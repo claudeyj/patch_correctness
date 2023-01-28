@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/9/mutant-6/ori-Base64.java	2021-08-08 21:02:01.408814619 -0700
++++ jd-result-2.0/Codec/9/mutant-6/patched-Base64.java	2021-08-09 06:25:54.729769328 -0700
+@@ -972,7 +972,7 @@
+ 
+         long len = (pArray.length * 4) / 3;
+         long mod = len % 4;
+-        if (mod != 0) {
++    if (mod == 0L) {
+             len += 4 - mod;
+         }
+         if (chunkSize > 0) {

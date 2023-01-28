@@ -1,0 +1,11 @@
+--- jd-result/Closure/46/mutant-4/a-RecordType.java	2021-07-14 21:43:14.950605243 -0700
++++ jd-result/Closure/46/mutant-4/b-RecordType.java	2021-07-14 21:43:17.354605310 -0700
+@@ -56,7 +56,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public JSType getLeastSupertype(JSType that) {
+-/* 142*/    if (!that.isRecordType())
++/* 142*/    if (!false)
+ /* 143*/      return super.getLeastSupertype(that); 
+ /* 145*/    RecordTypeBuilder builder = new RecordTypeBuilder(this.registry);
+ /* 146*/    for (String property : this.properties.keySet()) {

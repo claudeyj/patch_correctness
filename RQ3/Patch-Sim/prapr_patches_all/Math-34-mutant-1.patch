@@ -1,0 +1,11 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/34/mutant-1/ori-ListPopulation.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/34/mutant-1/patched-ListPopulation.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/34/mutant-1/ori-ListPopulation.java	2021-08-23 09:23:48.924990960 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/34/mutant-1/patched-ListPopulation.java	2021-08-23 09:23:48.924990960 +0800
+@@ -206,6 +206,6 @@
+      * @return chromosome iterator
+      */
+     public Iterator<Chromosome> iterator() {
+-        return chromosomes.iterator();
++    return getChromosomes().iterator();
+     }
+ }

@@ -1,0 +1,11 @@
+--- Math49b/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java	2017-03-20 23:53:36.000000000 +0800
++++ Math49_Math-49-mutant-3.patchb/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java	2017-03-20 23:53:36.000000000 +0800
+@@ -396,7 +396,7 @@
+         final double previous = values[index];
+         values[index] = missingEntries;
+         --size;
+-        ++count;
++    this.count = size() + 1;
+         return previous;
+     }
+ 

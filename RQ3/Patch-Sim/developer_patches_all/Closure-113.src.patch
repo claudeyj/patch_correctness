@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/113/mutant-0/buggy-ProcessClosurePrimitives.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/113/mutant-0/patched-ProcessClosurePrimitives.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/113/mutant-0/buggy-ProcessClosurePrimitives.java	2021-08-22 00:18:38.582190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/113/mutant-0/patched-ProcessClosurePrimitives.java	2021-08-22 00:18:38.586190183 -0700
+@@ -326,7 +326,7 @@
+       // the checks for broken requires turned off. In these cases, we
+       // allow broken requires to be preserved by the first run to
+       // let them be caught in the subsequent run.
+-      if (provided != null) {
++      if (provided != null || requiresLevel.isOn()) {
+         parent.detachFromParent();
+         compiler.reportCodeChange();
+       }

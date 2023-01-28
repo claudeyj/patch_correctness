@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/85/mutant-1/a-Attribute.java	2021-08-09 04:22:39.029560636 -0700
++++ jd-result-2.0/Jsoup/85/mutant-1/b-Attribute.java	2021-08-09 04:22:40.437560676 -0700
+@@ -25,7 +25,7 @@
+ /*   0*/  
+ /*   0*/  public Attribute(String key, String val, Attributes parent) {
+ /*  43*/    Validate.notNull(key);
+-/*  44*/    this.key = key.trim();
++/*  44*/    setKey(key.trim());
+ /*  45*/    Validate.notEmpty(key);
+ /*  46*/    this.val = val;
+ /*  47*/    this.parent = parent;

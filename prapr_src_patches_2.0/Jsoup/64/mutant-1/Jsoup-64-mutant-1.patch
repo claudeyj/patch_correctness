@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/64/mutant-1/a-HtmlTreeBuilderState.java	2021-08-09 04:24:14.353563326 -0700
++++ jd-result-2.0/Jsoup/64/mutant-1/b-HtmlTreeBuilderState.java	2021-08-09 04:24:16.089563375 -0700
+@@ -1611,7 +1611,7 @@
+ /*   0*/  
+ /*   0*/  private static void handleRawtext(Token.StartTag startTag, HtmlTreeBuilder tb) {
+ /*1489*/    tb.insert(startTag);
+-/*1490*/    tb.tokeniser.transition(TokeniserState.Rawtext);
++/*1490*/    tb.tokeniser.transition(TokeniserState.Rcdata);
+ /*1491*/    tb.markInsertionMode();
+ /*1492*/    tb.transition(Text);
+ /*   0*/  }

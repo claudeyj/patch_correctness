@@ -1,0 +1,11 @@
+--- jd-result/Math/6/mutant-1/a-BaseOptimizer.java	2021-07-14 09:05:34.169322429 -0700
++++ jd-result/Math/6/mutant-1/b-BaseOptimizer.java	2021-07-14 09:05:35.537322468 -0700
+@@ -30,7 +30,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public int getIterations() {
+-/*  93*/    return this.iterations.getCount();
++/*  93*/    return (this.iterations.getCount() != 0) ? 0 : 1;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public ConvergenceChecker<PAIR> getConvergenceChecker() {

@@ -1,0 +1,7 @@
+     */
+    protected JsonDeserializer<Object> _prefetchRootDeserializer(DeserializationConfig config, JavaType valueType)
+    {
+    if (valueType == null || !this._config.isEnabled(DeserializationFeature.READ_ENUMS_USING_TO_STRING)) {
+            return null;
+        }
+        // already cached?

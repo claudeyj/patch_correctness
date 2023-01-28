@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/32/mutant-0/buggy-PolygonsSet.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/32/mutant-0/patched-PolygonsSet.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/32/mutant-0/buggy-PolygonsSet.java	2021-08-22 00:18:38.674190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/32/mutant-0/patched-PolygonsSet.java	2021-08-22 00:18:38.674190186 -0700
+@@ -133,7 +133,7 @@
+ 
+         if (v.length == 0) {
+             final BSPTree<Euclidean2D> tree = getTree(false);
+-            if ((Boolean) tree.getAttribute()) {
++            if (tree.getCut() == null && (Boolean) tree.getAttribute()) {
+                 // the instance covers the whole space
+                 setSize(Double.POSITIVE_INFINITY);
+                 setBarycenter(Vector2D.NaN);

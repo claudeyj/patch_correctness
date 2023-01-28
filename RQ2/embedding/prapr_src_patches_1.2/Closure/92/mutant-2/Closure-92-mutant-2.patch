@@ -1,0 +1,11 @@
+--- jd-result/Closure/92/mutant-2/a-ProcessClosurePrimitives.java	2021-07-14 21:47:06.394611774 -0700
++++ jd-result/Closure/92/mutant-2/b-ProcessClosurePrimitives.java	2021-07-14 21:47:08.010611819 -0700
+@@ -477,7 +477,7 @@
+ /* 784*/        if (this.firstModule == this.minimumModule) {
+ /* 785*/          this.firstNode.getParent().addChildBefore(this.replacementNode, this.firstNode);
+ /*   0*/        } else {
+-/* 789*/          int indexOfDot = this.namespace.indexOf('.');
++/* 789*/          int i = 46, indexOfDot = this.namespace.indexOf(this.namespace, i);
+ /* 790*/          if (indexOfDot == -1) {
+ /* 792*/            ProcessClosurePrimitives.this.compiler.getNodeForCodeInsertion(this.minimumModule).addChildToBack(this.replacementNode);
+ /*   0*/          } else {

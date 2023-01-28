@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/20/mutant-0/buggy-StringUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/20/mutant-0/patched-StringUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/20/mutant-0/buggy-StringUtils.java	2021-08-22 00:18:38.634190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/20/mutant-0/patched-StringUtils.java	2021-08-22 00:18:38.638190185 -0700
+@@ -3295,7 +3295,7 @@
+             return EMPTY;
+         }
+         
+-        StringBuilder buf = new StringBuilder((array[startIndex] == null ? 16 : array[startIndex].toString().length()) + 1);
++        StringBuilder buf = new StringBuilder(noOfItems * 16);
+ 
+         for (int i = startIndex; i < endIndex; i++) {
+             if (i > startIndex) {
+@@ -3380,7 +3380,7 @@
+             return EMPTY;
+         }
+ 
+-        StringBuilder buf = new StringBuilder((array[startIndex] == null ? 16 : array[startIndex].toString().length()) + separator.length());
++        StringBuilder buf = new StringBuilder(noOfItems * 16);
+ 
+         for (int i = startIndex; i < endIndex; i++) {
+             if (i > startIndex) {

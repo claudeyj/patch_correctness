@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-29/ori-DurationFormatUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-29/patched-DurationFormatUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-29/ori-DurationFormatUtils.java	2021-08-23 09:23:48.856990018 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-29/patched-DurationFormatUtils.java	2021-08-23 09:23:48.856990018 +0800
+@@ -435,7 +435,7 @@
+         int startValue = start.get(field);
+         if (endValue < startValue) {
+             int newdiff = startValue - endValue;
+-            end.add( field, newdiff );
++      end.roll(field, newdiff);
+             return newdiff;
+         } else {
+             return 0;

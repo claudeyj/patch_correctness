@@ -1,0 +1,7 @@
+    protected JsonNode _bindAsTree(JsonParser jp) throws IOException
+    {
+        JsonNode result;
+        JsonToken t = _initForReading(jp);
+        if (t == JsonToken.VALUE_NULL || t == JsonToken.END_ARRAY || t == JsonToken.END_OBJECT) {
+            result = NullNode.instance;
+        } else {

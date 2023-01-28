@@ -1,0 +1,12 @@
+--- jd-result/Lang/27/mutant-9/a-NumberUtils.java	2021-07-14 16:56:10.898119214 -0700
++++ jd-result/Lang/27/mutant-9/b-NumberUtils.java	2021-07-14 16:56:12.358119255 -0700
+@@ -149,7 +149,8 @@
+ /* 486*/      mant = str.substring(0, decPos);
+ /*   0*/    } else {
+ /* 488*/      if (expPos > -1) {
+-/* 489*/        mant = str.substring(0, expPos);
++/* 489*/        false;
++/* 489*/        mant = null;
+ /*   0*/      } else {
+ /* 491*/        mant = str;
+ /*   0*/      } 

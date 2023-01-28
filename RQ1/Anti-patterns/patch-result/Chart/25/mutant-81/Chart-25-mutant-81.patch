@@ -1,0 +1,13 @@
+--- jd-result/Chart/25/mutant-81/a-CategoryPlot.java	2021-07-14 20:14:45.186455412 -0700
++++ jd-result/Chart/25/mutant-81/b-CategoryPlot.java	2021-07-14 20:14:46.782455457 -0700
+@@ -1291,7 +1292,9 @@
+ /*   0*/  public boolean render(Graphics2D g2, Rectangle2D dataArea, int index, PlotRenderingInfo info) {
+ /*   0*/    boolean foundData = false;
+ /*2850*/    CategoryDataset currentDataset = getDataset(index);
+-/*2851*/    CategoryItemRenderer renderer = getRenderer(index);
++/*2851*/    int i = index;
++/*2851*/    this;
++/*2851*/    CategoryItemRenderer renderer = new IntervalBarRenderer();
+ /*2852*/    CategoryAxis domainAxis = getDomainAxisForDataset(index);
+ /*2853*/    ValueAxis rangeAxis = getRangeAxisForDataset(index);
+ /*2854*/    boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);

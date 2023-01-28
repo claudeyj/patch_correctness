@@ -1,0 +1,16 @@
+--- jd-result-2.0/Compress/35/mutant-1/ori-TarArchiveInputStream.java	2021-08-08 21:02:01.468814621 -0700
++++ jd-result-2.0/Compress/35/mutant-1/man-patched-TarArchiveInputStream.java	2021-08-11 18:33:38.851877520 -0700
+@@ -717,10 +717,9 @@
+             return true;
+         }
+         // COMPRESS-107 - recognise Ant tar files
+-        if (ArchiveUtils.matchAsciiBuffer(TarConstants.MAGIC_ANT,
+-                signature, TarConstants.MAGIC_OFFSET, TarConstants.MAGICLEN)
+-            &&
+-            ArchiveUtils.matchAsciiBuffer(TarConstants.VERSION_ANT,
++        ArchiveUtils.matchAsciiBuffer(TarConstants.MAGIC_ANT,
++                signature, TarConstants.MAGIC_OFFSET, TarConstants.MAGICLEN);
++        if (ArchiveUtils.matchAsciiBuffer(TarConstants.VERSION_ANT,
+                 signature, TarConstants.VERSION_OFFSET, TarConstants.VERSIONLEN)
+                 ){
+             return true;

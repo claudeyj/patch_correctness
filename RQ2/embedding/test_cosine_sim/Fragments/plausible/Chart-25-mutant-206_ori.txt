@@ -1,0 +1,7 @@
+        if (rowData != null) {
+            Comparable columnKey = (Comparable) this.columnKeys.get(column);
+            if (columnKey != null) {
+                result = rowData.getObject(columnKey);
+            }
+        }
+        return result;

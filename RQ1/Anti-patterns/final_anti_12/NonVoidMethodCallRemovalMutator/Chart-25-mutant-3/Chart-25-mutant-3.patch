@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-3/a-CategoryPlot.java	2021-07-14 20:13:24.426453133 -0700
++++ jd-result/Chart/25/mutant-3/b-CategoryPlot.java	2021-07-14 20:13:25.998453177 -0700
+@@ -1298,7 +1298,7 @@
+ /*2855*/    if (hasData && renderer != null) {
+ /*2857*/      foundData = true;
+ /*2858*/      CategoryItemRendererState state = renderer.initialise(g2, dataArea, this, index, info);
+-/*2860*/      int columnCount = currentDataset.getColumnCount();
++/*2860*/      int columnCount = index;
+ /*2861*/      int rowCount = currentDataset.getRowCount();
+ /*2862*/      int passCount = renderer.getPassCount();
+ /*2863*/      for (int pass = 0; pass < passCount; pass++) {

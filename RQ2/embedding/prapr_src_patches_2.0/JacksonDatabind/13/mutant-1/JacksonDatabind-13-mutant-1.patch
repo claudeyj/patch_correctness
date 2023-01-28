@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/13/mutant-1/a-StdDeserializer.java	2021-08-09 04:26:12.021566647 -0700
++++ jd-result-2.0/JacksonDatabind/13/mutant-1/b-StdDeserializer.java	2021-08-09 04:26:14.009566703 -0700
+@@ -317,7 +317,8 @@
+ /*   0*/      } 
+ /*   0*/    } 
+ /* 415*/    if (t == JsonToken.VALUE_NULL) {
+-/* 416*/        return (Integer)getNullValue(); 
++/* 416*/      (Integer)getNullValue();
++/* 416*/      return 0;
+ /*   0*/       }
+ /* 419*/    if (t == JsonToken.START_ARRAY && ctxt.isEnabled(DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS)) {
+ /* 420*/      jp.nextToken();

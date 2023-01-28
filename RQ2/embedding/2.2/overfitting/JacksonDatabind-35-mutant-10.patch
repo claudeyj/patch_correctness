@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/35/mutant-10/ori-BeanDeserializerBase.java	2021-08-08 21:02:02.128814639 -0700
++++ jd-result-2.0/JacksonDatabind/35/mutant-10/patched-BeanDeserializerBase.java	2021-08-09 06:25:54.921769334 -0700
+@@ -953,7 +953,7 @@
+                     return deserializeFromObjectId(p, ctxt);
+                 }
+                 // but, with 2.5+, a simple Object-wrapped value also legal:
+-                if (t == JsonToken.START_OBJECT) {
++        if (t != JsonToken.START_OBJECT) {
+                     t = p.nextToken();
+                 }
+                 if (t == JsonToken.FIELD_NAME && _objectIdReader.maySerializeAsObject()

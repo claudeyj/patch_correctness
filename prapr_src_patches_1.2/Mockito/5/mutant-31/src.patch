@@ -1,0 +1,19 @@
+--- jd-result/Mockito/5/mutant-31/ori-VerificationOverTimeImpl.java	2021-07-15 18:51:56.288753237 -0700
++++ jd-result/Mockito/5/mutant-31/fixed-patched-VerificationOverTimeImpl.java	2021-07-30 04:02:39.749146417 -0700
+@@ -8,6 +8,7 @@
+ import org.mockito.internal.util.Timer;
+ import org.mockito.internal.verification.api.VerificationData;
+ import org.mockito.verification.VerificationMode;
++import junit.framework.ComparisonFailure;
+ 
+ /**
+  * Verifies that another verification mode (the delegate) is satisfied within a certain timeframe
+@@ -88,7 +89,7 @@
+             } catch (MockitoAssertionError e) {
+                 error = handleVerifyException(e);
+             }
+-            catch (org.mockito.exceptions.verification.junit.ArgumentsAreDifferent e) {
++            catch (ComparisonFailure e) {
+                 error = handleVerifyException(e);
+             }
+         }

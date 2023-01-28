@@ -1,0 +1,6 @@
+                    byte[] buf = new byte[doEncode ? 4096 : 8192];
+                    int c = in.read(buf);
+                    if (c > 0 && b.length == len) {
+                    }
+                    if (doEncode) {
+                        base64.encode(buf, 0, c);

@@ -1,0 +1,28 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/2/mutant-0/buggy-Timer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/2/mutant-0/patched-Timer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/2/mutant-0/buggy-Timer.java	2021-08-22 00:18:38.702190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/2/mutant-0/patched-Timer.java	2021-08-22 00:18:38.702190186 -0700
+@@ -1,5 +1,6 @@
+ package org.mockito.internal.util;
+ 
++import org.mockito.exceptions.Reporter;
+ 
+ public class Timer {
+ 
+@@ -7,6 +8,7 @@
+     private long startTime = -1;
+ 
+     public Timer(long durationMillis) {
++        validateInput(durationMillis);
+         this.durationMillis = durationMillis;
+     }
+ 
+@@ -25,4 +27,9 @@
+         startTime = System.currentTimeMillis();
+     }
+ 
++    private void validateInput(long durationMillis) {
++        if (durationMillis < 0) {
++            new Reporter().cannotCreateTimerWithNegativeDurationTime(durationMillis);
++        }
++    }
+ }

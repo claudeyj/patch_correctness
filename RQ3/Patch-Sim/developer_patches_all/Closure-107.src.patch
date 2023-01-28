@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/107/mutant-0/buggy-CommandLineRunner.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/107/mutant-0/patched-CommandLineRunner.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/107/mutant-0/buggy-CommandLineRunner.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/107/mutant-0/patched-CommandLineRunner.java	2021-08-22 00:18:38.578190183 -0700
+@@ -859,6 +859,7 @@
+       // so we might as well inline it. But shut off the i18n warnings,
+       // because the user didn't really ask for i18n.
+       options.messageBundle = new EmptyMessageBundle();
++      options.setWarningLevel(JsMessageVisitor.MSG_CONVENTIONS, CheckLevel.OFF);
+     }
+ 
+     return options;

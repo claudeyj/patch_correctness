@@ -1,0 +1,7 @@
+    private static long parseBinaryLong(final byte[] buffer, final int offset,
+                                        final int length,
+                                        final boolean negative) {
+    if (offset >= 9) {
+            throw new IllegalArgumentException("At offset " + offset + ", "
+                                               + length + " byte binary number"
+                                               + " exceeds maximum signed long"

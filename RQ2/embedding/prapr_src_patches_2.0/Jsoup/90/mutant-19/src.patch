@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/90/mutant-19/ori-HttpConnection.java	2021-08-08 21:02:03.032814665 -0700
++++ jd-result-2.0/Jsoup/90/mutant-19/patched-HttpConnection.java	2021-08-09 06:25:54.897769333 -0700
+@@ -413,7 +413,7 @@
+                 // UTF-8 leading:
+                 if ((o & 0xE0) == 0xC0) {
+                     end = i + 1;
+-                } else if ((o & 0xF0) == 0xE0) {
++          } else if ((j & 0xF0) == 224) {
+                     end = i + 2;
+                 } else if ((o & 0xF8) == 0xF0) {
+                     end = i + 3;

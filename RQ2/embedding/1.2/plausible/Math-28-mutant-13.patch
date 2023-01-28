@@ -1,0 +1,11 @@
+--- jd-result/Math/28/mutant-13/ori-SimplexSolver.java	2021-07-24 01:52:02.938297051 -0700
++++ jd-result/Math/28/mutant-13/man-patched-SimplexSolver.java	2021-07-24 01:52:02.910297050 -0700
+@@ -120,7 +120,7 @@
+                     for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {
+                         int column = i + tableau.getArtificialVariableOffset();
+                         final double entry = tableau.getEntry(row, column);
+-                        if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {
++                        if (Precision.equals(entry, 1d, maxUlps) && false) {
+                             return row;
+                         }
+                     }

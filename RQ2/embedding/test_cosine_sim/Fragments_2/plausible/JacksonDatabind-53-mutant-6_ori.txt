@@ -1,0 +1,7 @@
+            // 29-Jun-2016, tatu: As to bindings, this works for [databind#1215], but
+            //  not certain it would reliably work... but let's hope for best for now
+            if (baseType.isInterface()) {
+                newType = baseType.refine(subclass, TypeBindings.emptyBindings(), null, new JavaType[] { baseType });
+            } else {
+                newType = baseType.refine(subclass, TypeBindings.emptyBindings(), baseType, NO_TYPES);
+            }

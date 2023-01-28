@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Chart/3/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Chart/3/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Chart/3/buggy1.java	2021-08-27 19:18:35.302863992 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Chart/3/tool-patch1.java	2021-08-27 19:18:35.302863992 -0700
+@@ -561,6 +561,7 @@
+      *              permitted).
+      */
+     public void add(TimeSeriesDataItem item) {
++        updateBoundsForRemovedItem(item);
+         add(item, true);
+     }
+ 

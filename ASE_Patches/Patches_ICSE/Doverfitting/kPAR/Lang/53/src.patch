@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/53/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/53/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/53/buggy1.java	2021-08-27 19:18:38.450864081 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/53/tool-patch1.java	2021-08-27 19:18:38.450864081 -0700
+@@ -661,7 +661,7 @@
+         }
+ 
+         // reset time
+-        if (date.getTime() != time) {
++        if ((!round || millisecs < 500)) {
+             date.setTime(time);
+             val.setTime(date);
+         }

@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-29/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-29/fixed-patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-29/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.024992347 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-29/fixed-patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.020992290 +0800
+@@ -1201,7 +1201,7 @@
+ 
+             final double range = right - left;
+             if ((range < absoluteTolerance) ||
+-                (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
++                (range < relativeTolerance / Math.max(Math.abs(left), Math.abs(right)))) {
+                 // search has converged
+                 break;
+             }

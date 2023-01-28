@@ -1,0 +1,7 @@
+    {
+        List<Class<?>> parents = new ArrayList<Class<?>>();
+        parents.add(mixInCls);
+        ClassUtil.findSuperTypes(mixInCls, targetClass, parents);
+        for (Class<?> mixin : parents) {
+            for (Method m : mixin.getDeclaredMethods()) {
+                if (!_isIncludableMemberMethod(m)) {

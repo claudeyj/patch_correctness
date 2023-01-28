@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-28/a-EigenDecompositionImpl.java	2021-07-14 09:25:13.825355717 -0700
++++ jd-result/Math/81/mutant-28/b-EigenDecompositionImpl.java	2021-07-14 09:25:15.401355761 -0700
+@@ -933,7 +933,7 @@
+ /*1517*/          a2 = 1.05D * a2;
+ /*1520*/          if (a2 < 0.563D)
+ /*1521*/            s = gam * (1.0D - Math.sqrt(a2)) / (1.0D + a2); 
+-/*1523*/          this.tau = s;
++/*1523*/          this.tau = a2;
+ /*   0*/          break;
+ /*   0*/        } 
+ /*1526*/        if (this.dMin == this.dN2) {

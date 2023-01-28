@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/9/mutant-0/buggy-FastDateParser.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/9/mutant-0/patched-FastDateParser.java
+--- Lang9b/src/main/java/org/apache/commons/lang3/time/FastDateParser.java
++++ Lang9b_Lang-9-src.patchb/src/main/java/org/apache/commons/lang3/time/FastDateParser.java
+@@ -141,6 +141,9 @@
+             currentFormatField= nextFormatField;
+             currentStrategy= nextStrategy;
+         }
++        if (patternMatcher.regionStart() != patternMatcher.regionEnd()) {
++            throw new IllegalArgumentException("Failed to parse \""+pattern+"\" ; gave up at index "+patternMatcher.regionStart());
++        }
+         if(currentStrategy.addRegex(this, regex)) {
+             collector.add(currentStrategy);
+         }

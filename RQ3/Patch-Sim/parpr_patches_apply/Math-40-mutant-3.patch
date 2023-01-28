@@ -1,0 +1,11 @@
+--- Math40b/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2017-03-20 23:51:29.000000000 +0800
++++ Math40_Math-40-mutant-3.patchb/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2017-03-20 23:51:29.000000000 +0800
+@@ -257,7 +257,7 @@
+                     // the guessed root is either not strictly inside the interval or it
+                     // is a NaN (which occurs when some sampling points share the same y)
+                     // we try again with a lower interpolation order
+-                    if (signChangeIndex - start >= end - signChangeIndex) {
++        if (MAXIMAL_AGING - start >= end - signChangeIndex) {
+                         // we have more points before the sign change, drop the lowest point
+                         ++start;
+                     } else {

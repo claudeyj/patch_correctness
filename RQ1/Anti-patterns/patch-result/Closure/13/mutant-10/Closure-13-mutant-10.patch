@@ -1,0 +1,15 @@
+--- jd-result/Closure/13/mutant-10/a-PeepholeOptimizationsPass.java	2021-07-14 21:37:05.750594825 -0700
++++ jd-result/Closure/13/mutant-10/b-PeepholeOptimizationsPass.java	2021-07-14 21:37:07.334594869 -0700
+@@ -113,8 +113,10 @@
+ /*   0*/  private boolean shouldVisit(Node node) {
+ /* 157*/    if (node.isFunction() || node.isScript()) {
+ /* 158*/      ScopeState previous = this.traversalState.peek();
+-/* 159*/      if (!previous.traverseChildScopes)
+-/* 160*/        return false; 
++/* 159*/      if (!previous.traverseChildScopes) {
++/* 160*/        false;
++/* 160*/        return true;
++/*   0*/      } 
+ /* 162*/      this.traversalState.push();
+ /*   0*/    } 
+ /* 164*/    return true;

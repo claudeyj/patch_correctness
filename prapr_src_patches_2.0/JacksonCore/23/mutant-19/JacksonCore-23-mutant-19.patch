@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonCore/23/mutant-19/a-CharsToNameCanonicalizer.java	2021-08-09 04:14:20.541546570 -0700
++++ jd-result-2.0/JacksonCore/23/mutant-19/b-CharsToNameCanonicalizer.java	2021-08-09 04:14:22.033546612 -0700
+@@ -44,7 +44,8 @@
+ /*   0*/  private BitSet _overflows;
+ /*   0*/  
+ /*   0*/  private CharsToNameCanonicalizer(int seed) {
+-/* 233*/    this._parent = null;
++/* 233*/    this;
++/* 233*/    this = null;
+ /* 234*/    this._seed = seed;
+ /* 237*/    this._canonicalize = true;
+ /* 238*/    this._flags = -1;

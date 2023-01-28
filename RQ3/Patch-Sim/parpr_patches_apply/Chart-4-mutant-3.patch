@@ -1,0 +1,19 @@
+--- Chart4b/source/org/jfree/chart/plot/XYPlot.java	2017-05-03 11:40:03.000000000 +0800
++++ Chart4_Chart-4-mutant-3.patchb/source/org/jfree/chart/plot/XYPlot.java	2017-05-03 11:40:03.000000000 +0800
+@@ -298,6 +298,7 @@
+ import org.jfree.data.xy.SelectableXYDataset;
+ import org.jfree.data.xy.XYDataset;
+ import org.jfree.data.xy.XYDatasetSelectionState;
++import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+ 
+ /**
+  * A general class for plotting data in the form of (x, y) pairs.  This plot can
+@@ -1746,7 +1747,7 @@
+             if (this.datasets.get(i) == dataset) {
+                 result = (XYItemRenderer) this.renderers.get(i);
+                 if (result == null) {
+-                    result = getRenderer();
++                    result = new XYLineAndShapeRenderer();
+                 }
+                 break;
+             }

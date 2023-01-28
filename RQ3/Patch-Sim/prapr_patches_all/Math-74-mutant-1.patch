@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/74/mutant-1/ori-AdamsMoultonIntegrator.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/74/mutant-1/fixed-patched-AdamsMoultonIntegrator.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/74/mutant-1/ori-AdamsMoultonIntegrator.java	2021-08-23 09:23:48.988991847 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/74/mutant-1/fixed-patched-AdamsMoultonIntegrator.java	2021-08-23 09:23:48.988991847 +0800
+@@ -236,7 +236,7 @@
+         interpolator.reinitialize(stepStart, stepSize, scaled, nordsieck);
+         interpolator.storeTime(stepStart);
+ 
+-        double hNew = stepSize;
++    double hNew = t;
+         interpolator.rescale(hNew);
+ 
+         boolean lastStep = false;

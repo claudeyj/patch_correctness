@@ -1,0 +1,13 @@
+--- jd-result/Chart/26/mutant-91/ori-Axis.java	2021-07-15 18:51:51.888753113 -0700
++++ jd-result/Chart/26/mutant-91/patched-Axis.java	2021-07-21 07:28:05.526223656 -0700
+@@ -339,7 +339,9 @@
+      * @see #setLabel(String)
+      */
+     public String getLabel() {
+-        return this.label;
++    if (this.label == null)
++      throw new RuntimeException(); 
++    return null;
+     }
+ 
+     /**

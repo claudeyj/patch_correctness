@@ -1,0 +1,12 @@
+--- jd-result/Math/101/mutant-6/a-ComplexFormat.java	2021-07-14 17:00:49.130127065 -0700
++++ jd-result/Math/101/mutant-6/b-ComplexFormat.java	2021-07-14 17:00:51.702127138 -0700
+@@ -167,7 +167,8 @@
+ /* 374*/    int n = getImaginaryCharacter().length();
+ /* 375*/    startIndex = pos.getIndex();
+ /* 376*/    int endIndex = startIndex + n;
+-/* 377*/    if (source.substring(startIndex, endIndex).compareTo(getImaginaryCharacter()) != 0) {
++/* 377*/    int j = endIndex, i = startIndex;
++/* 377*/    if (source.substring(i).compareTo(getImaginaryCharacter()) != 0) {
+ /* 382*/      pos.setIndex(initialIndex);
+ /* 383*/      pos.setErrorIndex(startIndex);
+ /* 384*/      return null;

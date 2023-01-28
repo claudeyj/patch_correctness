@@ -1,0 +1,12 @@
+--- jd-result-2.0/Gson/16/mutant-11/ori-$Gson$Types.java	2021-08-08 21:02:01.636814625 -0700
++++ jd-result-2.0/Gson/16/mutant-11/man-patched-.java	2021-08-11 21:24:47.440167279 -0700
+@@ -556,7 +556,8 @@
+         checkNotNull(lowerBounds[0]);
+         checkNotPrimitive(lowerBounds[0]);
+         checkArgument(upperBounds[0] == Object.class);
+-        this.lowerBound = canonicalize(lowerBounds[0]);
++        this.lowerBound = null;
++        $Gson$Types.canonicalize(lowerBounds[0]);
+         this.upperBound = Object.class;
+ 
+       } else {

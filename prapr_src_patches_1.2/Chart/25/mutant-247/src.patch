@@ -1,0 +1,15 @@
+--- jd-result/Chart/25/mutant-247/ori-DatasetUtilities.java	2021-07-15 18:51:51.388753099 -0700
++++ jd-result/Chart/25/mutant-247/man-patched-DatasetUtilities.java	2021-07-29 18:55:03.888219289 -0700
+@@ -572,12 +572,6 @@
+         }
+ 
+         for (int r = 0; r < rowCount; r++) {
+-            for (int c = 0; c < columnCount; c++) {
+-                if (dataset.getValue(r, c) != null) {
+-                    return false;
+-                }
+-
+-            }
+         }
+ 
+         return true;

@@ -1,0 +1,11 @@
+--- Math71b/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2017-03-20 23:59:53.000000000 +0800
++++ Math71_Math-71-mutant-2.patchb/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2017-03-20 23:59:53.000000000 +0800
+@@ -239,7 +239,7 @@
+         }
+         newManager.addEventHandler(new EndTimeChecker(endTime),
+                                    Double.POSITIVE_INFINITY,
+-                                   Math.ulp(Math.max(Math.abs(startTime), Math.abs(endTime))),
++                                   Math.ulp(Math.max(Math.toDegrees(startTime), Math.abs(endTime))),
+                                    100);
+         return newManager;
+     }

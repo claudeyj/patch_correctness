@@ -1,0 +1,11 @@
+--- jd-result/Lang/60/mutant-2/ori-StrBuilder.java	2021-07-15 18:51:52.352753126 -0700
++++ jd-result/Lang/60/mutant-2/patched-StrBuilder.java	2021-07-21 08:05:30.910287017 -0700
+@@ -1111,7 +1111,7 @@
+      * @throws IndexOutOfBoundsException if any index is invalid
+      */
+     private void deleteImpl(int startIndex, int endIndex, int len) {
+-        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
++    System.arraycopy(this.buffer, endIndex, this.buffer, startIndex, capacity() - endIndex);
+         size -= len;
+     }
+ 

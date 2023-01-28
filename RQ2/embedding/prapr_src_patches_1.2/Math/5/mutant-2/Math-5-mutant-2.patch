@@ -1,0 +1,11 @@
+--- jd-result/Math/5/mutant-2/a-Complex.java	2021-07-14 09:05:22.197322091 -0700
++++ jd-result/Math/5/mutant-2/b-Complex.java	2021-07-14 09:05:23.745322135 -0700
+@@ -132,7 +132,7 @@
+ /* 341*/      return true; 
+ /* 343*/    if (other instanceof Complex) {
+ /* 344*/      Complex c = (Complex)other;
+-/* 345*/      if (c.isNaN)
++/* 345*/      if (this.isNaN)
+ /* 346*/        return this.isNaN; 
+ /* 348*/      return (this.real == c.real && this.imaginary == c.imaginary);
+ /*   0*/    } 

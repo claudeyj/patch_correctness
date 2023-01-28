@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jKali/Math/8/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jKali/Math/8/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jKali/Math/8/buggy1.java	2021-09-08 07:11:31.489222358 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jKali/Math/8/tool-patch1.java	2021-09-08 07:11:31.489222358 -0700
+@@ -186,9 +186,9 @@
+ 
+         final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+ 
+-        for (int i = 0; i < sampleSize; i++) {
+-            out[i] = sample();
+-        }
++
++
++
+ 
+         return out;
+ 

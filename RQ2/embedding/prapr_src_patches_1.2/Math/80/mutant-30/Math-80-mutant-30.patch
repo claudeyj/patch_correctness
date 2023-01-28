@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-30/a-EigenDecompositionImpl.java	2021-07-14 09:18:39.013344576 -0700
++++ jd-result/Math/80/mutant-30/b-EigenDecompositionImpl.java	2021-07-14 09:18:40.545344619 -0700
+@@ -658,7 +658,7 @@
+ /*1136*/      for (int i = 0; i < j; i += 4) {
+ /*1137*/        for (int k = 0; k < 4; k += step) {
+ /*1138*/          double tmp = this.work[i + k];
+-/*1139*/          this.work[i + k] = this.work[j - k];
++/*1139*/          this.work[j + k] = this.work[j - k];
+ /*1140*/          this.work[j - k] = tmp;
+ /*   0*/        } 
+ /*1142*/        j -= 4;

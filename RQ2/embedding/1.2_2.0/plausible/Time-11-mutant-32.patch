@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-32/ori-DateTimeZoneBuilder.java	2021-07-15 18:51:56.072753231 -0700
++++ jd-result/Time/11/mutant-32/patched-DateTimeZoneBuilder.java	2021-07-21 07:31:36.078229598 -0700
+@@ -824,7 +824,7 @@
+         }
+ 
+         public int getToYear() {
+-            return iToYear;
++      return getFromYear();
+         }
+ 
+         public OfYear getOfYear() {

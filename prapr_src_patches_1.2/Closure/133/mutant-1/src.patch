@@ -1,0 +1,11 @@
+--- jd-result/Closure/133/mutant-1/ori-JsDocInfoParser.java	2021-07-15 18:51:52.692753135 -0700
++++ jd-result/Closure/133/mutant-1/patched-JsDocInfoParser.java	2021-07-21 07:51:59.846264130 -0700
+@@ -1429,7 +1429,7 @@
+     builder.append(line);
+ 
+     state = State.SEARCHING_ANNOTATION;
+-    token = next();
++    token = eatTokensUntilEOL();
+ 
+     boolean ignoreStar = false;
+ 

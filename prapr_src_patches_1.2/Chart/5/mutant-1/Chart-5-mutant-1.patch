@@ -1,0 +1,14 @@
+--- jd-result/Chart/5/mutant-1/a-XYSeries.java	2021-07-14 17:01:30.354128228 -0700
++++ jd-result/Chart/5/mutant-1/b-XYSeries.java	2021-07-14 17:01:31.754128268 -0700
+@@ -195,11 +195,7 @@
+ /*   0*/      } 
+ /* 556*/      existing.setY(y);
+ /*   0*/    } else {
+-/* 563*/      if (this.autoSort) {
+-/* 564*/        this.data.add(-index - 1, new XYDataItem(x, y));
+-/*   0*/      } else {
+ /* 567*/        this.data.add(new XYDataItem(x, y));
+-/*   0*/      } 
+ /* 570*/      if (getItemCount() > this.maximumItemCount)
+ /* 571*/        this.data.remove(0); 
+ /*   0*/    } 

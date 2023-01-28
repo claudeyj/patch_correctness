@@ -1,0 +1,11 @@
+--- jd-result/Math/5/mutant-2/ori-Complex.java	2021-07-24 01:52:03.762297074 -0700
++++ jd-result/Math/5/mutant-2/fixed-patched-Complex.java	2021-07-24 01:52:03.758297074 -0700
+@@ -342,7 +342,7 @@
+         }
+         if (other instanceof Complex){
+             Complex c = (Complex)other;
+-            if (c.isNaN) {
++      if (this.isNaN) {
+                 return isNaN;
+             } else {
+                 return (real == c.real) && (imaginary == c.imaginary);

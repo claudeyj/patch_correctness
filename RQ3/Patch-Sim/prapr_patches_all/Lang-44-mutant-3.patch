@@ -1,0 +1,11 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/44/mutant-3/ori-NumberUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/44/mutant-3/man-patched-NumberUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/44/mutant-3/ori-NumberUtils.java	2021-08-23 09:23:48.840989796 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/44/mutant-3/man-patched-NumberUtils.java	2021-08-23 09:23:48.840989796 +0800
+@@ -188,7 +188,6 @@
+             String numeric = val.substring(0, val.length() - 1);
+             boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+             switch (lastChar) {
+-                case 'l' :
+                 case 'L' :
+                     if (dec == null
+                         && exp == null

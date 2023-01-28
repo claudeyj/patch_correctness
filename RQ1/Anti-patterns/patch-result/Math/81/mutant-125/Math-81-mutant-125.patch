@@ -1,0 +1,195 @@
+--- jd-result/Math/81/mutant-125/a-EigenDecompositionImpl.java	2021-07-14 09:27:54.297360245 -0700
++++ jd-result/Math/81/mutant-125/b-EigenDecompositionImpl.java	2021-07-14 09:27:55.857360289 -0700
+@@ -864,6 +864,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void computeShiftIncrement(int start, int end, int deflated) {
++/*   0*/    double b1, b2, a2, s, gam;
++/*   0*/    int np, i4;
+ /*1432*/    double cnst1 = 0.563D;
+ /*1433*/    double cnst2 = 1.01D;
+ /*1434*/    double cnst3 = 1.05D;
+@@ -875,12 +877,11 @@
+ /*1444*/    int nn = 4 * end + this.pingPong - 1;
+ /*1445*/    switch (deflated) {
+ /*   0*/      case 0:
+-/*1448*/        if (this.dMin == this.dN || this.dMin == this.dN1) {
+-/*   0*/          double gam;
+-/*   0*/          int np;
+-/*1450*/          double b1 = Math.sqrt(this.work[nn - 3]) * Math.sqrt(this.work[nn - 5]);
+-/*1451*/          double b2 = Math.sqrt(this.work[nn - 7]) * Math.sqrt(this.work[nn - 9]);
+-/*1452*/          double a2 = this.work[nn - 7] + this.work[nn - 5];
++/*1448*/        if (this.dMin != this.dN)
++/*1448*/          this.dMin cmp this.dN1; 
++/*1450*/        b1 = Math.sqrt(this.work[nn - 3]) * Math.sqrt(this.work[nn - 5]);
++/*1451*/        b2 = Math.sqrt(this.work[nn - 7]) * Math.sqrt(this.work[nn - 9]);
++/*1452*/        a2 = this.work[nn - 7] + this.work[nn - 5];
+ /*1454*/          if (this.dMin == this.dN && this.dMin1 == this.dN1) {
+ /*1456*/            double gap2 = this.dMin2 - a2 - this.dMin2 * 0.25D;
+ /*1457*/            double gap1 = a2 - this.dN - ((gap2 > 0.0D && gap2 > b2) ? (b2 / gap2 * b2) : (b1 + b2));
+@@ -899,7 +900,7 @@
+ /*   0*/            break;
+ /*   0*/          } 
+ /*1474*/          this.tType = -4;
+-/*1475*/          double s = 0.25D * this.dMin;
++/*1475*/        s = 0.25D * this.dMin;
+ /*1478*/          if (this.dMin == this.dN) {
+ /*1479*/            gam = this.dN;
+ /*1480*/            a2 = 0.0D;
+@@ -920,7 +921,7 @@
+ /*1498*/            np = nn - 13;
+ /*   0*/          } 
+ /*1502*/          a2 += b2;
+-/*1503*/          for (int i4 = np; i4 >= 4 * start + 2 + this.pingPong && 
++/*1503*/        for (i4 = np; i4 >= 4 * start + 2 + this.pingPong && 
+ /*1504*/            b2 != 0.0D; i4 -= 4) {
+ /*1507*/            b1 = b2;
+ /*1508*/            if (this.work[i4] > this.work[i4 - 2])
+@@ -935,75 +936,32 @@
+ /*1521*/            s = gam * (1.0D - Math.sqrt(a2)) / (1.0D + a2); 
+ /*1523*/          this.tau = s;
+ /*   0*/          break;
+-/*   0*/        } 
+-/*1526*/        if (this.dMin == this.dN2) {
+-/*1529*/          this.tType = -5;
+-/*1530*/          double s = 0.25D * this.dMin;
+-/*1533*/          int np = nn - 2 * this.pingPong;
+-/*1534*/          double b1 = this.work[np - 2];
+-/*1535*/          double b2 = this.work[np - 6];
+-/*1536*/          double gam = this.dN2;
+-/*1537*/          if (this.work[np - 8] > b2 || this.work[np - 4] > b1)
+-/*   0*/            return; 
+-/*1540*/          double a2 = this.work[np - 8] / b2 * (1.0D + this.work[np - 4] / b1);
+-/*1543*/          if (end - start > 2) {
+-/*1544*/            b2 = this.work[nn - 13] / this.work[nn - 15];
+-/*1545*/            a2 += b2;
+-/*1546*/            for (int i4 = nn - 17; i4 >= 4 * start + 2 + this.pingPong && 
+-/*1547*/              b2 != 0.0D; i4 -= 4) {
+-/*1550*/              b1 = b2;
+-/*1551*/              if (this.work[i4] > this.work[i4 - 2])
+-/*   0*/                return; 
+-/*1554*/              b2 *= this.work[i4] / this.work[i4 - 2];
+-/*1555*/              a2 += b2;
+-/*1556*/              if (100.0D * Math.max(b2, b1) < a2 || 0.563D < a2)
+-/*   0*/                break; 
+-/*   0*/            } 
+-/*1560*/            a2 = 1.05D * a2;
+-/*   0*/          } 
+-/*1563*/          if (a2 < 0.563D) {
+-/*1564*/            this.tau = gam * (1.0D - Math.sqrt(a2)) / (1.0D + a2);
+-/*   0*/            break;
+-/*   0*/          } 
+-/*1566*/          this.tau = s;
+-/*   0*/          break;
+-/*   0*/        } 
+-/*1572*/        if (this.tType == -6) {
+-/*1573*/          this.g += 0.333D * (1.0D - this.g);
+-/*1574*/        } else if (this.tType == -18) {
+-/*1575*/          this.g = 0.08325D;
+-/*   0*/        } else {
+-/*1577*/          this.g = 0.25D;
+-/*   0*/        } 
+-/*1579*/        this.tau = this.g * this.dMin;
+-/*1580*/        this.tType = -6;
+-/*   0*/        break;
+ /*   0*/      case 1:
+ /*1586*/        if (this.dMin1 == this.dN1 && this.dMin2 == this.dN2) {
+ /*1589*/          this.tType = -7;
+-/*1590*/          double s = 0.333D * this.dMin1;
++/*1590*/          double d1 = 0.333D * this.dMin1;
+ /*1591*/          if (this.work[nn - 5] > this.work[nn - 7])
+ /*   0*/            return; 
+-/*1594*/          double b1 = this.work[nn - 5] / this.work[nn - 7];
+-/*1595*/          double b2 = b1;
+-/*1596*/          if (b2 != 0.0D)
+-/*1597*/            for (int i4 = 4 * end - 10 + this.pingPong; i4 >= 4 * start + 2 + this.pingPong; i4 -= 4) {
+-/*1598*/              double oldB1 = b1;
+-/*1599*/              if (this.work[i4] > this.work[i4 - 2])
+-/*   0*/                return; 
+-/*1602*/              b1 *= this.work[i4] / this.work[i4 - 2];
+-/*1603*/              b2 += b1;
+-/*1604*/              if (100.0D * Math.max(b1, oldB1) < b2)
+-/*   0*/                break; 
+-/*   0*/            }  
+-/*1609*/          b2 = Math.sqrt(1.05D * b2);
+-/*1610*/          double a2 = this.dMin1 / (1.0D + b2 * b2);
+-/*1611*/          double gap2 = 0.5D * this.dMin2 - a2;
+-/*1612*/          if (gap2 > 0.0D && gap2 > b2 * a2) {
+-/*1613*/            this.tau = Math.max(s, a2 * (1.0D - 1.01D * a2 * b2 / gap2 * b2));
++/*1594*/          double d2 = this.work[nn - 5] / this.work[nn - 7];
++/*1595*/          double d3 = d2;
++/*1596*/          if (d3 != 0.0D)
++/*1597*/            for (int i = 4 * end - 10 + this.pingPong; i >= 4 * start + 2 + this.pingPong; i -= 4) {
++/*1598*/              double oldB1 = d2;
++/*1599*/              if (this.work[i] > this.work[i - 2])
++/*   0*/                return; 
++/*1602*/              double d5 = d2 * this.work[i] / this.work[i - 2];
++/*1603*/              d3 += d5;
++/*1604*/              if (100.0D * Math.max(d5, oldB1) < d3)
++/*   0*/                break; 
++/*   0*/            }  
++/*1609*/          d3 = Math.sqrt(1.05D * d3);
++/*1610*/          double d4 = this.dMin1 / (1.0D + d3 * d3);
++/*1611*/          double gap2 = 0.5D * this.dMin2 - d4;
++/*1612*/          if (gap2 > 0.0D && gap2 > d3 * d4) {
++/*1613*/            this.tau = Math.max(d1, d4 * (1.0D - 1.01D * d4 * d3 / gap2 * d3));
+ /*   0*/            break;
+ /*   0*/          } 
+-/*1615*/          this.tau = Math.max(s, a2 * (1.0D - 1.01D * b2));
++/*1615*/          this.tau = Math.max(d1, d4 * (1.0D - 1.01D * d3));
+ /*1616*/          this.tType = -8;
+ /*   0*/          break;
+ /*   0*/        } 
+@@ -1015,28 +973,28 @@
+ /*   0*/      case 2:
+ /*1632*/        if (this.dMin2 == this.dN2 && 2.0D * this.work[nn - 5] < this.work[nn - 7]) {
+ /*1633*/          this.tType = -10;
+-/*1634*/          double s = 0.333D * this.dMin2;
++/*1634*/          double d1 = 0.333D * this.dMin2;
+ /*1635*/          if (this.work[nn - 5] > this.work[nn - 7])
+ /*   0*/            return; 
+-/*1638*/          double b1 = this.work[nn - 5] / this.work[nn - 7];
+-/*1639*/          double b2 = b1;
+-/*1640*/          if (b2 != 0.0D)
+-/*1641*/            for (int i4 = 4 * end - 9 + this.pingPong; i4 >= 4 * start + 2 + this.pingPong; i4 -= 4) {
+-/*1642*/              if (this.work[i4] > this.work[i4 - 2])
++/*1638*/          double d2 = this.work[nn - 5] / this.work[nn - 7];
++/*1639*/          double d3 = d2;
++/*1640*/          if (d3 != 0.0D)
++/*1641*/            for (int i = 4 * end - 9 + this.pingPong; i >= 4 * start + 2 + this.pingPong; i -= 4) {
++/*1642*/              if (this.work[i] > this.work[i - 2])
+ /*   0*/                return; 
+-/*1645*/              b1 *= this.work[i4] / this.work[i4 - 2];
+-/*1646*/              b2 += b1;
+-/*1647*/              if (100.0D * b1 < b2)
++/*1645*/              d2 *= this.work[i] / this.work[i - 2];
++/*1646*/              d3 += d2;
++/*1647*/              if (100.0D * d2 < d3)
+ /*   0*/                break; 
+ /*   0*/            }  
+-/*1652*/          b2 = Math.sqrt(1.05D * b2);
+-/*1653*/          double a2 = this.dMin2 / (1.0D + b2 * b2);
+-/*1654*/          double gap2 = this.work[nn - 7] + this.work[nn - 9] - Math.sqrt(this.work[nn - 11]) * Math.sqrt(this.work[nn - 9]) - a2;
+-/*1656*/          if (gap2 > 0.0D && gap2 > b2 * a2) {
+-/*1657*/            this.tau = Math.max(s, a2 * (1.0D - 1.01D * a2 * b2 / gap2 * b2));
++/*1652*/          d3 = Math.sqrt(1.05D * d3);
++/*1653*/          double d4 = this.dMin2 / (1.0D + d3 * d3);
++/*1654*/          double gap2 = this.work[nn - 7] + this.work[nn - 9] - Math.sqrt(this.work[nn - 11]) * Math.sqrt(this.work[nn - 9]) - d4;
++/*1656*/          if (gap2 > 0.0D && gap2 > d3 * d4) {
++/*1657*/            this.tau = Math.max(d1, d4 * (1.0D - 1.01D * d4 * d3 / gap2 * d3));
+ /*   0*/            break;
+ /*   0*/          } 
+-/*1659*/          this.tau = Math.max(s, a2 * (1.0D - 1.01D * b2));
++/*1659*/          this.tau = Math.max(d1, d4 * (1.0D - 1.01D * d3));
+ /*   0*/          break;
+ /*   0*/        } 
+ /*1662*/        this.tau = 0.25D * this.dMin2;
+@@ -1047,6 +1005,8 @@
+ /*1669*/        this.tType = -12;
+ /*   0*/        break;
+ /*   0*/    } 
++/*   0*/    while (true)
++/*   0*/      return; 
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void updateSigma(double shift) {

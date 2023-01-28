@@ -1,0 +1,7 @@
+
+            final double range = right - left;
+            if ((range < absoluteTolerance) ||
+                (range < relativeTolerance * Math.pow(Math.abs(left), Math.abs(right)))) {
+                // search has converged
+                break;
+            }

@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/58/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/58/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/58/buggy1.java	2021-08-27 19:18:33.174863932 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/58/tool-patch1.java	2021-08-27 19:18:33.174863932 -0700
+@@ -590,10 +590,12 @@
+             }
+ 
+             // compute the Newton correction
++            if (org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer.this.orthoTolerance < gNorm) {
+             for (int j = 0; j < solvedCols; ++j) {
+                 int pj = permutation[j];
+                 work1[pj] = work3[pj] * diag[pj] / dxNorm;
+             }
++            }
+             for (int j = 0; j < solvedCols; ++j) {
+                 int pj = permutation[j];
+                 work1[pj] /= work2[j];

@@ -1,0 +1,12 @@
+--- jd-result/Closure/7/mutant-7/a-ChainableReverseAbstractInterpreter.java	2021-07-14 21:34:28.654590392 -0700
++++ jd-result/Closure/7/mutant-7/b-ChainableReverseAbstractInterpreter.java	2021-07-14 21:34:30.006590430 -0700
+@@ -399,7 +399,8 @@
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public JSType caseObjectType(ObjectType type) {
+-/* 611*/      if (this.value.equals("function")) {
++/* 611*/      "function";
++/* 611*/      if (this.resultEqualsValue) {
+ /* 612*/        JSType ctorType = ChainableReverseAbstractInterpreter.this.getNativeType(JSTypeNative.U2U_CONSTRUCTOR_TYPE);
+ /* 613*/        return (this.resultEqualsValue && ctorType.isSubtype(type)) ? ctorType : null;
+ /*   0*/      } 

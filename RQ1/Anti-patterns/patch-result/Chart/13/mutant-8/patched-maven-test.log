@@ -1,0 +1,63 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.jfree:jfreechart2:jar:2.0-pre1
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-surefire-plugin @ line 104, column 9
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -----------------------< org.jfree:jfreechart2 >------------------------
+[INFO] Building JFreeChart2 2.0-pre1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jfreechart2 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 41 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ jfreechart2 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 578 source files to /home/junyang/PR/SubjectPrograms/Chart/13/target/classes
+[INFO] /home/junyang/PR/SubjectPrograms/Chart/13/src/main/java/org/jfree/data/statistics/BoxAndWhiskerItem.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/junyang/PR/SubjectPrograms/Chart/13/src/main/java/org/jfree/data/statistics/BoxAndWhiskerItem.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/junyang/PR/SubjectPrograms/Chart/13/src/main/java/org/jfree/chart/block/BorderArrangement.java:[454,13] constructor Range in class org.jfree.data.Range cannot be applied to given types;
+  required: double,double
+  found: no arguments
+  reason: actual and formal argument lists differ in length
+[ERROR] /home/junyang/PR/SubjectPrograms/Chart/13/src/main/java/org/jfree/chart/block/BorderArrangement.java:[455,13] constructor Range in class org.jfree.data.Range cannot be applied to given types;
+  required: double,double
+  found: no arguments
+  reason: actual and formal argument lists differ in length
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.249 s
+[INFO] Finished at: 2021-07-26T21:29:05-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.2:compile (default-compile) on project jfreechart2: Compilation failure: Compilation failure: 
+[ERROR] /home/junyang/PR/SubjectPrograms/Chart/13/src/main/java/org/jfree/chart/block/BorderArrangement.java:[454,13] constructor Range in class org.jfree.data.Range cannot be applied to given types;
+[ERROR]   required: double,double
+[ERROR]   found: no arguments
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /home/junyang/PR/SubjectPrograms/Chart/13/src/main/java/org/jfree/chart/block/BorderArrangement.java:[455,13] constructor Range in class org.jfree.data.Range cannot be applied to given types;
+[ERROR]   required: double,double
+[ERROR]   found: no arguments
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

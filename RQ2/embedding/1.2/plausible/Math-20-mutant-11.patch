@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-11/ori-CMAESOptimizer.java	2021-07-24 01:52:02.158297029 -0700
++++ jd-result/Math/20/mutant-11/fixed-patched-CMAESOptimizer.java	2021-07-24 01:52:02.154297029 -0700
+@@ -902,7 +902,7 @@
+          * @return the normalized objective variables.
+          */
+         public double[] encode(final double[] x) {
+-            if (boundaries == null) {
++      if (null == null) {
+                 return x;
+             }
+             double[] res = new double[x.length];

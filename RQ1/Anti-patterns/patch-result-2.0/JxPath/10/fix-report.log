@@ -1,0 +1,40 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 19 01:42:15 PDT 2021
+Number of Plausible Fixes: 4
+Total Number of Patches: 13569
+================================================
+1.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/Object::equals
+	File Name: org/apache/commons/jxpath/ri/InfoSetUtil.java
+	Line Number: 105
+	Rank: 1
+	Total Rank: 196
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/jxpath/ri/InfoSetUtil.java
+	Line Number: 105
+	Rank: 2
+	Total Rank: 197
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/jxpath/ri/InfoSetUtil.java
+	Line Number: 51
+	Rank: 3
+	Total Rank: 388
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: replaced call to computeValue with a call to compute
+	File Name: org/apache/commons/jxpath/ri/compiler/CoreOperationRelationalExpression.java
+	Line Number: 42
+	Rank: 4
+	Total Rank: 452
+	Dump: mutant-2.class
+------------------------------------------------

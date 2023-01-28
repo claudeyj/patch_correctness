@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-37/a-EigenDecompositionImpl.java	2021-07-14 09:18:24.873344177 -0700
++++ jd-result/Math/80/mutant-37/b-EigenDecompositionImpl.java	2021-07-14 09:18:26.353344218 -0700
+@@ -655,7 +655,7 @@
+ /*   0*/  private boolean flipIfWarranted(int n, int step) {
+ /*1133*/    if (1.5D * this.work[this.pingPong] < this.work[4 * (n - 1) + this.pingPong]) {
+ /*1135*/      int j = 4 * n - 1;
+-/*1136*/      for (int i = 0; i < j; i += 4) {
++/*1136*/      for (int i = 0; i < this.pingPong; i += 4) {
+ /*1137*/        for (int k = 0; k < 4; k += step) {
+ /*1138*/          double tmp = this.work[i + k];
+ /*1139*/          this.work[i + k] = this.work[j - k];

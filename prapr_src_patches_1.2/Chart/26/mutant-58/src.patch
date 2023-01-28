@@ -1,0 +1,12 @@
+--- jd-result/Chart/26/mutant-58/ori-Axis.java	2021-07-15 18:51:51.884753113 -0700
++++ jd-result/Chart/26/mutant-58/man-patched-Axis.java	2021-07-23 05:10:19.415651423 -0700
+@@ -1189,6 +1189,9 @@
+         }
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
++            if (owner == null) {
++                return state; 
++            }
+                 EntityCollection entities = owner.getEntityCollection();
+                 if (entities != null) {
+                     entities.add(new AxisLabelEntity(this, hotspot, 

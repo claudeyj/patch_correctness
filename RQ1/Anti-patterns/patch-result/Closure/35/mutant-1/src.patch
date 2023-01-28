@@ -1,0 +1,11 @@
+--- jd-result/Closure/35/mutant-1/ori-TypeInference.java	2021-07-15 18:51:52.816753139 -0700
++++ jd-result/Closure/35/mutant-1/patched-TypeInference.java	2021-07-21 07:52:46.638265450 -0700
+@@ -368,7 +368,7 @@
+         break;
+ 
+       case Token.EXPR_RESULT:
+-        scope = traverseChildren(n, scope);
++        scope = traverseReturn(n, scope);
+         if (n.getFirstChild().isGetProp()) {
+           ensurePropertyDeclared(n.getFirstChild());
+         }

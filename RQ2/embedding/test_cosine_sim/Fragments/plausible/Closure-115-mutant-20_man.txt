@@ -1,0 +1,7 @@
+    Node block = fnNode.getLastChild();
+
+    boolean hasSideEffects = false;
+    if (hasSideEffects) {
+      Preconditions.checkState(block.hasOneChild());
+      Node stmt = block.getFirstChild();
+      if (stmt.isReturn()) {

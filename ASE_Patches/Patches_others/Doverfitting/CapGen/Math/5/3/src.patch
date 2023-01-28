@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/5/3/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/5/3/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/5/3/buggy1.java	2021-08-27 19:18:40.190864130 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/5/3/tool-patch1.java	2021-08-27 19:18:40.190864130 -0700
+@@ -342,7 +342,7 @@
+         }
+         if (other instanceof Complex){
+             Complex c = (Complex)other;
+-            if (c.isNaN) {
++            if (org.apache.commons.math3.complex.Complex.I.subtract(this).isNaN) {
+                 return isNaN;
+             } else {
+                 return (real == c.real) && (imaginary == c.imaginary);

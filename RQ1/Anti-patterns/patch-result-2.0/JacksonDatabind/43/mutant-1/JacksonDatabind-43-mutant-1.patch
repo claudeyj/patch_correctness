@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/43/mutant-1/a-BeanDeserializer.java	2021-08-09 04:38:04.573586753 -0700
++++ jd-result-2.0/JacksonDatabind/43/mutant-1/b-BeanDeserializer.java	2021-08-09 04:38:06.241586801 -0700
+@@ -225,7 +225,7 @@
+ /*   0*/          try {
+ /* 341*/            prop.deserializeAndSet(p, ctxt, bean);
+ /* 342*/          } catch (Exception e) {
+-/* 343*/            wrapAndThrow(e, bean, propName, ctxt);
++/* 343*/            this;
+ /*   0*/          } 
+ /*   0*/        } else {
+ /* 347*/          handleUnknownVanilla(p, ctxt, bean, propName);

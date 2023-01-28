@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/66/mutant-8/ori-Element.java	2021-08-08 21:02:03.276814672 -0700
++++ jd-result-2.0/Jsoup/66/mutant-8/patched-Element.java	2021-08-09 06:25:54.909769334 -0700
+@@ -282,7 +282,7 @@
+                 if (node instanceof Element)
+                     children.add((Element) node);
+             }
+-            shadowChildrenRef = new WeakReference<>(children);
++      new WeakReference<>(children);
+         }
+         return children;
+     }

@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/75/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/75/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/75/buggy1.java	2021-08-27 19:18:38.462864081 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/75/tool-patch1.java	2021-08-27 19:18:38.462864081 -0700
+@@ -329,10 +329,7 @@
+       }
+     }
+ 
+-    if (s.length() > 3
+-        && (s.charAt(0) == '-' || s.charAt(0) == '+')
+-        && s.charAt(1) == '0'
+-        && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {
++    if (true) {
+       // hex numbers with explicit signs vary between browsers.
+       return null;
+     }

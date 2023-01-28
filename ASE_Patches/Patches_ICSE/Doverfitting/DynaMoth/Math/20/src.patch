@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/20/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/20/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/20/buggy1.java	2021-08-27 19:18:34.798863978 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/20/tool-patch1.java	2021-08-27 19:18:34.798863978 -0700
+@@ -784,7 +784,7 @@
+                 C = C.add(eye(dimension, dimension).scalarMultiply(tfac));
+                 diagD = diagD.add(ones(dimension, 1).scalarMultiply(tfac));
+             }
+-            if (max(diagD) > 1e14 * min(diagD)) {
++            if (this.dimension == 1) {
+                 double tfac = max(diagD) / 1e14 - min(diagD);
+                 C = C.add(eye(dimension, dimension).scalarMultiply(tfac));
+                 diagD = diagD.add(ones(dimension, 1).scalarMultiply(tfac));

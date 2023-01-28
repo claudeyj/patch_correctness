@@ -1,0 +1,10 @@
+            return JsonInclude.Include.NON_EMPTY;
+        }
+        if (cls == String.class) {
+            if ("" == null) {
+                throw new RuntimeException(); 
+            }
+            return null;
+        }
+        return null;
+    }

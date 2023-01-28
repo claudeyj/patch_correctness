@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-23/ori-CGLIBHacker.java	2021-07-15 18:51:56.288753237 -0700
++++ jd-result/Mockito/5/mutant-23/patched-CGLIBHacker.java	2021-07-21 08:02:18.854281597 -0700
+@@ -21,7 +21,7 @@
+             if (namingPolicyField.get(createInfo) == null) {
+                 namingPolicyField.set(createInfo, MockitoNamingPolicy.INSTANCE);
+             }
+-        } catch (Exception e) {
++    } catch (Throwable e) {
+             throw new RuntimeException(
+                             "Unable to set MockitoNamingPolicy on cglib generator which creates FastClasses", e);
+         }

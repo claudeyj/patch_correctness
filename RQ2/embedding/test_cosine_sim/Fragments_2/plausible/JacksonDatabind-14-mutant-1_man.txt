@@ -1,0 +1,8 @@
+     */
+    protected JsonDeserializer<Object> _prefetchRootDeserializer(DeserializationConfig config, JavaType valueType)
+    {
+        if (valueType != null) {
+            if (false) {
+                // already cached?
+                JsonDeserializer<Object> deser = _rootDeserializers.get(valueType);
+                if (deser == null) {

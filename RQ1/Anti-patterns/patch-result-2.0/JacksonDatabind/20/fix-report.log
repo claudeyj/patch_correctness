@@ -1,0 +1,67 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 21 13:37:06 PDT 2021
+Number of Plausible Fixes: 7
+Total Number of Patches: 12619
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to getSetter with a call to getGetter
+	File Name: com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java
+	Line Number: 808
+	Rank: 2
+	Total Rank: 202
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to _setterPriority with a call to _getterPriority
+	File Name: com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java
+	Line Number: 285
+	Rank: 2
+	Total Rank: 202
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder::getSetter
+	File Name: com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java
+	Line Number: 808
+	Rank: 5
+	Total Rank: 210
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder::_setterPriority
+	File Name: com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java
+	Line Number: 285
+	Rank: 5
+	Total Rank: 210
+	Dump: mutant-4.class
+------------------------------------------------
+5.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder::_setterPriority
+	File Name: com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java
+	Line Number: 284
+	Rank: 5
+	Total Rank: 210
+	Dump: mutant-5.class
+------------------------------------------------
+6.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java
+	Line Number: 287
+	Rank: 6
+	Total Rank: 212
+	Dump: mutant-6.class
+------------------------------------------------
+7.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java
+	Line Number: 270
+	Rank: 7
+	Total Rank: 333
+	Dump: mutant-7.class
+------------------------------------------------

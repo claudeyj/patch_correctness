@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/129/mutant-0/buggy-PrepareAst.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/129/mutant-0/patched-PrepareAst.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/129/mutant-0/buggy-PrepareAst.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/129/mutant-0/patched-PrepareAst.java	2021-08-22 00:18:38.590190183 -0700
+@@ -163,6 +163,9 @@
+       Node first = n.getFirstChild();
+ 
+       // ignore cast nodes.
++      while (first.isCast()) {
++        first = first.getFirstChild();
++      }
+ 
+       if (!NodeUtil.isGet(first)) {
+         n.putBooleanProp(Node.FREE_CALL, true);

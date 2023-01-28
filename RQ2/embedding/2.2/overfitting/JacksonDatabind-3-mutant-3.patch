@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/3/mutant-3/ori-StdDeserializer.java	2021-08-08 21:02:02.776814657 -0700
++++ jd-result-2.0/JacksonDatabind/3/mutant-3/patched-StdDeserializer.java	2021-08-09 06:25:54.957769335 -0700
+@@ -74,7 +74,7 @@
+      * {@link JacksonStdImpl} annotation on deserializer class.
+      */
+     protected boolean isDefaultDeserializer(JsonDeserializer<?> deserializer) {
+-        return ClassUtil.isJacksonStdImpl(deserializer);
++    return false;
+     }
+ 
+     protected boolean isDefaultKeyDeserializer(KeyDeserializer keyDeser) {

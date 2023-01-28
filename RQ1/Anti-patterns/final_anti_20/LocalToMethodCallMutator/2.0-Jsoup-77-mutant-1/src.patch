@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/77/mutant-1/ori-XmlTreeBuilder.java	2021-08-08 21:02:02.900814661 -0700
++++ jd-result-2.0/Jsoup/77/mutant-1/patched-XmlTreeBuilder.java	2021-08-09 06:25:54.893769333 -0700
+@@ -119,7 +119,7 @@
+ 
+         for (int pos = stack.size() -1; pos >= 0; pos--) {
+             Element next = stack.get(pos);
+-            if (next.nodeName().equals(elName)) {
++      if (next.nodeName().equals(elName.toLowerCase())) {
+                 firstFound = next;
+                 break;
+             }

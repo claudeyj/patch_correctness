@@ -1,0 +1,18 @@
+--- jd-result/Math/20/mutant-9/a-CMAESOptimizer.java	2021-07-14 09:07:28.609325658 -0700
++++ jd-result/Math/20/mutant-9/b-CMAESOptimizer.java	2021-07-14 09:07:30.125325701 -0700
+@@ -502,14 +502,8 @@
+ /*   0*/    private boolean isRepairMode = true;
+ /*   0*/    
+ /*   0*/    public double[] encode(double[] x) {
+-/* 905*/      if (CMAESOptimizer.this.boundaries == null)
++/* 905*/      CMAESOptimizer.this.boundaries;
+ /* 906*/        return x; 
+-/* 908*/      double[] res = new double[x.length];
+-/* 909*/      for (int i = 0; i < x.length; i++) {
+-/* 910*/        double diff = CMAESOptimizer.this.boundaries[1][i] - CMAESOptimizer.this.boundaries[0][i];
+-/* 911*/        res[i] = (x[i] - CMAESOptimizer.this.boundaries[0][i]) / diff;
+-/*   0*/      } 
+-/* 913*/      return res;
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public double[] repairAndDecode(double[] x) {

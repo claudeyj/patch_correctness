@@ -1,0 +1,25 @@
+--- jd-result-2.0/Compress/11/mutant-8/a-ArchiveStreamFactory.java	2021-08-09 03:52:56.013510323 -0700
++++ jd-result-2.0/Compress/11/mutant-8/b-ArchiveStreamFactory.java	2021-08-09 03:52:57.493510365 -0700
+@@ -4,11 +4,13 @@
+ /*   0*/import java.io.IOException;
+ /*   0*/import java.io.InputStream;
+ /*   0*/import java.io.OutputStream;
++/*   0*/import java.util.zip.ZipEntry;
+ /*   0*/import org.apache.commons.compress.archivers.ar.ArArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.ar.ArArchiveOutputStream;
+ /*   0*/import org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream;
+ /*   0*/import org.apache.commons.compress.archivers.dump.DumpArchiveInputStream;
++/*   0*/import org.apache.commons.compress.archivers.jar.JarArchiveEntry;
+ /*   0*/import org.apache.commons.compress.archivers.jar.JarArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.jar.JarArchiveOutputStream;
+ /*   0*/import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+@@ -122,7 +124,7 @@
+ /*   0*/         }
+ /*   0*/      try {
+ /* 241*/        TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(tarheader));
+-/* 242*/        tais.getNextEntry();
++/* 242*/        new JarArchiveEntry((ZipEntry)null);
+ /* 243*/        return new TarArchiveInputStream(in);
+ /* 244*/      } catch (Exception exception) {}
+ /* 249*/    } catch (IOException e) {

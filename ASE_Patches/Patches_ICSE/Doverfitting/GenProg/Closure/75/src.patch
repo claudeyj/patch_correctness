@@ -1,0 +1,37 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/buggy1.java	2021-08-27 19:18:35.130863987 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/tool-patch1.java	2021-08-27 19:18:35.130863987 -0700
+@@ -300,7 +300,7 @@
+           case MOD:             return "MOD";
+           case NOT:             return "NOT";
+           case BITNOT:          return "BITNOT";
+-          case POS:             return "POS";
++          case POS:             ;
+           case NEG:             return "NEG";
+           case NEW:             return "NEW";
+           case DELPROP:         return "DELPROP";
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/buggy2.java	2021-08-27 19:18:35.130863987 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/tool-patch2.java	2021-08-27 19:18:35.130863987 -0700
+@@ -372,7 +372,7 @@
+   static TernaryValue isStrWhiteSpaceChar(int c) {
+     switch (c) {
+       case '\u000B': // <VT>
+-        return TernaryValue.TRUE;
++        ;
+       case ' ': // <SP>
+       case '\n': // <LF>
+       case '\r': // <CR>
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/buggy3.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/tool-patch3.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/buggy3.java	2021-08-27 19:18:35.130863987 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/75/tool-patch3.java	2021-08-27 19:18:35.130863987 -0700
+@@ -260,9 +260,6 @@
+     } else {
+       replacement = Node.newNumber(value);
+     }
+-
+-    n.getParent().replaceChild(n, replacement);
+-    reportCodeChange();
+   }
+ 
+   /**

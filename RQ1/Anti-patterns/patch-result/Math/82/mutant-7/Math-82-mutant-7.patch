@@ -1,0 +1,11 @@
+--- jd-result/Math/82/mutant-7/a-SimplexSolver.java	2021-07-14 09:29:03.521362198 -0700
++++ jd-result/Math/82/mutant-7/b-SimplexSolver.java	2021-07-14 09:29:04.829362235 -0700
+@@ -21,7 +21,7 @@
+ /*  59*/    double minValue = 0.0D;
+ /*  60*/    Integer minPos = null;
+ /*  61*/    for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getWidth() - 1; i++) {
+-/*  62*/      if (MathUtils.compareTo(tableau.getEntry(0, i), minValue, this.epsilon) < 0) {
++/*  62*/      if (MathUtils.compareTo(tableau.getEntry(0, i), this.epsilon, this.epsilon) < 0) {
+ /*  63*/        minValue = tableau.getEntry(0, i);
+ /*  64*/        minPos = i;
+ /*   0*/      } 

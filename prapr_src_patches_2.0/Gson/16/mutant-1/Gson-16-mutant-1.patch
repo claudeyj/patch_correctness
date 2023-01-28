@@ -1,0 +1,11 @@
+--- jd-result-2.0/Gson/16/mutant-1/a-$Gson$Types.java	2021-08-09 04:43:35.177596082 -0700
++++ jd-result-2.0/Gson/16/mutant-1/b-$Gson$Types.java	2021-08-09 04:43:36.729596126 -0700
+@@ -258,7 +258,7 @@
+ /* 388*/      Type[] originalLowerBound = original.getLowerBounds();
+ /* 389*/      Type[] originalUpperBound = original.getUpperBounds();
+ /* 391*/      if (originalLowerBound.length == 1) {
+-/* 392*/        Type lowerBound = resolve(context, contextRawType, originalLowerBound[0], visitedTypeVariables);
++/* 392*/        Type lowerBound = resolve(context, contextRawType, originalUpperBound[0], visitedTypeVariables);
+ /* 393*/        if (lowerBound != originalLowerBound[0]) {
+ /* 394*/            return supertypeOf(lowerBound); 
+ /*   0*/           }

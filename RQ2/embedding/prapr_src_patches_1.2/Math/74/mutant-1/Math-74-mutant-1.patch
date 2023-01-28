@@ -1,0 +1,12 @@
+--- jd-result/Math/74/mutant-1/a-AdamsMoultonIntegrator.java	2021-07-14 09:17:17.653342280 -0700
++++ jd-result/Math/74/mutant-1/b-AdamsMoultonIntegrator.java	2021-07-14 09:17:19.013342318 -0700
+@@ -40,7 +40,8 @@
+ /* 235*/    start(t0, y, t);
+ /* 236*/    interpolator.reinitialize(this.stepStart, this.stepSize, this.scaled, this.nordsieck);
+ /* 237*/    interpolator.storeTime(this.stepStart);
+-/* 239*/    double hNew = this.stepSize;
++/* 239*/    this;
++/* 239*/    double hNew = t;
+ /* 240*/    interpolator.rescale(hNew);
+ /*   0*/    boolean lastStep = false;
+ /* 243*/    while (!lastStep) {

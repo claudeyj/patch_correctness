@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-13/a-DefaultAnnotationEngine.java	2021-07-14 21:31:29.102585325 -0700
++++ jd-result/Mockito/5/mutant-13/b-DefaultAnnotationEngine.java	2021-07-14 21:31:30.446585363 -0700
+@@ -50,7 +50,7 @@
+ /*  69*/          alreadyAssigned = true;
+ /*   0*/          try {
+ /*  71*/            new FieldSetter(testInstance, field).set(mock);
+-/*  72*/          } catch (Exception e) {
++/*  72*/          } catch (Throwable e) {
+ /*  73*/            throw new MockitoException("Problems setting field " + field.getName() + " annotated with " + annotation, e);
+ /*   0*/          } 
+ /*   0*/        } 

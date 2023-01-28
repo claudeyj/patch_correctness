@@ -1,0 +1,11 @@
+--- jd-result/Closure/7/mutant-6/ori-BaseJSTypeTestCase.java	2021-07-15 18:51:53.464753157 -0700
++++ jd-result/Closure/7/mutant-6/patched-BaseJSTypeTestCase.java	2021-07-21 07:57:13.990272995 -0700
+@@ -178,7 +178,7 @@
+         registry.getNativeType(JSTypeNative.NULL_VOID);
+     OBJECT_NUMBER_STRING =
+         registry.getNativeType(JSTypeNative.OBJECT_NUMBER_STRING);
+-    OBJECT_NUMBER_STRING_BOOLEAN =
++    this.OBJECT_NUMBER_STRING_BOOLEAN = this.registry.getNativeType(JSTypeNative.CHECKED_UNKNOWN_TYPE);
+         registry.getNativeType(JSTypeNative.OBJECT_NUMBER_STRING_BOOLEAN);
+     OBJECT_PROTOTYPE =
+         registry.getNativeType(JSTypeNative.OBJECT_PROTOTYPE);

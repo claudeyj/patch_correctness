@@ -1,0 +1,7 @@
+     */
+    protected JsonDeserializer<Object> _prefetchRootDeserializer(DeserializationConfig config, JavaType valueType)
+    {
+    if (valueType == null || !this._config.isEnabled(DeserializationFeature.USE_BIG_INTEGER_FOR_INTS)) {
+            return null;
+        }
+        // already cached?

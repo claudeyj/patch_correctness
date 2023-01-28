@@ -1,0 +1,11 @@
+--- jd-result/Closure/66/mutant-1/ori-TypeCheck.java	2021-07-15 18:51:53.908753170 -0700
++++ jd-result/Closure/66/mutant-1/patched-TypeCheck.java	2021-07-21 08:00:56.398279271 -0700
+@@ -819,7 +819,7 @@
+   private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+     JSType type = n.getJSType();
+     if (type == null) {
+-      nullCount++;
++      this.typedCount = this.nullCount + 1;
+     } else if (type.isUnknownType()) {
+       if (reportUnknownTypes.isOn()) {
+         compiler.report(

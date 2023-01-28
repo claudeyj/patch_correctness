@@ -1,0 +1,7 @@
+            int priNext = _setterPriority(next.value);
+            int priCurr = _setterPriority(curr.value);
+
+            if (priNext != priCurr) {
+                if (priNext < priCurr) {
+                    curr = next;
+                }

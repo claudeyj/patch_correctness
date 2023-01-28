@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/114/mutant-0/buggy-NameAnalyzer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/114/mutant-0/patched-NameAnalyzer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/114/mutant-0/buggy-NameAnalyzer.java	2021-08-22 00:18:38.586190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/114/mutant-0/patched-NameAnalyzer.java	2021-08-22 00:18:38.586190183 -0700
+@@ -575,7 +575,7 @@
+           } else {
+             recordDepScope(nameNode, ns);
+           }
+-        } else {
++        } else if (!(parent.isCall() && parent.getFirstChild() == n)) {
+           // The rhs of the assignment is the caller, so it's used by the
+           // context. Don't associate it w/ the lhs.
+           // FYI: this fixes only the specific case where the assignment is the

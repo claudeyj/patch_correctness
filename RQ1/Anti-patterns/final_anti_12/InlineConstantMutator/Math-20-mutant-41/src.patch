@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-41/ori-CMAESOptimizer.java	2021-07-24 01:52:02.622297042 -0700
++++ jd-result/Math/20/mutant-41/fixed-patched-CMAESOptimizer.java	2021-07-24 01:52:02.594297041 -0700
+@@ -244,7 +244,7 @@
+      * @param lambda Population size.
+      */
+     public CMAESOptimizer(int lambda) {
+-        this(lambda, null, DEFAULT_MAXITERATIONS, DEFAULT_STOPFITNESS,
++        this(lambda, null, DEFAULT_MAXITERATIONS, 1.0,
+              DEFAULT_ISACTIVECMA, DEFAULT_DIAGONALONLY,
+              DEFAULT_CHECKFEASABLECOUNT, DEFAULT_RANDOMGENERATOR, false);
+     }

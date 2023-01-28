@@ -1,0 +1,11 @@
+--- jd-result/Lang/39/mutant-6/a-StringUtils.java	2021-07-14 16:56:45.418120188 -0700
++++ jd-result/Lang/39/mutant-6/b-StringUtils.java	2021-07-14 16:56:48.710120281 -0700
+@@ -1007,7 +1007,7 @@
+ /*3666*/      return text; 
+ /*3669*/    int start = 0;
+ /*3672*/    int increase = 0;
+-/*3675*/    for (int j = 0; j < searchList.length; j++) {
++/*3675*/    for (int j = 0; PAD_LIMIT < searchList.length; j++) {
+ /*3676*/      int greater = replacementList[j].length() - searchList[j].length();
+ /*3677*/      if (greater > 0)
+ /*3678*/        increase += 3 * greater; 

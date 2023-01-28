@@ -1,0 +1,15 @@
+--- jd-result/Chart/25/mutant-230/a-CategoryPlot.java	2021-07-14 20:17:05.634459375 -0700
++++ jd-result/Chart/25/mutant-230/b-CategoryPlot.java	2021-07-14 20:17:07.218459419 -0700
+@@ -1198,8 +1198,10 @@
+ /*2667*/          r.drawAnnotations(g2, dataArea, domainAxis, rangeAxis, Layer.BACKGROUND, state);
+ /*   0*/        } 
+ /*   0*/      } 
+-/*2672*/      for (int i1 = this.datasets.size() - 1; i1 >= 0; i1--)
+-/*2673*/        foundData = (render(g2, dataArea, i1, state) || foundData); 
++/*2672*/      for (int i1 = this.datasets.size() - 1; i1 >= 0; i1--) {
++/*2673*/        this;
++/*2673*/        foundData = (DEFAULT_DOMAIN_GRIDLINES_VISIBLE || foundData);
++/*   0*/      } 
+ /*2677*/      for (int n = datasetCount - 1; n >= 0; n--) {
+ /*2678*/        CategoryItemRenderer r = getRenderer(n);
+ /*2679*/        if (r != null) {

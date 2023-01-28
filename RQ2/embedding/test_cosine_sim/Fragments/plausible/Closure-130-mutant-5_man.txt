@@ -1,0 +1,7 @@
+              case Token.VAR:
+                isSet = true;
+                Node rvalue = n.getFirstChild();
+                type = (rvalue == null) ? GlobalNamespace.Name.Type.SET : getValueType(rvalue);
+                break;
+              case Token.ASSIGN:
+                if (parent.getFirstChild() == n) {

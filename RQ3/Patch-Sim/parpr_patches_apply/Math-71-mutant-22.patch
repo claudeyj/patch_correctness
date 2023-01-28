@@ -1,0 +1,11 @@
+--- Math71b/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2017-03-20 23:59:53.000000000 +0800
++++ Math71_Math-71-mutant-22.patchb/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2017-03-20 23:59:53.000000000 +0800
+@@ -235,7 +235,7 @@
+                     } else if (Double.isNaN(previousEventTime) ||
+                                (Math.abs(previousEventTime - root) > convergence)) {
+                         pendingEventTime = root;
+-                        if (pendingEvent && (Math.abs(t1 - pendingEventTime) <= convergence)) {
++            if (this.pendingEvent && Math.toRadians(t1 - this.pendingEventTime) <= this.convergence) {
+                             // we were already waiting for this event which was
+                             // found during a previous call for a step that was
+                             // rejected, this step must now be accepted since it

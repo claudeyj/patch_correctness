@@ -1,0 +1,11 @@
+--- Math71b/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2017-03-20 23:59:53.000000000 +0800
++++ Math71_Math-71-mutant-27.patchb/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2017-03-20 23:59:53.000000000 +0800
+@@ -279,7 +279,7 @@
+                 return result;
+             }
+             double dx = x2 - x1;
+-            double tolerance =
++      double tolerance = Math.max(this.relativeAccuracy * Math.sin(x1), this.absoluteAccuracy);
+                 Math.max(relativeAccuracy * Math.abs(x1), absoluteAccuracy);
+             if (Math.abs(dx) <= tolerance) {
+                 setResult(x1, i);

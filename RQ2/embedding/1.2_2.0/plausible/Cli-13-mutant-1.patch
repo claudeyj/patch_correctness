@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/13/mutant-1/ori-GroupImpl.java	2021-08-08 21:02:01.220814614 -0700
++++ jd-result-2.0/Cli/13/mutant-1/patched-GroupImpl.java	2021-08-09 06:25:54.961769335 -0700
+@@ -216,7 +216,7 @@
+ 
+                     // if there are no anonymous arguments then this group can't
+                     // process the argument
+-                    if (anonymous.isEmpty()) {
++      if (getOptions().isEmpty()) {
+                         break;
+                     }
+ 

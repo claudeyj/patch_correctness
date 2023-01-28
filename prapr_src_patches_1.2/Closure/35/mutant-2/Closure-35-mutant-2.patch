@@ -1,0 +1,11 @@
+--- jd-result/Closure/35/mutant-2/a-TypeInference.java	2021-07-14 21:41:08.222601667 -0700
++++ jd-result/Closure/35/mutant-2/b-TypeInference.java	2021-07-14 21:41:10.690601736 -0700
+@@ -687,7 +687,7 @@
+ /*   0*/      return; 
+ /*1119*/    ObjectType constraintObj = ObjectType.cast(constraint.restrictByNotNullOrUndefined());
+ /*1121*/    if (constraintObj != null && constraintObj.isRecordType()) {
+-/*1122*/      ObjectType objType = ObjectType.cast(type.restrictByNotNullOrUndefined());
++/*1122*/      ObjectType objType = ObjectType.cast(type.collapseUnion());
+ /*1123*/      if (objType != null)
+ /*1124*/        for (String prop : constraintObj.getOwnPropertyNames()) {
+ /*1125*/          JSType propType = constraintObj.getPropertyType(prop);

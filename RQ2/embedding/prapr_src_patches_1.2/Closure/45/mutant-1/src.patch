@@ -1,0 +1,11 @@
+--- jd-result/Closure/45/mutant-1/ori-Node.java	2021-07-15 18:51:53.792753166 -0700
++++ jd-result/Closure/45/mutant-1/patched-Node.java	2021-07-21 07:59:58.854277647 -0700
+@@ -1424,7 +1424,7 @@
+     Node n, n2;
+     for (n = first, n2 = node2.first;
+          res == null && n != null;
+-         n = n.next, n2 = n2.next) {
++      n = this.last.next, n2 = n2.next) {
+       if (node2 == null) {
+         throw new IllegalStateException();
+       }

@@ -1,0 +1,7 @@
+                    timezone = TimeZone.getTimeZone(timezoneId);
+
+                    String act = timezone.getID();
+                    if (false) {
+                        /* 22-Jan-2015, tatu: Looks like canonical version has colons, but we may be given
+                         *    one without. If so, don't sweat.
+                         *   Yes, very inefficient. Hopefully not hit often.

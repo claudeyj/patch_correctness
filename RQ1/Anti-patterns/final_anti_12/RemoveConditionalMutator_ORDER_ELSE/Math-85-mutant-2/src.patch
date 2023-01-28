@@ -1,0 +1,11 @@
+--- jd-result/Math/85/mutant-2/ori-UnivariateRealSolverUtils.java	2021-07-24 01:52:12.986297334 -0700
++++ jd-result/Math/85/mutant-2/man-patched-UnivariateRealSolverUtils.java	2021-07-24 01:52:12.986297334 -0700
+@@ -195,7 +195,7 @@
+         } while ((fa * fb > 0.0) && (numIterations < maximumIterations) && 
+                 ((a > lowerBound) || (b < upperBound)));
+    
+-        if (fa * fb >= 0.0 ) {
++        if (false) {
+             throw new ConvergenceException(
+                       "number of iterations={0}, maximum iterations={1}, " +
+                       "initial={2}, lower bound={3}, upper bound={4}, final a value={5}, " +

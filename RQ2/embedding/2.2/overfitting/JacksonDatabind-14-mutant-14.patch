@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-14/ori-ObjectReader.java	2021-08-08 21:02:02.280814643 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-14/man-patched-ObjectReader.java	2021-08-12 16:37:38.658119154 -0700
+@@ -184,7 +184,8 @@
+         _injectableValues = injectableValues;
+         _unwrapRoot = config.useRootWrapping();
+ 
+-        _rootDeserializer = _prefetchRootDeserializer(config, valueType);
++        this._rootDeserializer = null;
++        _prefetchRootDeserializer(config, valueType);
+         _dataFormatReaders = null;        
+     }
+     

@@ -1,0 +1,37 @@
+--- jd-result/Math/50/mutant-11/a-BaseSecantSolver.java	2021-07-14 09:14:02.429336771 -0700
++++ jd-result/Math/50/mutant-11/b-BaseSecantSolver.java	2021-07-14 09:14:03.777336809 -0700
+@@ -56,7 +56,7 @@
+ /* 150*/    double atol = getAbsoluteAccuracy();
+ /* 151*/    double rtol = getRelativeAccuracy();
+ /*   0*/    boolean inverted = false;
+-/*   0*/    do {
++/*   0*/    while (true) {
+ /* 160*/      double x = x1 - f1 * (x1 - x0) / (f1 - f0);
+ /* 161*/      double fx = computeObjectiveValue(x);
+ /* 166*/      if (fx == 0.0D)
+@@ -74,15 +74,13 @@
+ /* 183*/            f0 *= f1 / (f1 + fx);
+ /*   0*/            break;
+ /*   0*/          case REGULA_FALSI:
+-/* 187*/            if (x == x1) {
+-/* 188*/              x0 = 0.5D * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+-/* 189*/              f0 = computeObjectiveValue(x0);
+-/*   0*/            } 
++/* 187*/            x cmp x1;
+ /*   0*/            break;
+ /*   0*/          default:
+ /* 194*/            throw new MathInternalError();
+ /*   0*/        } 
+ /*   0*/      } 
++/*   0*/      do {
+ /* 198*/      x1 = x;
+ /* 199*/      f1 = fx;
+ /* 204*/      if (FastMath.abs(f1) > ftol)
+@@ -110,6 +108,7 @@
+ /* 229*/          throw new MathInternalError();
+ /*   0*/      } 
+ /* 235*/    } while (FastMath.abs(x1 - x0) >= FastMath.max(rtol * FastMath.abs(x1), atol));
++/*   0*/    } 
+ /* 237*/    switch (this.allowed) {
+ /*   0*/      case ANY_SIDE:
+ /* 239*/        return x1;

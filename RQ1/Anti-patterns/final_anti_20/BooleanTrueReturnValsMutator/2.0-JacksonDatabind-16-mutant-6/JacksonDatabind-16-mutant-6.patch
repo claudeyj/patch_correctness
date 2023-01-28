@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/16/mutant-6/a-AnnotatedMember.java	2021-08-09 04:35:53.425583053 -0700
++++ jd-result-2.0/JacksonDatabind/16/mutant-6/b-AnnotatedMember.java	2021-08-09 04:35:55.265583105 -0700
+@@ -43,7 +43,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public final boolean addOrOverride(Annotation a) {
+-/* 105*/    return this._annotations.add(a);
++/* 105*/    this._annotations.add(a);
++/* 105*/    return true;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public final boolean addIfNotPresent(Annotation a) {

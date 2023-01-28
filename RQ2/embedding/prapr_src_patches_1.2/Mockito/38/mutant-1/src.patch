@@ -1,0 +1,10 @@
+--- jd-result/Mockito/38/mutant-1/ori-ArgumentMatchingTool.java	2021-07-15 18:51:56.396753240 -0700
++++ jd-result/Mockito/38/mutant-1/patched-ArgumentMatchingTool.java	2021-07-21 08:03:05.890282925 -0700
+@@ -45,6 +45,6 @@
+     }
+ 
+     private boolean toStringEquals(Matcher m, Object arg) {
+-        return StringDescription.toString(m).equals(arg.toString());
++    return arg.equals((arg == null) ? null : arg.toString());
+     }
+ }

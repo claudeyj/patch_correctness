@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/8/mutant-1/ori-Base64InputStream.java	2021-08-08 21:02:01.392814618 -0700
++++ jd-result-2.0/Codec/8/mutant-1/patched-Base64InputStream.java	2021-08-09 06:25:54.725769328 -0700
+@@ -166,7 +166,7 @@
+                 if (!base64.hasData()) {
+                     byte[] buf = new byte[doEncode ? 4096 : 8192];
+                     int c = in.read(buf);
+-                    if (c > 0 && b.length == len) {
++        if (offset > 0 && b.length == len) {
+                         base64.setInitialBuffer(b, offset, len);
+                     }
+                     if (doEncode) {

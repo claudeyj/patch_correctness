@@ -1,0 +1,50 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/30/mutant-0/buggy-MustBeReachingVariableDef.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/30/mutant-0/patched-MustBeReachingVariableDef.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/30/mutant-0/buggy-MustBeReachingVariableDef.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/30/mutant-0/patched-MustBeReachingVariableDef.java	2021-08-22 00:18:38.602190184 -0700
+@@ -68,6 +68,7 @@
+   private static class Definition {
+     final Node node;
+     final Set<Var> depends = Sets.newHashSet();
++    private boolean unknownDependencies = false;
+ 
+     Definition(Node node) {
+       this.node = node;
+@@ -393,11 +394,15 @@
+         new AbstractCfgNodeTraversalCallback() {
+       @Override
+       public void visit(NodeTraversal t, Node n, Node parent) {
+-        if (n.isName() && jsScope.isDeclared(n.getString(), true)) {
++        if (n.isName()) {
+           Var dep = jsScope.getVar(n.getString());
++          if (dep == null) {
++            def.unknownDependencies = true;
++          } else {
+             def.depends.add(dep);
+         }
+       }
++      }
+     });
+   }
+ 
+@@ -427,6 +432,9 @@
+     GraphNode<Node, Branch> n = getCfg().getNode(useNode);
+     FlowState<MustDef> state = n.getAnnotation();
+     Definition def = state.getIn().reachingDef.get(jsScope.getVar(name));
++    if (def.unknownDependencies) {
++      return true;
++    }
+ 
+     for (Var s : def.depends) {
+       if (s.scope != jsScope) {
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/30/mutant-0/buggy-FlowSensitiveInlineVariables.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/30/mutant-0/patched-FlowSensitiveInlineVariables.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/30/mutant-0/buggy-FlowSensitiveInlineVariables.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/30/mutant-0/patched-FlowSensitiveInlineVariables.java	2021-08-22 00:18:38.602190184 -0700
+@@ -154,7 +154,7 @@
+ 
+   @Override
+   public void process(Node externs, Node root) {
+-    (new NodeTraversal(compiler, this)).traverse(root);
++    (new NodeTraversal(compiler, this)).traverseRoots(externs, root);
+   }
+ 
+   @Override

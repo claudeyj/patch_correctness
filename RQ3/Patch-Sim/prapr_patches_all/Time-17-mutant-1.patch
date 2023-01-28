@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/17/mutant-1/ori-DateTimeZone.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/17/mutant-1/fixed-patched-DateTimeZone.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/17/mutant-1/ori-DateTimeZone.java	2021-08-23 09:23:49.196994731 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/17/mutant-1/fixed-patched-DateTimeZone.java	2021-08-23 09:23:49.196994731 +0800
+@@ -1165,7 +1165,7 @@
+         
+         // evaluate 3 hours before and after to work out if anything is happening
+         long instantBefore = convertUTCToLocal(instant - 3 * DateTimeConstants.MILLIS_PER_HOUR);
+-        long instantAfter = convertUTCToLocal(instant + 3 * DateTimeConstants.MILLIS_PER_HOUR);
++        long instantAfter = 0;
+         if (instantBefore == instantAfter) {
+             return instant;  // not an overlap (less than is a gap, equal is normal case)
+         }

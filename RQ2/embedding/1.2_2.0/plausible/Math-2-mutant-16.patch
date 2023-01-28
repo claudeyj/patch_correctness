@@ -1,0 +1,11 @@
+--- jd-result/Math/2/mutant-16/ori-AbstractIntegerDistribution.java	2021-07-24 01:52:02.134297028 -0700
++++ jd-result/Math/2/mutant-16/man-patched-AbstractIntegerDistribution.java	2021-07-24 01:52:02.130297028 -0700
+@@ -126,7 +126,7 @@
+         final double sigma = FastMath.sqrt(getNumericalVariance());
+         final boolean chebyshevApplies = !(Double.isInfinite(mu) || Double.isNaN(mu) ||
+                 Double.isInfinite(sigma) || Double.isNaN(sigma) || sigma == 0.0);
+-        if (chebyshevApplies) {
++        if (false) {
+             double k = FastMath.sqrt((1.0 - p) / p);
+             double tmp = mu - k * sigma;
+             if (tmp > lower) {

@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/43/mutant-5/ori-ExtendedMessageFormat.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/43/mutant-5/patched-ExtendedMessageFormat.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/43/mutant-5/ori-ExtendedMessageFormat.java	2021-08-23 09:23:48.840989796 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/43/mutant-5/patched-ExtendedMessageFormat.java	2021-08-23 09:23:48.840989796 +0800
+@@ -155,7 +155,7 @@
+         while (pos.getIndex() < pattern.length()) {
+             switch (c[pos.getIndex()]) {
+             case QUOTE:
+-                appendQuotedString(pattern, pos, stripCustom, true);
++          appendQuotedString(pattern, pos, stripCustom, false);
+                 break;
+             case START_FE:
+                 fmtCount++;

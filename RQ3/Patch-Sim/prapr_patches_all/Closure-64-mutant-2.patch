@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/64/mutant-2/ori-Compiler.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/64/mutant-2/man-patched-Compiler.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/64/mutant-2/ori-Compiler.java	2021-08-23 09:23:48.772988853 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/64/mutant-2/man-patched-Compiler.java	2021-08-23 09:23:48.772988853 +0800
+@@ -1288,7 +1288,7 @@
+           CodeBuilder cb = new CodeBuilder();
+           if (jsRoot != null) {
+             int i = 0;
+-            for (Node scriptNode = jsRoot.getFirstChild();
++            for (Node scriptNode = jsRoot.getLastChild();
+                  scriptNode != null;
+                  scriptNode = scriptNode.getNext()) {
+               toSource(cb, i++, scriptNode);

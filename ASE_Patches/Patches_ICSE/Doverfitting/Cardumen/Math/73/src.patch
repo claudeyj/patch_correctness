@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/73/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/73/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/73/buggy1.java	2021-08-27 19:18:34.918863981 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/73/tool-patch1.java	2021-08-27 19:18:34.918863981 -0700
+@@ -135,7 +135,7 @@
+ 
+ 
+         // full Brent algorithm starting with provided initial guess
+-        return solve(f, min, yMin, max, yMax, initial, yInitial);
++        return solve(f, max, max);
+ 
+     }
+ 

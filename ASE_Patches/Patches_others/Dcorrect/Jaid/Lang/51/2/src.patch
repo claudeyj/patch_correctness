@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Lang/51/2/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Lang/51/2/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Lang/51/2/buggy1.java	2021-08-27 19:18:45.518864280 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Lang/51/2/tool-patch1.java	2021-08-27 19:18:45.518864280 -0700
+@@ -669,6 +669,10 @@
+             }
+             case 3: {
+                 char ch = str.charAt(0);
++                if((ch == 'y') == false){
++                	return ch == 'Y';
++
++                	}
+                 if (ch == 'y') {
+                     return 
+                         (str.charAt(1) == 'e' || str.charAt(1) == 'E') &&

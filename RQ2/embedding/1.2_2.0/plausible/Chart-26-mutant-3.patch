@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-3/ori-RectangleInsets.java	2021-07-15 18:51:51.892753113 -0700
++++ jd-result/Chart/26/mutant-3/fixed-patched-RectangleInsets.java	2021-07-21 21:11:44.698741615 -0700
+@@ -355,7 +355,7 @@
+      * @return The top margin (in Java2D units).
+      */
+     public double calculateTopInset(double height) {
+-        double result = this.top;
++    double result = height;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.top * height);
+         }

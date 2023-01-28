@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/36/mutant-0/buggy-InlineVariables.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/36/mutant-0/patched-InlineVariables.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/36/mutant-0/buggy-InlineVariables.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/36/mutant-0/patched-InlineVariables.java	2021-08-22 00:18:38.602190184 -0700
+@@ -572,6 +572,9 @@
+ 
+           // issue 668: Don't inline singleton getter methods
+           // calls as this confused class removing logic.
++          if (convention.getSingletonGetterClassName(callNode) != null) {
++            return false;
++          }
+         }
+       }
+ 

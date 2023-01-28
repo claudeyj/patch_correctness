@@ -1,0 +1,350 @@
+--- jd-result-2.0/Csv/15/mutant-5/a-CSVFormat.java	2021-08-09 03:52:34.937509728 -0700
++++ jd-result-2.0/Csv/15/mutant-5/b-CSVFormat.java	2021-08-09 03:52:36.501509773 -0700
+@@ -390,79 +390,274 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void printAndQuote(Object object, CharSequence value, int offset, int len, Appendable out, boolean newRecord) throws IOException {
+-/*   0*/    boolean quote = false;
+-/*1154*/    int start = offset;
+-/*1155*/    int pos = offset;
+-/*1156*/    int end = offset + len;
+-/*1158*/    char delimChar = getDelimiter();
+-/*1159*/    char quoteChar = getQuoteCharacter();
+-/*1161*/    QuoteMode quoteModePolicy = getQuoteMode();
+-/*1162*/    if (quoteModePolicy == null) {
+-/*1163*/        quoteModePolicy = QuoteMode.MINIMAL; 
+-/*   0*/       }
+-/*1165*/    switch (quoteModePolicy) {
+-/*   0*/      case ALL:
+-/*   0*/      case ALL_NON_NULL:
+-/*1168*/        quote = true;
+-/*   0*/        break;
+-/*   0*/      case NON_NUMERIC:
+-/*1171*/        quote = !(object instanceof Number);
+-/*   0*/        break;
+-/*   0*/      case NONE:
+-/*1175*/        printAndEscape(value, offset, len, out);
+-/*   0*/        return;
+-/*   0*/      case MINIMAL:
+-/*1178*/        if (len <= 0) {
+-/*1183*/          if (newRecord) {
+-/*1184*/              quote = true; 
+-/*   0*/             }
+-/*   0*/        } else {
+-/*1187*/          char c = value.charAt(pos);
+-/*1189*/          if (newRecord && (c < ' ' || (c > '!' && c < '#') || (c > '+' && c < '-') || c > '~')) {
+-/*1190*/            quote = true;
+-/*1191*/          } else if (c <= '#') {
+-/*1195*/            quote = true;
+-/*   0*/          } else {
+-/*1197*/            while (pos < end) {
+-/*1198*/              c = value.charAt(pos);
+-/*1199*/              if (c == '\n' || c == '\r' || c == quoteChar || c == delimChar) {
+-/*1200*/                quote = true;
+-/*   0*/                break;
+-/*   0*/              } 
+-/*1203*/              pos++;
+-/*   0*/            } 
+-/*1206*/            if (!quote) {
+-/*1207*/              pos = end - 1;
+-/*1208*/              c = value.charAt(pos);
+-/*1211*/              if (c <= ' ') {
+-/*1212*/                  quote = true; 
+-/*   0*/                 }
+-/*   0*/            } 
+-/*   0*/          } 
+-/*   0*/        } 
+-/*1218*/        if (!quote) {
+-/*1220*/          out.append(value, start, end);
+-/*   0*/          return;
+-/*   0*/        } 
+-/*   0*/        break;
+-/*   0*/      default:
+-/*1225*/        throw new IllegalStateException("Unexpected Quote value: " + quoteModePolicy);
+-/*   0*/    } 
+-/*1228*/    if (!quote) {
+-/*1230*/      out.append(value, start, end);
+-/*   0*/      return;
+-/*   0*/    } 
+-/*1235*/    out.append(quoteChar);
+-/*1239*/    while (pos < end) {
+-/*1240*/      char c = value.charAt(pos);
+-/*1241*/      if (c == quoteChar) {
+-/*1245*/        out.append(value, start, pos + 1);
+-/*1248*/        start = pos;
+-/*   0*/      } 
+-/*1250*/      pos++;
+-/*   0*/    } 
+-/*1254*/    out.append(value, start, pos);
+-/*1255*/    out.append(quoteChar);
++/*   0*/    // Byte code:
++/*   0*/    //   0: iconst_0
++/*   0*/    //   1: istore #7
++/*   0*/    //   3: iload_3
++/*   0*/    //   4: istore #8
++/*   0*/    //   6: iload_3
++/*   0*/    //   7: istore #9
++/*   0*/    //   9: iload_3
++/*   0*/    //   10: iload #4
++/*   0*/    //   12: iadd
++/*   0*/    //   13: istore #10
++/*   0*/    //   15: aload_0
++/*   0*/    //   16: invokevirtual getDelimiter : ()C
++/*   0*/    //   19: istore #11
++/*   0*/    //   21: aload_0
++/*   0*/    //   22: invokevirtual getQuoteCharacter : ()Ljava/lang/Character;
++/*   0*/    //   25: invokevirtual charValue : ()C
++/*   0*/    //   28: istore #12
++/*   0*/    //   30: aload_0
++/*   0*/    //   31: invokevirtual getQuoteMode : ()Lorg/apache/commons/csv/QuoteMode;
++/*   0*/    //   34: astore #13
++/*   0*/    //   36: aload #13
++/*   0*/    //   38: ifnonnull -> 46
++/*   0*/    //   41: getstatic org/apache/commons/csv/QuoteMode.MINIMAL : Lorg/apache/commons/csv/QuoteMode;
++/*   0*/    //   44: astore #13
++/*   0*/    //   46: getstatic org/apache/commons/csv/CSVFormat$1.$SwitchMap$org$apache$commons$csv$QuoteMode : [I
++/*   0*/    //   49: aload #13
++/*   0*/    //   51: invokevirtual ordinal : ()I
++/*   0*/    //   54: iaload
++/*   0*/    //   55: tableswitch default -> 322, 1 -> 88, 2 -> 88, 3 -> 94, 4 -> 111, 5 -> 122
++/*   0*/    //   88: iconst_1
++/*   0*/    //   89: istore #7
++/*   0*/    //   91: goto -> 351
++/*   0*/    //   94: aload_1
++/*   0*/    //   95: instanceof java/lang/Number
++/*   0*/    //   98: ifne -> 105
++/*   0*/    //   101: iconst_1
++/*   0*/    //   102: goto -> 106
++/*   0*/    //   105: iconst_0
++/*   0*/    //   106: istore #7
++/*   0*/    //   108: goto -> 351
++/*   0*/    //   111: aload_0
++/*   0*/    //   112: aload_2
++/*   0*/    //   113: iload_3
++/*   0*/    //   114: iload #4
++/*   0*/    //   116: aload #5
++/*   0*/    //   118: invokespecial printAndEscape : (Ljava/lang/CharSequence;IILjava/lang/Appendable;)V
++/*   0*/    //   121: return
++/*   0*/    //   122: iload #4
++/*   0*/    //   124: ifgt -> 138
++/*   0*/    //   127: iload #6
++/*   0*/    //   129: ifeq -> 303
++/*   0*/    //   132: iconst_1
++/*   0*/    //   133: istore #7
++/*   0*/    //   135: goto -> 303
++/*   0*/    //   138: aload_2
++/*   0*/    //   139: iload #9
++/*   0*/    //   141: invokeinterface charAt : (I)C
++/*   0*/    //   146: istore #14
++/*   0*/    //   148: iload #6
++/*   0*/    //   150: ifeq -> 202
++/*   0*/    //   153: iload #14
++/*   0*/    //   155: bipush #32
++/*   0*/    //   157: if_icmplt -> 196
++/*   0*/    //   160: iload #14
++/*   0*/    //   162: bipush #33
++/*   0*/    //   164: if_icmple -> 174
++/*   0*/    //   167: iload #14
++/*   0*/    //   169: bipush #35
++/*   0*/    //   171: if_icmplt -> 196
++/*   0*/    //   174: iload #14
++/*   0*/    //   176: bipush #43
++/*   0*/    //   178: if_icmple -> 188
++/*   0*/    //   181: iload #14
++/*   0*/    //   183: bipush #45
++/*   0*/    //   185: if_icmplt -> 196
++/*   0*/    //   188: iload #14
++/*   0*/    //   190: bipush #126
++/*   0*/    //   192: pop2
++/*   0*/    //   193: goto -> 202
++/*   0*/    //   196: iconst_1
++/*   0*/    //   197: istore #7
++/*   0*/    //   199: goto -> 303
++/*   0*/    //   202: iload #14
++/*   0*/    //   204: bipush #35
++/*   0*/    //   206: if_icmpgt -> 215
++/*   0*/    //   209: iconst_1
++/*   0*/    //   210: istore #7
++/*   0*/    //   212: goto -> 303
++/*   0*/    //   215: iload #9
++/*   0*/    //   217: iload #10
++/*   0*/    //   219: if_icmpge -> 272
++/*   0*/    //   222: aload_2
++/*   0*/    //   223: iload #9
++/*   0*/    //   225: invokeinterface charAt : (I)C
++/*   0*/    //   230: istore #14
++/*   0*/    //   232: iload #14
++/*   0*/    //   234: bipush #10
++/*   0*/    //   236: if_icmpeq -> 260
++/*   0*/    //   239: iload #14
++/*   0*/    //   241: bipush #13
++/*   0*/    //   243: if_icmpeq -> 260
++/*   0*/    //   246: iload #14
++/*   0*/    //   248: iload #12
++/*   0*/    //   250: if_icmpeq -> 260
++/*   0*/    //   253: iload #14
++/*   0*/    //   255: iload #11
++/*   0*/    //   257: if_icmpne -> 266
++/*   0*/    //   260: iconst_1
++/*   0*/    //   261: istore #7
++/*   0*/    //   263: goto -> 272
++/*   0*/    //   266: iinc #9, 1
++/*   0*/    //   269: goto -> 215
++/*   0*/    //   272: iload #7
++/*   0*/    //   274: ifne -> 303
++/*   0*/    //   277: iload #10
++/*   0*/    //   279: iconst_1
++/*   0*/    //   280: isub
++/*   0*/    //   281: istore #9
++/*   0*/    //   283: aload_2
++/*   0*/    //   284: iload #9
++/*   0*/    //   286: invokeinterface charAt : (I)C
++/*   0*/    //   291: istore #14
++/*   0*/    //   293: iload #14
++/*   0*/    //   295: bipush #32
++/*   0*/    //   297: if_icmpgt -> 303
++/*   0*/    //   300: iconst_1
++/*   0*/    //   301: istore #7
++/*   0*/    //   303: iload #7
++/*   0*/    //   305: ifne -> 351
++/*   0*/    //   308: aload #5
++/*   0*/    //   310: aload_2
++/*   0*/    //   311: iload #8
++/*   0*/    //   313: iload #10
++/*   0*/    //   315: invokeinterface append : (Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
++/*   0*/    //   320: pop
++/*   0*/    //   321: return
++/*   0*/    //   322: new java/lang/IllegalStateException
++/*   0*/    //   325: dup
++/*   0*/    //   326: new java/lang/StringBuilder
++/*   0*/    //   329: dup
++/*   0*/    //   330: invokespecial <init> : ()V
++/*   0*/    //   333: ldc_w 'Unexpected Quote value: '
++/*   0*/    //   336: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
++/*   0*/    //   339: aload #13
++/*   0*/    //   341: invokevirtual append : (Ljava/lang/Object;)Ljava/lang/StringBuilder;
++/*   0*/    //   344: invokevirtual toString : ()Ljava/lang/String;
++/*   0*/    //   347: invokespecial <init> : (Ljava/lang/String;)V
++/*   0*/    //   350: athrow
++/*   0*/    //   351: iload #7
++/*   0*/    //   353: ifne -> 370
++/*   0*/    //   356: aload #5
++/*   0*/    //   358: aload_2
++/*   0*/    //   359: iload #8
++/*   0*/    //   361: iload #10
++/*   0*/    //   363: invokeinterface append : (Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
++/*   0*/    //   368: pop
++/*   0*/    //   369: return
++/*   0*/    //   370: aload #5
++/*   0*/    //   372: iload #12
++/*   0*/    //   374: invokeinterface append : (C)Ljava/lang/Appendable;
++/*   0*/    //   379: pop
++/*   0*/    //   380: iload #9
++/*   0*/    //   382: iload #10
++/*   0*/    //   384: if_icmpge -> 429
++/*   0*/    //   387: aload_2
++/*   0*/    //   388: iload #9
++/*   0*/    //   390: invokeinterface charAt : (I)C
++/*   0*/    //   395: istore #14
++/*   0*/    //   397: iload #14
++/*   0*/    //   399: iload #12
++/*   0*/    //   401: if_icmpne -> 423
++/*   0*/    //   404: aload #5
++/*   0*/    //   406: aload_2
++/*   0*/    //   407: iload #8
++/*   0*/    //   409: iload #9
++/*   0*/    //   411: iconst_1
++/*   0*/    //   412: iadd
++/*   0*/    //   413: invokeinterface append : (Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
++/*   0*/    //   418: pop
++/*   0*/    //   419: iload #9
++/*   0*/    //   421: istore #8
++/*   0*/    //   423: iinc #9, 1
++/*   0*/    //   426: goto -> 380
++/*   0*/    //   429: aload #5
++/*   0*/    //   431: aload_2
++/*   0*/    //   432: iload #8
++/*   0*/    //   434: iload #9
++/*   0*/    //   436: invokeinterface append : (Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
++/*   0*/    //   441: pop
++/*   0*/    //   442: aload #5
++/*   0*/    //   444: iload #12
++/*   0*/    //   446: invokeinterface append : (C)Ljava/lang/Appendable;
++/*   0*/    //   451: pop
++/*   0*/    //   452: return
++/*   0*/    // Line number table:
++/*   0*/    //   Java source line number -> byte code offset
++/*   0*/    //   #1153	-> 0
++/*   0*/    //   #1154	-> 3
++/*   0*/    //   #1155	-> 6
++/*   0*/    //   #1156	-> 9
++/*   0*/    //   #1158	-> 15
++/*   0*/    //   #1159	-> 21
++/*   0*/    //   #1161	-> 30
++/*   0*/    //   #1162	-> 36
++/*   0*/    //   #1163	-> 41
++/*   0*/    //   #1165	-> 46
++/*   0*/    //   #1168	-> 88
++/*   0*/    //   #1169	-> 91
++/*   0*/    //   #1171	-> 94
++/*   0*/    //   #1172	-> 108
++/*   0*/    //   #1175	-> 111
++/*   0*/    //   #1176	-> 121
++/*   0*/    //   #1178	-> 122
++/*   0*/    //   #1183	-> 127
++/*   0*/    //   #1184	-> 132
++/*   0*/    //   #1187	-> 138
++/*   0*/    //   #1189	-> 148
++/*   0*/    //   #1190	-> 196
++/*   0*/    //   #1191	-> 202
++/*   0*/    //   #1195	-> 209
++/*   0*/    //   #1197	-> 215
++/*   0*/    //   #1198	-> 222
++/*   0*/    //   #1199	-> 232
++/*   0*/    //   #1200	-> 260
++/*   0*/    //   #1201	-> 263
++/*   0*/    //   #1203	-> 266
++/*   0*/    //   #1206	-> 272
++/*   0*/    //   #1207	-> 277
++/*   0*/    //   #1208	-> 283
++/*   0*/    //   #1211	-> 293
++/*   0*/    //   #1212	-> 300
++/*   0*/    //   #1218	-> 303
++/*   0*/    //   #1220	-> 308
++/*   0*/    //   #1221	-> 321
++/*   0*/    //   #1225	-> 322
++/*   0*/    //   #1228	-> 351
++/*   0*/    //   #1230	-> 356
++/*   0*/    //   #1231	-> 369
++/*   0*/    //   #1235	-> 370
++/*   0*/    //   #1239	-> 380
++/*   0*/    //   #1240	-> 387
++/*   0*/    //   #1241	-> 397
++/*   0*/    //   #1245	-> 404
++/*   0*/    //   #1248	-> 419
++/*   0*/    //   #1250	-> 423
++/*   0*/    //   #1251	-> 426
++/*   0*/    //   #1254	-> 429
++/*   0*/    //   #1255	-> 442
++/*   0*/    //   #1256	-> 452
++/*   0*/    // Local variable table:
++/*   0*/    //   start	length	slot	name	descriptor
++/*   0*/    //   148	155	14	c	C
++/*   0*/    //   397	29	14	c	C
++/*   0*/    //   0	453	0	this	Lorg/apache/commons/csv/CSVFormat;
++/*   0*/    //   0	453	1	object	Ljava/lang/Object;
++/*   0*/    //   0	453	2	value	Ljava/lang/CharSequence;
++/*   0*/    //   0	453	3	offset	I
++/*   0*/    //   0	453	4	len	I
++/*   0*/    //   0	453	5	out	Ljava/lang/Appendable;
++/*   0*/    //   0	453	6	newRecord	Z
++/*   0*/    //   3	450	7	quote	Z
++/*   0*/    //   6	447	8	start	I
++/*   0*/    //   9	444	9	pos	I
++/*   0*/    //   15	438	10	end	I
++/*   0*/    //   21	432	11	delimChar	C
++/*   0*/    //   30	423	12	quoteChar	C
++/*   0*/    //   36	417	13	quoteModePolicy	Lorg/apache/commons/csv/QuoteMode;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void println(Appendable out) throws IOException {

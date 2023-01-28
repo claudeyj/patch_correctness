@@ -1,0 +1,11 @@
+--- jd-result-2.0/Csv/15/mutant-2/a-CSVFormat.java	2021-08-09 03:52:16.613509211 -0700
++++ jd-result-2.0/Csv/15/mutant-2/b-CSVFormat.java	2021-08-09 03:52:18.165509255 -0700
+@@ -418,7 +418,7 @@
+ /*   0*/             }
+ /*   0*/        } else {
+ /*1187*/          char c = value.charAt(pos);
+-/*1189*/          if (newRecord && (c < ' ' || (c > '!' && c < '#') || (c > '+' && c < '-') || c > '~')) {
++/*1189*/          if (this.ignoreEmptyLines && (c < ' ' || (c > '!' && c < '#') || (c > '+' && c < '-') || c > '~')) {
+ /*1190*/            quote = true;
+ /*1191*/          } else if (c <= '#') {
+ /*1195*/            quote = true;

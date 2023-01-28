@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/6/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/6/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/6/buggy1.java	2021-09-08 07:11:31.461222357 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/6/tool-patch1.java	2021-09-08 07:11:31.461222357 -0700
+@@ -90,7 +90,7 @@
+      * @return the number of evaluations of the objective function.
+      */
+     public int getIterations() {
+-        return iterations.getCount();
++        return this.evaluations.getCount();
+     }
+ 
+     /**

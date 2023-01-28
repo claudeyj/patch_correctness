@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/83/mutant-0/buggy-CommandLineRunner.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/83/mutant-0/patched-CommandLineRunner.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/83/mutant-0/buggy-CommandLineRunner.java	2021-08-22 00:18:38.622190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/83/mutant-0/patched-CommandLineRunner.java	2021-08-22 00:18:38.622190184 -0700
+@@ -331,7 +331,10 @@
+ 
+       @Override
+       public int parseArguments(Parameters params) throws CmdLineException {
+-        String param = params.getParameter(0);
++        String param = null;
++        try {
++          param = params.getParameter(0);
++        } catch (CmdLineException e) {}
+ 
+         if (param == null) {
+           setter.addValue(true);

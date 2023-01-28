@@ -1,0 +1,25 @@
+--- jd-result/Closure/21/mutant-9/a-CheckSideEffects.java	2021-07-14 21:38:37.550597415 -0700
++++ jd-result/Closure/21/mutant-9/b-CheckSideEffects.java	2021-07-14 21:38:39.442597468 -0700
+@@ -50,14 +51,20 @@
+ /* 113*/    if (parent.getType() == 85) {
+ /* 114*/      if (isResultUsed)
+ /*   0*/        return; 
+-/* 117*/      if (n == parent.getLastChild())
+-/* 118*/        for (Node an : (Iterable<Node>)parent.getAncestors()) {
++/* 117*/      if (n == parent.getLastChild()) {
++/* 118*/        Iterator<Node> i$ = parent.getAncestors().iterator();
++/*   0*/        while (true) {
++/* 118*/          if (isResultUsed) {
++/* 118*/            Node an = i$.next();
+ /* 119*/          int ancestorType = an.getType();
+ /* 120*/          if (ancestorType == 85)
+ /*   0*/            continue; 
+ /* 121*/          if (ancestorType != 130 && ancestorType != 125)
+ /*   0*/            return; 
+ /*   0*/        }  
++/*   0*/          break;
++/*   0*/        } 
++/*   0*/      } 
+ /* 125*/    } else if (parent.getType() != 130 && parent.getType() != 125 && (
+ /* 126*/      parent.getType() != 115 || parent.getChildCount() != 4 || (n != parent.getFirstChild() && n != parent.getFirstChild().getNext().getNext()))) {
+ /*   0*/      return;

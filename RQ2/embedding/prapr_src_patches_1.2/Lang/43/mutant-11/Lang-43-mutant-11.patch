@@ -1,0 +1,43 @@
+--- jd-result/Lang/43/mutant-11/a-ExtendedMessageFormat.java	2021-07-14 16:57:36.226121622 -0700
++++ jd-result/Lang/43/mutant-11/b-ExtendedMessageFormat.java	2021-07-14 16:57:37.610121661 -0700
+@@ -65,38 +64,10 @@
+ /* 153*/    char[] c = pattern.toCharArray();
+ /* 154*/    int fmtCount = 0;
+ /* 155*/    while (pos.getIndex() < pattern.length()) {
+-/*   0*/      int start, index;
+-/*   0*/      Format format;
+-/*   0*/      String formatDescription;
+ /* 156*/      switch (c[pos.getIndex()]) {
+-/*   0*/        case '\'':
+-/* 158*/          appendQuotedString(pattern, pos, stripCustom, true);
+-/*   0*/          continue;
+-/*   0*/        case '{':
+-/* 161*/          fmtCount++;
+-/* 162*/          seekNonWs(pattern, pos);
+-/* 163*/          start = pos.getIndex();
+-/* 164*/          index = readArgumentIndex(pattern, next(pos));
+-/* 165*/          stripCustom.append('{').append(index);
+-/* 166*/          seekNonWs(pattern, pos);
+-/* 167*/          format = null;
+-/* 168*/          formatDescription = null;
+-/* 169*/          if (c[pos.getIndex()] == ',') {
+-/* 170*/            formatDescription = parseFormatDescription(pattern, next(pos));
+-/* 172*/            format = getFormat(formatDescription);
+-/* 173*/            if (format == null)
+-/* 174*/              stripCustom.append(',').append(formatDescription); 
+-/*   0*/          } 
+-/* 177*/          foundFormats.add(format);
+-/* 178*/          foundDescriptions.add((format == null) ? null : formatDescription);
+-/* 179*/          Validate.isTrue((foundFormats.size() == fmtCount));
+-/* 180*/          Validate.isTrue((foundDescriptions.size() == fmtCount));
+-/* 181*/          if (c[pos.getIndex()] != '}')
+-/* 182*/            throw new IllegalArgumentException("Unreadable format element at position " + start); 
+-/*   0*/          break;
++/*   0*/      
+ /*   0*/      } 
+-/* 187*/      stripCustom.append(c[pos.getIndex()]);
+-/* 188*/      next(pos);
++/* 158*/      appendQuotedString(pattern, pos, stripCustom, true);
+ /*   0*/    } 
+ /* 191*/    super.applyPattern(stripCustom.toString());
+ /* 192*/    this.toPattern = insertFormats(super.toPattern(), foundDescriptions);

@@ -1,0 +1,7 @@
+            sigmaArray[i][0]   = ((inputSigma == null) ? 0.3 : inputSigma[i]) / range;
+        }
+        RealMatrix insigma = new Array2DRowRealMatrix(sigmaArray, false);
+        sigma = max(insigma); // overall standard deviation
+
+        // initialize termination criteria
+        stopTolUpX = 1e3 * max(insigma);

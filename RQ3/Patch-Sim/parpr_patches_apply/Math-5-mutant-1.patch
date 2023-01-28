@@ -1,0 +1,11 @@
+--- Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java	2017-03-20 23:46:49.000000000 +0800
++++ Math5_Math-5-mutant-1.patchb/src/main/java/org/apache/commons/math3/complex/Complex.java	2017-03-20 23:46:49.000000000 +0800
+@@ -302,7 +302,7 @@
+         }
+ 
+         if (real == 0.0 && imaginary == 0.0) {
+-            return NaN;
++      return INF; 
+         }
+ 
+         if (isInfinite) {

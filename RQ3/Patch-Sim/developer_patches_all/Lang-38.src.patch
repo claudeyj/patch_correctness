@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/38/mutant-0/buggy-FastDateFormat.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/38/mutant-0/patched-FastDateFormat.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/38/mutant-0/buggy-FastDateFormat.java	2021-08-22 00:18:38.646190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/38/mutant-0/patched-FastDateFormat.java	2021-08-22 00:18:38.646190185 -0700
+@@ -869,6 +869,7 @@
+      */
+     public StringBuffer format(Calendar calendar, StringBuffer buf) {
+         if (mTimeZoneForced) {
++            calendar.getTime(); /// LANG-538
+             calendar = (Calendar) calendar.clone();
+             calendar.setTimeZone(mTimeZone);
+         }

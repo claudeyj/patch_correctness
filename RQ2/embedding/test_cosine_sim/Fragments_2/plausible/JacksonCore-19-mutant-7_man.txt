@@ -1,0 +1,7 @@
+    private char[] buf(int needed)
+    {
+        if (_allocator != null) {
+        return this._allocator.allocCharBuffer(2, MAX_SEGMENT_LEN); 
+        }
+        return new char[Math.max(needed, MIN_SEGMENT_LEN)];
+    }

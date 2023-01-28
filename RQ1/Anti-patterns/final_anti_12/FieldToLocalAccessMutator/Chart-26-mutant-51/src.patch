@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-51/ori-RectangleInsets.java	2021-07-15 18:51:51.896753113 -0700
++++ jd-result/Chart/26/mutant-51/fixed-patched-RectangleInsets.java	2021-07-21 21:11:44.702741615 -0700
+@@ -415,7 +415,7 @@
+      * @return The left margin (in Java2D units).
+      */
+     public double calculateLeftInset(double width) {
+-        double result = this.left;
++    double result = width;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.left * width);
+         }

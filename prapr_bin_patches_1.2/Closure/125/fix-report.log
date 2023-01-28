@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 01:43:35 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 55124
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to getInstanceType with a call to getPrototype
+	File Name: com/google/javascript/jscomp/TypeCheck.java
+	Line Number: 1663
+	Rank: 2
+	Total Rank: 2223
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to getInstanceType with a call to getImplicitPrototype
+	File Name: com/google/javascript/jscomp/TypeCheck.java
+	Line Number: 1663
+	Rank: 2
+	Total Rank: 2223
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.jstype.FunctionType::getInstanceType()Lcom/google/javascript/rhino/jstype/ObjectType; is replaced with the used of default value null
+	File Name: com/google/javascript/jscomp/TypeCheck.java
+	Line Number: 1663
+	Rank: 3
+	Total Rank: 2224
+	Dump: mutant-1.class
+------------------------------------------------

@@ -1,0 +1,11 @@
+--- jd-result/Closure/48/mutant-2/a-TypedScopeCreator.java	2021-07-14 21:43:52.986606316 -0700
++++ jd-result/Closure/48/mutant-2/b-TypedScopeCreator.java	2021-07-14 21:43:54.654606363 -0700
+@@ -753,7 +753,7 @@
+ /*1422*/      Preconditions.checkArgument((qName != null && ownerName != null));
+ /*1438*/      JSType valueType = getDeclaredType(t.getSourceName(), info, n, rhsValue);
+ /*1439*/      if (valueType == null && rhsValue != null)
+-/*1441*/        valueType = rhsValue.getJSType(); 
++/*1441*/        valueType = ownerNode.getJSType(); 
+ /*1448*/      if ("prototype".equals(propName)) {
+ /*1449*/        Scope.Var qVar = this.scope.getVar(qName);
+ /*1450*/        if (qVar != null) {

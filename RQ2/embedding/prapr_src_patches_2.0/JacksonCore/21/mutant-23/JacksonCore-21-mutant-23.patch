@@ -1,0 +1,14 @@
+--- jd-result-2.0/JacksonCore/21/mutant-23/a-CharsToNameCanonicalizer.java	2021-08-09 04:16:53.445550885 -0700
++++ jd-result-2.0/JacksonCore/21/mutant-23/b-CharsToNameCanonicalizer.java	2021-08-09 04:16:55.001550929 -0700
+@@ -381,7 +381,10 @@
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public static TableInfo createInitial(int sz) {
+-/* 809*/      return new TableInfo(0, 0, new String[sz], new CharsToNameCanonicalizer.Bucket[sz >> 1]);
++/* 809*/      CharsToNameCanonicalizer.Bucket[] arrayOfBucket = new CharsToNameCanonicalizer.Bucket[sz >> 1];
++/* 809*/      String[] arrayOfString = new String[sz];
++/* 809*/      boolean bool2 = false, bool1 = false;
++/* 809*/      return new TableInfo(null);
+ /*   0*/    }
+ /*   0*/  }
+ /*   0*/}

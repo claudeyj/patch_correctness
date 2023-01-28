@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/48/mutant-9/a-VisibilityChecker.java	2021-08-09 04:28:27.293570464 -0700
++++ jd-result-2.0/JacksonDatabind/48/mutant-9/b-VisibilityChecker.java	2021-08-09 04:28:28.845570508 -0700
+@@ -140,7 +140,8 @@
+ /* 288*/      if (this._getterMinLevel == v) {
+ /* 288*/          return this; 
+ /*   0*/         }
+-/* 289*/      return new Std(v, this._isGetterMinLevel, this._setterMinLevel, this._creatorMinLevel, this._fieldMinLevel);
++/* 289*/      this;
++/* 289*/      return new Std(v, this._isGetterMinLevel, v, this._creatorMinLevel, this._fieldMinLevel);
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public Std withIsGetterVisibility(JsonAutoDetect.Visibility v) {

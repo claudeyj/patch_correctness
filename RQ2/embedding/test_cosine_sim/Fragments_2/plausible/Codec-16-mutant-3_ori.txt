@@ -1,0 +1,7 @@
+        }
+        this.decodeSize = this.encodeSize - 1;
+
+        if (isInAlphabet(pad) || isWhiteSpace(pad)) {
+            throw new IllegalArgumentException("pad must not be in alphabet or whitespace");
+        }
+    }

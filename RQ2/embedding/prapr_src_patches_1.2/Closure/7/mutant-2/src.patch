@@ -1,0 +1,11 @@
+--- jd-result/Closure/7/mutant-2/ori-Asserts.java	2021-07-15 18:51:53.464753157 -0700
++++ jd-result/Closure/7/mutant-2/man-patched-Asserts.java	2021-07-23 18:56:36.941593688 -0700
+@@ -100,7 +100,7 @@
+     Assert.assertTrue(
+         "Both types must be null, or both must be non-null " + a + "," + b,
+         (a == null) == (b == null));
+-    if (a == null) {
++    if (true) {
+       return;
+     }
+     Assert.assertTrue(

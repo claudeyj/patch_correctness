@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/25/mutant-20/ori-ReaderBasedJsonParser.java	2021-08-08 21:02:01.736814628 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-20/patched-ReaderBasedJsonParser.java	2021-08-09 06:25:54.817769331 -0700
+@@ -135,7 +135,7 @@
+     {
+         super(ctxt, features);
+         _reader = r;
+-        _inputBuffer = ctxt.allocTokenBuffer();
++    this._inputBuffer = ctxt.allocTokenBuffer(features);
+         _inputPtr = 0;
+         _inputEnd = 0;
+         _objectCodec = codec;

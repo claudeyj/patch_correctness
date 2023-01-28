@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/102/mutant-1/a-DateTimeSerializerBase.java	2021-08-09 04:35:06.497581728 -0700
++++ jd-result-2.0/JacksonDatabind/102/mutant-1/b-DateTimeSerializerBase.java	2021-08-09 04:35:08.069581773 -0700
+@@ -40,9 +40,6 @@
+ /*   0*/  public abstract DateTimeSerializerBase<T> withFormat(Boolean paramBoolean, DateFormat paramDateFormat);
+ /*   0*/  
+ /*   0*/  public JsonSerializer<?> createContextual(SerializerProvider serializers, BeanProperty property) throws JsonMappingException {
+-/*  67*/    if (property == null) {
+-/*  68*/        return this; 
+-/*   0*/       }
+ /*  70*/    JsonFormat.Value format = findFormatOverrides(serializers, property, handledType());
+ /*  71*/    if (format == null) {
+ /*  72*/        return this; 

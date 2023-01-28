@@ -1,0 +1,11 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-101.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1476,7 +1476,7 @@
+                     double gam;
+                     int np;
+                     if (dMin == dN) {
+-                        gam = dN;
++            gam = this.minPivot;
+                         a2 = 0.0;
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;

@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jKali/Math/71/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jKali/Math/71/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jKali/Math/71/buggy1.java	2021-09-08 07:11:31.489222358 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jKali/Math/71/tool-patch1.java	2021-09-08 07:11:31.489222358 -0700
+@@ -60,7 +60,6 @@
+     protected ConvergingAlgorithmImpl(final int defaultMaximalIterationCount,
+                                       final double defaultAbsoluteAccuracy) {
+         this.defaultAbsoluteAccuracy = defaultAbsoluteAccuracy;
+-        this.defaultRelativeAccuracy = 1.0e-14;
+         this.absoluteAccuracy = defaultAbsoluteAccuracy;
+         this.relativeAccuracy = defaultRelativeAccuracy;
+         this.defaultMaximalIterationCount = defaultMaximalIterationCount;

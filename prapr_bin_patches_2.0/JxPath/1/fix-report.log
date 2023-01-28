@@ -1,0 +1,40 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 19 00:12:24 PDT 2021
+Number of Plausible Fixes: 4
+Total Number of Patches: 3546
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.apache.commons.jxpath.ri.model.container.ContainerPointer.getValuePointer()Lorg/apache/commons/jxpath/ri/model/NodePointer; is replaced by an instantiation of type org.apache.commons.jxpath.ri.model.beans.CollectionPointer using (Ljava/lang/Object;Ljava/util/Locale;)V
+	File Name: org/apache/commons/jxpath/ri/model/container/ContainerPointer.java
+	Line Number: 149
+	Rank: 2
+	Total Rank: 238
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.apache.commons.jxpath.ri.model.container.ContainerPointer.getValuePointer()Lorg/apache/commons/jxpath/ri/model/NodePointer; is replaced by an instantiation of type org.apache.commons.jxpath.ri.model.beans.CollectionPointer using (Lorg/apache/commons/jxpath/ri/model/NodePointer;Ljava/lang/Object;)V
+	File Name: org/apache/commons/jxpath/ri/model/container/ContainerPointer.java
+	Line Number: 149
+	Rank: 2
+	Total Rank: 238
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/apache/commons/jxpath/ri/model/container/ContainerPointer.java
+	Line Number: 149
+	Rank: 3
+	Total Rank: 241
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: BooleanTrueReturnValsMutator
+	Description: replaced boolean return with true for org/apache/commons/jxpath/ri/model/container/ContainerPointer::testNode
+	File Name: org/apache/commons/jxpath/ri/model/container/ContainerPointer.java
+	Line Number: 149
+	Rank: 4
+	Total Rank: 243
+	Dump: mutant-3.class
+------------------------------------------------

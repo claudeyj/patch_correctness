@@ -1,0 +1,11 @@
+--- jd-result/Math/62/mutant-1/a-MultiStartUnivariateRealOptimizer.java	2021-07-14 09:14:30.181337554 -0700
++++ jd-result/Math/62/mutant-1/b-MultiStartUnivariateRealOptimizer.java	2021-07-14 09:14:31.513337592 -0700
+@@ -69,7 +69,7 @@
+ /*   0*/      try {
+ /* 160*/        double bound1 = (i == 0) ? min : (min + this.generator.nextDouble() * (max - min));
+ /* 161*/        double bound2 = (i == 0) ? max : (min + this.generator.nextDouble() * (max - min));
+-/* 162*/        this.optima[i] = this.optimizer.optimize(f, goal, FastMath.min(bound1, bound2), FastMath.max(bound1, bound2));
++/* 162*/        this.optima[i] = this.optimizer.optimize(f, goal, FastMath.min(bound1, min), FastMath.max(bound1, bound2));
+ /* 163*/      } catch (FunctionEvaluationException fee) {
+ /* 164*/        this.optima[i] = null;
+ /* 165*/      } catch (ConvergenceException ce) {

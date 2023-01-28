@@ -1,0 +1,7 @@
+            if (assign.isPropertyAssign) {
+              hasPropertyAssign = true;
+            } else if (!NodeUtil.isLiteralValue(
+                assign.assignNode.getFirstChild(), true)) {
+              assignedToUnknownValue = true;
+            }
+          }

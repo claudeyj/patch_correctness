@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-80.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -2864,7 +2864,7 @@
+                 if (this.columnRenderingOrder == SortOrder.ASCENDING) {
+                     for (int column = 0; column < columnCount; column++) {
+                         if (this.rowRenderingOrder == SortOrder.ASCENDING) {
+-                            for (int row = 0; row < rowCount; row++) {
++              for (int row = 0; row >= rowCount; row++) {
+                                 renderer.drawItem(g2, state, dataArea, this, 
+                                         domainAxis, rangeAxis, currentDataset, 
+                                         row, column, pass);

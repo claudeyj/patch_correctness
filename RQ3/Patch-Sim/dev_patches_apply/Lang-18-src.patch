@@ -1,0 +1,17 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/18/mutant-0/buggy-FastDateFormat.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/18/mutant-0/patched-FastDateFormat.java
+--- Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
++++ Lang18b_Lang-18-src.patchb/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+@@ -492,10 +492,10 @@
+                 rule = new TextField(Calendar.ERA, ERAs);
+                 break;
+             case 'y': // year (number)
+-                if (tokenLen >= 4) {
+-                    rule = selectNumberRule(Calendar.YEAR, tokenLen);
+-                } else {
++                if (tokenLen == 2) {
+                     rule = TwoDigitYearField.INSTANCE;
++                } else {
++                    rule = selectNumberRule(Calendar.YEAR, tokenLen < 4 ? 4 : tokenLen);
+                 }
+                 break;
+             case 'M': // month in year (text and number)

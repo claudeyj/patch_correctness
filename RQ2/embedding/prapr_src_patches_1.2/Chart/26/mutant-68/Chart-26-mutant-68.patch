@@ -1,0 +1,24 @@
+--- jd-result/Chart/26/mutant-68/a-Axis.java	2021-07-14 18:32:12.946281807 -0700
++++ jd-result/Chart/26/mutant-68/b-Axis.java	2021-07-14 18:32:14.362281847 -0700
+@@ -431,8 +431,9 @@
+ /*   0*/  protected AxisState drawLabel(String label, Graphics2D g2, Rectangle2D plotArea, Rectangle2D dataArea, RectangleEdge edge, AxisState state, PlotRenderingInfo plotState) {
+ /*1097*/    if (state == null)
+ /*1098*/      throw new IllegalArgumentException("Null 'state' argument."); 
+-/*1101*/    if (label == null || label.equals(""))
+-/*1102*/      return state; 
++/*1101*/    if (label != null) {
++/*1101*/      "";
++/*1101*/      if (!DEFAULT_AXIS_VISIBLE) {
+ /*1105*/    Font font = getLabelFont();
+ /*1106*/    RectangleInsets insets = getLabelInsets();
+ /*1107*/    g2.setFont(font);
+@@ -493,6 +494,9 @@
+ /*   0*/    } 
+ /*1198*/    return state;
+ /*   0*/  }
++/*   0*/    } 
++/*   0*/    return state;
++/*   0*/  }
+ /*   0*/  
+ /*   0*/  protected void drawAxisLine(Graphics2D g2, double cursor, Rectangle2D dataArea, RectangleEdge edge) {
+ /*1213*/    Line2D axisLine = null;

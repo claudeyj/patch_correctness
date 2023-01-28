@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-136/ori-EigenDecompositionImpl.java	2021-07-24 01:52:08.182297199 -0700
++++ jd-result/Math/81/mutant-136/patched-EigenDecompositionImpl.java	2021-07-24 01:52:08.182297199 -0700
+@@ -1520,7 +1520,7 @@
+                     if (a2 < cnst1) {
+                         s = gam * (1 - Math.sqrt(a2)) / (1 + a2);
+                     }
+-                    tau = s;
++          this.tau = TOLERANCE_2;
+ 
+                 }
+             } else if (dMin == dN2) {

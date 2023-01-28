@@ -1,0 +1,12 @@
+--- jd-result-2.0/Cli/37/mutant-4/a-DefaultParser.java	2021-08-09 04:42:36.581594429 -0700
++++ jd-result-2.0/Cli/37/mutant-4/b-DefaultParser.java	2021-08-09 04:42:38.269594477 -0700
+@@ -130,7 +130,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private boolean isShortOption(String token) {
+-/* 302*/    return (token.startsWith("-") && token.length() >= 2 && this.options.hasShortOption(token.substring(1, 2)));
++/* 302*/    int j = 2, i = 1;
++/* 302*/    return (token.startsWith("-") && token.length() >= 2 && this.options.hasShortOption(token.substring(i)));
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private boolean isLongOption(String token) {

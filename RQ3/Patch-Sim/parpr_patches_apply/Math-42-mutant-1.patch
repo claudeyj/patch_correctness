@@ -1,0 +1,11 @@
+--- Math42b/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2017-03-20 23:52:40.000000000 +0800
++++ Math42_Math-42-mutant-1.patchb/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2017-03-20 23:52:40.000000000 +0800
+@@ -192,7 +192,7 @@
+         RealVector objectiveCoefficients =
+             maximize ? f.getCoefficients().mapMultiply(-1) : f.getCoefficients();
+         copyArray(objectiveCoefficients.toArray(), matrix.getDataRef()[zIndex]);
+-        matrix.setEntry(zIndex, width - 1,
++        matrix.setEntry(zIndex, height - 1,
+             maximize ? f.getConstantTerm() : -1 * f.getConstantTerm());
+ 
+         if (!restrictToNonNegative) {

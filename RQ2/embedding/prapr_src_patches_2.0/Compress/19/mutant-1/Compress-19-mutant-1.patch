@@ -1,0 +1,12 @@
+--- jd-result-2.0/Compress/19/mutant-1/a-Zip64ExtendedInformationExtraField.java	2021-08-09 03:56:43.949516755 -0700
++++ jd-result-2.0/Compress/19/mutant-1/b-Zip64ExtendedInformationExtraField.java	2021-08-09 03:56:45.917516811 -0700
+@@ -113,9 +113,6 @@
+ /*   0*/  public void reparseCentralDirectoryData(boolean hasUncompressedSize, boolean hasCompressedSize, boolean hasRelativeHeaderOffset, boolean hasDiskStart) throws ZipException {
+ /* 254*/    if (this.rawCentralDirectoryData != null) {
+ /* 255*/      int expectedLength = (hasUncompressedSize ? 8 : 0) + (hasCompressedSize ? 8 : 0) + (hasRelativeHeaderOffset ? 8 : 0) + (hasDiskStart ? 4 : 0);
+-/* 259*/      if (this.rawCentralDirectoryData.length != expectedLength) {
+-/* 260*/          throw new ZipException("central directory zip64 extended information extra field's length doesn't match central directory data.  Expected length " + expectedLength + " but is " + this.rawCentralDirectoryData.length); 
+-/*   0*/         }
+ /* 267*/      int offset = 0;
+ /* 268*/      if (hasUncompressedSize) {
+ /* 269*/        this.size = new ZipEightByteInteger(this.rawCentralDirectoryData, offset);

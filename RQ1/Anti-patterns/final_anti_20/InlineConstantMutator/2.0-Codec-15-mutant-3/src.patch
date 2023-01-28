@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/15/mutant-3/ori-Soundex.java	2021-08-08 21:02:01.360814617 -0700
++++ jd-result-2.0/Codec/15/mutant-3/patched-Soundex.java	2021-08-09 06:25:54.717769328 -0700
+@@ -189,7 +189,7 @@
+             if ('H' == hwChar || 'W' == hwChar) {
+                 final char preHWChar = str.charAt(index - 2);
+                 final char firstCode = this.map(preHWChar);
+-                if (firstCode == mappedChar || 'H' == preHWChar || 'W' == preHWChar) {
++        if (firstCode == mappedChar || 'I' == preHWChar || 'W' == preHWChar) {
+                     return 0;
+                 }
+             }

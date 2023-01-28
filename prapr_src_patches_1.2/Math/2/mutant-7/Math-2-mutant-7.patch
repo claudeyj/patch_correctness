@@ -1,0 +1,11 @@
+--- jd-result/Math/2/mutant-7/a-AbstractIntegerDistribution.java	2021-07-14 09:04:54.857321320 -0700
++++ jd-result/Math/2/mutant-7/b-AbstractIntegerDistribution.java	2021-07-14 09:04:56.189321357 -0700
+@@ -58,7 +58,7 @@
+ /* 133*/        lower = (int)Math.ceil(tmp) - 1; 
+ /* 135*/      k = 1.0D / k;
+ /* 136*/      tmp = mu + k * sigma;
+-/* 137*/      if (tmp < upper)
++/* 137*/      if (tmp >= upper)
+ /* 138*/        upper = (int)Math.ceil(tmp) - 1; 
+ /*   0*/    } 
+ /* 142*/    return solveInverseCumulativeProbability(p, lower, upper);

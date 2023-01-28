@@ -1,0 +1,7 @@
+                t.dataBuffer.append(Character.toLowerCase(r.current()));
+                t.emit("<" + r.current());
+                t.advanceTransition(ScriptDataDoubleEscapeStart);
+      } else if (r.matches('0')) {
+                t.createTempBuffer();
+                t.advanceTransition(ScriptDataEscapedEndTagOpen);
+            } else {

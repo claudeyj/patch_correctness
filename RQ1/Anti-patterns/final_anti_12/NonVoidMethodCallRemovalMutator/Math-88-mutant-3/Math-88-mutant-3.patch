@@ -1,0 +1,19 @@
+--- jd-result/Math/88/mutant-3/a-SimplexTableau.java	2021-07-14 09:29:53.645363612 -0700
++++ jd-result/Math/88/mutant-3/b-SimplexTableau.java	2021-07-14 09:29:55.021363651 -0700
+@@ -165,12 +165,14 @@
+ /* 329*/    for (int i = 0; i < coefficients.length; i++) {
+ /* 330*/      basicRow = getBasicRow(getNumObjectiveFunctions() + i);
+ /* 333*/      coefficients[i] = ((basicRow == null) ? 0.0D : getEntry(basicRow, getRhsOffset())) - (this.restrictToNonNegative ? 0.0D : mostNegative);
+-/* 336*/      if (basicRow != null)
+-/* 337*/        for (int j = getNumObjectiveFunctions(); j < getNumObjectiveFunctions() + i; j++) {
++/* 336*/      if (basicRow != null) {
++/* 337*/        this;
++/* 337*/        for (int j = i; j < getNumObjectiveFunctions() + i; j++) {
+ /* 338*/          if (this.tableau.getEntry(basicRow, j) == 1.0D)
+ /* 339*/            coefficients[i] = 0.0D; 
+ /*   0*/        }  
+ /*   0*/    } 
++/*   0*/    } 
+ /* 344*/    return new RealPointValuePair(coefficients, this.f.getValue(coefficients));
+ /*   0*/  }
+ /*   0*/  

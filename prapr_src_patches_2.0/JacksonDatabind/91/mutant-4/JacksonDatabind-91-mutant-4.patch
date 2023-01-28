@@ -1,0 +1,26 @@
+--- jd-result-2.0/JacksonDatabind/91/mutant-4/a-MapLikeType.java	2021-08-09 04:26:26.521567056 -0700
++++ jd-result-2.0/JacksonDatabind/91/mutant-4/b-MapLikeType.java	2021-08-09 04:26:28.077567100 -0700
+@@ -83,18 +83,17 @@
+ /* 151*/    JavaType srcKeyType = src.getKeyType();
+ /* 153*/    if (type instanceof MapLikeType && 
+ /* 154*/      srcKeyType != null) {
+-/* 155*/      JavaType ct = this._keyType.withHandlersFrom(srcKeyType);
+-/* 156*/      if (ct != this._keyType) {
+-/* 157*/          type = ((MapLikeType)type).withKeyType(ct); 
++/* 155*/      JavaType javaType = this._keyType.withHandlersFrom(srcKeyType);
++/* 156*/      if (javaType != this._keyType) {
++/* 157*/          type = ((MapLikeType)type).withKeyType(javaType); 
+ /*   0*/         }
+ /*   0*/    } 
+ /* 161*/    JavaType srcCt = src.getContentType();
+-/* 162*/    if (srcCt != null) {
+ /* 163*/      JavaType ct = this._valueType.withHandlersFrom(srcCt);
+-/* 164*/      if (ct != this._valueType) {
++/* 164*/    this;
++/* 164*/    if (srcCt != null && ct != srcKeyType) {
+ /* 165*/          type = type.withContentType(ct); 
+ /*   0*/         }
+-/*   0*/    } 
+ /* 168*/    return type;
+ /*   0*/  }
+ /*   0*/  

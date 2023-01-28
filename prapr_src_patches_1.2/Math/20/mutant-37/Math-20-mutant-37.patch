@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-37/a-CMAESOptimizer.java	2021-07-14 09:08:00.553326560 -0700
++++ jd-result/Math/20/mutant-37/b-CMAESOptimizer.java	2021-07-14 09:08:02.181326606 -0700
+@@ -177,7 +177,7 @@
+ /* 350*/    checkParameters();
+ /* 352*/    this.isMinimize = getGoalType().equals(GoalType.MINIMIZE);
+ /* 353*/    FitnessFunction fitfun = new FitnessFunction();
+-/* 354*/    double[] guess = fitfun.encode(getStartPoint());
++/* 354*/    double[] guess = getStartPoint();
+ /* 356*/    this.dimension = guess.length;
+ /* 357*/    initializeCMA(guess);
+ /* 358*/    this.iterations = 0;

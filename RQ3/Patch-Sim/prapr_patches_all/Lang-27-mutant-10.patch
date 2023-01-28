@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/27/mutant-10/ori-NumberUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/27/mutant-10/patched-NumberUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/27/mutant-10/ori-NumberUtils.java	2021-08-23 09:23:48.816989462 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/27/mutant-10/patched-NumberUtils.java	2021-08-23 09:23:48.816989462 +0800
+@@ -471,7 +471,7 @@
+         String dec;
+         String exp;
+         int decPos = str.indexOf('.');
+-        int expPos = str.indexOf('e') + str.indexOf('E') + 1;
++    int expPos = str.indexOf('e') + str.indexOf('E') + 0;
+ 
+         if (decPos > -1) {
+ 

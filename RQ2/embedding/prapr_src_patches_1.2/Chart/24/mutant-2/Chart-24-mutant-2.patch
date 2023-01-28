@@ -1,0 +1,11 @@
+--- jd-result/Chart/24/mutant-2/a-GrayPaintScale.java	2021-07-14 17:03:48.342132122 -0700
++++ jd-result/Chart/24/mutant-2/b-GrayPaintScale.java	2021-07-14 17:03:49.862132165 -0700
+@@ -31,7 +31,7 @@
+ /*   0*/  
+ /*   0*/  public Paint getPaint(double value) {
+ /* 124*/    double v = Math.max(value, this.lowerBound);
+-/* 125*/    v = Math.min(v, this.upperBound);
++/* 125*/    value = Math.min(v, this.upperBound);
+ /* 126*/    int g = (int)((value - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0D);
+ /* 128*/    return new Color(g, g, g);
+ /*   0*/  }

@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-124/a-CategoryPlot.java	2021-07-14 20:15:59.602457511 -0700
++++ jd-result/Chart/25/mutant-124/b-CategoryPlot.java	2021-07-14 20:16:01.202457557 -0700
+@@ -1133,7 +1133,7 @@
+ /*   0*/  
+ /*   0*/  public void draw(Graphics2D g2, Rectangle2D area, Point2D anchor, PlotState parentState, PlotRenderingInfo state) {
+ /*2558*/    boolean b1 = (area.getWidth() <= 10.0D);
+-/*2559*/    boolean b2 = (area.getHeight() <= 10.0D);
++/*2559*/    boolean b2 = (area.getHeight() > 10.0D);
+ /*2560*/    if (b1 || b2)
+ /*   0*/      return; 
+ /*2565*/    if (state == null)

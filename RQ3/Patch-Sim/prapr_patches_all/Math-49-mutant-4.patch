@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-4/ori-OpenIntToDoubleHashMap.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-4/patched-OpenIntToDoubleHashMap.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-4/ori-OpenIntToDoubleHashMap.java	2021-08-23 09:23:48.928991015 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-4/patched-OpenIntToDoubleHashMap.java	2021-08-23 09:23:48.928991015 +0800
+@@ -396,7 +396,7 @@
+         final double previous = values[index];
+         values[index] = missingEntries;
+         --size;
+-        ++count;
++    this.count += 0;
+         return previous;
+     }
+ 

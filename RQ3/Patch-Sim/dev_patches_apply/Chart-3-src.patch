@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/3/mutant-0/buggy-TimeSeries.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/3/mutant-0/patched-TimeSeries.java
+--- Chart3b/source/org/jfree/data/time/TimeSeries.java
++++ Chart3b_Chart-3-src.patchb/source/org/jfree/data/time/TimeSeries.java
+@@ -1054,6 +1054,8 @@
+             throw new IllegalArgumentException("Requires start <= end.");
+         }
+         TimeSeries copy = (TimeSeries) super.clone();
++        copy.minY = Double.NaN;
++        copy.maxY = Double.NaN;
+         copy.data = new java.util.ArrayList();
+         if (this.data.size() > 0) {
+             for (int index = start; index <= end; index++) {

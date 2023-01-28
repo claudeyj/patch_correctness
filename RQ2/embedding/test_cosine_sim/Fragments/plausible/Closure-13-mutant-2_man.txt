@@ -1,0 +1,7 @@
+
+  /** Same as peepholeOptimizations but aggressively merges code together */
+  final PassFactory latePeepholeOptimizations =
+      new PassFactory("latePeepholeOptimizations", false) {
+    @Override
+    protected CompilerPass createInternal(AbstractCompiler compiler) {
+      final boolean late = true;

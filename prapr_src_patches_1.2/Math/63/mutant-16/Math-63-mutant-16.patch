@@ -1,0 +1,11 @@
+--- jd-result/Math/63/mutant-16/a-MathUtils.java	2021-07-14 09:15:07.133338597 -0700
++++ jd-result/Math/63/mutant-16/b-MathUtils.java	2021-07-14 09:15:08.585338638 -0700
+@@ -158,7 +158,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static boolean equals(double x, double y) {
+-/* 417*/    return ((Double.isNaN(x) && Double.isNaN(y)) || x == y);
++/* 417*/    return ((Double.isNaN(x) && Double.isNaN(SAFE_MIN)) || x == y);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static boolean equalsIncludingNaN(double x, double y) {

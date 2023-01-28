@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/11/mutant-0/buggy-TypeCheck.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/11/mutant-0/patched-TypeCheck.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/11/mutant-0/buggy-TypeCheck.java	2021-08-22 00:18:38.582190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/11/mutant-0/patched-TypeCheck.java	2021-08-22 00:18:38.582190183 -0700
+@@ -1311,8 +1311,6 @@
+ 
+     if (childType.isDict()) {
+       report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, "'.'", "dict");
+-    } else if (n.getJSType() != null && parent.isAssign()) {
+-      return;
+     } else if (validator.expectNotNullOrUndefined(t, n, childType,
+         "No properties on this expression", getNativeType(OBJECT_TYPE))) {
+       checkPropertyAccess(childType, property.getString(), t, n);

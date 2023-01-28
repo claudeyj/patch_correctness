@@ -1,0 +1,25 @@
+--- jd-result-2.0/JxPath/22/mutant-6/a-DOMNodePointer.java	2021-08-09 04:17:52.745552558 -0700
++++ jd-result-2.0/JxPath/22/mutant-6/b-DOMNodePointer.java	2021-08-09 04:17:54.409552605 -0700
+@@ -17,6 +17,7 @@
+ /*   0*/import org.apache.commons.jxpath.ri.model.NodePointer;
+ /*   0*/import org.apache.commons.jxpath.ri.model.beans.NullPointer;
+ /*   0*/import org.apache.commons.jxpath.util.TypeUtils;
++/*   0*/import org.apache.xerces.impl.xs.opti.AttrImpl;
+ /*   0*/import org.w3c.dom.Attr;
+ /*   0*/import org.w3c.dom.Comment;
+ /*   0*/import org.w3c.dom.Document;
+@@ -511,9 +512,11 @@
+ /* 684*/      Node aNode = node;
+ /* 685*/      while (aNode != null) {
+ /* 686*/        if (aNode.getNodeType() == 1) {
+-/* 687*/          Attr attr = ((Element)aNode).getAttributeNode(qname);
+-/* 688*/          if (attr != null) {
+-/* 689*/              return attr.getValue(); 
++/* 687*/          String str = qname;
++/* 687*/          (Element)aNode;
++/* 687*/          AttrImpl attrImpl = new AttrImpl();
++/* 688*/          if (attrImpl != null) {
++/* 689*/              return attrImpl.getValue(); 
+ /*   0*/             }
+ /*   0*/        } 
+ /* 692*/        aNode = aNode.getParentNode();

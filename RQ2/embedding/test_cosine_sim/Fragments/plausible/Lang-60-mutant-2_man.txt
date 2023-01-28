@@ -1,0 +1,7 @@
+     * @throws IndexOutOfBoundsException if any index is invalid
+     */
+    private void deleteImpl(int startIndex, int endIndex, int len) {
+    System.arraycopy(this.buffer, endIndex, this.buffer, startIndex, capacity() - endIndex);
+        size -= len;
+    }
+

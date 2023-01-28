@@ -1,0 +1,11 @@
+--- jd-result/Math/40/mutant-4/ori-BracketingNthOrderBrentSolver.java	2021-07-24 01:52:03.514297067 -0700
++++ jd-result/Math/40/mutant-4/fixed-patched-BracketingNthOrderBrentSolver.java	2021-07-24 01:52:03.514297067 -0700
+@@ -371,7 +371,7 @@
+ 
+         // evaluate Q(targetY)
+         double x0 = 0;
+-        for (int j = end - 1; j >= start; --j) {
++    for (int j = this.maximalOrder - 1; j >= start; j--) {
+             x0 = x[j] + x0 * (targetY - y[j]);
+         }
+ 

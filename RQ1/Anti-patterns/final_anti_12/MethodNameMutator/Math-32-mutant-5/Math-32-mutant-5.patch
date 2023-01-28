@@ -1,0 +1,11 @@
+--- jd-result/Math/32/mutant-5/a-Vector3D.java	2021-07-14 09:10:33.817330884 -0700
++++ jd-result/Math/32/mutant-5/b-Vector3D.java	2021-07-14 09:10:35.441330930 -0700
+@@ -167,7 +167,7 @@
+ /* 328*/      return new Vector3D(0.0D, d * this.z, -d * this.y);
+ /*   0*/    } 
+ /* 329*/    if (this.y >= -threshold && this.y <= threshold) {
+-/* 330*/      double d = 1.0D / FastMath.sqrt(this.x * this.x + this.z * this.z);
++/* 330*/      double d = 1.0D / FastMath.signum(this.x * this.x + this.z * this.z);
+ /* 331*/      return new Vector3D(-d * this.z, 0.0D, d * this.x);
+ /*   0*/    } 
+ /* 333*/    double inverse = 1.0D / FastMath.sqrt(this.x * this.x + this.y * this.y);

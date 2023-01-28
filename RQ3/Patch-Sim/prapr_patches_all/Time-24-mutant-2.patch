@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/24/mutant-2/ori-BasicChronology.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/24/mutant-2/man-patched-BasicChronology.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/24/mutant-2/ori-BasicChronology.java	2021-08-23 09:23:49.204994842 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/24/mutant-2/man-patched-BasicChronology.java	2021-08-23 09:23:49.204994842 +0800
+@@ -515,7 +515,7 @@
+     int getWeekOfWeekyear(long instant, int year) {
+         long firstWeekMillis1 = getFirstWeekOfYearMillis(year);
+         if (instant < firstWeekMillis1) {
+-            return getWeeksInYear(year - 1);
++      return (getWeeksInYear(year - 1) != 0) ? 0 : 1; 
+         }
+         long firstWeekMillis2 = getFirstWeekOfYearMillis(year + 1);
+         if (instant >= firstWeekMillis2) {

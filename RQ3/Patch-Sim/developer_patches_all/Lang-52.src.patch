@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/52/mutant-0/buggy-StringEscapeUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/52/mutant-0/patched-StringEscapeUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/52/mutant-0/buggy-StringEscapeUtils.java	2021-08-22 00:18:38.654190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/52/mutant-0/patched-StringEscapeUtils.java	2021-08-22 00:18:38.654190185 -0700
+@@ -233,6 +233,10 @@
+                         out.write('\\');
+                         out.write('\\');
+                         break;
++                    case '/':
++                        out.write('\\');
++                        out.write('/');
++                        break;
+                     default :
+                         out.write(ch);
+                         break;

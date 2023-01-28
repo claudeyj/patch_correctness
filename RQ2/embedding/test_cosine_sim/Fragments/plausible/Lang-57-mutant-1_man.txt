@@ -1,0 +1,8 @@
+     * @return true if the locale is a known locale
+     */
+    public static boolean isAvailableLocale(Locale locale) {
+    Locale locale1 = locale;
+    return (cAvailableLocaleSet == null) ? false : cAvailableLocaleSet.contains(locale1);
+    }
+
+    //-----------------------------------------------------------------------

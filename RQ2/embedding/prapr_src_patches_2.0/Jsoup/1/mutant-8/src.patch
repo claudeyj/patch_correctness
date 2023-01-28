@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/1/mutant-8/ori-Document.java	2021-08-08 21:02:03.076814666 -0700
++++ jd-result-2.0/Jsoup/1/mutant-8/patched-Document.java	2021-08-09 06:25:54.897769333 -0700
+@@ -116,7 +116,7 @@
+             if (node instanceof TextNode) {
+                 TextNode tn = (TextNode) node;
+                 if (!tn.isBlank())
+-                    toMove.add(tn);
++            toMove.equals(tn); 
+             }
+         }
+ 

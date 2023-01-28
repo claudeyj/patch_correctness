@@ -1,0 +1,11 @@
+--- jd-result/Closure/21/mutant-4/a-CheckSideEffects.java	2021-07-14 21:38:45.718597645 -0700
++++ jd-result/Closure/21/mutant-4/b-CheckSideEffects.java	2021-07-14 21:38:47.162597686 -0700
+@@ -55,7 +55,7 @@
+ /* 119*/          int ancestorType = an.getType();
+ /* 120*/          if (ancestorType == 85)
+ /*   0*/            continue; 
+-/* 121*/          if (ancestorType != 130 && ancestorType != 125)
++/* 121*/          if (ancestorType != 130 && ancestorType == 125)
+ /*   0*/            return; 
+ /*   0*/        }  
+ /* 125*/    } else if (parent.getType() != 130 && parent.getType() != 125 && (

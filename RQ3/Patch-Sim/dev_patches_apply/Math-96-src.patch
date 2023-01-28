@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/96/mutant-0/buggy-Complex.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/96/mutant-0/patched-Complex.java
+--- Math96b/src/java/org/apache/commons/math/complex/Complex.java
++++ Math96b_Math-96-src.patchb/src/java/org/apache/commons/math/complex/Complex.java
+@@ -255,7 +255,7 @@
+                 if (rhs.isNaN()) {
+                     ret = this.isNaN();
+                 } else {
+-                    ret = (Double.doubleToRawLongBits(real) == Double.doubleToRawLongBits(rhs.getReal())) && (Double.doubleToRawLongBits(imaginary) == Double.doubleToRawLongBits(rhs.getImaginary())); 
++                    ret = (real == rhs.real) && (imaginary == rhs.imaginary); 
+                 }
+             } catch (ClassCastException ex) {
+                 // ignore exception

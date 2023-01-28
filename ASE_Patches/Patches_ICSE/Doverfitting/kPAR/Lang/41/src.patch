@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/41/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/41/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/41/buggy1.java	2021-08-27 19:18:38.454864081 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/41/tool-patch1.java	2021-08-27 19:18:38.454864081 -0700
+@@ -229,7 +229,7 @@
+         if (cls == null) {
+             return StringUtils.EMPTY;
+         }
+-        return getPackageName(cls.getName());
++        return getPackageCanonicalName(cls.getName());
+     }
+ 
+     /**

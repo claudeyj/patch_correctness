@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-13/ori-CMAESOptimizer.java	2021-07-24 01:52:02.162297029 -0700
++++ jd-result/Math/20/mutant-13/patched-CMAESOptimizer.java	2021-07-24 01:52:02.162297029 -0700
+@@ -992,7 +992,7 @@
+                 if (x[i] < 0) {
+                     repaired[i] = 0;
+                 } else if (x[i] > 1.0) {
+-                    repaired[i] = 1.0;
++          repaired[i] = 2.0D;
+                 } else {
+                     repaired[i] = x[i];
+                 }

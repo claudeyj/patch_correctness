@@ -1,0 +1,12 @@
+--- jd-result/Time/4/mutant-5/a-ZeroIsMaxDateTimeField.java	2021-07-14 21:28:01.806579476 -0700
++++ jd-result/Time/4/mutant-5/b-ZeroIsMaxDateTimeField.java	2021-07-14 21:28:03.090579512 -0700
+@@ -94,7 +94,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public int getMaximumValue(ReadablePartial paramReadablePartial, int[] paramArrayOfint) {
+-/* 178*/    return getWrappedField().getMaximumValue(paramReadablePartial, paramArrayOfint) + 1;
++/* 178*/    this;
++/* 178*/    return new DelegatedDateTimeField(null).getMaximumValue(paramReadablePartial, paramArrayOfint) + 1;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public long roundFloor(long paramLong) {

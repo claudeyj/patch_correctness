@@ -1,0 +1,27 @@
+--- jd-result/Math/28/mutant-9/a-SimplexSolver.java	2021-07-14 09:09:33.089329171 -0700
++++ jd-result/Math/28/mutant-9/b-SimplexSolver.java	2021-07-14 09:09:34.573329213 -0700
+@@ -58,12 +59,18 @@
+ /* 113*/    if (minRatioPositions.size() == 0)
+ /* 114*/      return null; 
+ /* 115*/    if (minRatioPositions.size() > 1) {
+-/* 119*/      for (Integer row : minRatioPositions) {
+-/* 120*/        for (int j = 0; j < tableau.getNumArtificialVariables(); j++) {
+-/* 121*/          int column = j + tableau.getArtificialVariableOffset();
+-/* 122*/          double entry = tableau.getEntry(row, column);
+-/* 123*/          if (Precision.equals(entry, 1.0D, this.maxUlps) && row.equals(tableau.getBasicRow(column)))
+-/* 124*/            return row; 
++/* 119*/      Iterator<Integer> i$ = minRatioPositions.iterator();
++/*   0*/      label47: while (true) {
++/*   0*/        int j;
++/* 119*/        if (i$.hasNext()) {
++/* 119*/          Integer row = i$.next();
++/* 120*/          j = 0;
++/*   0*/        } else {
++/*   0*/          break;
++/*   0*/        } 
++/*   0*/        while (true) {
++/* 120*/          tableau.getNumArtificialVariables();
++/*   0*/          continue label47;
+ /*   0*/        } 
+ /*   0*/      } 
+ /* 138*/      Integer minRow = null;

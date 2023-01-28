@@ -1,0 +1,52 @@
+--- jd-result-2.0/Jsoup/51/mutant-2/a-CharacterReader.java	2021-08-09 04:20:01.345556187 -0700
++++ jd-result-2.0/Jsoup/51/mutant-2/b-CharacterReader.java	2021-08-09 04:20:02.789556228 -0700
+@@ -273,11 +273,44 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  boolean matchesLetter() {
+-/* 297*/    if (isEmpty()) {
+-/* 298*/        return false; 
+-/*   0*/       }
+-/* 299*/    char c = this.input[this.pos];
+-/* 300*/    return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
++/*   0*/    // Byte code:
++/*   0*/    //   0: aload_0
++/*   0*/    //   1: invokevirtual isEmpty : ()Z
++/*   0*/    //   4: ifeq -> 9
++/*   0*/    //   7: iconst_0
++/*   0*/    //   8: ireturn
++/*   0*/    //   9: aload_0
++/*   0*/    //   10: getfield input : [C
++/*   0*/    //   13: aload_0
++/*   0*/    //   14: getfield pos : I
++/*   0*/    //   17: caload
++/*   0*/    //   18: istore_1
++/*   0*/    //   19: iload_1
++/*   0*/    //   20: bipush #65
++/*   0*/    //   22: if_icmplt -> 31
++/*   0*/    //   25: iload_1
++/*   0*/    //   26: bipush #90
++/*   0*/    //   28: if_icmple -> 41
++/*   0*/    //   31: iload_1
++/*   0*/    //   32: bipush #97
++/*   0*/    //   34: if_icmplt -> 45
++/*   0*/    //   37: iload_1
++/*   0*/    //   38: bipush #122
++/*   0*/    //   40: pop2
++/*   0*/    //   41: iconst_1
++/*   0*/    //   42: goto -> 46
++/*   0*/    //   45: iconst_0
++/*   0*/    //   46: ireturn
++/*   0*/    // Line number table:
++/*   0*/    //   Java source line number -> byte code offset
++/*   0*/    //   #297	-> 0
++/*   0*/    //   #298	-> 7
++/*   0*/    //   #299	-> 9
++/*   0*/    //   #300	-> 19
++/*   0*/    // Local variable table:
++/*   0*/    //   start	length	slot	name	descriptor
++/*   0*/    //   0	47	0	this	Lorg/jsoup/parser/CharacterReader;
++/*   0*/    //   19	28	1	c	C
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  boolean matchesDigit() {

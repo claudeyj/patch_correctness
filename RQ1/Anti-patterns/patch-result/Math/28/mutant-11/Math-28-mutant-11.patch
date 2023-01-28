@@ -1,0 +1,32 @@
+--- jd-result/Math/28/mutant-11/a-SimplexSolver.java	2021-07-14 09:10:08.805330179 -0700
++++ jd-result/Math/28/mutant-11/b-SimplexSolver.java	2021-07-14 09:10:10.197330218 -0700
+@@ -40,20 +40,25 @@
+ /*   0*/  private Integer getPivotRow(SimplexTableau tableau, int col) {
+ /*  92*/    List<Integer> minRatioPositions = new ArrayList<Integer>();
+ /*  93*/    double minRatio = Double.MAX_VALUE;
+-/*  94*/    for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++) {
++/*  94*/    int i = tableau.getNumObjectiveFunctions();
++/*   0*/    while (true) {
++/*  94*/      if (i < tableau.getHeight()) {
+ /*  95*/      double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
+ /*  96*/      double entry = tableau.getEntry(i, col);
+ /*  98*/      if (Precision.compareTo(entry, 0.0D, this.maxUlps) > 0) {
+ /*  99*/        double ratio = rhs / entry;
+ /* 102*/        int cmp = Double.compare(ratio, minRatio);
+-/* 103*/        if (cmp == 0) {
+-/* 104*/          minRatioPositions.add(i);
+-/* 105*/        } else if (cmp < 0) {
++/* 105*/          if (cmp < 0) {
+ /* 106*/          minRatio = ratio;
+ /* 107*/          minRatioPositions = new ArrayList<Integer>();
+ /* 108*/          minRatioPositions.add(i);
+ /*   0*/        } 
+ /*   0*/      } 
++/*   0*/      } else {
++/*   0*/        break;
++/*   0*/      } 
++/*   0*/      while (true)
++/*   0*/        i++; 
+ /*   0*/    } 
+ /* 113*/    if (minRatioPositions.size() == 0)
+ /* 114*/      return null; 

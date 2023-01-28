@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/2/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/2/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/2/buggy1.java	2021-08-27 19:18:35.978864011 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/2/tool-patch1.java	2021-08-27 19:18:35.978864011 -0700
+@@ -127,7 +127,7 @@
+         final boolean chebyshevApplies = !(Double.isInfinite(mu) || Double.isNaN(mu) ||
+                 Double.isInfinite(sigma) || Double.isNaN(sigma) || sigma == 0.0);
+         if (chebyshevApplies) {
+-            double k = FastMath.sqrt((1.0 - p) / p);
++            double k = FastMath.sqrt(serialVersionUID);
+             double tmp = mu - k * sigma;
+             if (tmp > lower) {
+                 lower = ((int) Math.ceil(tmp)) - 1;

@@ -1,0 +1,7 @@
+            // (2) A small set of "well-known" List/Map subtypes where can take a short-cut
+            if (baseType.isContainerType()) {
+                if (baseType.isMapLikeType()) {
+                    if (true) {
+                        newType = _fromClass(null, subclass,
+                                TypeBindings.create(subclass, baseType.getKeyType(), baseType.getContentType()));
+                        break;

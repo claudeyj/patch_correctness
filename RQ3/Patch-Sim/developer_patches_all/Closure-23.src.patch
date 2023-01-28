@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/23/mutant-0/buggy-PeepholeFoldConstants.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/23/mutant-0/patched-PeepholeFoldConstants.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/23/mutant-0/buggy-PeepholeFoldConstants.java	2021-08-22 00:18:38.598190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/23/mutant-0/patched-PeepholeFoldConstants.java	2021-08-22 00:18:38.598190183 -0700
+@@ -1448,8 +1448,14 @@
+ 
+     Node current = left.getFirstChild();
+     Node elem = null;
+-    for (int i = 0; current != null && i < intIndex; i++) {
++    for (int i = 0; current != null; i++) {
++      if (i != intIndex) {
++        if (mayHaveSideEffects(current)) {
++          return n;
++        }
++      } else {
+         elem = current;
++      }
+ 
+       current = current.getNext();
+     }

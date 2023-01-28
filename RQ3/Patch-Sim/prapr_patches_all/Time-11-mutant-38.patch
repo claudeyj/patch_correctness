@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/11/mutant-38/ori-DateTimeZoneBuilder.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/11/mutant-38/man-patched-DateTimeZoneBuilder.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/11/mutant-38/ori-DateTimeZoneBuilder.java	2021-08-23 09:23:49.192994677 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/11/mutant-38/man-patched-DateTimeZoneBuilder.java	2021-08-30 00:21:19.447544067 +0800
+@@ -1457,7 +1457,7 @@
+             if (tailZone != null) {
+                 if (tailZone.iStartRecurrence.getNameKey()
+                     .equals(tailZone.iEndRecurrence.getNameKey())) {
+-                    if (ZoneInfoCompiler.verbose()) {
++                    if (false) {
+                         System.out.println("Fixing duplicate recurrent name key - " +
+                                            tailZone.iStartRecurrence.getNameKey());
+                     }

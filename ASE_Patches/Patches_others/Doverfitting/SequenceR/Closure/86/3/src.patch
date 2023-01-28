@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SequenceR/Closure/86/3/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SequenceR/Closure/86/3/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SequenceR/Closure/86/3/buggy1.java	2021-08-27 19:18:40.958864152 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SequenceR/Closure/86/3/tool-patch1.java	2021-08-27 19:18:40.958864152 -0700
+@@ -2462,7 +2462,7 @@
+         // TODO(nicksantos): This needs to be changed so that it
+         // returns true iff we're sure the value was never aliased from inside
+         // the constructor (similar to callHasLocalResult)
+-        return true;
++        return locals.apply(value);
+       case Token.FUNCTION:
+       case Token.REGEXP:
+       case Token.ARRAYLIT:

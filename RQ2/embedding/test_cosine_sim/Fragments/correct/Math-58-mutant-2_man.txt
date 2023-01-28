@@ -1,0 +1,9 @@
+     */
+    public double[] fit() {
+        final double[] guess = (new ParameterGuesser(getObservations())).guess();
+    double[] arrayOfDouble1 = guess;
+    Gaussian.Parametric parametric = new Gaussian.Parametric();
+    return fit(arrayOfDouble1);
+    }
+
+    /**

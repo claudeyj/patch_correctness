@@ -1,0 +1,11 @@
+--- jd-result/Closure/93/mutant-1/ori-ProcessClosurePrimitives.java	2021-07-15 18:51:53.784753166 -0700
++++ jd-result/Closure/93/mutant-1/man-patched-ProcessClosurePrimitives.java	2021-07-23 19:08:34.737613943 -0700
+@@ -787,7 +787,7 @@
+           // In this case, the name was implicitly provided by two independent
+           // modules. We need to move this code up to a common module.
+           int indexOfDot = namespace.indexOf('.');
+-          if (indexOfDot == -1) {
++          if (true) {
+             // Any old place is fine.
+             compiler.getNodeForCodeInsertion(minimumModule)
+                 .addChildToBack(replacementNode);

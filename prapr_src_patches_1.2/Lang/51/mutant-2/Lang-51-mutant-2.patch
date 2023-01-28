@@ -1,0 +1,24 @@
+--- jd-result/Lang/51/mutant-2/a-BooleanUtils.java	2021-07-14 16:57:58.202122242 -0700
++++ jd-result/Lang/51/mutant-2/b-BooleanUtils.java	2021-07-14 16:58:00.590122309 -0700
+@@ -193,17 +193,17 @@
+ /* 666*/        return ((ch0 == 'o' || ch0 == 'O') && (ch1 == 'n' || ch1 == 'N'));
+ /*   0*/      case 3:
+ /* 671*/        ch = str.charAt(0);
+-/* 672*/        if (ch == 'y')
++/* 672*/        121;
+ /* 673*/          return ((str.charAt(1) == 'e' || str.charAt(1) == 'E') && (str.charAt(2) == 's' || str.charAt(2) == 'S')); 
+-/* 677*/        if (ch == 'Y')
+-/* 678*/          return ((str.charAt(1) == 'E' || str.charAt(1) == 'e') && (str.charAt(2) == 'S' || str.charAt(2) == 's')); 
+ /*   0*/      case 4:
++/*   0*/        while (true) {
+ /* 684*/        ch = str.charAt(0);
+ /* 685*/        if (ch == 't')
+ /* 686*/          return ((str.charAt(1) == 'r' || str.charAt(1) == 'R') && (str.charAt(2) == 'u' || str.charAt(2) == 'U') && (str.charAt(3) == 'e' || str.charAt(3) == 'E')); 
+ /* 691*/        if (ch == 'T')
+ /* 692*/          return ((str.charAt(1) == 'R' || str.charAt(1) == 'r') && (str.charAt(2) == 'U' || str.charAt(2) == 'u') && (str.charAt(3) == 'E' || str.charAt(3) == 'e')); 
+-/*   0*/        break;
++/* 699*/          return false;
++/*   0*/        } 
+ /*   0*/    } 
+ /* 699*/    return false;
+ /*   0*/  }

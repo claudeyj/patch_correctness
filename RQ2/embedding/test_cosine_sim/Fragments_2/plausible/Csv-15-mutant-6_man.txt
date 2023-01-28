@@ -1,0 +1,7 @@
+            out.append(value);
+        } else if (isQuoteCharacterSet()) {
+            // the original object is needed so can check for Number
+      printAndQuote(object, value, offset, len, out, this.ignoreEmptyLines);
+        } else if (isEscapeCharacterSet()) {
+            printAndEscape(value, offset, len, out);
+        } else {

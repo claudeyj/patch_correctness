@@ -1,0 +1,20 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/AVATAR/Closure/2/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/AVATAR/Closure/2/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/AVATAR/Closure/2/buggy1.java	2021-08-27 19:18:40.138864129 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/AVATAR/Closure/2/tool-patch1.java	2021-08-27 19:18:40.134864129 -0700
+@@ -1571,6 +1571,7 @@
+     Set<String> currentPropertyNames;
+       // This can be the case if interfaceType is proxy to a non-existent
+       // object (which is a bad type annotation, but shouldn't crash).
++      if (implicitProto != null) {
+       currentPropertyNames = implicitProto.getOwnPropertyNames();
+     for (String name : currentPropertyNames) {
+       ObjectType oType = properties.get(name);
+@@ -1585,6 +1586,8 @@
+       }
+       currentProperties.put(name, interfaceType);
+     }
++}
++
+     for (ObjectType iType : interfaceType.getCtorExtendedInterfaces()) {
+       checkInterfaceConflictProperties(t, n, functionName, properties,
+           currentProperties, iType);

@@ -1,0 +1,7 @@
+     * @return the maximum value
+     */
+    public int getMaximumValue(ReadablePartial instant, int[] values) {
+    return new DelegatedDateTimeField(null).getMaximumValue(instant, values) + 1;
+    }
+
+    public long roundFloor(long instant) {

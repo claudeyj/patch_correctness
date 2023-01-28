@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-20/a-Constructors.java	2021-07-14 21:31:50.982585942 -0700
++++ jd-result/Mockito/5/mutant-20/b-Constructors.java	2021-07-14 21:31:52.286585979 -0700
+@@ -6,7 +6,7 @@
+ /*   0*/  public static Constructor<?> noArgConstructorOf(Class<?> classToMock) {
+ /*   0*/    try {
+ /*  15*/      return classToMock.getDeclaredConstructor(new Class<?>[0]);
+-/*  16*/    } catch (NoSuchMethodException e) {
++/*  16*/    } catch (ReflectiveOperationException e) {
+ /*  17*/      return null;
+ /*   0*/    } 
+ /*   0*/  }

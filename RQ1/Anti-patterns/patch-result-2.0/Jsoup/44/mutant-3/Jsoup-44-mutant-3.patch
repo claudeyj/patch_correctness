@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/44/mutant-3/a-Node.java	2021-08-09 04:19:39.621555574 -0700
++++ jd-result-2.0/Jsoup/44/mutant-3/b-Node.java	2021-08-09 04:19:41.257555620 -0700
+@@ -171,7 +171,7 @@
+ /*   0*/  public Node before(Node node) {
+ /* 303*/    Validate.notNull(node);
+ /* 304*/    Validate.notNull(this.parentNode);
+-/* 306*/    this.parentNode.addChildren(this.siblingIndex, new Node[] { node });
++/* 306*/    this.parentNode.addChildren(childNodeSize(), new Node[] { node });
+ /* 307*/    return this;
+ /*   0*/  }
+ /*   0*/  

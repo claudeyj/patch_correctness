@@ -1,0 +1,7 @@
+    },
+    ScriptDataEscapedEndTagOpen {
+        void read(Tokeniser t, CharacterReader r) {
+            if (r.matchesLetter()) {
+                t.createTagPending(false);
+                t.tagPending.appendTagName(Character.toLowerCase(r.current()));
+                t.dataBuffer.append(r.current());

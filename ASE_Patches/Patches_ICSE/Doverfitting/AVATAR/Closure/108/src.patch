@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/108/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/108/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/108/buggy1.java	2021-08-27 19:18:39.178864102 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/108/tool-patch1.java	2021-08-27 19:18:39.178864102 -0700
+@@ -419,7 +419,7 @@
+                 compiler.getCodingConvention(),
+                 globalName,
+                 value,
+-                v.getJSDocInfo())
++                grandparent.getJSDocInfo())
+                 .useSourceInfoIfMissingFromForTree(n);
+             NodeUtil.setDebugInformation(
+                 newDecl.getFirstChild().getFirstChild(), n, name);

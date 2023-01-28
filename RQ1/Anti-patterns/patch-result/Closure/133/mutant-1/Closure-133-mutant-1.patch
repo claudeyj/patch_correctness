@@ -1,0 +1,11 @@
+--- jd-result/Closure/133/mutant-1/a-JsDocInfoParser.java	2021-07-14 21:56:03.622626933 -0700
++++ jd-result/Closure/133/mutant-1/b-JsDocInfoParser.java	2021-07-14 21:56:05.286626980 -0700
+@@ -854,7 +854,7 @@
+ /*1428*/    StringBuilder builder = new StringBuilder();
+ /*1429*/    builder.append(line);
+ /*1431*/    this.state = State.SEARCHING_ANNOTATION;
+-/*1432*/    token = next();
++/*1432*/    token = eatTokensUntilEOL();
+ /*   0*/    boolean ignoreStar = false;
+ /*1439*/    int lineStartChar = -1;
+ /*   0*/    while (true) {

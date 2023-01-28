@@ -1,0 +1,11 @@
+--- jd-result/Closure/12/mutant-5/ori-Node.java	2021-07-15 18:51:52.688753135 -0700
++++ jd-result/Closure/12/mutant-5/fixed-patched-Node.java	2021-07-21 20:49:43.586704336 -0700
+@@ -1458,7 +1458,7 @@
+         throw new IllegalStateException();
+       }
+       res = n.checkTreeEqualsImpl(n2);
+-      if (res != null) {
++      if (res == null) {
+         return res;
+       }
+     }

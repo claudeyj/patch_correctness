@@ -1,0 +1,375 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.jfree:jfreechart2:jar:2.0-pre1
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-surefire-plugin @ line 125, column 9
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -----------------------< org.jfree:jfreechart2 >------------------------
+[INFO] Building JFreeChart2 2.0-pre1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jfreechart2 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 41 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ jfreechart2 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 633 source files to /home/junyang/PR/SubjectPrograms/Chart/4/target/classes
+[INFO] /home/junyang/PR/SubjectPrograms/Chart/4/src/main/java/org/jfree/chart/plot/XYPlot.java: /home/junyang/PR/SubjectPrograms/Chart/4/src/main/java/org/jfree/chart/plot/XYPlot.java uses or overrides a deprecated API.
+[INFO] /home/junyang/PR/SubjectPrograms/Chart/4/src/main/java/org/jfree/chart/plot/XYPlot.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/junyang/PR/SubjectPrograms/Chart/4/src/main/java/org/jfree/data/DefaultKeyedValues2D.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/junyang/PR/SubjectPrograms/Chart/4/src/main/java/org/jfree/data/DefaultKeyedValues2D.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jfreechart2 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Chart/4/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ jfreechart2 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ jfreechart2 ---
+[INFO] Surefire report directory: /home/junyang/PR/SubjectPrograms/Chart/4/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.jfree.chart.block.junit.BlockPackageTests
+Tests run: 52, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec - in org.jfree.chart.block.junit.BlockPackageTests
+Running org.jfree.chart.junit.ChartPackageTests
+Tests run: 105, Failures: 0, Errors: 16, Skipped: 0, Time elapsed: 1.619 sec <<< FAILURE! - in org.jfree.chart.junit.ChartPackageTests
+testSerialization4(org.jfree.chart.junit.JFreeChartTests)  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.DateAxis.autoAdjustRange(DateAxis.java:1286)
+	at org.jfree.chart.axis.DateAxis.configure(DateAxis.java:719)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createTimeSeriesChart(ChartFactory.java:1893)
+	at org.jfree.chart.junit.JFreeChartTests.testSerialization4(JFreeChartTests.java:448)
+
+testDrawWithNullInfo(org.jfree.chart.junit.ScatterPlotTests)  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createScatterPlot(ChartFactory.java:1490)
+	at org.jfree.chart.junit.ScatterPlotTests.createChart(ScatterPlotTests.java:181)
+	at org.jfree.chart.junit.ScatterPlotTests.setUp(ScatterPlotTests.java:98)
+
+testSetSeriesToolTipGenerator(org.jfree.chart.junit.ScatterPlotTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createScatterPlot(ChartFactory.java:1490)
+	at org.jfree.chart.junit.ScatterPlotTests.createChart(ScatterPlotTests.java:181)
+	at org.jfree.chart.junit.ScatterPlotTests.setUp(ScatterPlotTests.java:98)
+
+testReplaceDataset(org.jfree.chart.junit.ScatterPlotTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createScatterPlot(ChartFactory.java:1490)
+	at org.jfree.chart.junit.ScatterPlotTests.createChart(ScatterPlotTests.java:181)
+	at org.jfree.chart.junit.ScatterPlotTests.setUp(ScatterPlotTests.java:98)
+
+testDrawWithNullInfo(org.jfree.chart.junit.TimeSeriesChartTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.DateAxis.autoAdjustRange(DateAxis.java:1286)
+	at org.jfree.chart.axis.DateAxis.configure(DateAxis.java:719)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createTimeSeriesChart(ChartFactory.java:1893)
+	at org.jfree.chart.junit.TimeSeriesChartTests.createChart(TimeSeriesChartTests.java:176)
+	at org.jfree.chart.junit.TimeSeriesChartTests.setUp(TimeSeriesChartTests.java:95)
+
+testSetSeriesToolTipGenerator(org.jfree.chart.junit.TimeSeriesChartTests)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.DateAxis.autoAdjustRange(DateAxis.java:1286)
+	at org.jfree.chart.axis.DateAxis.configure(DateAxis.java:719)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createTimeSeriesChart(ChartFactory.java:1893)
+	at org.jfree.chart.junit.TimeSeriesChartTests.createChart(TimeSeriesChartTests.java:176)
+	at org.jfree.chart.junit.TimeSeriesChartTests.setUp(TimeSeriesChartTests.java:95)
+
+testReplaceDataset(org.jfree.chart.junit.TimeSeriesChartTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.DateAxis.autoAdjustRange(DateAxis.java:1286)
+	at org.jfree.chart.axis.DateAxis.configure(DateAxis.java:719)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createTimeSeriesChart(ChartFactory.java:1893)
+	at org.jfree.chart.junit.TimeSeriesChartTests.createChart(TimeSeriesChartTests.java:176)
+	at org.jfree.chart.junit.TimeSeriesChartTests.setUp(TimeSeriesChartTests.java:95)
+
+testDrawWithNullInfo(org.jfree.chart.junit.XYAreaChartTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYAreaChart(ChartFactory.java:1619)
+	at org.jfree.chart.junit.XYAreaChartTests.createChart(XYAreaChartTests.java:178)
+	at org.jfree.chart.junit.XYAreaChartTests.setUp(XYAreaChartTests.java:96)
+
+testSetSeriesToolTipGenerator(org.jfree.chart.junit.XYAreaChartTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYAreaChart(ChartFactory.java:1619)
+	at org.jfree.chart.junit.XYAreaChartTests.createChart(XYAreaChartTests.java:178)
+	at org.jfree.chart.junit.XYAreaChartTests.setUp(XYAreaChartTests.java:96)
+
+testReplaceDataset(org.jfree.chart.junit.XYAreaChartTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYAreaChart(ChartFactory.java:1619)
+	at org.jfree.chart.junit.XYAreaChartTests.createChart(XYAreaChartTests.java:178)
+	at org.jfree.chart.junit.XYAreaChartTests.setUp(XYAreaChartTests.java:96)
+
+testDrawWithNullInfo(org.jfree.chart.junit.XYStepAreaChartTests)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYStepAreaChart(ChartFactory.java:1848)
+	at org.jfree.chart.junit.XYStepAreaChartTests.createChart(XYStepAreaChartTests.java:177)
+	at org.jfree.chart.junit.XYStepAreaChartTests.setUp(XYStepAreaChartTests.java:96)
+
+testSetSeriesToolTipGenerator(org.jfree.chart.junit.XYStepAreaChartTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYStepAreaChart(ChartFactory.java:1848)
+	at org.jfree.chart.junit.XYStepAreaChartTests.createChart(XYStepAreaChartTests.java:177)
+	at org.jfree.chart.junit.XYStepAreaChartTests.setUp(XYStepAreaChartTests.java:96)
+
+testReplaceDataset(org.jfree.chart.junit.XYStepAreaChartTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYStepAreaChart(ChartFactory.java:1848)
+	at org.jfree.chart.junit.XYStepAreaChartTests.createChart(XYStepAreaChartTests.java:177)
+	at org.jfree.chart.junit.XYStepAreaChartTests.setUp(XYStepAreaChartTests.java:96)
+
+testDrawWithNullInfo(org.jfree.chart.junit.XYStepChartTests)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.DateAxis.autoAdjustRange(DateAxis.java:1286)
+	at org.jfree.chart.axis.DateAxis.configure(DateAxis.java:719)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYStepChart(ChartFactory.java:1792)
+	at org.jfree.chart.junit.XYStepChartTests.createChart(XYStepChartTests.java:177)
+	at org.jfree.chart.junit.XYStepChartTests.setUp(XYStepChartTests.java:96)
+
+testSetSeriesToolTipGenerator(org.jfree.chart.junit.XYStepChartTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.DateAxis.autoAdjustRange(DateAxis.java:1286)
+	at org.jfree.chart.axis.DateAxis.configure(DateAxis.java:719)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYStepChart(ChartFactory.java:1792)
+	at org.jfree.chart.junit.XYStepChartTests.createChart(XYStepChartTests.java:177)
+	at org.jfree.chart.junit.XYStepChartTests.setUp(XYStepChartTests.java:96)
+
+testReplaceDataset(org.jfree.chart.junit.XYStepChartTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.DateAxis.autoAdjustRange(DateAxis.java:1286)
+	at org.jfree.chart.axis.DateAxis.configure(DateAxis.java:719)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createXYStepChart(ChartFactory.java:1792)
+	at org.jfree.chart.junit.XYStepChartTests.createChart(XYStepChartTests.java:177)
+	at org.jfree.chart.junit.XYStepChartTests.setUp(XYStepChartTests.java:96)
+
+Running org.jfree.chart.entity.junit.EntityPackageTests
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.jfree.chart.entity.junit.EntityPackageTests
+Running org.jfree.chart.urls.junit.UrlsPackageTests
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.jfree.chart.urls.junit.UrlsPackageTests
+Running org.jfree.chart.title.junit.TitlePackageTests
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.jfree.chart.title.junit.TitlePackageTests
+Running org.jfree.chart.util.junit.UtilPackageTests
+Tests run: 62, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.jfree.chart.util.junit.UtilPackageTests
+Running org.jfree.chart.needle.junit.NeedlePackageTests
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.jfree.chart.needle.junit.NeedlePackageTests
+Running org.jfree.chart.renderer.junit.RendererPackageTests
+Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.jfree.chart.renderer.junit.RendererPackageTests
+Running org.jfree.chart.renderer.xy.junit.RendererXYPackageTests
+Tests run: 178, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.jfree.chart.renderer.xy.junit.RendererXYPackageTests
+Running org.jfree.chart.renderer.category.junit.RendererCategoryPackageTests
+Tests run: 173, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.jfree.chart.renderer.category.junit.RendererCategoryPackageTests
+Running org.jfree.chart.plot.junit.PlotPackageTests
+Tests run: 159, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE! - in org.jfree.chart.plot.junit.PlotPackageTests
+testDrawRangeGridlines(org.jfree.chart.plot.junit.XYPlotTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.plot.XYPlot.configureDomainAxes(XYPlot.java:972)
+	at org.jfree.chart.plot.XYPlot.setRenderer(XYPlot.java:1644)
+	at org.jfree.chart.plot.XYPlot.setRenderer(XYPlot.java:1620)
+	at org.jfree.chart.plot.XYPlot.setRenderer(XYPlot.java:1607)
+	at org.jfree.chart.plot.junit.XYPlotTests.testDrawRangeGridlines(XYPlotTests.java:1056)
+
+Running org.jfree.chart.plot.dial.junit.DialPackageTests
+Tests run: 51, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.jfree.chart.plot.dial.junit.DialPackageTests
+Running org.jfree.chart.annotations.junit.AnnotationsPackageTests
+Tests run: 62, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.jfree.chart.annotations.junit.AnnotationsPackageTests
+Running org.jfree.chart.axis.junit.AxisPackageTests
+Tests run: 187, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 2.471 sec <<< FAILURE! - in org.jfree.chart.axis.junit.AxisPackageTests
+testXYAutoRange1(org.jfree.chart.axis.junit.LogAxisTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createScatterPlot(ChartFactory.java:1490)
+	at org.jfree.chart.axis.junit.LogAxisTests.testXYAutoRange1(LogAxisTests.java:260)
+
+testXYAutoRange2(org.jfree.chart.axis.junit.LogAxisTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createScatterPlot(ChartFactory.java:1490)
+	at org.jfree.chart.axis.junit.LogAxisTests.testXYAutoRange2(LogAxisTests.java:288)
+
+testXYAutoRange1(org.jfree.chart.axis.junit.NumberAxisTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createScatterPlot(ChartFactory.java:1490)
+	at org.jfree.chart.axis.junit.NumberAxisTests.testXYAutoRange1(NumberAxisTests.java:354)
+
+testXYAutoRange2(org.jfree.chart.axis.junit.NumberAxisTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createScatterPlot(ChartFactory.java:1490)
+	at org.jfree.chart.axis.junit.NumberAxisTests.testXYAutoRange2(NumberAxisTests.java:382)
+
+testAxisMargins(org.jfree.chart.axis.junit.ValueAxisTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.jfree.chart.plot.XYPlot.getDataRange(XYPlot.java:4493)
+	at org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis.java:434)
+	at org.jfree.chart.axis.NumberAxis.configure(NumberAxis.java:417)
+	at org.jfree.chart.axis.Axis.setPlot(Axis.java:1044)
+	at org.jfree.chart.plot.XYPlot.<init>(XYPlot.java:660)
+	at org.jfree.chart.ChartFactory.createScatterPlot(ChartFactory.java:1490)
+	at org.jfree.chart.axis.junit.ValueAxisTests.testAxisMargins(ValueAxisTests.java:234)
+
+Running org.jfree.chart.labels.junit.LabelsPackageTests
+Tests run: 99, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in org.jfree.chart.labels.junit.LabelsPackageTests
+Running org.jfree.chart.imagemap.junit.ImageMapPackageTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.jfree.chart.imagemap.junit.ImageMapPackageTests
+Running org.jfree.data.function.junit.DataFunctionPackageTests
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.jfree.data.function.junit.DataFunctionPackageTests
+Running org.jfree.data.junit.DataPackageTests
+Tests run: 102, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in org.jfree.data.junit.DataPackageTests
+Running org.jfree.data.general.junit.DataGeneralPackageTests
+Tests run: 68, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.jfree.data.general.junit.DataGeneralPackageTests
+Running org.jfree.data.statistics.junit.DataStatisticsPackageTests
+Tests run: 84, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.jfree.data.statistics.junit.DataStatisticsPackageTests
+Running org.jfree.data.time.junit.DataTimePackageTests
+Tests run: 278, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.121 sec - in org.jfree.data.time.junit.DataTimePackageTests
+Running org.jfree.data.time.ohlc.junit.OHLCPackageTests
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.jfree.data.time.ohlc.junit.OHLCPackageTests
+Running org.jfree.data.xy.junit.DataXYPackageTests
+Tests run: 240, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in org.jfree.data.xy.junit.DataXYPackageTests
+Running org.jfree.data.gantt.junit.DataGanttPackageTests
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.jfree.data.gantt.junit.DataGanttPackageTests
+Running org.jfree.data.category.junit.DataCategoryPackageTests
+Tests run: 49, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.jfree.data.category.junit.DataCategoryPackageTests
+
+Results :
+
+Tests in error: 
+  LogAxisTests.testXYAutoRange1:260 » NullPointer
+  LogAxisTests.testXYAutoRange2:288 » NullPointer
+  NumberAxisTests.testXYAutoRange1:354 » NullPointer
+  NumberAxisTests.testXYAutoRange2:382 » NullPointer
+  ValueAxisTests.testAxisMargins:234 » NullPointer
+  JFreeChartTests.testSerialization4:448 » NullPointer
+  ScatterPlotTests.setUp:98->createChart:181 » NullPointer
+  ScatterPlotTests.setUp:98->createChart:181 » NullPointer
+  ScatterPlotTests.setUp:98->createChart:181 » NullPointer
+  TimeSeriesChartTests.setUp:95->createChart:176 » NullPointer
+  TimeSeriesChartTests.setUp:95->createChart:176 » NullPointer
+  TimeSeriesChartTests.setUp:95->createChart:176 » NullPointer
+  XYAreaChartTests.setUp:96->createChart:178 » NullPointer
+  XYAreaChartTests.setUp:96->createChart:178 » NullPointer
+  XYAreaChartTests.setUp:96->createChart:178 » NullPointer
+  XYStepAreaChartTests.setUp:96->createChart:177 » NullPointer
+  XYStepAreaChartTests.setUp:96->createChart:177 » NullPointer
+  XYStepAreaChartTests.setUp:96->createChart:177 » NullPointer
+  XYStepChartTests.setUp:96->createChart:177 » NullPointer
+  XYStepChartTests.setUp:96->createChart:177 » NullPointer
+  XYStepChartTests.setUp:96->createChart:177 » NullPointer
+  XYPlotTests.testDrawRangeGridlines:1056 » NullPointer
+
+Tests run: 2187, Failures: 0, Errors: 22, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.808 s
+[INFO] Finished at: 2021-07-26T18:14:45-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test (default-test) on project jfreechart2: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/junyang/PR/SubjectPrograms/Chart/4/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

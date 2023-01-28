@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-201.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -107,7 +107,7 @@
+ 
+         Object result = null;
+         KeyedObjects rowData = (KeyedObjects) this.rows.get(row);
+-        if (rowData != null) {
++    if (rowData == null) {
+             Comparable columnKey = (Comparable) this.columnKeys.get(column);
+             if (columnKey != null) {
+                 result = rowData.getObject(columnKey);

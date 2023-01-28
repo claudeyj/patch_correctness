@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-26.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -449,7 +449,7 @@
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.right * width);
+         }
+-        return result;
++    return width;
+     }
+     
+     /**

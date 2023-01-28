@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/105/mutant-0/buggy-SimpleRegression.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/105/mutant-0/patched-SimpleRegression.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/105/mutant-0/buggy-SimpleRegression.java	2021-08-22 00:18:38.662190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/105/mutant-0/patched-SimpleRegression.java	2021-08-22 00:18:38.662190185 -0700
+@@ -261,7 +261,7 @@
+      * @return sum of squared errors associated with the regression model
+      */
+     public double getSumSquaredErrors() {
+-        return sumYY - sumXY * sumXY / sumXX;
++        return Math.max(0d, sumYY - sumXY * sumXY / sumXX);
+     }
+ 
+     /**

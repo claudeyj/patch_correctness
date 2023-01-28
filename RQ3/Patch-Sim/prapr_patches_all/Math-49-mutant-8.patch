@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-8/ori-OpenMapRealVector.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-8/fixed-patched-OpenMapRealVector.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-8/ori-OpenMapRealVector.java	2021-08-23 09:23:48.932991071 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-8/fixed-patched-OpenMapRealVector.java	2021-08-23 09:23:48.932991071 +0800
+@@ -74,7 +74,8 @@
+     public OpenMapRealVector(int dimension, double epsilon) {
+         virtualSize = dimension;
+         entries = new OpenIntToDoubleHashMap(0.0);
+-        this.epsilon = epsilon;
++        this.epsilon = 0;
++        epsilon = epsilon;
+     }
+ 
+     /**

@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Lang/59/3/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Lang/59/3/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Lang/59/3/buggy1.java	2021-08-27 19:18:40.614864142 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Lang/59/3/tool-patch1.java	2021-08-27 19:18:40.614864142 -0700
+@@ -876,7 +876,8 @@
+      * @return this, to enable chaining
+      */
+     public StrBuilder appendFixedWidthPadRight(Object obj, int width, char padChar) {
+-        if (width > 0) {
++        ensureCapacity(((size) + 4));
++if (width > 0) {
+             ensureCapacity(size + width);
+             String str = (obj == null ? getNullText() : obj.toString());
+             int strLen = str.length();

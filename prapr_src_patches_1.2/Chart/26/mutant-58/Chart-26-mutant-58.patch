@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-58/a-Axis.java	2021-07-14 18:31:20.006280314 -0700
++++ jd-result/Chart/26/mutant-58/b-Axis.java	2021-07-14 18:31:21.438280354 -0700
+@@ -487,6 +487,8 @@
+ /*   0*/    } 
+ /*1190*/    if (plotState != null && hotspot != null) {
+ /*1191*/      ChartRenderingInfo owner = plotState.getOwner();
++/*1192*/      if (owner == null)
++/*1192*/        return state; 
+ /*1192*/      EntityCollection entities = owner.getEntityCollection();
+ /*1193*/      if (entities != null)
+ /*1194*/        entities.add(new AxisLabelEntity(this, hotspot, this.labelToolTip, this.labelURL)); 

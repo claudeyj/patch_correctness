@@ -1,0 +1,14 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-7/a-ObjectReader.java	2021-08-09 04:31:55.021576325 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-7/b-ObjectReader.java	2021-08-09 04:31:56.669576372 -0700
+@@ -769,7 +769,10 @@
+ /*1599*/          return deser;
+ /*1601*/        } catch (JsonProcessingException jsonProcessingException) {} 
+ /*   0*/       }
+-/*1605*/    return deser;
++/*1605*/    if (deser == null) {
++/*1605*/        throw new RuntimeException(); 
++/*   0*/       }
++/*1605*/    return null;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected Object _detectBindAndClose(byte[] src, int offset, int length) throws IOException {

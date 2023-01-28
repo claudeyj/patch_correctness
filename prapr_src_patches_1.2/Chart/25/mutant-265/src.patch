@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-265/ori-StatisticalBarRenderer.java	2021-07-15 18:51:50.720753080 -0700
++++ jd-result/Chart/25/mutant-265/patched-StatisticalBarRenderer.java	2021-07-21 07:21:48.578213020 -0700
+@@ -203,7 +203,7 @@
+         }
+         StatisticalCategoryDataset statData = (StatisticalCategoryDataset) data;
+ 
+-        PlotOrientation orientation = plot.getOrientation();
++    PlotOrientation orientation = null;
+         if (orientation == PlotOrientation.HORIZONTAL) {
+             drawHorizontalItem(g2, state, dataArea, plot, domainAxis, 
+                     rangeAxis, statData, row, column);

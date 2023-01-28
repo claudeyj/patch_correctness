@@ -1,0 +1,11 @@
+--- jd-result/Closure/66/mutant-2/ori-TypeCheck.java	2021-07-15 18:51:53.908753170 -0700
++++ jd-result/Closure/66/mutant-2/patched-TypeCheck.java	2021-07-21 08:00:53.590279191 -0700
+@@ -1910,7 +1910,7 @@
+    * @return a number between 0.0 and 100.0
+    */
+   double getTypedPercent() {
+-    int total = nullCount + unknownCount + typedCount;
++    int total = this.noTypeCheckSection + this.unknownCount + this.typedCount;
+     if (total == 0) {
+       return 0.0;
+     } else {

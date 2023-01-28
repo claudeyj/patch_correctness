@@ -1,0 +1,85 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 02:41:21 PDT 2021
+Number of Plausible Fixes: 9
+Total Number of Patches: 2099
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local ratio is replaced by local rhs to be used
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 85
+	Rank: 1
+	Total Rank: 663
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local minValue is replaced by access to field epsilon
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 62
+	Rank: 3
+	Total Rank: 698
+	Dump: mutant-7.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local minValue is replaced by access to field DEFAULT_EPSILON
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 62
+	Rank: 3
+	Total Rank: 698
+	Dump: mutant-8.class
+------------------------------------------------
+4.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.optimization.linear.SimplexTableau::getEntry(II)D is replaced with the used of default value 0.D
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 63
+	Rank: 6
+	Total Rank: 754
+	Dump: mutant-4.class
+------------------------------------------------
+5.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.optimization.linear.SimplexTableau::getEntry(II)D is replaced with the used of local minValue
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 63
+	Rank: 6
+	Total Rank: 754
+	Dump: mutant-6.class
+------------------------------------------------
+6.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.optimization.linear.SimplexTableau::getEntry(II)D is replaced with the used of field DEFAULT_EPSILON
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 63
+	Rank: 6
+	Total Rank: 754
+	Dump: mutant-5.class
+------------------------------------------------
+7.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field epsilon is replaced by access to local entry
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 82
+	Rank: 7
+	Total Rank: 764
+	Dump: mutant-1.class
+------------------------------------------------
+8.
+	Mutator: ConditionalsBoundaryMutator
+	Description: changed conditional boundary
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 84
+	Rank: 9
+	Total Rank: 772
+	Dump: mutant-9.class
+------------------------------------------------
+9.
+	Mutator: ConditionalsBoundaryMutator
+	Description: changed conditional boundary
+	File Name: org/apache/commons/math/optimization/linear/SimplexSolver.java
+	Line Number: 82
+	Rank: 9
+	Total Rank: 772
+	Dump: mutant-2.class
+------------------------------------------------

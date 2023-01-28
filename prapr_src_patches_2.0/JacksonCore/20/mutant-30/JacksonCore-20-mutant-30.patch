@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/20/mutant-30/a-CharsToNameCanonicalizer.java	2021-08-09 04:03:17.365527857 -0700
++++ jd-result-2.0/JacksonCore/20/mutant-30/b-CharsToNameCanonicalizer.java	2021-08-09 04:03:18.853527899 -0700
+@@ -79,7 +79,7 @@
+ /* 268*/    this._flags = flags;
+ /* 269*/    this._canonicalize = JsonFactory.Feature.CANONICALIZE_FIELD_NAMES.enabledIn(flags);
+ /* 271*/    this._symbols = symbols;
+-/* 272*/    this._buckets = buckets;
++/* 272*/    parent._buckets = buckets;
+ /* 273*/    this._size = size;
+ /* 274*/    this._hashSeed = hashSeed;
+ /* 276*/    int arrayLen = symbols.length;

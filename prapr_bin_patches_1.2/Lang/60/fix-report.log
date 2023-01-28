@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 00:15:35 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 438
+================================================
+1.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local this is replaced a call this.minimizeCapacity()
+	File Name: org/apache/commons/lang/text/StrBuilder.java
+	Line Number: 1672
+	Rank: 1
+	Total Rank: 22
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local this is replaced a call this.minimizeCapacity()
+	File Name: org/apache/commons/lang/text/StrBuilder.java
+	Line Number: 1209
+	Rank: 2
+	Total Rank: 80
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.lang.text.StrBuilder.size is replaced by the call to org.apache.commons.lang.text.StrBuilder::capacity()I
+	File Name: org/apache/commons/lang/text/StrBuilder.java
+	Line Number: 1114
+	Rank: 3
+	Total Rank: 296
+	Dump: mutant-2.class
+------------------------------------------------

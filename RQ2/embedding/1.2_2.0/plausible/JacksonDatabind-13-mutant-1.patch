@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/13/mutant-1/ori-StdDeserializer.java	2021-08-08 21:02:01.992814635 -0700
++++ jd-result-2.0/JacksonDatabind/13/mutant-1/man-patched-StdDeserializer.java	2021-08-12 16:15:56.490082410 -0700
+@@ -413,7 +413,7 @@
+             }
+         }
+         if (t == JsonToken.VALUE_NULL) {
+-            return (Integer) getNullValue();
++      return 0;
+         }
+         // Issue#381
+         if (t == JsonToken.START_ARRAY && ctxt.isEnabled(DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS)) {

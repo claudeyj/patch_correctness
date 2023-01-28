@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Chart/18/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Chart/18/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Chart/18/buggy1.java	2021-08-27 19:18:38.866864093 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Chart/18/tool-patch1.java	2021-08-27 19:18:38.862864093 -0700
+@@ -315,7 +315,7 @@
+     public void removeValue(int index) {
+         this.keys.remove(index);
+         this.values.remove(index);
+-        if (index < this.keys.size()) {
++        if (index <= this.keys.size()) {
+         rebuildIndex();
+         }
+     }

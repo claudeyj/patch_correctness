@@ -1,0 +1,7 @@
+     */
+    @Override
+    public void write(byte[] wBuf, int wOffset, int numToWrite) throws IOException {
+    if (this.currBytes + LONGFILE_ERROR > this.currSize) {
+            throw new IOException("request to write '" + numToWrite
+                                  + "' bytes exceeds size in header of '"
+                                  + currSize + "' bytes for entry '"

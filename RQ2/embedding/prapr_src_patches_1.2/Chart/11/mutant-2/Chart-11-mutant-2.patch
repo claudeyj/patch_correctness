@@ -1,0 +1,11 @@
+--- jd-result/Chart/11/mutant-2/a-ShapeUtilities.java	2021-07-14 17:02:41.394130233 -0700
++++ jd-result/Chart/11/mutant-2/b-ShapeUtilities.java	2021-07-14 17:02:42.714130270 -0700
+@@ -97,7 +97,7 @@
+ /* 271*/    if (p1.getWindingRule() != p2.getWindingRule())
+ /* 272*/      return false; 
+ /* 274*/    PathIterator iterator1 = p1.getPathIterator(null);
+-/* 275*/    PathIterator iterator2 = p1.getPathIterator(null);
++/* 275*/    PathIterator iterator2 = p2.getPathIterator(null);
+ /* 276*/    double[] d1 = new double[6];
+ /* 277*/    double[] d2 = new double[6];
+ /* 278*/    boolean done = (iterator1.isDone() && iterator2.isDone());

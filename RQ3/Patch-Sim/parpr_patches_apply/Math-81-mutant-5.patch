@@ -1,0 +1,11 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-5.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1068,7 +1068,7 @@
+                                                   Math.min(work[l - 9],
+                                                            dMin2 + work[l - 2 * pingPong])))) {
+             // step 3: choose a shift
+-            computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
++      computeShiftIncrement(this.pingPong, deflatedEnd, end - deflatedEnd);
+ 
+             // step 4a: dqds
+             for (boolean loop = true; loop;) {

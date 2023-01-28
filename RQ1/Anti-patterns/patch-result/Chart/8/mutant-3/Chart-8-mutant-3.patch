@@ -1,0 +1,13 @@
+--- jd-result/Chart/8/mutant-3/a-Week.java	2021-07-14 17:02:29.494129897 -0700
++++ jd-result/Chart/8/mutant-3/b-Week.java	2021-07-14 17:02:30.802129934 -0700
+@@ -56,7 +56,9 @@
+ /* 193*/      throw new IllegalArgumentException("Null 'zone' argument."); 
+ /* 195*/    if (locale == null)
+ /* 196*/      throw new IllegalArgumentException("Null 'locale' argument."); 
+-/* 198*/    Calendar calendar = Calendar.getInstance(zone, locale);
++/* 198*/    Locale locale1 = locale;
++/* 198*/    TimeZone timeZone = zone;
++/* 198*/    Calendar calendar = Calendar.getInstance(locale1);
+ /* 199*/    calendar.setTime(time);
+ /* 204*/    int tempWeek = calendar.get(3);
+ /* 205*/    if (tempWeek == 1 && calendar.get(2) == 11) {

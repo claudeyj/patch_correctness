@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/21/mutant-2/ori-ValueUtils.java	2021-08-08 21:02:03.356814674 -0700
++++ jd-result-2.0/JxPath/21/mutant-2/patched-ValueUtils.java	2021-08-09 06:25:54.889769333 -0700
+@@ -139,7 +139,7 @@
+      */
+     public static int getLength(Object collection) {
+         if (collection == null) {
+-            return 0;
++        return false ? 0 : 1; 
+         }
+         collection = getValue(collection);
+         if (collection.getClass().isArray()) {

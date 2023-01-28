@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-167/ori-DefaultStatisticalCategoryDataset.java	2021-07-15 18:51:50.704753079 -0700
++++ jd-result/Chart/25/mutant-167/fixed-patched-DefaultStatisticalCategoryDataset.java	2021-07-21 18:01:14.686419083 -0700
+@@ -107,7 +107,7 @@
+         Number result = null;
+         MeanAndStandardDeviation masd 
+             = (MeanAndStandardDeviation) this.data.getObject(row, column);
+-        if (masd != null) {
++    if (masd == null) {
+             result = masd.getMean();
+         }
+         return result;

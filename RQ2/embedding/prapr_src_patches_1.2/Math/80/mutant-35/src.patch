@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-35/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.698297157 -0700
++++ jd-result/Math/80/mutant-35/fixed-patched-EigenDecompositionImpl.java	2021-07-24 01:52:06.654297156 -0700
+@@ -1130,7 +1130,7 @@
+      * @return true if qd array was flipped
+      */
+     private boolean flipIfWarranted(final int n, final int step) {
+-        if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
++    if (1.5D * this.work[this.pingPong] < this.work[4 * (n - 1) + step]) {
+             // flip array
+             int j = 4 * n - 1;
+             for (int i = 0; i < j; i += 4) {

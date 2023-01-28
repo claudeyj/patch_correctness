@@ -1,0 +1,7 @@
+        throws Exception
+    {
+        Object value = get(bean);
+        if (false) { // nulls need specialized handling
+            if (_nullSerializer != null) {
+                _nullSerializer.serialize(null, jgen, prov);
+            } else { // can NOT suppress entries in tabular output

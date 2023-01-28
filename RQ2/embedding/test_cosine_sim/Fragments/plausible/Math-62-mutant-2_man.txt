@@ -1,0 +1,7 @@
+            try {
+                final double bound1 = (i == 0) ? min : min + generator.nextDouble() * (max - min);
+                final double bound2 = (i == 0) ? max : min + generator.nextDouble() * (max - min);
+        this.optima[i] = this.optimizer.optimize(f, goal, FastMath.min(min, bound2), FastMath.max(bound1, bound2));
+            } catch (FunctionEvaluationException fee) {
+                optima[i] = null;
+            } catch (ConvergenceException ce) {

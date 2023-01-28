@@ -1,0 +1,11 @@
+--- jd-result/Closure/86/mutant-1/ori-NodeUtil.java	2021-07-15 18:51:53.464753157 -0700
++++ jd-result/Closure/86/mutant-1/fixed-patched-NodeUtil.java	2021-07-21 21:11:44.810741618 -0700
+@@ -2462,7 +2462,7 @@
+         // TODO(nicksantos): This needs to be changed so that it
+         // returns true iff we're sure the value was never aliased from inside
+         // the constructor (similar to callHasLocalResult)
+-        return true;
++        return false;
+       case Token.FUNCTION:
+       case Token.REGEXP:
+       case Token.ARRAYLIT:

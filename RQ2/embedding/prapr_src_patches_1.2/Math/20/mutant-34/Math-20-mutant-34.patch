@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-34/a-CMAESOptimizer.java	2021-07-14 09:07:14.381325257 -0700
++++ jd-result/Math/20/mutant-34/b-CMAESOptimizer.java	2021-07-14 09:07:15.909325300 -0700
+@@ -349,7 +348,7 @@
+ /* 605*/    this.ccov1Sep = Math.min(1.0D, this.ccov1 * (this.dimension + 1.5D) / 3.0D);
+ /* 606*/    this.ccovmuSep = Math.min(1.0D - this.ccov1, this.ccovmu * (this.dimension + 1.5D) / 3.0D);
+ /* 607*/    this.chiN = Math.sqrt(this.dimension) * (1.0D - 1.0D / 4.0D * this.dimension + 1.0D / 21.0D * this.dimension * this.dimension);
+-/* 610*/    this.xmean = MatrixUtils.createColumnRealMatrix(guess);
++/* 610*/    this.xmean = insigma;
+ /* 612*/    this.diagD = insigma.scalarMultiply(1.0D / this.sigma);
+ /* 613*/    this.diagC = square(this.diagD);
+ /* 614*/    this.pc = zeros(this.dimension, 1);

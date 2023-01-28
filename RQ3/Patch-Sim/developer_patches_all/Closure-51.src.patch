@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/51/mutant-0/buggy-CodeConsumer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/51/mutant-0/patched-CodeConsumer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/51/mutant-0/buggy-CodeConsumer.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/51/mutant-0/patched-CodeConsumer.java	2021-08-22 00:18:38.610190184 -0700
+@@ -238,7 +238,7 @@
+       add(" ");
+     }
+ 
+-    if ((long) x == x) {
++    if ((long) x == x && !isNegativeZero(x)) {
+       long value = (long) x;
+       long mantissa = value;
+       int exp = 0;

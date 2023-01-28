@@ -1,0 +1,49 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 22:54:34 PDT 2021
+Number of Plausible Fixes: 5
+Total Number of Patches: 205
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.String::charAt(I)C is replaced with the used of default value '\0'
+	File Name: org/apache/commons/lang/NumberUtils.java
+	Line Number: 193
+	Rank: 2
+	Total Rank: 177
+	Dump: mutant-4.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.String::charAt(I)C is replaced with the used of local lastChar
+	File Name: org/apache/commons/lang/NumberUtils.java
+	Line Number: 193
+	Rank: 2
+	Total Rank: 177
+	Dump: mutant-5.class
+------------------------------------------------
+3.
+	Mutator: LocalNameMutator
+	Description: local numeric is replaced by local mant to be used
+	File Name: org/apache/commons/lang/NumberUtils.java
+	Line Number: 193
+	Rank: 4
+	Total Rank: 199
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local numeric is replaced by local val to be used
+	File Name: org/apache/commons/lang/NumberUtils.java
+	Line Number: 193
+	Rank: 4
+	Total Rank: 199
+	Dump: mutant-1.class
+------------------------------------------------
+5.
+	Mutator: RemoveSwitchMutator
+	Description: RemoveSwitch 5 mutation
+	File Name: org/apache/commons/lang/NumberUtils.java
+	Line Number: 190
+	Rank: 5
+	Total Rank: 205
+	Dump: mutant-3.class
+------------------------------------------------

@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-46/ori-EigenDecompositionImpl.java	2021-07-24 01:52:11.130297282 -0700
++++ jd-result/Math/81/mutant-46/patched-EigenDecompositionImpl.java	2021-07-24 01:52:11.130297282 -0700
+@@ -1441,7 +1441,7 @@
+             return;
+         }
+ 
+-        int nn = 4 * end + pingPong - 1;
++    int nn = 4 * end - this.pingPong - 1;
+         switch (deflated) {
+ 
+         case 0 : // no realEigenvalues deflated.

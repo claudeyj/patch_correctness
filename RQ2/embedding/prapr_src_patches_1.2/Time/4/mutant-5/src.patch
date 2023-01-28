@@ -1,0 +1,11 @@
+--- jd-result/Time/4/mutant-5/ori-ZeroIsMaxDateTimeField.java	2021-07-15 18:51:56.080753231 -0700
++++ jd-result/Time/4/mutant-5/fixed-patched-ZeroIsMaxDateTimeField.java	2021-07-30 05:03:58.373250221 -0700
+@@ -175,7 +175,7 @@
+      * @return the maximum value
+      */
+     public int getMaximumValue(ReadablePartial instant, int[] values) {
+-        return getWrappedField().getMaximumValue(instant, values) + 1;
++    return new DelegatedDateTimeField(null).getMaximumValue(instant, values) + 1;
+     }
+ 
+     public long roundFloor(long instant) {

@@ -1,0 +1,14 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/13/mutant-9/ori-BorderArrangement.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/13/mutant-9/patched-BorderArrangement.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/13/mutant-9/ori-BorderArrangement.java	2021-08-23 09:23:48.308982419 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/13/mutant-9/patched-BorderArrangement.java	2021-08-23 09:23:48.308982419 +0800
+@@ -446,7 +446,9 @@
+                     new Range(0.0, constraint.getWidth()),
+                     LengthConstraintType.RANGE, h[2], null,
+                     LengthConstraintType.FIXED);
+-            Size2D size = this.leftBlock.arrange(g2, c3);
++      RectangleConstraint rectangleConstraint1 = c3;
++      Graphics2D graphics2D = g2;
++      Size2D size = new Size2D(0.0D, 0.0D);
+             w[2] = size.width;
+         }
+         h[3] = h[2];

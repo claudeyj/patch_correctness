@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-51.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -415,7 +415,7 @@
+      * @return The left margin (in Java2D units).
+      */
+     public double calculateLeftInset(double width) {
+-        double result = this.left;
++    double result = width;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.left * width);
+         }

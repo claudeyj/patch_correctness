@@ -1,0 +1,112 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 20:01:36 PDT 2021
+Number of Plausible Fixes: 12
+Total Number of Patches: 697
+================================================
+1.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local i is replaced by access to field PAD_LIMIT
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3675
+	Rank: 1
+	Total Rank: 284
+	Dump: mutant-6.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local i is replaced by local textIndex to be used
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3676
+	Rank: 6
+	Total Rank: 606
+	Dump: mutant-8.class
+------------------------------------------------
+3.
+	Mutator: LocalNameMutator
+	Description: local i is replaced by local replacementLength to be used
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3675
+	Rank: 6
+	Total Rank: 606
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local i is replaced by local replaceIndex to be used
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3676
+	Rank: 6
+	Total Rank: 606
+	Dump: mutant-7.class
+------------------------------------------------
+5.
+	Mutator: LocalNameMutator
+	Description: local i is replaced by local searchLength to be used
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3675
+	Rank: 6
+	Total Rank: 606
+	Dump: mutant-1.class
+------------------------------------------------
+6.
+	Mutator: LocalNameMutator
+	Description: local replacementList is replaced by local searchList to be used
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3676
+	Rank: 6
+	Total Rank: 606
+	Dump: mutant-11.class
+------------------------------------------------
+7.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3675
+	Rank: 7
+	Total Rank: 624
+	Dump: mutant-12.class
+------------------------------------------------
+8.
+	Mutator: NonVoidMethodCallGuardMutator
+	Description: the call to java.lang.String::length()I is guarded using default value 0
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3676
+	Rank: 8
+	Total Rank: 641
+	Dump: mutant-9.class
+------------------------------------------------
+9.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.String::length()I is replaced with the used of field INDEX_NOT_FOUND
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3676
+	Rank: 11
+	Total Rank: 688
+	Dump: mutant-4.class
+------------------------------------------------
+10.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.String::length()I is replaced with the used of default value 0
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3676
+	Rank: 11
+	Total Rank: 688
+	Dump: mutant-5.class
+------------------------------------------------
+11.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.String::length()I is replaced with the used of local timeToLive
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3676
+	Rank: 11
+	Total Rank: 688
+	Dump: mutant-3.class
+------------------------------------------------
+12.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/apache/commons/lang3/StringUtils.java
+	Line Number: 3675
+	Rank: 12
+	Total Rank: 697
+	Dump: mutant-10.class
+------------------------------------------------

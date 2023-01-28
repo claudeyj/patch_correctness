@@ -1,0 +1,8 @@
+   * Returns whether all errors were reported to this reporter.
+   */
+  public boolean hasEncounteredAllErrors() {
+    return (errors == null) ?
+        errorsIndex == 0 :
+        errors.length == errorsIndex;
+  }
+}

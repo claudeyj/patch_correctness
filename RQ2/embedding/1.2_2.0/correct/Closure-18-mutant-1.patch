@@ -1,0 +1,11 @@
+--- jd-result/Closure/18/mutant-1/ori-Compiler.java	2021-07-15 18:51:52.692753135 -0700
++++ jd-result/Closure/18/mutant-1/man-patched-Compiler.java	2021-07-23 02:35:50.227173362 -0700
+@@ -1285,7 +1285,7 @@
+ 
+       // Check if the sources need to be re-ordered.
+       boolean staleInputs = false;
+-      if (options.dependencyOptions.needsManagement() && options.closurePass) {
++      if (options.dependencyOptions.needsManagement()) {
+         for (CompilerInput input : inputs) {
+           // Forward-declare all the provided types, so that they
+           // are not flagged even if they are dropped from the process.

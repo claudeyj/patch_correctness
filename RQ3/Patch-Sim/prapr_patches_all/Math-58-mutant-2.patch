@@ -1,0 +1,14 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/58/mutant-2/ori-GaussianFitter.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/58/mutant-2/patched-GaussianFitter.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/58/mutant-2/ori-GaussianFitter.java	2021-08-23 09:23:48.956991404 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/58/mutant-2/patched-GaussianFitter.java	2021-08-23 09:23:48.956991404 +0800
+@@ -118,7 +118,9 @@
+      */
+     public double[] fit() {
+         final double[] guess = (new ParameterGuesser(getObservations())).guess();
+-        return fit(new Gaussian.Parametric(), guess);
++    double[] arrayOfDouble1 = guess;
++    Gaussian.Parametric parametric = new Gaussian.Parametric();
++    return fit(arrayOfDouble1);
+     }
+ 
+     /**

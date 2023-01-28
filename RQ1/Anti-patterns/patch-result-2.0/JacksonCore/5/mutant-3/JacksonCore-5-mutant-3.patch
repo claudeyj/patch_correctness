@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/5/mutant-3/a-NumberInput.java	2021-08-09 04:01:25.981524713 -0700
++++ jd-result-2.0/JacksonCore/5/mutant-3/b-NumberInput.java	2021-08-09 04:01:27.665524761 -0700
+@@ -59,7 +59,7 @@
+ /*  88*/    if (offset < len) {
+ /*  89*/      c = s.charAt(offset++);
+ /*  90*/      if (c > '9' || c < '0') {
+-/*  91*/          return Integer.parseInt(s); 
++/*  91*/          return 0; 
+ /*   0*/         }
+ /*  93*/      num = num * 10 + c - 48;
+ /*  94*/      if (offset < len) {

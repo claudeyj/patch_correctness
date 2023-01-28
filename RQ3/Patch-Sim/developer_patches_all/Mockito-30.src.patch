@@ -1,0 +1,28 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/30/mutant-0/buggy-ReturnsSmartNulls.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/30/mutant-0/patched-ReturnsSmartNulls.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/30/mutant-0/buggy-ReturnsSmartNulls.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/30/mutant-0/patched-ReturnsSmartNulls.java	2021-08-22 00:18:38.706190186 -0700
+@@ -53,7 +53,7 @@
+                 return "SmartNull returned by unstubbed " + formatMethodCall()  + " method on mock";
+             }
+ 
+-            new Reporter().smartNullPointerException(location);
++            new Reporter().smartNullPointerException(obj, location);
+             return null;
+         }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/30/mutant-0/buggy-Reporter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/30/mutant-0/patched-Reporter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/30/mutant-0/buggy-Reporter.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/30/mutant-0/patched-Reporter.java	2021-08-22 00:18:38.706190186 -0700
+@@ -435,10 +435,11 @@
+                 ));
+     }
+ 
+-    public void smartNullPointerException(Location location) {
++    public void smartNullPointerException(Object obj, Location location) {
+         throw new SmartNullPointerException(join(
+                 "You have a NullPointerException here:",
+                 new Location(),
++                obj,
+                 "Because this method was *not* stubbed correctly:",
+                 location,
+                 ""

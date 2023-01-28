@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/53/mutant-4/ori-TypeFactory.java	2021-08-08 21:02:02.364814646 -0700
++++ jd-result-2.0/JacksonDatabind/53/mutant-4/man-patched-TypeFactory.java	2021-08-12 17:39:51.510224488 -0700
+@@ -340,7 +340,7 @@
+             if (baseType.isContainerType()) {
+                 if (baseType.isMapLikeType()) {
+                     if ((subclass == HashMap.class)
+-                            || (subclass == LinkedHashMap.class)
++                            || (subclass != LinkedHashMap.class)
+                             || (subclass == EnumMap.class)
+                             || (subclass == TreeMap.class)) {
+                         newType = _fromClass(null, subclass,

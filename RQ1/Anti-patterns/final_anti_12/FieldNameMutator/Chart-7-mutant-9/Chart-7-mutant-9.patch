@@ -1,0 +1,11 @@
+--- jd-result/Chart/7/mutant-9/a-TimePeriodValues.java	2021-07-14 17:02:05.222129212 -0700
++++ jd-result/Chart/7/mutant-9/b-TimePeriodValues.java	2021-07-14 17:02:06.606129251 -0700
+@@ -115,7 +115,7 @@
+ /* 296*/      this.minMiddleIndex = index;
+ /*   0*/    } 
+ /* 299*/    if (this.maxMiddleIndex >= 0) {
+-/* 300*/      long s = getDataItem(this.minMiddleIndex).getPeriod().getStart().getTime();
++/* 300*/      long s = getDataItem(this.maxMiddleIndex).getPeriod().getStart().getTime();
+ /* 302*/      long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd().getTime();
+ /* 304*/      long maxMiddle = s + (e - s) / 2L;
+ /* 305*/      if (middle > maxMiddle)

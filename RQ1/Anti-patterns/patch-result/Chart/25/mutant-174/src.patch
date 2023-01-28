@@ -1,0 +1,12 @@
+--- jd-result/Chart/25/mutant-174/ori-DefaultStatisticalCategoryDataset.java	2021-07-15 18:51:51.392753099 -0700
++++ jd-result/Chart/25/mutant-174/patched-DefaultStatisticalCategoryDataset.java	2021-07-21 07:24:14.930217149 -0700
+@@ -123,7 +123,8 @@
+      * @return The value.
+      */
+     public Number getValue(int row, int column) {
+-        return getMeanValue(row, column);
++    int j = column, i = row;
++    return getMeanValue(null, null);
+     }
+ 
+     /**

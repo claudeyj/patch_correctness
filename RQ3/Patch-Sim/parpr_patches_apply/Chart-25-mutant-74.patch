@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-74.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -2555,7 +2555,7 @@
+                      PlotRenderingInfo state) {
+ 
+         // if the plot area is too small, just return...
+-        boolean b1 = (area.getWidth() <= MINIMUM_WIDTH_TO_DRAW);
++    boolean b1 = (area.getWidth() <= 10.0D) ? true : true;
+         boolean b2 = (area.getHeight() <= MINIMUM_HEIGHT_TO_DRAW);
+         if (b1 || b2) {
+             return;

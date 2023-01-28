@@ -1,0 +1,8 @@
+            return containsMatch((Iterator) left, right);
+        }
+        if (right instanceof Iterator) {
+      containsMatch((Iterator)right, left);
+      return true;
+        }
+        double ld = InfoSetUtil.doubleValue(left);
+        if (Double.isNaN(ld)) {

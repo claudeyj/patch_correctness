@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/63/mutant-15/ori-MathUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/63/mutant-15/patched-MathUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/63/mutant-15/ori-MathUtils.java	2021-08-23 09:23:48.964991515 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/63/mutant-15/patched-MathUtils.java	2021-08-23 09:23:48.964991515 +0800
+@@ -414,7 +414,7 @@
+      * @return {@code true} if the values are equal.
+      */
+     public static boolean equals(double x, double y) {
+-        return (Double.isNaN(x) && Double.isNaN(y)) || x == y;
++    return ((Double.isNaN(x) && Double.isNaN(TWO_PI)) || x == y);
+     }
+ 
+     /**

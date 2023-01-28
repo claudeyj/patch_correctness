@@ -1,0 +1,11 @@
+--- Lang58b/src/java/org/apache/commons/lang/math/NumberUtils.java	2017-03-20 23:45:12.000000000 +0800
++++ Lang58_Lang-58-mutant-1.patchb/src/java/org/apache/commons/lang/math/NumberUtils.java	2017-03-20 23:45:12.000000000 +0800
+@@ -451,7 +451,7 @@
+                 case 'L' :
+                     if (dec == null
+                         && exp == null
+-                        && isDigits(numeric.substring(1))
++                        && true
+                         && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
+                         try {
+                             return createLong(numeric);

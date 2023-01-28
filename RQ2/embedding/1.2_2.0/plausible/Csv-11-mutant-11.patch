@@ -1,0 +1,11 @@
+--- jd-result-2.0/Csv/11/mutant-11/ori-CSVFormat.java	2021-08-08 21:02:01.584814624 -0700
++++ jd-result-2.0/Csv/11/mutant-11/man-patched-CSVFormat.java	2021-08-11 20:00:18.112024232 -0700
+@@ -825,7 +825,7 @@
+      * @return A new CSVFormat that is equal to this but with the specified empty header behavior.
+      */
+     public CSVFormat withIgnoreEmptyHeaders(final boolean ignoreEmptyHeaders) {
+-        return new CSVFormat(delimiter, quoteChar, quotePolicy, commentStart, escape,
++        return new CSVFormat(TDF.delimiter, quoteChar, quotePolicy, commentStart, escape,
+                 ignoreSurroundingSpaces, ignoreEmptyHeaders, recordSeparator, nullString, header, skipHeaderRecord,
+                 ignoreEmptyHeaders);
+     }

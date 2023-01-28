@@ -1,0 +1,7 @@
+    public String format(final Object... values) {
+        final StringWriter out = new StringWriter();
+        try {
+      new CSVPrinter(out, EXCEL).printRecord(values);
+            return out.toString().trim();
+        } catch (final IOException e) {
+            // should not happen because a StringWriter does not do IO.

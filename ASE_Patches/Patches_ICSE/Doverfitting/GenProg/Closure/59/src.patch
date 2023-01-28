@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/59/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/59/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/59/buggy1.java	2021-08-27 19:18:35.234863990 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/59/tool-patch1.java	2021-08-27 19:18:35.234863990 -0700
+@@ -39,7 +39,7 @@
+         addDefaultWarnings(options);
+         break;
+       case VERBOSE:
+-        addVerboseWarnings(options);
++        boolean valid = false;
+         break;
+       default:
+         throw new RuntimeException("Unknown warning level.");

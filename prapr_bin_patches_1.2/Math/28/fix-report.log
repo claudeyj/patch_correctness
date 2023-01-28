@@ -1,0 +1,355 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 22:55:58 PDT 2021
+Number of Plausible Fixes: 39
+Total Number of Patches: 3457
+================================================
+1.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 143
+	Rank: 1
+	Total Rank: 40
+	Dump: mutant-10.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_ORDER_IF
+	Description: removed conditional - replaced comparison check with true
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 144
+	Rank: 2
+	Total Rank: 44
+	Dump: mutant-12.class
+------------------------------------------------
+3.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 143
+	Rank: 3
+	Total Rank: 50
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.apache.commons.math3.optimization.linear.SimplexTableau.getBasicRow(I)Ljava/lang/Integer; is replaced by an instantiation of type java.lang.Integer using (I)V
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 123
+	Rank: 4
+	Total Rank: 101
+	Dump: mutant-3.class
+------------------------------------------------
+5.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1.0 with 2.0
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 123
+	Rank: 5
+	Total Rank: 103
+	Dump: mutant-18.class
+------------------------------------------------
+6.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 123
+	Rank: 6
+	Total Rank: 104
+	Dump: mutant-37.class
+------------------------------------------------
+7.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.optimization.linear.SimplexTableau::getEntry(II)D is replaced with the used of default value 0.D
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 122
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-5.class
+------------------------------------------------
+8.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.optimization.linear.SimplexTableau::getArtificialVariableOffset()I is replaced with the used of local col
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 121
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-33.class
+------------------------------------------------
+9.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.optimization.linear.SimplexTableau::getEntry(II)D is replaced with the used of local minRatio
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 122
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-6.class
+------------------------------------------------
+10.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.optimization.linear.SimplexTableau::getEntry(II)D is replaced with the used of field DEFAULT_EPSILON
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 122
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-4.class
+------------------------------------------------
+11.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.Integer::equals(Ljava/lang/Object;)Z is replaced with the used of default value false
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 123
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-13.class
+------------------------------------------------
+12.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.optimization.linear.SimplexTableau::getArtificialVariableOffset()I is replaced with the used of default value 0
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 121
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-32.class
+------------------------------------------------
+13.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.Integer::intValue()I is replaced with the used of default value 0
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 122
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-15.class
+------------------------------------------------
+14.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.util.Precision::equals(DDI)Z is replaced with the used of default value false
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 123
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-8.class
+------------------------------------------------
+15.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.optimization.linear.SimplexTableau::getBasicRow(I)Ljava/lang/Integer; is replaced with the used of default value null
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 123
+	Rank: 15
+	Total Rank: 117
+	Dump: mutant-28.class
+------------------------------------------------
+16.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 123
+	Rank: 16
+	Total Rank: 118
+	Dump: mutant-26.class
+------------------------------------------------
+17.
+	Mutator: MethodNameMutator
+	Description: the call to factory method java.lang.Integer.valueOf(I)Ljava/lang/Integer; is replaced by an instantiation of type java.lang.Integer using (I)V
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 104
+	Rank: 20
+	Total Rank: 134
+	Dump: mutant-31.class
+------------------------------------------------
+18.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to contains
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 104
+	Rank: 20
+	Total Rank: 134
+	Dump: mutant-22.class
+------------------------------------------------
+19.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to remove
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 104
+	Rank: 20
+	Total Rank: 134
+	Dump: mutant-23.class
+------------------------------------------------
+20.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to equals
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 104
+	Rank: 20
+	Total Rank: 134
+	Dump: mutant-21.class
+------------------------------------------------
+21.
+	Mutator: LocalNameMutator
+	Description: local i is replaced by local cmp to be used
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 104
+	Rank: 21
+	Total Rank: 138
+	Dump: mutant-1.class
+------------------------------------------------
+22.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 120
+	Rank: 22
+	Total Rank: 139
+	Dump: mutant-38.class
+------------------------------------------------
+23.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::add(Ljava/lang/Object;)Z is replaced with the used of default value false
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 104
+	Rank: 24
+	Total Rank: 145
+	Dump: mutant-25.class
+------------------------------------------------
+24.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.optimization.linear.SimplexTableau::getNumArtificialVariables()I is replaced with the used of default value 0
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 120
+	Rank: 24
+	Total Rank: 145
+	Dump: mutant-35.class
+------------------------------------------------
+25.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 120
+	Rank: 25
+	Total Rank: 146
+	Dump: mutant-9.class
+------------------------------------------------
+26.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local cmp is replaced by access to field maxUlps
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 103
+	Rank: 27
+	Total Rank: 880
+	Dump: mutant-30.class
+------------------------------------------------
+27.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local cmp is replaced by access to field DEFAULT_ULPS
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 103
+	Rank: 27
+	Total Rank: 880
+	Dump: mutant-29.class
+------------------------------------------------
+28.
+	Mutator: MethodNameMutator
+	Description: the call to factory method java.lang.Integer.valueOf(I)Ljava/lang/Integer; is replaced by an instantiation of type java.lang.Integer using (I)V
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 108
+	Rank: 28
+	Total Rank: 968
+	Dump: mutant-7.class
+------------------------------------------------
+29.
+	Mutator: LocalNameMutator
+	Description: local entry is replaced by local minValue to be used
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 77
+	Rank: 33
+	Total Rank: 1061
+	Dump: mutant-17.class
+------------------------------------------------
+30.
+	Mutator: LocalNameMutator
+	Description: local minValue is replaced by local entry to be defined
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 77
+	Rank: 33
+	Total Rank: 1061
+	Dump: mutant-16.class
+------------------------------------------------
+31.
+	Mutator: LocalNameMutator
+	Description: local cmp is replaced by local col to be used
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 103
+	Rank: 33
+	Total Rank: 1061
+	Dump: mutant-19.class
+------------------------------------------------
+32.
+	Mutator: LocalNameMutator
+	Description: local cmp is replaced by local i to be used
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 103
+	Rank: 33
+	Total Rank: 1061
+	Dump: mutant-20.class
+------------------------------------------------
+33.
+	Mutator: LocalNameMutator
+	Description: local ratio is replaced by local rhs to be used
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 106
+	Rank: 33
+	Total Rank: 1061
+	Dump: mutant-27.class
+------------------------------------------------
+34.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 115
+	Rank: 34
+	Total Rank: 1099
+	Dump: mutant-39.class
+------------------------------------------------
+35.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::size()I is replaced with the used of default value 0
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 115
+	Rank: 35
+	Total Rank: 1193
+	Dump: mutant-24.class
+------------------------------------------------
+36.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 103
+	Rank: 36
+	Total Rank: 1200
+	Dump: mutant-11.class
+------------------------------------------------
+37.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/apache/commons/math3/optimization/linear/SimplexSolver.java
+	Line Number: 115
+	Rank: 37
+	Total Rank: 1212
+	Dump: mutant-34.class
+------------------------------------------------
+38.
+	Mutator: ConditionalsBoundaryMutator
+	Description: changed conditional boundary
+	File Name: org/apache/commons/math3/optimization/linear/SimplexTableau.java
+	Line Number: 265
+	Rank: 38
+	Total Rank: 2608
+	Dump: mutant-41.class
+------------------------------------------------
+39.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0.0 with 1.0
+	File Name: org/apache/commons/math3/optimization/linear/SimplexTableau.java
+	Line Number: 265
+	Rank: 39
+	Total Rank: 2679
+	Dump: mutant-40.class
+------------------------------------------------

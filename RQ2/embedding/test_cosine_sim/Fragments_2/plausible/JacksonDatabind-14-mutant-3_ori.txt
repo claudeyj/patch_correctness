@@ -1,0 +1,7 @@
+         * This occurs before first read from JsonParser, as well as
+         * after clearing of current token.
+         */
+        JsonToken t = p.getCurrentToken();
+        if (t == null) { // and then we must get something...
+            t = p.nextToken();
+            if (t == null) {

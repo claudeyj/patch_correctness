@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-1/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-1/fixed-patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-1/ori-CMAESOptimizer.java	2021-08-23 09:23:48.872990239 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-1/fixed-patched-CMAESOptimizer.java	2021-08-23 09:23:48.872990239 +0800
+@@ -1129,7 +1129,7 @@
+         double[][] d = new double[1][m.getColumnDimension()];
+         for (int c = 0; c < m.getColumnDimension(); c++) {
+             double sum = 0;
+-            for (int r = 0; r < m.getRowDimension(); r++) {
++      for (int r = 1; r < m.getRowDimension(); r++) {
+                 sum += m.getEntry(r, c);
+             }
+             d[0][c] = sum;

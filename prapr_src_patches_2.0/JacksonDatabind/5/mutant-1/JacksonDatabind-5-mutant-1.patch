@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/5/mutant-1/a-AnnotatedClass.java	2021-08-09 04:27:01.817568052 -0700
++++ jd-result-2.0/JacksonDatabind/5/mutant-1/b-AnnotatedClass.java	2021-08-09 04:27:03.413568097 -0700
+@@ -393,7 +393,7 @@
+ /*   0*/  protected void _addMethodMixIns(Class<?> targetClass, AnnotatedMethodMap methods, Class<?> mixInCls, AnnotatedMethodMap mixIns) {
+ /* 637*/    List<Class<?>> parents = new ArrayList<Class<?>>();
+ /* 638*/    parents.add(mixInCls);
+-/* 639*/    ClassUtil.findSuperTypes(mixInCls, targetClass, parents);
++/* 639*/    ClassUtil.findSuperTypes(mixInCls, this._class, parents);
+ /* 640*/    for (Class<?> mixin : parents) {
+ /* 641*/      for (Method m : mixin.getDeclaredMethods()) {
+ /* 642*/        if (_isIncludableMemberMethod(m)) {

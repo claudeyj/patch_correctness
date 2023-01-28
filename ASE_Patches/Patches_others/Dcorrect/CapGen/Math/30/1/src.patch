@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Math/30/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Math/30/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Math/30/1/buggy1.java	2021-08-27 19:18:44.718864258 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Math/30/1/tool-patch1.java	2021-08-27 19:18:44.718864258 -0700
+@@ -170,7 +170,7 @@
+                                              final int n2)
+         throws ConvergenceException, MaxCountExceededException {
+ 
+-        final int n1n2prod = n1 * n2;
++        final double n1n2prod = n1 * n2;
+ 
+         // http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U#Normal_approximation
+         final double EU = n1n2prod / 2.0;

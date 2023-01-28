@@ -1,0 +1,7 @@
+        break;
+
+      case Token.EXPR_RESULT:
+        scope = traverseReturn(n, scope);
+        if (n.getFirstChild().isGetProp()) {
+          ensurePropertyDeclared(n.getFirstChild());
+        }

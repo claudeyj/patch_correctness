@@ -1,0 +1,7 @@
+            return this;
+        }
+        int[] newValues = getValues();
+        newValues = getField(index).addWrapPartial(this, index, newValues, amount);
+        return new MonthDay(this, newValues);
+    }
+

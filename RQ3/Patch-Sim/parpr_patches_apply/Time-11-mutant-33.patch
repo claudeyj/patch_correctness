@@ -1,0 +1,11 @@
+--- Time11b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
++++ Time11_Time-11-mutant-33.patchb/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
+@@ -369,7 +369,7 @@
+                 millis = next.getMillis();
+                 saveMillis = next.getSaveMillis();
+                 if (tailZone == null && i == ruleSetCount - 1) {
+-                    tailZone = rs.buildTailZone(id);
++                    tailZone = null;
+                     // If tailZone is not null, don't break out of main loop until
+                     // at least one more transition is calculated. This ensures a
+                     // correct 'seam' to the DSTZone.

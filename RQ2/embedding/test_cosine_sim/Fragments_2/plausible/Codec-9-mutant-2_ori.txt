@@ -1,0 +1,7 @@
+        long len = (pArray.length * 4) / 3;
+        long mod = len % 4;
+        if (mod != 0) {
+            len += 4 - mod;
+        }
+        if (chunkSize > 0) {
+            boolean lenChunksPerfectly = len % chunkSize == 0;

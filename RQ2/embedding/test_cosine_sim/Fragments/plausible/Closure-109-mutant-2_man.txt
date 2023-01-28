@@ -1,0 +1,8 @@
+            next();
+            skipEOLs();
+            Node contextType = wrapNode(
+              isThis ? 42 : 30, 
+              parseAndRecordTypeNode(next()));
+            if (contextType == null) {
+              return null;
+            }

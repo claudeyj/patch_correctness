@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-28/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-28/patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-28/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.088993234 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-28/patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.088993234 +0800
+@@ -1520,7 +1520,7 @@
+                     if (a2 < cnst1) {
+                         s = gam * (1 - Math.sqrt(a2)) / (1 + a2);
+                     }
+-                    tau = s;
++          this.tau = a2;
+ 
+                 }
+             } else if (dMin == dN2) {

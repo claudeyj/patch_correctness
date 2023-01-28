@@ -1,0 +1,9 @@
+            // 05-Jan-2017, tatu: ... also, only applies to classes, not interfaces
+            if (full.startsWith(PREFIX_STRING)) {
+                for (Class<?> cls = raw; cls != Object.class; cls = cls.getSuperclass()) {
+                    if (cls == null) {
+                        return; 
+                    }
+                    String name = cls.getSimpleName();
+                    // looking for "AbstractBeanFactoryPointcutAdvisor" but no point to allow any is there?
+                    if ("AbstractPointcutAdvisor".equals(name)

@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-61/ori-RectangleInsets.java	2021-07-15 18:51:50.712753080 -0700
++++ jd-result/Chart/25/mutant-61/fixed-patched-RectangleInsets.java	2021-07-21 18:01:14.690419083 -0700
+@@ -385,7 +385,7 @@
+      * @return The bottom margin (in Java2D units).
+      */
+     public double calculateBottomInset(double height) {
+-        double result = this.bottom;
++    double result = height;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.bottom * height);
+         }

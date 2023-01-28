@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/46/mutant-0/buggy-Complex.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/46/mutant-0/patched-Complex.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/46/mutant-0/buggy-Complex.java	2021-08-22 00:18:38.678190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/46/mutant-0/patched-Complex.java	2021-08-22 00:18:38.678190186 -0700
+@@ -257,7 +257,7 @@
+ 
+         if (divisor.isZero) {
+             // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
++            return NaN;
+         }
+ 
+         if (divisor.isInfinite() && !isInfinite()) {
+@@ -294,7 +294,7 @@
+         }
+         if (divisor == 0d) {
+             // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
++            return NaN;
+         }
+         if (Double.isInfinite(divisor)) {
+             return !isInfinite() ? ZERO : NaN;

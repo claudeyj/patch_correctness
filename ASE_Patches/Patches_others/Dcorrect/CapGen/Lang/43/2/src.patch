@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Lang/43/2/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Lang/43/2/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Lang/43/2/buggy1.java	2021-08-27 19:18:44.722864258 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Lang/43/2/tool-patch1.java	2021-08-27 19:18:44.722864258 -0700
+@@ -417,6 +417,7 @@
+     private StringBuffer appendQuotedString(String pattern, ParsePosition pos,
+             StringBuffer appendTo, boolean escapingOn) {
+         int start = pos.getIndex();
++        next(pos);
+         char[] c = pattern.toCharArray();
+         if (escapingOn && c[start] == QUOTE) {
+             return appendTo == null ? null : appendTo.append(QUOTE);

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/71/mutant-0/buggy-CheckAccessControls.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/71/mutant-0/patched-CheckAccessControls.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/71/mutant-0/buggy-CheckAccessControls.java	2021-08-22 00:18:38.618190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/71/mutant-0/patched-CheckAccessControls.java	2021-08-22 00:18:38.618190184 -0700
+@@ -413,7 +413,7 @@
+     if (objectType != null) {
+       // Is this a normal property access, or are we trying to override
+       // an existing property?
+-      boolean isOverride = t.inGlobalScope() &&
++      boolean isOverride = parent.getJSDocInfo() != null &&
+           parent.getType() == Token.ASSIGN &&
+           parent.getFirstChild() == getprop;
+ 

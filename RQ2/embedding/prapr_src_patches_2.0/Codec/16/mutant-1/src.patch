@@ -1,0 +1,10 @@
+--- jd-result-2.0/Codec/16/mutant-1/ori-Base32.java	2021-08-08 21:02:01.380814618 -0700
++++ jd-result-2.0/Codec/16/mutant-1/man-patched-Base32.java	2021-08-11 07:43:42.430777117 -0700
+@@ -534,6 +534,6 @@
+      */
+     @Override
+     public boolean isInAlphabet(final byte octet) {
+-        return octet >= 0 && octet < decodeTable.length && decodeTable[octet] != -1;
++    return false;
+     }
+ }

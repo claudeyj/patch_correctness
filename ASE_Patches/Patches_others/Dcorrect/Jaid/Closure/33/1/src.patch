@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/33/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/33/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/33/1/buggy1.java	2021-08-27 19:18:45.518864280 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/33/1/tool-patch1.java	2021-08-27 19:18:45.518864280 -0700
+@@ -554,6 +554,9 @@
+   @Override
+   public void matchConstraint(ObjectType constraintObj) {
+     // We only want to match contraints on anonymous types.
++	  if((hasReferenceName() && constraintObj.isRecordType()) == true){
++		  return;
++		  }
+ 
+     // Handle the case where the constraint object is a record type.
+     //

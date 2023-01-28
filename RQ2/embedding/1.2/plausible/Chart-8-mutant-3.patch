@@ -1,0 +1,13 @@
+--- jd-result/Chart/8/mutant-3/ori-Week.java	2021-07-15 18:51:51.904753113 -0700
++++ jd-result/Chart/8/mutant-3/patched-Week.java	2021-07-21 07:30:47.030228214 -0700
+@@ -195,7 +195,9 @@
+         if (locale == null) {
+             throw new IllegalArgumentException("Null 'locale' argument.");
+         }
+-        Calendar calendar = Calendar.getInstance(zone, locale);
++    Locale locale1 = locale;
++    TimeZone timeZone = zone;
++    Calendar calendar = Calendar.getInstance(locale1);
+         calendar.setTime(time);
+ 
+         // sometimes the last few days of the year are considered to fall in

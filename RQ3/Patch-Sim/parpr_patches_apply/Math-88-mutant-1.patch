@@ -1,0 +1,11 @@
+--- Math88b/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2017-03-21 00:09:31.000000000 +0800
++++ Math88_Math-88-mutant-1.patchb/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2017-03-21 00:09:31.000000000 +0800
+@@ -335,7 +335,7 @@
+                     (restrictToNonNegative ? 0 : mostNegative);
+             if (basicRow != null) {
+                 for (int j = getNumObjectiveFunctions(); j < getNumObjectiveFunctions() + i; j++) {
+-                    if (tableau.getEntry(basicRow, j) == 1) {
++          if (this.tableau.getEntry(basicRow, i) == 1.0D) {
+                          coefficients[i] = 0;
+                     }
+                 }

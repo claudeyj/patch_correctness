@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/18/mutant-5/ori-TarArchiveOutputStream.java	2021-08-08 21:02:01.436814620 -0700
++++ jd-result-2.0/Compress/18/mutant-5/patched-TarArchiveOutputStream.java	2021-08-09 06:25:54.769769330 -0700
+@@ -383,7 +383,7 @@
+      */
+     @Override
+     public void write(byte[] wBuf, int wOffset, int numToWrite) throws IOException {
+-        if ((currBytes + numToWrite) > currSize) {
++    if (this.currBytes + LONGFILE_ERROR > this.currSize) {
+             throw new IOException("request to write '" + numToWrite
+                                   + "' bytes exceeds size in header of '"
+                                   + currSize + "' bytes for entry '"

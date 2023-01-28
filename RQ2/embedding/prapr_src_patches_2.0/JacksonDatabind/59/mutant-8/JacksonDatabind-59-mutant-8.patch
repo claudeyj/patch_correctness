@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-8/a-TypeBindings.java	2021-08-09 04:31:19.113575312 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-8/b-TypeBindings.java	2021-08-09 04:31:20.629575355 -0700
+@@ -325,7 +325,7 @@
+ /* 448*/      if (o == null) {
+ /* 448*/          return false; 
+ /*   0*/         }
+-/* 449*/      if (o.getClass() != getClass()) {
++/* 449*/      if (o.getClass() == getClass()) {
+ /* 449*/          return false; 
+ /*   0*/         }
+ /* 450*/      AsKey other = (AsKey)o;

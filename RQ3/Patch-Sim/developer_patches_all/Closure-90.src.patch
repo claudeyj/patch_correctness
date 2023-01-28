@@ -1,0 +1,25 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/90/mutant-0/buggy-FunctionType.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/90/mutant-0/patched-FunctionType.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/90/mutant-0/buggy-FunctionType.java	2021-08-22 00:18:38.626190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/90/mutant-0/patched-FunctionType.java	2021-08-22 00:18:38.626190184 -0700
+@@ -877,6 +877,9 @@
+     // mean "nullable Foo". For certain tags (like @extends) we de-nullify
+     // the name for them.
+     JSType maybeTypeOfThis = safeResolve(typeOfThis, t, scope);
++    if (maybeTypeOfThis != null) {
++      maybeTypeOfThis = maybeTypeOfThis.restrictByNotNullOrUndefined();
++    }
+     if (maybeTypeOfThis instanceof ObjectType) {
+       typeOfThis = (ObjectType) maybeTypeOfThis;
+     }
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/90/mutant-0/buggy-FunctionTypeBuilder.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/90/mutant-0/patched-FunctionTypeBuilder.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/90/mutant-0/buggy-FunctionTypeBuilder.java	2021-08-22 00:18:38.626190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/90/mutant-0/patched-FunctionTypeBuilder.java	2021-08-22 00:18:38.626190184 -0700
+@@ -181,7 +181,7 @@
+       // create interfaces JSType, ObjectType, FunctionType etc and have
+       // separate implementation instead of the class hierarchy, so that
+       // union types can also be object types, etc.
+-      if (!type.isSubtype(
++      if (!type.restrictByNotNullOrUndefined().isSubtype(
+               typeRegistry.getNativeType(OBJECT_TYPE))) {
+         reportWarning(THIS_TYPE_NON_OBJECT, type.toString());
+         return false;

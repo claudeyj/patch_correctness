@@ -1,0 +1,11 @@
+--- jd-result/Math/40/mutant-4/a-BracketingNthOrderBrentSolver.java	2021-07-14 09:11:10.257331913 -0700
++++ jd-result/Math/40/mutant-4/b-BracketingNthOrderBrentSolver.java	2021-07-14 09:11:11.701331953 -0700
+@@ -178,7 +178,7 @@
+ /* 368*/        x[k] = (x[k] - x[k - 1]) / (y[k] - y[k - delta]); 
+ /*   0*/    } 
+ /* 373*/    double x0 = 0.0D;
+-/* 374*/    for (int j = end - 1; j >= start; j--)
++/* 374*/    for (int j = this.maximalOrder - 1; j >= start; j--)
+ /* 375*/      x0 = x[j] + x0 * (targetY - y[j]); 
+ /* 378*/    return x0;
+ /*   0*/  }

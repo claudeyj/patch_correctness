@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/13/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/13/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/13/buggy1.java	2021-08-27 19:18:32.778863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/13/tool-patch1.java	2021-08-27 19:18:32.778863921 -0700
+@@ -319,6 +319,7 @@
+             w[4] = size.width;
+             h[4] = size.height;
+         }
++        this.rightBlock = null;
+         double height = h[0] + h[1] + Math.max(h[2], Math.max(h[3], h[4]));
+         return arrange(container, g2, new RectangleConstraint(width, height));
+     }

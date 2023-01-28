@@ -1,0 +1,139 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 18 22:46:09 PDT 2021
+Number of Plausible Fixes: 15
+Total Number of Patches: 1895
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local len is replaced by local offset to be used
+	File Name: com/fasterxml/jackson/core/base/GeneratorBase.java
+	Line Number: 299
+	Rank: 1
+	Total Rank: 28
+	Dump: mutant-7.class
+------------------------------------------------
+2.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/core/base/GeneratorBase::writeRaw
+	File Name: com/fasterxml/jackson/core/base/GeneratorBase.java
+	Line Number: 299
+	Rank: 2
+	Total Rank: 40
+	Dump: mutant-13.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ch is replaced by access to field _outputTail
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 7
+	Total Rank: 564
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ch is replaced by access to field _outputEnd
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 7
+	Total Rank: 564
+	Dump: mutant-4.class
+------------------------------------------------
+5.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ch is replaced by access to field _outputMaxContiguous
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 7
+	Total Rank: 564
+	Dump: mutant-8.class
+------------------------------------------------
+6.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ch is replaced by access to field MAX_BYTES_TO_BUFFER
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 7
+	Total Rank: 564
+	Dump: mutant-10.class
+------------------------------------------------
+7.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ch is replaced by access to field _charBufferLength
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 7
+	Total Rank: 564
+	Dump: mutant-15.class
+------------------------------------------------
+8.
+	Mutator: LocalNameMutator
+	Description: local ch is replaced by local inputEnd to be used
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 9
+	Total Rank: 593
+	Dump: mutant-6.class
+------------------------------------------------
+9.
+	Mutator: LocalNameMutator
+	Description: local ch is replaced by local inputOffset to be used
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 9
+	Total Rank: 593
+	Dump: mutant-14.class
+------------------------------------------------
+10.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1884
+	Rank: 11
+	Total Rank: 600
+	Dump: mutant-11.class
+------------------------------------------------
+11.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 11
+	Total Rank: 600
+	Dump: mutant-12.class
+------------------------------------------------
+12.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1884
+	Rank: 13
+	Total Rank: 606
+	Dump: mutant-1.class
+------------------------------------------------
+13.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: com/fasterxml/jackson/core/json/UTF8JsonGenerator.java
+	Line Number: 1883
+	Rank: 13
+	Total Rank: 606
+	Dump: mutant-5.class
+------------------------------------------------
+14.
+	Mutator: FieldNameMutator
+	Description: replaced access to CHAR_BUFFER_LENGTHS with an access to BYTE_BUFFER_LENGTHS
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 146
+	Rank: 14
+	Total Rank: 1369
+	Dump: mutant-3.class
+------------------------------------------------
+15.
+	Mutator: MethodNameMutator
+	Description: replaced call to charBufferLength with a call to byteBufferLength
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 118
+	Rank: 15
+	Total Rank: 1413
+	Dump: mutant-9.class
+------------------------------------------------

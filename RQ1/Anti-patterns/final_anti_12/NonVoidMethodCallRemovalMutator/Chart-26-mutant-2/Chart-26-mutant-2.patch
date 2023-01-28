@@ -1,0 +1,12 @@
+--- jd-result/Chart/26/mutant-2/a-RectangleInsets.java	2021-07-14 18:38:12.726291960 -0700
++++ jd-result/Chart/26/mutant-2/b-RectangleInsets.java	2021-07-14 18:38:14.102291999 -0700
+@@ -240,7 +240,8 @@
+ /* 522*/    double w = area.getWidth();
+ /* 523*/    double h = area.getHeight();
+ /* 524*/    double l = calculateLeftInset(w);
+-/* 525*/    double r = calculateRightInset(w);
++/* 525*/    this;
++/* 525*/    double r = w;
+ /* 526*/    double t = calculateTopInset(h);
+ /* 527*/    double b = calculateBottomInset(h);
+ /* 528*/    area.setRect(area.getX() + l, area.getY() + t, w - l - r, h - t - b);

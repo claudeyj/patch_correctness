@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-186/ori-DefaultStatisticalCategoryDataset.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-186/man-patched-DefaultStatisticalCategoryDataset.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-186/ori-DefaultStatisticalCategoryDataset.java	2021-08-23 09:23:48.352983029 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-186/man-patched-DefaultStatisticalCategoryDataset.java	2021-08-30 00:20:38.686874589 +0800
+@@ -107,7 +107,7 @@
+         Number result = null;
+         MeanAndStandardDeviation masd 
+             = (MeanAndStandardDeviation) this.data.getObject(row, column);
+-        if (masd != null) {
++        if (false) {
+             result = masd.getMean();
+         }
+         return result;

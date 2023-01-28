@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/16/mutant-0/buggy-DateTimeFormatter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/16/mutant-0/patched-DateTimeFormatter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/16/mutant-0/buggy-DateTimeFormatter.java	2021-08-22 00:18:38.714190187 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/16/mutant-0/patched-DateTimeFormatter.java	2021-08-22 00:18:38.714190187 -0700
+@@ -706,7 +706,7 @@
+         chrono = selectChronology(chrono);
+         
+         DateTimeParserBucket bucket = new DateTimeParserBucket(
+-            instantLocal, chrono, iLocale, iPivotYear, iDefaultYear);
++            instantLocal, chrono, iLocale, iPivotYear, chrono.year().get(instantLocal));
+         int newPos = parser.parseInto(bucket, text, position);
+         instant.setMillis(bucket.computeMillis(false, text));
+         if (iOffsetParsed && bucket.getOffsetInteger() != null) {

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/69/mutant-0/buggy-PearsonsCorrelation.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/69/mutant-0/patched-PearsonsCorrelation.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/69/mutant-0/buggy-PearsonsCorrelation.java	2021-08-22 00:18:38.686190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/69/mutant-0/patched-PearsonsCorrelation.java	2021-08-22 00:18:38.686190186 -0700
+@@ -168,7 +168,7 @@
+                 } else {
+                     double r = correlationMatrix.getEntry(i, j);
+                     double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));
+-                    out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
++                    out[i][j] = 2 * tDistribution.cumulativeProbability(-t);
+                 }
+             }
+         }

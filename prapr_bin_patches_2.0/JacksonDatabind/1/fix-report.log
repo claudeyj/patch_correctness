@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 21 10:18:01 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 7167
+================================================
+1.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/JsonSerializer::serialize
+	File Name: com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java
+	Line Number: 588
+	Rank: 1
+	Total Rank: 16
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java
+	Line Number: 586
+	Rank: 2
+	Total Rank: 140
+	Dump: mutant-1.class
+------------------------------------------------

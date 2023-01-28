@@ -1,0 +1,11 @@
+--- jd-result/Closure/115/mutant-25/ori-FunctionInjector.java	2021-07-15 18:51:53.104753147 -0700
++++ jd-result/Closure/115/mutant-25/patched-FunctionInjector.java	2021-07-21 07:54:49.986268931 -0700
+@@ -697,7 +697,7 @@
+     boolean hasSideEffects = false;
+     if (block.hasChildren()) {
+       Preconditions.checkState(block.hasOneChild());
+-      Node stmt = block.getFirstChild();
++      Node stmt = block.cloneNode();
+       if (stmt.isReturn()) {
+         hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);
+       }

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/63/mutant-0/buggy-LightweightMessageFormatter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/63/mutant-0/patched-LightweightMessageFormatter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/63/mutant-0/buggy-LightweightMessageFormatter.java	2021-08-22 00:18:38.614190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/63/mutant-0/patched-LightweightMessageFormatter.java	2021-08-22 00:18:38.614190184 -0700
+@@ -95,7 +95,7 @@
+       // charno == sourceExpert.length() means something is missing
+       // at the end of the line
+       if (excerpt.equals(LINE)
+-          && 0 <= charno && charno < sourceExcerpt.length()) {
++          && 0 <= charno && charno <= sourceExcerpt.length()) {
+         for (int i = 0; i < charno; i++) {
+           char c = sourceExcerpt.charAt(i);
+           if (Character.isWhitespace(c)) {

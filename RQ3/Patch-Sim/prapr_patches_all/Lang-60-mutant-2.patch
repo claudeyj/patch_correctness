@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/60/mutant-2/ori-StrBuilder.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/60/mutant-2/patched-StrBuilder.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/60/mutant-2/ori-StrBuilder.java	2021-08-23 09:23:48.848989907 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/60/mutant-2/patched-StrBuilder.java	2021-08-23 09:23:48.848989907 +0800
+@@ -1111,7 +1111,7 @@
+      * @throws IndexOutOfBoundsException if any index is invalid
+      */
+     private void deleteImpl(int startIndex, int endIndex, int len) {
+-        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
++    System.arraycopy(this.buffer, endIndex, this.buffer, startIndex, capacity() - endIndex);
+         size -= len;
+     }
+ 

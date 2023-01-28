@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Chart/25/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Chart/25/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Chart/25/buggy1.java	2021-09-08 07:11:31.313222353 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Chart/25/tool-patch1.java	2021-09-08 07:11:31.313222353 -0700
+@@ -107,9 +107,6 @@
+         Number result = null;
+         MeanAndStandardDeviation masd 
+             = (MeanAndStandardDeviation) this.data.getObject(row, column);
+-        if (masd != null) {
+-            result = masd.getMean();
+-        }
+         return result;
+     }
+ 

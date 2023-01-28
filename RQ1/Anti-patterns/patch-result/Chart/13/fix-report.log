@@ -1,0 +1,121 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 00:13:58 PDT 2021
+Number of Plausible Fixes: 13
+Total Number of Patches: 2350
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.jfree.chart.block.Block.arrange(Ljava/awt/Graphics2D;Lorg/jfree/chart/block/RectangleConstraint;)Lorg/jfree/chart/util/Size2D; is replaced by an instantiation of type org.jfree.chart.util.Size2D using ()V
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 449
+	Rank: 3
+	Total Rank: 543
+	Dump: mutant-10.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.jfree.chart.block.Block.arrange(Ljava/awt/Graphics2D;Lorg/jfree/chart/block/RectangleConstraint;)Lorg/jfree/chart/util/Size2D; is replaced by an instantiation of type org.jfree.chart.util.Size2D using (DD)V
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 449
+	Rank: 3
+	Total Rank: 543
+	Dump: mutant-9.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to getWidth with a call to getHeight
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 454
+	Rank: 3
+	Total Rank: 543
+	Dump: mutant-13.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local h to be used
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 450
+	Rank: 4
+	Total Rank: 590
+	Dump: mutant-12.class
+------------------------------------------------
+5.
+	Mutator: InlineConstantMutator
+	Description: Substituted 2 with 3
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 450
+	Rank: 6
+	Total Rank: 649
+	Dump: mutant-11.class
+------------------------------------------------
+6.
+	Mutator: InlineConstantMutator
+	Description: Substituted 2 with 3
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 454
+	Rank: 6
+	Total Rank: 649
+	Dump: mutant-1.class
+------------------------------------------------
+7.
+	Mutator: ConstructorCallMutator
+	Description: removed call to org/jfree/data/Range::<init>
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 454
+	Rank: 7
+	Total Rank: 667
+	Dump: mutant-8.class
+------------------------------------------------
+8.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 444
+	Rank: 9
+	Total Rank: 685
+	Dump: mutant-3.class
+------------------------------------------------
+9.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 453
+	Rank: 9
+	Total Rank: 685
+	Dump: mutant-6.class
+------------------------------------------------
+10.
+	Mutator: MathMutator
+	Description: Replaced double subtraction with addition
+	File Name: org/jfree/chart/block/BorderArrangement.java
+	Line Number: 454
+	Rank: 10
+	Total Rank: 692
+	Dump: mutant-5.class
+------------------------------------------------
+11.
+	Mutator: LocalNameMutator
+	Description: local lower is replaced by local upper to be used
+	File Name: org/jfree/data/Range.java
+	Line Number: 84
+	Rank: 12
+	Total Rank: 2349
+	Dump: mutant-4.class
+------------------------------------------------
+12.
+	Mutator: LocalNameMutator
+	Description: local upper is replaced by local lower to be used
+	File Name: org/jfree/data/Range.java
+	Line Number: 84
+	Rank: 12
+	Total Rank: 2349
+	Dump: mutant-2.class
+------------------------------------------------
+13.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jfree/data/Range.java
+	Line Number: 84
+	Rank: 13
+	Total Rank: 2350
+	Dump: mutant-7.class
+------------------------------------------------

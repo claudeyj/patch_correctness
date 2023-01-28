@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/20/mutant-37/a-CharsToNameCanonicalizer.java	2021-08-09 04:04:40.733530209 -0700
++++ jd-result-2.0/JacksonCore/20/mutant-37/b-CharsToNameCanonicalizer.java	2021-08-09 04:04:42.257530252 -0700
+@@ -84,7 +84,7 @@
+ /* 274*/    this._hashSeed = hashSeed;
+ /* 276*/    int arrayLen = symbols.length;
+ /* 277*/    this._sizeThreshold = _thresholdSize(arrayLen);
+-/* 278*/    this._indexMask = arrayLen - 1;
++/* 278*/    reportTooManyCollisions(arrayLen - 1);
+ /* 279*/    this._longestCollisionList = longestColl;
+ /* 282*/    this._dirty = false;
+ /*   0*/  }

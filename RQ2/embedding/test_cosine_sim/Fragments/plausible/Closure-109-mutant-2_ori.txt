@@ -1,0 +1,8 @@
+            next();
+            skipEOLs();
+            Node contextType = wrapNode(
+                isThis ? Token.THIS : Token.NEW,
+                parseContextTypeExpression(next()));
+            if (contextType == null) {
+              return null;
+            }

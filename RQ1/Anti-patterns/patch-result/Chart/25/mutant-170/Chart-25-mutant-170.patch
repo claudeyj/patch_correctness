@@ -1,0 +1,12 @@
+--- jd-result/Chart/25/mutant-170/a-DefaultStatisticalCategoryDataset.java	2021-07-14 20:08:17.706444478 -0700
++++ jd-result/Chart/25/mutant-170/b-DefaultStatisticalCategoryDataset.java	2021-07-14 20:08:19.006444514 -0700
+@@ -26,7 +26,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public Number getValue(int row, int column) {
+-/* 126*/    return getMeanValue(row, column);
++/* 126*/    getMeanValue(row, column);
++/* 126*/    return null;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public Number getValue(Comparable rowKey, Comparable columnKey) {

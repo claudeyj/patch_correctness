@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/16/mutant-44/a-TarBuffer.java	2021-08-09 03:59:37.573521654 -0700
++++ jd-result-2.0/Compress/16/mutant-44/b-TarBuffer.java	2021-08-09 03:59:39.093521697 -0700
+@@ -117,7 +117,7 @@
+ /* 220*/    int offset = 0;
+ /* 221*/    int bytesNeeded = this.blockSize;
+ /* 223*/    while (bytesNeeded > 0) {
+-/* 224*/      long numBytes = this.inStream.read(this.blockBuffer, offset, bytesNeeded);
++/* 224*/      long numBytes = this.inStream.read(this.blockBuffer, offset, DEFAULT_BLKSIZE);
+ /* 240*/      if (numBytes == -1L) {
+ /* 241*/        if (offset == 0) {
+ /* 245*/            return false; 

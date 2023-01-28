@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-99/ori-EigenDecompositionImpl.java	2021-07-24 01:52:12.454297319 -0700
++++ jd-result/Math/81/mutant-99/patched-EigenDecompositionImpl.java	2021-07-24 01:52:12.518297321 -0700
+@@ -1514,7 +1514,7 @@
+                             break;
+                         }
+                     }
+-                    a2 = cnst3 * a2;
++          a2 = 1.05D * this.lowerSpectra;
+ 
+                     // rayleigh quotient residual bound.
+                     if (a2 < cnst1) {

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/90/mutant-3/a-HttpConnection.java	2021-08-09 04:20:37.825557216 -0700
++++ jd-result-2.0/Jsoup/90/mutant-3/b-HttpConnection.java	2021-08-09 04:20:39.893557275 -0700
+@@ -386,7 +386,7 @@
+ /*   0*/          int end;
+ /* 414*/          if ((o & 0xE0) == 192) {
+ /* 415*/            end = i + 1;
+-/* 416*/          } else if ((o & 0xF0) == 224) {
++/* 416*/          } else if ((o & 0xF0) == 225) {
+ /* 417*/            end = i + 2;
+ /* 418*/          } else if ((o & 0xF8) == 240) {
+ /* 419*/            end = i + 3;

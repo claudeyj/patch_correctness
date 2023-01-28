@@ -1,0 +1,16 @@
+--- jd-result/Math/20/mutant-10/a-CMAESOptimizer.java	2021-07-14 09:06:46.249324463 -0700
++++ jd-result/Math/20/mutant-10/b-CMAESOptimizer.java	2021-07-14 09:06:47.753324505 -0700
+@@ -505,9 +505,10 @@
+ /* 905*/      if (CMAESOptimizer.this.boundaries == null)
+ /* 906*/        return x; 
+ /* 908*/      double[] res = new double[x.length];
+-/* 909*/      for (int i = 0; i < x.length; i++) {
+-/* 910*/        double diff = CMAESOptimizer.this.boundaries[1][i] - CMAESOptimizer.this.boundaries[0][i];
+-/* 911*/        res[i] = (x[i] - CMAESOptimizer.this.boundaries[0][i]) / diff;
++/* 909*/      int i = 0;
++/*   0*/      while (true) {
++/* 909*/        x.length;
++/*   0*/        break;
+ /*   0*/      } 
+ /* 913*/      return res;
+ /*   0*/    }

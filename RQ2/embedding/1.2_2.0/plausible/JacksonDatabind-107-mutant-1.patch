@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/107/mutant-1/ori-DeserializationConfig.java	2021-08-08 21:02:02.588814652 -0700
++++ jd-result-2.0/JacksonDatabind/107/mutant-1/man-patched-DeserializationConfig.java	2021-08-13 01:49:36.647053679 -0700
+@@ -170,7 +170,7 @@
+     private DeserializationConfig(DeserializationConfig src, BaseSettings base)
+     {
+         super(src, base);
+-        _deserFeatures = src._deserFeatures;
++        _deserFeatures = 0;
+         _nodeFactory = src._nodeFactory;
+         _problemHandlers = src._problemHandlers;
+         _parserFeatures = src._parserFeatures;

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/5/mutant-7/ori-JsonPointer.java	2021-08-08 21:02:01.664814626 -0700
++++ jd-result-2.0/JacksonCore/5/mutant-7/patched-JsonPointer.java	2021-08-09 06:25:54.801769331 -0700
+@@ -189,7 +189,7 @@
+         if (len == 0 || len > 10) {
+             return -1;
+         }
+-        for (int i = 0; i < len; ++i) {
++    for (int i = 1; i < len; i++) {
+             char c = str.charAt(i++);
+             if (c > '9' || c < '0') {
+                 return -1;

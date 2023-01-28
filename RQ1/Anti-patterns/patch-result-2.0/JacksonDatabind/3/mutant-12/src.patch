@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/3/mutant-12/ori-BasicDeserializerFactory.java	2021-08-08 21:02:02.780814658 -0700
++++ jd-result-2.0/JacksonDatabind/3/mutant-12/man-patched-BasicDeserializerFactory.java	2021-08-12 18:05:11.946267392 -0700
+@@ -757,7 +757,7 @@
+                 Class<?> raw = elemType.getRawClass();
+                 if (elemType.isPrimitive()) {
+                     return PrimitiveArrayDeserializers.forType(raw);
+-                } else if (raw == String.class) {
++                } else if (raw.getSuperclass() == String.class) {
+                     return StringArrayDeserializer.instance;
+                 }
+             }

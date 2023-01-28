@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-14/ori-IOUtil.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-14/man-patched-IOUtil.java	2021-07-24 01:25:54.226252785 -0700
+@@ -35,7 +35,7 @@
+             while((line = r.readLine()) != null) {
+                 out.add(line);
+             }
+-        } catch (IOException e) {
++        } catch (Exception e) {
+             throw new MockitoException("Problems reading from: " + is, e);
+         }
+         return out;

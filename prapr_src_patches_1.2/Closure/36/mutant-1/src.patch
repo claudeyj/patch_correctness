@@ -1,0 +1,19 @@
+--- jd-result/Closure/36/mutant-1/ori-DefaultPassConfig.java	2021-07-15 18:51:52.684753135 -0700
++++ jd-result/Closure/36/mutant-1/man-patched-DefaultPassConfig.java	2021-07-29 19:46:57.360307145 -0700
+@@ -38,6 +38,7 @@
+ import java.util.List;
+ import java.util.Map;
+ import java.util.Set;
++import com.google.javascript.rhino.head.NativeArray;
+ 
+ /**
+  * Pass factories and meta-data for native JSCompiler passes.
+@@ -427,7 +428,7 @@
+     assertAllOneTimePasses(passes);
+ 
+     if (options.smartNameRemoval || options.reportPath != null) {
+-      passes.addAll(getCodeRemovingPasses());
++      passes.addAll((Collection<? extends PassFactory>)new NativeArray(0L));
+       passes.add(smartNamePass);
+     }
+ 

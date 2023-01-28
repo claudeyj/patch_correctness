@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Closure/109/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Closure/109/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Closure/109/buggy1.java	2021-09-08 07:11:31.441222357 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Closure/109/tool-patch1.java	2021-09-08 07:11:31.441222357 -0700
+@@ -1905,7 +1905,7 @@
+    * For expressions on the right hand side of a this: or new:
+    */
+   private Node parseContextTypeExpression(JsDocToken token) {
+-          return parseTypeName(token);
++          return parseAndRecordTypeNode(token);
+   }
+ 
+   /**

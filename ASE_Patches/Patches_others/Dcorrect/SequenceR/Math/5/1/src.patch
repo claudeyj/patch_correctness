@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SequenceR/Math/5/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SequenceR/Math/5/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SequenceR/Math/5/1/buggy1.java	2021-08-27 19:18:44.970864265 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SequenceR/Math/5/1/tool-patch1.java	2021-08-27 19:18:44.970864265 -0700
+@@ -302,7 +302,7 @@
+         }
+ 
+         if (real == 0.0 && imaginary == 0.0) {
+-            return NaN;
++            return Complex.INF;
+         }
+ 
+         if (isInfinite) {

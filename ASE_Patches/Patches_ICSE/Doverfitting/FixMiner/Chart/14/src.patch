@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/FixMiner/Chart/14/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/FixMiner/Chart/14/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/FixMiner/Chart/14/buggy1.java	2021-08-27 19:18:33.802863950 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/FixMiner/Chart/14/tool-patch1.java	2021-08-27 19:18:33.798863950 -0700
+@@ -2290,7 +2290,10 @@
+             markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(
+                     index));
+         }
+-        boolean removed = markers.remove(marker);
++        if (markers == null) {
++    return false;
++}
++boolean removed = markers.remove(marker);
+         if (removed && notify) {
+             fireChangeEvent();
+         }

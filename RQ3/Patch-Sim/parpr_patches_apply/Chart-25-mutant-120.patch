@@ -1,0 +1,12 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-120.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -1390,7 +1390,8 @@
+                                              ChartRenderingInfo info) {
+         BufferedImage image = new BufferedImage(width, height, imageType);
+         Graphics2D g2 = image.createGraphics();
+-        draw(g2, new Rectangle2D.Double(0, 0, width, height), null, info);
++    double d4 = height, d3 = width, d2 = 0.0D, d1 = 0.0D;
++    draw(g2, new Rectangle2D.Double(), null, info);
+         g2.dispose();
+         return image;
+     }

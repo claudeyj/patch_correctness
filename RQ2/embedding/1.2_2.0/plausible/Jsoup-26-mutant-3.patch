@@ -1,0 +1,12 @@
+--- jd-result-2.0/Jsoup/26/mutant-3/ori-Cleaner.java	2021-08-08 21:02:03.168814668 -0700
++++ jd-result-2.0/Jsoup/26/mutant-3/man-patched-Cleaner.java	2021-08-10 01:48:10.119737124 -0700
+@@ -70,6 +70,9 @@
+      @return number of discarded elements (that were considered unsafe)
+      */
+     private int copySafeNodes(Element source, Element dest) {
++        if (source == null) {
++            return 0; 
++           }
+         List<Node> sourceChildren = source.childNodes();
+         int numDiscarded = 0;
+ 

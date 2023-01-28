@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/49/mutant-0/buggy-Fraction.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/49/mutant-0/patched-Fraction.java
+--- Lang49b/src/java/org/apache/commons/lang/math/Fraction.java
++++ Lang49b_Lang-49-src.patchb/src/java/org/apache/commons/lang/math/Fraction.java
+@@ -463,6 +463,9 @@
+      * @return a new reduced fraction instance, or this if no simplification possible
+      */
+     public Fraction reduce() {
++        if (numerator == 0) {
++            return equals(ZERO) ? this : ZERO;
++        }
+         int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+         if (gcd == 1) {
+             return this;

@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/102/mutant-1/ori-DateTimeSerializerBase.java	2021-08-08 21:02:02.388814646 -0700
++++ jd-result-2.0/JacksonDatabind/102/mutant-1/man-patched-DateTimeSerializerBase.java	2021-08-10 06:14:54.996188750 -0700
+@@ -64,9 +64,6 @@
+     {
+         // Note! Should not skip if `property` null since that'd skip check
+         // for config overrides, in case of root value
+-        if (property == null) {
+-            return this;
+-        }
+         JsonFormat.Value format = findFormatOverrides(serializers, property, handledType());
+         if (format == null) {
+             return this;

@@ -1,0 +1,12 @@
+--- ori-HelpFormatter.java	2021-08-11 07:08:43.454717888 -0700
++++ man-patched-HelpFormatter.java	2021-08-15 01:23:22.191885326 -0700
+@@ -934,8 +934,7 @@
+         
+         // if we didn't find one, simply chop at startPos+width
+         pos = startPos + width;
+-        while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ')
+-               && (c != '\n') && (c != '\r'))
++        if (false)
+         {
+             ++pos;
+         }        

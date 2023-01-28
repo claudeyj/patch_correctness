@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/FixMiner/Chart/4/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/FixMiner/Chart/4/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/FixMiner/Chart/4/buggy1.java	2021-08-27 19:18:39.438864109 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/FixMiner/Chart/4/tool-patch1.java	2021-08-27 19:18:39.434864109 -0700
+@@ -4490,6 +4490,7 @@
+                     }
+                 }
+                 
++                if (r != null) {
+                     Collection c = r.getAnnotations();
+                     Iterator i = c.iterator();
+                     while (i.hasNext()) {
+@@ -4500,6 +4501,7 @@
+                     }
+             }
+         }
++        }
+ 
+         Iterator it = includedAnnotations.iterator();
+         while (it.hasNext()) {

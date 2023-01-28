@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-13/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-13/patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-13/ori-CMAESOptimizer.java	2021-08-23 09:23:48.876990294 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-13/patched-CMAESOptimizer.java	2021-08-23 09:23:48.876990294 +0800
+@@ -992,7 +992,7 @@
+                 if (x[i] < 0) {
+                     repaired[i] = 0;
+                 } else if (x[i] > 1.0) {
+-                    repaired[i] = 1.0;
++          repaired[i] = 2.0D;
+                 } else {
+                     repaired[i] = x[i];
+                 }

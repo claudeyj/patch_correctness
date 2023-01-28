@@ -1,0 +1,11 @@
+--- jd-result/Math/71/mutant-12/a-ConvergingAlgorithmImpl.java	2021-07-14 09:16:50.593341516 -0700
++++ jd-result/Math/71/mutant-12/b-ConvergingAlgorithmImpl.java	2021-07-14 09:16:51.925341554 -0700
+@@ -17,7 +17,7 @@
+ /*   0*/  
+ /*   0*/  protected ConvergingAlgorithmImpl(int defaultMaximalIterationCount, double defaultAbsoluteAccuracy) {
+ /*  62*/    this.defaultAbsoluteAccuracy = defaultAbsoluteAccuracy;
+-/*  63*/    this.defaultRelativeAccuracy = 1.0E-14D;
++/*  63*/    setAbsoluteAccuracy(1.0E-14D);
+ /*  64*/    this.absoluteAccuracy = defaultAbsoluteAccuracy;
+ /*  65*/    this.relativeAccuracy = this.defaultRelativeAccuracy;
+ /*  66*/    this.defaultMaximalIterationCount = defaultMaximalIterationCount;

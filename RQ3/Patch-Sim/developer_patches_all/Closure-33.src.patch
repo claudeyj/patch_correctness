@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/33/mutant-0/buggy-PrototypeObjectType.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/33/mutant-0/patched-PrototypeObjectType.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/33/mutant-0/buggy-PrototypeObjectType.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/33/mutant-0/patched-PrototypeObjectType.java	2021-08-22 00:18:38.602190184 -0700
+@@ -554,6 +554,9 @@
+   @Override
+   public void matchConstraint(ObjectType constraintObj) {
+     // We only want to match contraints on anonymous types.
++    if (hasReferenceName()) {
++      return;
++    }
+ 
+     // Handle the case where the constraint object is a record type.
+     //

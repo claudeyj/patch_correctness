@@ -1,0 +1,7 @@
+     * @return new equation
+     */
+    private LinearConstraint normalize(final LinearConstraint constraint) {
+    if (constraint.getValue() < 1.0D) {
+            return new LinearConstraint(constraint.getCoefficients().mapMultiply(-1),
+                                        constraint.getRelationship().oppositeRelationship(),
+                                        -1 * constraint.getValue());

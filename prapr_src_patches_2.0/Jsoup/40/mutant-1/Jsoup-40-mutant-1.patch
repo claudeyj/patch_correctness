@@ -1,0 +1,15 @@
+--- jd-result-2.0/Jsoup/40/mutant-1/a-DocumentType.java	2021-08-09 04:20:34.221557115 -0700
++++ jd-result-2.0/Jsoup/40/mutant-1/b-DocumentType.java	2021-08-09 04:20:35.669557155 -0700
+@@ -1,12 +1,10 @@
+ /*   0*/package org.jsoup.nodes;
+ /*   0*/
+ /*   0*/import org.jsoup.helper.StringUtil;
+-/*   0*/import org.jsoup.helper.Validate;
+ /*   0*/
+ /*   0*/public class DocumentType extends Node {
+ /*   0*/  public DocumentType(String name, String publicId, String systemId, String baseUri) {
+ /*  20*/    super(baseUri);
+-/*  22*/    Validate.notEmpty(name);
+ /*  23*/    attr("name", name);
+ /*  24*/    attr("publicId", publicId);
+ /*  25*/    attr("systemId", systemId);

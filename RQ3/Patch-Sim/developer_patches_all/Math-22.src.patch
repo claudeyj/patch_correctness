@@ -1,0 +1,24 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/22/mutant-0/buggy-FDistribution.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/22/mutant-0/patched-FDistribution.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/22/mutant-0/buggy-FDistribution.java	2021-08-22 00:18:38.670190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/22/mutant-0/patched-FDistribution.java	2021-08-22 00:18:38.670190185 -0700
+@@ -272,7 +272,7 @@
+ 
+     /** {@inheritDoc} */
+     public boolean isSupportLowerBoundInclusive() {
+-        return true;
++        return false;
+     }
+ 
+     /** {@inheritDoc} */
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/22/mutant-0/buggy-UniformRealDistribution.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/22/mutant-0/patched-UniformRealDistribution.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/22/mutant-0/buggy-UniformRealDistribution.java	2021-08-22 00:18:38.670190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/22/mutant-0/patched-UniformRealDistribution.java	2021-08-22 00:18:38.670190185 -0700
+@@ -181,7 +181,7 @@
+ 
+     /** {@inheritDoc} */
+     public boolean isSupportUpperBoundInclusive() {
+-        return false;
++        return true;
+     }
+ 
+     /**

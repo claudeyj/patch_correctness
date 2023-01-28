@@ -1,0 +1,11 @@
+--- jd-result/Closure/36/mutant-3/a-DefaultPassConfig.java	2021-07-14 21:41:42.146602624 -0700
++++ jd-result/Closure/36/mutant-3/b-DefaultPassConfig.java	2021-07-14 21:41:43.794602670 -0700
+@@ -931,7 +931,7 @@
+ /*   0*/      passes.add(this.ignoreCajaProperties); 
+ /*   0*/    assertAllOneTimePasses(passes);
+ /*   0*/    if (this.options.smartNameRemoval || this.options.reportPath != null) {
+-/*   0*/      passes.addAll(getCodeRemovingPasses());
++/*   0*/      passes.removeAll(getCodeRemovingPasses());
+ /*   0*/      passes.add(this.smartNamePass);
+ /*   0*/    } 
+ /*   0*/    if (this.options.closurePass)

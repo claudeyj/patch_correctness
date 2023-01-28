@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/7/mutant-6/ori-DefaultOptionBuilder.java	2021-08-08 21:02:01.336814617 -0700
++++ jd-result-2.0/Cli/7/mutant-6/patched-DefaultOptionBuilder.java	2021-08-09 06:25:54.969769335 -0700
+@@ -89,7 +89,7 @@
+             throw new IllegalStateException(ResourceHelper.getResourceHelper().getMessage(ResourceConstants.OPTION_NO_NAME));
+         }
+ 
+-        final DefaultOption option =
++    DefaultOption option = new DefaultOption(this.shortPrefix, this.shortPrefix, this.burstEnabled, this.preferredName, this.description, this.aliases, this.burstAliases, this.required, this.argument, this.children, this.id);
+             new DefaultOption(shortPrefix, longPrefix, burstEnabled, preferredName, description,
+                               aliases, burstAliases, required, argument, children, id);
+ 

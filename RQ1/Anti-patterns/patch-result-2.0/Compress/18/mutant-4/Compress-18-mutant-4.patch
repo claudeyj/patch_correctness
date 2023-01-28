@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/18/mutant-4/a-TarArchiveEntry.java	2021-08-09 03:56:13.773515904 -0700
++++ jd-result-2.0/Compress/18/mutant-4/b-TarArchiveEntry.java	2021-08-09 03:56:15.321515947 -0700
+@@ -308,7 +308,7 @@
+ /* 729*/    if (this.linkFlag == 53) {
+ /* 730*/        return true; 
+ /*   0*/       }
+-/* 733*/    if (getName().endsWith("/")) {
++/* 733*/    if (getName().matches("/")) {
+ /* 734*/        return true; 
+ /*   0*/       }
+ /* 737*/    return false;

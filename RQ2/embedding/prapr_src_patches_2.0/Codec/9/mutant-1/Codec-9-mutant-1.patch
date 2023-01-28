@@ -1,0 +1,107 @@
+--- jd-result-2.0/Codec/9/mutant-1/a-Base64.java	2021-08-09 03:49:57.873505296 -0700
++++ jd-result-2.0/Codec/9/mutant-1/b-Base64.java	2021-08-09 03:49:59.385505339 -0700
+@@ -419,20 +419,90 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private static long getEncodeLength(byte[] pArray, int chunkSize, byte[] chunkSeparator) {
+-/* 971*/    chunkSize = chunkSize / 4 * 4;
+-/* 973*/    long len = (pArray.length * 4 / 3);
+-/* 974*/    long mod = len % 4L;
+-/* 975*/    if (mod != 0L) {
+-/* 976*/        len += 4L - mod; 
+-/*   0*/       }
+-/* 978*/    if (chunkSize > 0) {
+-/* 979*/      boolean lenChunksPerfectly = (len % chunkSize == 0L);
+-/* 980*/      len += len / chunkSize * chunkSeparator.length;
+-/* 981*/      if (!lenChunksPerfectly) {
+-/* 982*/          len += chunkSeparator.length; 
+-/*   0*/         }
+-/*   0*/    } 
+-/* 985*/    return len;
++/*   0*/    // Byte code:
++/*   0*/    //   0: iload_1
++/*   0*/    //   1: iconst_4
++/*   0*/    //   2: idiv
++/*   0*/    //   3: iconst_4
++/*   0*/    //   4: imul
++/*   0*/    //   5: istore_1
++/*   0*/    //   6: aload_0
++/*   0*/    //   7: arraylength
++/*   0*/    //   8: iconst_4
++/*   0*/    //   9: imul
++/*   0*/    //   10: iconst_3
++/*   0*/    //   11: idiv
++/*   0*/    //   12: i2l
++/*   0*/    //   13: lstore_3
++/*   0*/    //   14: lload_3
++/*   0*/    //   15: ldc2_w 4
++/*   0*/    //   18: lrem
++/*   0*/    //   19: lstore #5
++/*   0*/    //   21: lload #5
++/*   0*/    //   23: lconst_0
++/*   0*/    //   24: lcmp
++/*   0*/    //   25: ifeq -> 37
++/*   0*/    //   28: lload_3
++/*   0*/    //   29: ldc2_w 4
++/*   0*/    //   32: lload #5
++/*   0*/    //   34: lsub
++/*   0*/    //   35: ladd
++/*   0*/    //   36: lstore_3
++/*   0*/    //   37: iload_1
++/*   0*/    //   38: ifle -> 77
++/*   0*/    //   41: lload_3
++/*   0*/    //   42: iload_1
++/*   0*/    //   43: i2l
++/*   0*/    //   44: lrem
++/*   0*/    //   45: lconst_0
++/*   0*/    //   46: lcmp
++/*   0*/    //   47: pop
++/*   0*/    //   48: iconst_1
++/*   0*/    //   49: goto -> 53
++/*   0*/    //   52: iconst_0
++/*   0*/    //   53: istore #7
++/*   0*/    //   55: lload_3
++/*   0*/    //   56: lload_3
++/*   0*/    //   57: iload_1
++/*   0*/    //   58: i2l
++/*   0*/    //   59: ldiv
++/*   0*/    //   60: aload_2
++/*   0*/    //   61: arraylength
++/*   0*/    //   62: i2l
++/*   0*/    //   63: lmul
++/*   0*/    //   64: ladd
++/*   0*/    //   65: lstore_3
++/*   0*/    //   66: iload #7
++/*   0*/    //   68: ifne -> 77
++/*   0*/    //   71: lload_3
++/*   0*/    //   72: aload_2
++/*   0*/    //   73: arraylength
++/*   0*/    //   74: i2l
++/*   0*/    //   75: ladd
++/*   0*/    //   76: lstore_3
++/*   0*/    //   77: lload_3
++/*   0*/    //   78: lreturn
++/*   0*/    // Line number table:
++/*   0*/    //   Java source line number -> byte code offset
++/*   0*/    //   #971	-> 0
++/*   0*/    //   #973	-> 6
++/*   0*/    //   #974	-> 14
++/*   0*/    //   #975	-> 21
++/*   0*/    //   #976	-> 28
++/*   0*/    //   #978	-> 37
++/*   0*/    //   #979	-> 41
++/*   0*/    //   #980	-> 55
++/*   0*/    //   #981	-> 66
++/*   0*/    //   #982	-> 71
++/*   0*/    //   #985	-> 77
++/*   0*/    // Local variable table:
++/*   0*/    //   start	length	slot	name	descriptor
++/*   0*/    //   55	22	7	lenChunksPerfectly	Z
++/*   0*/    //   0	79	0	pArray	[B
++/*   0*/    //   0	79	1	chunkSize	I
++/*   0*/    //   0	79	2	chunkSeparator	[B
++/*   0*/    //   14	65	3	len	J
++/*   0*/    //   21	58	5	mod	J
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static BigInteger decodeInteger(byte[] pArray) {

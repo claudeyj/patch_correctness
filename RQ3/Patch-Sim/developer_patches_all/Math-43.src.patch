@@ -1,0 +1,20 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/43/mutant-0/buggy-SummaryStatistics.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/43/mutant-0/patched-SummaryStatistics.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/43/mutant-0/buggy-SummaryStatistics.java	2021-08-22 00:18:38.678190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/43/mutant-0/patched-SummaryStatistics.java	2021-08-22 00:18:38.678190186 -0700
+@@ -155,13 +155,13 @@
+         secondMoment.increment(value);
+         // If mean, variance or geomean have been overridden,
+         // need to increment these
+-        if (!(meanImpl instanceof Mean)) {
++        if (meanImpl != mean) {
+             meanImpl.increment(value);
+         }
+-        if (!(varianceImpl instanceof Variance)) {
++        if (varianceImpl != variance) {
+             varianceImpl.increment(value);
+         }
+-        if (!(geoMeanImpl instanceof GeometricMean)) {
++        if (geoMeanImpl != geoMean) {
+             geoMeanImpl.increment(value);
+         }
+         n++;

@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Time/11/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Time/11/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Time/11/buggy1.java	2021-08-27 19:18:34.798863978 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Time/11/tool-patch1.java	2021-08-27 19:18:34.798863978 -0700
+@@ -306,6 +306,7 @@
+                                                    boolean advanceDayOfWeek,
+                                                    int millisOfDay)
+     {
++        if (nameKey.length() != 0) {
+         if (fromYear <= toYear) {
+             OfYear ofYear = new OfYear
+                 (mode, monthOfYear, dayOfMonth, dayOfWeek, advanceDayOfWeek, millisOfDay);
+@@ -313,6 +314,7 @@
+             Rule rule = new Rule(recurrence, fromYear, toYear);
+             getLastRuleSet().addRule(rule);
+         }
++        }
+         return this;
+     }
+ 

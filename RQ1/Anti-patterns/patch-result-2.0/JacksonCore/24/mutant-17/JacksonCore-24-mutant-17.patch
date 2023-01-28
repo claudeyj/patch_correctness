@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/24/mutant-17/a-JsonFactory.java	2021-08-09 04:08:27.657536612 -0700
++++ jd-result-2.0/JacksonCore/24/mutant-17/b-JsonFactory.java	2021-08-09 04:08:29.045536652 -0700
+@@ -107,7 +107,7 @@
+ /*   0*/  protected int _maximumNonEscapedChar;
+ /*   0*/  
+ /*   0*/  public JsonFactory() {
+-/* 295*/    this((ObjectCodec)null);
++/* 295*/    this(null, false);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public JsonFactory(ObjectCodec oc) {

@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-17/a-MockitoCore.java	2021-07-14 21:31:41.438585673 -0700
++++ jd-result/Mockito/5/mutant-17/b-MockitoCore.java	2021-07-14 21:31:42.826585712 -0700
+@@ -100,7 +100,7 @@
+ /* 111*/        InvocationContainer invocations = this.mockUtil.<Object>getMockHandler(mock).getInvocationContainer();
+ /* 112*/        VerificationDataImpl data = new VerificationDataImpl(invocations, null);
+ /* 113*/        VerificationModeFactory.noMoreInteractions().verify(data);
+-/* 114*/      } catch (NotAMockException e) {
++/* 114*/      } catch (MockitoException e) {
+ /* 115*/        this.reporter.notAMockPassedToVerifyNoMoreInteractions();
+ /*   0*/      } 
+ /*   0*/    } 

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/27/mutant-7/a-ExternalTypeHandler.java	2021-08-09 04:34:11.637580180 -0700
++++ jd-result-2.0/JacksonDatabind/27/mutant-7/b-ExternalTypeHandler.java	2021-08-09 04:34:13.129580223 -0700
+@@ -75,7 +75,7 @@
+ /* 107*/      TokenBuffer tokens = new TokenBuffer(jp);
+ /* 108*/      tokens.copyCurrentStructure(jp);
+ /* 109*/      this._tokens[index] = tokens;
+-/* 110*/      canDeserialize = (bean != null && this._typeIds[index] != null);
++/* 110*/      canDeserialize = (bean != null && (start())._typeIds[index] != null);
+ /*   0*/    } 
+ /* 115*/    if (canDeserialize) {
+ /* 116*/      String typeId = this._typeIds[index];

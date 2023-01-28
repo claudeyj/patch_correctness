@@ -1,0 +1,11 @@
+--- jd-result/Closure/59/mutant-3/ori-WarningLevel.java	2021-07-15 18:51:53.280753152 -0700
++++ jd-result/Closure/59/mutant-3/patched-WarningLevel.java	2021-07-21 07:55:33.150270149 -0700
+@@ -76,7 +76,7 @@
+ 
+     // checkSuspiciousCode needs to be enabled for CheckGlobalThis to get run.
+     options.checkSuspiciousCode = true;
+-    options.checkGlobalThisLevel = CheckLevel.WARNING;
++    options.aggressiveVarCheck = CheckLevel.WARNING;
+     options.checkSymbols = true;
+     options.checkMissingReturn = CheckLevel.WARNING;
+ 

@@ -1,0 +1,7 @@
+    }
+
+    public char[] allocCharBuffer(int ix, int minSize) {
+        final int DEF_SIZE = charBufferLength(ix);
+        if (minSize < DEF_SIZE) {
+            minSize = DEF_SIZE;
+        }

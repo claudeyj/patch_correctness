@@ -1,0 +1,103 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 00:48:15 PDT 2021
+Number of Plausible Fixes: 11
+Total Number of Patches: 1223
+================================================
+1.
+	Mutator: MemberVariableMutator
+	Description: Removed assignment to member variable epsilon
+	File Name: org/apache/commons/math/linear/OpenMapRealVector.java
+	Line Number: 77
+	Rank: 1
+	Total Rank: 163
+	Dump: mutant-7.class
+------------------------------------------------
+2.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field epsilon is replaced by access to local epsilon
+	File Name: org/apache/commons/math/linear/OpenMapRealVector.java
+	Line Number: 77
+	Rank: 2
+	Total Rank: 165
+	Dump: mutant-8.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local value is replaced by access to field epsilon
+	File Name: org/apache/commons/math/linear/OpenMapRealVector.java
+	Line Number: 664
+	Rank: 4
+	Total Rank: 203
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local value is replaced by access to field DEFAULT_ZERO_TOLERANCE
+	File Name: org/apache/commons/math/linear/OpenMapRealVector.java
+	Line Number: 664
+	Rank: 4
+	Total Rank: 203
+	Dump: mutant-2.class
+------------------------------------------------
+5.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.linear.OpenMapRealVector::isDefaultValue(D)Z is replaced with the used of default value false
+	File Name: org/apache/commons/math/linear/OpenMapRealVector.java
+	Line Number: 664
+	Rank: 5
+	Total Rank: 209
+	Dump: mutant-6.class
+------------------------------------------------
+6.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/apache/commons/math/linear/OpenMapRealVector.java
+	Line Number: 664
+	Rank: 6
+	Total Rank: 213
+	Dump: mutant-9.class
+------------------------------------------------
+7.
+	Mutator: FieldNameMutator
+	Description: replaced access to count with an access to size
+	File Name: org/apache/commons/math/util/OpenIntToDoubleHashMap.java
+	Line Number: 399
+	Rank: 7
+	Total Rank: 469
+	Dump: mutant-10.class
+------------------------------------------------
+8.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: org/apache/commons/math/util/OpenIntToDoubleHashMap.java
+	Line Number: 399
+	Rank: 8
+	Total Rank: 476
+	Dump: mutant-4.class
+------------------------------------------------
+9.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.math.util.OpenIntToDoubleHashMap.count is replaced by the call to org.apache.commons.math.util.OpenIntToDoubleHashMap::size()I
+	File Name: org/apache/commons/math/util/OpenIntToDoubleHashMap.java
+	Line Number: 399
+	Rank: 9
+	Total Rank: 481
+	Dump: mutant-3.class
+------------------------------------------------
+10.
+	Mutator: MemberVariableMutator
+	Description: Removed assignment to member variable count
+	File Name: org/apache/commons/math/util/OpenIntToDoubleHashMap.java
+	Line Number: 399
+	Rank: 10
+	Total Rank: 490
+	Dump: mutant-11.class
+------------------------------------------------
+11.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field count is replaced by access to local index
+	File Name: org/apache/commons/math/util/OpenIntToDoubleHashMap.java
+	Line Number: 399
+	Rank: 11
+	Total Rank: 497
+	Dump: mutant-5.class
+------------------------------------------------

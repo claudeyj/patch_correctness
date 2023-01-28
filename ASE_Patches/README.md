@@ -1,0 +1,2 @@
+This directory is directly downloaded from ASE'20 paper https://zenodo.org/record/3730599/files/Patches_for_Static.zip
+Note that for patches in ./Patches_ICSE, each buggy program only has at most one plausible patch for one tool, while for patches in ./Patches_others, one buggy program can have more than one plausible patch from one tool, so their diretory structure is slightly different.

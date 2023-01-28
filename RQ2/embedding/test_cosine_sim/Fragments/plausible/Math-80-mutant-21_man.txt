@@ -1,0 +1,7 @@
+        final double relativeTolerance = Math.sqrt(MathUtils.EPSILON);
+        final double absoluteTolerance = 4 * minPivot;
+        final int maxIter =
+            2 + (int) ((lower - Math.log(minPivot)) / Math.log(2.0));
+        final double margin = 2 * (tNorm * MathUtils.EPSILON * n + 2 * minPivot);
+
+        // search lower eigenvalue

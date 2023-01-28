@@ -1,0 +1,332 @@
+--- jd-result-2.0/JacksonDatabind/53/mutant-5/a-TypeFactory.java	2021-08-09 04:34:46.901581176 -0700
++++ jd-result-2.0/JacksonDatabind/53/mutant-5/b-TypeFactory.java	2021-08-09 04:34:48.409581218 -0700
+@@ -11,19 +11,10 @@
+ /*   0*/import java.lang.reflect.Type;
+ /*   0*/import java.lang.reflect.TypeVariable;
+ /*   0*/import java.lang.reflect.WildcardType;
+-/*   0*/import java.util.ArrayList;
+ /*   0*/import java.util.Collection;
+-/*   0*/import java.util.EnumMap;
+-/*   0*/import java.util.EnumSet;
+-/*   0*/import java.util.HashMap;
+-/*   0*/import java.util.HashSet;
+-/*   0*/import java.util.LinkedHashMap;
+-/*   0*/import java.util.LinkedList;
+ /*   0*/import java.util.List;
+ /*   0*/import java.util.Map;
+ /*   0*/import java.util.Properties;
+-/*   0*/import java.util.TreeMap;
+-/*   0*/import java.util.TreeSet;
+ /*   0*/import java.util.concurrent.atomic.AtomicReference;
+ /*   0*/
+ /*   0*/public final class TypeFactory implements Serializable {
+@@ -200,60 +191,255 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public JavaType constructSpecializedType(JavaType baseType, Class<?> subclass) {
+-/*   0*/    JavaType newType;
+-/* 315*/    Class<?> rawBase = baseType.getRawClass();
+-/* 316*/    if (rawBase == subclass) {
+-/* 317*/        return baseType; 
+-/*   0*/       }
+-/* 324*/    if (rawBase == Object.class) {
+-/* 325*/      newType = _fromClass(null, subclass, TypeBindings.emptyBindings());
+-/*   0*/    } else {
+-/* 328*/      if (!rawBase.isAssignableFrom(subclass)) {
+-/* 329*/          throw new IllegalArgumentException(String.format("Class %s not subtype of %s", new Object[] { subclass.getName(), baseType })); 
+-/*   0*/         }
+-/* 335*/      if (baseType.getBindings().isEmpty()) {
+-/* 336*/        newType = _fromClass(null, subclass, TypeBindings.emptyBindings());
+-/*   0*/      } else {
+-/* 340*/        if (baseType.isContainerType()) {
+-/* 341*/            if (baseType.isMapLikeType()) {
+-/* 342*/              if (subclass == HashMap.class || subclass == LinkedHashMap.class || subclass == EnumMap.class || subclass == TreeMap.class) {
+-/* 346*/                newType = _fromClass(null, subclass, TypeBindings.create(subclass, baseType.getKeyType(), baseType.getContentType()));
+-/* 408*/                return newType;
+-/*   0*/              } 
+-/*   0*/            } else if (baseType.isCollectionLikeType()) {
+-/*   0*/              if (subclass == ArrayList.class || subclass == LinkedList.class || subclass == HashSet.class || subclass == TreeSet.class) {
+-/*   0*/                newType = _fromClass(null, subclass, TypeBindings.create(subclass, baseType.getContentType()));
+-/* 408*/                return newType;
+-/*   0*/              } 
+-/*   0*/              if (rawBase == EnumSet.class) {
+-/*   0*/                  return baseType; 
+-/*   0*/                 }
+-/*   0*/            }  
+-/*   0*/           }
+-/*   0*/        int typeParamCount = (subclass.getTypeParameters()).length;
+-/*   0*/        if (typeParamCount == 0) {
+-/*   0*/          newType = _fromClass(null, subclass, TypeBindings.emptyBindings());
+-/*   0*/        } else {
+-/*   0*/          if (baseType.isInterface()) {
+-/*   0*/            newType = baseType.refine(subclass, TypeBindings.emptyBindings(), null, new JavaType[] { baseType });
+-/*   0*/          } else {
+-/*   0*/            newType = baseType.refine(subclass, TypeBindings.emptyBindings(), baseType, NO_TYPES);
+-/*   0*/          } 
+-/*   0*/          if (newType == null) {
+-/*   0*/            TypeBindings tb = null;
+-/*   0*/            if (baseType.containedTypeCount() == typeParamCount) {
+-/*   0*/                if (typeParamCount == 1) {
+-/*   0*/                  tb = TypeBindings.create(subclass, baseType.containedType(0));
+-/*   0*/                } else if (typeParamCount == 2) {
+-/*   0*/                  tb = TypeBindings.create(subclass, baseType.containedType(0), baseType.containedType(1));
+-/*   0*/                }  
+-/*   0*/               }
+-/*   0*/            newType = _fromClass(null, subclass, (tb == null) ? TypeBindings.emptyBindings() : tb);
+-/*   0*/          } 
+-/*   0*/        } 
+-/*   0*/      } 
+-/*   0*/    } 
+-/* 408*/    return newType;
++/*   0*/    // Byte code:
++/*   0*/    //   0: aload_1
++/*   0*/    //   1: invokevirtual getRawClass : ()Ljava/lang/Class;
++/*   0*/    //   4: astore_3
++/*   0*/    //   5: aload_3
++/*   0*/    //   6: aload_2
++/*   0*/    //   7: if_acmpne -> 12
++/*   0*/    //   10: aload_1
++/*   0*/    //   11: areturn
++/*   0*/    //   12: aload_3
++/*   0*/    //   13: ldc java/lang/Object
++/*   0*/    //   15: if_acmpne -> 32
++/*   0*/    //   18: aload_0
++/*   0*/    //   19: aconst_null
++/*   0*/    //   20: aload_2
++/*   0*/    //   21: invokestatic emptyBindings : ()Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   24: invokevirtual _fromClass : (Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   27: astore #4
++/*   0*/    //   29: goto -> 371
++/*   0*/    //   32: aload_3
++/*   0*/    //   33: aload_2
++/*   0*/    //   34: invokevirtual isAssignableFrom : (Ljava/lang/Class;)Z
++/*   0*/    //   37: ifne -> 69
++/*   0*/    //   40: new java/lang/IllegalArgumentException
++/*   0*/    //   43: dup
++/*   0*/    //   44: ldc_w 'Class %s not subtype of %s'
++/*   0*/    //   47: iconst_2
++/*   0*/    //   48: anewarray java/lang/Object
++/*   0*/    //   51: dup
++/*   0*/    //   52: iconst_0
++/*   0*/    //   53: aload_2
++/*   0*/    //   54: invokevirtual getName : ()Ljava/lang/String;
++/*   0*/    //   57: aastore
++/*   0*/    //   58: dup
++/*   0*/    //   59: iconst_1
++/*   0*/    //   60: aload_1
++/*   0*/    //   61: aastore
++/*   0*/    //   62: invokestatic format : (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
++/*   0*/    //   65: invokespecial <init> : (Ljava/lang/String;)V
++/*   0*/    //   68: athrow
++/*   0*/    //   69: aload_1
++/*   0*/    //   70: invokevirtual getBindings : ()Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   73: invokevirtual isEmpty : ()Z
++/*   0*/    //   76: ifeq -> 93
++/*   0*/    //   79: aload_0
++/*   0*/    //   80: aconst_null
++/*   0*/    //   81: aload_2
++/*   0*/    //   82: invokestatic emptyBindings : ()Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   85: invokevirtual _fromClass : (Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   88: astore #4
++/*   0*/    //   90: goto -> 371
++/*   0*/    //   93: aload_1
++/*   0*/    //   94: invokevirtual isContainerType : ()Z
++/*   0*/    //   97: ifeq -> 222
++/*   0*/    //   100: aload_1
++/*   0*/    //   101: invokevirtual isMapLikeType : ()Z
++/*   0*/    //   104: ifeq -> 159
++/*   0*/    //   107: aload_2
++/*   0*/    //   108: ldc_w java/util/HashMap
++/*   0*/    //   111: if_acmpeq -> 136
++/*   0*/    //   114: aload_2
++/*   0*/    //   115: ldc_w java/util/LinkedHashMap
++/*   0*/    //   118: if_acmpeq -> 136
++/*   0*/    //   121: aload_2
++/*   0*/    //   122: ldc_w java/util/EnumMap
++/*   0*/    //   125: pop2
++/*   0*/    //   126: goto -> 136
++/*   0*/    //   129: aload_2
++/*   0*/    //   130: ldc_w java/util/TreeMap
++/*   0*/    //   133: if_acmpne -> 222
++/*   0*/    //   136: aload_0
++/*   0*/    //   137: aconst_null
++/*   0*/    //   138: aload_2
++/*   0*/    //   139: aload_2
++/*   0*/    //   140: aload_1
++/*   0*/    //   141: invokevirtual getKeyType : ()Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   144: aload_1
++/*   0*/    //   145: invokevirtual getContentType : ()Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   148: invokestatic create : (Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   151: invokevirtual _fromClass : (Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   154: astore #4
++/*   0*/    //   156: goto -> 371
++/*   0*/    //   159: aload_1
++/*   0*/    //   160: invokevirtual isCollectionLikeType : ()Z
++/*   0*/    //   163: ifeq -> 222
++/*   0*/    //   166: aload_2
++/*   0*/    //   167: ldc_w java/util/ArrayList
++/*   0*/    //   170: if_acmpeq -> 194
++/*   0*/    //   173: aload_2
++/*   0*/    //   174: ldc_w java/util/LinkedList
++/*   0*/    //   177: if_acmpeq -> 194
++/*   0*/    //   180: aload_2
++/*   0*/    //   181: ldc_w java/util/HashSet
++/*   0*/    //   184: if_acmpeq -> 194
++/*   0*/    //   187: aload_2
++/*   0*/    //   188: ldc_w java/util/TreeSet
++/*   0*/    //   191: if_acmpne -> 213
++/*   0*/    //   194: aload_0
++/*   0*/    //   195: aconst_null
++/*   0*/    //   196: aload_2
++/*   0*/    //   197: aload_2
++/*   0*/    //   198: aload_1
++/*   0*/    //   199: invokevirtual getContentType : ()Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   202: invokestatic create : (Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   205: invokevirtual _fromClass : (Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   208: astore #4
++/*   0*/    //   210: goto -> 371
++/*   0*/    //   213: aload_3
++/*   0*/    //   214: ldc_w java/util/EnumSet
++/*   0*/    //   217: if_acmpne -> 222
++/*   0*/    //   220: aload_1
++/*   0*/    //   221: areturn
++/*   0*/    //   222: aload_2
++/*   0*/    //   223: invokevirtual getTypeParameters : ()[Ljava/lang/reflect/TypeVariable;
++/*   0*/    //   226: arraylength
++/*   0*/    //   227: istore #5
++/*   0*/    //   229: iload #5
++/*   0*/    //   231: ifne -> 248
++/*   0*/    //   234: aload_0
++/*   0*/    //   235: aconst_null
++/*   0*/    //   236: aload_2
++/*   0*/    //   237: invokestatic emptyBindings : ()Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   240: invokevirtual _fromClass : (Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   243: astore #4
++/*   0*/    //   245: goto -> 371
++/*   0*/    //   248: aload_1
++/*   0*/    //   249: invokevirtual isInterface : ()Z
++/*   0*/    //   252: ifeq -> 277
++/*   0*/    //   255: aload_1
++/*   0*/    //   256: aload_2
++/*   0*/    //   257: invokestatic emptyBindings : ()Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   260: aconst_null
++/*   0*/    //   261: iconst_1
++/*   0*/    //   262: anewarray com/fasterxml/jackson/databind/JavaType
++/*   0*/    //   265: dup
++/*   0*/    //   266: iconst_0
++/*   0*/    //   267: aload_1
++/*   0*/    //   268: aastore
++/*   0*/    //   269: invokevirtual refine : (Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;Lcom/fasterxml/jackson/databind/JavaType;[Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   272: astore #4
++/*   0*/    //   274: goto -> 291
++/*   0*/    //   277: aload_1
++/*   0*/    //   278: aload_2
++/*   0*/    //   279: invokestatic emptyBindings : ()Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   282: aload_1
++/*   0*/    //   283: getstatic com/fasterxml/jackson/databind/type/TypeFactory.NO_TYPES : [Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   286: invokevirtual refine : (Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;Lcom/fasterxml/jackson/databind/JavaType;[Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   289: astore #4
++/*   0*/    //   291: aload #4
++/*   0*/    //   293: ifnonnull -> 371
++/*   0*/    //   296: aconst_null
++/*   0*/    //   297: astore #6
++/*   0*/    //   299: aload_1
++/*   0*/    //   300: invokevirtual containedTypeCount : ()I
++/*   0*/    //   303: iload #5
++/*   0*/    //   305: if_icmpne -> 350
++/*   0*/    //   308: iload #5
++/*   0*/    //   310: iconst_1
++/*   0*/    //   311: if_icmpne -> 328
++/*   0*/    //   314: aload_2
++/*   0*/    //   315: aload_1
++/*   0*/    //   316: iconst_0
++/*   0*/    //   317: invokevirtual containedType : (I)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   320: invokestatic create : (Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   323: astore #6
++/*   0*/    //   325: goto -> 350
++/*   0*/    //   328: iload #5
++/*   0*/    //   330: iconst_2
++/*   0*/    //   331: if_icmpne -> 350
++/*   0*/    //   334: aload_2
++/*   0*/    //   335: aload_1
++/*   0*/    //   336: iconst_0
++/*   0*/    //   337: invokevirtual containedType : (I)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   340: aload_1
++/*   0*/    //   341: iconst_1
++/*   0*/    //   342: invokevirtual containedType : (I)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   345: invokestatic create : (Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   348: astore #6
++/*   0*/    //   350: aload_0
++/*   0*/    //   351: aconst_null
++/*   0*/    //   352: aload_2
++/*   0*/    //   353: aload #6
++/*   0*/    //   355: ifnonnull -> 364
++/*   0*/    //   358: invokestatic emptyBindings : ()Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   361: goto -> 366
++/*   0*/    //   364: aload #6
++/*   0*/    //   366: invokevirtual _fromClass : (Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   369: astore #4
++/*   0*/    //   371: aload #4
++/*   0*/    //   373: areturn
++/*   0*/    // Line number table:
++/*   0*/    //   Java source line number -> byte code offset
++/*   0*/    //   #315	-> 0
++/*   0*/    //   #316	-> 5
++/*   0*/    //   #317	-> 10
++/*   0*/    //   #324	-> 12
++/*   0*/    //   #325	-> 18
++/*   0*/    //   #326	-> 29
++/*   0*/    //   #328	-> 32
++/*   0*/    //   #329	-> 40
++/*   0*/    //   #335	-> 69
++/*   0*/    //   #336	-> 79
++/*   0*/    //   #337	-> 90
++/*   0*/    //   #340	-> 93
++/*   0*/    //   #341	-> 100
++/*   0*/    //   #342	-> 107
++/*   0*/    //   #346	-> 136
++/*   0*/    //   #348	-> 156
++/*   0*/    //   #350	-> 159
++/*   0*/    //   #351	-> 166
++/*   0*/    //   #355	-> 194
++/*   0*/    //   #357	-> 210
++/*   0*/    //   #361	-> 213
++/*   0*/    //   #362	-> 220
++/*   0*/    //   #367	-> 222
++/*   0*/    //   #368	-> 229
++/*   0*/    //   #369	-> 234
++/*   0*/    //   #370	-> 245
++/*   0*/    //   #385	-> 248
++/*   0*/    //   #386	-> 255
++/*   0*/    //   #388	-> 277
++/*   0*/    //   #391	-> 291
++/*   0*/    //   #392	-> 296
++/*   0*/    //   #393	-> 299
++/*   0*/    //   #394	-> 308
++/*   0*/    //   #395	-> 314
++/*   0*/    //   #396	-> 328
++/*   0*/    //   #397	-> 334
++/*   0*/    //   #401	-> 350
++/*   0*/    //   #408	-> 371
++/*   0*/    // Local variable table:
++/*   0*/    //   start	length	slot	name	descriptor
++/*   0*/    //   29	3	4	newType	Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   90	3	4	newType	Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   156	3	4	newType	Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   210	3	4	newType	Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   245	3	4	newType	Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   274	3	4	newType	Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   299	72	6	tb	Lcom/fasterxml/jackson/databind/type/TypeBindings;
++/*   0*/    //   229	142	5	typeParamCount	I
++/*   0*/    //   0	374	0	this	Lcom/fasterxml/jackson/databind/type/TypeFactory;
++/*   0*/    //   0	374	1	baseType	Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    //   0	374	2	subclass	Ljava/lang/Class;
++/*   0*/    //   5	369	3	rawBase	Ljava/lang/Class;
++/*   0*/    //   291	83	4	newType	Lcom/fasterxml/jackson/databind/JavaType;
++/*   0*/    // Local variable type table:
++/*   0*/    //   start	length	slot	name	signature
++/*   0*/    //   0	374	2	subclass	Ljava/lang/Class<*>;
++/*   0*/    //   5	369	3	rawBase	Ljava/lang/Class<*>;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public JavaType constructGeneralizedType(JavaType baseType, Class<?> superClass) {

@@ -1,0 +1,23 @@
+--- jd-result/Time/11/mutant-24/a-DateTimeZoneBuilder.java	2021-07-14 21:28:34.450580397 -0700
++++ jd-result/Time/11/mutant-24/b-DateTimeZoneBuilder.java	2021-07-14 21:28:35.962580439 -0700
+@@ -957,8 +957,10 @@
+ /*   0*/          } 
+ /*   0*/        } 
+ /*   0*/      } 
+-/*1457*/      if (param1DSTZone != null && 
+-/*1458*/        param1DSTZone.iStartRecurrence.getNameKey().equals(param1DSTZone.iEndRecurrence.getNameKey())) {
++/*1457*/      if (param1DSTZone != null) {
++/*1458*/        param1DSTZone.iEndRecurrence.getNameKey();
++/*1458*/        param1DSTZone.iStartRecurrence.getNameKey();
++/*   0*/        if (false) {
+ /*1460*/        if (ZoneInfoCompiler.verbose())
+ /*1461*/          System.out.println("Fixing duplicate recurrent name key - " + param1DSTZone.iStartRecurrence.getNameKey()); 
+ /*1464*/        if (param1DSTZone.iStartRecurrence.getSaveMillis() > 0) {
+@@ -967,6 +969,7 @@
+ /*1471*/          param1DSTZone = new DateTimeZoneBuilder.DSTZone(param1DSTZone.getID(), param1DSTZone.iStandardOffset, param1DSTZone.iStartRecurrence, param1DSTZone.iEndRecurrence.renameAppend("-Summer"));
+ /*   0*/        } 
+ /*   0*/      } 
++/*   0*/      } 
+ /*1480*/      return new PrecalculatedZone(param1Boolean ? param1String : "", arrayOfLong, arrayOfInt1, arrayOfInt2, arrayOfString1, param1DSTZone);
+ /*   0*/    }
+ /*   0*/    

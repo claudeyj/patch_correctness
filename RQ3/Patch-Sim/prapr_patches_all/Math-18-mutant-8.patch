@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/18/mutant-8/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/18/mutant-8/man-patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/18/mutant-8/ori-CMAESOptimizer.java	2021-08-23 09:23:48.864990129 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/18/mutant-8/man-patched-CMAESOptimizer.java	2021-08-23 09:23:48.864990129 +0800
+@@ -243,7 +243,7 @@
+      * Default constructor, uses default parameters
+      */
+     public CMAESOptimizer() {
+-        this(0);
++    this(0, null, 0, 0.0D, false, 0, 0, null, false, null);
+     }
+ 
+     /**

@@ -1,0 +1,2065 @@
+/*   0*/package org.joda.time.format;
+/*   0*/
+/*   0*/import java.io.IOException;
+/*   0*/import java.io.Writer;
+/*   0*/import java.util.ArrayList;
+/*   0*/import java.util.HashMap;
+/*   0*/import java.util.HashSet;
+/*   0*/import java.util.List;
+/*   0*/import java.util.Locale;
+/*   0*/import java.util.Map;
+/*   0*/import java.util.Set;
+/*   0*/import org.joda.time.Chronology;
+/*   0*/import org.joda.time.DateTimeField;
+/*   0*/import org.joda.time.DateTimeFieldType;
+/*   0*/import org.joda.time.DateTimeZone;
+/*   0*/import org.joda.time.MutableDateTime;
+/*   0*/import org.joda.time.ReadablePartial;
+/*   0*/import org.joda.time.field.MillisDurationField;
+/*   0*/import org.joda.time.field.PreciseDateTimeField;
+/*   0*/
+/*   0*/public class DateTimeFormatterBuilder {
+/*  84*/  private ArrayList<Object> iElementPairs = new ArrayList();
+/*   0*/  
+/*   0*/  private Object iFormatter;
+/*   0*/  
+/*   0*/  public DateTimeFormatter toFormatter() {
+/* 104*/    Object object = getFormatter();
+/* 105*/    DateTimePrinter dateTimePrinter = null;
+/* 106*/    if (isPrinter(object))
+/* 107*/      dateTimePrinter = (DateTimePrinter)object; 
+/* 109*/    DateTimeParser dateTimeParser = null;
+/* 110*/    if (isParser(object))
+/* 111*/      dateTimeParser = (DateTimeParser)object; 
+/* 113*/    if (dateTimePrinter != null || dateTimeParser != null)
+/* 114*/      return new DateTimeFormatter(dateTimePrinter, dateTimeParser); 
+/* 116*/    throw new UnsupportedOperationException("Both printing and parsing not supported");
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimePrinter toPrinter() {
+/* 132*/    Object object = getFormatter();
+/* 133*/    if (isPrinter(object))
+/* 134*/      return (DateTimePrinter)object; 
+/* 136*/    throw new UnsupportedOperationException("Printing is not supported");
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeParser toParser() {
+/* 152*/    Object object = getFormatter();
+/* 153*/    if (isParser(object))
+/* 154*/      return (DateTimeParser)object; 
+/* 156*/    throw new UnsupportedOperationException("Parsing is not supported");
+/*   0*/  }
+/*   0*/  
+/*   0*/  public boolean canBuildFormatter() {
+/* 167*/    return isFormatter(getFormatter());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public boolean canBuildPrinter() {
+/* 177*/    return isPrinter(getFormatter());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public boolean canBuildParser() {
+/* 187*/    return isParser(getFormatter());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public void clear() {
+/* 196*/    this.iFormatter = null;
+/* 197*/    this.iElementPairs.clear();
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder append(DateTimeFormatter paramDateTimeFormatter) {
+/* 209*/    if (paramDateTimeFormatter == null)
+/* 210*/      throw new IllegalArgumentException("No formatter supplied"); 
+/* 212*/    return append0(paramDateTimeFormatter.getPrinter(), paramDateTimeFormatter.getParser());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder append(DateTimePrinter paramDateTimePrinter) {
+/* 224*/    checkPrinter(paramDateTimePrinter);
+/* 225*/    return append0(paramDateTimePrinter, null);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder append(DateTimeParser paramDateTimeParser) {
+/* 237*/    checkParser(paramDateTimeParser);
+/* 238*/    return append0(null, paramDateTimeParser);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder append(DateTimePrinter paramDateTimePrinter, DateTimeParser paramDateTimeParser) {
+/* 250*/    checkPrinter(paramDateTimePrinter);
+/* 251*/    checkParser(paramDateTimeParser);
+/* 252*/    return append0(paramDateTimePrinter, paramDateTimeParser);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder append(DateTimePrinter paramDateTimePrinter, DateTimeParser[] paramArrayOfDateTimeParser) {
+/* 273*/    if (paramDateTimePrinter != null)
+/* 274*/      checkPrinter(paramDateTimePrinter); 
+/* 276*/    if (paramArrayOfDateTimeParser == null)
+/* 277*/      throw new IllegalArgumentException("No parsers supplied"); 
+/* 279*/    int i = paramArrayOfDateTimeParser.length;
+/* 280*/    if (i == 1) {
+/* 281*/      if (paramArrayOfDateTimeParser[0] == null)
+/* 282*/        throw new IllegalArgumentException("No parser supplied"); 
+/* 284*/      return append0(paramDateTimePrinter, paramArrayOfDateTimeParser[0]);
+/*   0*/    } 
+/* 287*/    DateTimeParser[] arrayOfDateTimeParser = new DateTimeParser[i];
+/*   0*/    int j;
+/* 289*/    for (j = 0; j < i - 1; j++) {
+/* 290*/      arrayOfDateTimeParser[j] = paramArrayOfDateTimeParser[j];
+/* 290*/      if (paramArrayOfDateTimeParser[j] == null)
+/* 291*/        throw new IllegalArgumentException("Incomplete parser array"); 
+/*   0*/    } 
+/* 294*/    arrayOfDateTimeParser[j] = paramArrayOfDateTimeParser[j];
+/* 296*/    return append0(paramDateTimePrinter, new MatchingParser(arrayOfDateTimeParser));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendOptional(DateTimeParser paramDateTimeParser) {
+/* 307*/    checkParser(paramDateTimeParser);
+/* 308*/    DateTimeParser[] arrayOfDateTimeParser = { paramDateTimeParser, null };
+/* 309*/    return append0(null, new MatchingParser(arrayOfDateTimeParser));
+/*   0*/  }
+/*   0*/  
+/*   0*/  private void checkParser(DateTimeParser paramDateTimeParser) {
+/* 319*/    if (paramDateTimeParser == null)
+/* 320*/      throw new IllegalArgumentException("No parser supplied"); 
+/*   0*/  }
+/*   0*/  
+/*   0*/  private void checkPrinter(DateTimePrinter paramDateTimePrinter) {
+/* 330*/    if (paramDateTimePrinter == null)
+/* 331*/      throw new IllegalArgumentException("No printer supplied"); 
+/*   0*/  }
+/*   0*/  
+/*   0*/  private DateTimeFormatterBuilder append0(Object paramObject) {
+/* 336*/    this.iFormatter = null;
+/* 338*/    this.iElementPairs.add(paramObject);
+/* 339*/    this.iElementPairs.add(paramObject);
+/* 340*/    return this;
+/*   0*/  }
+/*   0*/  
+/*   0*/  private DateTimeFormatterBuilder append0(DateTimePrinter paramDateTimePrinter, DateTimeParser paramDateTimeParser) {
+/* 345*/    this.iFormatter = null;
+/* 346*/    this.iElementPairs.add(paramDateTimePrinter);
+/* 347*/    this.iElementPairs.add(paramDateTimeParser);
+/* 348*/    return this;
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendLiteral(char paramChar) {
+/* 359*/    return append0(new CharacterLiteral(paramChar));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendLiteral(String paramString) {
+/* 370*/    if (paramString == null)
+/* 371*/      throw new IllegalArgumentException("Literal must not be null"); 
+/* 373*/    switch (paramString.length()) {
+/*   0*/      case 0:
+/* 375*/        return this;
+/*   0*/      case 1:
+/* 377*/        return append0(new CharacterLiteral(paramString.charAt(0)));
+/*   0*/    } 
+/* 379*/    return append0(new StringLiteral(paramString));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendDecimal(DateTimeFieldType paramDateTimeFieldType, int paramInt1, int paramInt2) {
+/* 396*/    if (paramDateTimeFieldType == null)
+/* 397*/      throw new IllegalArgumentException("Field type must not be null"); 
+/* 399*/    if (paramInt2 < paramInt1)
+/* 400*/      paramInt2 = paramInt1; 
+/* 402*/    if (paramInt1 < 0 || paramInt2 <= 0)
+/* 403*/      throw new IllegalArgumentException(); 
+/* 405*/    if (paramInt1 <= 1)
+/* 406*/      return append0(new UnpaddedNumber(paramDateTimeFieldType, paramInt2, false)); 
+/* 408*/    return append0(new PaddedNumber(paramDateTimeFieldType, paramInt2, false, paramInt1));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendFixedDecimal(DateTimeFieldType paramDateTimeFieldType, int paramInt) {
+/* 426*/    if (paramDateTimeFieldType == null)
+/* 427*/      throw new IllegalArgumentException("Field type must not be null"); 
+/* 429*/    if (paramInt <= 0)
+/* 430*/      throw new IllegalArgumentException("Illegal number of digits: " + paramInt); 
+/* 432*/    return append0(new FixedNumber(paramDateTimeFieldType, paramInt, false));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendSignedDecimal(DateTimeFieldType paramDateTimeFieldType, int paramInt1, int paramInt2) {
+/* 448*/    if (paramDateTimeFieldType == null)
+/* 449*/      throw new IllegalArgumentException("Field type must not be null"); 
+/* 451*/    if (paramInt2 < paramInt1)
+/* 452*/      paramInt2 = paramInt1; 
+/* 454*/    if (paramInt1 < 0 || paramInt2 <= 0)
+/* 455*/      throw new IllegalArgumentException(); 
+/* 457*/    if (paramInt1 <= 1)
+/* 458*/      return append0(new UnpaddedNumber(paramDateTimeFieldType, paramInt2, true)); 
+/* 460*/    return append0(new PaddedNumber(paramDateTimeFieldType, paramInt2, true, paramInt1));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendFixedSignedDecimal(DateTimeFieldType paramDateTimeFieldType, int paramInt) {
+/* 478*/    if (paramDateTimeFieldType == null)
+/* 479*/      throw new IllegalArgumentException("Field type must not be null"); 
+/* 481*/    if (paramInt <= 0)
+/* 482*/      throw new IllegalArgumentException("Illegal number of digits: " + paramInt); 
+/* 484*/    return append0(new FixedNumber(paramDateTimeFieldType, paramInt, true));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendText(DateTimeFieldType paramDateTimeFieldType) {
+/* 496*/    if (paramDateTimeFieldType == null)
+/* 497*/      throw new IllegalArgumentException("Field type must not be null"); 
+/* 499*/    return append0(new TextField(paramDateTimeFieldType, false));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendShortText(DateTimeFieldType paramDateTimeFieldType) {
+/* 511*/    if (paramDateTimeFieldType == null)
+/* 512*/      throw new IllegalArgumentException("Field type must not be null"); 
+/* 514*/    return append0(new TextField(paramDateTimeFieldType, true));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendFraction(DateTimeFieldType paramDateTimeFieldType, int paramInt1, int paramInt2) {
+/* 532*/    if (paramDateTimeFieldType == null)
+/* 533*/      throw new IllegalArgumentException("Field type must not be null"); 
+/* 535*/    if (paramInt2 < paramInt1)
+/* 536*/      paramInt2 = paramInt1; 
+/* 538*/    if (paramInt1 < 0 || paramInt2 <= 0)
+/* 539*/      throw new IllegalArgumentException(); 
+/* 541*/    return append0(new Fraction(paramDateTimeFieldType, paramInt1, paramInt2));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendFractionOfSecond(int paramInt1, int paramInt2) {
+/* 559*/    return appendFraction(DateTimeFieldType.secondOfDay(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendFractionOfMinute(int paramInt1, int paramInt2) {
+/* 576*/    return appendFraction(DateTimeFieldType.minuteOfDay(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendFractionOfHour(int paramInt1, int paramInt2) {
+/* 593*/    return appendFraction(DateTimeFieldType.hourOfDay(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendFractionOfDay(int paramInt1, int paramInt2) {
+/* 610*/    return appendFraction(DateTimeFieldType.dayOfYear(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendMillisOfSecond(int paramInt) {
+/* 627*/    return appendDecimal(DateTimeFieldType.millisOfSecond(), paramInt, 3);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendMillisOfDay(int paramInt) {
+/* 637*/    return appendDecimal(DateTimeFieldType.millisOfDay(), paramInt, 8);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendSecondOfMinute(int paramInt) {
+/* 647*/    return appendDecimal(DateTimeFieldType.secondOfMinute(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendSecondOfDay(int paramInt) {
+/* 657*/    return appendDecimal(DateTimeFieldType.secondOfDay(), paramInt, 5);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendMinuteOfHour(int paramInt) {
+/* 667*/    return appendDecimal(DateTimeFieldType.minuteOfHour(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendMinuteOfDay(int paramInt) {
+/* 677*/    return appendDecimal(DateTimeFieldType.minuteOfDay(), paramInt, 4);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendHourOfDay(int paramInt) {
+/* 687*/    return appendDecimal(DateTimeFieldType.hourOfDay(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendClockhourOfDay(int paramInt) {
+/* 697*/    return appendDecimal(DateTimeFieldType.clockhourOfDay(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendHourOfHalfday(int paramInt) {
+/* 707*/    return appendDecimal(DateTimeFieldType.hourOfHalfday(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendClockhourOfHalfday(int paramInt) {
+/* 717*/    return appendDecimal(DateTimeFieldType.clockhourOfHalfday(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendDayOfWeek(int paramInt) {
+/* 727*/    return appendDecimal(DateTimeFieldType.dayOfWeek(), paramInt, 1);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendDayOfMonth(int paramInt) {
+/* 737*/    return appendDecimal(DateTimeFieldType.dayOfMonth(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendDayOfYear(int paramInt) {
+/* 747*/    return appendDecimal(DateTimeFieldType.dayOfYear(), paramInt, 3);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendWeekOfWeekyear(int paramInt) {
+/* 757*/    return appendDecimal(DateTimeFieldType.weekOfWeekyear(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendWeekyear(int paramInt1, int paramInt2) {
+/* 769*/    return appendSignedDecimal(DateTimeFieldType.weekyear(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendMonthOfYear(int paramInt) {
+/* 779*/    return appendDecimal(DateTimeFieldType.monthOfYear(), paramInt, 2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendYear(int paramInt1, int paramInt2) {
+/* 791*/    return appendSignedDecimal(DateTimeFieldType.year(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTwoDigitYear(int paramInt) {
+/* 813*/    return appendTwoDigitYear(paramInt, false);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTwoDigitYear(int paramInt, boolean paramBoolean) {
+/* 831*/    return append0(new TwoDigitYear(DateTimeFieldType.year(), paramInt, paramBoolean));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTwoDigitWeekyear(int paramInt) {
+/* 853*/    return appendTwoDigitWeekyear(paramInt, false);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTwoDigitWeekyear(int paramInt, boolean paramBoolean) {
+/* 871*/    return append0(new TwoDigitYear(DateTimeFieldType.weekyear(), paramInt, paramBoolean));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendYearOfEra(int paramInt1, int paramInt2) {
+/* 883*/    return appendDecimal(DateTimeFieldType.yearOfEra(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendYearOfCentury(int paramInt1, int paramInt2) {
+/* 895*/    return appendDecimal(DateTimeFieldType.yearOfCentury(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendCenturyOfEra(int paramInt1, int paramInt2) {
+/* 907*/    return appendSignedDecimal(DateTimeFieldType.centuryOfEra(), paramInt1, paramInt2);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendHalfdayOfDayText() {
+/* 917*/    return appendText(DateTimeFieldType.halfdayOfDay());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendDayOfWeekText() {
+/* 927*/    return appendText(DateTimeFieldType.dayOfWeek());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendDayOfWeekShortText() {
+/* 938*/    return appendShortText(DateTimeFieldType.dayOfWeek());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendMonthOfYearText() {
+/* 949*/    return appendText(DateTimeFieldType.monthOfYear());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendMonthOfYearShortText() {
+/* 959*/    return appendShortText(DateTimeFieldType.monthOfYear());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendEraText() {
+/* 969*/    return appendText(DateTimeFieldType.era());
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTimeZoneName() {
+/* 980*/    return append0(new TimeZoneName(0, null), null);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTimeZoneName(Map<String, DateTimeZone> paramMap) {
+/* 993*/    TimeZoneName timeZoneName = new TimeZoneName(0, paramMap);
+/* 994*/    return append0(timeZoneName, timeZoneName);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTimeZoneShortName() {
+/*1005*/    return append0(new TimeZoneName(1, null), null);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTimeZoneShortName(Map<String, DateTimeZone> paramMap) {
+/*1019*/    TimeZoneName timeZoneName = new TimeZoneName(1, paramMap);
+/*1020*/    return append0(timeZoneName, timeZoneName);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTimeZoneId() {
+/*1030*/    return append0(TimeZoneId.INSTANCE, TimeZoneId.INSTANCE);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTimeZoneOffset(String paramString, boolean paramBoolean, int paramInt1, int paramInt2) {
+/*1053*/    return append0(new TimeZoneOffset(paramString, paramString, paramBoolean, paramInt1, paramInt2));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendTimeZoneOffset(String paramString1, String paramString2, boolean paramBoolean, int paramInt1, int paramInt2) {
+/*1080*/    return append0(new TimeZoneOffset(paramString1, paramString2, paramBoolean, paramInt1, paramInt2));
+/*   0*/  }
+/*   0*/  
+/*   0*/  public DateTimeFormatterBuilder appendPattern(String paramString) {
+/*1094*/    DateTimeFormat.appendPatternTo(this, paramString);
+/*1095*/    return this;
+/*   0*/  }
+/*   0*/  
+/*   0*/  private Object getFormatter() {
+/*1100*/    Object object = this.iFormatter;
+/*1102*/    if (object == null) {
+/*1103*/      if (this.iElementPairs.size() == 2) {
+/*1104*/        Object object1 = this.iElementPairs.get(0);
+/*1105*/        Object object2 = this.iElementPairs.get(1);
+/*1107*/        if (object1 != null) {
+/*1108*/          if (object1 == object2 || object2 == null)
+/*1109*/            object = object1; 
+/*   0*/        } else {
+/*1112*/          object = object2;
+/*   0*/        } 
+/*   0*/      } 
+/*1116*/      if (object == null)
+/*1117*/        object = new Composite(this.iElementPairs); 
+/*1120*/      this.iFormatter = object;
+/*   0*/    } 
+/*1123*/    return object;
+/*   0*/  }
+/*   0*/  
+/*   0*/  private boolean isPrinter(Object paramObject) {
+/*1127*/    if (paramObject instanceof DateTimePrinter) {
+/*1128*/      if (paramObject instanceof Composite)
+/*1129*/        return ((Composite)paramObject).isPrinter(); 
+/*1131*/      return true;
+/*   0*/    } 
+/*1133*/    return false;
+/*   0*/  }
+/*   0*/  
+/*   0*/  private boolean isParser(Object paramObject) {
+/*1137*/    if (paramObject instanceof DateTimeParser) {
+/*1138*/      if (paramObject instanceof Composite)
+/*1139*/        return ((Composite)paramObject).isParser(); 
+/*1141*/      return true;
+/*   0*/    } 
+/*1143*/    return false;
+/*   0*/  }
+/*   0*/  
+/*   0*/  private boolean isFormatter(Object paramObject) {
+/*1147*/    return (isPrinter(paramObject) || isParser(paramObject));
+/*   0*/  }
+/*   0*/  
+/*   0*/  static void appendUnknownString(StringBuffer paramStringBuffer, int paramInt) {
+/*1151*/    for (int i = paramInt; --i >= 0;)
+/*1152*/      paramStringBuffer.append('�'); 
+/*   0*/  }
+/*   0*/  
+/*   0*/  static void printUnknownString(Writer paramWriter, int paramInt) throws IOException {
+/*1157*/    for (int i = paramInt; --i >= 0;)
+/*1158*/      paramWriter.write(65533); 
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class CharacterLiteral implements DateTimePrinter, DateTimeParser {
+/*   0*/    private final char iValue;
+/*   0*/    
+/*   0*/    CharacterLiteral(char param1Char) {
+/*1170*/      this.iValue = param1Char;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*1174*/      return 1;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*1180*/      param1StringBuffer.append(this.iValue);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*1186*/      param1Writer.write(this.iValue);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*1190*/      param1StringBuffer.append(this.iValue);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {
+/*1194*/      param1Writer.write(this.iValue);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*1198*/      return 1;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*1202*/      if (param1Int >= param1String.length())
+/*1203*/        return param1Int ^ 0xFFFFFFFF; 
+/*1206*/      char c1 = param1String.charAt(param1Int);
+/*1207*/      char c2 = this.iValue;
+/*1209*/      if (c1 != c2) {
+/*1210*/        c1 = Character.toUpperCase(c1);
+/*1211*/        c2 = Character.toUpperCase(c2);
+/*1212*/        if (c1 != c2) {
+/*1213*/          c1 = Character.toLowerCase(c1);
+/*1214*/          c2 = Character.toLowerCase(c2);
+/*1215*/          if (c1 != c2)
+/*1216*/            return param1Int ^ 0xFFFFFFFF; 
+/*   0*/        } 
+/*   0*/      } 
+/*1221*/      return param1Int + 1;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class StringLiteral implements DateTimePrinter, DateTimeParser {
+/*   0*/    private final String iValue;
+/*   0*/    
+/*   0*/    StringLiteral(String param1String) {
+/*1233*/      this.iValue = param1String;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*1237*/      return this.iValue.length();
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*1243*/      param1StringBuffer.append(this.iValue);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*1249*/      param1Writer.write(this.iValue);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*1253*/      param1StringBuffer.append(this.iValue);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {
+/*1257*/      param1Writer.write(this.iValue);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*1261*/      return this.iValue.length();
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*1265*/      if (param1String.regionMatches(true, param1Int, this.iValue, 0, this.iValue.length()))
+/*1266*/        return param1Int + this.iValue.length(); 
+/*1268*/      return param1Int ^ 0xFFFFFFFF;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static abstract class NumberFormatter implements DateTimePrinter, DateTimeParser {
+/*   0*/    protected final DateTimeFieldType iFieldType;
+/*   0*/    
+/*   0*/    protected final int iMaxParsedDigits;
+/*   0*/    
+/*   0*/    protected final boolean iSigned;
+/*   0*/    
+/*   0*/    NumberFormatter(DateTimeFieldType param1DateTimeFieldType, int param1Int, boolean param1Boolean) {
+/*1282*/      this.iFieldType = param1DateTimeFieldType;
+/*1283*/      this.iMaxParsedDigits = param1Int;
+/*1284*/      this.iSigned = param1Boolean;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*1288*/      return this.iMaxParsedDigits;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*   0*/      int k;
+/*1292*/      int i = Math.min(this.iMaxParsedDigits, param1String.length() - param1Int);
+/*1294*/      boolean bool = false;
+/*1295*/      int j = 0;
+/*1296*/      while (j < i) {
+/*1297*/        k = param1String.charAt(param1Int + j);
+/*1298*/        if (j == 0 && (k == 45 || k == 43) && this.iSigned) {
+/*1299*/          bool = (k == 45) ? true : false;
+/*1302*/          if (j + 1 >= i || (k = param1String.charAt(param1Int + j + 1)) < '0' || k > 57)
+/*   0*/            break; 
+/*1308*/          if (bool) {
+/*1309*/            j++;
+/*   0*/          } else {
+/*1312*/            param1Int++;
+/*   0*/          } 
+/*1315*/          i = Math.min(i + 1, param1String.length() - param1Int);
+/*   0*/          continue;
+/*   0*/        } 
+/*1318*/        if (k < 48 || k > 57)
+/*   0*/          break; 
+/*1321*/        j++;
+/*   0*/      } 
+/*1324*/      if (j == 0)
+/*1325*/        return param1Int ^ 0xFFFFFFFF; 
+/*1329*/      if (j >= 9) {
+/*1332*/        k = Integer.parseInt(param1String.substring(param1Int, param1Int += j));
+/*   0*/      } else {
+/*1334*/        int m = param1Int;
+/*1335*/        if (bool)
+/*1336*/          m++; 
+/*   0*/        try {
+/*1339*/          k = param1String.charAt(m++) - 48;
+/*1340*/        } catch (StringIndexOutOfBoundsException stringIndexOutOfBoundsException) {
+/*1341*/          return param1Int ^ 0xFFFFFFFF;
+/*   0*/        } 
+/*1343*/        param1Int += j;
+/*1344*/        while (m < param1Int)
+/*1345*/          k = (k << 3) + (k << 1) + param1String.charAt(m++) - 48; 
+/*1347*/        if (bool)
+/*1348*/          k = -k; 
+/*   0*/      } 
+/*1352*/      param1DateTimeParserBucket.saveField(this.iFieldType, k);
+/*1353*/      return param1Int;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class UnpaddedNumber extends NumberFormatter {
+/*   0*/    protected UnpaddedNumber(DateTimeFieldType param1DateTimeFieldType, int param1Int, boolean param1Boolean) {
+/*1363*/      super(param1DateTimeFieldType, param1Int, param1Boolean);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*1367*/      return this.iMaxParsedDigits;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*   0*/      try {
+/*1374*/        DateTimeField dateTimeField = this.iFieldType.getField(param1Chronology);
+/*1375*/        FormatUtils.appendUnpaddedInteger(param1StringBuffer, dateTimeField.get(param1Long));
+/*1376*/      } catch (RuntimeException runtimeException) {
+/*1377*/        param1StringBuffer.append('�');
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*   0*/      try {
+/*1385*/        DateTimeField dateTimeField = this.iFieldType.getField(param1Chronology);
+/*1386*/        FormatUtils.writeUnpaddedInteger(param1Writer, dateTimeField.get(param1Long));
+/*1387*/      } catch (RuntimeException runtimeException) {
+/*1388*/        param1Writer.write(65533);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*1393*/      if (param1ReadablePartial.isSupported(this.iFieldType)) {
+/*   0*/        try {
+/*1395*/          FormatUtils.appendUnpaddedInteger(param1StringBuffer, param1ReadablePartial.get(this.iFieldType));
+/*1396*/        } catch (RuntimeException runtimeException) {
+/*1397*/          param1StringBuffer.append('�');
+/*   0*/        } 
+/*   0*/      } else {
+/*1400*/        param1StringBuffer.append('�');
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {
+/*1405*/      if (param1ReadablePartial.isSupported(this.iFieldType)) {
+/*   0*/        try {
+/*1407*/          FormatUtils.writeUnpaddedInteger(param1Writer, param1ReadablePartial.get(this.iFieldType));
+/*1408*/        } catch (RuntimeException runtimeException) {
+/*1409*/          param1Writer.write(65533);
+/*   0*/        } 
+/*   0*/      } else {
+/*1412*/        param1Writer.write(65533);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class PaddedNumber extends NumberFormatter {
+/*   0*/    protected final int iMinPrintedDigits;
+/*   0*/    
+/*   0*/    protected PaddedNumber(DateTimeFieldType param1DateTimeFieldType, int param1Int1, boolean param1Boolean, int param1Int2) {
+/*1425*/      super(param1DateTimeFieldType, param1Int1, param1Boolean);
+/*1426*/      this.iMinPrintedDigits = param1Int2;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*1430*/      return this.iMaxParsedDigits;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*   0*/      try {
+/*1437*/        DateTimeField dateTimeField = this.iFieldType.getField(param1Chronology);
+/*1438*/        FormatUtils.appendPaddedInteger(param1StringBuffer, dateTimeField.get(param1Long), this.iMinPrintedDigits);
+/*1439*/      } catch (RuntimeException runtimeException) {
+/*1440*/        DateTimeFormatterBuilder.appendUnknownString(param1StringBuffer, this.iMinPrintedDigits);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*   0*/      try {
+/*1448*/        DateTimeField dateTimeField = this.iFieldType.getField(param1Chronology);
+/*1449*/        FormatUtils.writePaddedInteger(param1Writer, dateTimeField.get(param1Long), this.iMinPrintedDigits);
+/*1450*/      } catch (RuntimeException runtimeException) {
+/*1451*/        DateTimeFormatterBuilder.printUnknownString(param1Writer, this.iMinPrintedDigits);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*1456*/      if (param1ReadablePartial.isSupported(this.iFieldType)) {
+/*   0*/        try {
+/*1458*/          FormatUtils.appendPaddedInteger(param1StringBuffer, param1ReadablePartial.get(this.iFieldType), this.iMinPrintedDigits);
+/*1459*/        } catch (RuntimeException runtimeException) {
+/*1460*/          DateTimeFormatterBuilder.appendUnknownString(param1StringBuffer, this.iMinPrintedDigits);
+/*   0*/        } 
+/*   0*/      } else {
+/*1463*/        DateTimeFormatterBuilder.appendUnknownString(param1StringBuffer, this.iMinPrintedDigits);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {
+/*1468*/      if (param1ReadablePartial.isSupported(this.iFieldType)) {
+/*   0*/        try {
+/*1470*/          FormatUtils.writePaddedInteger(param1Writer, param1ReadablePartial.get(this.iFieldType), this.iMinPrintedDigits);
+/*1471*/        } catch (RuntimeException runtimeException) {
+/*1472*/          DateTimeFormatterBuilder.printUnknownString(param1Writer, this.iMinPrintedDigits);
+/*   0*/        } 
+/*   0*/      } else {
+/*1475*/        DateTimeFormatterBuilder.printUnknownString(param1Writer, this.iMinPrintedDigits);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class FixedNumber extends PaddedNumber {
+/*   0*/    protected FixedNumber(DateTimeFieldType param1DateTimeFieldType, int param1Int, boolean param1Boolean) {
+/*1484*/      super(param1DateTimeFieldType, param1Int, param1Boolean, param1Int);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*1488*/      int i = super.parseInto(param1DateTimeParserBucket, param1String, param1Int);
+/*1489*/      if (i < 0)
+/*1490*/        return i; 
+/*1492*/      int j = param1Int + this.iMaxParsedDigits;
+/*1493*/      if (i != j) {
+/*1494*/        if (this.iSigned) {
+/*1495*/          char c = param1String.charAt(param1Int);
+/*1496*/          if (c == '-' || c == '+')
+/*1497*/            j++; 
+/*   0*/        } 
+/*1500*/        if (i > j)
+/*1502*/          return j + 1 ^ 0xFFFFFFFF; 
+/*1503*/        if (i < j)
+/*1505*/          return i ^ 0xFFFFFFFF; 
+/*   0*/      } 
+/*1508*/      return i;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class TwoDigitYear implements DateTimePrinter, DateTimeParser {
+/*   0*/    private final DateTimeFieldType iType;
+/*   0*/    
+/*   0*/    private final int iPivot;
+/*   0*/    
+/*   0*/    private final boolean iLenientParse;
+/*   0*/    
+/*   0*/    TwoDigitYear(DateTimeFieldType param1DateTimeFieldType, int param1Int, boolean param1Boolean) {
+/*1524*/      this.iType = param1DateTimeFieldType;
+/*1525*/      this.iPivot = param1Int;
+/*1526*/      this.iLenientParse = param1Boolean;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*1530*/      return this.iLenientParse ? 4 : 2;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*   0*/      int n;
+/*1534*/      int i = param1String.length() - param1Int;
+/*1536*/      if (!this.iLenientParse) {
+/*1537*/        i = Math.min(2, i);
+/*1538*/        if (i < 2)
+/*1539*/          return param1Int ^ 0xFFFFFFFF; 
+/*   0*/      } else {
+/*1542*/        boolean bool1 = false;
+/*1543*/        boolean bool2 = false;
+/*1544*/        int i1 = 0;
+/*1545*/        while (i1 < i) {
+/*1546*/          char c1 = param1String.charAt(param1Int + i1);
+/*1547*/          if (i1 == 0 && (c1 == '-' || c1 == '+')) {
+/*1548*/            bool1 = true;
+/*1549*/            bool2 = (c1 == '-') ? true : false;
+/*1550*/            if (bool2) {
+/*1551*/              i1++;
+/*   0*/              continue;
+/*   0*/            } 
+/*1554*/            param1Int++;
+/*1555*/            i--;
+/*   0*/            continue;
+/*   0*/          } 
+/*1559*/          if (c1 < '0' || c1 > '9')
+/*   0*/            break; 
+/*1562*/          i1++;
+/*   0*/        } 
+/*1565*/        if (i1 == 0)
+/*1566*/          return param1Int ^ 0xFFFFFFFF; 
+/*1569*/        if (bool1 || i1 != 2) {
+/*   0*/          int i2;
+/*1571*/          if (i1 >= 9) {
+/*1574*/            i2 = Integer.parseInt(param1String.substring(param1Int, param1Int += i1));
+/*   0*/          } else {
+/*1576*/            n = param1Int;
+/*1577*/            if (bool2)
+/*1578*/              n++; 
+/*   0*/            try {
+/*1581*/              i2 = param1String.charAt(n++) - 48;
+/*1582*/            } catch (StringIndexOutOfBoundsException stringIndexOutOfBoundsException) {
+/*1583*/              return param1Int ^ 0xFFFFFFFF;
+/*   0*/            } 
+/*1585*/            param1Int += i1;
+/*1586*/            while (n < param1Int)
+/*1587*/              i2 = (i2 << 3) + (i2 << 1) + param1String.charAt(n++) - 48; 
+/*1589*/            if (bool2)
+/*1590*/              i2 = -i2; 
+/*   0*/          } 
+/*1594*/          param1DateTimeParserBucket.saveField(this.iType, i2);
+/*1595*/          return param1Int;
+/*   0*/        } 
+/*   0*/      } 
+/*1600*/      char c = param1String.charAt(param1Int);
+/*1601*/      if (c < '0' || c > '9')
+/*1602*/        return param1Int ^ 0xFFFFFFFF; 
+/*1604*/      int j = c - 48;
+/*1605*/      c = param1String.charAt(param1Int + 1);
+/*1606*/      if (c < '0' || c > '9')
+/*1607*/        return param1Int ^ 0xFFFFFFFF; 
+/*1609*/      j = (j << 3) + (j << 1) + c - 48;
+/*1611*/      int k = this.iPivot;
+/*1613*/      if (param1DateTimeParserBucket.getPivotYear() != null)
+/*1614*/        k = param1DateTimeParserBucket.getPivotYear(); 
+/*1617*/      int m = k - 50;
+/*1620*/      if (m >= 0) {
+/*1621*/        n = m % 100;
+/*   0*/      } else {
+/*1623*/        n = 99 + (m + 1) % 100;
+/*   0*/      } 
+/*1626*/      j += m + ((j < n) ? 100 : 0) - n;
+/*1628*/      param1DateTimeParserBucket.saveField(this.iType, j);
+/*1629*/      return param1Int + 2;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*1633*/      return 2;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*1639*/      int i = getTwoDigitYear(param1Long, param1Chronology);
+/*1640*/      if (i < 0) {
+/*1641*/        param1StringBuffer.append('�');
+/*1642*/        param1StringBuffer.append('�');
+/*   0*/      } else {
+/*1644*/        FormatUtils.appendPaddedInteger(param1StringBuffer, i, 2);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*1651*/      int i = getTwoDigitYear(param1Long, param1Chronology);
+/*1652*/      if (i < 0) {
+/*1653*/        param1Writer.write(65533);
+/*1654*/        param1Writer.write(65533);
+/*   0*/      } else {
+/*1656*/        FormatUtils.writePaddedInteger(param1Writer, i, 2);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    private int getTwoDigitYear(long param1Long, Chronology param1Chronology) {
+/*   0*/      try {
+/*1662*/        int i = this.iType.getField(param1Chronology).get(param1Long);
+/*1663*/        if (i < 0)
+/*1664*/          i = -i; 
+/*1666*/        return i % 100;
+/*1667*/      } catch (RuntimeException runtimeException) {
+/*1668*/        return -1;
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*1673*/      int i = getTwoDigitYear(param1ReadablePartial);
+/*1674*/      if (i < 0) {
+/*1675*/        param1StringBuffer.append('�');
+/*1676*/        param1StringBuffer.append('�');
+/*   0*/      } else {
+/*1678*/        FormatUtils.appendPaddedInteger(param1StringBuffer, i, 2);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {
+/*1683*/      int i = getTwoDigitYear(param1ReadablePartial);
+/*1684*/      if (i < 0) {
+/*1685*/        param1Writer.write(65533);
+/*1686*/        param1Writer.write(65533);
+/*   0*/      } else {
+/*1688*/        FormatUtils.writePaddedInteger(param1Writer, i, 2);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    private int getTwoDigitYear(ReadablePartial param1ReadablePartial) {
+/*1693*/      if (param1ReadablePartial.isSupported(this.iType))
+/*   0*/        try {
+/*1695*/          int i = param1ReadablePartial.get(this.iType);
+/*1696*/          if (i < 0)
+/*1697*/            i = -i; 
+/*1699*/          return i % 100;
+/*1700*/        } catch (RuntimeException runtimeException) {} 
+/*1702*/      return -1;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class TextField implements DateTimePrinter, DateTimeParser {
+/*1710*/    private static Map<Locale, Map<DateTimeFieldType, Object[]>> cParseCache = new HashMap<Locale, Map<DateTimeFieldType, Object[]>>();
+/*   0*/    
+/*   0*/    private final DateTimeFieldType iFieldType;
+/*   0*/    
+/*   0*/    private final boolean iShort;
+/*   0*/    
+/*   0*/    TextField(DateTimeFieldType param1DateTimeFieldType, boolean param1Boolean) {
+/*1717*/      this.iFieldType = param1DateTimeFieldType;
+/*1718*/      this.iShort = param1Boolean;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*1722*/      return this.iShort ? 6 : 20;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*   0*/      try {
+/*1729*/        param1StringBuffer.append(print(param1Long, param1Chronology, param1Locale));
+/*1730*/      } catch (RuntimeException runtimeException) {
+/*1731*/        param1StringBuffer.append('�');
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*   0*/      try {
+/*1739*/        param1Writer.write(print(param1Long, param1Chronology, param1Locale));
+/*1740*/      } catch (RuntimeException runtimeException) {
+/*1741*/        param1Writer.write(65533);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*   0*/      try {
+/*1747*/        param1StringBuffer.append(print(param1ReadablePartial, param1Locale));
+/*1748*/      } catch (RuntimeException runtimeException) {
+/*1749*/        param1StringBuffer.append('�');
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {
+/*   0*/      try {
+/*1755*/        param1Writer.write(print(param1ReadablePartial, param1Locale));
+/*1756*/      } catch (RuntimeException runtimeException) {
+/*1757*/        param1Writer.write(65533);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    private String print(long param1Long, Chronology param1Chronology, Locale param1Locale) {
+/*1762*/      DateTimeField dateTimeField = this.iFieldType.getField(param1Chronology);
+/*1763*/      if (this.iShort)
+/*1764*/        return dateTimeField.getAsShortText(param1Long, param1Locale); 
+/*1766*/      return dateTimeField.getAsText(param1Long, param1Locale);
+/*   0*/    }
+/*   0*/    
+/*   0*/    private String print(ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*1771*/      if (param1ReadablePartial.isSupported(this.iFieldType)) {
+/*1772*/        DateTimeField dateTimeField = this.iFieldType.getField(param1ReadablePartial.getChronology());
+/*1773*/        if (this.iShort)
+/*1774*/          return dateTimeField.getAsShortText(param1ReadablePartial, param1Locale); 
+/*1776*/        return dateTimeField.getAsText(param1ReadablePartial, param1Locale);
+/*   0*/      } 
+/*1779*/      return "�";
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*1784*/      return estimatePrintedLength();
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*1789*/      Locale locale = param1DateTimeParserBucket.getLocale();
+/*1792*/      Set set = null;
+/*1793*/      int i = 0;
+/*1794*/      synchronized (cParseCache) {
+/*1795*/        Map<DateTimeFieldType, Object[]> map = cParseCache.get(locale);
+/*1796*/        if (map == null) {
+/*1797*/          map = new HashMap();
+/*1798*/          cParseCache.put(locale, map);
+/*   0*/        } 
+/*1800*/        Object[] arrayOfObject = map.get(this.iFieldType);
+/*1801*/        if (arrayOfObject == null) {
+/*1802*/          set = new HashSet(32);
+/*1803*/          MutableDateTime mutableDateTime = new MutableDateTime(0L, DateTimeZone.UTC);
+/*1804*/          MutableDateTime.Property property = mutableDateTime.property(this.iFieldType);
+/*1805*/          int m = property.getMinimumValueOverall();
+/*1806*/          int n = property.getMaximumValueOverall();
+/*1807*/          if (n - m > 32)
+/*1808*/            return param1Int ^ 0xFFFFFFFF; 
+/*1810*/          i = property.getMaximumTextLength(locale);
+/*1811*/          for (int i1 = m; i1 <= n; i1++) {
+/*1812*/            property.set(i1);
+/*1813*/            set.add(property.getAsShortText(locale));
+/*1814*/            set.add(property.getAsShortText(locale).toLowerCase(locale));
+/*1815*/            set.add(property.getAsShortText(locale).toUpperCase(locale));
+/*1816*/            set.add(property.getAsText(locale));
+/*1817*/            set.add(property.getAsText(locale).toLowerCase(locale));
+/*1818*/            set.add(property.getAsText(locale).toUpperCase(locale));
+/*   0*/          } 
+/*1820*/          if ("en".equals(locale.getLanguage()) && this.iFieldType == DateTimeFieldType.era()) {
+/*1822*/            set.add("BCE");
+/*1823*/            set.add("bce");
+/*1824*/            set.add("CE");
+/*1825*/            set.add("ce");
+/*1826*/            i = 3;
+/*   0*/          } 
+/*1828*/          arrayOfObject = new Object[] { set, i };
+/*1829*/          map.put(this.iFieldType, arrayOfObject);
+/*   0*/        } else {
+/*1831*/          set = (Set)arrayOfObject[0];
+/*1832*/          i = (Integer)arrayOfObject[1];
+/*   0*/        } 
+/*   0*/      } 
+/*1836*/      int j = Math.min(param1String.length(), param1Int + i);
+/*1837*/      for (int k = j; k > param1Int; k--) {
+/*1838*/        String str = param1String.substring(param1Int, k);
+/*1839*/        if (set.contains(str)) {
+/*1840*/          param1DateTimeParserBucket.saveField(this.iFieldType, str, locale);
+/*1841*/          return k;
+/*   0*/        } 
+/*   0*/      } 
+/*1844*/      return param1Int ^ 0xFFFFFFFF;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class Fraction implements DateTimePrinter, DateTimeParser {
+/*   0*/    private final DateTimeFieldType iFieldType;
+/*   0*/    
+/*   0*/    protected int iMinDigits;
+/*   0*/    
+/*   0*/    protected int iMaxDigits;
+/*   0*/    
+/*   0*/    protected Fraction(DateTimeFieldType param1DateTimeFieldType, int param1Int1, int param1Int2) {
+/*1858*/      this.iFieldType = param1DateTimeFieldType;
+/*1860*/      if (param1Int2 > 18)
+/*1861*/        param1Int2 = 18; 
+/*1863*/      this.iMinDigits = param1Int1;
+/*1864*/      this.iMaxDigits = param1Int2;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*1868*/      return this.iMaxDigits;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*   0*/      try {
+/*1875*/        printTo(param1StringBuffer, null, param1Long, param1Chronology);
+/*1876*/      } catch (IOException iOException) {}
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*1884*/      printTo(null, param1Writer, param1Long, param1Chronology);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*1890*/      long l = param1ReadablePartial.getChronology().set(param1ReadablePartial, 0L);
+/*   0*/      try {
+/*1892*/        printTo(param1StringBuffer, null, l, param1ReadablePartial.getChronology());
+/*1893*/      } catch (IOException iOException) {}
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {
+/*1901*/      long l = param1ReadablePartial.getChronology().set(param1ReadablePartial, 0L);
+/*1902*/      printTo(null, param1Writer, l, param1ReadablePartial.getChronology());
+/*   0*/    }
+/*   0*/    
+/*   0*/    protected void printTo(StringBuffer param1StringBuffer, Writer param1Writer, long param1Long, Chronology param1Chronology) throws IOException {
+/*   0*/      long l1;
+/*   0*/      String str;
+/*1908*/      DateTimeField dateTimeField = this.iFieldType.getField(param1Chronology);
+/*1909*/      int i = this.iMinDigits;
+/*   0*/      try {
+/*1913*/        l1 = dateTimeField.remainder(param1Long);
+/*1914*/      } catch (RuntimeException runtimeException) {
+/*1915*/        if (param1StringBuffer != null) {
+/*1916*/          DateTimeFormatterBuilder.appendUnknownString(param1StringBuffer, i);
+/*   0*/        } else {
+/*1918*/          DateTimeFormatterBuilder.printUnknownString(param1Writer, i);
+/*   0*/        } 
+/*   0*/        return;
+/*   0*/      } 
+/*1923*/      if (l1 == 0L) {
+/*1924*/        if (param1StringBuffer != null) {
+/*1925*/          while (--i >= 0)
+/*1926*/            param1StringBuffer.append('0'); 
+/*   0*/        } else {
+/*1929*/          while (--i >= 0)
+/*1930*/            param1Writer.write(48); 
+/*   0*/        } 
+/*   0*/        return;
+/*   0*/      } 
+/*1937*/      long[] arrayOfLong = getFractionData(l1, dateTimeField);
+/*1938*/      long l2 = arrayOfLong[0];
+/*1939*/      int j = (int)arrayOfLong[1];
+/*1941*/      if ((l2 & 0x7FFFFFFFL) == l2) {
+/*1942*/        str = Integer.toString((int)l2);
+/*   0*/      } else {
+/*1944*/        str = Long.toString(l2);
+/*   0*/      } 
+/*1947*/      int k = str.length();
+/*1948*/      int m = j;
+/*1949*/      while (k < m) {
+/*1950*/        if (param1StringBuffer != null) {
+/*1951*/          param1StringBuffer.append('0');
+/*   0*/        } else {
+/*1953*/          param1Writer.write(48);
+/*   0*/        } 
+/*1955*/        i--;
+/*1956*/        m--;
+/*   0*/      } 
+/*1959*/      if (i < m) {
+/*1961*/        while (i < m && 
+/*1962*/          k > 1 && str.charAt(k - 1) == '0') {
+/*1965*/          m--;
+/*1966*/          k--;
+/*   0*/        } 
+/*1968*/        if (k < str.length()) {
+/*1969*/          if (param1StringBuffer != null) {
+/*1970*/            for (int n = 0; n < k; n++)
+/*1971*/              param1StringBuffer.append(str.charAt(n)); 
+/*   0*/          } else {
+/*1974*/            for (int n = 0; n < k; n++)
+/*1975*/              param1Writer.write(str.charAt(n)); 
+/*   0*/          } 
+/*   0*/          return;
+/*   0*/        } 
+/*   0*/      } 
+/*1982*/      if (param1StringBuffer != null) {
+/*1983*/        param1StringBuffer.append(str);
+/*   0*/      } else {
+/*1985*/        param1Writer.write(str);
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    private long[] getFractionData(long param1Long, DateTimeField param1DateTimeField) {
+/*   0*/      long l2;
+/*1990*/      long l1 = param1DateTimeField.getDurationField().getUnitMillis();
+/*1992*/      int i = this.iMaxDigits;
+/*   0*/      while (true) {
+/*1994*/        switch (i) {
+/*   0*/          default:
+/*1995*/            l2 = 1L;
+/*   0*/            break;
+/*   0*/          case 1:
+/*1996*/            l2 = 10L;
+/*   0*/            break;
+/*   0*/          case 2:
+/*1997*/            l2 = 100L;
+/*   0*/            break;
+/*   0*/          case 3:
+/*1998*/            l2 = 1000L;
+/*   0*/            break;
+/*   0*/          case 4:
+/*1999*/            l2 = 10000L;
+/*   0*/            break;
+/*   0*/          case 5:
+/*2000*/            l2 = 100000L;
+/*   0*/            break;
+/*   0*/          case 6:
+/*2001*/            l2 = 1000000L;
+/*   0*/            break;
+/*   0*/          case 7:
+/*2002*/            l2 = 10000000L;
+/*   0*/            break;
+/*   0*/          case 8:
+/*2003*/            l2 = 100000000L;
+/*   0*/            break;
+/*   0*/          case 9:
+/*2004*/            l2 = 1000000000L;
+/*   0*/            break;
+/*   0*/          case 10:
+/*2005*/            l2 = 10000000000L;
+/*   0*/            break;
+/*   0*/          case 11:
+/*2006*/            l2 = 100000000000L;
+/*   0*/            break;
+/*   0*/          case 12:
+/*2007*/            l2 = 1000000000000L;
+/*   0*/            break;
+/*   0*/          case 13:
+/*2008*/            l2 = 10000000000000L;
+/*   0*/            break;
+/*   0*/          case 14:
+/*2009*/            l2 = 100000000000000L;
+/*   0*/            break;
+/*   0*/          case 15:
+/*2010*/            l2 = 1000000000000000L;
+/*   0*/            break;
+/*   0*/          case 16:
+/*2011*/            l2 = 10000000000000000L;
+/*   0*/            break;
+/*   0*/          case 17:
+/*2012*/            l2 = 100000000000000000L;
+/*   0*/            break;
+/*   0*/          case 18:
+/*2013*/            l2 = 1000000000000000000L;
+/*   0*/            break;
+/*   0*/        } 
+/*2015*/        if (l1 * l2 / l2 == l1)
+/*   0*/          break; 
+/*2019*/        i--;
+/*   0*/      } 
+/*2022*/      return new long[] { param1Long * l2 / l1, i };
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*2026*/      return this.iMaxDigits;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*2030*/      DateTimeField dateTimeField = this.iFieldType.getField(param1DateTimeParserBucket.getChronology());
+/*2032*/      int i = Math.min(this.iMaxDigits, param1String.length() - param1Int);
+/*2034*/      long l1 = 0L;
+/*2035*/      long l2 = dateTimeField.getDurationField().getUnitMillis() * 10L;
+/*2036*/      int j = 0;
+/*2037*/      while (j < i) {
+/*2038*/        char c = param1String.charAt(param1Int + j);
+/*2039*/        if (c < '0' || c > '9')
+/*   0*/          break; 
+/*2042*/        j++;
+/*2043*/        long l = l2 / 10L;
+/*2044*/        l1 += (c - 48) * l;
+/*2045*/        l2 = l;
+/*   0*/      } 
+/*2048*/      l1 /= 10L;
+/*2050*/      if (j == 0)
+/*2051*/        return param1Int ^ 0xFFFFFFFF; 
+/*2054*/      if (l1 > 2147483647L)
+/*2055*/        return param1Int ^ 0xFFFFFFFF; 
+/*2058*/      PreciseDateTimeField preciseDateTimeField = new PreciseDateTimeField(DateTimeFieldType.millisOfSecond(), MillisDurationField.INSTANCE, dateTimeField.getDurationField());
+/*2063*/      param1DateTimeParserBucket.saveField(preciseDateTimeField, (int)l1);
+/*2065*/      return param1Int + j;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class TimeZoneOffset implements DateTimePrinter, DateTimeParser {
+/*   0*/    private final String iZeroOffsetPrintText;
+/*   0*/    
+/*   0*/    private final String iZeroOffsetParseText;
+/*   0*/    
+/*   0*/    private final boolean iShowSeparators;
+/*   0*/    
+/*   0*/    private final int iMinFields;
+/*   0*/    
+/*   0*/    private final int iMaxFields;
+/*   0*/    
+/*   0*/    TimeZoneOffset(String param1String1, String param1String2, boolean param1Boolean, int param1Int1, int param1Int2) {
+/*2084*/      this.iZeroOffsetPrintText = param1String1;
+/*2085*/      this.iZeroOffsetParseText = param1String2;
+/*2086*/      this.iShowSeparators = param1Boolean;
+/*2087*/      if (param1Int1 <= 0 || param1Int2 < param1Int1)
+/*2088*/        throw new IllegalArgumentException(); 
+/*2090*/      if (param1Int1 > 4) {
+/*2091*/        param1Int1 = 4;
+/*2092*/        param1Int2 = 4;
+/*   0*/      } 
+/*2094*/      this.iMinFields = param1Int1;
+/*2095*/      this.iMaxFields = param1Int2;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*2099*/      int i = 1 + this.iMinFields << 1;
+/*2100*/      if (this.iShowSeparators)
+/*2101*/        i += this.iMinFields - 1; 
+/*2103*/      if (this.iZeroOffsetPrintText != null && this.iZeroOffsetPrintText.length() > i)
+/*2104*/        i = this.iZeroOffsetPrintText.length(); 
+/*2106*/      return i;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*2112*/      if (param1DateTimeZone == null)
+/*   0*/        return; 
+/*2115*/      if (param1Int == 0 && this.iZeroOffsetPrintText != null) {
+/*2116*/        param1StringBuffer.append(this.iZeroOffsetPrintText);
+/*   0*/        return;
+/*   0*/      } 
+/*2119*/      if (param1Int >= 0) {
+/*2120*/        param1StringBuffer.append('+');
+/*   0*/      } else {
+/*2122*/        param1StringBuffer.append('-');
+/*2123*/        param1Int = -param1Int;
+/*   0*/      } 
+/*2126*/      int i = param1Int / 3600000;
+/*2127*/      FormatUtils.appendPaddedInteger(param1StringBuffer, i, 2);
+/*2128*/      if (this.iMaxFields == 1)
+/*   0*/        return; 
+/*2131*/      param1Int -= i * 3600000;
+/*2132*/      if (param1Int == 0 && this.iMinFields <= 1)
+/*   0*/        return; 
+/*2136*/      int j = param1Int / 60000;
+/*2137*/      if (this.iShowSeparators)
+/*2138*/        param1StringBuffer.append(':'); 
+/*2140*/      FormatUtils.appendPaddedInteger(param1StringBuffer, j, 2);
+/*2141*/      if (this.iMaxFields == 2)
+/*   0*/        return; 
+/*2144*/      param1Int -= j * 60000;
+/*2145*/      if (param1Int == 0 && this.iMinFields <= 2)
+/*   0*/        return; 
+/*2149*/      int k = param1Int / 1000;
+/*2150*/      if (this.iShowSeparators)
+/*2151*/        param1StringBuffer.append(':'); 
+/*2153*/      FormatUtils.appendPaddedInteger(param1StringBuffer, k, 2);
+/*2154*/      if (this.iMaxFields == 3)
+/*   0*/        return; 
+/*2157*/      param1Int -= k * 1000;
+/*2158*/      if (param1Int == 0 && this.iMinFields <= 3)
+/*   0*/        return; 
+/*2162*/      if (this.iShowSeparators)
+/*2163*/        param1StringBuffer.append('.'); 
+/*2165*/      FormatUtils.appendPaddedInteger(param1StringBuffer, param1Int, 3);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*2171*/      if (param1DateTimeZone == null)
+/*   0*/        return; 
+/*2174*/      if (param1Int == 0 && this.iZeroOffsetPrintText != null) {
+/*2175*/        param1Writer.write(this.iZeroOffsetPrintText);
+/*   0*/        return;
+/*   0*/      } 
+/*2178*/      if (param1Int >= 0) {
+/*2179*/        param1Writer.write(43);
+/*   0*/      } else {
+/*2181*/        param1Writer.write(45);
+/*2182*/        param1Int = -param1Int;
+/*   0*/      } 
+/*2185*/      int i = param1Int / 3600000;
+/*2186*/      FormatUtils.writePaddedInteger(param1Writer, i, 2);
+/*2187*/      if (this.iMaxFields == 1)
+/*   0*/        return; 
+/*2190*/      param1Int -= i * 3600000;
+/*2191*/      if (param1Int == 0 && this.iMinFields == 1)
+/*   0*/        return; 
+/*2195*/      int j = param1Int / 60000;
+/*2196*/      if (this.iShowSeparators)
+/*2197*/        param1Writer.write(58); 
+/*2199*/      FormatUtils.writePaddedInteger(param1Writer, j, 2);
+/*2200*/      if (this.iMaxFields == 2)
+/*   0*/        return; 
+/*2203*/      param1Int -= j * 60000;
+/*2204*/      if (param1Int == 0 && this.iMinFields == 2)
+/*   0*/        return; 
+/*2208*/      int k = param1Int / 1000;
+/*2209*/      if (this.iShowSeparators)
+/*2210*/        param1Writer.write(58); 
+/*2212*/      FormatUtils.writePaddedInteger(param1Writer, k, 2);
+/*2213*/      if (this.iMaxFields == 3)
+/*   0*/        return; 
+/*2216*/      param1Int -= k * 1000;
+/*2217*/      if (param1Int == 0 && this.iMinFields == 3)
+/*   0*/        return; 
+/*2221*/      if (this.iShowSeparators)
+/*2222*/        param1Writer.write(46); 
+/*2224*/      FormatUtils.writePaddedInteger(param1Writer, param1Int, 3);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {}
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {}
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*2236*/      return estimatePrintedLength();
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*   0*/      // Byte code:
+/*   0*/      //   0: aload_2
+/*   0*/      //   1: invokevirtual length : ()I
+/*   0*/      //   4: iload_3
+/*   0*/      //   5: isub
+/*   0*/      //   6: istore #4
+/*   0*/      //   8: aload_0
+/*   0*/      //   9: getfield iZeroOffsetParseText : Ljava/lang/String;
+/*   0*/      //   12: ifnull -> 103
+/*   0*/      //   15: aload_0
+/*   0*/      //   16: getfield iZeroOffsetParseText : Ljava/lang/String;
+/*   0*/      //   19: invokevirtual length : ()I
+/*   0*/      //   22: ifne -> 64
+/*   0*/      //   25: iload #4
+/*   0*/      //   27: ifle -> 54
+/*   0*/      //   30: aload_2
+/*   0*/      //   31: iload_3
+/*   0*/      //   32: invokevirtual charAt : (I)C
+/*   0*/      //   35: istore #5
+/*   0*/      //   37: iload #5
+/*   0*/      //   39: bipush #45
+/*   0*/      //   41: if_icmpeq -> 103
+/*   0*/      //   44: iload #5
+/*   0*/      //   46: bipush #43
+/*   0*/      //   48: if_icmpne -> 54
+/*   0*/      //   51: goto -> 103
+/*   0*/      //   54: aload_1
+/*   0*/      //   55: iconst_0
+/*   0*/      //   56: invokestatic valueOf : (I)Ljava/lang/Integer;
+/*   0*/      //   59: invokevirtual setOffset : (Ljava/lang/Integer;)V
+/*   0*/      //   62: iload_3
+/*   0*/      //   63: ireturn
+/*   0*/      //   64: aload_2
+/*   0*/      //   65: iconst_1
+/*   0*/      //   66: iload_3
+/*   0*/      //   67: aload_0
+/*   0*/      //   68: getfield iZeroOffsetParseText : Ljava/lang/String;
+/*   0*/      //   71: iconst_0
+/*   0*/      //   72: aload_0
+/*   0*/      //   73: getfield iZeroOffsetParseText : Ljava/lang/String;
+/*   0*/      //   76: invokevirtual length : ()I
+/*   0*/      //   79: invokevirtual regionMatches : (ZILjava/lang/String;II)Z
+/*   0*/      //   82: ifeq -> 103
+/*   0*/      //   85: aload_1
+/*   0*/      //   86: iconst_0
+/*   0*/      //   87: invokestatic valueOf : (I)Ljava/lang/Integer;
+/*   0*/      //   90: invokevirtual setOffset : (Ljava/lang/Integer;)V
+/*   0*/      //   93: iload_3
+/*   0*/      //   94: aload_0
+/*   0*/      //   95: getfield iZeroOffsetParseText : Ljava/lang/String;
+/*   0*/      //   98: invokevirtual length : ()I
+/*   0*/      //   101: iadd
+/*   0*/      //   102: ireturn
+/*   0*/      //   103: iload #4
+/*   0*/      //   105: iconst_1
+/*   0*/      //   106: if_icmpgt -> 113
+/*   0*/      //   109: iload_3
+/*   0*/      //   110: iconst_m1
+/*   0*/      //   111: ixor
+/*   0*/      //   112: ireturn
+/*   0*/      //   113: aload_2
+/*   0*/      //   114: iload_3
+/*   0*/      //   115: invokevirtual charAt : (I)C
+/*   0*/      //   118: istore #6
+/*   0*/      //   120: iload #6
+/*   0*/      //   122: bipush #45
+/*   0*/      //   124: if_icmpne -> 133
+/*   0*/      //   127: iconst_1
+/*   0*/      //   128: istore #5
+/*   0*/      //   130: goto -> 150
+/*   0*/      //   133: iload #6
+/*   0*/      //   135: bipush #43
+/*   0*/      //   137: if_icmpne -> 146
+/*   0*/      //   140: iconst_0
+/*   0*/      //   141: istore #5
+/*   0*/      //   143: goto -> 150
+/*   0*/      //   146: iload_3
+/*   0*/      //   147: iconst_m1
+/*   0*/      //   148: ixor
+/*   0*/      //   149: ireturn
+/*   0*/      //   150: iinc #4, -1
+/*   0*/      //   153: iinc #3, 1
+/*   0*/      //   156: aload_0
+/*   0*/      //   157: aload_2
+/*   0*/      //   158: iload_3
+/*   0*/      //   159: iconst_2
+/*   0*/      //   160: invokespecial digitCount : (Ljava/lang/String;II)I
+/*   0*/      //   163: iconst_2
+/*   0*/      //   164: if_icmpge -> 171
+/*   0*/      //   167: iload_3
+/*   0*/      //   168: iconst_m1
+/*   0*/      //   169: ixor
+/*   0*/      //   170: ireturn
+/*   0*/      //   171: aload_2
+/*   0*/      //   172: iload_3
+/*   0*/      //   173: invokestatic parseTwoDigits : (Ljava/lang/String;I)I
+/*   0*/      //   176: istore #8
+/*   0*/      //   178: iload #8
+/*   0*/      //   180: bipush #23
+/*   0*/      //   182: if_icmple -> 189
+/*   0*/      //   185: iload_3
+/*   0*/      //   186: iconst_m1
+/*   0*/      //   187: ixor
+/*   0*/      //   188: ireturn
+/*   0*/      //   189: iload #8
+/*   0*/      //   191: ldc 3600000
+/*   0*/      //   193: imul
+/*   0*/      //   194: istore #7
+/*   0*/      //   196: iinc #4, -2
+/*   0*/      //   199: iinc #3, 2
+/*   0*/      //   202: iload #4
+/*   0*/      //   204: ifgt -> 210
+/*   0*/      //   207: goto -> 558
+/*   0*/      //   210: aload_2
+/*   0*/      //   211: iload_3
+/*   0*/      //   212: invokevirtual charAt : (I)C
+/*   0*/      //   215: istore #6
+/*   0*/      //   217: iload #6
+/*   0*/      //   219: bipush #58
+/*   0*/      //   221: if_icmpne -> 236
+/*   0*/      //   224: iconst_1
+/*   0*/      //   225: istore #9
+/*   0*/      //   227: iinc #4, -1
+/*   0*/      //   230: iinc #3, 1
+/*   0*/      //   233: goto -> 253
+/*   0*/      //   236: iload #6
+/*   0*/      //   238: bipush #48
+/*   0*/      //   240: if_icmplt -> 558
+/*   0*/      //   243: iload #6
+/*   0*/      //   245: bipush #57
+/*   0*/      //   247: if_icmpgt -> 558
+/*   0*/      //   250: iconst_0
+/*   0*/      //   251: istore #9
+/*   0*/      //   253: aload_0
+/*   0*/      //   254: aload_2
+/*   0*/      //   255: iload_3
+/*   0*/      //   256: iconst_2
+/*   0*/      //   257: invokespecial digitCount : (Ljava/lang/String;II)I
+/*   0*/      //   260: istore #10
+/*   0*/      //   262: iload #10
+/*   0*/      //   264: ifne -> 275
+/*   0*/      //   267: iload #9
+/*   0*/      //   269: ifne -> 275
+/*   0*/      //   272: goto -> 558
+/*   0*/      //   275: iload #10
+/*   0*/      //   277: iconst_2
+/*   0*/      //   278: if_icmpge -> 285
+/*   0*/      //   281: iload_3
+/*   0*/      //   282: iconst_m1
+/*   0*/      //   283: ixor
+/*   0*/      //   284: ireturn
+/*   0*/      //   285: aload_2
+/*   0*/      //   286: iload_3
+/*   0*/      //   287: invokestatic parseTwoDigits : (Ljava/lang/String;I)I
+/*   0*/      //   290: istore #11
+/*   0*/      //   292: iload #11
+/*   0*/      //   294: bipush #59
+/*   0*/      //   296: if_icmple -> 303
+/*   0*/      //   299: iload_3
+/*   0*/      //   300: iconst_m1
+/*   0*/      //   301: ixor
+/*   0*/      //   302: ireturn
+/*   0*/      //   303: iload #7
+/*   0*/      //   305: iload #11
+/*   0*/      //   307: ldc 60000
+/*   0*/      //   309: imul
+/*   0*/      //   310: iadd
+/*   0*/      //   311: istore #7
+/*   0*/      //   313: iinc #4, -2
+/*   0*/      //   316: iinc #3, 2
+/*   0*/      //   319: iload #4
+/*   0*/      //   321: ifgt -> 327
+/*   0*/      //   324: goto -> 558
+/*   0*/      //   327: iload #9
+/*   0*/      //   329: ifeq -> 351
+/*   0*/      //   332: aload_2
+/*   0*/      //   333: iload_3
+/*   0*/      //   334: invokevirtual charAt : (I)C
+/*   0*/      //   337: bipush #58
+/*   0*/      //   339: if_icmpeq -> 345
+/*   0*/      //   342: goto -> 558
+/*   0*/      //   345: iinc #4, -1
+/*   0*/      //   348: iinc #3, 1
+/*   0*/      //   351: aload_0
+/*   0*/      //   352: aload_2
+/*   0*/      //   353: iload_3
+/*   0*/      //   354: iconst_2
+/*   0*/      //   355: invokespecial digitCount : (Ljava/lang/String;II)I
+/*   0*/      //   358: istore #10
+/*   0*/      //   360: iload #10
+/*   0*/      //   362: ifne -> 373
+/*   0*/      //   365: iload #9
+/*   0*/      //   367: ifne -> 373
+/*   0*/      //   370: goto -> 558
+/*   0*/      //   373: iload #10
+/*   0*/      //   375: iconst_2
+/*   0*/      //   376: if_icmpge -> 383
+/*   0*/      //   379: iload_3
+/*   0*/      //   380: iconst_m1
+/*   0*/      //   381: ixor
+/*   0*/      //   382: ireturn
+/*   0*/      //   383: aload_2
+/*   0*/      //   384: iload_3
+/*   0*/      //   385: invokestatic parseTwoDigits : (Ljava/lang/String;I)I
+/*   0*/      //   388: istore #12
+/*   0*/      //   390: iload #12
+/*   0*/      //   392: bipush #59
+/*   0*/      //   394: if_icmple -> 401
+/*   0*/      //   397: iload_3
+/*   0*/      //   398: iconst_m1
+/*   0*/      //   399: ixor
+/*   0*/      //   400: ireturn
+/*   0*/      //   401: iload #7
+/*   0*/      //   403: iload #12
+/*   0*/      //   405: sipush #1000
+/*   0*/      //   408: imul
+/*   0*/      //   409: iadd
+/*   0*/      //   410: istore #7
+/*   0*/      //   412: iinc #4, -2
+/*   0*/      //   415: iinc #3, 2
+/*   0*/      //   418: iload #4
+/*   0*/      //   420: ifgt -> 426
+/*   0*/      //   423: goto -> 558
+/*   0*/      //   426: iload #9
+/*   0*/      //   428: ifeq -> 460
+/*   0*/      //   431: aload_2
+/*   0*/      //   432: iload_3
+/*   0*/      //   433: invokevirtual charAt : (I)C
+/*   0*/      //   436: bipush #46
+/*   0*/      //   438: if_icmpeq -> 454
+/*   0*/      //   441: aload_2
+/*   0*/      //   442: iload_3
+/*   0*/      //   443: invokevirtual charAt : (I)C
+/*   0*/      //   446: bipush #44
+/*   0*/      //   448: if_icmpeq -> 454
+/*   0*/      //   451: goto -> 558
+/*   0*/      //   454: iinc #4, -1
+/*   0*/      //   457: iinc #3, 1
+/*   0*/      //   460: aload_0
+/*   0*/      //   461: aload_2
+/*   0*/      //   462: iload_3
+/*   0*/      //   463: iconst_3
+/*   0*/      //   464: invokespecial digitCount : (Ljava/lang/String;II)I
+/*   0*/      //   467: istore #10
+/*   0*/      //   469: iload #10
+/*   0*/      //   471: ifne -> 482
+/*   0*/      //   474: iload #9
+/*   0*/      //   476: ifne -> 482
+/*   0*/      //   479: goto -> 558
+/*   0*/      //   482: iload #10
+/*   0*/      //   484: iconst_1
+/*   0*/      //   485: if_icmpge -> 492
+/*   0*/      //   488: iload_3
+/*   0*/      //   489: iconst_m1
+/*   0*/      //   490: ixor
+/*   0*/      //   491: ireturn
+/*   0*/      //   492: iload #7
+/*   0*/      //   494: aload_2
+/*   0*/      //   495: iload_3
+/*   0*/      //   496: iinc #3, 1
+/*   0*/      //   499: invokevirtual charAt : (I)C
+/*   0*/      //   502: bipush #48
+/*   0*/      //   504: isub
+/*   0*/      //   505: bipush #100
+/*   0*/      //   507: imul
+/*   0*/      //   508: iadd
+/*   0*/      //   509: istore #7
+/*   0*/      //   511: iload #10
+/*   0*/      //   513: iconst_1
+/*   0*/      //   514: if_icmple -> 558
+/*   0*/      //   517: iload #7
+/*   0*/      //   519: aload_2
+/*   0*/      //   520: iload_3
+/*   0*/      //   521: iinc #3, 1
+/*   0*/      //   524: invokevirtual charAt : (I)C
+/*   0*/      //   527: bipush #48
+/*   0*/      //   529: isub
+/*   0*/      //   530: bipush #10
+/*   0*/      //   532: imul
+/*   0*/      //   533: iadd
+/*   0*/      //   534: istore #7
+/*   0*/      //   536: iload #10
+/*   0*/      //   538: iconst_2
+/*   0*/      //   539: if_icmple -> 558
+/*   0*/      //   542: iload #7
+/*   0*/      //   544: aload_2
+/*   0*/      //   545: iload_3
+/*   0*/      //   546: iinc #3, 1
+/*   0*/      //   549: invokevirtual charAt : (I)C
+/*   0*/      //   552: bipush #48
+/*   0*/      //   554: isub
+/*   0*/      //   555: iadd
+/*   0*/      //   556: istore #7
+/*   0*/      //   558: aload_1
+/*   0*/      //   559: iload #5
+/*   0*/      //   561: ifeq -> 570
+/*   0*/      //   564: iload #7
+/*   0*/      //   566: ineg
+/*   0*/      //   567: goto -> 572
+/*   0*/      //   570: iload #7
+/*   0*/      //   572: invokestatic valueOf : (I)Ljava/lang/Integer;
+/*   0*/      //   575: invokevirtual setOffset : (Ljava/lang/Integer;)V
+/*   0*/      //   578: iload_3
+/*   0*/      //   579: ireturn
+/*   0*/      // Line number table:
+/*   0*/      //   Java source line number -> byte code offset
+/*   0*/      //   #2240	-> 0
+/*   0*/      //   #2243	-> 8
+/*   0*/      //   #2244	-> 15
+/*   0*/      //   #2246	-> 25
+/*   0*/      //   #2247	-> 30
+/*   0*/      //   #2248	-> 37
+/*   0*/      //   #2249	-> 51
+/*   0*/      //   #2252	-> 54
+/*   0*/      //   #2253	-> 62
+/*   0*/      //   #2255	-> 64
+/*   0*/      //   #2256	-> 85
+/*   0*/      //   #2257	-> 93
+/*   0*/      //   #2263	-> 103
+/*   0*/      //   #2264	-> 109
+/*   0*/      //   #2268	-> 113
+/*   0*/      //   #2269	-> 120
+/*   0*/      //   #2270	-> 127
+/*   0*/      //   #2271	-> 133
+/*   0*/      //   #2272	-> 140
+/*   0*/      //   #2274	-> 146
+/*   0*/      //   #2277	-> 150
+/*   0*/      //   #2278	-> 153
+/*   0*/      //   #2292	-> 156
+/*   0*/      //   #2294	-> 167
+/*   0*/      //   #2299	-> 171
+/*   0*/      //   #2300	-> 178
+/*   0*/      //   #2301	-> 185
+/*   0*/      //   #2303	-> 189
+/*   0*/      //   #2304	-> 196
+/*   0*/      //   #2305	-> 199
+/*   0*/      //   #2311	-> 202
+/*   0*/      //   #2312	-> 207
+/*   0*/      //   #2316	-> 210
+/*   0*/      //   #2317	-> 217
+/*   0*/      //   #2318	-> 224
+/*   0*/      //   #2319	-> 227
+/*   0*/      //   #2320	-> 230
+/*   0*/      //   #2321	-> 236
+/*   0*/      //   #2322	-> 250
+/*   0*/      //   #2329	-> 253
+/*   0*/      //   #2330	-> 262
+/*   0*/      //   #2331	-> 272
+/*   0*/      //   #2332	-> 275
+/*   0*/      //   #2334	-> 281
+/*   0*/      //   #2337	-> 285
+/*   0*/      //   #2338	-> 292
+/*   0*/      //   #2339	-> 299
+/*   0*/      //   #2341	-> 303
+/*   0*/      //   #2342	-> 313
+/*   0*/      //   #2343	-> 316
+/*   0*/      //   #2347	-> 319
+/*   0*/      //   #2348	-> 324
+/*   0*/      //   #2351	-> 327
+/*   0*/      //   #2352	-> 332
+/*   0*/      //   #2353	-> 342
+/*   0*/      //   #2355	-> 345
+/*   0*/      //   #2356	-> 348
+/*   0*/      //   #2359	-> 351
+/*   0*/      //   #2360	-> 360
+/*   0*/      //   #2361	-> 370
+/*   0*/      //   #2362	-> 373
+/*   0*/      //   #2364	-> 379
+/*   0*/      //   #2367	-> 383
+/*   0*/      //   #2368	-> 390
+/*   0*/      //   #2369	-> 397
+/*   0*/      //   #2371	-> 401
+/*   0*/      //   #2372	-> 412
+/*   0*/      //   #2373	-> 415
+/*   0*/      //   #2377	-> 418
+/*   0*/      //   #2378	-> 423
+/*   0*/      //   #2381	-> 426
+/*   0*/      //   #2382	-> 431
+/*   0*/      //   #2383	-> 451
+/*   0*/      //   #2385	-> 454
+/*   0*/      //   #2386	-> 457
+/*   0*/      //   #2389	-> 460
+/*   0*/      //   #2390	-> 469
+/*   0*/      //   #2391	-> 479
+/*   0*/      //   #2392	-> 482
+/*   0*/      //   #2394	-> 488
+/*   0*/      //   #2397	-> 492
+/*   0*/      //   #2398	-> 511
+/*   0*/      //   #2399	-> 517
+/*   0*/      //   #2400	-> 536
+/*   0*/      //   #2401	-> 542
+/*   0*/      //   #2406	-> 558
+/*   0*/      //   #2407	-> 578
+/*   0*/    }
+/*   0*/    
+/*   0*/    private int digitCount(String param1String, int param1Int1, int param1Int2) {
+/*2415*/      int i = Math.min(param1String.length() - param1Int1, param1Int2);
+/*2416*/      param1Int2 = 0;
+/*2417*/      for (; i > 0; i--) {
+/*2418*/        char c = param1String.charAt(param1Int1 + param1Int2);
+/*2419*/        if (c < '0' || c > '9')
+/*   0*/          break; 
+/*2422*/        param1Int2++;
+/*   0*/      } 
+/*2424*/      return param1Int2;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class TimeZoneName implements DateTimePrinter, DateTimeParser {
+/*   0*/    static final int LONG_NAME = 0;
+/*   0*/    
+/*   0*/    static final int SHORT_NAME = 1;
+/*   0*/    
+/*   0*/    private final Map<String, DateTimeZone> iParseLookup;
+/*   0*/    
+/*   0*/    private final int iType;
+/*   0*/    
+/*   0*/    TimeZoneName(int param1Int, Map<String, DateTimeZone> param1Map) {
+/*2440*/      this.iType = param1Int;
+/*2441*/      this.iParseLookup = param1Map;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*2445*/      return (this.iType == 1) ? 4 : 20;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*2451*/      param1StringBuffer.append(print(param1Long - param1Int, param1DateTimeZone, param1Locale));
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*2457*/      param1Writer.write(print(param1Long - param1Int, param1DateTimeZone, param1Locale));
+/*   0*/    }
+/*   0*/    
+/*   0*/    private String print(long param1Long, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*2461*/      if (param1DateTimeZone == null)
+/*2462*/        return ""; 
+/*2464*/      switch (this.iType) {
+/*   0*/        case 0:
+/*2466*/          return param1DateTimeZone.getName(param1Long, param1Locale);
+/*   0*/        case 1:
+/*2468*/          return param1DateTimeZone.getShortName(param1Long, param1Locale);
+/*   0*/      } 
+/*2470*/      return "";
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {}
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {}
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*2482*/      return (this.iType == 1) ? 4 : 20;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*2486*/      String str = param1String.substring(param1Int);
+/*2487*/      for (String str1 : this.iParseLookup.keySet()) {
+/*2488*/        if (str.startsWith(str1)) {
+/*2489*/          param1DateTimeParserBucket.setZone(this.iParseLookup.get(str1));
+/*2490*/          return param1Int + str1.length();
+/*   0*/        } 
+/*   0*/      } 
+/*2493*/      return param1Int ^ 0xFFFFFFFF;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  enum TimeZoneId implements DateTimePrinter, DateTimeParser {
+/*2501*/    INSTANCE;
+/*   0*/    
+/*2502*/    static final Set<String> ALL_IDS = DateTimeZone.getAvailableIDs();
+/*   0*/    
+/*   0*/    static final int MAX_LENGTH;
+/*   0*/    
+/*   0*/    static {
+/*2505*/      int i = 0;
+/*2506*/      for (String str : ALL_IDS)
+/*2507*/        i = Math.max(i, str.length()); 
+/*2509*/      MAX_LENGTH = i;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*2513*/      return MAX_LENGTH;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*2519*/      param1StringBuffer.append((param1DateTimeZone != null) ? param1DateTimeZone.getID() : "");
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*2525*/      param1Writer.write((param1DateTimeZone != null) ? param1DateTimeZone.getID() : "");
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {}
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {}
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*2537*/      return MAX_LENGTH;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*2541*/      String str = param1String.substring(param1Int);
+/*2542*/      for (String str1 : ALL_IDS) {
+/*2543*/        if (str.endsWith(str1)) {
+/*2544*/          param1DateTimeParserBucket.setZone(DateTimeZone.forID(str1));
+/*2545*/          return param1Int + str1.length();
+/*   0*/        } 
+/*   0*/      } 
+/*2548*/      return param1Int ^ 0xFFFFFFFF;
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class Composite implements DateTimePrinter, DateTimeParser {
+/*   0*/    private final DateTimePrinter[] iPrinters;
+/*   0*/    
+/*   0*/    private final DateTimeParser[] iParsers;
+/*   0*/    
+/*   0*/    private final int iPrintedLengthEstimate;
+/*   0*/    
+/*   0*/    private final int iParsedLengthEstimate;
+/*   0*/    
+/*   0*/    Composite(List<Object> param1List) {
+/*2565*/      ArrayList<Object> arrayList1 = new ArrayList();
+/*2566*/      ArrayList<Object> arrayList2 = new ArrayList();
+/*2568*/      decompose(param1List, arrayList1, arrayList2);
+/*2570*/      if (arrayList1.size() <= 0) {
+/*2571*/        this.iPrinters = null;
+/*2572*/        this.iPrintedLengthEstimate = 0;
+/*   0*/      } else {
+/*2574*/        int i = arrayList1.size();
+/*2575*/        this.iPrinters = new DateTimePrinter[i];
+/*2576*/        int j = 0;
+/*2577*/        for (int k = 0; k < i; k++) {
+/*2578*/          DateTimePrinter dateTimePrinter = (DateTimePrinter)arrayList1.get(k);
+/*2579*/          j += dateTimePrinter.estimatePrintedLength();
+/*2580*/          this.iPrinters[k] = dateTimePrinter;
+/*   0*/        } 
+/*2582*/        this.iPrintedLengthEstimate = j;
+/*   0*/      } 
+/*2585*/      if (arrayList2.size() <= 0) {
+/*2586*/        this.iParsers = null;
+/*2587*/        this.iParsedLengthEstimate = 0;
+/*   0*/      } else {
+/*2589*/        int i = arrayList2.size();
+/*2590*/        this.iParsers = new DateTimeParser[i];
+/*2591*/        int j = 0;
+/*2592*/        for (int k = 0; k < i; k++) {
+/*2593*/          DateTimeParser dateTimeParser = (DateTimeParser)arrayList2.get(k);
+/*2594*/          j += dateTimeParser.estimateParsedLength();
+/*2595*/          this.iParsers[k] = dateTimeParser;
+/*   0*/        } 
+/*2597*/        this.iParsedLengthEstimate = j;
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimatePrintedLength() {
+/*2602*/      return this.iPrintedLengthEstimate;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) {
+/*2608*/      DateTimePrinter[] arrayOfDateTimePrinter = this.iPrinters;
+/*2609*/      if (arrayOfDateTimePrinter == null)
+/*2610*/        throw new UnsupportedOperationException(); 
+/*2613*/      if (param1Locale == null)
+/*2615*/        param1Locale = Locale.getDefault(); 
+/*2618*/      int i = arrayOfDateTimePrinter.length;
+/*2619*/      for (int j = 0; j < i; j++)
+/*2620*/        arrayOfDateTimePrinter[j].printTo(param1StringBuffer, param1Long, param1Chronology, param1Int, param1DateTimeZone, param1Locale); 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, long param1Long, Chronology param1Chronology, int param1Int, DateTimeZone param1DateTimeZone, Locale param1Locale) throws IOException {
+/*2627*/      DateTimePrinter[] arrayOfDateTimePrinter = this.iPrinters;
+/*2628*/      if (arrayOfDateTimePrinter == null)
+/*2629*/        throw new UnsupportedOperationException(); 
+/*2632*/      if (param1Locale == null)
+/*2634*/        param1Locale = Locale.getDefault(); 
+/*2637*/      int i = arrayOfDateTimePrinter.length;
+/*2638*/      for (int j = 0; j < i; j++)
+/*2639*/        arrayOfDateTimePrinter[j].printTo(param1Writer, param1Long, param1Chronology, param1Int, param1DateTimeZone, param1Locale); 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(StringBuffer param1StringBuffer, ReadablePartial param1ReadablePartial, Locale param1Locale) {
+/*2644*/      DateTimePrinter[] arrayOfDateTimePrinter = this.iPrinters;
+/*2645*/      if (arrayOfDateTimePrinter == null)
+/*2646*/        throw new UnsupportedOperationException(); 
+/*2649*/      if (param1Locale == null)
+/*2651*/        param1Locale = Locale.getDefault(); 
+/*2654*/      int i = arrayOfDateTimePrinter.length;
+/*2655*/      for (int j = 0; j < i; j++)
+/*2656*/        arrayOfDateTimePrinter[j].printTo(param1StringBuffer, param1ReadablePartial, param1Locale); 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void printTo(Writer param1Writer, ReadablePartial param1ReadablePartial, Locale param1Locale) throws IOException {
+/*2661*/      DateTimePrinter[] arrayOfDateTimePrinter = this.iPrinters;
+/*2662*/      if (arrayOfDateTimePrinter == null)
+/*2663*/        throw new UnsupportedOperationException(); 
+/*2666*/      if (param1Locale == null)
+/*2668*/        param1Locale = Locale.getDefault(); 
+/*2671*/      int i = arrayOfDateTimePrinter.length;
+/*2672*/      for (int j = 0; j < i; j++)
+/*2673*/        arrayOfDateTimePrinter[j].printTo(param1Writer, param1ReadablePartial, param1Locale); 
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*2678*/      return this.iParsedLengthEstimate;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*2682*/      DateTimeParser[] arrayOfDateTimeParser = this.iParsers;
+/*2683*/      if (arrayOfDateTimeParser == null)
+/*2684*/        throw new UnsupportedOperationException(); 
+/*2687*/      int i = arrayOfDateTimeParser.length;
+/*2688*/      for (int j = 0; j < i && param1Int >= 0; j++)
+/*2689*/        param1Int = arrayOfDateTimeParser[j].parseInto(param1DateTimeParserBucket, param1String, param1Int); 
+/*2691*/      return param1Int;
+/*   0*/    }
+/*   0*/    
+/*   0*/    boolean isPrinter() {
+/*2695*/      return (this.iPrinters != null);
+/*   0*/    }
+/*   0*/    
+/*   0*/    boolean isParser() {
+/*2699*/      return (this.iParsers != null);
+/*   0*/    }
+/*   0*/    
+/*   0*/    private void decompose(List<Object> param1List1, List<Object> param1List2, List<Object> param1List3) {
+/*2707*/      int i = param1List1.size();
+/*2708*/      for (int j = 0; j < i; j += 2) {
+/*2709*/        Object object = param1List1.get(j);
+/*2710*/        if (object instanceof DateTimePrinter)
+/*2711*/          if (object instanceof Composite) {
+/*2712*/            addArrayToList(param1List2, (Object[])((Composite)object).iPrinters);
+/*   0*/          } else {
+/*2714*/            param1List2.add(object);
+/*   0*/          }  
+/*2718*/        object = param1List1.get(j + 1);
+/*2719*/        if (object instanceof DateTimeParser)
+/*2720*/          if (object instanceof Composite) {
+/*2721*/            addArrayToList(param1List3, (Object[])((Composite)object).iParsers);
+/*   0*/          } else {
+/*2723*/            param1List3.add(object);
+/*   0*/          }  
+/*   0*/      } 
+/*   0*/    }
+/*   0*/    
+/*   0*/    private void addArrayToList(List<Object> param1List, Object[] param1ArrayOfObject) {
+/*2730*/      if (param1ArrayOfObject != null)
+/*2731*/        for (int i = 0; i < param1ArrayOfObject.length; i++)
+/*2732*/          param1List.add(param1ArrayOfObject[i]);  
+/*   0*/    }
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class MatchingParser implements DateTimeParser {
+/*   0*/    private final DateTimeParser[] iParsers;
+/*   0*/    
+/*   0*/    private final int iParsedLengthEstimate;
+/*   0*/    
+/*   0*/    MatchingParser(DateTimeParser[] param1ArrayOfDateTimeParser) {
+/*2747*/      this.iParsers = param1ArrayOfDateTimeParser;
+/*2748*/      int i = 0;
+/*2749*/      for (int j = param1ArrayOfDateTimeParser.length; --j >= 0; ) {
+/*2750*/        DateTimeParser dateTimeParser = param1ArrayOfDateTimeParser[j];
+/*2751*/        if (dateTimeParser != null) {
+/*2752*/          int k = dateTimeParser.estimateParsedLength();
+/*2753*/          if (k > i)
+/*2754*/            i = k; 
+/*   0*/        } 
+/*   0*/      } 
+/*2758*/      this.iParsedLengthEstimate = i;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int estimateParsedLength() {
+/*2762*/      return this.iParsedLengthEstimate;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+/*2766*/      DateTimeParser[] arrayOfDateTimeParser = this.iParsers;
+/*2767*/      int i = arrayOfDateTimeParser.length;
+/*2769*/      Object object1 = param1DateTimeParserBucket.saveState();
+/*2770*/      boolean bool = false;
+/*2772*/      int j = param1Int;
+/*2773*/      Object object2 = null;
+/*2775*/      int k = param1Int;
+/*2777*/      for (int m = 0; m < i; m++) {
+/*2778*/        DateTimeParser dateTimeParser = arrayOfDateTimeParser[m];
+/*2779*/        if (dateTimeParser == null) {
+/*2781*/          if (j <= param1Int)
+/*2782*/            return param1Int; 
+/*2784*/          bool = true;
+/*   0*/          break;
+/*   0*/        } 
+/*2787*/        int n = dateTimeParser.parseInto(param1DateTimeParserBucket, param1String, param1Int);
+/*2788*/        if (n >= param1Int) {
+/*2789*/          if (n > j) {
+/*2790*/            if (n >= param1String.length() || m + 1 >= i || arrayOfDateTimeParser[m + 1] == null)
+/*2795*/              return n; 
+/*2797*/            j = n;
+/*2798*/            object2 = param1DateTimeParserBucket.saveState();
+/*   0*/          } 
+/*2801*/        } else if (n < 0) {
+/*2802*/          n ^= 0xFFFFFFFF;
+/*2803*/          if (n > k)
+/*2804*/            k = n; 
+/*   0*/        } 
+/*2808*/        param1DateTimeParserBucket.restoreState(object1);
+/*   0*/      } 
+/*2811*/      if (j > param1Int || (j == param1Int && bool)) {
+/*2813*/        if (object2 != null)
+/*2814*/          param1DateTimeParserBucket.restoreState(object2); 
+/*2816*/        return j;
+/*   0*/      } 
+/*2819*/      return k ^ 0xFFFFFFFF;
+/*   0*/    }
+/*   0*/  }
+/*   0*/}

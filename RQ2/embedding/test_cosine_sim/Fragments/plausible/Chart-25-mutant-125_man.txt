@@ -1,0 +1,7 @@
+                                             ChartRenderingInfo info) {
+        BufferedImage image = new BufferedImage(width, height, imageType);
+        Graphics2D g2 = image.createGraphics();
+    draw(g2, new Rectangle2D.Double(0.0D, 0.0D, width, imageType), null, info);
+        g2.dispose();
+        return image;
+    }

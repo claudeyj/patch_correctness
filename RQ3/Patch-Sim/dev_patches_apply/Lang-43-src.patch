@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/43/mutant-0/buggy-ExtendedMessageFormat.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/43/mutant-0/patched-ExtendedMessageFormat.java
+--- Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
++++ Lang43b_Lang-43-src.patchb/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
+@@ -419,6 +419,7 @@
+         int start = pos.getIndex();
+         char[] c = pattern.toCharArray();
+         if (escapingOn && c[start] == QUOTE) {
++            next(pos);
+             return appendTo == null ? null : appendTo.append(QUOTE);
+         }
+         int lastHold = start;

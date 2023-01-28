@@ -1,0 +1,28 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/84/mutant-0/buggy-MultiDirectional.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/84/mutant-0/patched-MultiDirectional.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/84/mutant-0/buggy-MultiDirectional.java	2021-08-22 00:18:38.694190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/84/mutant-0/patched-MultiDirectional.java	2021-08-22 00:18:38.694190186 -0700
+@@ -61,6 +61,7 @@
+     protected void iterateSimplex(final Comparator<RealPointValuePair> comparator)
+         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException {
+ 
++        final RealConvergenceChecker checker = getConvergenceChecker();
+         while (true) {
+ 
+             incrementIterationsCounter();
+@@ -89,8 +90,16 @@
+             final RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);
+             if (comparator.compare(contracted, best) < 0) {
+                 // accept the contracted simplex
++                return;
++            }
+ 
+             // check convergence
++            final int iter = getIterations();
++            boolean converged = true;
++            for (int i = 0; i < simplex.length; ++i) {
++                converged &= checker.converged(iter, original[i], simplex[i]);
++            }
++            if (converged) {
+                 return;
+             }
+ 

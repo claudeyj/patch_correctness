@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-41/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-41/fixed-patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-41/ori-CMAESOptimizer.java	2021-08-23 09:23:48.892990516 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-41/fixed-patched-CMAESOptimizer.java	2021-08-23 09:23:48.892990516 +0800
+@@ -244,7 +244,7 @@
+      * @param lambda Population size.
+      */
+     public CMAESOptimizer(int lambda) {
+-        this(lambda, null, DEFAULT_MAXITERATIONS, DEFAULT_STOPFITNESS,
++        this(lambda, null, DEFAULT_MAXITERATIONS, 1.0,
+              DEFAULT_ISACTIVECMA, DEFAULT_DIAGONALONLY,
+              DEFAULT_CHECKFEASABLECOUNT, DEFAULT_RANDOMGENERATOR, false);
+     }

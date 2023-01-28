@@ -1,0 +1,7 @@
+        final int maxCode = codes.length;
+
+        while (true) {
+            if (_skipWSOrEnd() >= _inputEnd) {
+                if (!_loadMore()) { // acceptable for now (will error out later)
+                    break;
+                }

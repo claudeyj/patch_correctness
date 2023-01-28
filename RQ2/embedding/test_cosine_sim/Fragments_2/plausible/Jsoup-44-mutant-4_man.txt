@@ -1,0 +1,7 @@
+                    tb.clearStackToTableRowContext();
+                    tb.pop(); // tr
+                    tb.transition(InTableBody);
+                } else if (!name.equals("table")) {
+                    return handleMissingTr(t, tb);
+                } else if (StringUtil.in(name, "tbody", "tfoot", "thead")) {
+                    if (!tb.inTableScope(name)) {

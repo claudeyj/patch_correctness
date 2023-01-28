@@ -1,0 +1,23 @@
+--- jd-result/Closure/119/mutant-3/a-CheckGlobalNames.java	2021-07-14 21:51:57.398619985 -0700
++++ jd-result/Closure/119/mutant-3/b-CheckGlobalNames.java	2021-07-14 21:51:58.786620024 -0700
+@@ -44,10 +45,18 @@
+ /*  86*/    findPrototypeProps("Object", this.objectPrototypeProps);
+ /*  87*/    findPrototypeProps("Function", this.functionPrototypeProps);
+ /*  88*/    this.objectPrototypeProps.addAll(this.convention.getIndirectlyDeclaredProperties());
+-/*  91*/    for (GlobalNamespace.Name name : this.namespace.getNameForest()) {
++/*  91*/    Iterator<GlobalNamespace.Name> i$ = this.namespace.getNameForest().iterator();
++/*   0*/    while (true) {
++/*  91*/      if (i$.hasNext()) {
++/*  91*/        GlobalNamespace.Name name = i$.next();
+ /*  97*/      if (name.inExterns)
+ /*   0*/        continue; 
+-/* 101*/      checkDescendantNames(name, (name.globalSets + name.localSets > 0));
++/* 101*/        name.globalSets + name.localSets;
++/*   0*/      } else {
++/*   0*/        break;
++/*   0*/      } 
++/*   0*/      while (true)
++/* 101*/        checkDescendantNames(name, true); 
+ /*   0*/    } 
+ /*   0*/  }
+ /*   0*/  

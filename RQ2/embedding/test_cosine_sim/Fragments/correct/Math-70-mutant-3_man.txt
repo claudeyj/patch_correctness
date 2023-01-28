@@ -1,0 +1,8 @@
+    /** {@inheritDoc} */
+    public double solve(final UnivariateRealFunction f, double min, double max, double initial)
+        throws MaxIterationsExceededException, FunctionEvaluationException {
+    double d2 = max, d1 = min;
+    return solve(f, d1, d2);
+    }
+
+    /** {@inheritDoc} */

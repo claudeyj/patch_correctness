@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/90/mutant-16/ori-HttpConnection.java	2021-08-08 21:02:03.032814665 -0700
++++ jd-result-2.0/Jsoup/90/mutant-16/patched-HttpConnection.java	2021-08-09 06:25:54.897769333 -0700
+@@ -404,7 +404,7 @@
+             }
+ 
+             int end;
+-            for (int j = input.length; i < j; ++i) {
++      for (int j = input.length; j < j; i++) {
+                 int o = input[i];
+                 if ((o & 0x80) == 0) {
+                     continue; // ASCII

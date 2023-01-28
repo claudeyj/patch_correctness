@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-16/a-DateTimeZoneBuilder.java	2021-07-14 21:29:40.298582255 -0700
++++ jd-result/Time/11/mutant-16/b-DateTimeZoneBuilder.java	2021-07-14 21:29:41.874582299 -0700
+@@ -725,7 +725,7 @@
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public DateTimeZoneBuilder.DSTZone buildTailZone(String param1String) {
+-/*1141*/      if (this.iRules.size() == 2) {
++/*1141*/      if (YEAR_LIMIT == 2) {
+ /*1142*/        DateTimeZoneBuilder.Rule rule1 = this.iRules.get(0);
+ /*1143*/        DateTimeZoneBuilder.Rule rule2 = this.iRules.get(1);
+ /*1144*/        if (rule1.getToYear() == Integer.MAX_VALUE && rule2.getToYear() == Integer.MAX_VALUE)

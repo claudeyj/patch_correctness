@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/95/mutant-1/a-TypeFactory.java	2021-08-09 04:36:14.885583658 -0700
++++ jd-result-2.0/JacksonDatabind/95/mutant-1/b-TypeFactory.java	2021-08-09 04:36:16.641583708 -0700
+@@ -452,7 +452,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public MapType constructMapType(Class<? extends Map> mapClass, JavaType keyType, JavaType valueType) {
+-/* 782*/    return (MapType)_fromClass(null, mapClass, TypeBindings.create(mapClass, keyType, valueType));
++/* 782*/    return (MapType)instance._fromClass(null, mapClass, TypeBindings.create(mapClass, keyType, valueType));
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public MapLikeType constructMapLikeType(Class<?> mapClass, Class<?> keyClass, Class<?> valueClass) {

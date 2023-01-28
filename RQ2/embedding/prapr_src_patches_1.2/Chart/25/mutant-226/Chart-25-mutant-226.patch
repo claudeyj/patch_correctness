@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-226/a-KeyedObjects2D.java	2021-07-14 20:09:42.926446882 -0700
++++ jd-result/Chart/25/mutant-226/b-KeyedObjects2D.java	2021-07-14 20:09:44.242446920 -0700
+@@ -16,7 +16,7 @@
+ /*  77*/  private List rows = new ArrayList();
+ /*   0*/  
+ /*   0*/  public int getRowCount() {
+-/*  86*/    return this.rowKeys.size();
++/*  86*/    return (this.rowKeys.size() != 0) ? 0 : 1;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public int getColumnCount() {

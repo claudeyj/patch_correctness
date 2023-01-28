@@ -1,0 +1,11 @@
+--- Chart7b/source/org/jfree/data/time/TimePeriodValues.java	2017-03-20 23:19:56.000000000 +0800
++++ Chart7_Chart-7-mutant-7.patchb/source/org/jfree/data/time/TimePeriodValues.java	2017-03-20 23:19:56.000000000 +0800
+@@ -297,7 +297,7 @@
+         }
+         
+         if (this.maxMiddleIndex >= 0) {
+-            long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
++      long s = getDataItem(getMaxStartIndex()).getPeriod().getStart()
+                 .getTime();
+             long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
+                 .getTime();

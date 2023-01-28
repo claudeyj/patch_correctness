@@ -1,0 +1,12 @@
+--- jd-result/Math/49/mutant-11/a-OpenIntToDoubleHashMap.java	2021-07-14 09:11:49.293333014 -0700
++++ jd-result/Math/49/mutant-11/b-OpenIntToDoubleHashMap.java	2021-07-14 09:11:50.661333053 -0700
+@@ -204,7 +204,8 @@
+ /* 396*/    double previous = this.values[index];
+ /* 397*/    this.values[index] = this.missingEntries;
+ /* 398*/    this.size--;
+-/* 399*/    this.count++;
++/* 399*/    this.count + 1;
++/* 399*/    this;
+ /* 400*/    return previous;
+ /*   0*/  }
+ /*   0*/  

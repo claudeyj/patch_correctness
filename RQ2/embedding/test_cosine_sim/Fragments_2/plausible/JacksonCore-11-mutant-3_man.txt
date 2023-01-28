@@ -1,0 +1,7 @@
+     * may have gotten additional entries. Used for checking to see
+     * if a child table should be merged into shared table.
+     */
+    public boolean maybeDirty() { return !_needRehash; }
+
+    public int hashSeed() { return _seed; }
+    

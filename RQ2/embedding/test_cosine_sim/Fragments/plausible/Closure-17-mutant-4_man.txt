@@ -1,0 +1,7 @@
+        case Token.OBJECTLIT:
+          JSDocInfo info = n.getJSDocInfo();
+          if (info != null &&
+              sourceName != null) {
+            if (lentObjectLiterals == null) {
+              lentObjectLiterals = Lists.newArrayList();
+            }

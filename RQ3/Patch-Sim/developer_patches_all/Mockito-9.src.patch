@@ -1,0 +1,24 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/9/mutant-0/buggy-CallsRealMethods.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/9/mutant-0/patched-CallsRealMethods.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/9/mutant-0/buggy-CallsRealMethods.java	2021-08-22 00:18:38.710190187 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/9/mutant-0/patched-CallsRealMethods.java	2021-08-22 00:18:38.710190187 -0700
+@@ -5,7 +5,9 @@
+ package org.mockito.internal.stubbing.answers;
+ 
+ import java.io.Serializable;
++import java.lang.reflect.Modifier;
+ 
++import org.mockito.internal.stubbing.defaultanswers.GloballyConfiguredAnswer;
+ import org.mockito.invocation.InvocationOnMock;
+ import org.mockito.stubbing.Answer;
+ 
+@@ -33,6 +35,9 @@
+     private static final long serialVersionUID = 9057165148930624087L;
+ 
+     public Object answer(InvocationOnMock invocation) throws Throwable {
++    	if (Modifier.isAbstract(invocation.getMethod().getModifiers())) {
++    		return new GloballyConfiguredAnswer().answer(invocation);
++    	}
+         return invocation.callRealMethod();
+     }
+ }
+\ No newline at end of file

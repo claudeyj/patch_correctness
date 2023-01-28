@@ -1,0 +1,76 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 21:50:37 PDT 2021
+Number of Plausible Fixes: 8
+Total Number of Patches: 1102
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local sampleSize is replaced by local i to be used
+	File Name: org/apache/commons/math3/distribution/DiscreteDistribution.java
+	Line Number: 189
+	Rank: 2
+	Total Rank: 25
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local i is replaced by local sampleSize to be used
+	File Name: org/apache/commons/math3/distribution/DiscreteDistribution.java
+	Line Number: 189
+	Rank: 2
+	Total Rank: 25
+	Dump: mutant-6.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: the call to factory method java.util.List.get(I)Ljava/lang/Object; is replaced by an instantiation of type java.lang.Object using ()V
+	File Name: org/apache/commons/math3/distribution/DiscreteDistribution.java
+	Line Number: 187
+	Rank: 3
+	Total Rank: 38
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.distribution.DiscreteDistribution::sample()Ljava/lang/Object; is replaced with the used of default value null
+	File Name: org/apache/commons/math3/distribution/DiscreteDistribution.java
+	Line Number: 190
+	Rank: 4
+	Total Rank: 42
+	Dump: mutant-3.class
+------------------------------------------------
+5.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/apache/commons/math3/distribution/DiscreteDistribution.java
+	Line Number: 187
+	Rank: 6
+	Total Rank: 44
+	Dump: mutant-8.class
+------------------------------------------------
+6.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/apache/commons/math3/distribution/DiscreteDistribution.java
+	Line Number: 189
+	Rank: 6
+	Total Rank: 44
+	Dump: mutant-4.class
+------------------------------------------------
+7.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/math3/distribution/DiscreteDistribution.java
+	Line Number: 189
+	Rank: 7
+	Total Rank: 46
+	Dump: mutant-2.class
+------------------------------------------------
+8.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/apache/commons/math3/distribution/DiscreteDistribution.java
+	Line Number: 189
+	Rank: 8
+	Total Rank: 48
+	Dump: mutant-7.class
+------------------------------------------------

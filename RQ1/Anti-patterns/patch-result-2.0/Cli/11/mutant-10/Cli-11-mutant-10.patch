@@ -1,0 +1,19 @@
+--- jd-result-2.0/Cli/11/mutant-10/a-HelpFormatter.java	2021-08-09 04:40:06.545590195 -0700
++++ jd-result-2.0/Cli/11/mutant-10/b-HelpFormatter.java	2021-08-09 04:40:08.029590237 -0700
+@@ -214,12 +214,13 @@
+ /*   0*/    } else {
+ /* 628*/      buff.append("--").append(option.getLongOpt());
+ /*   0*/    } 
+-/* 632*/    if (option.hasArg() && option.getArgName() != null) {
+-/* 634*/        buff.append(" <").append(option.getArgName()).append(">"); 
+-/*   0*/       }
++/* 632*/    option.hasArg();
++/*   0*/    while (true) {
+ /* 638*/    if (!required) {
+ /* 640*/        buff.append("]"); 
+ /*   0*/       }
++/*   0*/      return;
++/*   0*/    } 
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void printUsage(PrintWriter pw, int width, String cmdLineSyntax) {

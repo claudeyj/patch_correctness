@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/67/mutant-0/buggy-MultiStartUnivariateRealOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/67/mutant-0/patched-MultiStartUnivariateRealOptimizer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/67/mutant-0/buggy-MultiStartUnivariateRealOptimizer.java	2021-08-22 00:18:38.686190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/67/mutant-0/patched-MultiStartUnivariateRealOptimizer.java	2021-08-22 00:18:38.686190186 -0700
+@@ -89,12 +89,12 @@
+ 
+     /** {@inheritDoc} */
+     public double getFunctionValue() {
+-        return optimizer.getFunctionValue();
++        return optimaValues[0];
+     }
+ 
+     /** {@inheritDoc} */
+     public double getResult() {
+-        return optimizer.getResult();
++        return optima[0];
+     }
+ 
+     /** {@inheritDoc} */

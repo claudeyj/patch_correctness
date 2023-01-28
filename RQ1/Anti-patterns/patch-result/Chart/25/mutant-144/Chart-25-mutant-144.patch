@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-144/a-JFreeChart.java	2021-07-14 20:12:22.018451372 -0700
++++ jd-result/Chart/25/mutant-144/b-JFreeChart.java	2021-07-14 20:12:23.526451414 -0700
+@@ -556,7 +556,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public BufferedImage createBufferedImage(int width, int height, ChartRenderingInfo info) {
+-/*1373*/    return createBufferedImage(width, height, 1, info);
++/*1373*/    return createBufferedImage(width, DEFAULT_BACKGROUND_IMAGE_ALIGNMENT, 1, info);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public BufferedImage createBufferedImage(int width, int height, int imageType, ChartRenderingInfo info) {

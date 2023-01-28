@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/17/mutant-6/ori-UTF8JsonGenerator.java	2021-08-08 21:02:01.900814633 -0700
++++ jd-result-2.0/JacksonCore/17/mutant-6/man-patched-UTF8JsonGenerator.java	2021-08-12 16:03:28.798061311 -0700
+@@ -1880,7 +1880,7 @@
+         throws IOException
+     {
+         // Let's handle surrogates gracefully (as 4 byte output):
+-        if (ch >= SURR1_FIRST) {
++        if (inputEnd >= SURR1_FIRST) {
+             if (ch <= SURR2_LAST) { // yes, outside of BMP
+                 // Do we have second part?
+                 if (inputOffset >= inputEnd || cbuf == null) { // nope... have to note down

@@ -1,0 +1,10 @@
+--- jd-result/Closure/68/mutant-1/ori-TestErrorReporter.java	2021-07-15 18:51:52.692753135 -0700
++++ jd-result/Closure/68/mutant-1/fixed-patched-TestErrorReporter.java	2021-07-22 20:57:56.814127755 -0700
+@@ -59,7 +59,6 @@
+     if (warnings != null && warningsIndex < warnings.length) {
+       assertEquals(warnings[warningsIndex++], message);
+     } else {
+-      fail("extra warning: " + message);
+     }
+   }
+ 

@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-23/a-CGLIBHacker.java	2021-07-14 21:32:00.670586216 -0700
++++ jd-result/Mockito/5/mutant-23/b-CGLIBHacker.java	2021-07-14 21:32:01.922586251 -0700
+@@ -13,7 +13,7 @@
+ /*  20*/      namingPolicyField.setAccessible(true);
+ /*  21*/      if (namingPolicyField.get(createInfo) == null)
+ /*  22*/        namingPolicyField.set(createInfo, MockitoNamingPolicy.INSTANCE); 
+-/*  24*/    } catch (Exception e) {
++/*  24*/    } catch (Throwable e) {
+ /*  25*/      throw new RuntimeException("Unable to set MockitoNamingPolicy on cglib generator which creates FastClasses", e);
+ /*   0*/    } 
+ /*   0*/  }

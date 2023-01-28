@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-4/ori-AbstractIntegerDistribution.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-4/fixed-patched-AbstractIntegerDistribution.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-4/ori-AbstractIntegerDistribution.java	2021-08-23 09:23:48.868990183 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-4/fixed-patched-AbstractIntegerDistribution.java	2021-08-23 09:23:48.868990183 +0800
+@@ -123,7 +123,7 @@
+         // use the one-sided Chebyshev inequality to narrow the bracket
+         // cf. AbstractRealDistribution.inverseCumulativeProbability(double)
+         final double mu = getNumericalMean();
+-        final double sigma = FastMath.sqrt(getNumericalVariance());
++    double sigma = FastMath.sqrt(0.0D);
+         final boolean chebyshevApplies = !(Double.isInfinite(mu) || Double.isNaN(mu) ||
+                 Double.isInfinite(sigma) || Double.isNaN(sigma) || sigma == 0.0);
+         if (chebyshevApplies) {

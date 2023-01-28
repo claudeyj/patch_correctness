@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/17/mutant-2/ori-TreeBuilderState.java	2021-08-08 21:02:03.248814671 -0700
++++ jd-result-2.0/Jsoup/17/mutant-2/patched-TreeBuilderState.java	2021-08-09 06:25:54.905769333 -0700
+@@ -247,7 +247,7 @@
+             switch (t.type) {
+                 case Character: {
+                     Token.Character c = t.asCharacter();
+-                    if (c.getData().equals(nullString)) {
++          if (c.getData().equals(null)) {
+                         // todo confirm that check
+                         tb.error(this);
+                         return false;

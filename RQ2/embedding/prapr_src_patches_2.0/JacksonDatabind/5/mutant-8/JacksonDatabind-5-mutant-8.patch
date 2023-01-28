@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/5/mutant-8/a-ObjectMapper.java	2021-08-09 04:26:42.573567509 -0700
++++ jd-result-2.0/JacksonDatabind/5/mutant-8/b-ObjectMapper.java	2021-08-09 04:26:44.273567557 -0700
+@@ -656,7 +656,8 @@
+ /*   0*/  
+ /*   0*/  public ObjectMapper disable(MapperFeature... f) {
+ /*1464*/    this._deserializationConfig = this._deserializationConfig.without(f);
+-/*1465*/    this._serializationConfig = this._serializationConfig.without(f);
++/*1465*/    this._serializationConfig.without(f);
++/*1465*/    this;
+ /*1466*/    return this;
+ /*   0*/  }
+ /*   0*/  

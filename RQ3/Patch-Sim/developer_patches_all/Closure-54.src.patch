@@ -1,0 +1,49 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/54/mutant-0/buggy-TypedScopeCreator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/54/mutant-0/patched-TypedScopeCreator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/54/mutant-0/buggy-TypedScopeCreator.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/54/mutant-0/patched-TypedScopeCreator.java	2021-08-22 00:18:38.610190184 -0700
+@@ -1410,7 +1410,13 @@
+           // then they are responsible for making sure that the object literal's
+           // implicit prototype is set up appropriately. We just obey
+           // the @extends tag.
+-          if (!qVar.isTypeInferred()) {
++          ObjectType qVarType = ObjectType.cast(qVar.getType());
++          if (qVarType != null &&
++              rhsValue != null &&
++              rhsValue.getType() == Token.OBJECTLIT) {
++            typeRegistry.resetImplicitPrototype(
++                rhsValue.getJSType(), qVarType.getImplicitPrototype());
++          } else if (!qVar.isTypeInferred()) {
+             // If the programmer has declared that F inherits from Super,
+             // and they assign F.prototype to some arbitrary expression,
+             // there's not much we can do. We just ignore the expression,
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/54/mutant-0/buggy-FunctionType.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/54/mutant-0/patched-FunctionType.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/54/mutant-0/buggy-FunctionType.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/54/mutant-0/patched-FunctionType.java	2021-08-22 00:18:38.610190184 -0700
+@@ -338,7 +338,6 @@
+     //
+     // In the second case, we just use the anonymous object as the prototype.
+     if (baseType.hasReferenceName() ||
+-        baseType.isUnknownType() ||
+         isNativeObjectType() ||
+         baseType.isFunctionPrototypeType() ||
+         !(baseType instanceof PrototypeObjectType)) {
+@@ -363,14 +362,18 @@
+       return false;
+     }
+ 
+-    boolean replacedPrototype = prototype != null;
++    PrototypeObjectType oldPrototype = this.prototype;
++    boolean replacedPrototype = oldPrototype != null;
+ 
+     this.prototype = prototype;
+     this.prototypeSlot = new SimpleSlot("prototype", prototype, true);
+     this.prototype.setOwnerFunction(this);
+ 
++    if (oldPrototype != null) {
+       // Disassociating the old prototype makes this easier to debug--
+       // we don't have to worry about two prototypes running around.
++      oldPrototype.setOwnerFunction(null);
++    }
+ 
+     if (isConstructor() || isInterface()) {
+       FunctionType superClass = getSuperClassConstructor();

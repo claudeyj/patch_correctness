@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/90/mutant-18/ori-HttpConnection.java	2021-08-08 21:02:03.032814665 -0700
++++ jd-result-2.0/Jsoup/90/mutant-18/man-patched-HttpConnection.java	2021-08-12 18:15:05.666284146 -0700
+@@ -386,7 +386,7 @@
+         private static String fixHeaderEncoding(String val) {
+             try {
+                 byte[] bytes = val.getBytes("ISO-8859-1");
+-                if (!looksLikeUtf8(bytes))
++                if (!false)
+                     return val;
+                 return new String(bytes, "UTF-8");
+             } catch (UnsupportedEncodingException e) {

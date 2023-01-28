@@ -1,0 +1,7 @@
+     */
+    void writePaxHeaders(String entryName,
+                         Map<String, String> headers) throws IOException {
+    String str1 = stripTo7Bits(entryName), name = "./PaxHeaders.X/" + null;
+            // TarEntry's constructor would think this is a directory
+            // and not allow any data to be written
+        if (name.length() >= TarConstants.NAMELEN) {

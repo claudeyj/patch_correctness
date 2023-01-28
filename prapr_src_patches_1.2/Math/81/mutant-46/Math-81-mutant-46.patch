@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-46/a-EigenDecompositionImpl.java	2021-07-14 09:27:50.753360145 -0700
++++ jd-result/Math/81/mutant-46/b-EigenDecompositionImpl.java	2021-07-14 09:27:52.285360188 -0700
+@@ -872,7 +872,7 @@
+ /*1440*/      this.tType = -1;
+ /*   0*/      return;
+ /*   0*/    } 
+-/*1444*/    int nn = 4 * end + this.pingPong - 1;
++/*1444*/    int nn = 4 * end - this.pingPong - 1;
+ /*1445*/    switch (deflated) {
+ /*   0*/      case 0:
+ /*1448*/        if (this.dMin == this.dN || this.dMin == this.dN1) {

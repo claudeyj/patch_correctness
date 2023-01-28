@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/9/mutant-4/a-Base64.java	2021-08-09 03:49:44.297504913 -0700
++++ jd-result-2.0/Codec/9/mutant-4/b-Base64.java	2021-08-09 03:49:45.793504956 -0700
+@@ -423,7 +423,7 @@
+ /* 973*/    long len = (pArray.length * 4 / 3);
+ /* 974*/    long mod = len % 4L;
+ /* 975*/    if (mod != 0L) {
+-/* 976*/        len += 4L - mod; 
++/* 976*/        len -= 4L - mod; 
+ /*   0*/       }
+ /* 978*/    if (chunkSize > 0) {
+ /* 979*/      boolean lenChunksPerfectly = (len % chunkSize == 0L);

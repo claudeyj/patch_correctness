@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/8/mutant-5/a-TextBuffer.java	2021-08-09 04:13:00.337544307 -0700
++++ jd-result-2.0/JacksonCore/8/mutant-5/b-TextBuffer.java	2021-08-09 04:13:01.725544346 -0700
+@@ -150,7 +150,7 @@
+ /* 304*/        return this._resultArray = this._resultString.toCharArray(); 
+ /*   0*/       }
+ /* 307*/    if (!this._hasSegments) {
+-/* 307*/        return this._currentSegment; 
++/* 307*/        return contentsAsArray(); 
+ /*   0*/       }
+ /* 309*/    return contentsAsArray();
+ /*   0*/  }

@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-5/a-EigenDecompositionImpl.java	2021-07-14 09:28:25.549361127 -0700
++++ jd-result/Math/81/mutant-5/b-EigenDecompositionImpl.java	2021-07-14 09:28:27.049361169 -0700
+@@ -613,7 +613,7 @@
+ /*1062*/      this.dMin = -0.0D;
+ /*   0*/    } 
+ /*1066*/    if (this.dMin < 0.0D || 2.2250738585072014E-308D * this.qMax < Math.min(this.work[l - 1], Math.min(this.work[l - 9], this.dMin2 + this.work[l - 2 * this.pingPong]))) {
+-/*1071*/      computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
++/*1071*/      computeShiftIncrement(this.pingPong, deflatedEnd, end - deflatedEnd);
+ /*1074*/      for (boolean loop = true; loop; ) {
+ /*1077*/        dqds(start, deflatedEnd);
+ /*1080*/        if (this.dMin >= 0.0D && this.dMin1 > 0.0D) {

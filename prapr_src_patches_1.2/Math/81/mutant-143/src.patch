@@ -1,0 +1,20 @@
+--- jd-result/Math/81/mutant-143/ori-EigenDecompositionImpl.java	2021-07-24 01:52:08.458297207 -0700
++++ jd-result/Math/81/mutant-143/man-patched-EigenDecompositionImpl.java	2021-07-30 02:54:08.777030414 -0700
+@@ -1429,7 +1429,7 @@
+      */
+     private void computeShiftIncrement(final int start, final int end, final int deflated) {
+ 
+-        final double cnst1 = 0.563;
++        double cnst1 = 0.563;
+         final double cnst2 = 1.010;
+         final double cnst3 = 1.05;
+ 
+@@ -1481,7 +1481,7 @@
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }
+-                        b2 = work[nn - 5] / work[nn - 7];
++                        cnst1 = work[nn - 5] / work[nn - 7];
+                         np = nn - 9;
+                     } else {
+                         np = nn - 2 * pingPong;

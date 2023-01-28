@@ -1,0 +1,41 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/105/mutant-0/buggy-FoldConstants.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/105/mutant-0/patched-FoldConstants.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/105/mutant-0/buggy-FoldConstants.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/105/mutant-0/patched-FoldConstants.java	2021-08-22 00:18:38.578190183 -0700
+@@ -1474,22 +1474,24 @@
+ 
+     String joinString = NodeUtil.getStringValue(right);
+     List<Node> arrayFoldedChildren = Lists.newLinkedList();
+-    StringBuilder sb = new StringBuilder();
++    StringBuilder sb = null;
+     int foldedSize = 0;
+     Node elem = arrayNode.getFirstChild();
+     // Merges adjacent String nodes.
+     while (elem != null) {
+       if (NodeUtil.isImmutableValue(elem)) {
+-        if (sb.length() > 0) {
++        if (sb == null) {
++          sb = new StringBuilder();
++        } else {
+           sb.append(joinString);
+         }
+         sb.append(NodeUtil.getStringValue(elem));
+       } else {
+-        if (sb.length() > 0) {
++        if (sb != null) {
+           // + 2 for the quotes.
+           foldedSize += sb.length() + 2;
+           arrayFoldedChildren.add(Node.newString(sb.toString()));
+-          sb = new StringBuilder();
++          sb = null;
+         }
+         foldedSize += InlineCostEstimator.getCost(elem);
+         arrayFoldedChildren.add(elem);
+@@ -1497,7 +1499,7 @@
+       elem = elem.getNext();
+     }
+ 
+-    if (sb.length() > 0) {
++    if (sb != null) {
+       // + 2 for the quotes.
+       foldedSize += sb.length() + 2;
+       arrayFoldedChildren.add(Node.newString(sb.toString()));

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/25/mutant-21/a-ReaderBasedJsonParser.java	2021-08-09 04:05:39.177531858 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-21/b-ReaderBasedJsonParser.java	2021-08-09 04:05:40.849531905 -0700
+@@ -1450,7 +1450,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private String _handleOddName2(int startPtr, int hash, int[] codes) throws IOException {
+-/*1950*/    this._textBuffer.resetWithShared(this._inputBuffer, startPtr, this._inputPtr - startPtr);
++/*1950*/    this._textBuffer.resetWithShared(this._inputBuffer, startPtr, _skipWSOrEnd() - startPtr);
+ /*1951*/    char[] outBuf = this._textBuffer.getCurrentSegment();
+ /*1952*/    int outPtr = this._textBuffer.getCurrentSegmentSize();
+ /*1953*/    int maxCode = codes.length;

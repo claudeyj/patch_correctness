@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-3/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-3/patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-3/ori-CMAESOptimizer.java	2021-08-23 09:23:48.884990405 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-3/patched-CMAESOptimizer.java	2021-08-23 09:23:48.884990405 +0800
+@@ -572,7 +572,7 @@
+ 
+         // initialize termination criteria
+         stopTolUpX = 1e3 * max(insigma);
+-        stopTolX = 1e-11 * max(insigma);
++    this.stopTolX = 1.0E-11D / max(insigma);
+         stopTolFun = 1e-12;
+         stopTolHistFun = 1e-13;
+ 

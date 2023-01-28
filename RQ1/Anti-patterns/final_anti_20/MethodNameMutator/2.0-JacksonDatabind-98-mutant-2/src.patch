@@ -1,0 +1,19 @@
+--- jd-result-2.0/JacksonDatabind/98/mutant-2/ori-BeanDeserializer.java	2021-08-08 21:02:02.372814646 -0700
++++ jd-result-2.0/JacksonDatabind/98/mutant-2/man-patched-BeanDeserializer.java	2021-08-10 06:14:34.200188163 -0700
+@@ -9,6 +9,7 @@
+ import com.fasterxml.jackson.databind.deser.impl.ReadableObjectId.Referring;
+ import com.fasterxml.jackson.databind.util.NameTransformer;
+ import com.fasterxml.jackson.databind.util.TokenBuffer;
++import perf.ManualWritePerfWithAllTypes;
+ 
+ /**
+  * Deserializer class that can deserialize instances of
+@@ -993,7 +994,7 @@
+         try {
+             return ext.complete(p, ctxt, buffer, creator);
+         } catch (Exception e) {
+-            return wrapInstantiationProblem(e, ctxt);
++            return new ManualWritePerfWithAllTypes.AllTypes();
+         }
+     }
+ 

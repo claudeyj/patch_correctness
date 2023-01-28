@@ -1,0 +1,16 @@
+--- jd-result-2.0/JxPath/20/mutant-1/a-XPathParserTokenManager.java	2021-08-09 04:17:24.621551764 -0700
++++ jd-result-2.0/JxPath/20/mutant-1/b-XPathParserTokenManager.java	2021-08-09 04:17:26.105551806 -0700
+@@ -1775,7 +1775,12 @@
+ /*1835*/        return matchedToken;
+ /*   0*/      } 
+ /*   0*/      try {
+-/*1838*/        this.input_stream.backup(0);
++/*1838*/        int i = 0;
++/*1838*/        if (this.input_stream == null) {
++/*   0*/        
++/*   0*/        } else {
++/*1838*/          this.input_stream.backup(i);
++/*   0*/        } 
+ /*1839*/        while (this.curChar <= ' ' && (0x100003600L & 1L << this.curChar) != 0L) {
+ /*1840*/            this.curChar = this.input_stream.BeginToken(); 
+ /*   0*/           }

@@ -1,0 +1,6 @@
+     */
+    public CSVFormat withSkipHeaderRecord(final boolean skipHeaderRecord) {
+        return new CSVFormat(delimiter, quoteChar, quotePolicy, commentStart, escape,
+                ignoreSurroundingSpaces, ignoreEmptyLines, TDF.recordSeparator, nullString, header, skipHeaderRecord);
+    }
+}

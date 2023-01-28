@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/12/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/12/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/12/buggy1.java	2021-08-27 19:18:39.218864103 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/12/tool-patch1.java	2021-08-27 19:18:39.218864103 -0700
+@@ -152,6 +152,9 @@
+                 new Font("SansSerif", Font.BOLD, 12));
+         seriesTitle.setPosition(RectangleEdge.BOTTOM);
+         this.pieChart.setTitle(seriesTitle);
++        if (dataset != null) {
++            dataset.addChangeListener(this);
++        }
+         this.aggregatedItemsKey = "Other";
+         this.aggregatedItemsPaint = Color.lightGray;
+         this.sectionPaints = new HashMap();

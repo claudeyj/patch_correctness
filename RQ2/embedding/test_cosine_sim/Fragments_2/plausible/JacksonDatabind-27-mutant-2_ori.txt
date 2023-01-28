@@ -1,0 +1,7 @@
+        /* Minor optimization: let's deserialize properties as soon as
+         * we have all pertinent information:
+         */
+        if (canDeserialize) {
+            String typeId = _typeIds[index];
+            // clear stored data, to avoid deserializing+setting twice:
+            _typeIds[index] = null;

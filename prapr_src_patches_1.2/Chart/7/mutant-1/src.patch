@@ -1,0 +1,11 @@
+--- jd-result/Chart/7/mutant-1/ori-TimePeriodValues.java	2021-07-15 18:51:51.900753113 -0700
++++ jd-result/Chart/7/mutant-1/patched-TimePeriodValues.java	2021-07-21 07:30:13.358227264 -0700
+@@ -549,7 +549,7 @@
+      * @return The index.
+      */
+     public int getMaxMiddleIndex() {
+-        return this.maxMiddleIndex;
++    return getMaxStartIndex();
+     }
+ 
+     /**

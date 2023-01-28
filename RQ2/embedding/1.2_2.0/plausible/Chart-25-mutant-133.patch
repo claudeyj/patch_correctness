@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-133/ori-JFreeChart.java	2021-07-15 18:51:50.716753080 -0700
++++ jd-result/Chart/25/mutant-133/fixed-patched-JFreeChart.java	2021-07-21 18:19:14.642449557 -0700
+@@ -1316,7 +1316,7 @@
+                     t.getHorizontalAlignment(), VerticalAlignment.BOTTOM);
+             retValue = t.draw(g2, titleArea, p);
+             area.setRect(area.getX(), area.getY(), area.getWidth(), 
+-                    area.getHeight() - size.height);
++                    area.getHeight() - hh);
+         }
+         else if (position == RectangleEdge.RIGHT) {
+             Size2D size = t.arrange(g2, constraint);

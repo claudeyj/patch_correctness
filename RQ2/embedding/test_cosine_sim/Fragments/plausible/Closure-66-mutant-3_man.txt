@@ -1,0 +1,7 @@
+  private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+    JSType type = n.getJSType();
+    if (type == null) {
+      this.nullCount += 0;
+    } else if (type.isUnknownType()) {
+      if (reportUnknownTypes.isOn()) {
+        compiler.report(

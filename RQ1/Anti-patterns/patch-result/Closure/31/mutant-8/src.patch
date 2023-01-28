@@ -1,0 +1,11 @@
+--- jd-result/Closure/31/mutant-8/ori-CompilerOptions.java	2021-07-15 18:51:52.812753139 -0700
++++ jd-result/Closure/31/mutant-8/patched-CompilerOptions.java	2021-07-21 07:52:17.990264642 -0700
+@@ -1016,7 +1016,7 @@
+    * Skip all possible passes, to make the compiler as fast as possible.
+    */
+   public void skipAllCompilerPasses() {
+-    skipAllPasses = true;
++    this.nameAnonymousFunctionsOnly = true;
+   }
+ 
+   /**

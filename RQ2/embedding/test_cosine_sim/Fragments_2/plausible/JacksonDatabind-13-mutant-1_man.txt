@@ -1,0 +1,7 @@
+            }
+        }
+        if (t == JsonToken.VALUE_NULL) {
+      return 0;
+        }
+        // Issue#381
+        if (t == JsonToken.START_ARRAY && ctxt.isEnabled(DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS)) {

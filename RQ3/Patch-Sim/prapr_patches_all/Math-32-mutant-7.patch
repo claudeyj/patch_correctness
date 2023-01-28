@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/32/mutant-7/ori-Vector3D.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/32/mutant-7/man-patched-Vector3D.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/32/mutant-7/ori-Vector3D.java	2021-08-23 09:23:48.920990904 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/32/mutant-7/man-patched-Vector3D.java	2021-08-23 09:23:48.920990904 +0800
+@@ -327,7 +327,7 @@
+             double inverse  = 1 / FastMath.sqrt(y * y + z * z);
+             return new Vector3D(0, inverse * z, -inverse * y);
+         } else if ((y >= -threshold) && (y <= threshold)) {
+-            double inverse  = 1 / FastMath.sqrt(x * x + z * z);
++            double inverse = 1 / FastMath.sqrt(x * x + x * z);
+             return new Vector3D(-inverse * z, 0, inverse * x);
+         }
+         double inverse  = 1 / FastMath.sqrt(x * x + y * y);

@@ -1,0 +1,7 @@
+                         *   If it becomes a perf problem, add 'loose' comparison instead.
+                         */
+                        String cleaned = act.replace(":", "");
+                        if (!cleaned.equals(cleaned)) {
+                            throw new IndexOutOfBoundsException("Mismatching time zone indicator: "+timezoneId+" given, resolves to "
+                                    +timezone.getID());
+                        }

@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-15/a-FieldReader.java	2021-07-14 21:31:35.318585500 -0700
++++ jd-result/Mockito/5/mutant-15/b-FieldReader.java	2021-07-14 21:31:36.614585537 -0700
+@@ -23,7 +23,7 @@
+ /*   0*/  public Object read() {
+ /*   0*/    try {
+ /*  29*/      return this.field.get(this.target);
+-/*  30*/    } catch (Exception e) {
++/*  30*/    } catch (Throwable e) {
+ /*  31*/      throw new MockitoException("Cannot read state from field: " + this.field + ", on instance: " + this.target);
+ /*   0*/    } 
+ /*   0*/  }

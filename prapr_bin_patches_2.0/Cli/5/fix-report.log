@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 17 08:52:43 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 11
+================================================
+1.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to startsWith(Ljava/lang/String;)Z is guarded returning default value null
+	File Name: org/apache/commons/cli/Util.java
+	Line Number: 36
+	Rank: 2
+	Total Rank: 11
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to startsWith(Ljava/lang/String;)Z is guarded returning local str
+	File Name: org/apache/commons/cli/Util.java
+	Line Number: 36
+	Rank: 2
+	Total Rank: 11
+	Dump: mutant-2.class
+------------------------------------------------

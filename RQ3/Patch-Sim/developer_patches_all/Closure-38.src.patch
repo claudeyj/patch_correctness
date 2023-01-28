@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/38/mutant-0/buggy-CodeConsumer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/38/mutant-0/patched-CodeConsumer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/38/mutant-0/buggy-CodeConsumer.java	2021-08-22 00:18:38.606190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/38/mutant-0/patched-CodeConsumer.java	2021-08-22 00:18:38.606190184 -0700
+@@ -242,7 +242,7 @@
+     // x--4 (which is a syntax error).
+     char prev = getLastChar();
+     boolean negativeZero = isNegativeZero(x);
+-    if (x < 0 && prev == '-') {
++    if ((x < 0 || negativeZero) && prev == '-') {
+       add(" ");
+     }
+ 

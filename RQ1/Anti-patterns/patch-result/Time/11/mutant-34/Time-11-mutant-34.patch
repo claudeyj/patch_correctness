@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-34/a-DateTimeZoneBuilder.java	2021-07-14 21:29:12.610581473 -0700
++++ jd-result/Time/11/mutant-34/b-DateTimeZoneBuilder.java	2021-07-14 21:29:14.102581516 -0700
+@@ -503,7 +503,7 @@
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public int getToYear() {
+-/* 827*/      return this.iToYear;
++/* 827*/      return (this.iToYear != 0) ? 0 : 1;
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public DateTimeZoneBuilder.OfYear getOfYear() {

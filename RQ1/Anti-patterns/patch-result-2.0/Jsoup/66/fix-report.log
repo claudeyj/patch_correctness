@@ -1,0 +1,85 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 19 11:55:04 PDT 2021
+Number of Plausible Fixes: 9
+Total Number of Patches: 7889
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to childElementsList with a call to ensureChildNodes
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 684
+	Rank: 1
+	Total Rank: 190
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local this is replaced by local clone to be used
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 1402
+	Rank: 2
+	Total Rank: 674
+	Dump: mutant-9.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/ref/WeakReference::get
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 276
+	Rank: 3
+	Total Rank: 1761
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 276
+	Rank: 4
+	Total Rank: 1766
+	Dump: mutant-3.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 276
+	Rank: 6
+	Total Rank: 1770
+	Dump: mutant-5.class
+------------------------------------------------
+6.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 276
+	Rank: 6
+	Total Rank: 1770
+	Dump: mutant-7.class
+------------------------------------------------
+7.
+	Mutator: MemberVariableMutator
+	Description: Removed assignment to member variable shadowChildrenRef
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 285
+	Rank: 7
+	Total Rank: 1771
+	Dump: mutant-8.class
+------------------------------------------------
+8.
+	Mutator: ConstructorCallMutator
+	Description: removed call to java/lang/ref/WeakReference::<init>
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 285
+	Rank: 8
+	Total Rank: 1776
+	Dump: mutant-6.class
+------------------------------------------------
+9.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>()V with a call to <init>(I)V
+	File Name: org/jsoup/nodes/Element.java
+	Line Number: 1024
+	Rank: 9
+	Total Rank: 2821
+	Dump: mutant-1.class
+------------------------------------------------

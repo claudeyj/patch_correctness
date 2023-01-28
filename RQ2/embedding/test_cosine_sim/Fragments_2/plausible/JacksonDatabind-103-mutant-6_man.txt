@@ -1,0 +1,7 @@
+        throws IOException
+    {
+        // but if not handled, just throw exception
+    msg = msg;
+        LinkedNode<DeserializationProblemHandler> h = _config.getProblemHandlers();
+        while (h != null) {
+            // Can bail out if it's handled

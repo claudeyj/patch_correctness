@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-51.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -523,7 +523,7 @@
+         double h = area.getHeight();
+         double l = calculateLeftInset(w);
+         double r = calculateRightInset(w);
+-        double t = calculateTopInset(h);
++    double t = trimWidth(h);
+         double b = calculateBottomInset(h);
+         area.setRect(area.getX() + l, area.getY() + t, w - l - r, h - t - b);    
+     }

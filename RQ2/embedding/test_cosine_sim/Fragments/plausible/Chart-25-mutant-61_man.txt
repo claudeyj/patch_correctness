@@ -1,0 +1,7 @@
+     * @return The bottom margin (in Java2D units).
+     */
+    public double calculateBottomInset(double height) {
+    double result = height;
+        if (this.unitType == UnitType.RELATIVE) {
+            result = (this.bottom * height);
+        }

@@ -1,0 +1,56 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.example:test:jar:1.0.0
+[WARNING] 'dependencies.dependency.systemPath' for objenesis:objenesis:jar should not point at files within the project directory, ${project.basedir}/lib/run/com.springsource.org.objenesis-1.0.0.jar will be unresolvable by dependent projects @ line 40, column 17
+[WARNING] 'dependencies.dependency.systemPath' for jarjar:jarjar:jar should not point at files within the project directory, ${project.basedir}/lib/build/jarjar-1.0.jar will be unresolvable by dependent projects @ line 65, column 17
+[WARNING] 'dependencies.dependency.systemPath' for cglib-asm:cglib-asm:jar should not point at files within the project directory, ${project.basedir}/lib/repackaged/cglib-and-asm-1.0.jar will be unresolvable by dependent projects @ line 84, column 17
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------------------< org.example:test >--------------------------
+[INFO] Building test 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ test ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Mockito/38/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ test ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 169 source files to /home/junyang/PR/SubjectPrograms/Mockito/38/target/classes
+[INFO] /home/junyang/PR/SubjectPrograms/Mockito/38/src/org/mockito/internal/runners/JUnit44RunnerImpl.java: Some input files use or override a deprecated API.
+[INFO] /home/junyang/PR/SubjectPrograms/Mockito/38/src/org/mockito/internal/runners/JUnit44RunnerImpl.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/junyang/PR/SubjectPrograms/Mockito/38/src/org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java:[48,64] cannot find symbol
+  symbol:   class SelfDescribing
+  location: class org.mockito.internal.verification.argumentmatching.ArgumentMatchingTool
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.944 s
+[INFO] Finished at: 2021-07-26T08:14:08-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.2:compile (default-compile) on project test: Compilation failure
+[ERROR] /home/junyang/PR/SubjectPrograms/Mockito/38/src/org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java:[48,64] cannot find symbol
+[ERROR]   symbol:   class SelfDescribing
+[ERROR]   location: class org.mockito.internal.verification.argumentmatching.ArgumentMatchingTool
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

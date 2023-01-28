@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/66/mutant-8/ori-BasicDeserializerFactory.java	2021-08-08 21:02:02.808814658 -0700
++++ jd-result-2.0/JacksonDatabind/66/mutant-8/man-patched-BasicDeserializerFactory.java	2021-08-10 06:36:33.700225397 -0700
+@@ -1431,7 +1431,7 @@
+         } else {
+             // 24-Sep-2015, bim: if no key deser, look for enum deserializer first, then a plain deser.
+             JsonDeserializer<?> custom = _findCustomEnumDeserializer(enumClass, config, beanDesc);
+-            if (custom != null) {
++            if (false) {
+                 return StdKeyDeserializers.constructDelegatingKeyDeserializer(config, type, custom);
+             }
+             JsonDeserializer<?> valueDesForKey = findDeserializerFromAnnotation(ctxt, beanDesc.getClassInfo());

@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/7/mutant-8/ori-TimePeriodValues.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/7/mutant-8/fixed-patched-TimePeriodValues.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/7/mutant-8/ori-TimePeriodValues.java	2021-08-23 09:23:48.512985248 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/7/mutant-8/fixed-patched-TimePeriodValues.java	2021-08-23 09:23:48.512985248 +0800
+@@ -297,7 +297,7 @@
+         }
+         
+         if (this.maxMiddleIndex >= 0) {
+-            long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
++      long s = getDataItem(this.maxStartIndex).getPeriod().getStart()
+                 .getTime();
+             long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
+                 .getTime();

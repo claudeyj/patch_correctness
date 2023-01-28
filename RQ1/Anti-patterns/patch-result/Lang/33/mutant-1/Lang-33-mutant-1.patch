@@ -1,0 +1,15 @@
+--- jd-result/Lang/33/mutant-1/a-ClassUtils.java	2021-07-14 16:56:40.622120053 -0700
++++ jd-result/Lang/33/mutant-1/b-ClassUtils.java	2021-07-14 16:56:42.898120117 -0700
+@@ -360,8 +360,10 @@
+ /* 905*/    if (array.length == 0)
+ /* 906*/      return ArrayUtils.EMPTY_CLASS_ARRAY; 
+ /* 908*/    Class<?>[] classes = new Class<?>[array.length];
+-/* 909*/    for (int i = 0; i < array.length; i++)
+-/* 910*/      classes[i] = array[i].getClass(); 
++/* 909*/    for (int i = 0; i < array.length; i++) {
++/* 910*/      array[i];
++/* 910*/      i[array[i]] = (array[i] == null) ? null : array[i].getClass();
++/*   0*/    } 
+ /* 912*/    return classes;
+ /*   0*/  }
+ /*   0*/  

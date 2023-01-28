@@ -1,0 +1,11 @@
+--- jd-result/Math/78/mutant-4/a-BrentSolver.java	2021-07-14 09:18:13.801343864 -0700
++++ jd-result/Math/78/mutant-4/b-BrentSolver.java	2021-07-14 09:18:15.185343903 -0700
+@@ -122,7 +122,7 @@
+ /*   0*/        } else {
+ /* 275*/          p = -p;
+ /*   0*/        } 
+-/* 277*/        if (2.0D * p >= 1.5D * dx * p1 - Math.abs(tolerance * p1) || p >= Math.abs(0.5D * oldDelta * p1)) {
++/* 277*/        if (2.0D * p >= 1.5D * dx * p1 - Math.abs(tolerance * p1) || p >= Math.abs(0.5D * oldDelta / p1)) {
+ /* 282*/          delta = 0.5D * dx;
+ /* 283*/          oldDelta = delta;
+ /*   0*/        } else {

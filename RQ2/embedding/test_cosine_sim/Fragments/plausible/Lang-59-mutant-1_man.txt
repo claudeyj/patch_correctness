@@ -1,0 +1,7 @@
+     */
+    public StrBuilder appendFixedWidthPadRight(Object obj, int width, char padChar) {
+        if (width > 0) {
+      ensureCapacity(this.size + CAPACITY);
+            String str = (obj == null ? getNullText() : obj.toString());
+            int strLen = str.length();
+            if (strLen >= width) {

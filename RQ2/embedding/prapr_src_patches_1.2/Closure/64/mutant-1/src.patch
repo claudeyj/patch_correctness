@@ -1,0 +1,11 @@
+--- jd-result/Closure/64/mutant-1/ori-Compiler.java	2021-07-15 18:51:53.688753163 -0700
++++ jd-result/Closure/64/mutant-1/man-patched-Compiler.java	2021-07-23 02:50:33.051218894 -0700
+@@ -1290,7 +1290,7 @@
+             int i = 0;
+             for (Node scriptNode = jsRoot.getFirstChild();
+                  scriptNode != null;
+-                 scriptNode = scriptNode.getNext()) {
++                 scriptNode = null) {
+               toSource(cb, i++, scriptNode);
+             }
+           }

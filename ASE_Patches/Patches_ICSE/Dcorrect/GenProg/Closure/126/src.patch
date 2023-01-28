@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/GenProg/Closure/126/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/GenProg/Closure/126/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/GenProg/Closure/126/buggy1.java	2021-09-08 07:11:31.089222347 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/GenProg/Closure/126/tool-patch1.java	2021-09-08 07:11:31.089222347 -0700
+@@ -140,7 +140,6 @@
+        */
+       if (NodeUtil.hasFinally(n)) {
+         Node finallyBlock = n.getLastChild();
+-        tryMinimizeExits(finallyBlock, exitType, labelName);
+       }
+     }
+ 

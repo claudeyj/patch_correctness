@@ -1,0 +1,34 @@
+--- jd-result/Closure/92/mutant-1/a-ProcessClosurePrimitives.java	2021-07-14 21:47:09.890611872 -0700
++++ jd-result/Closure/92/mutant-1/b-ProcessClosurePrimitives.java	2021-07-14 21:47:11.294611912 -0700
+@@ -472,25 +472,23 @@
+ /* 778*/            this.replacementNode = varNode;
+ /*   0*/          } 
+ /*   0*/        } 
+-/*   0*/      } else {
++/*   0*/        return;
++/*   0*/      } 
+ /* 783*/        this.replacementNode = createDeclarationNode();
+ /* 784*/        if (this.firstModule == this.minimumModule) {
+ /* 785*/          this.firstNode.getParent().addChildBefore(this.replacementNode, this.firstNode);
+ /*   0*/        } else {
+ /* 789*/          int indexOfDot = this.namespace.indexOf('.');
+-/* 790*/          if (indexOfDot == -1) {
++/* 790*/        -1;
+ /* 792*/            ProcessClosurePrimitives.this.compiler.getNodeForCodeInsertion(this.minimumModule).addChildToBack(this.replacementNode);
+-/*   0*/          } else {
+-/* 796*/            ProvidedName parentName = ProcessClosurePrimitives.this.providedNames.get(this.namespace.substring(0, indexOfDot));
+-/* 798*/            Preconditions.checkNotNull(parentName);
+-/* 799*/            Preconditions.checkNotNull(parentName.replacementNode);
+-/* 800*/            parentName.replacementNode.getParent().addChildAfter(this.replacementNode, parentName.replacementNode);
+-/*   0*/          } 
+ /*   0*/        } 
++/*   0*/      while (true) {
+ /* 804*/        if (this.explicitNode != null)
+ /* 805*/          this.explicitNode.detachFromParent(); 
+ /* 807*/        ProcessClosurePrimitives.this.compiler.reportCodeChange();
++/*   0*/        return;
+ /*   0*/      } 
++/* 807*/      ProcessClosurePrimitives.this.compiler.reportCodeChange();
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    private Node createDeclarationNode() {

@@ -1,0 +1,11 @@
+--- jd-result/Closure/124/mutant-1/a-ExploitAssigns.java	2021-07-14 21:53:16.758622224 -0700
++++ jd-result/Closure/124/mutant-1/b-ExploitAssigns.java	2021-07-14 21:53:19.186622293 -0700
+@@ -63,7 +63,7 @@
+ /*   0*/        case 38:
+ /* 136*/          if (next.isQualifiedName()) {
+ /* 137*/            String nextName = next.getQualifiedName();
+-/* 138*/            if (value.isQualifiedName() && nextName.equals(value.getQualifiedName())) {
++/* 138*/            if (value.isQualifiedName() && nextName.toLowerCase().equals(value.getQualifiedName())) {
+ /* 145*/              if (!isSafeReplacement(next, assign))
+ /* 146*/                return false; 
+ /* 149*/              exprParent.removeChild(expr);

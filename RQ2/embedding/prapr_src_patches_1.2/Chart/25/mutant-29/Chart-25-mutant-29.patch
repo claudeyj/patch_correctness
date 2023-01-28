@@ -1,0 +1,27 @@
+--- jd-result/Chart/25/mutant-29/a-CategoryPlot.java	2021-07-14 20:17:12.914459580 -0700
++++ jd-result/Chart/25/mutant-29/b-CategoryPlot.java	2021-07-14 20:17:14.518459625 -0700
+@@ -1190,17 +1190,17 @@
+ /*   0*/      } 
+ /*   0*/    } else {
+ /*2661*/      int datasetCount = this.datasets.size();
+-/*2662*/      for (int i2 = datasetCount - 1; i2 >= 0; i2--) {
+-/*2663*/        CategoryItemRenderer r = getRenderer(i2);
++/*   0*/      int n;
++/*2662*/      for (n = datasetCount - 1; n >= 0; n--) {
++/*2663*/        CategoryItemRenderer r = getRenderer(n);
+ /*2664*/        if (r != null) {
+-/*2665*/          CategoryAxis domainAxis = getDomainAxisForDataset(i2);
+-/*2666*/          ValueAxis rangeAxis = getRangeAxisForDataset(i2);
++/*2665*/          CategoryAxis domainAxis = getDomainAxisForDataset(n);
++/*2666*/          ValueAxis rangeAxis = getRangeAxisForDataset(n);
+ /*2667*/          r.drawAnnotations(g2, dataArea, domainAxis, rangeAxis, Layer.BACKGROUND, state);
+ /*   0*/        } 
+ /*   0*/      } 
+-/*2672*/      for (int i1 = this.datasets.size() - 1; i1 >= 0; i1--)
+-/*2673*/        foundData = (render(g2, dataArea, i1, state) || foundData); 
+-/*2677*/      for (int n = datasetCount - 1; n >= 0; n--) {
++/*2672*/      n = this.datasets.size() - 1;
++/*2677*/      for (n = datasetCount - 1; n >= 0; n--) {
+ /*2678*/        CategoryItemRenderer r = getRenderer(n);
+ /*2679*/        if (r != null) {
+ /*2680*/          CategoryAxis domainAxis = getDomainAxisForDataset(n);

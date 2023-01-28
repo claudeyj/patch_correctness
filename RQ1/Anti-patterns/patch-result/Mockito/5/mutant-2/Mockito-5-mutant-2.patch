@@ -1,0 +1,37 @@
+--- jd-result/Mockito/5/mutant-2/a-IOUtil.java	2021-07-14 21:30:53.046584308 -0700
++++ jd-result/Mockito/5/mutant-2/b-IOUtil.java	2021-07-14 21:30:54.410584346 -0700
+@@ -19,7 +19,7 @@
+ /*   0*/    try {
+ /*  21*/      pw = new PrintWriter(new FileWriter(output));
+ /*  22*/      pw.write(text);
+-/*  23*/    } catch (Exception e) {
++/*  23*/    } catch (Throwable e) {
+ /*  24*/      throw new MockitoException("Problems writing text to file: " + output, e);
+ /*   0*/    } finally {
+ /*  26*/      close(pw);
+@@ -33,7 +33,7 @@
+ /*   0*/      String line;
+ /*  35*/      while ((line = r.readLine()) != null)
+ /*  36*/        out.add(line); 
+-/*  38*/    } catch (IOException e) {
++/*  38*/    } catch (Exception e) {
+ /*  39*/      throw new MockitoException("Problems reading from: " + is, e);
+ /*   0*/    } 
+ /*  41*/    return out;
+@@ -42,14 +42,14 @@
+ /*   0*/  public static void closeQuietly(Closeable closeable) {
+ /*   0*/    try {
+ /*  51*/      close(closeable);
+-/*  52*/    } catch (MockitoException mockitoException) {}
++/*  52*/    } catch (RuntimeException runtimeException) {}
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static void close(Closeable closeable) {
+ /*  63*/    if (closeable != null)
+ /*   0*/      try {
+ /*  65*/        closeable.close();
+-/*  66*/      } catch (IOException e) {
++/*  66*/      } catch (Exception e) {
+ /*  67*/        throw new MockitoException("Problems closing stream: " + closeable, e);
+ /*   0*/      }  
+ /*   0*/  }

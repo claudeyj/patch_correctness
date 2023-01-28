@@ -1,0 +1,11 @@
+--- jd-result/Closure/109/mutant-6/a-JsDocInfoParser.java	2021-07-14 21:48:50.850614721 -0700
++++ jd-result/Closure/109/mutant-6/b-JsDocInfoParser.java	2021-07-14 21:48:52.346614763 -0700
+@@ -1133,7 +1133,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private Node parseContextTypeExpression(JsDocToken token) {
+-/*1908*/    return parseTypeName(token);
++/*1908*/    return parseAndRecordTypeNode(token);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private Node parseBasicTypeExpression(JsDocToken token) {

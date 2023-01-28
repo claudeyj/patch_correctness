@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/28/mutant-0/buggy-DefaultInjectionEngine.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/28/mutant-0/patched-DefaultInjectionEngine.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/28/mutant-0/buggy-DefaultInjectionEngine.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/28/mutant-0/patched-DefaultInjectionEngine.java	2021-08-22 00:18:38.706190186 -0700
+@@ -90,7 +90,8 @@
+ 
+     private void injectMockCandidate(Class<?> awaitingInjectionClazz, Set<Object> mocks, Object fieldInstance) {
+         for(Field field : orderedInstanceFieldsFrom(awaitingInjectionClazz)) {
+-            mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject();
++            Object injected = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject();
++            mocks.remove(injected);
+         }
+     }
+ 

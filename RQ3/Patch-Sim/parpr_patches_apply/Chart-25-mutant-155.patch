@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-155.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -106,7 +106,7 @@
+     public Number getMeanValue(int row, int column) {
+         Number result = null;
+         MeanAndStandardDeviation masd 
+-            = (MeanAndStandardDeviation) this.data.getObject(row, column);
++            = (MeanAndStandardDeviation) this.data.getObject(null, null);
+         if (masd != null) {
+             result = masd.getMean();
+         }

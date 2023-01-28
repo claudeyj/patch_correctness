@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Math/50/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Math/50/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Math/50/buggy1.java	2021-08-27 19:18:32.950863926 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Math/50/tool-patch1.java	2021-08-27 19:18:32.950863926 -0700
+@@ -185,8 +185,8 @@
+                 case REGULA_FALSI:
+                     // Nothing.
+                     if (x == x1) {
+-                        x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+-                        f0 = computeObjectiveValue(x0);
++
++                            f0 = computeObjectiveValue(x0);                             x0 = 0.5 * ((x0 + x1) - (org.apache.commons.math.util.FastMath.max((rtol * (org.apache.commons.math.util.FastMath.abs(x1))), atol)));                             f0 = computeObjectiveValue(x0);
+                     }
+                     break;
+                 default:

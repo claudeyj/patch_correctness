@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-5/ori-MersenneTwister.java	2021-07-24 01:52:02.706297044 -0700
++++ jd-result/Math/20/mutant-5/man-patched-MersenneTwister.java	2021-07-30 19:25:58.374709657 -0700
+@@ -230,7 +230,7 @@
+ 
+         int y;
+ 
+-        if (mti >= N) { // generate N words at one time
++        if (((this == null) ? 0 : mti) >= N) { // generate N words at one time
+             int mtNext = mt[0];
+             for (int k = 0; k < N - M; ++k) {
+                 int mtCurr = mtNext;

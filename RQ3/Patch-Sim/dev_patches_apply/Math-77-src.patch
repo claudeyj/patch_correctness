@@ -1,0 +1,31 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/77/mutant-0/buggy-ArrayRealVector.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/77/mutant-0/patched-ArrayRealVector.java
+--- Math77b/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java
++++ Math77b_Math-77-src.patchb/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java
+@@ -718,7 +718,7 @@
+     public double getLInfNorm() {
+         double max = 0;
+         for (double a : data) {
+-            max += Math.max(max, Math.abs(a));
++            max = Math.max(max, Math.abs(a));
+         }
+         return max;
+     }
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/77/mutant-0/buggy-OpenMapRealVector.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/77/mutant-0/patched-OpenMapRealVector.java
+--- Math77b/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java
++++ Math77b_Math-77-src.patchb/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java
+@@ -495,15 +495,6 @@
+         return max;
+     }
+ 
+-    public double getLInfNorm() {
+-        double max = 0;
+-        Iterator iter = entries.iterator();
+-        while (iter.hasNext()) {
+-            iter.advance();
+-            max += iter.value();
+-        }
+-        return max;
+-    }
+     /**
+      * Optimized method to compute LInfDistance.
+      * @param v The vector to compute from

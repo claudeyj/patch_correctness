@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/16/mutant-0/buggy-NumberUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/16/mutant-0/patched-NumberUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/16/mutant-0/buggy-NumberUtils.java	2021-08-22 00:18:38.634190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/16/mutant-0/patched-NumberUtils.java	2021-08-22 00:18:38.634190184 -0700
+@@ -455,7 +455,7 @@
+             // a wrong value.
+             return null;
+         }
+-        if (str.startsWith("0x") || str.startsWith("-0x")) {
++        if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {
+             return createInteger(str);
+         }   
+         char lastChar = str.charAt(str.length() - 1);

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-3/ori-ObjectReader.java	2021-08-08 21:02:02.280814643 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-3/patched-ObjectReader.java	2021-08-09 06:25:54.937769334 -0700
+@@ -340,7 +340,7 @@
+          * This occurs before first read from JsonParser, as well as
+          * after clearing of current token.
+          */
+-        JsonToken t = p.getCurrentToken();
++    JsonToken t = p.skipChildren().getCurrentToken();
+         if (t == null) { // and then we must get something...
+             t = p.nextToken();
+             if (t == null) {

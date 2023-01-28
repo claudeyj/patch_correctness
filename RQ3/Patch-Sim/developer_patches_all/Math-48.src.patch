@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/48/mutant-0/buggy-BaseSecantSolver.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/48/mutant-0/patched-BaseSecantSolver.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/48/mutant-0/buggy-BaseSecantSolver.java	2021-08-22 00:18:38.678190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/48/mutant-0/patched-BaseSecantSolver.java	2021-08-22 00:18:38.678190186 -0700
+@@ -186,6 +186,9 @@
+                 case REGULA_FALSI:
+                     // Detect early that algorithm is stuck, instead of waiting
+                     // for the maximum number of iterations to be exceeded.
++                    if (x == x1) {
++                        throw new ConvergenceException();
++                    }
+                     break;
+                 default:
+                     // Should never happen.

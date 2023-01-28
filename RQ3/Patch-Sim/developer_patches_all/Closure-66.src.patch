@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/66/mutant-0/buggy-TypeCheck.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/66/mutant-0/patched-TypeCheck.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/66/mutant-0/buggy-TypeCheck.java	2021-08-22 00:18:38.614190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/66/mutant-0/patched-TypeCheck.java	2021-08-22 00:18:38.614190184 -0700
+@@ -513,7 +513,9 @@
+         // Object literal keys are handled with OBJECTLIT
+         if (!NodeUtil.isObjectLitKey(n, n.getParent())) {
+           ensureTyped(t, n, STRING_TYPE);
++        } else {
+           // Object literal keys are not typeable
++          typeable = false;
+         }
+         break;
+ 

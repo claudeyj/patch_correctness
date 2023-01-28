@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/7/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/7/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/7/buggy1.java	2021-08-27 19:18:35.978864011 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/7/tool-patch1.java	2021-08-27 19:18:35.978864011 -0700
+@@ -124,7 +124,7 @@
+                                 final double maxCheckInterval,
+                                 final double convergence,
+                                 final int maxIterationCount) {
+-        addEventHandler(handler, maxCheckInterval, convergence,
++        addEventHandler(handler, maxIterationCount, convergence,
+                         maxIterationCount,
+                         new BracketingNthOrderBrentSolver(convergence, 5));
+     }

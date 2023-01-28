@@ -1,0 +1,11 @@
+--- jd-result/Closure/63/mutant-1/a-LightweightMessageFormatter.java	2021-07-14 21:44:57.678608141 -0700
++++ jd-result/Closure/63/mutant-1/b-LightweightMessageFormatter.java	2021-07-14 21:44:59.038608180 -0700
+@@ -54,7 +54,7 @@
+ /*  90*/      b.append(sourceExcerpt);
+ /*  91*/      b.append('\n');
+ /*  92*/      int charno = error.getCharno();
+-/*  97*/      if (this.excerpt.equals(SourceExcerptProvider.SourceExcerpt.LINE) && 0 <= charno && charno < sourceExcerpt.length()) {
++/*  97*/      if (this.excerpt.equals(SourceExcerptProvider.SourceExcerpt.LINE) && 0 <= charno && charno <= sourceExcerpt.length()) {
+ /*  99*/        for (int i = 0; i < charno; i++) {
+ /* 100*/          char c = sourceExcerpt.charAt(i);
+ /* 101*/          if (Character.isWhitespace(c)) {

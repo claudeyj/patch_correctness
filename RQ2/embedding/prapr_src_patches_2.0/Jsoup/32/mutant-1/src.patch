@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/32/mutant-1/ori-Element.java	2021-08-08 21:02:03.180814669 -0700
++++ jd-result-2.0/Jsoup/32/mutant-1/man-patched-Element.java	2021-08-10 01:48:46.339738146 -0700
+@@ -959,7 +959,7 @@
+      * @return set of classnames, empty if no class attribute
+      */
+     public Set<String> classNames() {
+-        if (classNames == null) {
++        if (true) {
+             String[] names = className().split("\\s+");
+             classNames = new LinkedHashSet<String>(Arrays.asList(names));
+         }

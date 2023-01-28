@@ -1,0 +1,40 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 17 09:55:40 PDT 2021
+Number of Plausible Fixes: 4
+Total Number of Patches: 1652
+================================================
+1.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to substring(II)Ljava/lang/String; with a call to substring(I)Ljava/lang/String;
+	File Name: org/apache/commons/cli/DefaultParser.java
+	Line Number: 302
+	Rank: 1
+	Total Rank: 332
+	Dump: mutant-4.class
+------------------------------------------------
+2.
+	Mutator: NakedReceiverMutator
+	Description: replaced call to java/lang/String::substring with receiver
+	File Name: org/apache/commons/cli/DefaultParser.java
+	Line Number: 302
+	Rank: 2
+	Total Rank: 333
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: FieldNameMutator
+	Description: replaced access to longOpts with an access to shortOpts
+	File Name: org/apache/commons/cli/Options.java
+	Line Number: 286
+	Rank: 3
+	Total Rank: 838
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: FieldNameMutator
+	Description: replaced access to longOpts with an access to shortOpts
+	File Name: org/apache/commons/cli/Options.java
+	Line Number: 281
+	Rank: 4
+	Total Rank: 909
+	Dump: mutant-1.class
+------------------------------------------------

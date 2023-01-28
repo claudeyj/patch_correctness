@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/35/mutant-0/buggy-ElitisticListPopulation.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/35/mutant-0/patched-ElitisticListPopulation.java
+--- Math35b/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java
++++ Math35b_Math-35-src.patchb/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java
+@@ -48,7 +48,7 @@
+                                    final int populationLimit,
+                                    final double elitismRate) {
+         super(chromosomes, populationLimit);
+-        this.elitismRate = elitismRate;
++        setElitismRate(elitismRate);
+     }
+ 
+     /**
+@@ -62,7 +62,7 @@
+      */
+     public ElitisticListPopulation(final int populationLimit, final double elitismRate) {
+         super(populationLimit);
+-        this.elitismRate = elitismRate;
++        setElitismRate(elitismRate);
+     }
+ 
+     /**

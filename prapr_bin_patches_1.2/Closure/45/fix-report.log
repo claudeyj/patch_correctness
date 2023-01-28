@@ -1,0 +1,139 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 08:59:35 PDT 2021
+Number of Plausible Fixes: 15
+Total Number of Patches: 31668
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to getLastChild with a call to getFirstChild
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 5
+	Total Rank: 348
+	Dump: mutant-11.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to getLastChild with a call to getLastSibling
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 5
+	Total Rank: 348
+	Dump: mutant-10.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to getLastChild with a call to cloneTree
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 5
+	Total Rank: 348
+	Dump: mutant-7.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: replaced call to getLastChild with a call to cloneNode
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 5
+	Total Rank: 348
+	Dump: mutant-8.class
+------------------------------------------------
+5.
+	Mutator: MethodNameMutator
+	Description: replaced call to getLastChild with a call to getParent
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 5
+	Total Rank: 348
+	Dump: mutant-9.class
+------------------------------------------------
+6.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.jscomp.NodeUtil::isLiteralValue(Lcom/google/javascript/rhino/Node;Z)Z is replaced with the used of local changes
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 7
+	Total Rank: 355
+	Dump: mutant-5.class
+------------------------------------------------
+7.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.jscomp.NodeUtil::isLiteralValue(Lcom/google/javascript/rhino/Node;Z)Z is replaced with the used of default value false
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 7
+	Total Rank: 355
+	Dump: mutant-6.class
+------------------------------------------------
+8.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 8
+	Total Rank: 358
+	Dump: mutant-4.class
+------------------------------------------------
+9.
+	Mutator: NakedReceiverMutator
+	Description: replaced call to com/google/javascript/rhino/Node::getLastChild with receiver
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 735
+	Rank: 9
+	Total Rank: 360
+	Dump: mutant-2.class
+------------------------------------------------
+10.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.jscomp.RemoveUnusedVars::isRemovableVar(Lcom/google/javascript/jscomp/Scope$Var;)Z is replaced with the used of field removeGlobals
+	File Name: com/google/javascript/jscomp/RemoveUnusedVars.java
+	Line Number: 281
+	Rank: 10
+	Total Rank: 2538
+	Dump: mutant-3.class
+------------------------------------------------
+11.
+	Mutator: LocalNameMutator
+	Description: local n is replaced by local n2 to be used
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1427
+	Rank: 11
+	Total Rank: 11383
+	Dump: mutant-14.class
+------------------------------------------------
+12.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local n is replaced by access to field last
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1427
+	Rank: 12
+	Total Rank: 11392
+	Dump: mutant-1.class
+------------------------------------------------
+13.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field next is replaced by access to local n
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1427
+	Rank: 13
+	Total Rank: 11396
+	Dump: mutant-13.class
+------------------------------------------------
+14.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1432
+	Rank: 14
+	Total Rank: 11430
+	Dump: mutant-15.class
+------------------------------------------------
+15.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1432
+	Rank: 15
+	Total Rank: 11432
+	Dump: mutant-12.class
+------------------------------------------------

@@ -1,0 +1,13 @@
+--- jd-result/Math/63/mutant-12/ori-MathUtils.java	2021-07-24 01:52:04.586297097 -0700
++++ jd-result/Math/63/mutant-12/patched-MathUtils.java	2021-07-24 01:52:04.590297097 -0700
+@@ -414,7 +414,9 @@
+      * @return {@code true} if the values are equal.
+      */
+     public static boolean equals(double x, double y) {
+-        return (Double.isNaN(x) && Double.isNaN(y)) || x == y;
++    if (Double.isNaN(x))
++      Double.isNaN(y); 
++    return (x == y);
+     }
+ 
+     /**

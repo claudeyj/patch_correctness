@@ -1,0 +1,28 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/31/mutant-0/buggy-StringUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/31/mutant-0/patched-StringUtils.java
+--- Lang31b/src/main/java/org/apache/commons/lang3/StringUtils.java
++++ Lang31b_Lang-31-src.patchb/src/main/java/org/apache/commons/lang3/StringUtils.java
+@@ -1443,16 +1443,24 @@
+ 		}
+ 		int csLength = cs.length();
+ 		int searchLength = searchChars.length;
++		int csLastIndex = csLength - 1;
++		int searchLastIndex = searchLength - 1;
+ 		for (int i = 0; i < csLength; i++) {
+ 			char ch = cs.charAt(i);
+ 			for (int j = 0; j < searchLength; j++) {
+ 				if (searchChars[j] == ch) {
++					if (i < csLastIndex && j < searchLastIndex && ch >= Character.MIN_HIGH_SURROGATE && ch <= Character.MAX_HIGH_SURROGATE) {
+ 						// ch is a supplementary character
++						if (searchChars[j + 1] == cs.charAt(i + 1)) {
++							return true;
++						}
++					} else {
+ 						// ch is in the Basic Multilingual Plane
+ 						return true;
+ 				}
+ 			}
+ 		}
++		}
+ 		return false;
+ 	}
+ 

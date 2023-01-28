@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/119/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/119/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/119/buggy1.java	2021-08-27 19:18:38.714864088 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/119/tool-patch1.java	2021-08-27 19:18:38.714864088 -0700
+@@ -155,7 +155,7 @@
+       boolean isGlobalExpr = ref.getNode().getParent().isExprResult();
+ 
+       if (!isDefined && !isTypedef(ref)) {
+-        if (!isGlobalExpr) {
++        if (false) {
+           reportRefToUndefinedName(name, ref);
+         }
+       } else if (declaration != null &&

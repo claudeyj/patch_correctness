@@ -1,0 +1,13 @@
+--- jd-result/Math/33/mutant-2/a-SimplexTableau.java	2021-07-14 09:10:55.025331483 -0700
++++ jd-result/Math/33/mutant-2/b-SimplexTableau.java	2021-07-14 09:10:56.541331526 -0700
+@@ -165,7 +165,9 @@
+ /* 333*/    columnsToDrop.add(0);
+ /* 336*/    for (int i = getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+ /* 337*/      double entry = this.tableau.getEntry(0, i);
+-/* 338*/      if (Precision.compareTo(entry, 0.0D, this.maxUlps) > 0)
++/* 338*/      int n = this.maxUlps;
++/* 338*/      double d2 = 0.0D, d1 = entry;
++/* 338*/      if (Precision.compareTo(d1, d2, this.epsilon) > 0)
+ /* 339*/        columnsToDrop.add(i); 
+ /*   0*/    } 
+ /* 344*/    for (int j = 0; j < getNumArtificialVariables(); j++) {

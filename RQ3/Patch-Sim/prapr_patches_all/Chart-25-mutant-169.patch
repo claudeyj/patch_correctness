@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-169/ori-DefaultStatisticalCategoryDataset.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-169/patched-DefaultStatisticalCategoryDataset.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-169/ori-DefaultStatisticalCategoryDataset.java	2021-08-23 09:23:48.352983029 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-169/patched-DefaultStatisticalCategoryDataset.java	2021-08-23 09:23:48.352983029 +0800
+@@ -270,7 +270,8 @@
+      * @return The column count.
+      */
+     public int getColumnCount() {
+-        return this.data.getColumnCount();
++    this.data.getColumnCount();
++    return 0;
+     }
+ 
+     /**

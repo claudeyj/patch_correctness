@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/7/mutant-0/buggy-GenericMetadataSupport.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/7/mutant-0/patched-GenericMetadataSupport.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/7/mutant-0/buggy-GenericMetadataSupport.java	2021-08-22 00:18:38.710190187 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/7/mutant-0/patched-GenericMetadataSupport.java	2021-08-22 00:18:38.710190187 -0700
+@@ -376,6 +376,7 @@
+             for (Type type : typeVariable.getBounds()) {
+                 registerTypeVariablesOn(type);
+             }
++            registerTypeParametersOn(new TypeVariable[] { typeVariable });
+             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+         }
+ 

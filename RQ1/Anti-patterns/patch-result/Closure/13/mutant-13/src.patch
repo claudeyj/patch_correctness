@@ -1,0 +1,11 @@
+--- jd-result/Closure/13/mutant-13/ori-PeepholeOptimizationsPass.java	2021-07-15 18:51:52.452753129 -0700
++++ jd-result/Closure/13/mutant-13/patched-PeepholeOptimizationsPass.java	2021-07-21 07:50:03.946260860 -0700
+@@ -146,7 +146,7 @@
+         // this reduces the cost of getting to a fixed
+         // point in global scope.
+         state.changed = false;
+-        state.traverseChildScopes = false;
++        state.traverseChildScopes = true;
+         return true;
+       }
+     }

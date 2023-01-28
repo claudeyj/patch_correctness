@@ -1,0 +1,11 @@
+--- jd-result/Chart/11/mutant-2/ori-ShapeUtilities.java	2021-07-15 18:51:50.688753079 -0700
++++ jd-result/Chart/11/mutant-2/patched-ShapeUtilities.java	2021-07-21 09:43:29.273576340 -0700
+@@ -272,7 +272,7 @@
+             return false;
+         }
+         PathIterator iterator1 = p1.getPathIterator(null);
+-        PathIterator iterator2 = p1.getPathIterator(null);
++    PathIterator iterator2 = p2.getPathIterator(null);
+         double[] d1 = new double[6];
+         double[] d2 = new double[6];
+         boolean done = iterator1.isDone() && iterator2.isDone();

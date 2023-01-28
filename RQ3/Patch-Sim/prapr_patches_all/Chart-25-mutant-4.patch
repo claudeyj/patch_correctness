@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-4/ori-CategoryPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-4/patched-CategoryPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-4/ori-CategoryPlot.java	2021-08-23 09:23:48.404983750 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-4/patched-CategoryPlot.java	2021-08-23 09:23:48.404983750 +0800
+@@ -2857,7 +2857,7 @@
+             foundData = true;
+             CategoryItemRendererState state = renderer.initialise(g2, dataArea,
+                     this, index, info);
+-            int columnCount = currentDataset.getColumnCount();
++      int columnCount = 0;
+             int rowCount = currentDataset.getRowCount();
+             int passCount = renderer.getPassCount();
+             for (int pass = 0; pass < passCount; pass++) {            

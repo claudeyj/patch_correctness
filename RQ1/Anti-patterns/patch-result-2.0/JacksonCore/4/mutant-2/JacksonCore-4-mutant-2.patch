@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/4/mutant-2/a-TextBuffer.java	2021-08-09 04:15:22.601548321 -0700
++++ jd-result-2.0/JacksonCore/4/mutant-2/b-TextBuffer.java	2021-08-09 04:15:24.065548363 -0700
+@@ -348,7 +348,7 @@
+ /*   0*/  public char[] expandCurrentSegment() {
+ /* 582*/    char[] curr = this._currentSegment;
+ /* 584*/    int len = curr.length;
+-/* 586*/    int newLen = (len == 262144) ? 262145 : Math.min(262144, len + (len >> 1));
++/* 586*/    int newLen = (len == 262144) ? 262145 : Math.max(262144, len + (len >> 1));
+ /* 587*/    return this._currentSegment = Arrays.copyOf(curr, newLen);
+ /*   0*/  }
+ /*   0*/  

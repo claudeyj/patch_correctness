@@ -1,0 +1,11 @@
+--- jd-result/Closure/13/mutant-2/a-DefaultPassConfig.java	2021-07-14 21:37:15.854595110 -0700
++++ jd-result/Closure/13/mutant-2/b-DefaultPassConfig.java	2021-07-14 21:37:17.470595155 -0700
+@@ -209,7 +209,7 @@
+ /*1035*/          return new PeepholeOptimizationsPass(compiler, new AbstractPeepholeOptimization[] { new PeepholeSubstituteAlternateSyntax(false), new PeepholeReplaceKnownMethods(false), new PeepholeRemoveDeadCode(), new PeepholeFoldConstants(false), new PeepholeCollectPropertyAssignments() });
+ /*   0*/        }
+ /*   0*/      };
+-/*1045*/    this.latePeepholeOptimizations = new PassFactory("latePeepholeOptimizations", true) {
++/*1045*/    this.latePeepholeOptimizations = new PassFactory("latePeepholeOptimizations", false) {
+ /*   0*/        protected CompilerPass createInternal(AbstractCompiler compiler) {
+ /*   0*/          boolean late = true;
+ /*1050*/          return new PeepholeOptimizationsPass(compiler, new AbstractPeepholeOptimization[] { new StatementFusion(), new PeepholeRemoveDeadCode(), new PeepholeSubstituteAlternateSyntax(true), new PeepholeReplaceKnownMethods(true), new PeepholeFoldConstants(true), new ReorderConstantExpression() });

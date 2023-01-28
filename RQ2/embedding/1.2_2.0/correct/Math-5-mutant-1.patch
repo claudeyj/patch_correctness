@@ -1,0 +1,11 @@
+--- jd-result/Math/5/mutant-1/ori-Complex.java	2021-07-24 01:52:03.758297074 -0700
++++ jd-result/Math/5/mutant-1/patched-Complex.java	2021-07-24 01:52:03.758297074 -0700
+@@ -302,7 +302,7 @@
+         }
+ 
+         if (real == 0.0 && imaginary == 0.0) {
+-            return NaN;
++      return INF; 
+         }
+ 
+         if (isInfinite) {

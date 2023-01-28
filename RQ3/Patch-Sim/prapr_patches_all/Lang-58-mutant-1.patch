@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/58/mutant-1/ori-NumberUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/58/mutant-1/man-patched-NumberUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/58/mutant-1/ori-NumberUtils.java	2021-08-23 09:23:48.844989850 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/58/mutant-1/man-patched-NumberUtils.java	2021-08-23 09:23:48.844989850 +0800
+@@ -451,7 +451,7 @@
+                 case 'L' :
+                     if (dec == null
+                         && exp == null
+-                        && isDigits(numeric.substring(1))
++                        && true
+                         && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
+                         try {
+                             return createLong(numeric);

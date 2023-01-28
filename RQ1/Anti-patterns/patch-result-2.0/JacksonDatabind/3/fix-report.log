@@ -1,0 +1,148 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 21 10:32:35 PDT 2021
+Number of Plausible Fixes: 16
+Total Number of Patches: 4550
+================================================
+1.
+	Mutator: NonVoidMethodCallGuardMutator
+	Description: the call to com.fasterxml.jackson.databind.JsonDeserializer::getNullValue()Ljava/lang/Object; is guarded using default value null
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 66
+	Rank: 1
+	Total Rank: 15
+	Dump: mutant-6.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/JsonDeserializer::getNullValue
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 66
+	Rank: 2
+	Total Rank: 18
+	Dump: mutant-15.class
+------------------------------------------------
+3.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field _elementDeserializer is replaced by access to local this
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 66
+	Rank: 3
+	Total Rank: 20
+	Dump: mutant-10.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field instance
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 66
+	Rank: 4
+	Total Rank: 21
+	Dump: mutant-5.class
+------------------------------------------------
+5.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local deser is replaced by access to field _elementDeserializer
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 146
+	Rank: 5
+	Total Rank: 128
+	Dump: mutant-16.class
+------------------------------------------------
+6.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 145
+	Rank: 6
+	Total Rank: 162
+	Dump: mutant-2.class
+------------------------------------------------
+7.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 145
+	Rank: 7
+	Total Rank: 165
+	Dump: mutant-14.class
+------------------------------------------------
+8.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer::isDefaultDeserializer
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 145
+	Rank: 8
+	Total Rank: 167
+	Dump: mutant-1.class
+------------------------------------------------
+9.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local deser is replaced a call deser.getDelegatee()
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 145
+	Rank: 9
+	Total Rank: 172
+	Dump: mutant-4.class
+------------------------------------------------
+10.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local deser is replaced by access to field _elementDeserializer
+	File Name: com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java
+	Line Number: 145
+	Rank: 10
+	Total Rank: 182
+	Dump: mutant-13.class
+------------------------------------------------
+11.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/util/ClassUtil::isJacksonStdImpl
+	File Name: com/fasterxml/jackson/databind/deser/std/StdDeserializer.java
+	Line Number: 77
+	Rank: 11
+	Total Rank: 194
+	Dump: mutant-3.class
+------------------------------------------------
+12.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to isJacksonStdImpl(Ljava/lang/Object;)Z with a call to isJacksonStdImpl(Ljava/lang/Class;)Z
+	File Name: com/fasterxml/jackson/databind/deser/std/StdDeserializer.java
+	Line Number: 77
+	Rank: 12
+	Total Rank: 196
+	Dump: mutant-9.class
+------------------------------------------------
+13.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local deserializer is replaced a call deserializer.getDelegatee()
+	File Name: com/fasterxml/jackson/databind/deser/std/StdDeserializer.java
+	Line Number: 77
+	Rank: 13
+	Total Rank: 197
+	Dump: mutant-7.class
+------------------------------------------------
+14.
+	Mutator: BooleanFalseReturnValsMutator
+	Description: replaced boolean return with false for com/fasterxml/jackson/databind/deser/std/StdDeserializer::isDefaultDeserializer
+	File Name: com/fasterxml/jackson/databind/deser/std/StdDeserializer.java
+	Line Number: 77
+	Rank: 14
+	Total Rank: 198
+	Dump: mutant-11.class
+------------------------------------------------
+15.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local raw is replaced a call raw.getSuperclass()
+	File Name: com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java
+	Line Number: 760
+	Rank: 15
+	Total Rank: 329
+	Dump: mutant-12.class
+------------------------------------------------
+16.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local raw is replaced by access to field CLASS_ITERABLE
+	File Name: com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java
+	Line Number: 760
+	Rank: 16
+	Total Rank: 333
+	Dump: mutant-8.class
+------------------------------------------------

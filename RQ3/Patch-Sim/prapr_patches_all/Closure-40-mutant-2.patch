@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/40/mutant-2/ori-NameAnalyzer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/40/mutant-2/patched-NameAnalyzer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/40/mutant-2/ori-NameAnalyzer.java	2021-08-23 09:23:48.716988076 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/40/mutant-2/patched-NameAnalyzer.java	2021-08-23 09:23:48.716988076 +0800
+@@ -632,7 +632,7 @@
+         Node nameNode = n.getFirstChild();
+         NameInformation ns = createNameInformation(t, nameNode, n);
+         if (ns != null && ns.onlyAffectsClassDef) {
+-          JsName name = getName(ns.name, false);
++          NameAnalyzer.JsName name = NameAnalyzer.this.getName(ns.name, true);
+           if (name != null) {
+           refNodes.add(new ClassDefiningFunctionNode(
+               name, n, parent, parent.getParent()));

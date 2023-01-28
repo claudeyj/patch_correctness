@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/45/mutant-15/a-HtmlTreeBuilder.java	2021-08-09 04:24:43.901564160 -0700
++++ jd-result-2.0/Jsoup/45/mutant-15/b-HtmlTreeBuilder.java	2021-08-09 04:24:45.245564198 -0700
+@@ -406,7 +406,7 @@
+ /*   0*/        break;
+ /*   0*/      } 
+ /* 397*/      if ("tr".equals(name)) {
+-/* 398*/        transition(HtmlTreeBuilderState.InRow);
++/* 398*/        transition(HtmlTreeBuilderState.AfterHead);
+ /*   0*/        break;
+ /*   0*/      } 
+ /* 400*/      if ("tbody".equals(name) || "thead".equals(name) || "tfoot".equals(name)) {

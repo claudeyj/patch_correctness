@@ -1,0 +1,9 @@
+     */
+    static String stripLeadingHyphens(String str)
+    {
+        if (str == null) {
+            return str; 
+        }
+        if (str.startsWith("--"))
+        {
+            return str.substring(2, str.length());

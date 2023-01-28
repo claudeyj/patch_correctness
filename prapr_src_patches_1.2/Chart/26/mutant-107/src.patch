@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-107/ori-CategoryPlot.java	2021-07-15 18:51:51.880753112 -0700
++++ jd-result/Chart/26/mutant-107/patched-CategoryPlot.java	2021-07-21 07:26:35.322221111 -0700
+@@ -2533,7 +2533,7 @@
+                      PlotRenderingInfo state) {
+ 
+         // if the plot area is too small, just return...
+-        boolean b1 = (area.getWidth() <= MINIMUM_WIDTH_TO_DRAW);
++    boolean b1 = (0.0D <= 10.0D);
+         boolean b2 = (area.getHeight() <= MINIMUM_HEIGHT_TO_DRAW);
+         if (b1 || b2) {
+             return;

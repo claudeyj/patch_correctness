@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/20/mutant-7/ori-POJOPropertyBuilder.java	2021-08-08 21:02:02.220814642 -0700
++++ jd-result-2.0/JacksonDatabind/20/mutant-7/man-patched-POJOPropertyBuilder.java	2021-08-10 05:17:14.048091089 -0700
+@@ -267,7 +267,7 @@
+              */
+             Class<?> currClass = curr.value.getDeclaringClass();
+             Class<?> nextClass = next.value.getDeclaringClass();
+-            if (currClass != nextClass) {
++            if (true) {
+                 if (currClass.isAssignableFrom(nextClass)) { // next is more specific
+                     curr = next;
+                     continue;

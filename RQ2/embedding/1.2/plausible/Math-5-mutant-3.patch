@@ -1,0 +1,11 @@
+--- jd-result/Math/5/mutant-3/ori-Complex.java	2021-07-24 01:52:03.762297074 -0700
++++ jd-result/Math/5/mutant-3/fixed-patched-Complex.java	2021-07-24 01:52:03.762297074 -0700
+@@ -337,7 +337,7 @@
+      */
+     @Override
+     public boolean equals(Object other) {
+-        if (this == other) {
++    if (INF == other) {
+             return true;
+         }
+         if (other instanceof Complex){

@@ -1,0 +1,67 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 21 12:55:27 PDT 2021
+Number of Plausible Fixes: 7
+Total Number of Patches: 11259
+================================================
+1.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/introspect/AnnotatedClass.java
+	Line Number: 961
+	Rank: 1
+	Total Rank: 270
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/introspect/AnnotatedClass.java
+	Line Number: 961
+	Rank: 2
+	Total Rank: 273
+	Dump: mutant-7.class
+------------------------------------------------
+3.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: com/fasterxml/jackson/databind/introspect/AnnotatedMember.java
+	Line Number: 105
+	Rank: 3
+	Total Rank: 274
+	Dump: mutant-3.class
+------------------------------------------------
+4.
+	Mutator: BooleanTrueReturnValsMutator
+	Description: replaced boolean return with true for com/fasterxml/jackson/databind/introspect/AnnotatedMember::addOrOverride
+	File Name: com/fasterxml/jackson/databind/introspect/AnnotatedMember.java
+	Line Number: 105
+	Rank: 4
+	Total Rank: 275
+	Dump: mutant-6.class
+------------------------------------------------
+5.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: com/fasterxml/jackson/databind/introspect/AnnotationMap.java
+	Line Number: 90
+	Rank: 5
+	Total Rank: 282
+	Dump: mutant-2.class
+------------------------------------------------
+6.
+	Mutator: BooleanTrueReturnValsMutator
+	Description: replaced boolean return with true for com/fasterxml/jackson/databind/introspect/AnnotationMap::add
+	File Name: com/fasterxml/jackson/databind/introspect/AnnotationMap.java
+	Line Number: 90
+	Rank: 6
+	Total Rank: 283
+	Dump: mutant-1.class
+------------------------------------------------
+7.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: com/fasterxml/jackson/databind/introspect/AnnotationMap.java
+	Line Number: 112
+	Rank: 7
+	Total Rank: 6013
+	Dump: mutant-4.class
+------------------------------------------------

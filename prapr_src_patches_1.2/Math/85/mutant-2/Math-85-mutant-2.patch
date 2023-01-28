@@ -1,0 +1,12 @@
+--- jd-result/Math/85/mutant-2/a-UnivariateRealSolverUtils.java	2021-07-14 09:29:50.093363512 -0700
++++ jd-result/Math/85/mutant-2/b-UnivariateRealSolverUtils.java	2021-07-14 09:29:51.377363548 -0700
+@@ -40,8 +40,7 @@
+ /* 193*/      fb = function.value(b);
+ /* 194*/      numIterations++;
+ /* 195*/    } while (fa * fb > 0.0D && numIterations < maximumIterations && (a > lowerBound || b < upperBound));
+-/* 198*/    if (fa * fb >= 0.0D)
+-/* 199*/      throw new ConvergenceException("number of iterations={0}, maximum iterations={1}, initial={2}, lower bound={3}, upper bound={4}, final a value={5}, final b value={6}, f(a)={7}, f(b)={8}", new Object[] { numIterations, maximumIterations, initial, lowerBound, upperBound, a, b, fa, fb }); 
++/* 198*/    fa * fb cmp 0.0D;
+ /* 207*/    return new double[] { a, b };
+ /*   0*/  }
+ /*   0*/  

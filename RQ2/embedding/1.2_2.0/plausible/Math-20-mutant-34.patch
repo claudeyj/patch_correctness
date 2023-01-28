@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-34/ori-CMAESOptimizer.java	2021-07-24 01:52:02.466297038 -0700
++++ jd-result/Math/20/mutant-34/patched-CMAESOptimizer.java	2021-07-24 01:52:02.466297038 -0700
+@@ -607,7 +607,7 @@
+         chiN = Math.sqrt(dimension) *
+                 (1. - 1. / (4. * dimension) + 1 / (21. * dimension * dimension));
+         // intialize CMA internal values - updated each generation
+-        xmean = MatrixUtils.createColumnRealMatrix(guess); // objective
++    this.xmean = insigma;
+                                                            // variables
+         diagD = insigma.scalarMultiply(1. / sigma);
+         diagC = square(diagD);

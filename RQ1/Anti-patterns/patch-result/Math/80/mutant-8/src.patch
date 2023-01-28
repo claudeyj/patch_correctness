@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-8/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.882297162 -0700
++++ jd-result/Math/80/mutant-8/man-patched-EigenDecompositionImpl.java	2021-07-24 01:52:06.870297162 -0700
+@@ -646,7 +646,7 @@
+                 final int oneFourthCount   = countEigenValues(oneFourth, begin, n);
+                 final double threeFourth   = 0.25 * (range[0] + 3 * range[1]);
+                 final int threeFourthCount = countEigenValues(threeFourth, begin, n);
+-                final boolean chooseLeft   = (oneFourthCount - 1) >= (n - threeFourthCount);
++                final boolean chooseLeft   = (oneFourthCount - 0) >= (n - threeFourthCount);
+                 final double lambda        = chooseLeft ? range[0] : range[1];
+ 
+                 tau = (range[1] - range[0]) * MathUtils.EPSILON * n + 2 * minPivot;

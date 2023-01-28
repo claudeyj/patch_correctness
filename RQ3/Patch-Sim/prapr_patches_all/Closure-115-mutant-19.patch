@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/115/mutant-19/ori-FunctionInjector.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/115/mutant-19/man-patched-FunctionInjector.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/115/mutant-19/ori-FunctionInjector.java	2021-08-23 09:23:48.568986025 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/115/mutant-19/man-patched-FunctionInjector.java	2021-08-30 00:20:48.743039879 +0800
+@@ -695,7 +695,7 @@
+     Node block = fnNode.getLastChild();
+ 
+     boolean hasSideEffects = false;
+-    if (block.hasChildren()) {
++    if (false) {
+       Preconditions.checkState(block.hasOneChild());
+       Node stmt = block.getFirstChild();
+       if (stmt.isReturn()) {

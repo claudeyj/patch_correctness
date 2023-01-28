@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/12/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/12/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/12/buggy1.java	2021-08-27 19:18:39.094864099 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/12/tool-patch1.java	2021-08-27 19:18:39.094864099 -0700
+@@ -109,7 +109,7 @@
+         }
+ 
+         for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {
+-          if (!ControlFlowGraph.isEnteringNewCfgNode(c) && apply(c)) {
++          if (apply(c)) {
+             return true;
+           }
+         }

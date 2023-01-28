@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonCore/25/mutant-13/a-ReaderBasedJsonParser.java	2021-08-09 04:05:15.789531198 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-13/b-ReaderBasedJsonParser.java	2021-08-09 04:05:17.549531248 -0700
+@@ -1343,7 +1343,8 @@
+ /*   0*/       }
+ /*1805*/    int start = this._inputPtr - 1;
+ /*1806*/    this._inputPtr = ptr;
+-/*1807*/    return _handleOddName2(start, hash, codes);
++/*1807*/    this;
++/*1807*/    return null;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected String _parseAposName() throws IOException {

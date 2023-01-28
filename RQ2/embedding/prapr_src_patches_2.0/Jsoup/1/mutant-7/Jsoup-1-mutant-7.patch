@@ -1,0 +1,13 @@
+--- jd-result-2.0/Jsoup/1/mutant-7/a-Document.java	2021-08-09 04:22:22.733560177 -0700
++++ jd-result-2.0/Jsoup/1/mutant-7/b-Document.java	2021-08-09 04:22:24.185560218 -0700
+@@ -67,9 +67,7 @@
+ /* 115*/    for (Node node : element.childNodes) {
+ /* 116*/      if (node instanceof TextNode) {
+ /* 117*/        TextNode tn = (TextNode)node;
+-/* 118*/        if (!tn.isBlank()) {
+-/* 119*/            toMove.add(tn); 
+-/*   0*/           }
++/* 118*/        tn.isBlank();
+ /*   0*/      } 
+ /*   0*/    } 
+ /* 123*/    for (Node node : toMove) {

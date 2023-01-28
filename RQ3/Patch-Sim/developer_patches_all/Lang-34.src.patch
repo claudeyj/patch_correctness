@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/34/mutant-0/buggy-ToStringStyle.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/34/mutant-0/patched-ToStringStyle.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/34/mutant-0/buggy-ToStringStyle.java	2021-08-22 00:18:38.646190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/34/mutant-0/patched-ToStringStyle.java	2021-08-22 00:18:38.646190185 -0700
+@@ -145,7 +145,7 @@
+      * @return Set the registry of objects being traversed
+      */
+     static Map<Object, Object> getRegistry() {
+-        return REGISTRY.get() != null ? REGISTRY.get() : Collections.<Object, Object>emptyMap();
++        return REGISTRY.get();
+     }
+ 
+     /**
+@@ -161,7 +161,7 @@
+      */
+     static boolean isRegistered(Object value) {
+         Map<Object, Object> m = getRegistry();
+-        return m.containsKey(value);
++        return m != null && m.containsKey(value);
+     }
+ 
+     /**

@@ -1,0 +1,121 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 18 22:53:57 PDT 2021
+Number of Plausible Fixes: 13
+Total Number of Patches: 5023
+================================================
+1.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local needed is replaced by access to field MIN_SEGMENT_LEN
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 235
+	Rank: 2
+	Total Rank: 3264
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local needed is replaced by access to field MAX_SEGMENT_LEN
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 235
+	Rank: 2
+	Total Rank: 3264
+	Dump: mutant-7.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 234
+	Rank: 3
+	Total Rank: 3354
+	Dump: mutant-13.class
+------------------------------------------------
+4.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field _allocator is replaced by access to local allocator
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 122
+	Rank: 4
+	Total Rank: 4416
+	Dump: mutant-3.class
+------------------------------------------------
+5.
+	Mutator: MemberVariableMutator
+	Description: Removed assignment to member variable _allocator
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 122
+	Rank: 5
+	Total Rank: 4417
+	Dump: mutant-8.class
+------------------------------------------------
+6.
+	Mutator: FieldNameMutator
+	Description: replaced access to CHAR_BUFFER_LENGTHS with an access to BYTE_BUFFER_LENGTHS
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 146
+	Rank: 6
+	Total Rank: 4509
+	Dump: mutant-10.class
+------------------------------------------------
+7.
+	Mutator: MethodNameMutator
+	Description: replaced call to charBufferLength with a call to byteBufferLength
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 118
+	Rank: 7
+	Total Rank: 4514
+	Dump: mutant-4.class
+------------------------------------------------
+8.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ix is replaced by access to field BYTE_WRITE_ENCODING_BUFFER
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 146
+	Rank: 13
+	Total Rank: 4547
+	Dump: mutant-2.class
+------------------------------------------------
+9.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ix is replaced by access to field BYTE_READ_IO_BUFFER
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 118
+	Rank: 13
+	Total Rank: 4547
+	Dump: mutant-5.class
+------------------------------------------------
+10.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ix is replaced by access to field BYTE_WRITE_ENCODING_BUFFER
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 118
+	Rank: 13
+	Total Rank: 4547
+	Dump: mutant-6.class
+------------------------------------------------
+11.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ix is replaced by access to field CHAR_TOKEN_BUFFER
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 118
+	Rank: 13
+	Total Rank: 4547
+	Dump: mutant-9.class
+------------------------------------------------
+12.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ix is replaced by access to field CHAR_TOKEN_BUFFER
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 146
+	Rank: 13
+	Total Rank: 4547
+	Dump: mutant-11.class
+------------------------------------------------
+13.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ix is replaced by access to field BYTE_READ_IO_BUFFER
+	File Name: com/fasterxml/jackson/core/util/BufferRecycler.java
+	Line Number: 146
+	Rank: 13
+	Total Rank: 4547
+	Dump: mutant-12.class
+------------------------------------------------

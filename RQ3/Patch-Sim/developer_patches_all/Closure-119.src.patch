@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/119/mutant-0/buggy-GlobalNamespace.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/119/mutant-0/patched-GlobalNamespace.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/119/mutant-0/buggy-GlobalNamespace.java	2021-08-22 00:18:38.586190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/119/mutant-0/patched-GlobalNamespace.java	2021-08-22 00:18:38.586190183 -0700
+@@ -363,6 +363,7 @@
+                 isSet = true;
+                 type = Name.Type.FUNCTION;
+                 break;
++              case Token.CATCH:
+               case Token.INC:
+               case Token.DEC:
+                 isSet = true;

@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Lang/45/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Lang/45/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Lang/45/1/buggy1.java	2021-08-27 19:18:44.362864248 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Lang/45/1/tool-patch1.java	2021-08-27 19:18:44.362864248 -0700
+@@ -607,9 +607,14 @@
+         if (str == null) {
+             return null;
+         }
++        if((lower > str.length()) == true){
++        	lower=str.length();
++
++        	}else{
+         if (str.length() == 0) {
+             return StringUtils.EMPTY;
+         }
++        	}
+ 
+         // if the lower value is greater than the length of the string,
+         // set to the length of the string

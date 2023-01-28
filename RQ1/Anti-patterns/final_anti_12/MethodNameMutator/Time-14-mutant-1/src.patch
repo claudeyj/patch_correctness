@@ -1,0 +1,11 @@
+--- jd-result/Time/14/mutant-1/ori-MonthDay.java	2021-07-15 18:51:56.076753231 -0700
++++ jd-result/Time/14/mutant-1/man-patched-MonthDay.java	2021-07-30 04:59:20.241242372 -0700
+@@ -516,7 +516,7 @@
+             return this;
+         }
+         int[] newValues = getValues();
+-        newValues = getField(index).add(this, index, newValues, amount);
++        newValues = getField(index).addWrapPartial(this, index, newValues, amount);
+         return new MonthDay(this, newValues);
+     }
+ 

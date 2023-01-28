@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 22 22:00:54 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 32872
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.databind.deser.BeanDeserializer.wrapInstantiationProblem(Ljava/lang/Throwable;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object; is replaced by an instantiation of type java.lang.Object using ()V
+	File Name: com/fasterxml/jackson/databind/deser/BeanDeserializer.java
+	Line Number: 996
+	Rank: 2
+	Total Rank: 7
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.databind.deser.BeanDeserializer.wrapInstantiationProblem(Ljava/lang/Throwable;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object; is replaced by an instantiation of type perf.ManualWritePerfWithAllTypes$AllTypes using ()V
+	File Name: com/fasterxml/jackson/databind/deser/BeanDeserializer.java
+	Line Number: 996
+	Rank: 2
+	Total Rank: 7
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/deser/BeanDeserializer::wrapInstantiationProblem
+	File Name: com/fasterxml/jackson/databind/deser/BeanDeserializer.java
+	Line Number: 996
+	Rank: 3
+	Total Rank: 8
+	Dump: mutant-3.class
+------------------------------------------------

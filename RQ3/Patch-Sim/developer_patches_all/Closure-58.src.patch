@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/58/mutant-0/buggy-LiveVariablesAnalysis.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/58/mutant-0/patched-LiveVariablesAnalysis.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/58/mutant-0/buggy-LiveVariablesAnalysis.java	2021-08-22 00:18:38.614190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/58/mutant-0/patched-LiveVariablesAnalysis.java	2021-08-22 00:18:38.614190184 -0700
+@@ -203,8 +203,12 @@
+             // for(var x in y) {...}
+             lhs = lhs.getLastChild();
+           }
++          if (NodeUtil.isName(lhs)) {
+             addToSetIfLocal(lhs, kill);
+             addToSetIfLocal(lhs, gen);
++          } else {
++            computeGenKill(lhs, gen, kill, conditional);
++          }
+           computeGenKill(rhs, gen, kill, conditional);
+         }
+         return;

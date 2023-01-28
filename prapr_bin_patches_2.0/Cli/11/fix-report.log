@@ -1,0 +1,103 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 17 08:59:15 PDT 2021
+Number of Plausible Fixes: 11
+Total Number of Patches: 1024
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: the call to factory method java.lang.StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer; is replaced by an instantiation of type java.lang.StringBuffer using (Ljava/lang/String;)V
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 634
+	Rank: 1
+	Total Rank: 21
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 2
+	Total Rank: 84
+	Dump: mutant-7.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/apache/commons/cli/Option::getArgName
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 4
+	Total Rank: 91
+	Dump: mutant-6.class
+------------------------------------------------
+4.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/apache/commons/cli/Option::hasArg
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 4
+	Total Rank: 91
+	Dump: mutant-8.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 5
+	Total Rank: 97
+	Dump: mutant-10.class
+------------------------------------------------
+6.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasArg with a call to hasValueSeparator
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 11
+	Total Rank: 127
+	Dump: mutant-1.class
+------------------------------------------------
+7.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasArg with a call to hasArgs
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 11
+	Total Rank: 127
+	Dump: mutant-2.class
+------------------------------------------------
+8.
+	Mutator: MethodNameMutator
+	Description: replaced call to getArgName with a call to getLongOpt
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 11
+	Total Rank: 127
+	Dump: mutant-4.class
+------------------------------------------------
+9.
+	Mutator: MethodNameMutator
+	Description: replaced call to getArgName with a call to getValue
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 11
+	Total Rank: 127
+	Dump: mutant-5.class
+------------------------------------------------
+10.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasArg with a call to hasOptionalArg
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 11
+	Total Rank: 127
+	Dump: mutant-9.class
+------------------------------------------------
+11.
+	Mutator: MethodNameMutator
+	Description: replaced call to getArgName with a call to getDescription
+	File Name: org/apache/commons/cli/HelpFormatter.java
+	Line Number: 632
+	Rank: 11
+	Total Rank: 127
+	Dump: mutant-11.class
+------------------------------------------------

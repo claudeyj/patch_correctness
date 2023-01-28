@@ -1,0 +1,11 @@
+--- jd-result/Lang/31/mutant-1/a-StringUtils.java	2021-07-14 16:56:36.574119938 -0700
++++ jd-result/Lang/31/mutant-1/b-StringUtils.java	2021-07-14 16:56:38.242119985 -0700
+@@ -327,7 +327,7 @@
+ /*1442*/      return false; 
+ /*1444*/    int csLength = cs.length();
+ /*1445*/    int searchLength = searchChars.length;
+-/*1446*/    for (int i = 0; i < csLength; i++) {
++/*1446*/    for (int i = 1; i < csLength; i++) {
+ /*1447*/      char ch = cs.charAt(i);
+ /*1448*/      for (int j = 0; j < searchLength; j++) {
+ /*1449*/        if (searchChars[j] == ch)

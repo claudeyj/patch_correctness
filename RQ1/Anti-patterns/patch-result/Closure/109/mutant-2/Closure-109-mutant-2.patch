@@ -1,0 +1,11 @@
+--- jd-result/Closure/109/mutant-2/a-JsDocInfoParser.java	2021-07-14 21:48:39.170614391 -0700
++++ jd-result/Closure/109/mutant-2/b-JsDocInfoParser.java	2021-07-14 21:48:40.846614439 -0700
+@@ -1213,7 +1213,7 @@
+ /*2009*/          if (match(JsDocToken.COLON)) {
+ /*2010*/            next();
+ /*2011*/            skipEOLs();
+-/*2012*/            Node contextType = wrapNode(isThis ? 42 : 30, parseContextTypeExpression(next()));
++/*2012*/            Node contextType = wrapNode(isThis ? 42 : 30, parseAndRecordTypeNode(next()));
+ /*2015*/            if (contextType == null)
+ /*2016*/              return null; 
+ /*2019*/            functionType.addChildToFront(contextType);

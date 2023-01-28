@@ -1,0 +1,67 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 19:46:45 PDT 2021
+Number of Plausible Fixes: 7
+Total Number of Patches: 957
+================================================
+1.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to append(Ljava/lang/String;)Ljava/lang/StringBuilder; with a call to append(C)Ljava/lang/StringBuilder;
+	File Name: org/apache/commons/lang3/time/FastDateParser.java
+	Line Number: 310
+	Rank: 1
+	Total Rank: 316
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.Character::isWhitespace(C)Z is replaced with the used of default value false
+	File Name: org/apache/commons/lang3/time/FastDateParser.java
+	Line Number: 307
+	Rank: 2
+	Total Rank: 595
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to isWhitespace with a call to isLowSurrogate
+	File Name: org/apache/commons/lang3/time/FastDateParser.java
+	Line Number: 307
+	Rank: 6
+	Total Rank: 609
+	Dump: mutant-6.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: replaced call to isWhitespace with a call to isSurrogate
+	File Name: org/apache/commons/lang3/time/FastDateParser.java
+	Line Number: 307
+	Rank: 6
+	Total Rank: 609
+	Dump: mutant-7.class
+------------------------------------------------
+5.
+	Mutator: MethodNameMutator
+	Description: replaced call to isWhitespace with a call to isHighSurrogate
+	File Name: org/apache/commons/lang3/time/FastDateParser.java
+	Line Number: 307
+	Rank: 6
+	Total Rank: 609
+	Dump: mutant-8.class
+------------------------------------------------
+6.
+	Mutator: MethodNameMutator
+	Description: replaced call to isWhitespace with a call to isTitleCase
+	File Name: org/apache/commons/lang3/time/FastDateParser.java
+	Line Number: 307
+	Rank: 6
+	Total Rank: 609
+	Dump: mutant-9.class
+------------------------------------------------
+7.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/lang3/time/FastDateParser.java
+	Line Number: 307
+	Rank: 7
+	Total Rank: 610
+	Dump: mutant-10.class
+------------------------------------------------

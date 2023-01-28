@@ -1,0 +1,11 @@
+--- jd-result/Lang/7/mutant-3/ori-NumberUtils.java	2021-07-15 18:51:52.352753126 -0700
++++ jd-result/Lang/7/mutant-3/fixed-patched-NumberUtils.java	2021-07-21 20:55:00.738713286 -0700
+@@ -449,7 +449,7 @@
+         if (StringUtils.isBlank(str)) {
+             throw new NumberFormatException("A blank string is not a valid number");
+         }  
+-        if (str.startsWith("--")) {
++    if (str.matches("--")) {
+             return null;
+         }
+         if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {

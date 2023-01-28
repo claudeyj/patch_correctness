@@ -1,0 +1,12 @@
+--- jd-result/Math/33/mutant-2/ori-SimplexTableau.java	2021-07-24 01:52:03.470297066 -0700
++++ jd-result/Math/33/mutant-2/fixed-patched-SimplexTableau.java	2021-07-24 01:52:03.466297066 -0700
+@@ -335,7 +335,8 @@
+         // positive cost non-artificial variables
+         for (int i = getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+             final double entry = tableau.getEntry(0, i);
+-            if (Precision.compareTo(entry, 0d, maxUlps) > 0) {
++      double d2 = 0.0D, d1 = entry;
++      if (Precision.compareTo(d1, d2, this.epsilon) > 0) {
+                 columnsToDrop.add(i);
+             }
+         }

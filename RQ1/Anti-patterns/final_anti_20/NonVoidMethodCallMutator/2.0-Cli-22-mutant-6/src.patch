@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/22/mutant-6/ori-PosixParser.java	2021-08-08 21:02:01.312814616 -0700
++++ jd-result-2.0/Cli/22/mutant-6/man-patched-PosixParser.java	2021-08-10 06:48:27.756245546 -0700
+@@ -203,7 +203,7 @@
+      */
+     private void processOptionToken(String token, boolean stopAtNonOption)
+     {
+-        if (stopAtNonOption && !options.hasOption(token))
++        if (stopAtNonOption)
+         {
+             eatTheRest = true;
+         }

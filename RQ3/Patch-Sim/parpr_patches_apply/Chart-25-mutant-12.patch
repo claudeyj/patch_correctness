@@ -1,0 +1,12 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-12.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -2851,7 +2851,8 @@
+         CategoryItemRenderer renderer = getRenderer(index);
+         CategoryAxis domainAxis = getDomainAxisForDataset(index);
+         ValueAxis rangeAxis = getRangeAxisForDataset(index);
+-        boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);
++        DatasetUtilities.isEmptyOrNull(currentDataset);
++        boolean hasData = false;
+         if (hasData && renderer != null) {
+             
+             foundData = true;

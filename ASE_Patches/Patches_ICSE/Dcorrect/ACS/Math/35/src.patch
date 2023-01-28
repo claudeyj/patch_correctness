@@ -1,0 +1,37 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/35/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/35/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/35/buggy1.java	2021-08-27 19:18:39.614864114 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/35/tool-patch1.java	2021-08-27 19:18:39.614864114 -0700
+@@ -15,6 +15,7 @@
+  * limitations under the License.
+  */
+ package org.apache.commons.math3.genetics;
++import  org.apache.commons.math3.exception.OutOfRangeException;
+ 
+ import java.util.Collections;
+ import java.util.List;
+@@ -48,6 +49,12 @@
+                                    final int populationLimit,
+                                    final double elitismRate) {
+         super(chromosomes, populationLimit);
++        if (elitismRate>(double)1.0){
++                throw new OutOfRangeException(null,null,null);
++        }
++        if (elitismRate<(double)0.0){
++                throw new OutOfRangeException(null,null,null);
++        }
+         this.elitismRate = elitismRate;
+     }
+ 
+@@ -62,6 +69,12 @@
+      */
+     public ElitisticListPopulation(final int populationLimit, final double elitismRate) {
+         super(populationLimit);
++        if (elitismRate>(double)1.0){
++                throw new OutOfRangeException(null,null,null);
++        }
++        if (elitismRate<(double)0.0){
++                throw new OutOfRangeException(null,null,null);
++        }
+         this.elitismRate = elitismRate;
+     }
+ 

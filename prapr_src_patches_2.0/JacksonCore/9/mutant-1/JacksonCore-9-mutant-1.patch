@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/9/mutant-1/a-ParserMinimalBase.java	2021-08-09 04:15:29.713548522 -0700
++++ jd-result-2.0/JacksonCore/9/mutant-1/b-ParserMinimalBase.java	2021-08-09 04:15:31.197548564 -0700
+@@ -322,7 +322,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public String getValueAsString(String defaultValue) throws IOException {
+-/* 397*/    if (this._currToken == JsonToken.VALUE_STRING) {
++/* 397*/    if (this._currToken == JsonToken.FIELD_NAME) {
+ /* 398*/        return getText(); 
+ /*   0*/       }
+ /* 400*/    if (this._currToken == null || this._currToken == JsonToken.VALUE_NULL || !this._currToken.isScalarValue()) {

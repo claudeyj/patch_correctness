@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/20/mutant-11/a-CharsToNameCanonicalizer.java	2021-08-09 04:02:34.941526659 -0700
++++ jd-result-2.0/JacksonCore/20/mutant-11/b-CharsToNameCanonicalizer.java	2021-08-09 04:02:36.461526702 -0700
+@@ -104,7 +104,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private CharsToNameCanonicalizer makeOrphan(int seed) {
+-/* 320*/    return new CharsToNameCanonicalizer(null, -1, this._symbols, this._buckets, this._size, seed, this._longestCollisionList);
++/* 320*/    return new CharsToNameCanonicalizer(null, -1, this._parent._symbols, this._buckets, this._size, seed, this._longestCollisionList);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void mergeChild(CharsToNameCanonicalizer child) {

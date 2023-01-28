@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-2/ori-CMAESOptimizer.java	2021-07-24 01:52:02.218297031 -0700
++++ jd-result/Math/20/mutant-2/fixed-patched-CMAESOptimizer.java	2021-07-24 01:52:02.218297031 -0700
+@@ -280,7 +280,7 @@
+                           boolean isActiveCMA, int diagonalOnly, int checkFeasableCount,
+                           RandomGenerator random, boolean generateStatistics) {
+         this(lambda, inputSigma, maxIterations, stopFitness, isActiveCMA,
+-             diagonalOnly, checkFeasableCount, random, generateStatistics,
++    diagonalOnly, maxIterations, random, generateStatistics, 
+              new SimpleValueChecker());
+     }
+ 

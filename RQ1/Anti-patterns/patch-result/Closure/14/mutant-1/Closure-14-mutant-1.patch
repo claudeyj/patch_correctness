@@ -1,0 +1,11 @@
+--- jd-result/Closure/14/mutant-1/a-ControlFlowAnalysis.java	2021-07-14 21:37:44.690595923 -0700
++++ jd-result/Closure/14/mutant-1/b-ControlFlowAnalysis.java	2021-07-14 21:37:46.082595963 -0700
+@@ -471,7 +471,7 @@
+ /* 764*/        if (parent.getLastChild() == node) {
+ /* 765*/          if (cfa != null)
+ /* 766*/            for (Node finallyNode : (Iterable<Node>)cfa.finallyMap.get(parent))
+-/* 767*/              cfa.createEdge(fromNode, ControlFlowGraph.Branch.UNCOND, finallyNode);  
++/* 767*/              cfa.createEdge(fromNode, ControlFlowGraph.Branch.ON_EX, finallyNode);  
+ /* 770*/          return computeFollowNode(fromNode, parent, cfa);
+ /*   0*/        } 
+ /*   0*/        break;

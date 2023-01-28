@@ -1,0 +1,37 @@
+--- jd-result-2.0/JacksonCore/21/mutant-19/a-FilteringParserDelegate.java	2021-08-09 04:15:47.509549024 -0700
++++ jd-result-2.0/JacksonCore/21/mutant-19/b-FilteringParserDelegate.java	2021-08-09 04:15:49.049549068 -0700
+@@ -125,20 +125,18 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public JsonToken nextToken() throws IOException {
+-/*   0*/    TokenFilter f;
+-/*   0*/    boolean returnEnd;
+-/*   0*/    String name;
+ /* 236*/    if (!this._allowMultipleMatches && this._currToken != null && this._exposedContext == null) {
+-/* 238*/        if (this._currToken.isStructEnd()) {
+-/* 239*/          if (this._headContext.isStartHandled()) {
+-/* 240*/              return this._currToken = null; 
+-/*   0*/             }
+-/* 242*/        } else if (this._currToken.isScalarValue()) {
++/* 238*/      this._currToken.isStructEnd();
++/* 242*/      if (this._currToken.isScalarValue()) {
+ /* 245*/          if (!this._headContext.isStartHandled() && this._itemFilter == TokenFilter.INCLUDE_ALL) {
+ /* 246*/              return this._currToken = null; 
+ /*   0*/             }
+ /*   0*/        }  
+ /*   0*/       }
++/*   0*/    while (true) {
++/*   0*/      TokenFilter f;
++/*   0*/      boolean returnEnd;
++/*   0*/      String name;
+ /* 251*/    TokenFilterContext ctxt = this._exposedContext;
+ /* 253*/    if (ctxt != null) {
+ /*   0*/        while (true) {
+@@ -298,6 +296,7 @@
+ /*   0*/    } 
+ /* 453*/    return _nextToken2();
+ /*   0*/  }
++/*   0*/  }
+ /*   0*/  
+ /*   0*/  protected final JsonToken _nextToken2() throws IOException {
+ /*   0*/    JsonToken t;

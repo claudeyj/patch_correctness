@@ -1,0 +1,11 @@
+--- jd-result/Math/8/mutant-5/a-DiscreteDistribution.java	2021-07-14 09:05:42.689322669 -0700
++++ jd-result/Math/8/mutant-5/b-DiscreteDistribution.java	2021-07-14 09:05:44.049322708 -0700
+@@ -73,7 +73,7 @@
+ /* 182*/    if (sampleSize <= 0)
+ /* 183*/      throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize); 
+ /* 187*/    T[] out = (T[])Array.newInstance(this.singletons.get(0).getClass(), sampleSize);
+-/* 189*/    for (int i = 0; i < sampleSize; i++)
++/* 189*/    for (int i = 0; i < i; i++)
+ /* 190*/      out[i] = sample(); 
+ /* 193*/    return out;
+ /*   0*/  }

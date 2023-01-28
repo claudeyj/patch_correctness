@@ -1,0 +1,12 @@
+--- jd-result-2.0/Compress/18/mutant-23/ori-TarArchiveOutputStream.java	2021-08-08 21:02:01.432814620 -0700
++++ jd-result-2.0/Compress/18/mutant-23/patched-TarArchiveOutputStream.java	2021-08-09 06:25:54.765769330 -0700
+@@ -496,7 +496,8 @@
+         for (int i = 0; i < length; i++) {
+             char stripped = (char) (name.charAt(i) & 0x7F);
+             if (stripped != 0) { // would be read as Trailing null
+-                result.append(stripped);
++        int j = stripped;
++        result.append(this.currSize);
+             }
+         }
+         return result.toString();

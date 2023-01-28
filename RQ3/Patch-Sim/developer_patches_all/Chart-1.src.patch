@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/1/mutant-0/buggy-AbstractCategoryItemRenderer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/1/mutant-0/patched-AbstractCategoryItemRenderer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/1/mutant-0/buggy-AbstractCategoryItemRenderer.java	2021-08-22 00:18:38.558190182 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/1/mutant-0/patched-AbstractCategoryItemRenderer.java	2021-08-22 00:18:38.558190182 -0700
+@@ -1794,7 +1794,7 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++        if (dataset == null) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();

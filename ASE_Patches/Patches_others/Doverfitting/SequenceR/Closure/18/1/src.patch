@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SequenceR/Closure/18/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SequenceR/Closure/18/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SequenceR/Closure/18/1/buggy1.java	2021-08-27 19:18:40.954864152 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SequenceR/Closure/18/1/tool-patch1.java	2021-08-27 19:18:40.954864152 -0700
+@@ -1285,7 +1285,7 @@
+ 
+       // Check if the sources need to be re-ordered.
+       boolean staleInputs = false;
+-      if (options.dependencyOptions.needsManagement() && options.closurePass) {
++      if((options.dependencyOptions.needsManagement())||(options.closurePass)){
+         for (CompilerInput input : inputs) {
+           // Forward-declare all the provided types, so that they
+           // are not flagged even if they are dropped from the process.

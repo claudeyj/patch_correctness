@@ -1,0 +1,19 @@
+--- jd-result-2.0/JacksonDatabind/83/mutant-3/ori-FromStringDeserializer.java	2021-08-08 21:02:02.296814644 -0700
++++ jd-result-2.0/JacksonDatabind/83/mutant-3/man-patched-FromStringDeserializer.java	2021-08-10 05:53:20.120152211 -0700
+@@ -19,6 +19,7 @@
+ import com.fasterxml.jackson.databind.JsonMappingException;
+ import com.fasterxml.jackson.databind.exc.InvalidFormatException;
+ import com.fasterxml.jackson.databind.util.ClassUtil;
++import perf.ManualWritePerfWithAllTypes;
+ 
+ /**
+  * Base class for simple deserializers that only accept JSON String
+@@ -116,7 +117,7 @@
+                 // 19-May-2017, tatu: Used to require non-null result (assuming `null`
+                 //    indicated error; but that seems wrong. Should be able to return
+                 //    `null` as value.
+-                if (_deserialize(text, ctxt) != null) {
++                if (new ManualWritePerfWithAllTypes.AllTypes() != null) {
+                 return _deserialize(text, ctxt);
+                 }
+             } catch (IllegalArgumentException iae) {

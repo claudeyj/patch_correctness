@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/101/mutant-0/buggy-CommandLineRunner.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/101/mutant-0/patched-CommandLineRunner.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/101/mutant-0/buggy-CommandLineRunner.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/101/mutant-0/patched-CommandLineRunner.java	2021-08-22 00:18:38.578190183 -0700
+@@ -430,10 +430,8 @@
+     for (FormattingOption formattingOption : flags.formatting) {
+       formattingOption.applyToOptions(options);
+     }
+-    if (flags.process_closure_primitives) {
+-      options.closurePass = true;
+-    }
+ 
++    options.closurePass = flags.process_closure_primitives;
+     initOptionsFromFlags(options);
+     return options;
+   }

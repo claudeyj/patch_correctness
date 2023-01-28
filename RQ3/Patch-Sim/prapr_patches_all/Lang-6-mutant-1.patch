@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/6/mutant-1/ori-CharSequenceTranslator.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/6/mutant-1/patched-CharSequenceTranslator.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/6/mutant-1/ori-CharSequenceTranslator.java	2021-08-23 09:23:48.848989907 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/6/mutant-1/patched-CharSequenceTranslator.java	2021-08-23 09:23:48.848989907 +0800
+@@ -92,7 +92,7 @@
+ //          // contract with translators is that they have to understand codepoints 
+ //          // and they just took care of a surrogate pair
+             for (int pt = 0; pt < consumed; pt++) {
+-                pos += Character.charCount(Character.codePointAt(input, pos));
++        pos += Character.charCount(Character.codePointAt(input, pt)); 
+             }
+         }
+     }

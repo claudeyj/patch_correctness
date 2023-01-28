@@ -1,0 +1,38 @@
+--- jd-result/Math/81/mutant-119/a-EigenDecompositionImpl.java	2021-07-14 09:20:19.265347405 -0700
++++ jd-result/Math/81/mutant-119/b-EigenDecompositionImpl.java	2021-07-14 09:20:20.797347448 -0700
+@@ -537,7 +537,7 @@
+ /* 940*/      double d = this.work[4 * (n - 1) + this.pingPong];
+ /* 941*/      for (int i = 4 * (n - 2) + this.pingPong; i >= 0; i -= 4) {
+ /* 942*/        if (this.work[i + 2] <= 1.232595164407831E-28D * d) {
+-/* 943*/          this.work[i + 2] = -0.0D;
++/* 943*/          this.work[i + 2] = 0.0D;
+ /* 944*/          d = this.work[i];
+ /*   0*/        } else {
+ /* 946*/          d *= this.work[i] / (d + this.work[i + 2]);
+@@ -548,7 +548,7 @@
+ /* 953*/        int m = j - 2 * this.pingPong - 1;
+ /* 954*/        this.work[m] = d + this.work[j];
+ /* 955*/        if (this.work[j] <= 1.232595164407831E-28D * d) {
+-/* 956*/          this.work[j] = -0.0D;
++/* 956*/          this.work[j] = 0.0D;
+ /* 957*/          this.work[m] = d;
+ /* 958*/          this.work[m + 2] = 0.0D;
+ /* 959*/          d = this.work[j + 2];
+@@ -610,7 +610,7 @@
+ /*1055*/      this.work[l - 1] = Math.min(this.work[l - 1], Math.min(this.work[3 + this.pingPong], this.work[7 + this.pingPong]));
+ /*1058*/      this.work[l - 2 * this.pingPong] = Math.min(this.work[l - 2 * this.pingPong], Math.min(this.work[6 + this.pingPong], this.work[6 + this.pingPong]));
+ /*1061*/      this.qMax = Math.max(this.qMax, Math.max(this.work[3 + this.pingPong], this.work[7 + this.pingPong]));
+-/*1062*/      this.dMin = -0.0D;
++/*1062*/      this.dMin = 0.0D;
+ /*   0*/    } 
+ /*1066*/    if (this.dMin < 0.0D || 2.2250738585072014E-308D * this.qMax < Math.min(this.work[l - 1], Math.min(this.work[l - 9], this.dMin2 + this.work[l - 2 * this.pingPong]))) {
+ /*1071*/      computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
+@@ -939,7 +939,7 @@
+ /*1526*/        if (this.dMin == this.dN2) {
+ /*1529*/          this.tType = -5;
+ /*1530*/          double s = 0.25D * this.dMin;
+-/*1533*/          int np = nn - 2 * this.pingPong;
++/*1533*/          int np = nn - 3 * this.pingPong;
+ /*1534*/          double b1 = this.work[np - 2];
+ /*1535*/          double b2 = this.work[np - 6];
+ /*1536*/          double gam = this.dN2;

@@ -1,0 +1,11 @@
+--- jd-result/Closure/13/mutant-2/ori-DefaultPassConfig.java	2021-07-15 18:51:52.436753128 -0700
++++ jd-result/Closure/13/mutant-2/fixed-patched-DefaultPassConfig.java	2021-07-22 20:43:18.722082467 -0700
+@@ -1043,7 +1043,7 @@
+ 
+   /** Same as peepholeOptimizations but aggressively merges code together */
+   final PassFactory latePeepholeOptimizations =
+-      new PassFactory("latePeepholeOptimizations", true) {
++      new PassFactory("latePeepholeOptimizations", false) {
+     @Override
+     protected CompilerPass createInternal(AbstractCompiler compiler) {
+       final boolean late = true;

@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-94/a-Axis.java	2021-07-14 18:31:54.222281279 -0700
++++ jd-result/Chart/26/mutant-94/b-Axis.java	2021-07-14 18:31:57.274281365 -0700
+@@ -485,7 +485,7 @@
+ /*1184*/      hotspot = new Rectangle2D.Float(labelx - w / 2.0F, labely - h / 2.0F, w, h);
+ /*1186*/      state.cursorRight(insets.getLeft() + labelBounds.getWidth() + insets.getRight());
+ /*   0*/    } 
+-/*1190*/    if (plotState != null && hotspot != null) {
++/*1190*/    if (plotState != null && hotspot == null) {
+ /*1191*/      ChartRenderingInfo owner = plotState.getOwner();
+ /*1192*/      EntityCollection entities = owner.getEntityCollection();
+ /*1193*/      if (entities != null)

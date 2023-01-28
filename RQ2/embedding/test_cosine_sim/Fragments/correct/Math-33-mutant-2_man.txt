@@ -1,0 +1,8 @@
+        // positive cost non-artificial variables
+        for (int i = getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+            final double entry = tableau.getEntry(0, i);
+      double d2 = 0.0D, d1 = entry;
+      if (Precision.compareTo(d1, d2, this.epsilon) > 0) {
+                columnsToDrop.add(i);
+            }
+        }

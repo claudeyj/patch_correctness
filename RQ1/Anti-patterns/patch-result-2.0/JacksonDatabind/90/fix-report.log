@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 29 13:57:40 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 9785
+================================================
+1.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.databind.deser.std.StdValueInstantiator._fromDoubleCreator is replaced by the call to com.fasterxml.jackson.databind.deser.std.StdValueInstantiator::getArrayDelegateCreator()Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;
+	File Name: com/fasterxml/jackson/databind/deser/std/StdValueInstantiator.java
+	Line Number: 204
+	Rank: 1
+	Total Rank: 390
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to canCreateFromString with a call to canCreateUsingArrayDelegate
+	File Name: com/fasterxml/jackson/databind/deser/ValueInstantiator.java
+	Line Number: 71
+	Rank: 2
+	Total Rank: 493
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java
+	Line Number: 320
+	Rank: 3
+	Total Rank: 4074
+	Dump: mutant-1.class
+------------------------------------------------

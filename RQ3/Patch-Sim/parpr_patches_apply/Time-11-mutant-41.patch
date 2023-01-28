@@ -1,0 +1,11 @@
+--- Time11b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
++++ Time11_Time-11-mutant-41.patchb/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
+@@ -75,7 +75,7 @@
+      * @return true to log verbosely
+      */
+     public static boolean verbose() {
+-        return cVerbose.get();
++    return ((Boolean)cVerbose.get() == null) ? false : (Boolean)cVerbose.get();
+     }
+ 
+     //-----------------------------------------------------------------------

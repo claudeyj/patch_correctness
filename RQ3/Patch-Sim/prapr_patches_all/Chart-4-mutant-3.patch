@@ -1,0 +1,20 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/4/mutant-3/ori-XYPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/4/mutant-3/man-patched-XYPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/4/mutant-3/ori-XYPlot.java	2021-08-23 09:23:48.504985137 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/4/mutant-3/man-patched-XYPlot.java	2021-08-23 09:23:48.504985137 +0800
+@@ -298,6 +298,7 @@
+ import org.jfree.data.xy.SelectableXYDataset;
+ import org.jfree.data.xy.XYDataset;
+ import org.jfree.data.xy.XYDatasetSelectionState;
++import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+ 
+ /**
+  * A general class for plotting data in the form of (x, y) pairs.  This plot can
+@@ -1746,7 +1747,7 @@
+             if (this.datasets.get(i) == dataset) {
+                 result = (XYItemRenderer) this.renderers.get(i);
+                 if (result == null) {
+-                    result = getRenderer();
++                    result = new XYLineAndShapeRenderer();
+                 }
+                 break;
+             }

@@ -1,0 +1,12 @@
+--- jd-result/Closure/42/mutant-2/ori-TestErrorReporter.java	2021-07-15 18:51:53.904753170 -0700
++++ jd-result/Closure/42/mutant-2/fixed-patched-TestErrorReporter.java	2021-07-22 22:41:21.718447775 -0700
+@@ -84,8 +84,6 @@
+    * Returns whether all errors were reported to this reporter.
+    */
+   public boolean hasEncounteredAllErrors() {
+-    return (errors == null) ?
+-        errorsIndex == 0 :
+-        errors.length == errorsIndex;
++    return true;
+   }
+ }

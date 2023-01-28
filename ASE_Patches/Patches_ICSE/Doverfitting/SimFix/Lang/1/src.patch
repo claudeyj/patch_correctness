@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/1/buggy1.java	2021-08-27 19:18:38.986864096 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/1/tool-patch1.java	2021-08-27 19:18:38.986864096 -0700
+@@ -465,7 +465,11 @@
+         }
+         if (pfxLen > 0) { // we have a hex number
+             final int hexDigits = str.length() - pfxLen;
+-            if (hexDigits > 16) { // too many for Long
++            if(hexDigits>16){
++                try{
++                    return createLong(str);
++                }catch (final NumberFormatException nfe) {
++}
+                 return createBigInteger(str);
+             }
+             if (hexDigits > 8) { // too many for an int

@@ -1,0 +1,15 @@
+--- jd-result/Chart/4/mutant-3/a-XYPlot.java	2021-07-14 17:01:14.386127778 -0700
++++ jd-result/Chart/4/mutant-3/b-XYPlot.java	2021-07-14 17:01:16.026127824 -0700
+@@ -694,8 +695,10 @@
+ /*1745*/    for (int i = 0; i < this.datasets.size(); i++) {
+ /*1746*/      if (this.datasets.get(i) == dataset) {
+ /*1747*/        result = (XYItemRenderer)this.renderers.get(i);
+-/*1748*/        if (result == null)
+-/*1749*/          result = getRenderer(); 
++/*1748*/        if (result == null) {
++/*1749*/          this;
++/*1749*/          result = new XYLineAndShapeRenderer();
++/*   0*/        } 
+ /*   0*/        break;
+ /*   0*/      } 
+ /*   0*/    } 

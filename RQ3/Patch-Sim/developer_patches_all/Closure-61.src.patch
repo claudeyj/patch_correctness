@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/61/mutant-0/buggy-NodeUtil.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/61/mutant-0/patched-NodeUtil.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/61/mutant-0/buggy-NodeUtil.java	2021-08-22 00:18:38.614190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/61/mutant-0/patched-NodeUtil.java	2021-08-22 00:18:38.614190184 -0700
+@@ -955,6 +955,12 @@
+       }
+ 
+       // Functions in the "Math" namespace have no side effects.
++      if (nameNode.getFirstChild().getType() == Token.NAME) {
++        String namespaceName = nameNode.getFirstChild().getString();
++        if (namespaceName.equals("Math")) {
++          return false;
++        }
++      }
+ 
+       if (compiler != null && !compiler.hasRegExpGlobalReferences()) {
+         if (nameNode.getFirstChild().getType() == Token.REGEXP

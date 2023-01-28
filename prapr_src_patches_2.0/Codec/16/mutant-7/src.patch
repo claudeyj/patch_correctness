@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/16/mutant-7/ori-Base32.java	2021-08-08 21:02:01.380814618 -0700
++++ jd-result-2.0/Codec/16/mutant-7/patched-Base32.java	2021-08-09 06:25:54.721769328 -0700
+@@ -282,7 +282,7 @@
+                 lineSeparator == null ? 0 : lineSeparator.length, pad);
+         if (useHex) {
+             this.encodeTable = HEX_ENCODE_TABLE;
+-            this.decodeTable = HEX_DECODE_TABLE;
++      this.decodeTable = ENCODE_TABLE;
+         } else {
+             this.encodeTable = ENCODE_TABLE;
+             this.decodeTable = DECODE_TABLE;

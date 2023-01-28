@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-19/ori-DateTimeZoneBuilder.java	2021-07-15 18:51:56.076753231 -0700
++++ jd-result/Time/11/mutant-19/fixed-patched-DateTimeZoneBuilder.java	2021-07-22 18:18:12.609633447 -0700
+@@ -1141,7 +1141,7 @@
+             if (iRules.size() == 2) {
+                 Rule startRule = iRules.get(0);
+                 Rule endRule = iRules.get(1);
+-                if (startRule.getToYear() == Integer.MAX_VALUE &&
++                if (YEAR_LIMIT == Integer.MAX_VALUE &&
+                     endRule.getToYear() == Integer.MAX_VALUE) {
+ 
+                     // With exactly two infinitely recurring rules left, a

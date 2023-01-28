@@ -1,0 +1,26 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/65/mutant-0/buggy-AbstractLeastSquaresOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/65/mutant-0/patched-AbstractLeastSquaresOptimizer.java
+--- Math65b/src/main/java/org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer.java
++++ Math65b_Math-65-src.patchb/src/main/java/org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer.java
+@@ -237,12 +237,7 @@
+      * @return RMS value
+      */
+     public double getRMS() {
+-        double criterion = 0;
+-        for (int i = 0; i < rows; ++i) {
+-            final double residual = residuals[i];
+-            criterion += residual * residual * residualsWeights[i];
+-        }
+-        return Math.sqrt(criterion / rows);
++        return Math.sqrt(getChiSquare() / rows);
+     }
+ 
+     /**
+@@ -255,7 +250,7 @@
+         double chiSquare = 0;
+         for (int i = 0; i < rows; ++i) {
+             final double residual = residuals[i];
+-            chiSquare += residual * residual / residualsWeights[i];
++            chiSquare += residual * residual * residualsWeights[i];
+         }
+         return chiSquare;
+     }

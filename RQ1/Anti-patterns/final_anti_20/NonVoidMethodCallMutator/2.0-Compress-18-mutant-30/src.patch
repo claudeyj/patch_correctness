@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/18/mutant-30/ori-TarArchiveOutputStream.java	2021-08-08 21:02:01.432814620 -0700
++++ jd-result-2.0/Compress/18/mutant-30/man-patched-TarArchiveOutputStream.java	2021-08-11 18:30:13.963871738 -0700
+@@ -320,7 +320,7 @@
+ 
+         currBytes = 0;
+ 
+-        if (entry.isDirectory()) {
++        if (false) {
+             currSize = 0;
+         } else {
+             currSize = entry.getSize();

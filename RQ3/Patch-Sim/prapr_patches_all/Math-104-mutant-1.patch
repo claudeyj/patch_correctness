@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/104/mutant-1/ori-Gamma.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/104/mutant-1/patched-Gamma.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/104/mutant-1/ori-Gamma.java	2021-08-23 09:23:48.864990129 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/104/mutant-1/patched-Gamma.java	2021-08-23 09:23:48.864990129 +0800
+@@ -159,7 +159,7 @@
+             ret = Double.NaN;
+         } else if (x == 0.0) {
+             ret = 0.0;
+-        } else if (a >= 1.0 && x > a) {
++    } else if (a >= 1.0D && x >= a) {
+             // use regularizedGammaQ because it should converge faster in this
+             // case.
+             ret = 1.0 - regularizedGammaQ(a, x, epsilon, maxIterations);

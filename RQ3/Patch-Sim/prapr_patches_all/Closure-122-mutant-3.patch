@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/122/mutant-3/ori-TestErrorReporter.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/122/mutant-3/man-patched-TestErrorReporter.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/122/mutant-3/ori-TestErrorReporter.java	2021-08-23 09:23:48.620986746 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/122/mutant-3/man-patched-TestErrorReporter.java	2021-08-23 09:23:48.620986746 +0800
+@@ -77,7 +77,7 @@
+   public boolean hasEncounteredAllWarnings() {
+     return (warnings == null) ?
+         warningsIndex == 0 :
+-        warnings.length == warningsIndex;
++        true;
+   }
+ 
+   /**

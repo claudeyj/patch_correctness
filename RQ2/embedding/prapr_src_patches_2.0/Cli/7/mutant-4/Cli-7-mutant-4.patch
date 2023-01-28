@@ -1,0 +1,12 @@
+--- jd-result-2.0/Cli/7/mutant-4/a-OptionImpl.java	2021-08-09 04:42:20.069593963 -0700
++++ jd-result-2.0/Cli/7/mutant-4/b-OptionImpl.java	2021-08-09 04:42:21.509594004 -0700
+@@ -62,7 +62,8 @@
+ /* 101*/        hashCode = hashCode * 37 + getDescription().hashCode(); 
+ /*   0*/       }
+ /* 104*/    hashCode = hashCode * 37 + getPrefixes().hashCode();
+-/* 105*/    hashCode = hashCode * 37 + getTriggers().hashCode();
++/* 105*/    getTriggers();
++/* 105*/    hashCode = hashCode * 37 + 0;
+ /* 107*/    return hashCode;
+ /*   0*/  }
+ /*   0*/  

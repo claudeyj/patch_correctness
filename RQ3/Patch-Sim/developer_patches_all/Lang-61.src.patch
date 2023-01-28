@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/61/mutant-0/buggy-StrBuilder.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/61/mutant-0/patched-StrBuilder.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/61/mutant-0/buggy-StrBuilder.java	2021-08-22 00:18:38.658190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/61/mutant-0/patched-StrBuilder.java	2021-08-22 00:18:38.658190185 -0700
+@@ -1773,7 +1773,7 @@
+             return -1;
+         }
+         char[] thisBuf = buffer;
+-        int len = thisBuf.length - strLen;
++        int len = size - strLen + 1;
+         outer:
+         for (int i = startIndex; i < len; i++) {
+             for (int j = 0; j < strLen; j++) {

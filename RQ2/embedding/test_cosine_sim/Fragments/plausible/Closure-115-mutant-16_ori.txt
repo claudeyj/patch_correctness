@@ -1,0 +1,7 @@
+      Preconditions.checkState(block.hasOneChild());
+      Node stmt = block.getFirstChild();
+      if (stmt.isReturn()) {
+        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);
+      }
+    }
+    // CALL NODE: [ NAME, ARG1, ARG2, ... ]

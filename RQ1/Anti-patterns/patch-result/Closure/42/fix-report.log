@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 08:37:19 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 11760
+================================================
+1.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: com/google/javascript/jscomp/testing/TestErrorReporter.java
+	Line Number: 87
+	Rank: 1
+	Total Rank: 81
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/jscomp/testing/TestErrorReporter.java
+	Line Number: 87
+	Rank: 2
+	Total Rank: 83
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: BooleanTrueReturnValsMutator
+	Description: replaced boolean return with true for com/google/javascript/jscomp/testing/TestErrorReporter::hasEncounteredAllErrors
+	File Name: com/google/javascript/jscomp/testing/TestErrorReporter.java
+	Line Number: 87
+	Rank: 3
+	Total Rank: 84
+	Dump: mutant-2.class
+------------------------------------------------

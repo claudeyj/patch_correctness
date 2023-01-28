@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-43/a-CMAESOptimizer.java	2021-07-14 09:07:46.269326157 -0700
++++ jd-result/Math/20/mutant-43/b-CMAESOptimizer.java	2021-07-14 09:07:47.845326201 -0700
+@@ -716,7 +716,7 @@
+ /*   0*/  
+ /*   0*/  private static double max(RealMatrix m) {
+ /*1252*/    double max = -1.7976931348623157E308D;
+-/*1253*/    for (int r = 0; r < m.getRowDimension(); r++) {
++/*1253*/    for (int r = 1; r < m.getRowDimension(); r++) {
+ /*1254*/      for (int c = 0; c < m.getColumnDimension(); c++) {
+ /*1255*/        double e = m.getEntry(r, c);
+ /*1256*/        if (max < e)

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/30/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/30/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/30/buggy1.java	2021-08-27 19:18:38.718864089 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/30/tool-patch1.java	2021-08-27 19:18:38.718864089 -0700
+@@ -1456,6 +1456,8 @@
+       }
+       res = n.checkTreeEqualsImpl(n2);
+       if (res != null) {
++        if (true)
++            return null;
+         return res;
+       }
+     }

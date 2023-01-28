@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/5/mutant-5/ori-Node.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/5/mutant-5/fixed-patched-Node.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/5/mutant-5/ori-Node.java	2021-08-23 09:23:48.752988576 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/5/mutant-5/fixed-patched-Node.java	2021-08-23 09:23:48.752988576 +0800
+@@ -1436,7 +1436,7 @@
+         throw new IllegalStateException();
+       }
+       res = n.checkTreeEqualsImpl(n2);
+-      if (res != null) {
++      if (res == null) {
+         return res;
+       }
+     }

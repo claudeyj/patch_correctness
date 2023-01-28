@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 19:56:46 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 409
+================================================
+1.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to getInstance(Ljava/util/TimeZone;Ljava/util/Locale;)Ljava/util/Calendar; with a call to getInstance(Ljava/util/Locale;)Ljava/util/Calendar;
+	File Name: org/jfree/data/time/Week.java
+	Line Number: 198
+	Rank: 1
+	Total Rank: 94
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field DEFAULT_TIME_ZONE is replaced by access to local zone
+	File Name: org/jfree/data/time/Week.java
+	Line Number: 175
+	Rank: 2
+	Total Rank: 95
+	Dump: mutant-7.class
+------------------------------------------------

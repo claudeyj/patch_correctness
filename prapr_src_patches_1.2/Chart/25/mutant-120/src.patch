@@ -1,0 +1,12 @@
+--- jd-result/Chart/25/mutant-120/ori-JFreeChart.java	2021-07-15 18:51:51.392753099 -0700
++++ jd-result/Chart/25/mutant-120/patched-JFreeChart.java	2021-07-21 07:24:07.218216932 -0700
+@@ -1390,7 +1390,8 @@
+                                              ChartRenderingInfo info) {
+         BufferedImage image = new BufferedImage(width, height, imageType);
+         Graphics2D g2 = image.createGraphics();
+-        draw(g2, new Rectangle2D.Double(0, 0, width, height), null, info);
++    double d4 = height, d3 = width, d2 = 0.0D, d1 = 0.0D;
++    draw(g2, new Rectangle2D.Double(), null, info);
+         g2.dispose();
+         return image;
+     }

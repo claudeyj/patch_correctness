@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/62/mutant-3/ori-MultiStartUnivariateRealOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/62/mutant-3/patched-MultiStartUnivariateRealOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/62/mutant-3/ori-MultiStartUnivariateRealOptimizer.java	2021-08-23 09:23:48.960991459 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/62/mutant-3/patched-MultiStartUnivariateRealOptimizer.java	2021-08-23 09:23:48.960991459 +0800
+@@ -159,7 +159,7 @@
+             try {
+                 final double bound1 = (i == 0) ? min : min + generator.nextDouble() * (max - min);
+                 final double bound2 = (i == 0) ? max : min + generator.nextDouble() * (max - min);
+-                optima[i] = optimizer.optimize(f, goal, FastMath.min(bound1, bound2), FastMath.max(bound1, bound2));
++        this.optima[i] = this.optimizer.optimize(f, goal, min, FastMath.max(bound1, bound2));
+             } catch (FunctionEvaluationException fee) {
+                 optima[i] = null;
+             } catch (ConvergenceException ce) {

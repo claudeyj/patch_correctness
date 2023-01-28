@@ -1,0 +1,36 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/108/mutant-0/buggy-ScopedAliases.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/108/mutant-0/patched-ScopedAliases.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/108/mutant-0/buggy-ScopedAliases.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/108/mutant-0/patched-ScopedAliases.java	2021-08-22 00:18:38.578190183 -0700
+@@ -256,6 +256,7 @@
+     private final Map<String, Var> aliases = Maps.newHashMap();
+ 
+     // Also temporary and cleared for each scope.
++    private final Set<Node> injectedDecls = Sets.newHashSet();
+ 
+     // Suppose you create an alias.
+     // var x = goog.x;
+@@ -313,6 +314,7 @@
+ 
+       if (t.getScopeDepth() == 2) {
+         renameNamespaceShadows(t);
++        injectedDecls.clear();
+         aliases.clear();
+         forbiddenLocals.clear();
+         transformation = null;
+@@ -429,6 +431,7 @@
+             } else {
+               grandparent.addChildBefore(newDecl, varNode);
+             }
++            injectedDecls.add(newDecl.getFirstChild());
+           }
+ 
+           // Rewrite "var name = EXPR;" to "var name = $jscomp.scope.name;"
+@@ -578,7 +581,7 @@
+         // When we inject declarations, we duplicate jsdoc. Make sure
+         // we only process that jsdoc once.
+         JSDocInfo info = n.getJSDocInfo();
+-        if (info != null) {
++        if (info != null && !injectedDecls.contains(n)) {
+           for (Node node : info.getTypeNodes()) {
+             fixTypeNode(node);
+           }

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/104/mutant-0/buggy-UnionType.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/104/mutant-0/patched-UnionType.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/104/mutant-0/buggy-UnionType.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/104/mutant-0/patched-UnionType.java	2021-08-22 00:18:38.578190183 -0700
+@@ -288,7 +288,7 @@
+       builder.addAlternate(that);
+     }
+     JSType result = builder.build();
+-    if (result != null) {
++    if (!result.isNoType()) {
+       return result;
+     } else if (this.isObject() && that.isObject()) {
+       return getNativeType(JSTypeNative.NO_OBJECT_TYPE);

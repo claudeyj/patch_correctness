@@ -1,0 +1,52 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/8/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/8/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/8/buggy1.java	2021-08-27 19:18:32.946863926 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/8/tool-patch1.java	2021-08-27 19:18:32.946863926 -0700
+@@ -114,7 +114,6 @@
+ 
+     if (!collapses.isEmpty()) {
+       applyCollapses();
+-      compiler.reportCodeChange();
+     }
+   }
+ 
+@@ -207,40 +206,5 @@
+ 
+ 
+   private void applyCollapses() {
+-    for (Collapse collapse : collapses) {
+-
+-      Node var = new Node(Token.VAR);
+-      var.copyInformationFrom(collapse.startNode);
+-      collapse.parent.addChildBefore(var, collapse.startNode);
+-
+-      boolean redeclaration = false;
+-      for (Node n = collapse.startNode; n != collapse.endNode;) {
+-        Node next = n.getNext();
+-
+-        Preconditions.checkState(var.getNext() == n);
+-        collapse.parent.removeChildAfter(var);
+-
+-        if (n.isVar()) {
+-          while(n.hasChildren()) {
+-            var.addChildToBack(n.removeFirstChild());
+-          }
+-        } else {
+-          Node assign = n.getFirstChild();
+-          Node lhs = assign.getFirstChild();
+-          Preconditions.checkState(lhs.isName());
+-          Node rhs = assign.getLastChild();
+-          lhs.addChildToBack(rhs.detachFromParent());
+-          var.addChildToBack(lhs.detachFromParent());
+-          redeclaration = true;
+-        }
+-        n = next;
+-      }
+-
+-      if (redeclaration) {
+-        JSDocInfo info = new JSDocInfo();
+-        info.addSuppression("duplicate");
+-        var.setJSDocInfo(info);
+-      }
+-    }
+   }
+ }

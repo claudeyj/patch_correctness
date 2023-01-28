@@ -1,0 +1,14 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-91/ori-Axis.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-91/patched-Axis.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-91/ori-Axis.java	2021-08-23 09:23:48.492984971 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-91/patched-Axis.java	2021-08-23 09:23:48.492984971 +0800
+@@ -339,7 +339,9 @@
+      * @see #setLabel(String)
+      */
+     public String getLabel() {
+-        return this.label;
++    if (this.label == null)
++      throw new RuntimeException(); 
++    return null;
+     }
+ 
+     /**

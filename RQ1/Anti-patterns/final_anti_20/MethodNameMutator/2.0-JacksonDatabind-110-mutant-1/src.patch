@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/110/mutant-1/ori-JavaUtilCollectionsDeserializers.java	2021-08-08 21:02:02.576814652 -0700
++++ jd-result-2.0/JacksonDatabind/110/mutant-1/patched-JavaUtilCollectionsDeserializers.java	2021-08-09 06:25:54.953769335 -0700
+@@ -75,7 +75,7 @@
+         } else if (type.hasRawClass(CLASS_SINGLETON_SET)) {
+             conv = converter(TYPE_SINGLETON_SET, type, Set.class);
+         // [databind#2265]: we may have another impl type for unmodifiable Lists, check both
+-        } else if (type.hasRawClass(CLASS_UNMODIFIABLE_LIST)) {
++    } else if (type.isTypeOrSuperTypeOf(CLASS_UNMODIFIABLE_LIST)) {
+             conv = converter(TYPE_UNMODIFIABLE_LIST, type, List.class);
+         } else if (type.hasRawClass(CLASS_UNMODIFIABLE_SET)) {
+             conv = converter(TYPE_UNMODIFIABLE_SET, type, Set.class);

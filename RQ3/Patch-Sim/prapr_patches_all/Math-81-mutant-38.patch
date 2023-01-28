@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-38/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-38/fixed-patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-38/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.096993345 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-38/fixed-patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.096993345 +0800
+@@ -1523,7 +1523,7 @@
+                     tau = s;
+ 
+                 }
+-            } else if (dMin == dN2) {
++            } else if (upperSpectra == dN2) {
+ 
+                 // case 5.
+                 tType = -5;

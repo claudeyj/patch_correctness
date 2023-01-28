@@ -1,0 +1,12 @@
+--- jd-result-2.0/JxPath/1/mutant-3/a-ContainerPointer.java	2021-08-09 04:17:38.057552144 -0700
++++ jd-result-2.0/JxPath/1/mutant-3/b-ContainerPointer.java	2021-08-09 04:17:39.505552184 -0700
+@@ -107,7 +107,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public boolean testNode(NodeTest nodeTest) {
+-/* 149*/    return getValuePointer().testNode(nodeTest);
++/* 149*/    getValuePointer().testNode(nodeTest);
++/* 149*/    return true;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public int compareChildNodePointers(NodePointer pointer1, NodePointer pointer2) {

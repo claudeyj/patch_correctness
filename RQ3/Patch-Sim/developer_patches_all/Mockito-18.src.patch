@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/18/mutant-0/buggy-ReturnsEmptyValues.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/18/mutant-0/patched-ReturnsEmptyValues.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/18/mutant-0/buggy-ReturnsEmptyValues.java	2021-08-22 00:18:38.702190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/18/mutant-0/patched-ReturnsEmptyValues.java	2021-08-22 00:18:38.702190186 -0700
+@@ -84,6 +84,8 @@
+             return Primitives.defaultValueForPrimitiveOrWrapper(type);
+             //new instances are used instead of Collections.emptyList(), etc.
+             //to avoid UnsupportedOperationException if code under test modifies returned collection
++        } else if (type == Iterable.class) {
++            return new ArrayList<Object>(0);
+         } else if (type == Collection.class) {
+             return new LinkedList<Object>();
+         } else if (type == Set.class) {

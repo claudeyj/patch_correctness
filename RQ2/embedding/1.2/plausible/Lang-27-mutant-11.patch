@@ -1,0 +1,11 @@
+--- jd-result/Lang/27/mutant-11/ori-NumberUtils.java	2021-07-15 18:51:52.216753122 -0700
++++ jd-result/Lang/27/mutant-11/man-patched-NumberUtils.java	2021-07-24 01:33:04.510264927 -0700
+@@ -486,7 +486,7 @@
+             mant = str.substring(0, decPos);
+         } else {
+             if (expPos > -1) {
+-                mant = str.substring(0, expPos);
++                mant = str.substring(0);
+             } else {
+                 mant = str;
+             }

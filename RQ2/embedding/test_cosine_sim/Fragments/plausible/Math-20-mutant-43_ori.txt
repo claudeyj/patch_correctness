@@ -1,0 +1,7 @@
+     */
+    private static double max(final RealMatrix m) {
+        double max = -Double.MAX_VALUE;
+        for (int r = 0; r < m.getRowDimension(); r++) {
+            for (int c = 0; c < m.getColumnDimension(); c++) {
+                double e = m.getEntry(r, c);
+                if (max < e) {

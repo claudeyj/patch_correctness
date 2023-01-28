@@ -1,0 +1,12 @@
+--- jd-result/Chart/25/mutant-39/a-CategoryPlot.java	2021-07-14 20:16:47.078458851 -0700
++++ jd-result/Chart/25/mutant-39/b-CategoryPlot.java	2021-07-14 20:16:48.718458897 -0700
+@@ -1290,7 +1290,8 @@
+ /*   0*/  
+ /*   0*/  public boolean render(Graphics2D g2, Rectangle2D dataArea, int index, PlotRenderingInfo info) {
+ /*   0*/    boolean foundData = false;
+-/*2850*/    CategoryDataset currentDataset = getDataset(index);
++/*2850*/    this;
++/*2850*/    CategoryDataset currentDataset = null;
+ /*2851*/    CategoryItemRenderer renderer = getRenderer(index);
+ /*2852*/    CategoryAxis domainAxis = getDomainAxisForDataset(index);
+ /*2853*/    ValueAxis rangeAxis = getRangeAxisForDataset(index);

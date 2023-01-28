@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/48/mutant-6/ori-SerializationConfig.java	2021-08-08 21:02:02.156814640 -0700
++++ jd-result-2.0/JacksonDatabind/48/mutant-6/patched-SerializationConfig.java	2021-08-09 06:25:54.921769334 -0700
+@@ -832,7 +832,7 @@
+     @Override
+     public AnnotationIntrospector getAnnotationIntrospector()
+     {
+-        if (isEnabled(MapperFeature.USE_ANNOTATIONS)) {
++    if (isEnabled(MapperFeature.AUTO_DETECT_SETTERS)) {
+             return super.getAnnotationIntrospector();
+         }
+         return AnnotationIntrospector.nopInstance();

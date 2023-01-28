@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/37/mutant-2/ori-Options.java	2021-08-08 21:02:01.344814617 -0700
++++ jd-result-2.0/Cli/37/mutant-2/man-patched-Options.java	2021-08-11 07:40:26.602771592 -0700
+@@ -283,7 +283,7 @@
+             return Collections.singletonList(opt);
+         }
+ 
+-        for (String longOpt : longOpts.keySet())
++        for (String longOpt : shortOpts.keySet())
+         {
+             if (longOpt.startsWith(opt))
+             {

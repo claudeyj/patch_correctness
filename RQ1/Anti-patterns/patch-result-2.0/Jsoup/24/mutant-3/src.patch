@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/24/mutant-3/ori-TokeniserState.java	2021-08-08 21:02:03.144814668 -0700
++++ jd-result-2.0/Jsoup/24/mutant-3/patched-TokeniserState.java	2021-08-09 06:25:54.901769333 -0700
+@@ -522,7 +522,7 @@
+     },
+     ScriptDataEscapedLessthanSign {
+         void read(Tokeniser t, CharacterReader r) {
+-            if (r.matchesLetter()) {
++      if (!r.matchesLetter()) {
+                 t.createTempBuffer();
+                 t.dataBuffer.append(Character.toLowerCase(r.current()));
+                 t.emit("<" + r.current());

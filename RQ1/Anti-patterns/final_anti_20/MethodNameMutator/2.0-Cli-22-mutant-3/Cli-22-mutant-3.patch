@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/22/mutant-3/a-PosixParser.java	2021-08-09 04:41:28.781592516 -0700
++++ jd-result-2.0/Cli/22/mutant-3/b-PosixParser.java	2021-08-09 04:41:30.417592562 -0700
+@@ -62,7 +62,7 @@
+ /*   0*/  
+ /*   0*/  private void processNonOptionToken(String value) {
+ /* 186*/    this.eatTheRest = true;
+-/* 187*/    this.tokens.add("--");
++/* 187*/    this.tokens.equals("--");
+ /* 189*/    this.tokens.add(value);
+ /*   0*/  }
+ /*   0*/  

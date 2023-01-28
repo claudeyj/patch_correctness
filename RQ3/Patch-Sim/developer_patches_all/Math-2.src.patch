@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/2/mutant-0/buggy-HypergeometricDistribution.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/2/mutant-0/patched-HypergeometricDistribution.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/2/mutant-0/buggy-HypergeometricDistribution.java	2021-08-22 00:18:38.670190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/2/mutant-0/patched-HypergeometricDistribution.java	2021-08-22 00:18:38.670190185 -0700
+@@ -265,7 +265,7 @@
+      * size {@code n}, the mean is {@code n * m / N}.
+      */
+     public double getNumericalMean() {
+-        return (double) (getSampleSize() * getNumberOfSuccesses()) / (double) getPopulationSize();
++        return getSampleSize() * (getNumberOfSuccesses() / (double) getPopulationSize());
+     }
+ 
+     /**

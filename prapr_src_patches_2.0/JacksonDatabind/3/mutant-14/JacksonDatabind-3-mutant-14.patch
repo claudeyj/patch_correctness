@@ -1,0 +1,18 @@
+--- jd-result-2.0/JacksonDatabind/3/mutant-14/a-StringArrayDeserializer.java	2021-08-09 04:38:33.025587556 -0700
++++ jd-result-2.0/JacksonDatabind/3/mutant-14/b-StringArrayDeserializer.java	2021-08-09 04:38:34.469587597 -0700
+@@ -107,12 +107,12 @@
+ /*   0*/    } else {
+ /* 142*/      deser = ctxt.handleSecondaryContextualization(deser, property);
+ /*   0*/    } 
+-/* 145*/    if (deser != null && isDefaultDeserializer(deser)) {
+-/* 146*/        deser = null; 
+-/*   0*/       }
++/*   0*/    while (true) {
+ /* 148*/    if (this._elementDeserializer != deser) {
+ /* 149*/        return new StringArrayDeserializer(deser); 
+ /*   0*/       }
+ /* 151*/    return this;
+ /*   0*/  }
++/* 151*/    return this;
++/*   0*/  }
+ /*   0*/}

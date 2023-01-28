@@ -1,0 +1,22 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/2/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/2/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/2/buggy1.java	2021-08-27 19:18:35.130863987 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/2/tool-patch1.java	2021-08-27 19:18:35.130863987 -0700
+@@ -135,7 +135,6 @@
+             k = 1.0 / k;
+             tmp = mu + k * sigma;
+             if (tmp < upper) {
+-                upper = ((int) Math.ceil(tmp)) - 1;
+             }
+         }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/2/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/2/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/2/buggy2.java	2021-08-27 19:18:35.130863987 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/2/tool-patch2.java	2021-08-27 19:18:35.130863987 -0700
+@@ -154,6 +154,7 @@
+ 
+         this.membershipMatrix = null;
+         this.points = null;
++        boolean emptyCluster = false;
+         this.clusters = null;
+     }
+ 

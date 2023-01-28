@@ -1,0 +1,67 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 02:49:32 PDT 2021
+Number of Plausible Fixes: 7
+Total Number of Patches: 934
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local d is replaced by local p to be used
+	File Name: org/apache/commons/math/distribution/FDistributionImpl.java
+	Line Number: 148
+	Rank: 2
+	Total Rank: 53
+	Dump: mutant-6.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local d is replaced by local ret to be used
+	File Name: org/apache/commons/math/distribution/FDistributionImpl.java
+	Line Number: 148
+	Rank: 2
+	Total Rank: 53
+	Dump: mutant-7.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.distribution.FDistributionImpl::getDenominatorDegreesOfFreedom()D is replaced with the used of default value 0.D
+	File Name: org/apache/commons/math/distribution/FDistributionImpl.java
+	Line Number: 145
+	Rank: 3
+	Total Rank: 56
+	Dump: mutant-3.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local d is replaced by access to field denominatorDegreesOfFreedom
+	File Name: org/apache/commons/math/distribution/FDistributionImpl.java
+	Line Number: 148
+	Rank: 5
+	Total Rank: 60
+	Dump: mutant-2.class
+------------------------------------------------
+5.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local d is replaced by access to field numeratorDegreesOfFreedom
+	File Name: org/apache/commons/math/distribution/FDistributionImpl.java
+	Line Number: 148
+	Rank: 5
+	Total Rank: 60
+	Dump: mutant-1.class
+------------------------------------------------
+6.
+	Mutator: MathMutator
+	Description: Replaced double subtraction with addition
+	File Name: org/apache/commons/math/distribution/FDistributionImpl.java
+	Line Number: 147
+	Rank: 6
+	Total Rank: 62
+	Dump: mutant-4.class
+------------------------------------------------
+7.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced double return with 0.0d for org/apache/commons/math/distribution/FDistributionImpl::getInitialDomain
+	File Name: org/apache/commons/math/distribution/FDistributionImpl.java
+	Line Number: 148
+	Rank: 7
+	Total Rank: 64
+	Dump: mutant-5.class
+------------------------------------------------

@@ -1,0 +1,121 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 21 20:36:34 PDT 2021
+Number of Plausible Fixes: 13
+Total Number of Patches: 8160
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.databind.introspect.VisibilityChecker.withFieldVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker; is replaced by an instantiation of type com.fasterxml.jackson.databind.introspect.VisibilityChecker$Std using (Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
+	File Name: com/fasterxml/jackson/databind/SerializationConfig.java
+	Line Number: 872
+	Rank: 3
+	Total Rank: 214
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to withFieldVisibility with a call to withSetterVisibility
+	File Name: com/fasterxml/jackson/databind/SerializationConfig.java
+	Line Number: 872
+	Rank: 3
+	Total Rank: 214
+	Dump: mutant-8.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to withFieldVisibility with a call to with
+	File Name: com/fasterxml/jackson/databind/SerializationConfig.java
+	Line Number: 872
+	Rank: 3
+	Total Rank: 214
+	Dump: mutant-11.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: replaced call to withIsGetterVisibility with a call to withSetterVisibility
+	File Name: com/fasterxml/jackson/databind/SerializationConfig.java
+	Line Number: 869
+	Rank: 4
+	Total Rank: 307
+	Dump: mutant-7.class
+------------------------------------------------
+5.
+	Mutator: FieldNameMutator
+	Description: replaced access to _setterMinLevel with an access to _getterMinLevel
+	File Name: com/fasterxml/jackson/databind/introspect/VisibilityChecker.java
+	Line Number: 296
+	Rank: 5
+	Total Rank: 429
+	Dump: mutant-3.class
+------------------------------------------------
+6.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field _setterMinLevel is replaced by access to local v
+	File Name: com/fasterxml/jackson/databind/introspect/VisibilityChecker.java
+	Line Number: 296
+	Rank: 6
+	Total Rank: 433
+	Dump: mutant-10.class
+------------------------------------------------
+7.
+	Mutator: ArgumentsListMutatorSecondPhase
+	Description: replaced call to <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V with a call to <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
+	File Name: com/fasterxml/jackson/databind/introspect/VisibilityChecker.java
+	Line Number: 296
+	Rank: 7
+	Total Rank: 434
+	Dump: mutant-1.class
+------------------------------------------------
+8.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field _setterMinLevel is replaced by access to local v
+	File Name: com/fasterxml/jackson/databind/introspect/VisibilityChecker.java
+	Line Number: 289
+	Rank: 8
+	Total Rank: 489
+	Dump: mutant-9.class
+------------------------------------------------
+9.
+	Mutator: ArgumentsListMutatorSecondPhase
+	Description: replaced call to <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V with a call to <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
+	File Name: com/fasterxml/jackson/databind/introspect/VisibilityChecker.java
+	Line Number: 289
+	Rank: 9
+	Total Rank: 490
+	Dump: mutant-2.class
+------------------------------------------------
+10.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field _setterMinLevel is replaced by access to local v
+	File Name: com/fasterxml/jackson/databind/introspect/VisibilityChecker.java
+	Line Number: 317
+	Rank: 10
+	Total Rank: 602
+	Dump: mutant-12.class
+------------------------------------------------
+11.
+	Mutator: ArgumentsListMutatorSecondPhase
+	Description: replaced call to <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V with a call to <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
+	File Name: com/fasterxml/jackson/databind/introspect/VisibilityChecker.java
+	Line Number: 317
+	Rank: 11
+	Total Rank: 603
+	Dump: mutant-4.class
+------------------------------------------------
+12.
+	Mutator: LocalNameMutator
+	Description: local setter is replaced by local field to be used
+	File Name: com/fasterxml/jackson/databind/introspect/VisibilityChecker.java
+	Line Number: 203
+	Rank: 12
+	Total Rank: 982
+	Dump: mutant-13.class
+------------------------------------------------
+13.
+	Mutator: FieldNameMutator
+	Description: replaced access to USE_ANNOTATIONS with an access to AUTO_DETECT_SETTERS
+	File Name: com/fasterxml/jackson/databind/SerializationConfig.java
+	Line Number: 835
+	Rank: 13
+	Total Rank: 3195
+	Dump: mutant-6.class
+------------------------------------------------

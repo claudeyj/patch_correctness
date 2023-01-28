@@ -1,0 +1,7 @@
+    public Object getObject(int row, int column) {
+
+        Object result = null;
+        KeyedObjects rowData = (KeyedObjects) this.rows.get(row);
+        if (rowData != null) {
+            Comparable columnKey = (Comparable) this.columnKeys.get(column);
+            if (columnKey != null) {

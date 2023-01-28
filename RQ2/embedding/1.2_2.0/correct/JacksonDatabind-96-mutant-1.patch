@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/96/mutant-1/ori-BasicDeserializerFactory.java	2021-08-08 21:02:02.088814638 -0700
++++ jd-result-2.0/JacksonDatabind/96/mutant-1/patched-BasicDeserializerFactory.java	2021-08-09 06:25:54.917769334 -0700
+@@ -732,7 +732,7 @@
+             // 25-May-2018, tatu: as per [databind#2051], looks like we have to get
+             //    not implicit name, but name with possible strategy-based-rename
+ //            paramName = candidate.findImplicitParamName(0);
+-            paramName = candidate.findImplicitParamName(0);
++      paramName = candidate.paramName(0);
+             useProps = (paramName != null) && paramDef.couldSerialize();
+         }
+         if (useProps) {

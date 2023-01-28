@@ -1,0 +1,7 @@
+        }
+        name = _findRootName(rootType, config);
+        synchronized (_rootNames) {
+            _rootNames.put(key, name);
+        }
+        return name;
+    }

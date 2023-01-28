@@ -1,0 +1,12 @@
+--- jd-result-2.0/Compress/16/mutant-39/a-TarArchiveEntry.java	2021-08-09 03:57:39.885518334 -0700
++++ jd-result-2.0/Compress/16/mutant-39/b-TarArchiveEntry.java	2021-08-09 03:57:41.437518377 -0700
+@@ -470,7 +470,8 @@
+ /*1003*/            this.name += "/"; 
+ /*   0*/           }
+ /*1005*/        if (prefix.length() > 0) {
+-/*1006*/            this.name = prefix + "/" + this.name; 
++/*1006*/          new StringBuilder().append(prefix).append("/").append(this.name);
++/*1006*/          this.name = new String((byte[])null, 0, 0, (String)null);
+ /*   0*/           }
+ /*   0*/        break;
+ /*   0*/    } 

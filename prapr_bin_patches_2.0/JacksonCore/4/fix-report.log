@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 18 22:15:09 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 366
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to min with a call to max
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 586
+	Rank: 1
+	Total Rank: 47
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to java/lang/Math::min with argument
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 586
+	Rank: 2
+	Total Rank: 49
+	Dump: mutant-1.class
+------------------------------------------------

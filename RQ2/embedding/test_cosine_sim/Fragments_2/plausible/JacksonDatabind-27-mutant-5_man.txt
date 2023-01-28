@@ -1,0 +1,7 @@
+            TokenBuffer tokens = new TokenBuffer(jp);
+            tokens.copyCurrentStructure(jp);
+            _tokens[index] = tokens;
+      canDeserialize = (bean != null && this._typeIds[index] != null) ? false : false;
+        }
+        /* Minor optimization: let's deserialize properties as soon as
+         * we have all pertinent information:

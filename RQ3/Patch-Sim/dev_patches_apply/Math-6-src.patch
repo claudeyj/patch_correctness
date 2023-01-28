@@ -1,0 +1,146 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/buggy-NonLinearConjugateGradientOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/patched-NonLinearConjugateGradientOptimizer.java
+--- Math6b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
++++ Math6b_Math-6-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+@@ -211,16 +211,15 @@
+         }
+ 
+         PointValuePair current = null;
+-        int iter = 0;
+         int maxEval = getMaxEvaluations();
+         while (true) {
+-            ++iter;
++            incrementIterationCount();
+ 
+             final double objective = computeObjectiveValue(point);
+             PointValuePair previous = current;
+             current = new PointValuePair(point, objective);
+             if (previous != null) {
+-                if (checker.converged(iter, previous, current)) {
++                if (checker.converged(getIterations(), previous, current)) {
+                     // We have found an optimum.
+                     return current;
+                 }
+@@ -274,7 +273,7 @@
+             steepestDescent = newSteepestDescent;
+ 
+             // Compute conjugate search direction.
+-            if (iter % n == 0 ||
++            if (getIterations() % n == 0 ||
+                 beta < 0) {
+                 // Break conjugation: reset search direction.
+                 searchDirection = steepestDescent.clone();
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/buggy-SimplexOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/patched-SimplexOptimizer.java
+--- Math6b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
++++ Math6b_Math-6-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+@@ -155,7 +155,7 @@
+         int iteration = 0;
+         final ConvergenceChecker<PointValuePair> checker = getConvergenceChecker();
+         while (true) {
+-            if (iteration > 0) {
++            if (getIterations() > 0) {
+                 boolean converged = true;
+                 for (int i = 0; i < simplex.getSize(); i++) {
+                     PointValuePair prev = previous[i];
+@@ -172,7 +172,7 @@
+             previous = simplex.getPoints();
+             simplex.iterate(evalFunc, comparator);
+ 
+-			++iteration;
++            incrementIterationCount();
+         }
+     }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/buggy-CMAESOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/patched-CMAESOptimizer.java
+--- Math6b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
++++ Math6b_Math-6-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+@@ -385,6 +385,7 @@
+ 
+         generationLoop:
+         for (iterations = 1; iterations <= maxIterations; iterations++) {
++            incrementIterationCount();
+ 
+             // Generate and evaluate lambda offspring
+             final RealMatrix arz = randn1(dimension, lambda);
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/buggy-GaussNewtonOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/patched-GaussNewtonOptimizer.java
+--- Math6b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
++++ Math6b_Math-6-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+@@ -103,9 +103,8 @@
+ 
+         // iterate until convergence is reached
+         PointVectorValuePair current = null;
+-        int iter = 0;
+         for (boolean converged = false; !converged;) {
+-            ++iter;
++            incrementIterationCount();
+ 
+             // evaluate the objective function and its jacobian
+             PointVectorValuePair previous = current;
+@@ -157,7 +156,7 @@
+ 
+             // Check convergence.
+             if (previous != null) {
+-                converged = checker.converged(iter, previous, current);
++                converged = checker.converged(getIterations(), previous, current);
+                 if (converged) {
+                     setCost(computeCost(currentResiduals));
+                     return current;
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/buggy-BaseOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/patched-BaseOptimizer.java
+--- Math6b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
++++ Math6b_Math-6-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+@@ -48,7 +48,7 @@
+         this.checker = checker;
+ 
+         evaluations = new Incrementor(0, new MaxEvalCallback());
+-        iterations = new Incrementor(0, new MaxIterCallback());
++        iterations = new Incrementor(Integer.MAX_VALUE, new MaxIterCallback());
+     }
+ 
+     /**
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/buggy-PowellOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/patched-PowellOptimizer.java
+--- Math6b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
++++ Math6b_Math-6-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+@@ -188,9 +188,8 @@
+         double[] x = guess;
+         double fVal = computeObjectiveValue(x);
+         double[] x1 = x.clone();
+-        int iter = 0;
+         while (true) {
+-            ++iter;
++            incrementIterationCount();
+ 
+             double fX = fVal;
+             double fX2 = 0;
+@@ -224,7 +223,7 @@
+             final PointValuePair current = new PointValuePair(x, fVal);
+             if (!stop) { // User-defined stopping criteria.
+                 if (checker != null) {
+-                    stop = checker.converged(iter, previous, current);
++                    stop = checker.converged(getIterations(), previous, current);
+                 }
+             }
+             if (stop) {
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/buggy-LevenbergMarquardtOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/6/mutant-0/patched-LevenbergMarquardtOptimizer.java
+--- Math6b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
++++ Math6b_Math-6-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+@@ -319,10 +319,10 @@
+         // Outer loop.
+         lmPar = 0;
+         boolean firstIteration = true;
+-        int iter = 0;
+         final ConvergenceChecker<PointVectorValuePair> checker = getConvergenceChecker();
+         while (true) {
+-            ++iter;
++            incrementIterationCount();
++
+             final PointVectorValuePair previous = current;
+ 
+             // QR decomposition of the jacobian matrix
+@@ -486,7 +486,7 @@
+                     // tests for convergence.
+                     if (checker != null) {
+                         // we use the vectorial convergence checker
+-                        if (checker.converged(iter, previous, current)) {
++                        if (checker.converged(getIterations(), previous, current)) {
+                             setCost(currentCost);
+                             return current;
+                         }

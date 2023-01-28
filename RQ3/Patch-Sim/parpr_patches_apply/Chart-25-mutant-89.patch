@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-89.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -2852,7 +2852,7 @@
+         CategoryAxis domainAxis = getDomainAxisForDataset(index);
+         ValueAxis rangeAxis = getRangeAxisForDataset(index);
+         boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);
+-        if (hasData && renderer != null) {
++    if (this.domainGridlinesVisible && renderer != null) {
+             
+             foundData = true;
+             CategoryItemRendererState state = renderer.initialise(g2, dataArea,

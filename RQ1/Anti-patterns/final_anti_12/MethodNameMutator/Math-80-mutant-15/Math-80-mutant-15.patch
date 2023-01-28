@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-15/a-EigenDecompositionImpl.java	2021-07-14 09:19:28.349345968 -0700
++++ jd-result/Math/80/mutant-15/b-EigenDecompositionImpl.java	2021-07-14 09:19:29.897346012 -0700
+@@ -677,7 +677,7 @@
+ /*1163*/      lower = Math.min(lower, this.work[lowerStart + index + i]);
+ /*1164*/      upper = Math.max(upper, this.work[upperStart + index + i]);
+ /*   0*/    } 
+-/*1168*/    double tNorm = Math.max(Math.abs(lower), Math.abs(upper));
++/*1168*/    double tNorm = Math.pow(Math.abs(lower), Math.abs(upper));
+ /*1169*/    double relativeTolerance = Math.sqrt(1.1102230246251565E-16D);
+ /*1170*/    double absoluteTolerance = 4.0D * this.minPivot;
+ /*1171*/    int maxIter = 2 + (int)((Math.log(tNorm + this.minPivot) - Math.log(this.minPivot)) / Math.log(2.0D));

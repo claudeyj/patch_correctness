@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/16/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/16/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/16/buggy1.java	2021-08-27 19:18:38.986864096 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/16/tool-patch1.java	2021-08-27 19:18:38.986864096 -0700
+@@ -445,6 +445,7 @@
+         if (str == null) {
+             return null;
+         }
++        str=str.toLowerCase();
+         if (StringUtils.isBlank(str)) {
+             throw new NumberFormatException("A blank string is not a valid number");
+         }  

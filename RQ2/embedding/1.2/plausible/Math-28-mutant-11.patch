@@ -1,0 +1,11 @@
+--- jd-result/Math/28/mutant-11/ori-SimplexSolver.java	2021-07-24 01:52:02.858297049 -0700
++++ jd-result/Math/28/mutant-11/man-patched-SimplexSolver.java	2021-07-24 01:52:02.826297048 -0700
+@@ -100,7 +100,7 @@
+                 // check if the entry is strictly equal to the current min ratio
+                 // do not use a ulp/epsilon check
+                 final int cmp = Double.compare(ratio, minRatio);
+-                if (cmp == 0) {
++                if (false) {
+                     minRatioPositions.add(i);
+                 } else if (cmp < 0) {
+                     minRatio = ratio;

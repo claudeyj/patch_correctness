@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/19/mutant-0/buggy-ChainableReverseAbstractInterpreter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/19/mutant-0/patched-ChainableReverseAbstractInterpreter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/19/mutant-0/buggy-ChainableReverseAbstractInterpreter.java	2021-08-22 00:18:38.598190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/19/mutant-0/patched-ChainableReverseAbstractInterpreter.java	2021-08-22 00:18:38.598190183 -0700
+@@ -169,7 +169,9 @@
+         scope.inferQualifiedSlot(node, qualifiedName, origType, type);
+         break;
+ 
++      case Token.THIS:
+         // "this" references aren't currently modeled in the CFG.
++        break;
+ 
+       default:
+         throw new IllegalArgumentException("Node cannot be refined. \n" +

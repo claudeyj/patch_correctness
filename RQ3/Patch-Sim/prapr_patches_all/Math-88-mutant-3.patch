@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/88/mutant-3/ori-SimplexTableau.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/88/mutant-3/man-patched-SimplexTableau.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/88/mutant-3/ori-SimplexTableau.java	2021-08-23 09:23:49.152994122 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/88/mutant-3/man-patched-SimplexTableau.java	2021-08-23 09:23:49.152994122 +0800
+@@ -334,7 +334,7 @@
+                     (basicRow == null ? 0 : getEntry(basicRow, getRhsOffset())) -
+                     (restrictToNonNegative ? 0 : mostNegative);
+             if (basicRow != null) {
+-                for (int j = getNumObjectiveFunctions(); j < getNumObjectiveFunctions() + i; j++) {
++                for (int j = i; j < getNumObjectiveFunctions() + i; j++) {
+                     if (tableau.getEntry(basicRow, j) == 1) {
+                          coefficients[i] = 0;
+                     }

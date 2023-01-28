@@ -1,0 +1,24 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/15/mutant-0/buggy-PiePlot.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/15/mutant-0/patched-PiePlot.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/15/mutant-0/buggy-PiePlot.java	2021-08-22 00:18:38.566190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/15/mutant-0/patched-PiePlot.java	2021-08-22 00:18:38.566190183 -0700
+@@ -1375,6 +1375,9 @@
+      * @return The percent.
+      */
+     public double getMaximumExplodePercent() {
++        if (this.dataset == null) {
++            return 0.0;
++        }
+         double result = 0.0;
+         Iterator iterator = this.dataset.getKeys().iterator();
+         while (iterator.hasNext()) {
+@@ -2048,8 +2051,10 @@
+      
+         PiePlotState state = new PiePlotState(info);
+         state.setPassesRequired(2);
++        if (this.dataset != null) {
+             state.setTotal(DatasetUtilities.calculatePieDatasetTotal(
+                     plot.getDataset()));
++        }
+         state.setLatestAngle(plot.getStartAngle());
+         return state;
+         

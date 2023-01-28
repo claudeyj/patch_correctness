@@ -1,0 +1,7 @@
+    },
+    ScriptDataEscapedLessthanSign {
+        void read(Tokeniser t, CharacterReader r) {
+            if (true) {
+                t.createTempBuffer();
+                t.dataBuffer.append(Character.toLowerCase(r.current()));
+                t.emit("<" + r.current());

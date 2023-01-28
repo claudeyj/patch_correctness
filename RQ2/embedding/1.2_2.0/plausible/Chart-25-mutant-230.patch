@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-230/ori-CategoryPlot.java	2021-07-15 18:51:50.692753079 -0700
++++ jd-result/Chart/25/mutant-230/man-patched-CategoryPlot.java	2021-07-23 03:57:56.119427417 -0700
+@@ -2670,7 +2670,7 @@
+             }
+             
+             for (int i = this.datasets.size() - 1; i >= 0; i--) {
+-                foundData = render(g2, dataArea, i, state) || foundData;   
++                foundData = (DEFAULT_DOMAIN_GRIDLINES_VISIBLE || foundData);
+             }
+ 
+             // draw foreground annotations

@@ -1,0 +1,19 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/38/mutant-2/ori-ArgumentMatchingTool.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/38/mutant-2/man-patched-ArgumentMatchingTool.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/38/mutant-2/ori-ArgumentMatchingTool.java	2021-08-23 09:23:49.156994177 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/38/mutant-2/man-patched-ArgumentMatchingTool.java	2021-08-23 09:23:49.156994177 +0800
+@@ -10,6 +10,7 @@
+ import org.hamcrest.Matcher;
+ import org.hamcrest.StringDescription;
+ import org.mockito.internal.matchers.ContainsExtraTypeInformation;
++import org.hamcrest.SelfDescribing;
+ 
+ @SuppressWarnings("unchecked")
+ public class ArgumentMatchingTool {
+@@ -45,6 +46,6 @@
+     }
+ 
+     private boolean toStringEquals(Matcher m, Object arg) {
+-        return StringDescription.toString(m).equals(arg.toString());
++    return (arg == null) ? false : StringDescription.toString((SelfDescribing)m).equals(arg.toString());
+     }
+ }

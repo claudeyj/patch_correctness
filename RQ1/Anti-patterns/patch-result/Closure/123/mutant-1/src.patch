@@ -1,0 +1,11 @@
+--- jd-result/Closure/123/mutant-1/ori-CodeGenerator.java	2021-07-15 18:51:52.460753129 -0700
++++ jd-result/Closure/123/mutant-1/man-patched-CodeGenerator.java	2021-07-29 19:40:38.073000000 -0700
+@@ -282,7 +282,7 @@
+       case Token.HOOK: {
+         Preconditions.checkState(childCount == 3);
+         int p = NodeUtil.precedence(type);
+-        Context rhsContext = Context.OTHER;
++        Context rhsContext = Context.IN_FOR_INIT_CLAUSE;
+         addExpr(first, p + 1, context);
+         cc.addOp("?", true);
+         addExpr(first.getNext(), 1, rhsContext);

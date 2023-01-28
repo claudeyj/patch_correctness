@@ -1,0 +1,11 @@
+--- jd-result/Lang/44/mutant-2/ori-NumberUtils.java	2021-07-15 18:51:51.908753113 -0700
++++ jd-result/Lang/44/mutant-2/fixed-patched-NumberUtils.java	2021-07-22 22:54:56.982489822 -0700
+@@ -192,7 +192,7 @@
+                 case 'L' :
+                     if (dec == null
+                         && exp == null
+-                        && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {
++          && ((mant.charAt(0) == '-' && isDigits(numeric.substring(1))) || isDigits(numeric))) {
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {

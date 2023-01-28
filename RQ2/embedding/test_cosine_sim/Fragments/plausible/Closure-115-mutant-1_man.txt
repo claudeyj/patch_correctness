@@ -1,0 +1,7 @@
+    boolean hasSideEffects = false;
+    if (block.hasChildren()) {
+      Preconditions.checkState(block.hasOneChild());
+      Node stmt = callNode;
+      if (stmt.isReturn()) {
+        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);
+      }

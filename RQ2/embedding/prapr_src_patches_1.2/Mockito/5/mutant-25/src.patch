@@ -1,0 +1,18 @@
+--- jd-result/Mockito/5/mutant-25/ori-FieldInitializer.java	2021-07-15 18:51:56.392753240 -0700
++++ jd-result/Mockito/5/mutant-25/man-patched-FieldInitializer.java	2021-07-30 04:25:23.901184911 -0700
+@@ -183,14 +183,8 @@
+                 new FieldSetter(testClass, field).set(newFieldInstance);
+ 
+                 return new FieldInitializationReport(field.get(testClass), true, false);
+-            } catch (NoSuchMethodException e) {
++      } catch (ReflectiveOperationException e) {
+                 throw new MockitoException("the type '" + field.getType().getSimpleName() + "' has no default constructor", e);
+-            } catch (InvocationTargetException e) {
+-                throw new MockitoException("the default constructor of type '" + field.getType().getSimpleName() + "' has raised an exception (see the stack trace for cause): " + e.getTargetException().toString(), e);
+-            } catch (InstantiationException e) {
+-                throw new MockitoException("InstantiationException (see the stack trace for cause): " + e.toString(), e);
+-            } catch (IllegalAccessException e) {
+-                throw new MockitoException("IllegalAccessException (see the stack trace for cause): " + e.toString(), e);
+             } finally {
+                 if(constructor != null) {
+                     changer.safelyDisableAccess(constructor);

@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-30/a-FieldInitializer.java	2021-07-14 21:32:22.778586840 -0700
++++ jd-result/Mockito/5/mutant-30/b-FieldInitializer.java	2021-07-14 21:32:24.174586879 -0700
+@@ -43,7 +43,7 @@
+ /*  83*/    changer.enableAccess(this.field);
+ /*   0*/    try {
+ /*  86*/      return acquireFieldInstance();
+-/*  87*/    } catch (IllegalAccessException e) {
++/*  87*/    } catch (ReflectiveOperationException e) {
+ /*  88*/      throw new MockitoException("Problems initializing field '" + this.field.getName() + "' of type '" + this.field.getType().getSimpleName() + "'", e);
+ /*   0*/    } finally {
+ /*  90*/      changer.safelyDisableAccess(this.field);

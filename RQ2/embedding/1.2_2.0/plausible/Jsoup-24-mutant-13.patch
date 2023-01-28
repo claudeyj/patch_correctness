@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/24/mutant-13/ori-TokeniserState.java	2021-08-08 21:02:03.144814668 -0700
++++ jd-result-2.0/Jsoup/24/mutant-13/man-patched-TokeniserState.java	2021-08-10 01:46:07.679733669 -0700
+@@ -527,7 +527,7 @@
+                 t.dataBuffer.append(Character.toLowerCase(r.current()));
+                 t.emit("<" + r.current());
+                 t.advanceTransition(ScriptDataDoubleEscapeStart);
+-            } else if (r.matches('/')) {
++            } else if (false) {
+                 t.createTempBuffer();
+                 t.advanceTransition(ScriptDataEscapedEndTagOpen);
+             } else {

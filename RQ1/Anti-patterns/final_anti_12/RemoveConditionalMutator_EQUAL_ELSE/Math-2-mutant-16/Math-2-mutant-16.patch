@@ -1,0 +1,20 @@
+--- jd-result/Math/2/mutant-16/a-AbstractIntegerDistribution.java	2021-07-14 09:05:11.225321782 -0700
++++ jd-result/Math/2/mutant-16/b-AbstractIntegerDistribution.java	2021-07-14 09:05:12.569321819 -0700
+@@ -51,16 +51,7 @@
+ /* 125*/    double mu = getNumericalMean();
+ /* 126*/    double sigma = FastMath.sqrt(getNumericalVariance());
+ /* 127*/    boolean chebyshevApplies = (!Double.isInfinite(mu) && !Double.isNaN(mu) && !Double.isInfinite(sigma) && !Double.isNaN(sigma) && sigma != 0.0D);
+-/* 129*/    if (chebyshevApplies) {
+-/* 130*/      double k = FastMath.sqrt((1.0D - p) / p);
+-/* 131*/      double tmp = mu - k * sigma;
+-/* 132*/      if (tmp > lower)
+-/* 133*/        lower = (int)Math.ceil(tmp) - 1; 
+-/* 135*/      k = 1.0D / k;
+-/* 136*/      tmp = mu + k * sigma;
+-/* 137*/      if (tmp < upper)
+-/* 138*/        upper = (int)Math.ceil(tmp) - 1; 
+-/*   0*/    } 
++/*   0*/    while (true)
+ /* 142*/    return solveInverseCumulativeProbability(p, lower, upper);
+ /*   0*/  }
+ /*   0*/  

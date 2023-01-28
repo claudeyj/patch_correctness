@@ -1,0 +1,25 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/11/mutant-0/buggy-DelegatingMethod.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/11/mutant-0/patched-DelegatingMethod.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/11/mutant-0/buggy-DelegatingMethod.java	2021-08-22 00:18:38.698190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/11/mutant-0/patched-DelegatingMethod.java	2021-08-22 00:18:38.698190186 -0700
+@@ -52,11 +52,19 @@
+      */
+     @Override
+     public boolean equals(Object o) {
++        if (this == o) {
++            return true;
++        }
++        if (o instanceof DelegatingMethod) {
++            DelegatingMethod that = (DelegatingMethod) o;
++            return method.equals(that.method);
++        } else {
+             return method.equals(o);
+     }
++    }
+ 
+     @Override
+     public int hashCode() {
+-        return 1;
++        return method.hashCode();
+     }
+ }
+\ No newline at end of file

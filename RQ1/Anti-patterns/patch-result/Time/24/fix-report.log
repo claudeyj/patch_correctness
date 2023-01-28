@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 01:19:43 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 3511
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.joda.time.chrono.BasicChronology::getWeeksInYear(I)I is replaced with the used of default value 0
+	File Name: org/joda/time/chrono/BasicChronology.java
+	Line Number: 518
+	Rank: 1
+	Total Rank: 110
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/joda/time/chrono/BasicChronology.java
+	Line Number: 518
+	Rank: 2
+	Total Rank: 112
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced int return with 0 for org/joda/time/chrono/BasicChronology::getWeekOfWeekyear
+	File Name: org/joda/time/chrono/BasicChronology.java
+	Line Number: 518
+	Rank: 3
+	Total Rank: 114
+	Dump: mutant-1.class
+------------------------------------------------

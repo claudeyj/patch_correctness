@@ -1,0 +1,14 @@
+--- jd-result-2.0/JacksonDatabind/53/mutant-5/ori-TypeFactory.java	2021-08-08 21:02:02.364814646 -0700
++++ jd-result-2.0/JacksonDatabind/53/mutant-5/man-patched-TypeFactory.java	2021-08-10 06:13:42.124186694 -0700
+@@ -339,10 +339,7 @@
+             // (2) A small set of "well-known" List/Map subtypes where can take a short-cut
+             if (baseType.isContainerType()) {
+                 if (baseType.isMapLikeType()) {
+-                    if ((subclass == HashMap.class)
+-                            || (subclass == LinkedHashMap.class)
+-                            || (subclass == EnumMap.class)
+-                            || (subclass == TreeMap.class)) {
++                    if (true) {
+                         newType = _fromClass(null, subclass,
+                                 TypeBindings.create(subclass, baseType.getKeyType(), baseType.getContentType()));
+                         break;

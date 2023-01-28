@@ -1,0 +1,13 @@
+--- jd-result/Chart/25/mutant-185/a-DefaultStatisticalCategoryDataset.java	2021-07-14 20:08:55.346445540 -0700
++++ jd-result/Chart/25/mutant-185/b-DefaultStatisticalCategoryDataset.java	2021-07-14 20:08:56.666445577 -0700
+@@ -94,7 +94,9 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void add(Number mean, Number standardDeviation, Comparable rowKey, Comparable columnKey) {
+-/* 299*/    MeanAndStandardDeviation item = new MeanAndStandardDeviation(mean, standardDeviation);
++/* 299*/    new MeanAndStandardDeviation();
++/* 299*/    new MeanAndStandardDeviation();
++/* 299*/    MeanAndStandardDeviation item = null;
+ /* 301*/    this.data.addObject(item, rowKey, columnKey);
+ /* 302*/    double m = 0.0D;
+ /* 303*/    double sd = 0.0D;

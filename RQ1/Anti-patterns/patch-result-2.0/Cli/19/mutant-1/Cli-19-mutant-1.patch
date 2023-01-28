@@ -1,0 +1,38 @@
+--- jd-result-2.0/Cli/19/mutant-1/a-PosixParser.java	2021-08-09 04:41:11.837592038 -0700
++++ jd-result-2.0/Cli/19/mutant-1/b-PosixParser.java	2021-08-09 04:41:13.149592075 -0700
+@@ -24,7 +24,8 @@
+ /*  99*/    init();
+ /* 100*/    this.options = options;
+ /* 103*/    Iterator iter = Arrays.asList(arguments).iterator();
+-/* 106*/    while (iter.hasNext()) {
++/*   0*/    while (true) {
++/* 106*/      if (iter.hasNext()) {
+ /* 109*/      String token = (String)iter.next();
+ /* 112*/      if (token.startsWith("--")) {
+ /* 114*/        if (token.indexOf('=') != -1) {
+@@ -36,9 +37,8 @@
+ /* 126*/      } else if ("-".equals(token)) {
+ /* 128*/        this.tokens.add(token);
+ /* 130*/      } else if (token.startsWith("-")) {
+-/* 132*/        if (token.length() == 2) {
+-/* 134*/          processOptionToken(token, stopAtNonOption);
+-/* 136*/        } else if (options.hasOption(token)) {
++/* 132*/          2;
++/* 136*/          if (options.hasOption(token)) {
+ /* 138*/          this.tokens.add(token);
+ /*   0*/        } else {
+ /* 143*/          burstToken(token, stopAtNonOption);
+@@ -48,8 +48,13 @@
+ /*   0*/      } else {
+ /* 152*/        this.tokens.add(token);
+ /*   0*/      } 
++/*   0*/      } else {
++/*   0*/        break;
++/*   0*/      } 
++/*   0*/      while (true) {
+ /* 155*/      gobble(iter);
+ /*   0*/    } 
++/*   0*/    } 
+ /* 158*/    return (String[])this.tokens.toArray(new String[this.tokens.size()]);
+ /*   0*/  }
+ /*   0*/  

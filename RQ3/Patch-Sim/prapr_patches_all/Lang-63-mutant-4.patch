@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-4/ori-DurationFormatUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-4/man-patched-DurationFormatUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-4/ori-DurationFormatUtils.java	2021-08-23 09:23:48.856990018 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-4/man-patched-DurationFormatUtils.java	2021-08-30 00:21:01.823254755 +0800
+@@ -433,7 +433,7 @@
+         end.add( field, -1 * difference );
+         int endValue = end.get(field);
+         int startValue = start.get(field);
+-        if (endValue < startValue) {
++        if (false) {
+             int newdiff = startValue - endValue;
+             end.add( field, newdiff );
+             return newdiff;

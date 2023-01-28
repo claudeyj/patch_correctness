@@ -1,0 +1,20 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-139.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1431,7 +1431,7 @@
+ 
+         final double cnst1 = 0.563;
+         final double cnst2 = 1.010;
+-        final double cnst3 = 1.05;
++        double cnst3 = 1.05;
+ 
+         // a negative dMin forces the shift to take that absolute value
+         // tType records the type of shift.
+@@ -1481,7 +1481,7 @@
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }
+-                        b2 = work[nn - 5] / work[nn - 7];
++                        cnst3 = work[nn - 5] / work[nn - 7];
+                         np = nn - 9;
+                     } else {
+                         np = nn - 2 * pingPong;

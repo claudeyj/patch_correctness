@@ -1,0 +1,20 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-101.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -213,6 +213,7 @@
+ import org.jfree.data.general.Dataset;
+ import org.jfree.data.general.DatasetChangeEvent;
+ import org.jfree.data.general.DatasetUtilities;
++import org.jfree.data.xy.XYDataset;
+ 
+ /**
+  * A general plotting class that uses data from a {@link CategoryDataset} and 
+@@ -2851,7 +2852,8 @@
+         CategoryItemRenderer renderer = getRenderer(index);
+         CategoryAxis domainAxis = getDomainAxisForDataset(index);
+         ValueAxis rangeAxis = getRangeAxisForDataset(index);
+-        boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);
++    CategoryDataset categoryDataset1 = currentDataset;
++    boolean hasData = !DatasetUtilities.isEmptyOrNull((XYDataset)null);
+         if (hasData && renderer != null) {
+             
+             foundData = true;

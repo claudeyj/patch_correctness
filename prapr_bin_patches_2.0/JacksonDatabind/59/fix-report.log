@@ -1,0 +1,346 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 29 14:33:46 PDT 2021
+Number of Plausible Fixes: 38
+Total Number of Patches: 20331
+================================================
+1.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local subclass is replaced a call subclass.getSuperclass()
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 1
+	Total Rank: 5175
+	Dump: mutant-19.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local subclass is replaced by local rawBase to be used
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 2
+	Total Rank: 5177
+	Dump: mutant-29.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local subclass is replaced by access to field CLS_CLASS
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 7
+	Total Rank: 5191
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local subclass is replaced by access to field CLS_ENUM
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 7
+	Total Rank: 5191
+	Dump: mutant-10.class
+------------------------------------------------
+5.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local subclass is replaced by access to field CLS_OBJECT
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 7
+	Total Rank: 5191
+	Dump: mutant-20.class
+------------------------------------------------
+6.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local subclass is replaced by access to field CLS_STRING
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 7
+	Total Rank: 5191
+	Dump: mutant-21.class
+------------------------------------------------
+7.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local subclass is replaced by access to field CLS_COMPARABLE
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 7
+	Total Rank: 5191
+	Dump: mutant-25.class
+------------------------------------------------
+8.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 8
+	Total Rank: 5193
+	Dump: mutant-13.class
+------------------------------------------------
+9.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 372
+	Rank: 9
+	Total Rank: 5195
+	Dump: mutant-5.class
+------------------------------------------------
+10.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/JavaType::isMapLikeType
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 371
+	Rank: 10
+	Total Rank: 5997
+	Dump: mutant-28.class
+------------------------------------------------
+11.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 371
+	Rank: 11
+	Total Rank: 6008
+	Dump: mutant-31.class
+------------------------------------------------
+12.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 371
+	Rank: 12
+	Total Rank: 6010
+	Dump: mutant-4.class
+------------------------------------------------
+13.
+	Mutator: MethodNameMutator
+	Description: replaced call to isContainerType with a call to isArrayType
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 370
+	Rank: 17
+	Total Rank: 6052
+	Dump: mutant-7.class
+------------------------------------------------
+14.
+	Mutator: MethodNameMutator
+	Description: replaced call to isContainerType with a call to isConcrete
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 370
+	Rank: 17
+	Total Rank: 6052
+	Dump: mutant-27.class
+------------------------------------------------
+15.
+	Mutator: MethodNameMutator
+	Description: replaced call to isContainerType with a call to isEnumType
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 370
+	Rank: 17
+	Total Rank: 6052
+	Dump: mutant-32.class
+------------------------------------------------
+16.
+	Mutator: MethodNameMutator
+	Description: replaced call to isContainerType with a call to isPrimitive
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 370
+	Rank: 17
+	Total Rank: 6052
+	Dump: mutant-34.class
+------------------------------------------------
+17.
+	Mutator: MethodNameMutator
+	Description: replaced call to isContainerType with a call to isThrowable
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 370
+	Rank: 17
+	Total Rank: 6052
+	Dump: mutant-38.class
+------------------------------------------------
+18.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 370
+	Rank: 18
+	Total Rank: 6055
+	Dump: mutant-3.class
+------------------------------------------------
+19.
+	Mutator: NonVoidMethodCallGuardMutator
+	Description: the call to com.fasterxml.jackson.databind.JavaType::equals(Ljava/lang/Object;)Z is guarded using default value false
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 458
+	Rank: 19
+	Total Rank: 7118
+	Dump: mutant-6.class
+------------------------------------------------
+20.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 462
+	Rank: 20
+	Total Rank: 7129
+	Dump: mutant-37.class
+------------------------------------------------
+21.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/JavaType::equals
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 458
+	Rank: 21
+	Total Rank: 7133
+	Dump: mutant-23.class
+------------------------------------------------
+22.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 462
+	Rank: 22
+	Total Rank: 7142
+	Dump: mutant-35.class
+------------------------------------------------
+23.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 456
+	Rank: 23
+	Total Rank: 7146
+	Dump: mutant-15.class
+------------------------------------------------
+24.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local len is replaced by access to field _hash
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 456
+	Rank: 24
+	Total Rank: 7152
+	Dump: mutant-33.class
+------------------------------------------------
+25.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 458
+	Rank: 25
+	Total Rank: 7156
+	Dump: mutant-18.class
+------------------------------------------------
+26.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 456
+	Rank: 26
+	Total Rank: 7161
+	Dump: mutant-11.class
+------------------------------------------------
+27.
+	Mutator: BooleanFalseReturnValsMutator
+	Description: replaced boolean return with false for com/fasterxml/jackson/databind/type/TypeBindings$AsKey::equals
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 462
+	Rank: 27
+	Total Rank: 7162
+	Dump: mutant-26.class
+------------------------------------------------
+28.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/Object::getClass
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 449
+	Rank: 28
+	Total Rank: 8570
+	Dump: mutant-30.class
+------------------------------------------------
+29.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 452
+	Rank: 29
+	Total Rank: 8593
+	Dump: mutant-14.class
+------------------------------------------------
+30.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 448
+	Rank: 31
+	Total Rank: 8599
+	Dump: mutant-16.class
+------------------------------------------------
+31.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 449
+	Rank: 31
+	Total Rank: 8599
+	Dump: mutant-17.class
+------------------------------------------------
+32.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 449
+	Rank: 34
+	Total Rank: 8606
+	Dump: mutant-8.class
+------------------------------------------------
+33.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 448
+	Rank: 34
+	Total Rank: 8606
+	Dump: mutant-9.class
+------------------------------------------------
+34.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/type/TypeBindings.java
+	Line Number: 452
+	Rank: 34
+	Total Rank: 8606
+	Dump: mutant-12.class
+------------------------------------------------
+35.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.databind.type.TypeBindings.asKey(Ljava/lang/Class;)Ljava/lang/Object; is replaced by an instantiation of type java.lang.Object using ()V
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 1208
+	Rank: 36
+	Total Rank: 9055
+	Dump: mutant-1.class
+------------------------------------------------
+36.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.databind.type.TypeBindings.asKey(Ljava/lang/Class;)Ljava/lang/Object; is replaced by an instantiation of type perf.ManualWritePerfWithAllTypes$AllTypes using ()V
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 1208
+	Rank: 36
+	Total Rank: 9055
+	Dump: mutant-22.class
+------------------------------------------------
+37.
+	Mutator: MethodNameMutator
+	Description: replaced call to getName with a call to toString
+	File Name: com/fasterxml/jackson/databind/JavaType.java
+	Line Number: 80
+	Rank: 37
+	Total Rank: 17491
+	Dump: mutant-36.class
+------------------------------------------------
+38.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for com/fasterxml/jackson/databind/util/LRUMap::get
+	File Name: com/fasterxml/jackson/databind/util/LRUMap.java
+	Line Number: 68
+	Rank: 38
+	Total Rank: 20221
+	Dump: mutant-24.class
+------------------------------------------------

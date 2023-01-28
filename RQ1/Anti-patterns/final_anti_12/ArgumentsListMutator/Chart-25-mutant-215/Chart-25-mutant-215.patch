@@ -1,0 +1,15 @@
+--- jd-result/Chart/25/mutant-215/a-KeyedObjects2D.java	2021-07-14 20:09:04.754445805 -0700
++++ jd-result/Chart/25/mutant-215/b-KeyedObjects2D.java	2021-07-14 20:09:06.142445844 -0700
+@@ -28,8 +28,10 @@
+ /* 109*/    KeyedObjects rowData = this.rows.get(row);
+ /* 110*/    if (rowData != null) {
+ /* 111*/      Comparable columnKey = this.columnKeys.get(column);
+-/* 112*/      if (columnKey != null)
+-/* 113*/        result = rowData.getObject(columnKey); 
++/* 112*/      if (columnKey != null) {
++/* 113*/        Comparable comparable = columnKey;
++/* 113*/        result = rowData.getObject(0);
++/*   0*/      } 
+ /*   0*/    } 
+ /* 116*/    return result;
+ /*   0*/  }

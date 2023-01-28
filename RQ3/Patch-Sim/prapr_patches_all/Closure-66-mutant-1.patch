@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/66/mutant-1/ori-TypeCheck.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/66/mutant-1/patched-TypeCheck.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/66/mutant-1/ori-TypeCheck.java	2021-08-23 09:23:48.772988853 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/66/mutant-1/patched-TypeCheck.java	2021-08-23 09:23:48.772988853 +0800
+@@ -819,7 +819,7 @@
+   private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+     JSType type = n.getJSType();
+     if (type == null) {
+-      nullCount++;
++      this.typedCount = this.nullCount + 1;
+     } else if (type.isUnknownType()) {
+       if (reportUnknownTypes.isOn()) {
+         compiler.report(

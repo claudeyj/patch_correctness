@@ -1,0 +1,13 @@
+--- jd-result-2.0/JxPath/10/mutant-3/a-InfoSetUtil.java	2021-08-09 04:19:03.589554557 -0700
++++ jd-result-2.0/JxPath/10/mutant-3/b-InfoSetUtil.java	2021-08-09 04:19:04.953554596 -0700
+@@ -69,9 +69,7 @@
+ /* 102*/        return (Boolean)object ? 0.0D : 1.0D; 
+ /*   0*/       }
+ /* 104*/    if (object instanceof String) {
+-/* 105*/      if (object.equals("")) {
+-/* 106*/          return 0.0D; 
+-/*   0*/         }
++/* 105*/      object.equals("");
+ /*   0*/      try {
+ /* 109*/        return Double.parseDouble((String)object);
+ /* 111*/      } catch (NumberFormatException ex) {

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/23/mutant-13/a-ByteQuadsCanonicalizer.java	2021-08-09 04:14:13.305546366 -0700
++++ jd-result-2.0/JacksonCore/23/mutant-13/b-ByteQuadsCanonicalizer.java	2021-08-09 04:14:14.873546410 -0700
+@@ -66,7 +66,7 @@
+ /*   0*/         }
+ /* 238*/      sz = curr;
+ /*   0*/    } 
+-/* 241*/    this._tableInfo = new AtomicReference<TableInfo>(TableInfo.createInitial(sz));
++/* 241*/    this._tableInfo = new AtomicReference<TableInfo>(TableInfo.createInitial(seed));
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private ByteQuadsCanonicalizer(ByteQuadsCanonicalizer parent, boolean intern, int seed, boolean failOnDoS, TableInfo state) {

@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-12/ori-CategoryPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-12/man-patched-CategoryPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-12/ori-CategoryPlot.java	2021-08-23 09:23:48.324982642 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-12/man-patched-CategoryPlot.java	2021-08-23 09:23:48.324982642 +0800
+@@ -2851,7 +2851,8 @@
+         CategoryItemRenderer renderer = getRenderer(index);
+         CategoryAxis domainAxis = getDomainAxisForDataset(index);
+         ValueAxis rangeAxis = getRangeAxisForDataset(index);
+-        boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);
++        DatasetUtilities.isEmptyOrNull(currentDataset);
++        boolean hasData = false;
+         if (hasData && renderer != null) {
+             
+             foundData = true;

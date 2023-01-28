@@ -1,0 +1,11 @@
+--- jd-result/Closure/64/mutant-1/a-Compiler.java	2021-07-14 21:45:13.670608593 -0700
++++ jd-result/Closure/64/mutant-1/b-Compiler.java	2021-07-14 21:45:15.274608638 -0700
+@@ -791,7 +791,7 @@
+ /*   0*/              if (Compiler.this.jsRoot != null) {
+ /*   0*/                int i = 0;
+ /*   0*/                Node scriptNode = Compiler.this.jsRoot.getFirstChild();
+-/*   0*/                for (; scriptNode != null; scriptNode = scriptNode.getNext())
++/*   0*/                for (; scriptNode != null; scriptNode = null)
+ /*   0*/                  Compiler.this.toSource(cb, i++, scriptNode); 
+ /*   0*/              } 
+ /*   0*/              return cb.toString();

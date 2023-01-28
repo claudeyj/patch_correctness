@@ -1,0 +1,13 @@
+--- jd-result/Closure/45/mutant-5/a-RemoveUnusedVars.java	2021-07-14 21:42:38.326604209 -0700
++++ jd-result/Closure/45/mutant-5/b-RemoveUnusedVars.java	2021-07-14 21:42:39.770604250 -0700
+@@ -384,7 +384,9 @@
+ /* 734*/              hasPropertyAssign = true;
+ /*   0*/              continue;
+ /*   0*/            } 
+-/* 735*/            if (!NodeUtil.isLiteralValue(assign.assignNode.getLastChild(), true))
++/* 735*/            true;
++/* 735*/            assign.assignNode.getLastChild();
++/* 735*/            if (!changes)
+ /* 737*/              assignedToUnknownValue = true; 
+ /*   0*/          } 
+ /* 741*/          if (assignedToUnknownValue && hasPropertyAssign) {

@@ -1,0 +1,10 @@
+--- jd-result-2.0/JacksonDatabind/101/mutant-4/ori-BeanDeserializer.java	2021-08-08 21:02:02.428814648 -0700
++++ jd-result-2.0/JacksonDatabind/101/mutant-4/patched-BeanDeserializer.java	2021-08-09 06:25:54.945769335 -0700
+@@ -768,7 +768,6 @@
+                     // if so, need to copy all remaining tokens into buffer
+                     while (t == JsonToken.FIELD_NAME) {
+                         // NOTE: do NOT skip name as it needs to be copied; `copyCurrentStructure` does that
+-                        p.nextToken();
+                         tokens.copyCurrentStructure(p);
+                         t = p.nextToken();
+                     }

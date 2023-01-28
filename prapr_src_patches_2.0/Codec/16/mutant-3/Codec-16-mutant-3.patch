@@ -1,0 +1,12 @@
+--- jd-result-2.0/Codec/16/mutant-3/a-Base32.java	2021-08-09 03:48:29.145502793 -0700
++++ jd-result-2.0/Codec/16/mutant-3/b-Base32.java	2021-08-09 03:48:30.573502833 -0700
+@@ -109,7 +109,8 @@
+ /* 304*/      this.lineSeparator = null;
+ /*   0*/    } 
+ /* 306*/    this.decodeSize = this.encodeSize - 1;
+-/* 308*/    if (isInAlphabet(pad) || isWhiteSpace(pad)) {
++/* 308*/    isInAlphabet(pad);
++/* 308*/    if (isWhiteSpace(pad)) {
+ /* 309*/        throw new IllegalArgumentException("pad must not be in alphabet or whitespace"); 
+ /*   0*/       }
+ /*   0*/  }

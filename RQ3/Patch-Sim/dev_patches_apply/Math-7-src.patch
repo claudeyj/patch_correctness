@@ -1,0 +1,43 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/7/mutant-0/buggy-AbstractIntegrator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/7/mutant-0/patched-AbstractIntegrator.java
+--- Math7b/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java
++++ Math7b_Math-7-src.patchb/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java
+@@ -343,8 +343,10 @@
+                 final double[] eventY = interpolator.getInterpolatedState().clone();
+ 
+                 // advance all event states to current time
+-                currentEvent.stepAccepted(eventT, eventY);
+-                isLastStep = currentEvent.stop();
++                for (final EventState state : eventsStates) {
++                    state.stepAccepted(eventT, eventY);
++                    isLastStep = isLastStep || state.stop();
++                }
+ 
+                 // handle the first part of the step, up to the event
+                 for (final StepHandler handler : stepHandlers) {
+@@ -354,22 +356,19 @@
+                 if (isLastStep) {
+                     // the event asked to stop integration
+                     System.arraycopy(eventY, 0, y, 0, y.length);
+-                    for (final EventState remaining : occuringEvents) {
+-                        remaining.stepAccepted(eventT, eventY);
+-                    }
+                     return eventT;
+                 }
+ 
+-                boolean needReset = currentEvent.reset(eventT, eventY);
++                boolean needReset = false;
++                for (final EventState state : eventsStates) {
++                    needReset =  needReset || state.reset(eventT, eventY);
++                }
+                 if (needReset) {
+                     // some event handler has triggered changes that
+                     // invalidate the derivatives, we need to recompute them
+                     System.arraycopy(eventY, 0, y, 0, y.length);
+                     computeDerivatives(eventT, y, yDot);
+                     resetOccurred = true;
+-                    for (final EventState remaining : occuringEvents) {
+-                        remaining.stepAccepted(eventT, eventY);
+-                    }
+                     return eventT;
+                 }
+ 

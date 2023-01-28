@@ -1,0 +1,10 @@
+--- Lang44b/src/java/org/apache/commons/lang/NumberUtils.java	2017-03-20 23:37:00.000000000 +0800
++++ Lang44_Lang-44-mutant-3.patchb/src/java/org/apache/commons/lang/NumberUtils.java	2017-03-20 23:37:00.000000000 +0800
+@@ -188,7 +188,6 @@
+             String numeric = val.substring(0, val.length() - 1);
+             boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+             switch (lastChar) {
+-                case 'l' :
+                 case 'L' :
+                     if (dec == null
+                         && exp == null

@@ -1,0 +1,11 @@
+--- jd-result/Lang/63/mutant-17/a-DurationFormatUtils.java	2021-07-14 17:00:17.942126185 -0700
++++ jd-result/Lang/63/mutant-17/b-DurationFormatUtils.java	2021-07-14 17:00:19.414126226 -0700
+@@ -219,7 +219,7 @@
+ /*   0*/  
+ /*   0*/  static int reduceAndCorrect(Calendar start, Calendar end, int field, int difference) {
+ /* 433*/    end.add(field, -1 * difference);
+-/* 434*/    int endValue = end.get(field);
++/* 434*/    int endValue = end.getLeastMaximum(field);
+ /* 435*/    int startValue = start.get(field);
+ /* 436*/    if (endValue < startValue) {
+ /* 437*/      int newdiff = startValue - endValue;

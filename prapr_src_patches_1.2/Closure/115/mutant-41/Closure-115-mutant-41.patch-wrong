@@ -1,0 +1,198 @@
+--- jd-result/Closure/115/mutant-41/a-FunctionInjector.java	2021-07-14 21:49:29.158615802 -0700
++++ jd-result/Closure/115/mutant-41/b-FunctionInjector.java	2021-07-14 21:49:30.574615842 -0700
+@@ -307,43 +307,158 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private CanInlineResult canInlineReferenceDirectly(Node callNode, Node fnNode) {
+-/* 691*/    if (!isDirectCallNodeReplacementPossible(fnNode))
+-/* 692*/      return CanInlineResult.NO; 
+-/* 695*/    Node block = fnNode.getLastChild();
+-/*   0*/    boolean hasSideEffects = false;
+-/* 698*/    if (block.hasChildren()) {
+-/* 699*/      Preconditions.checkState(block.hasOneChild());
+-/* 700*/      Node stmt = block.getFirstChild();
+-/* 701*/      if (stmt.isReturn())
+-/* 702*/        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), this.compiler); 
+-/*   0*/    } 
+-/* 706*/    Node cArg = callNode.getFirstChild().getNext();
+-/* 711*/    if (!callNode.getFirstChild().isName())
+-/* 712*/      if (NodeUtil.isFunctionObjectCall(callNode)) {
+-/* 714*/        if (cArg == null || !cArg.isThis())
+-/* 715*/          return CanInlineResult.NO; 
+-/* 717*/        cArg = cArg.getNext();
+-/*   0*/      } else {
+-/* 720*/        Preconditions.checkState(!NodeUtil.isFunctionObjectApply(callNode));
+-/*   0*/      }  
+-/* 725*/    Node fnParam = NodeUtil.getFunctionParameters(fnNode).getFirstChild();
+-/* 726*/    while (cArg != null || fnParam != null) {
+-/* 728*/      if (fnParam != null) {
+-/* 729*/        if (cArg != null) {
+-/* 730*/          if (hasSideEffects && NodeUtil.canBeSideEffected(cArg))
+-/* 731*/            return CanInlineResult.NO; 
+-/* 736*/          if (NodeUtil.mayEffectMutableState(cArg, this.compiler) && NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1)
+-/* 739*/            return CanInlineResult.NO; 
+-/*   0*/        } 
+-/* 744*/        fnParam = fnParam.getNext();
+-/*   0*/      } 
+-/* 749*/      if (cArg != null) {
+-/* 750*/        if (NodeUtil.mayHaveSideEffects(cArg, this.compiler))
+-/* 751*/          return CanInlineResult.NO; 
+-/* 753*/        cArg = cArg.getNext();
+-/*   0*/      } 
+-/*   0*/    } 
+-/* 757*/    return CanInlineResult.YES;
++/*   0*/    // Byte code:
++/*   0*/    //   0: aload_0
++/*   0*/    //   1: aload_2
++/*   0*/    //   2: invokevirtual isDirectCallNodeReplacementPossible : (Lcom/google/javascript/rhino/Node;)Z
++/*   0*/    //   5: ifne -> 12
++/*   0*/    //   8: getstatic com/google/javascript/jscomp/FunctionInjector$CanInlineResult.NO : Lcom/google/javascript/jscomp/FunctionInjector$CanInlineResult;
++/*   0*/    //   11: areturn
++/*   0*/    //   12: aload_2
++/*   0*/    //   13: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   16: astore_3
++/*   0*/    //   17: iconst_0
++/*   0*/    //   18: istore #4
++/*   0*/    //   20: aload_3
++/*   0*/    //   21: invokevirtual hasChildren : ()Z
++/*   0*/    //   24: ifeq -> 62
++/*   0*/    //   27: aload_3
++/*   0*/    //   28: invokevirtual hasOneChild : ()Z
++/*   0*/    //   31: invokestatic checkState : (Z)V
++/*   0*/    //   34: aload_3
++/*   0*/    //   35: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   38: astore #5
++/*   0*/    //   40: aload #5
++/*   0*/    //   42: invokevirtual isReturn : ()Z
++/*   0*/    //   45: ifeq -> 62
++/*   0*/    //   48: aload #5
++/*   0*/    //   50: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   53: aload_0
++/*   0*/    //   54: getfield compiler : Lcom/google/javascript/jscomp/AbstractCompiler;
++/*   0*/    //   57: invokestatic mayHaveSideEffects : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/jscomp/AbstractCompiler;)Z
++/*   0*/    //   60: istore #4
++/*   0*/    //   62: aload_1
++/*   0*/    //   63: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   66: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   69: astore #5
++/*   0*/    //   71: aload_1
++/*   0*/    //   72: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   75: invokevirtual isName : ()Z
++/*   0*/    //   78: ifne -> 130
++/*   0*/    //   81: aload_1
++/*   0*/    //   82: invokestatic isFunctionObjectCall : (Lcom/google/javascript/rhino/Node;)Z
++/*   0*/    //   85: ifeq -> 115
++/*   0*/    //   88: aload #5
++/*   0*/    //   90: ifnull -> 101
++/*   0*/    //   93: aload #5
++/*   0*/    //   95: invokevirtual isThis : ()Z
++/*   0*/    //   98: ifne -> 105
++/*   0*/    //   101: getstatic com/google/javascript/jscomp/FunctionInjector$CanInlineResult.NO : Lcom/google/javascript/jscomp/FunctionInjector$CanInlineResult;
++/*   0*/    //   104: areturn
++/*   0*/    //   105: aload #5
++/*   0*/    //   107: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   110: astore #5
++/*   0*/    //   112: goto -> 130
++/*   0*/    //   115: aload_1
++/*   0*/    //   116: invokestatic isFunctionObjectApply : (Lcom/google/javascript/rhino/Node;)Z
++/*   0*/    //   119: ifne -> 126
++/*   0*/    //   122: iconst_1
++/*   0*/    //   123: goto -> 127
++/*   0*/    //   126: iconst_0
++/*   0*/    //   127: invokestatic checkState : (Z)V
++/*   0*/    //   130: aload_2
++/*   0*/    //   131: invokestatic getFunctionParameters : (Lcom/google/javascript/rhino/Node;)Lcom/google/javascript/rhino/Node;
++/*   0*/    //   134: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   137: astore #6
++/*   0*/    //   139: aload #5
++/*   0*/    //   141: ifnonnull -> 149
++/*   0*/    //   144: aload #6
++/*   0*/    //   146: ifnull -> 244
++/*   0*/    //   149: aload #6
++/*   0*/    //   151: ifnull -> 213
++/*   0*/    //   154: aload #5
++/*   0*/    //   156: ifnull -> 206
++/*   0*/    //   159: iload #4
++/*   0*/    //   161: pop
++/*   0*/    //   162: goto -> 177
++/*   0*/    //   165: aload #5
++/*   0*/    //   167: invokestatic canBeSideEffected : (Lcom/google/javascript/rhino/Node;)Z
++/*   0*/    //   170: ifeq -> 177
++/*   0*/    //   173: getstatic com/google/javascript/jscomp/FunctionInjector$CanInlineResult.NO : Lcom/google/javascript/jscomp/FunctionInjector$CanInlineResult;
++/*   0*/    //   176: areturn
++/*   0*/    //   177: aload #5
++/*   0*/    //   179: aload_0
++/*   0*/    //   180: getfield compiler : Lcom/google/javascript/jscomp/AbstractCompiler;
++/*   0*/    //   183: invokestatic mayEffectMutableState : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/jscomp/AbstractCompiler;)Z
++/*   0*/    //   186: ifeq -> 206
++/*   0*/    //   189: aload_3
++/*   0*/    //   190: aload #6
++/*   0*/    //   192: invokevirtual getString : ()Ljava/lang/String;
++/*   0*/    //   195: invokestatic getNameReferenceCount : (Lcom/google/javascript/rhino/Node;Ljava/lang/String;)I
++/*   0*/    //   198: iconst_1
++/*   0*/    //   199: if_icmple -> 206
++/*   0*/    //   202: getstatic com/google/javascript/jscomp/FunctionInjector$CanInlineResult.NO : Lcom/google/javascript/jscomp/FunctionInjector$CanInlineResult;
++/*   0*/    //   205: areturn
++/*   0*/    //   206: aload #6
++/*   0*/    //   208: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   211: astore #6
++/*   0*/    //   213: aload #5
++/*   0*/    //   215: ifnull -> 139
++/*   0*/    //   218: aload #5
++/*   0*/    //   220: aload_0
++/*   0*/    //   221: getfield compiler : Lcom/google/javascript/jscomp/AbstractCompiler;
++/*   0*/    //   224: invokestatic mayHaveSideEffects : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/jscomp/AbstractCompiler;)Z
++/*   0*/    //   227: ifeq -> 234
++/*   0*/    //   230: getstatic com/google/javascript/jscomp/FunctionInjector$CanInlineResult.NO : Lcom/google/javascript/jscomp/FunctionInjector$CanInlineResult;
++/*   0*/    //   233: areturn
++/*   0*/    //   234: aload #5
++/*   0*/    //   236: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   239: astore #5
++/*   0*/    //   241: goto -> 139
++/*   0*/    //   244: getstatic com/google/javascript/jscomp/FunctionInjector$CanInlineResult.YES : Lcom/google/javascript/jscomp/FunctionInjector$CanInlineResult;
++/*   0*/    //   247: areturn
++/*   0*/    // Line number table:
++/*   0*/    //   Java source line number -> byte code offset
++/*   0*/    //   #691	-> 0
++/*   0*/    //   #692	-> 8
++/*   0*/    //   #695	-> 12
++/*   0*/    //   #697	-> 17
++/*   0*/    //   #698	-> 20
++/*   0*/    //   #699	-> 27
++/*   0*/    //   #700	-> 34
++/*   0*/    //   #701	-> 40
++/*   0*/    //   #702	-> 48
++/*   0*/    //   #706	-> 62
++/*   0*/    //   #711	-> 71
++/*   0*/    //   #712	-> 81
++/*   0*/    //   #714	-> 88
++/*   0*/    //   #715	-> 101
++/*   0*/    //   #717	-> 105
++/*   0*/    //   #720	-> 115
++/*   0*/    //   #725	-> 130
++/*   0*/    //   #726	-> 139
++/*   0*/    //   #728	-> 149
++/*   0*/    //   #729	-> 154
++/*   0*/    //   #730	-> 159
++/*   0*/    //   #731	-> 173
++/*   0*/    //   #736	-> 177
++/*   0*/    //   #739	-> 202
++/*   0*/    //   #744	-> 206
++/*   0*/    //   #749	-> 213
++/*   0*/    //   #750	-> 218
++/*   0*/    //   #751	-> 230
++/*   0*/    //   #753	-> 234
++/*   0*/    //   #757	-> 244
++/*   0*/    // Local variable table:
++/*   0*/    //   start	length	slot	name	descriptor
++/*   0*/    //   40	22	5	stmt	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   0	248	0	this	Lcom/google/javascript/jscomp/FunctionInjector;
++/*   0*/    //   0	248	1	callNode	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   0	248	2	fnNode	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   17	231	3	block	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   20	228	4	hasSideEffects	Z
++/*   0*/    //   71	177	5	cArg	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   139	109	6	fnParam	Lcom/google/javascript/rhino/Node;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  boolean inliningLowersCost(JSModule fnModule, Node fnNode, Collection<? extends Reference> refs, Set<String> namesToAlias, boolean isRemovable, boolean referencesThis) {

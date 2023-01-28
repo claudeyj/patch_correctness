@@ -1,0 +1,372 @@
+--- jd-result/Closure/48/mutant-7/a-TypedScopeCreator.java	2021-07-14 21:44:00.438606526 -0700
++++ jd-result/Closure/48/mutant-7/b-TypedScopeCreator.java	2021-07-14 21:44:01.990606570 -0700
+@@ -746,55 +746,320 @@
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    void maybeDeclareQualifiedName(NodeTraversal t, JSDocInfo info, Node n, Node parent, Node rhsValue) {
+-/*1418*/      Node ownerNode = n.getFirstChild();
+-/*1419*/      String ownerName = ownerNode.getQualifiedName();
+-/*1420*/      String qName = n.getQualifiedName();
+-/*1421*/      String propName = n.getLastChild().getString();
+-/*1422*/      Preconditions.checkArgument((qName != null && ownerName != null));
+-/*1438*/      JSType valueType = getDeclaredType(t.getSourceName(), info, n, rhsValue);
+-/*1439*/      if (valueType == null && rhsValue != null)
+-/*1441*/        valueType = rhsValue.getJSType(); 
+-/*1448*/      if ("prototype".equals(propName)) {
+-/*1449*/        Scope.Var qVar = this.scope.getVar(qName);
+-/*1450*/        if (qVar != null) {
+-/*1456*/          ObjectType qVarType = ObjectType.cast(qVar.getType());
+-/*1457*/          if (qVarType != null && rhsValue != null && rhsValue.isObjectLit()) {
+-/*1460*/            TypedScopeCreator.this.typeRegistry.resetImplicitPrototype(rhsValue.getJSType(), qVarType.getImplicitPrototype());
+-/*1462*/          } else if (!qVar.isTypeInferred()) {
+-/*   0*/            return;
+-/*   0*/          } 
+-/*1470*/          if (qVar.getScope() == this.scope)
+-/*1471*/            this.scope.undeclare(qVar); 
+-/*   0*/        } 
+-/*   0*/      } 
+-/*1476*/      if (valueType == null) {
+-/*1477*/        if (parent.isExprResult())
+-/*1478*/          this.stubDeclarations.add(new TypedScopeCreator.StubDeclaration(n, (t.getInput() != null && t.getInput().isExtern()), ownerName)); 
+-/*   0*/        return;
+-/*   0*/      } 
+-/*   0*/      boolean inferred = true;
+-/*1512*/      if (info != null)
+-/*1514*/        inferred = (!info.hasType() && !info.hasEnumParameterType() && (!info.isConstant() || valueType == null || valueType.isUnknownType()) && !FunctionTypeBuilder.isFunctionTypeDeclaration(info)); 
+-/*1521*/      if (inferred)
+-/*1523*/        inferred = (rhsValue == null || !rhsValue.isFunction() || (info == null && this.scope.isDeclared(qName, false))); 
+-/*1528*/      if (!inferred) {
+-/*1529*/        ObjectType ownerType = getObjectSlot(ownerName);
+-/*1530*/        if (ownerType != null) {
+-/*1533*/          boolean isExtern = (t.getInput() != null && t.getInput().isExtern());
+-/*1534*/          if ((!ownerType.hasOwnProperty(propName) || ownerType.isPropertyTypeInferred(propName)) && ((isExtern && !ownerType.isNativeObjectType()) || !ownerType.isInstanceType()))
+-/*1539*/            ownerType.defineDeclaredProperty(propName, valueType, n); 
+-/*   0*/        } 
+-/*1545*/        defineSlot(n, parent, valueType, inferred);
+-/*1546*/      } else if (rhsValue != null && rhsValue.isTrue()) {
+-/*1548*/        FunctionType ownerType = JSType.toMaybeFunctionType(getObjectSlot(ownerName));
+-/*1550*/        if (ownerType != null) {
+-/*1551*/          JSType ownerTypeOfThis = ownerType.getTypeOfThis();
+-/*1552*/          String delegateName = TypedScopeCreator.this.codingConvention.getDelegateSuperclassName();
+-/*1553*/          JSType delegateType = (delegateName == null) ? null : TypedScopeCreator.this.typeRegistry.getType(delegateName);
+-/*1555*/          if (delegateType != null && ownerTypeOfThis.isSubtype(delegateType))
+-/*1557*/            defineSlot(n, parent, TypedScopeCreator.this.getNativeType(JSTypeNative.BOOLEAN_TYPE), true); 
+-/*   0*/        } 
+-/*   0*/      } 
++/*   0*/      // Byte code:
++/*   0*/      //   0: aload_3
++/*   0*/      //   1: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/      //   4: astore #6
++/*   0*/      //   6: aload #6
++/*   0*/      //   8: invokevirtual getQualifiedName : ()Ljava/lang/String;
++/*   0*/      //   11: astore #7
++/*   0*/      //   13: aload_3
++/*   0*/      //   14: invokevirtual getQualifiedName : ()Ljava/lang/String;
++/*   0*/      //   17: astore #8
++/*   0*/      //   19: aload_3
++/*   0*/      //   20: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/      //   23: invokevirtual getString : ()Ljava/lang/String;
++/*   0*/      //   26: astore #9
++/*   0*/      //   28: aload #8
++/*   0*/      //   30: ifnull -> 42
++/*   0*/      //   33: aload #7
++/*   0*/      //   35: ifnull -> 42
++/*   0*/      //   38: iconst_1
++/*   0*/      //   39: goto -> 43
++/*   0*/      //   42: iconst_0
++/*   0*/      //   43: invokestatic checkArgument : (Z)V
++/*   0*/      //   46: aload_0
++/*   0*/      //   47: aload_1
++/*   0*/      //   48: invokevirtual getSourceName : ()Ljava/lang/String;
++/*   0*/      //   51: aload_2
++/*   0*/      //   52: aload_3
++/*   0*/      //   53: aload #5
++/*   0*/      //   55: invokespecial getDeclaredType : (Ljava/lang/String;Lcom/google/javascript/rhino/JSDocInfo;Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/Node;)Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   58: astore #10
++/*   0*/      //   60: aload #10
++/*   0*/      //   62: pop
++/*   0*/      //   63: goto -> 78
++/*   0*/      //   66: aload #5
++/*   0*/      //   68: ifnull -> 78
++/*   0*/      //   71: aload #5
++/*   0*/      //   73: invokevirtual getJSType : ()Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   76: astore #10
++/*   0*/      //   78: ldc_w 'prototype'
++/*   0*/      //   81: aload #9
++/*   0*/      //   83: invokevirtual equals : (Ljava/lang/Object;)Z
++/*   0*/      //   86: ifeq -> 187
++/*   0*/      //   89: aload_0
++/*   0*/      //   90: getfield scope : Lcom/google/javascript/jscomp/Scope;
++/*   0*/      //   93: aload #8
++/*   0*/      //   95: invokevirtual getVar : (Ljava/lang/String;)Lcom/google/javascript/jscomp/Scope$Var;
++/*   0*/      //   98: astore #11
++/*   0*/      //   100: aload #11
++/*   0*/      //   102: ifnull -> 187
++/*   0*/      //   105: aload #11
++/*   0*/      //   107: invokevirtual getType : ()Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   110: invokestatic cast : (Lcom/google/javascript/rhino/jstype/JSType;)Lcom/google/javascript/rhino/jstype/ObjectType;
++/*   0*/      //   113: astore #12
++/*   0*/      //   115: aload #12
++/*   0*/      //   117: ifnull -> 157
++/*   0*/      //   120: aload #5
++/*   0*/      //   122: ifnull -> 157
++/*   0*/      //   125: aload #5
++/*   0*/      //   127: invokevirtual isObjectLit : ()Z
++/*   0*/      //   130: ifeq -> 157
++/*   0*/      //   133: aload_0
++/*   0*/      //   134: getfield this$0 : Lcom/google/javascript/jscomp/TypedScopeCreator;
++/*   0*/      //   137: invokestatic access$400 : (Lcom/google/javascript/jscomp/TypedScopeCreator;)Lcom/google/javascript/rhino/jstype/JSTypeRegistry;
++/*   0*/      //   140: aload #5
++/*   0*/      //   142: invokevirtual getJSType : ()Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   145: aload #12
++/*   0*/      //   147: invokevirtual getImplicitPrototype : ()Lcom/google/javascript/rhino/jstype/ObjectType;
++/*   0*/      //   150: invokevirtual resetImplicitPrototype : (Lcom/google/javascript/rhino/jstype/JSType;Lcom/google/javascript/rhino/jstype/ObjectType;)Z
++/*   0*/      //   153: pop
++/*   0*/      //   154: goto -> 166
++/*   0*/      //   157: aload #11
++/*   0*/      //   159: invokevirtual isTypeInferred : ()Z
++/*   0*/      //   162: ifne -> 166
++/*   0*/      //   165: return
++/*   0*/      //   166: aload #11
++/*   0*/      //   168: invokevirtual getScope : ()Lcom/google/javascript/jscomp/Scope;
++/*   0*/      //   171: aload_0
++/*   0*/      //   172: getfield scope : Lcom/google/javascript/jscomp/Scope;
++/*   0*/      //   175: if_acmpne -> 187
++/*   0*/      //   178: aload_0
++/*   0*/      //   179: getfield scope : Lcom/google/javascript/jscomp/Scope;
++/*   0*/      //   182: aload #11
++/*   0*/      //   184: invokevirtual undeclare : (Lcom/google/javascript/jscomp/Scope$Var;)V
++/*   0*/      //   187: aload #10
++/*   0*/      //   189: ifnonnull -> 244
++/*   0*/      //   192: aload #4
++/*   0*/      //   194: invokevirtual isExprResult : ()Z
++/*   0*/      //   197: ifeq -> 243
++/*   0*/      //   200: aload_0
++/*   0*/      //   201: getfield stubDeclarations : Ljava/util/List;
++/*   0*/      //   204: new com/google/javascript/jscomp/TypedScopeCreator$StubDeclaration
++/*   0*/      //   207: dup
++/*   0*/      //   208: aload_3
++/*   0*/      //   209: aload_1
++/*   0*/      //   210: invokevirtual getInput : ()Lcom/google/javascript/jscomp/CompilerInput;
++/*   0*/      //   213: ifnull -> 230
++/*   0*/      //   216: aload_1
++/*   0*/      //   217: invokevirtual getInput : ()Lcom/google/javascript/jscomp/CompilerInput;
++/*   0*/      //   220: invokevirtual isExtern : ()Z
++/*   0*/      //   223: ifeq -> 230
++/*   0*/      //   226: iconst_1
++/*   0*/      //   227: goto -> 231
++/*   0*/      //   230: iconst_0
++/*   0*/      //   231: aload #7
++/*   0*/      //   233: aconst_null
++/*   0*/      //   234: invokespecial <init> : (Lcom/google/javascript/rhino/Node;ZLjava/lang/String;Lcom/google/javascript/jscomp/TypedScopeCreator$1;)V
++/*   0*/      //   237: invokeinterface add : (Ljava/lang/Object;)Z
++/*   0*/      //   242: pop
++/*   0*/      //   243: return
++/*   0*/      //   244: iconst_1
++/*   0*/      //   245: istore #11
++/*   0*/      //   247: aload_2
++/*   0*/      //   248: ifnull -> 299
++/*   0*/      //   251: aload_2
++/*   0*/      //   252: invokevirtual hasType : ()Z
++/*   0*/      //   255: ifne -> 296
++/*   0*/      //   258: aload_2
++/*   0*/      //   259: invokevirtual hasEnumParameterType : ()Z
++/*   0*/      //   262: ifne -> 296
++/*   0*/      //   265: aload_2
++/*   0*/      //   266: invokevirtual isConstant : ()Z
++/*   0*/      //   269: ifeq -> 285
++/*   0*/      //   272: aload #10
++/*   0*/      //   274: ifnull -> 285
++/*   0*/      //   277: aload #10
++/*   0*/      //   279: invokevirtual isUnknownType : ()Z
++/*   0*/      //   282: ifeq -> 296
++/*   0*/      //   285: aload_2
++/*   0*/      //   286: invokestatic isFunctionTypeDeclaration : (Lcom/google/javascript/rhino/JSDocInfo;)Z
++/*   0*/      //   289: ifne -> 296
++/*   0*/      //   292: iconst_1
++/*   0*/      //   293: goto -> 297
++/*   0*/      //   296: iconst_0
++/*   0*/      //   297: istore #11
++/*   0*/      //   299: iload #11
++/*   0*/      //   301: ifeq -> 341
++/*   0*/      //   304: aload #5
++/*   0*/      //   306: ifnull -> 334
++/*   0*/      //   309: aload #5
++/*   0*/      //   311: invokevirtual isFunction : ()Z
++/*   0*/      //   314: ifeq -> 334
++/*   0*/      //   317: aload_2
++/*   0*/      //   318: ifnonnull -> 338
++/*   0*/      //   321: aload_0
++/*   0*/      //   322: getfield scope : Lcom/google/javascript/jscomp/Scope;
++/*   0*/      //   325: aload #8
++/*   0*/      //   327: iconst_0
++/*   0*/      //   328: invokevirtual isDeclared : (Ljava/lang/String;Z)Z
++/*   0*/      //   331: ifeq -> 338
++/*   0*/      //   334: iconst_1
++/*   0*/      //   335: goto -> 339
++/*   0*/      //   338: iconst_0
++/*   0*/      //   339: istore #11
++/*   0*/      //   341: iload #11
++/*   0*/      //   343: ifne -> 449
++/*   0*/      //   346: aload_0
++/*   0*/      //   347: aload #7
++/*   0*/      //   349: invokespecial getObjectSlot : (Ljava/lang/String;)Lcom/google/javascript/rhino/jstype/ObjectType;
++/*   0*/      //   352: astore #12
++/*   0*/      //   354: aload #12
++/*   0*/      //   356: ifnull -> 435
++/*   0*/      //   359: aload_1
++/*   0*/      //   360: invokevirtual getInput : ()Lcom/google/javascript/jscomp/CompilerInput;
++/*   0*/      //   363: ifnull -> 380
++/*   0*/      //   366: aload_1
++/*   0*/      //   367: invokevirtual getInput : ()Lcom/google/javascript/jscomp/CompilerInput;
++/*   0*/      //   370: invokevirtual isExtern : ()Z
++/*   0*/      //   373: ifeq -> 380
++/*   0*/      //   376: iconst_1
++/*   0*/      //   377: goto -> 381
++/*   0*/      //   380: iconst_0
++/*   0*/      //   381: istore #13
++/*   0*/      //   383: aload #12
++/*   0*/      //   385: aload #9
++/*   0*/      //   387: invokevirtual hasOwnProperty : (Ljava/lang/String;)Z
++/*   0*/      //   390: ifeq -> 403
++/*   0*/      //   393: aload #12
++/*   0*/      //   395: aload #9
++/*   0*/      //   397: invokevirtual isPropertyTypeInferred : (Ljava/lang/String;)Z
++/*   0*/      //   400: ifeq -> 435
++/*   0*/      //   403: iload #13
++/*   0*/      //   405: ifeq -> 416
++/*   0*/      //   408: aload #12
++/*   0*/      //   410: invokevirtual isNativeObjectType : ()Z
++/*   0*/      //   413: ifeq -> 424
++/*   0*/      //   416: aload #12
++/*   0*/      //   418: invokevirtual isInstanceType : ()Z
++/*   0*/      //   421: ifne -> 435
++/*   0*/      //   424: aload #12
++/*   0*/      //   426: aload #9
++/*   0*/      //   428: aload #10
++/*   0*/      //   430: aload_3
++/*   0*/      //   431: invokevirtual defineDeclaredProperty : (Ljava/lang/String;Lcom/google/javascript/rhino/jstype/JSType;Lcom/google/javascript/rhino/Node;)Z
++/*   0*/      //   434: pop
++/*   0*/      //   435: aload_0
++/*   0*/      //   436: aload_3
++/*   0*/      //   437: aload #4
++/*   0*/      //   439: aload #10
++/*   0*/      //   441: iload #11
++/*   0*/      //   443: invokevirtual defineSlot : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/jstype/JSType;Z)V
++/*   0*/      //   446: goto -> 555
++/*   0*/      //   449: aload #5
++/*   0*/      //   451: ifnull -> 555
++/*   0*/      //   454: aload #5
++/*   0*/      //   456: invokevirtual isTrue : ()Z
++/*   0*/      //   459: ifeq -> 555
++/*   0*/      //   462: aload_0
++/*   0*/      //   463: aload #7
++/*   0*/      //   465: invokespecial getObjectSlot : (Ljava/lang/String;)Lcom/google/javascript/rhino/jstype/ObjectType;
++/*   0*/      //   468: invokestatic toMaybeFunctionType : (Lcom/google/javascript/rhino/jstype/JSType;)Lcom/google/javascript/rhino/jstype/FunctionType;
++/*   0*/      //   471: astore #12
++/*   0*/      //   473: aload #12
++/*   0*/      //   475: ifnull -> 555
++/*   0*/      //   478: aload #12
++/*   0*/      //   480: invokevirtual getTypeOfThis : ()Lcom/google/javascript/rhino/jstype/ObjectType;
++/*   0*/      //   483: astore #13
++/*   0*/      //   485: aload_0
++/*   0*/      //   486: getfield this$0 : Lcom/google/javascript/jscomp/TypedScopeCreator;
++/*   0*/      //   489: invokestatic access$900 : (Lcom/google/javascript/jscomp/TypedScopeCreator;)Lcom/google/javascript/jscomp/CodingConvention;
++/*   0*/      //   492: invokeinterface getDelegateSuperclassName : ()Ljava/lang/String;
++/*   0*/      //   497: astore #14
++/*   0*/      //   499: aload #14
++/*   0*/      //   501: ifnonnull -> 508
++/*   0*/      //   504: aconst_null
++/*   0*/      //   505: goto -> 520
++/*   0*/      //   508: aload_0
++/*   0*/      //   509: getfield this$0 : Lcom/google/javascript/jscomp/TypedScopeCreator;
++/*   0*/      //   512: invokestatic access$400 : (Lcom/google/javascript/jscomp/TypedScopeCreator;)Lcom/google/javascript/rhino/jstype/JSTypeRegistry;
++/*   0*/      //   515: aload #14
++/*   0*/      //   517: invokevirtual getType : (Ljava/lang/String;)Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   520: astore #15
++/*   0*/      //   522: aload #15
++/*   0*/      //   524: ifnull -> 555
++/*   0*/      //   527: aload #13
++/*   0*/      //   529: aload #15
++/*   0*/      //   531: invokevirtual isSubtype : (Lcom/google/javascript/rhino/jstype/JSType;)Z
++/*   0*/      //   534: ifeq -> 555
++/*   0*/      //   537: aload_0
++/*   0*/      //   538: aload_3
++/*   0*/      //   539: aload #4
++/*   0*/      //   541: aload_0
++/*   0*/      //   542: getfield this$0 : Lcom/google/javascript/jscomp/TypedScopeCreator;
++/*   0*/      //   545: getstatic com/google/javascript/rhino/jstype/JSTypeNative.BOOLEAN_TYPE : Lcom/google/javascript/rhino/jstype/JSTypeNative;
++/*   0*/      //   548: invokestatic access$600 : (Lcom/google/javascript/jscomp/TypedScopeCreator;Lcom/google/javascript/rhino/jstype/JSTypeNative;)Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   551: iconst_1
++/*   0*/      //   552: invokevirtual defineSlot : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/jstype/JSType;Z)V
++/*   0*/      //   555: return
++/*   0*/      // Line number table:
++/*   0*/      //   Java source line number -> byte code offset
++/*   0*/      //   #1418	-> 0
++/*   0*/      //   #1419	-> 6
++/*   0*/      //   #1420	-> 13
++/*   0*/      //   #1421	-> 19
++/*   0*/      //   #1422	-> 28
++/*   0*/      //   #1438	-> 46
++/*   0*/      //   #1439	-> 60
++/*   0*/      //   #1441	-> 71
++/*   0*/      //   #1448	-> 78
++/*   0*/      //   #1449	-> 89
++/*   0*/      //   #1450	-> 100
++/*   0*/      //   #1456	-> 105
++/*   0*/      //   #1457	-> 115
++/*   0*/      //   #1460	-> 133
++/*   0*/      //   #1462	-> 157
++/*   0*/      //   #1468	-> 165
++/*   0*/      //   #1470	-> 166
++/*   0*/      //   #1471	-> 178
++/*   0*/      //   #1476	-> 187
++/*   0*/      //   #1477	-> 192
++/*   0*/      //   #1478	-> 200
++/*   0*/      //   #1484	-> 243
++/*   0*/      //   #1511	-> 244
++/*   0*/      //   #1512	-> 247
++/*   0*/      //   #1514	-> 251
++/*   0*/      //   #1521	-> 299
++/*   0*/      //   #1523	-> 304
++/*   0*/      //   #1528	-> 341
++/*   0*/      //   #1529	-> 346
++/*   0*/      //   #1530	-> 354
++/*   0*/      //   #1533	-> 359
++/*   0*/      //   #1534	-> 383
++/*   0*/      //   #1539	-> 424
++/*   0*/      //   #1545	-> 435
++/*   0*/      //   #1546	-> 446
++/*   0*/      //   #1548	-> 462
++/*   0*/      //   #1550	-> 473
++/*   0*/      //   #1551	-> 478
++/*   0*/      //   #1552	-> 485
++/*   0*/      //   #1553	-> 499
++/*   0*/      //   #1555	-> 522
++/*   0*/      //   #1557	-> 537
++/*   0*/      //   #1561	-> 555
++/*   0*/      // Local variable table:
++/*   0*/      //   start	length	slot	name	descriptor
++/*   0*/      //   115	72	12	qVarType	Lcom/google/javascript/rhino/jstype/ObjectType;
++/*   0*/      //   100	87	11	qVar	Lcom/google/javascript/jscomp/Scope$Var;
++/*   0*/      //   383	52	13	isExtern	Z
++/*   0*/      //   354	92	12	ownerType	Lcom/google/javascript/rhino/jstype/ObjectType;
++/*   0*/      //   485	70	13	ownerTypeOfThis	Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   499	56	14	delegateName	Ljava/lang/String;
++/*   0*/      //   522	33	15	delegateType	Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   473	82	12	ownerType	Lcom/google/javascript/rhino/jstype/FunctionType;
++/*   0*/      //   0	556	0	this	Lcom/google/javascript/jscomp/TypedScopeCreator$AbstractScopeBuilder;
++/*   0*/      //   0	556	1	t	Lcom/google/javascript/jscomp/NodeTraversal;
++/*   0*/      //   0	556	2	info	Lcom/google/javascript/rhino/JSDocInfo;
++/*   0*/      //   0	556	3	n	Lcom/google/javascript/rhino/Node;
++/*   0*/      //   0	556	4	parent	Lcom/google/javascript/rhino/Node;
++/*   0*/      //   0	556	5	rhsValue	Lcom/google/javascript/rhino/Node;
++/*   0*/      //   6	550	6	ownerNode	Lcom/google/javascript/rhino/Node;
++/*   0*/      //   13	543	7	ownerName	Ljava/lang/String;
++/*   0*/      //   19	537	8	qName	Ljava/lang/String;
++/*   0*/      //   28	528	9	propName	Ljava/lang/String;
++/*   0*/      //   60	496	10	valueType	Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/      //   247	309	11	inferred	Z
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    private ObjectType getObjectSlot(String slotName) {

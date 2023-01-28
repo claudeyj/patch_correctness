@@ -1,0 +1,11 @@
+--- jd-result/Closure/45/mutant-7/ori-RemoveUnusedVars.java	2021-07-15 18:51:53.904753170 -0700
++++ jd-result/Closure/45/mutant-7/fixed-patched-RemoveUnusedVars.java	2021-07-22 22:40:02.346443681 -0700
+@@ -733,7 +733,7 @@
+             if (assign.isPropertyAssign) {
+               hasPropertyAssign = true;
+             } else if (!NodeUtil.isLiteralValue(
+-                assign.assignNode.getLastChild(), true)) {
++                assign.assignNode.cloneTree(), true)) {
+               assignedToUnknownValue = true;
+             }
+           }

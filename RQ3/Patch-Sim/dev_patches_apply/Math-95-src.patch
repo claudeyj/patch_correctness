@@ -1,0 +1,17 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/95/mutant-0/buggy-FDistributionImpl.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/95/mutant-0/patched-FDistributionImpl.java
+--- Math95b/src/java/org/apache/commons/math/distribution/FDistributionImpl.java
++++ Math95b_Math-95-src.patchb/src/java/org/apache/commons/math/distribution/FDistributionImpl.java
+@@ -141,10 +141,12 @@
+      * @return initial domain value
+      */
+     protected double getInitialDomain(double p) {
+-        double ret;
++        double ret = 1.0;
+         double d = getDenominatorDegreesOfFreedom();
++        if (d > 2.0) {
+             // use mean
+             ret = d / (d - 2.0);
++        }
+         return ret;
+     }
+     

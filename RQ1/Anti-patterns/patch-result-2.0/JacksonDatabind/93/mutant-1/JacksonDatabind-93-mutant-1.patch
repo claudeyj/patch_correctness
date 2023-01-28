@@ -1,0 +1,22 @@
+--- jd-result-2.0/JacksonDatabind/93/mutant-1/a-SubTypeValidator.java	2021-08-09 04:37:57.001586540 -0700
++++ jd-result-2.0/JacksonDatabind/93/mutant-1/b-SubTypeValidator.java	2021-08-09 04:37:58.441586580 -0700
+@@ -50,14 +50,17 @@
+ /*   0*/       }
+ /*   0*/    if (full.startsWith("org.springframework.")) {
+ /*   0*/        for (Class<?> cls = raw; cls != Object.class; ) {
++/*   0*/          if (cls == null) {
++/*   0*/              return; 
++/*   0*/             }
+ /*   0*/          String name = cls.getSimpleName();
+ /*   0*/          if (!"AbstractPointcutAdvisor".equals(name)) {
+ /*   0*/            if ("AbstractApplicationContext".equals(name)) {
+-/*   0*/                // Byte code: goto -> 90 
++/*   0*/                // Byte code: goto -> 94 
+ /*   0*/               }
+ /*   0*/            cls = cls.getSuperclass();
+ /*   0*/          } 
+-/*   0*/          // Byte code: goto -> 90
++/*   0*/          // Byte code: goto -> 94
+ /*   0*/        }  
+ /*   0*/       }
+ /*   0*/  }

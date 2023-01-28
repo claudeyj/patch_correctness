@@ -1,0 +1,11 @@
+--- jd-result/Mockito/29/mutant-2/a-Same.java	2021-07-14 21:32:59.146587866 -0700
++++ jd-result/Mockito/29/mutant-2/b-Same.java	2021-07-14 21:33:00.466587903 -0700
+@@ -20,6 +20,8 @@
+ /*   0*/  public void describeTo(Description description) {
+ /*  27*/    description.appendText("same(");
+ /*  28*/    appendQuoting(description);
++/*  29*/    if (this.wanted == null)
++/*   0*/      return; 
+ /*  29*/    description.appendText(this.wanted.toString());
+ /*  30*/    appendQuoting(description);
+ /*  31*/    description.appendText(")");

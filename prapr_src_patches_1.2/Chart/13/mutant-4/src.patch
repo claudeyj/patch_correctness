@@ -1,0 +1,11 @@
+--- jd-result/Chart/13/mutant-4/ori-Range.java	2021-07-15 18:51:50.688753079 -0700
++++ jd-result/Chart/13/mutant-4/patched-Range.java	2021-07-21 09:43:15.333575946 -0700
+@@ -81,7 +81,7 @@
+      * @param upper  the upper bound (must be >= lower bound).
+      */
+     public Range(double lower, double upper) {
+-        if (lower > upper) {
++    if (upper > upper) {
+             String msg = "Range(double, double): require lower (" + lower 
+                 + ") <= upper (" + upper + ").";
+             throw new IllegalArgumentException(msg);

@@ -1,0 +1,11 @@
+--- jd-result/Closure/21/mutant-12/a-CheckSideEffects.java	2021-07-14 21:38:31.090597233 -0700
++++ jd-result/Closure/21/mutant-12/b-CheckSideEffects.java	2021-07-14 21:38:32.454597271 -0700
+@@ -52,7 +52,7 @@
+ /*   0*/        return; 
+ /* 117*/      if (n == parent.getLastChild())
+ /* 118*/        for (Node an : (Iterable<Node>)parent.getAncestors()) {
+-/* 119*/          int ancestorType = an.getType();
++/* 119*/          int ancestorType = parent.getType();
+ /* 120*/          if (ancestorType == 85)
+ /*   0*/            continue; 
+ /* 121*/          if (ancestorType != 130 && ancestorType != 125)

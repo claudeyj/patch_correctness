@@ -1,0 +1,12 @@
+--- jd-result/Closure/13/mutant-8/a-PeepholeOptimizationsPass.java	2021-07-14 21:37:22.438595295 -0700
++++ jd-result/Closure/13/mutant-8/b-PeepholeOptimizationsPass.java	2021-07-14 21:37:23.778595333 -0700
+@@ -81,8 +81,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void traverse(Node node) {
+-/* 118*/    if (!shouldVisit(node))
+-/*   0*/      return; 
++/* 118*/    shouldVisit(node);
+ /* 122*/    int visits = 0;
+ /*   0*/    do {
+ /* 124*/      Node c = node.getFirstChild();

@@ -1,0 +1,29 @@
+--- jd-result/Mockito/5/mutant-12/a-Whitebox.java	2021-07-14 21:31:26.014585238 -0700
++++ jd-result/Mockito/5/mutant-12/b-Whitebox.java	2021-07-14 21:31:27.290585274 -0700
+@@ -9,7 +9,7 @@
+ /*  14*/      Field f = getFieldFromHierarchy(c, field);
+ /*  15*/      f.setAccessible(true);
+ /*  16*/      return f.get(target);
+-/*  17*/    } catch (Exception e) {
++/*  17*/    } catch (Throwable e) {
+ /*  18*/      throw new RuntimeException("Unable to get internal state on a private field. Please report to mockito mailing list.", e);
+ /*   0*/    } 
+ /*   0*/  }
+@@ -20,7 +20,7 @@
+ /*  25*/      Field f = getFieldFromHierarchy(c, field);
+ /*  26*/      f.setAccessible(true);
+ /*  27*/      f.set(target, value);
+-/*  28*/    } catch (Exception e) {
++/*  28*/    } catch (Throwable e) {
+ /*  29*/      throw new RuntimeException("Unable to set internal state on a private field. Please report to mockito mailing list.", e);
+ /*   0*/    } 
+ /*   0*/  }
+@@ -39,7 +39,7 @@
+ /*   0*/  private static Field getField(Class<?> clazz, String field) {
+ /*   0*/    try {
+ /*  50*/      return clazz.getDeclaredField(field);
+-/*  51*/    } catch (NoSuchFieldException e) {
++/*  51*/    } catch (ReflectiveOperationException e) {
+ /*  52*/      return null;
+ /*   0*/    } 
+ /*   0*/  }

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/11/mutant-2/a-HelpFormatter.java	2021-08-09 04:40:13.417590389 -0700
++++ jd-result-2.0/Cli/11/mutant-2/b-HelpFormatter.java	2021-08-09 04:40:14.865590430 -0700
+@@ -214,7 +214,7 @@
+ /*   0*/    } else {
+ /* 628*/      buff.append("--").append(option.getLongOpt());
+ /*   0*/    } 
+-/* 632*/    if (option.hasArg() && option.getArgName() != null) {
++/* 632*/    if (option.hasArgs() && option.getArgName() != null) {
+ /* 634*/        buff.append(" <").append(option.getArgName()).append(">"); 
+ /*   0*/       }
+ /* 638*/    if (!required) {

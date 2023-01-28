@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/27/mutant-2/ori-ExternalTypeHandler.java	2021-08-08 21:02:02.328814645 -0700
++++ jd-result-2.0/JacksonDatabind/27/mutant-2/man-patched-ExternalTypeHandler.java	2021-08-10 05:58:51.812161571 -0700
+@@ -112,7 +112,7 @@
+         /* Minor optimization: let's deserialize properties as soon as
+          * we have all pertinent information:
+          */
+-        if (canDeserialize) {
++        if (false) {
+             String typeId = _typeIds[index];
+             // clear stored data, to avoid deserializing+setting twice:
+             _typeIds[index] = null;

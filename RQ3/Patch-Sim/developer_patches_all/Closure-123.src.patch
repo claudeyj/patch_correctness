@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/123/mutant-0/buggy-CodeGenerator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/123/mutant-0/patched-CodeGenerator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/123/mutant-0/buggy-CodeGenerator.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/123/mutant-0/patched-CodeGenerator.java	2021-08-22 00:18:38.590190183 -0700
+@@ -282,7 +282,7 @@
+       case Token.HOOK: {
+         Preconditions.checkState(childCount == 3);
+         int p = NodeUtil.precedence(type);
+-        Context rhsContext = Context.OTHER;
++        Context rhsContext = getContextForNoInOperator(context);
+         addExpr(first, p + 1, context);
+         cc.addOp("?", true);
+         addExpr(first.getNext(), 1, rhsContext);

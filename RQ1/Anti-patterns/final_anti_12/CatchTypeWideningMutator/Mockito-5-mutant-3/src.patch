@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-3/ori-VerificationOverTimeImpl.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-3/man-patched-VerificationOverTimeImpl.java	2021-07-31 06:27:23.763829501 -0700
+@@ -88,7 +88,7 @@
+             } catch (MockitoAssertionError e) {
+                 error = handleVerifyException(e);
+             }
+-            catch (org.mockito.exceptions.verification.junit.ArgumentsAreDifferent e) {
++            catch (AssertionError e) {
+                 error = handleVerifyException(e);
+             }
+         }

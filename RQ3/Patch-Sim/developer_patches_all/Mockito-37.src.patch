@@ -1,0 +1,20 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/37/mutant-0/buggy-AnswersValidator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/37/mutant-0/patched-AnswersValidator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/37/mutant-0/buggy-AnswersValidator.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/37/mutant-0/patched-AnswersValidator.java	2021-08-22 00:18:38.706190186 -0700
+@@ -25,8 +25,16 @@
+             validateDoNothing((DoesNothing) answer, invocation);
+         }
+         
++        if (answer instanceof CallsRealMethods) {
++            validateMockingConcreteClass((CallsRealMethods) answer, invocation);
++        }
+     }
+ 
++    private void validateMockingConcreteClass(CallsRealMethods answer, Invocation invocation) {
++        if (invocation.getMethod().getDeclaringClass().isInterface()) {
++            reporter.cannotCallRealMethodOnInterface();
++        }
++    }
+ 
+     private void validateDoNothing(DoesNothing answer, Invocation invocation) {
+         if (!invocation.isVoid()) {

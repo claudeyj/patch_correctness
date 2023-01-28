@@ -1,0 +1,17 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/80/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/80/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/80/buggy1.java	2021-08-27 19:18:33.786863949 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/80/tool-patch1.java	2021-08-27 19:18:33.786863949 -0700
+@@ -1134,11 +1134,13 @@
+             // flip array
+             int j = 4 * n - 1;
+             for (int i = 0; i < j; i += 4) {
++                if (org.apache.commons.math.linear.EigenDecompositionImpl.this.cachedV!=null) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+                     work[i + k] = work[j - k];
+                     work[j - k] = tmp;
+                 }
++                }
+                 j -= 4;
+             }
+             return true;

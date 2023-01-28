@@ -1,0 +1,67 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 17 09:14:32 PDT 2021
+Number of Plausible Fixes: 7
+Total Number of Patches: 1472
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to contains
+	File Name: org/apache/commons/cli/PosixParser.java
+	Line Number: 187
+	Rank: 3
+	Total Rank: 38
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to equals
+	File Name: org/apache/commons/cli/PosixParser.java
+	Line Number: 187
+	Rank: 3
+	Total Rank: 38
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to remove
+	File Name: org/apache/commons/cli/PosixParser.java
+	Line Number: 187
+	Rank: 3
+	Total Rank: 38
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/util/List::add
+	File Name: org/apache/commons/cli/PosixParser.java
+	Line Number: 187
+	Rank: 4
+	Total Rank: 42
+	Dump: mutant-5.class
+------------------------------------------------
+5.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/cli/PosixParser.java
+	Line Number: 206
+	Rank: 5
+	Total Rank: 166
+	Dump: mutant-2.class
+------------------------------------------------
+6.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/apache/commons/cli/Options::hasOption
+	File Name: org/apache/commons/cli/PosixParser.java
+	Line Number: 206
+	Rank: 6
+	Total Rank: 168
+	Dump: mutant-6.class
+------------------------------------------------
+7.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/apache/commons/cli/PosixParser.java
+	Line Number: 206
+	Rank: 7
+	Total Rank: 170
+	Dump: mutant-7.class
+------------------------------------------------

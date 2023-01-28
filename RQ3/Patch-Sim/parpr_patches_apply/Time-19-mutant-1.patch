@@ -1,0 +1,11 @@
+--- Time19b/src/main/java/org/joda/time/DateTimeZone.java	2017-08-23 00:21:33.961147691 +0800
++++ Time19_Time-19-mutant-1.patchb/src/main/java/org/joda/time/DateTimeZone.java	2017-08-23 00:21:33.961147691 +0800
+@@ -897,7 +897,7 @@
+                     return offsetLocal;
+                 }
+             }
+-        } else if (offsetLocal > 0) {
++        } else if (true) {
+             long prev = previousTransition(instantAdjusted);
+             if (prev < instantAdjusted) {
+                 int offsetPrev = getOffset(prev);

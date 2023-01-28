@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/18/mutant-8/a-TarArchiveOutputStream.java	2021-08-09 03:55:07.693514039 -0700
++++ jd-result-2.0/Compress/18/mutant-8/b-TarArchiveOutputStream.java	2021-08-09 03:55:09.221514082 -0700
+@@ -246,7 +246,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  void writePaxHeaders(String entryName, Map<String, String> headers) throws IOException {
+-/* 456*/    String name = "./PaxHeaders.X/" + stripTo7Bits(entryName);
++/* 456*/    String str1 = stripTo7Bits(entryName), name = "./PaxHeaders.X/" + LONGFILE_ERROR;
+ /* 459*/    if (name.length() >= 100) {
+ /* 460*/        name = name.substring(0, 99); 
+ /*   0*/       }

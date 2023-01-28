@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-15.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -355,7 +355,7 @@
+      * @return The top margin (in Java2D units).
+      */
+     public double calculateTopInset(double height) {
+-        double result = this.top;
++    double result = height;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.top * height);
+         }

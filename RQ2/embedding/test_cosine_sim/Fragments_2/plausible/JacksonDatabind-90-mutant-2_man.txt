@@ -1,0 +1,7 @@
+    public boolean canInstantiate() {
+        return canCreateUsingDefault()
+                || canCreateUsingDelegate() 
+                || canCreateFromObjectWith() || canCreateUsingArrayDelegate()
+                || canCreateFromInt() || canCreateFromLong()
+                || canCreateFromDouble() || canCreateFromBoolean();
+    }

@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/56/mutant-0/buggy-MultidimensionalCounter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/56/mutant-0/patched-MultidimensionalCounter.java
+--- Math56b/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java
++++ Math56b_Math-56-src.patchb/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java
+@@ -234,13 +234,7 @@
+             indices[i] = idx;
+         }
+ 
+-        int idx = 1;
+-        while (count < index) {
+-            count += idx;
+-            ++idx;
+-        }
+-        --idx;
+-        indices[last] = idx;
++        indices[last] = index - count;
+ 
+         return indices;
+     }

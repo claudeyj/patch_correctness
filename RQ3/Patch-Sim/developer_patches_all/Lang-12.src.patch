@@ -1,0 +1,26 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/12/mutant-0/buggy-RandomStringUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/12/mutant-0/patched-RandomStringUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/12/mutant-0/buggy-RandomStringUtils.java	2021-08-22 00:18:38.630190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/12/mutant-0/patched-RandomStringUtils.java	2021-08-22 00:18:38.630190184 -0700
+@@ -227,8 +227,14 @@
+         } else if (count < 0) {
+             throw new IllegalArgumentException("Requested random string length " + count + " is less than 0.");
+         }
++        if (chars != null && chars.length == 0) {
++            throw new IllegalArgumentException("The chars array must not be empty");
++        }
+ 
+         if (start == 0 && end == 0) {
++            if (chars != null) {
++                end = chars.length;
++            } else {
+                 if (!letters && !numbers) {
+                     end = Integer.MAX_VALUE;
+                 } else {
+@@ -236,6 +242,7 @@
+                     start = ' ';                
+                 }
+         }
++        }
+ 
+         char[] buffer = new char[count];
+         int gap = end - start;

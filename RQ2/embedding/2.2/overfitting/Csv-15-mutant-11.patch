@@ -1,0 +1,11 @@
+--- jd-result-2.0/Csv/15/mutant-11/ori-CSVFormat.java	2021-08-08 21:02:01.612814625 -0700
++++ jd-result-2.0/Csv/15/mutant-11/patched-CSVFormat.java	2021-08-09 06:25:54.757769329 -0700
+@@ -1186,7 +1186,7 @@
+             } else {
+                 char c = value.charAt(pos);
+ 
+-                if (newRecord && (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {
++          if (newRecord && (c < ' ' || (c > '!' && c < '#') || (c > '+' && c < '-') || this.delimiter > '~')) {
+                     quote = true;
+                 } else if (c <= COMMENT) {
+                     // Some other chars at the start of a value caused the parser to fail, so for now

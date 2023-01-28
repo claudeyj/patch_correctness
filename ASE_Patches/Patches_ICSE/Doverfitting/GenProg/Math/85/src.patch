@@ -1,0 +1,37 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/85/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/85/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/85/buggy1.java	2021-08-27 19:18:35.022863984 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/85/tool-patch1.java	2021-08-27 19:18:35.022863984 -0700
+@@ -187,6 +187,7 @@
+     
+         do {
+             a = Math.max(a - 1.0, lowerBound);
++            int i = 0;
+             b = Math.min(b + 1.0, upperBound);
+             fa = function.value(a);
+             
+@@ -196,12 +197,6 @@
+                 ((a > lowerBound) || (b < upperBound)));
+    
+         if (fa * fb >= 0.0 ) {
+-            throw new ConvergenceException(
+-                      "number of iterations={0}, maximum iterations={1}, " +
+-                      "initial={2}, lower bound={3}, upper bound={4}, final a value={5}, " +
+-                      "final b value={6}, f(a)={7}, f(b)={8}",
+-                      numIterations, maximumIterations, initial,
+-                      lowerBound, upperBound, a, b, fa, fb);
+         }
+         
+         return new double[]{a, b};
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/85/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/85/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/85/buggy2.java	2021-08-27 19:18:35.022863984 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/85/tool-patch2.java	2021-08-27 19:18:35.022863984 -0700
+@@ -97,6 +97,9 @@
+             if (Math.abs(rootFindingFunction.value(lowerBound)) < 1E-6) {
+                 return lowerBound;
+             }
++            if (p == 0) {
++                return Double.NEGATIVE_INFINITY;
++            }
+             if (Math.abs(rootFindingFunction.value(upperBound)) < 1E-6) {
+                 return upperBound;
+             }     

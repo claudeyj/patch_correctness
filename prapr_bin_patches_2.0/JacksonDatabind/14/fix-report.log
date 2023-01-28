@@ -1,0 +1,184 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 21 12:20:47 PDT 2021
+Number of Plausible Fixes: 20
+Total Number of Patches: 21041
+================================================
+1.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local jp is replaced a call jp.skipChildren()
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1022
+	Rank: 1
+	Total Rank: 40
+	Dump: mutant-20.class
+------------------------------------------------
+2.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local jp is replaced a call jp.skipChildren()
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1471
+	Rank: 2
+	Total Rank: 124
+	Dump: mutant-9.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local deser is replaced by access to field _rootDeserializer
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1605
+	Rank: 3
+	Total Rank: 1316
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: ReturnValsMutator
+	Description: mutated return of Object value for com/fasterxml/jackson/databind/ObjectReader::_prefetchRootDeserializer to ( if (x != null) null else throw new RuntimeException )
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1605
+	Rank: 4
+	Total Rank: 1318
+	Dump: mutant-7.class
+------------------------------------------------
+5.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for com/fasterxml/jackson/databind/ObjectReader::_prefetchRootDeserializer
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1605
+	Rank: 5
+	Total Rank: 1319
+	Dump: mutant-19.class
+------------------------------------------------
+6.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local deser is replaced a call deser.getDelegatee()
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1605
+	Rank: 6
+	Total Rank: 1321
+	Dump: mutant-11.class
+------------------------------------------------
+7.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local p is replaced a call p.skipChildren()
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 337
+	Rank: 8
+	Total Rank: 2700
+	Dump: mutant-2.class
+------------------------------------------------
+8.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local p is replaced a call p.skipChildren()
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 343
+	Rank: 8
+	Total Rank: 2700
+	Dump: mutant-3.class
+------------------------------------------------
+9.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1551
+	Rank: 9
+	Total Rank: 3030
+	Dump: mutant-16.class
+------------------------------------------------
+10.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 10
+	Total Rank: 3114
+	Dump: mutant-10.class
+------------------------------------------------
+11.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 11
+	Total Rank: 3117
+	Dump: mutant-15.class
+------------------------------------------------
+12.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/DeserializationConfig::isEnabled
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 13
+	Total Rank: 3121
+	Dump: mutant-1.class
+------------------------------------------------
+13.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/ObjectReader::_prefetchRootDeserializer
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 187
+	Rank: 13
+	Total Rank: 3121
+	Dump: mutant-13.class
+------------------------------------------------
+14.
+	Mutator: MemberVariableMutator
+	Description: Removed assignment to member variable _rootDeserializer
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 187
+	Rank: 14
+	Total Rank: 3133
+	Dump: mutant-14.class
+------------------------------------------------
+15.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 15
+	Total Rank: 3136
+	Dump: mutant-17.class
+------------------------------------------------
+16.
+	Mutator: FieldNameMutator
+	Description: replaced access to EAGER_DESERIALIZER_FETCH with an access to USE_JAVA_ARRAY_FOR_JSON_ARRAY
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 20
+	Total Rank: 3142
+	Dump: mutant-5.class
+------------------------------------------------
+17.
+	Mutator: FieldNameMutator
+	Description: replaced access to EAGER_DESERIALIZER_FETCH with an access to FAIL_ON_NULL_FOR_PRIMITIVES
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 20
+	Total Rank: 3142
+	Dump: mutant-6.class
+------------------------------------------------
+18.
+	Mutator: FieldNameMutator
+	Description: replaced access to EAGER_DESERIALIZER_FETCH with an access to USE_BIG_DECIMAL_FOR_FLOATS
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 20
+	Total Rank: 3142
+	Dump: mutant-8.class
+------------------------------------------------
+19.
+	Mutator: FieldNameMutator
+	Description: replaced access to EAGER_DESERIALIZER_FETCH with an access to READ_ENUMS_USING_TO_STRING
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 20
+	Total Rank: 3142
+	Dump: mutant-12.class
+------------------------------------------------
+20.
+	Mutator: FieldNameMutator
+	Description: replaced access to EAGER_DESERIALIZER_FETCH with an access to USE_BIG_INTEGER_FOR_INTS
+	File Name: com/fasterxml/jackson/databind/ObjectReader.java
+	Line Number: 1586
+	Rank: 20
+	Total Rank: 3142
+	Dump: mutant-18.class
+------------------------------------------------

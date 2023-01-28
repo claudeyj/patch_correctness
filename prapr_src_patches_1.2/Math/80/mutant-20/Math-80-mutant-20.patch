@@ -1,0 +1,31 @@
+--- jd-result/Math/80/mutant-20/a-EigenDecompositionImpl.java	2021-07-14 09:19:14.285345571 -0700
++++ jd-result/Math/80/mutant-20/b-EigenDecompositionImpl.java	2021-07-14 09:19:15.821345614 -0700
+@@ -653,20 +653,17 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private boolean flipIfWarranted(int n, int step) {
++/*   0*/    int j, i;
+ /*1133*/    if (1.5D * this.work[this.pingPong] < this.work[4 * (n - 1) + this.pingPong]) {
+-/*1135*/      int j = 4 * n - 1;
+-/*1136*/      for (int i = 0; i < j; i += 4) {
+-/*1137*/        for (int k = 0; k < 4; k += step) {
+-/*1138*/          double tmp = this.work[i + k];
+-/*1139*/          this.work[i + k] = this.work[j - k];
+-/*1140*/          this.work[j - k] = tmp;
+-/*   0*/        } 
+-/*1142*/        j -= 4;
+-/*   0*/      } 
+-/*1144*/      return true;
+-/*   0*/    } 
++/*1135*/      j = 4 * n - 1;
++/*1136*/      i = 0;
++/*   0*/    } else {
+ /*1146*/    return false;
+ /*   0*/  }
++/*   0*/    while (true)
++/*   0*/      break; 
++/*   0*/    return true;
++/*   0*/  }
+ /*   0*/  
+ /*   0*/  private double[] eigenvaluesRange(int index, int n) {
+ /*1158*/    int lowerStart = 4 * this.main.length;

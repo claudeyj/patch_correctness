@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/54/mutant-0/buggy-LocaleUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/54/mutant-0/patched-LocaleUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/54/mutant-0/buggy-LocaleUtils.java	2021-08-22 00:18:38.654190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/54/mutant-0/patched-LocaleUtils.java	2021-08-22 00:18:38.654190185 -0700
+@@ -111,6 +111,9 @@
+                 throw new IllegalArgumentException("Invalid locale format: " + str);
+             }
+             char ch3 = str.charAt(3);
++            if (ch3 == '_') {
++                return new Locale(str.substring(0, 2), "", str.substring(4));
++            }
+             char ch4 = str.charAt(4);
+             if (ch3 < 'A' || ch3 > 'Z' || ch4 < 'A' || ch4 > 'Z') {
+                 throw new IllegalArgumentException("Invalid locale format: " + str);

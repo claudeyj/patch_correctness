@@ -1,0 +1,247 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 01:45:43 PDT 2021
+Number of Plausible Fixes: 27
+Total Number of Patches: 2852
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to toRadians
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 238
+	Rank: 1
+	Total Rank: 507
+	Dump: mutant-22.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to toDegrees
+	File Name: org/apache/commons/math/ode/AbstractIntegrator.java
+	Line Number: 240
+	Rank: 2
+	Total Rank: 1412
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local x1 is replaced by access to field DEFAULT_ABSOLUTE_ACCURACY
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 3
+	Total Rank: 2302
+	Dump: mutant-21.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local y0 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 7
+	Total Rank: 2416
+	Dump: mutant-20.class
+------------------------------------------------
+5.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local delta to be used
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 7
+	Total Rank: 2416
+	Dump: mutant-4.class
+------------------------------------------------
+6.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local y1 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 7
+	Total Rank: 2416
+	Dump: mutant-5.class
+------------------------------------------------
+7.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local y2 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 7
+	Total Rank: 2416
+	Dump: mutant-3.class
+------------------------------------------------
+8.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.Math::abs(D)D is replaced with the used of default value 0.D
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 9
+	Total Rank: 2442
+	Dump: mutant-19.class
+------------------------------------------------
+9.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.Math::abs(D)D is replaced with the used of field DEFAULT_ABSOLUTE_ACCURACY
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 9
+	Total Rank: 2442
+	Dump: mutant-18.class
+------------------------------------------------
+10.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to java/lang/Math::max with argument
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 10
+	Total Rank: 2464
+	Dump: mutant-1.class
+------------------------------------------------
+11.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to tan
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 15
+	Total Rank: 2513
+	Dump: mutant-25.class
+------------------------------------------------
+12.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to cos
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 15
+	Total Rank: 2513
+	Dump: mutant-26.class
+------------------------------------------------
+13.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to toRadians
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 15
+	Total Rank: 2513
+	Dump: mutant-23.class
+------------------------------------------------
+14.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to sin
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 15
+	Total Rank: 2513
+	Dump: mutant-27.class
+------------------------------------------------
+15.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to atan
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 282
+	Rank: 15
+	Total Rank: 2513
+	Dump: mutant-24.class
+------------------------------------------------
+16.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field relativeAccuracy is replaced by access to local defaultAbsoluteAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 65
+	Rank: 16
+	Total Rank: 2811
+	Dump: mutant-17.class
+------------------------------------------------
+17.
+	Mutator: FieldNameMutator
+	Description: replaced access to defaultRelativeAccuracy with an access to absoluteAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 63
+	Rank: 22
+	Total Rank: 2832
+	Dump: mutant-15.class
+------------------------------------------------
+18.
+	Mutator: FieldNameMutator
+	Description: replaced access to relativeAccuracy with an access to defaultAbsoluteAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 65
+	Rank: 22
+	Total Rank: 2832
+	Dump: mutant-7.class
+------------------------------------------------
+19.
+	Mutator: FieldNameMutator
+	Description: replaced access to relativeAccuracy with an access to defaultRelativeAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 65
+	Rank: 22
+	Total Rank: 2832
+	Dump: mutant-6.class
+------------------------------------------------
+20.
+	Mutator: FieldNameMutator
+	Description: replaced access to defaultRelativeAccuracy with an access to defaultAbsoluteAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 63
+	Rank: 22
+	Total Rank: 2832
+	Dump: mutant-14.class
+------------------------------------------------
+21.
+	Mutator: FieldNameMutator
+	Description: replaced access to defaultRelativeAccuracy with an access to relativeAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 65
+	Rank: 22
+	Total Rank: 2832
+	Dump: mutant-8.class
+------------------------------------------------
+22.
+	Mutator: FieldNameMutator
+	Description: replaced access to defaultRelativeAccuracy with an access to relativeAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 63
+	Rank: 22
+	Total Rank: 2832
+	Dump: mutant-16.class
+------------------------------------------------
+23.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.math.ConvergingAlgorithmImpl.defaultRelativeAccuracy is replaced by the call to org.apache.commons.math.ConvergingAlgorithmImpl::setRelativeAccuracy(D)V
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 63
+	Rank: 25
+	Total Rank: 2845
+	Dump: mutant-11.class
+------------------------------------------------
+24.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.math.ConvergingAlgorithmImpl.defaultRelativeAccuracy is replaced by the call to org.apache.commons.math.ConvergingAlgorithmImpl::setAbsoluteAccuracy(D)V
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 63
+	Rank: 25
+	Total Rank: 2845
+	Dump: mutant-12.class
+------------------------------------------------
+25.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.math.ConvergingAlgorithmImpl.defaultRelativeAccuracy is replaced by the call to org.apache.commons.math.ConvergingAlgorithmImpl::getRelativeAccuracy()D
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 65
+	Rank: 25
+	Total Rank: 2845
+	Dump: mutant-13.class
+------------------------------------------------
+26.
+	Mutator: MemberVariableMutator
+	Description: Removed assignment to member variable defaultRelativeAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 63
+	Rank: 27
+	Total Rank: 2852
+	Dump: mutant-9.class
+------------------------------------------------
+27.
+	Mutator: MemberVariableMutator
+	Description: Removed assignment to member variable relativeAccuracy
+	File Name: org/apache/commons/math/ConvergingAlgorithmImpl.java
+	Line Number: 65
+	Rank: 27
+	Total Rank: 2852
+	Dump: mutant-10.class
+------------------------------------------------

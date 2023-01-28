@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-242/ori-DatasetUtilities.java	2021-07-15 18:51:50.720753080 -0700
++++ jd-result/Chart/25/mutant-242/patched-DatasetUtilities.java	2021-07-21 07:21:56.170213234 -0700
+@@ -566,7 +566,7 @@
+         }
+ 
+         int rowCount = dataset.getRowCount();
+-        int columnCount = dataset.getColumnCount();
++    int columnCount = 0;
+         if (rowCount == 0 || columnCount == 0) {
+             return true;
+         }

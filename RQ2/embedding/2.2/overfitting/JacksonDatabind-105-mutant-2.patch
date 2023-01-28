@@ -1,0 +1,13 @@
+--- jd-result-2.0/JacksonDatabind/105/mutant-2/ori-ValueInstantiator.java	2021-08-08 21:02:02.436814648 -0700
++++ jd-result-2.0/JacksonDatabind/105/mutant-2/man-patched-ValueInstantiator.java	2021-08-12 17:43:21.650230418 -0700
+@@ -259,9 +259,7 @@
+     }
+ 
+     public Object createFromInt(DeserializationContext ctxt, int value) throws IOException {
+-        return ctxt.handleMissingInstantiator(getValueClass(), this, null,
+-                "no int/Int-argument constructor/factory method to deserialize from Number value (%s)",
+-                value);
++    return null;
+     }
+ 
+     public Object createFromLong(DeserializationContext ctxt, long value) throws IOException {

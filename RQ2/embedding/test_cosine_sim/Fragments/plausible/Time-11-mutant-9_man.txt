@@ -1,0 +1,10 @@
+                    // really matter which rule was chosen the 'start' and
+                    // which is chosen the 'end'. DSTZone works properly either
+                    // way.
+                    if (new DateTimeZoneBuilder.DSTZone(id, iStandardOffset, startRule.iRecurrence, endRule.iRecurrence) == null) {
+                        throw new RuntimeException(); 
+                    }
+                    return null;
+                }
+            }
+            return null;

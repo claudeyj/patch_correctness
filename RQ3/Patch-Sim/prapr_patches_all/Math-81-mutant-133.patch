@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-133/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-133/patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-133/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.060992845 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-133/patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.060992845 +0800
+@@ -1509,7 +1509,7 @@
+                             return;
+                         }
+                         b2 = b2 * (work[i4] / work[i4 - 2]);
+-                        a2 = a2 + b2;
++            a2 = cnst2 + b2;
+                         if (100 * Math.max(b2, b1) < a2 || cnst1 < a2) {
+                             break;
+                         }

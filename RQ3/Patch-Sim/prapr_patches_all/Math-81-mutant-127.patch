@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-127/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-127/patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-127/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.056992791 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-127/patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.056992791 +0800
+@@ -1540,7 +1540,7 @@
+                 double a2 = (work[np - 8] / b2) * (1 + work[np - 4] / b1);
+ 
+                 // approximate contribution to norm squared from i < nn-2.
+-                if (end - start > 2) {
++          if (end - start <= 2) {
+                     b2 = work[nn - 13] / work[nn - 15];
+                     a2 = a2 + b2;
+                     for (int i4 = nn - 17; i4 >= 4 * start + 2 + pingPong; i4 -= 4) {

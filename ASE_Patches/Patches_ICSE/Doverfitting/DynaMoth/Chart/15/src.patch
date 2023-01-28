@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Chart/15/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Chart/15/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Chart/15/buggy1.java	2021-08-27 19:18:34.422863967 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Chart/15/tool-patch1.java	2021-08-27 19:18:34.422863967 -0700
+@@ -1216,7 +1216,9 @@
+         if (info != null) {
+             plotInfo = info.getPlotInfo();
+         }
++        if (false) {
+         this.plot.draw(g2, plotArea, anchor, null, plotInfo);
++        }
+ 
+         g2.setClip(savedClip);
+ 

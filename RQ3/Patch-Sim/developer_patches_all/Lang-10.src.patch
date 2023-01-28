@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/10/mutant-0/buggy-FastDateParser.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/10/mutant-0/patched-FastDateParser.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/10/mutant-0/buggy-FastDateParser.java	2021-08-22 00:18:38.630190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/10/mutant-0/patched-FastDateParser.java	2021-08-22 00:18:38.630190184 -0700
+@@ -301,17 +301,8 @@
+      * @return The <code>StringBuilder</code>
+      */
+     private static StringBuilder escapeRegex(StringBuilder regex, String value, boolean unquote) {
+-        boolean wasWhite= false;
+         for(int i= 0; i<value.length(); ++i) {
+             char c= value.charAt(i);
+-            if(Character.isWhitespace(c)) {
+-                if(!wasWhite) {
+-                    wasWhite= true;
+-                    regex.append("\\s*+");
+-                }
+-                continue;
+-            }
+-            wasWhite= false;
+             switch(c) {
+             case '\'':
+                 if(unquote) {

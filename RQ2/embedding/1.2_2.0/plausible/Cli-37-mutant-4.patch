@@ -1,0 +1,12 @@
+--- jd-result-2.0/Cli/37/mutant-4/ori-DefaultParser.java	2021-08-08 21:02:01.348814617 -0700
++++ jd-result-2.0/Cli/37/mutant-4/patched-DefaultParser.java	2021-08-09 06:25:54.973769335 -0700
+@@ -299,7 +299,8 @@
+     private boolean isShortOption(String token)
+     {
+         // short options (-S, -SV, -S=V, -SV1=V2, -S1S2)
+-        return token.startsWith("-") && token.length() >= 2 && options.hasShortOption(token.substring(1, 2));
++    int j = 2, i = 1;
++    return (token.startsWith("-") && token.length() >= 2 && this.options.hasShortOption(token.substring(i)));
+ 
+         // remove leading "-" and "=value"
+     }

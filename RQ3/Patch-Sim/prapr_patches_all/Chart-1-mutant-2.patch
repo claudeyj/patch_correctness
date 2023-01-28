@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/1/mutant-2/ori-AbstractCategoryItemRenderer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/1/mutant-2/fixed-patched-AbstractCategoryItemRenderer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/1/mutant-2/ori-AbstractCategoryItemRenderer.java	2021-08-23 09:23:48.296982254 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/1/mutant-2/fixed-patched-AbstractCategoryItemRenderer.java	2021-08-23 09:23:48.296982254 +0800
+@@ -1794,7 +1794,7 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++    if (dataset == null) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();

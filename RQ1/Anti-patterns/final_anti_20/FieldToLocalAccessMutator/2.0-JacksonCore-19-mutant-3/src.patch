@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonCore/19/mutant-3/ori-TextBuffer.java	2021-08-08 21:02:01.676814626 -0700
++++ jd-result-2.0/JacksonCore/19/mutant-3/man-patched-TextBuffer.java	2021-08-11 21:35:36.892185605 -0700
+@@ -119,7 +119,8 @@
+      */
+ 
+     public TextBuffer(BufferRecycler allocator) {
+-        _allocator = allocator;
++    allocator = allocator;
++    _allocator = null;
+     }
+ 
+     /**

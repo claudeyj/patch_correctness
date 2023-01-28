@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/40/mutant-0/buggy-NameAnalyzer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/40/mutant-0/patched-NameAnalyzer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/40/mutant-0/buggy-NameAnalyzer.java	2021-08-22 00:18:38.606190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/40/mutant-0/patched-NameAnalyzer.java	2021-08-22 00:18:38.606190184 -0700
+@@ -632,14 +632,12 @@
+         Node nameNode = n.getFirstChild();
+         NameInformation ns = createNameInformation(t, nameNode, n);
+         if (ns != null && ns.onlyAffectsClassDef) {
+-          JsName name = getName(ns.name, false);
+-          if (name != null) {
++          JsName name = getName(ns.name, true);
+           refNodes.add(new ClassDefiningFunctionNode(
+               name, n, parent, parent.getParent()));
+           }
+         }
+       }
+-    }
+ 
+     /**
+      * Records the assignment of a value to a global name.

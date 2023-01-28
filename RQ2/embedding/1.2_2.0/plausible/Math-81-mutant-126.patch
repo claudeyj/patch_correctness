@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-126/ori-EigenDecompositionImpl.java	2021-07-24 01:52:07.730297186 -0700
++++ jd-result/Math/81/mutant-126/patched-EigenDecompositionImpl.java	2021-07-24 01:52:07.746297187 -0700
+@@ -1530,7 +1530,7 @@
+                 double s = 0.25 * dMin;
+ 
+                 // compute contribution to norm squared from i > nn-2.
+-                final int np = nn - 2 * pingPong;
++          int np = nn - 2 * this.tType;
+                 double b1 = work[np - 2];
+                 double b2 = work[np - 6];
+                 final double gam = dN2;

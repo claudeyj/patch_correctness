@@ -1,0 +1,19 @@
+--- jd-result-2.0/JxPath/22/mutant-6/ori-DOMNodePointer.java	2021-08-08 21:02:03.316814673 -0700
++++ jd-result-2.0/JxPath/22/mutant-6/man-patched-DOMNodePointer.java	2021-08-13 04:58:15.987373088 -0700
+@@ -43,6 +43,7 @@
+ import org.w3c.dom.Node;
+ import org.w3c.dom.NodeList;
+ import org.w3c.dom.ProcessingInstruction;
++import org.apache.xerces.impl.xs.opti.AttrImpl;
+ 
+ /**
+  * A Pointer that points to a DOM node. Because a DOM Node is not guaranteed Serializable,
+@@ -684,7 +685,7 @@
+             Node aNode = node;
+             while (aNode != null) {
+                 if (aNode.getNodeType() == Node.ELEMENT_NODE) {
+-                    Attr attr = ((Element) aNode).getAttributeNode(qname);
++                    Attr attr = new AttrImpl();
+                     if (attr != null) {
+                         return attr.getValue();
+                     }

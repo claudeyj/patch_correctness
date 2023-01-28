@@ -1,0 +1,7 @@
+        throws JsonMappingException
+    {
+        KeyDeserializer kd = factory.createKeyDeserializer(ctxt, type);
+        if (kd == null) { // if none found, need to use a placeholder that'll fail
+            return _handleUnknownKeyDeserializer(ctxt, type);
+        }
+        // First: need to resolve?

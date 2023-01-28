@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/35/mutant-2/a-TarArchiveInputStream.java	2021-08-09 03:56:34.977516502 -0700
++++ jd-result-2.0/Compress/35/mutant-2/b-TarArchiveInputStream.java	2021-08-09 03:56:36.465516544 -0700
+@@ -393,7 +393,7 @@
+ /* 706*/    if (ArchiveUtils.matchAsciiBuffer("ustar ", signature, 257, 6) && (ArchiveUtils.matchAsciiBuffer(" \000", signature, 263, 2) || ArchiveUtils.matchAsciiBuffer("0\000", signature, 263, 2))) {
+ /* 717*/        return true; 
+ /*   0*/       }
+-/* 720*/    if (ArchiveUtils.matchAsciiBuffer("ustar\000", signature, 257, 6) && ArchiveUtils.matchAsciiBuffer("\000\000", signature, 263, 2)) {
++/* 720*/    if (!ArchiveUtils.matchAsciiBuffer("ustar\000", signature, 257, 6) && ArchiveUtils.matchAsciiBuffer("\000\000", signature, 263, 2)) {
+ /* 726*/        return true; 
+ /*   0*/       }
+ /* 728*/    return false;

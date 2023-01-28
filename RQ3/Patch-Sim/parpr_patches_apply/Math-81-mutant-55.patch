@@ -1,0 +1,11 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-55.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1445,7 +1445,7 @@
+         switch (deflated) {
+ 
+         case 0 : // no realEigenvalues deflated.
+-            if (dMin == dN || dMin == dN1) {
++            if (true) {
+ 
+                 double b1 = Math.sqrt(work[nn - 3]) * Math.sqrt(work[nn - 5]);
+                 double b2 = Math.sqrt(work[nn - 7]) * Math.sqrt(work[nn - 9]);

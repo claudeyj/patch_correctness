@@ -1,0 +1,44 @@
+--- jd-result/Lang/43/mutant-11/ori-ExtendedMessageFormat.java	2021-07-15 18:51:52.436753128 -0700
++++ jd-result/Lang/43/mutant-11/man-patched-ExtendedMessageFormat.java	2021-07-30 19:08:29.702680066 -0700
+@@ -154,40 +154,12 @@
+         int fmtCount = 0;
+         while (pos.getIndex() < pattern.length()) {
+             switch (c[pos.getIndex()]) {
+-            case QUOTE:
+-                appendQuotedString(pattern, pos, stripCustom, true);
+-                break;
+-            case START_FE:
+-                fmtCount++;
+-                seekNonWs(pattern, pos);
+-                int start = pos.getIndex();
+-                int index = readArgumentIndex(pattern, next(pos));
+-                stripCustom.append(START_FE).append(index);
+-                seekNonWs(pattern, pos);
+-                Format format = null;
+-                String formatDescription = null;
+-                if (c[pos.getIndex()] == START_FMT) {
+-                    formatDescription = parseFormatDescription(pattern,
+-                            next(pos));
+-                    format = getFormat(formatDescription);
+-                    if (format == null) {
+-                        stripCustom.append(START_FMT).append(formatDescription);
+-                    }
+-                }
+-                foundFormats.add(format);
+-                foundDescriptions.add(format == null ? null : formatDescription);
+-                Validate.isTrue(foundFormats.size() == fmtCount);
+-                Validate.isTrue(foundDescriptions.size() == fmtCount);
+-                if (c[pos.getIndex()] != END_FE) {
+-                    throw new IllegalArgumentException(
+-                            "Unreadable format element at position " + start);
+-                }
+-                // fall through
+             default:
+                 stripCustom.append(c[pos.getIndex()]);
+                 next(pos);
+             }
+         }
++        appendQuotedString(pattern, pos, stripCustom, true);
+         super.applyPattern(stripCustom.toString());
+         toPattern = insertFormats(super.toPattern(), foundDescriptions);
+         if (containsElements(foundFormats)) {

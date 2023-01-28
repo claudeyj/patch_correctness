@@ -1,0 +1,11 @@
+--- jd-result/Closure/64/mutant-2/ori-Compiler.java	2021-07-15 18:51:53.688753163 -0700
++++ jd-result/Closure/64/mutant-2/man-patched-Compiler.java	2021-07-23 02:49:26.179215445 -0700
+@@ -1288,7 +1288,7 @@
+           CodeBuilder cb = new CodeBuilder();
+           if (jsRoot != null) {
+             int i = 0;
+-            for (Node scriptNode = jsRoot.getFirstChild();
++            for (Node scriptNode = jsRoot.getLastChild();
+                  scriptNode != null;
+                  scriptNode = scriptNode.getNext()) {
+               toSource(cb, i++, scriptNode);

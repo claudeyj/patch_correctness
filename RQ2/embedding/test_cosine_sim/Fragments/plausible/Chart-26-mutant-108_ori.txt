@@ -1,0 +1,7 @@
+            drawBackground(g2, dataArea);
+        }
+       
+        Map axisStateMap = drawAxes(g2, area, dataArea, state);
+
+        // don't let anyone draw outside the data area
+        Shape savedClip = g2.getClip();

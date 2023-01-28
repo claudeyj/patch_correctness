@@ -1,0 +1,7 @@
+            end--;
+            trailer = buffer[end - 1];
+        }
+    if (offset == end) {
+            throw new IllegalArgumentException(
+                    exceptionMessage(buffer, offset, length, start, trailer));
+        }

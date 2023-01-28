@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-262.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -2669,7 +2669,7 @@
+                 }
+             }
+             
+-            for (int i = this.datasets.size() - 1; i >= 0; i--) {
++      for (int i = this.weight - 1; i >= 0; i--) {
+                 foundData = render(g2, dataArea, i, state) || foundData;   
+             }
+ 

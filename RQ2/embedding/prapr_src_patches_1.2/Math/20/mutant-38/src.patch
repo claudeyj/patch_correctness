@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-38/ori-CMAESOptimizer.java	2021-07-24 01:52:02.514297039 -0700
++++ jd-result/Math/20/mutant-38/patched-CMAESOptimizer.java	2021-07-24 01:52:02.514297039 -0700
+@@ -412,7 +412,7 @@
+                 sigma *= Math.exp(Math.min(1.0,(normps/chiN - 1.)*cs/damps));
+                 double bestFitness = fitness[arindex[0]];
+                 double worstFitness = fitness[arindex[arindex.length-1]];
+-                if (bestValue > bestFitness) {
++      if (this.stopTolUpX > bestFitness) {
+                     bestValue = bestFitness;
+                     lastResult = optimum;
+                     optimum = new PointValuePair(

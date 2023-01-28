@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/118/mutant-0/buggy-DisambiguateProperties.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/118/mutant-0/patched-DisambiguateProperties.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/118/mutant-0/buggy-DisambiguateProperties.java	2021-08-22 00:18:38.586190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/118/mutant-0/patched-DisambiguateProperties.java	2021-08-22 00:18:38.586190183 -0700
+@@ -492,6 +492,9 @@
+           child != null;
+           child = child.getNext()) {
+         // Maybe STRING, GET, SET
++        if (child.isQuotedString()) {
++          continue;
++        }
+ 
+         // We should never see a mix of numbers and strings.
+         String name = child.getString();

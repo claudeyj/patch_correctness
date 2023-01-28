@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 18 22:17:22 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 123
+================================================
+1.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.util.TextBuffer._hasSegments is replaced by the call to com.fasterxml.jackson.core.util.TextBuffer::hasTextAsCharacters()Z
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 307
+	Rank: 2
+	Total Rank: 26
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.util.TextBuffer._currentSegment is replaced by the call to com.fasterxml.jackson.core.util.TextBuffer::contentsAsArray()[C
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 307
+	Rank: 2
+	Total Rank: 26
+	Dump: mutant-5.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 307
+	Rank: 3
+	Total Rank: 27
+	Dump: mutant-6.class
+------------------------------------------------
+4.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.util.TextBuffer._resultString is replaced by the call to com.fasterxml.jackson.core.util.TextBuffer::contentsAsString()Ljava/lang/String;
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 303
+	Rank: 6
+	Total Rank: 51
+	Dump: mutant-1.class
+------------------------------------------------
+5.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.util.TextBuffer._resultArray is replaced by the call to com.fasterxml.jackson.core.util.TextBuffer::contentsAsArray()[C
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 302
+	Rank: 6
+	Total Rank: 51
+	Dump: mutant-2.class
+------------------------------------------------
+6.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.util.TextBuffer._resultString is replaced by the call to com.fasterxml.jackson.core.util.TextBuffer::toString()Ljava/lang/String;
+	File Name: com/fasterxml/jackson/core/util/TextBuffer.java
+	Line Number: 303
+	Rank: 6
+	Total Rank: 51
+	Dump: mutant-4.class
+------------------------------------------------

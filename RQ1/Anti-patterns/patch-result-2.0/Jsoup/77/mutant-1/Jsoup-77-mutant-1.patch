@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/77/mutant-1/a-XmlTreeBuilder.java	2021-08-09 04:19:54.349555989 -0700
++++ jd-result-2.0/Jsoup/77/mutant-1/b-XmlTreeBuilder.java	2021-08-09 04:19:55.865556032 -0700
+@@ -109,7 +109,7 @@
+ /* 118*/    Element firstFound = null;
+ /* 120*/    for (int pos = this.stack.size() - 1; pos >= 0; pos--) {
+ /* 121*/      Element next = this.stack.get(pos);
+-/* 122*/      if (next.nodeName().equals(elName)) {
++/* 122*/      if (next.nodeName().equals(elName.toLowerCase())) {
+ /* 123*/        firstFound = next;
+ /*   0*/        break;
+ /*   0*/      } 

@@ -1,0 +1,31 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/103/mutant-0/buggy-ControlFlowAnalysis.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/103/mutant-0/patched-ControlFlowAnalysis.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/103/mutant-0/buggy-ControlFlowAnalysis.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/103/mutant-0/patched-ControlFlowAnalysis.java	2021-08-22 00:18:38.578190183 -0700
+@@ -891,6 +891,7 @@
+       case Token.ASSIGN:
+       case Token.INC:
+       case Token.DEC:
++      case Token.INSTANCEOF:
+         return true;
+       case Token.FUNCTION:
+         return false;
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/103/mutant-0/buggy-DisambiguateProperties.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/103/mutant-0/patched-DisambiguateProperties.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/103/mutant-0/buggy-DisambiguateProperties.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/103/mutant-0/patched-DisambiguateProperties.java	2021-08-22 00:18:38.578190183 -0700
+@@ -760,9 +760,16 @@
+       }
+       // If the property does not exist on the referenced type but the original
+       // type is an object type, see if any subtype has the property.
++      if (foundType == null) {
++        ObjectType maybeType = ObjectType.cast(
++            registry.getGreatestSubtypeWithProperty(type, field));
+         // getGreatestSubtypeWithProperty does not guarantee that the property
+         // is defined on the returned type, it just indicates that it might be,
+         // so we have to double check.
++        if (maybeType != null && maybeType.hasOwnProperty(field)) {
++          foundType = maybeType;
++        }
++      }
+       return foundType;
+     }
+ 

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/19/mutant-1/a-Whitelist.java	2021-08-09 04:21:49.005559225 -0700
++++ jd-result-2.0/Jsoup/19/mutant-1/b-Whitelist.java	2021-08-09 04:21:50.985559281 -0700
+@@ -120,7 +120,7 @@
+ /* 298*/      this.protocols.put(tagName, attrMap);
+ /*   0*/    } 
+ /* 300*/    if (attrMap.containsKey(attrKey)) {
+-/* 301*/      protSet = attrMap.get(attrKey);
++/* 301*/      protSet = attrMap.remove(attrKey);
+ /*   0*/    } else {
+ /* 303*/      protSet = new HashSet<Protocol>();
+ /* 304*/      attrMap.put(attrKey, protSet);

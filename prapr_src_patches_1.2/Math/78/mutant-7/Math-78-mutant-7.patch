@@ -1,0 +1,11 @@
+--- jd-result/Math/78/mutant-7/a-EventState.java	2021-07-14 09:18:00.773343497 -0700
++++ jd-result/Math/78/mutant-7/b-EventState.java	2021-07-14 09:18:02.093343534 -0700
+@@ -75,7 +75,7 @@
+ /*   0*/    try {
+ /* 172*/      this.forward = interpolator.isForward();
+ /* 173*/      double t1 = interpolator.getCurrentTime();
+-/* 174*/      int n = Math.max(1, (int)Math.ceil(Math.abs(t1 - this.t0) / this.maxCheckInterval));
++/* 174*/      int n = Math.max(1, (int)Math.ceil(Math.toDegrees(t1 - this.t0) / this.maxCheckInterval));
+ /* 175*/      double h = (t1 - this.t0) / n;
+ /* 177*/      double ta = this.t0;
+ /* 178*/      double ga = this.g0;

@@ -1,0 +1,11 @@
+--- jd-result/Math/28/mutant-20/a-SimplexSolver.java	2021-07-14 09:09:55.713329809 -0700
++++ jd-result/Math/28/mutant-20/b-SimplexSolver.java	2021-07-14 09:09:57.109329849 -0700
+@@ -46,7 +46,7 @@
+ /*  98*/      if (Precision.compareTo(entry, 0.0D, this.maxUlps) > 0) {
+ /*  99*/        double ratio = rhs / entry;
+ /* 102*/        int cmp = Double.compare(ratio, minRatio);
+-/* 103*/        if (cmp == 0) {
++/* 103*/        if (i == 0) {
+ /* 104*/          minRatioPositions.add(i);
+ /* 105*/        } else if (cmp < 0) {
+ /* 106*/          minRatio = ratio;

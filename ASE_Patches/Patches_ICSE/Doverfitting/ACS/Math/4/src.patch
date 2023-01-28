@@ -1,0 +1,24 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/ACS/Math/4/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/ACS/Math/4/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/ACS/Math/4/buggy1.java	2021-08-27 19:18:35.946864010 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/ACS/Math/4/tool-patch1.java	2021-08-27 19:18:35.946864010 -0700
+@@ -112,7 +112,7 @@
+         // compute the intersection on infinite line
+         Vector3D v1D = line.intersection(subLine.line);
+ 
+-        // check location of point with respect to first sub-line
++if (v1D == null){return null;}        // check location of point with respect to first sub-line
+         Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D));
+ 
+         // check location of point with respect to second sub-line
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/ACS/Math/4/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/ACS/Math/4/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/ACS/Math/4/buggy2.java	2021-08-27 19:18:35.882864009 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/ACS/Math/4/tool-patch2.java	2021-08-27 19:18:35.946864010 -0700
+@@ -116,7 +116,7 @@
+         // compute the intersection on infinite line
+         Vector2D v2D = line1.intersection(line2);
+ 
+-        // check location of point with respect to first sub-line
++if (v2D == null){return null;}        // check location of point with respect to first sub-line
+         Location loc1 = getRemainingRegion().checkPoint(line1.toSubSpace(v2D));
+ 
+         // check location of point with respect to second sub-line

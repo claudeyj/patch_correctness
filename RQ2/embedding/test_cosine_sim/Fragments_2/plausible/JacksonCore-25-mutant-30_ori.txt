@@ -1,0 +1,7 @@
+
+        while (true) {
+            if (_inputPtr >= _inputEnd) {
+                if (!_loadMore()) { // acceptable for now (will error out later)
+                    break;
+                }
+            }

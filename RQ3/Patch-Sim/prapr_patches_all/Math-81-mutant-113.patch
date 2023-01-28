@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-113/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-113/fixed-patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-113/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.044992623 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-113/fixed-patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.044992623 +0800
+@@ -1530,7 +1530,7 @@
+                 double s = 0.25 * dMin;
+ 
+                 // compute contribution to norm squared from i > nn-2.
+-                final int np = nn - 2 * pingPong;
++          int np = nn - 2 * start;
+                 double b1 = work[np - 2];
+                 double b2 = work[np - 6];
+                 final double gam = dN2;

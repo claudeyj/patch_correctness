@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/93/mutant-0/buggy-ProcessClosurePrimitives.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/93/mutant-0/patched-ProcessClosurePrimitives.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/93/mutant-0/buggy-ProcessClosurePrimitives.java	2021-08-22 00:18:38.626190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/93/mutant-0/patched-ProcessClosurePrimitives.java	2021-08-22 00:18:38.626190184 -0700
+@@ -786,7 +786,7 @@
+         } else {
+           // In this case, the name was implicitly provided by two independent
+           // modules. We need to move this code up to a common module.
+-          int indexOfDot = namespace.indexOf('.');
++          int indexOfDot = namespace.lastIndexOf('.');
+           if (indexOfDot == -1) {
+             // Any old place is fine.
+             compiler.getNodeForCodeInsertion(minimumModule)

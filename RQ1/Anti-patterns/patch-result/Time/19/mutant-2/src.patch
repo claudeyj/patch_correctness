@@ -1,0 +1,11 @@
+--- jd-result/Time/19/mutant-2/ori-DateTimeZone.java	2021-07-15 18:51:56.076753231 -0700
++++ jd-result/Time/19/mutant-2/man-patched-DateTimeZone.java	2021-07-30 04:52:53.761231467 -0700
+@@ -897,7 +897,7 @@
+                     return offsetLocal;
+                 }
+             }
+-        } else if (offsetLocal > 0) {
++    } else if (offsetLocal >= 0) {
+             long prev = previousTransition(instantAdjusted);
+             if (prev < instantAdjusted) {
+                 int offsetPrev = getOffset(prev);

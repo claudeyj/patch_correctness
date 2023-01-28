@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SequenceR/Closure/18/1/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SequenceR/Closure/18/1/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SequenceR/Closure/18/1/buggy1.java	2021-09-08 07:11:31.593222361 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SequenceR/Closure/18/1/tool-patch1.java	2021-09-08 07:11:31.593222361 -0700
+@@ -1285,7 +1285,7 @@
+ 
+       // Check if the sources need to be re-ordered.
+       boolean staleInputs = false;
+-      if (options.dependencyOptions.needsManagement() && options.closurePass) {
++      if(options.dependencyOptions.needsManagement()){
+         for (CompilerInput input : inputs) {
+           // Forward-declare all the provided types, so that they
+           // are not flagged even if they are dropped from the process.

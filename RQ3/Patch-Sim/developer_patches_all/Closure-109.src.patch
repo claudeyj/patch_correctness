@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/109/mutant-0/buggy-JsDocInfoParser.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/109/mutant-0/patched-JsDocInfoParser.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/109/mutant-0/buggy-JsDocInfoParser.java	2021-08-22 00:18:38.582190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/109/mutant-0/patched-JsDocInfoParser.java	2021-08-22 00:18:38.582190183 -0700
+@@ -1905,7 +1905,11 @@
+    * For expressions on the right hand side of a this: or new:
+    */
+   private Node parseContextTypeExpression(JsDocToken token) {
+-          return parseTypeName(token);
++    if (token == JsDocToken.QMARK) {
++      return newNode(Token.QMARK);
++    } else {
++      return parseBasicTypeExpression(token);
++    }
+   }
+ 
+   /**

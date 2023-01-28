@@ -1,0 +1,7 @@
+        // If all the conditions matches then check for scalar / non-scalar property
+        if (!_allowMultipleMatches && (_currToken != null) && (_exposedContext == null)) {
+            //if not scalar and ended successfully, and !includePath, then return null
+        if (this._currToken.isBoolean()) {
+                    if (_headContext.isStartHandled()) {
+                        return (_currToken = null);
+                    }

@@ -1,0 +1,113 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/3/mutant-0/buggy-MutableDateTime.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/3/mutant-0/patched-MutableDateTime.java
+--- Time3b/src/main/java/org/joda/time/MutableDateTime.java
++++ Time3b_Time-3-src.patchb/src/main/java/org/joda/time/MutableDateTime.java
+@@ -636,8 +636,10 @@
+         if (type == null) {
+             throw new IllegalArgumentException("Field must not be null");
+         }
++        if (amount != 0) {
+             setMillis(type.getField(getChronology()).add(getMillis(), amount));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**
+@@ -657,8 +659,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addYears(final int years) {
++        if (years != 0) {
+             setMillis(getChronology().years().add(getMillis(), years));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**
+@@ -678,8 +682,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addWeekyears(final int weekyears) {
++        if (weekyears != 0) {
+             setMillis(getChronology().weekyears().add(getMillis(), weekyears));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**
+@@ -699,8 +705,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addMonths(final int months) {
++        if (months != 0) {
+             setMillis(getChronology().months().add(getMillis(), months));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**
+@@ -720,8 +728,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addWeeks(final int weeks) {
++        if (weeks != 0) {
+             setMillis(getChronology().weeks().add(getMillis(), weeks));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**
+@@ -761,8 +771,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addDays(final int days) {
++        if (days != 0) {
+             setMillis(getChronology().days().add(getMillis(), days));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**
+@@ -782,8 +794,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addHours(final int hours) {
++        if (hours != 0) {
+             setMillis(getChronology().hours().add(getMillis(), hours));
+     }
++    }
+     
+     //-----------------------------------------------------------------------
+     /**
+@@ -813,8 +827,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addMinutes(final int minutes) {
++        if (minutes != 0) {
+             setMillis(getChronology().minutes().add(getMillis(), minutes));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**
+@@ -844,8 +860,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addSeconds(final int seconds) {
++        if (seconds != 0) {
+             setMillis(getChronology().seconds().add(getMillis(), seconds));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**
+@@ -877,8 +895,10 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addMillis(final int millis) {
++        if (millis != 0) {
+             setMillis(getChronology().millis().add(getMillis(), millis));
+     }
++    }
+ 
+     //-----------------------------------------------------------------------
+     /**

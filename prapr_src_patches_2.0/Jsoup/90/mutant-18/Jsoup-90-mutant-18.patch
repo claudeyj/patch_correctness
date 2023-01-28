@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/90/mutant-18/a-HttpConnection.java	2021-08-09 04:21:34.505558816 -0700
++++ jd-result-2.0/Jsoup/90/mutant-18/b-HttpConnection.java	2021-08-09 04:21:36.129558861 -0700
+@@ -366,7 +366,7 @@
+ /*   0*/    private static String fixHeaderEncoding(String val) {
+ /*   0*/      try {
+ /* 388*/        byte[] bytes = val.getBytes("ISO-8859-1");
+-/* 389*/        if (!looksLikeUtf8(bytes)) {
++/* 389*/        if (!false) {
+ /* 390*/            return val; 
+ /*   0*/           }
+ /* 391*/        return new String(bytes, "UTF-8");

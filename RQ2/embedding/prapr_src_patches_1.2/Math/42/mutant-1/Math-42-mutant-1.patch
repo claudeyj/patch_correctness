@@ -1,0 +1,11 @@
+--- jd-result/Math/42/mutant-1/a-SimplexTableau.java	2021-07-14 09:11:14.261332026 -0700
++++ jd-result/Math/42/mutant-1/b-SimplexTableau.java	2021-07-14 09:11:15.777332068 -0700
+@@ -86,7 +86,7 @@
+ /* 191*/    matrix.setEntry(zIndex, zIndex, maximize ? 1.0D : -1.0D);
+ /* 192*/    RealVector objectiveCoefficients = maximize ? this.f.getCoefficients().mapMultiply(-1.0D) : this.f.getCoefficients();
+ /* 194*/    copyArray(objectiveCoefficients.toArray(), matrix.getDataRef()[zIndex]);
+-/* 195*/    matrix.setEntry(zIndex, width - 1, maximize ? this.f.getConstantTerm() : (-1.0D * this.f.getConstantTerm()));
++/* 195*/    matrix.setEntry(zIndex, height - 1, maximize ? this.f.getConstantTerm() : (-1.0D * this.f.getConstantTerm()));
+ /* 198*/    if (!this.restrictToNonNegative)
+ /* 199*/      matrix.setEntry(zIndex, getSlackVariableOffset() - 1, getInvertedCoefficientSum(objectiveCoefficients)); 
+ /* 204*/    int slackVar = 0;

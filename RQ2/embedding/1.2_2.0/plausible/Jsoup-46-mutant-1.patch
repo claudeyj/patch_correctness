@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/46/mutant-1/ori-Entities.java	2021-08-08 21:02:03.048814665 -0700
++++ jd-result-2.0/Jsoup/46/mutant-1/man-patched-Entities.java	2021-08-12 18:15:51.442285437 -0700
+@@ -112,7 +112,7 @@
+                         accum.append("&amp;");
+                         break;
+                     case 0xA0:
+-                        if (escapeMode != EscapeMode.xhtml)
++                        if (escapeMode == EscapeMode.xhtml)
+                             accum.append("&nbsp;");
+                         else
+                             accum.append(c);

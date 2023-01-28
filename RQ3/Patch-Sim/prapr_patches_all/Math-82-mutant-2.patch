@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/82/mutant-2/ori-SimplexSolver.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/82/mutant-2/patched-SimplexSolver.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/82/mutant-2/ori-SimplexSolver.java	2021-08-23 09:23:49.144994011 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/82/mutant-2/patched-SimplexSolver.java	2021-08-23 09:23:49.144994011 +0800
+@@ -79,7 +79,7 @@
+         for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++) {
+             final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
+             final double entry = tableau.getEntry(i, col);
+-            if (MathUtils.compareTo(entry, 0, epsilon) >= 0) {
++      if (MathUtils.compareTo(entry, 0.0D, this.epsilon) > 0) {
+                 final double ratio = rhs / entry;
+                 if (ratio < minRatio) {
+                     minRatio = ratio;

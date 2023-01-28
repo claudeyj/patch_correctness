@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-4/ori-SimplexSolver.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-4/fixed-patched-SimplexSolver.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-4/ori-SimplexSolver.java	2021-08-23 09:23:48.912990793 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-4/fixed-patched-SimplexSolver.java	2021-08-23 09:23:48.912990793 +0800
+@@ -119,7 +119,7 @@
+                 for (Integer row : minRatioPositions) {
+                     for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {
+                         int column = i + tableau.getArtificialVariableOffset();
+-                        final double entry = tableau.getEntry(row, column);
++          double entry = DEFAULT_EPSILON;
+                         if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {
+                             return row;
+                         }

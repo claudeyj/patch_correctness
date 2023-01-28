@@ -1,0 +1,11 @@
+--- jd-result/Closure/11/mutant-9/ori-TypeCheck.java	2021-07-15 18:51:52.452753129 -0700
++++ jd-result/Closure/11/mutant-9/man-patched-TypeCheck.java	2021-07-23 07:00:44.367993107 -0700
+@@ -1311,7 +1311,7 @@
+ 
+     if (childType.isDict()) {
+       report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, "'.'", "dict");
+-    } else if (n.getJSType() != null && parent.isAssign()) {
++    } else if (false) {
+       return;
+     } else if (validator.expectNotNullOrUndefined(t, n, childType,
+         "No properties on this expression", getNativeType(OBJECT_TYPE))) {

@@ -1,0 +1,12 @@
+--- jd-result/Math/70/mutant-3/a-BisectionSolver.java	2021-07-14 09:15:34.201339361 -0700
++++ jd-result/Math/70/mutant-3/b-BisectionSolver.java	2021-07-14 09:15:35.505339397 -0700
+@@ -25,7 +25,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public double solve(UnivariateRealFunction f, double min, double max, double initial) throws MaxIterationsExceededException, FunctionEvaluationException {
+-/*  72*/    return solve(min, max);
++/*  72*/    double d2 = max, d1 = min;
++/*  72*/    return solve(f, d1, d2);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public double solve(UnivariateRealFunction f, double min, double max) throws MaxIterationsExceededException, FunctionEvaluationException {

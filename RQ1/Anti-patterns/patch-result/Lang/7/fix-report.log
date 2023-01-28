@@ -1,0 +1,49 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 19:45:34 PDT 2021
+Number of Plausible Fixes: 5
+Total Number of Patches: 773
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.String::startsWith(Ljava/lang/String;)Z is replaced with the used of default value false
+	File Name: org/apache/commons/lang3/math/NumberUtils.java
+	Line Number: 452
+	Rank: 1
+	Total Rank: 548
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to startsWith with a call to equalsIgnoreCase
+	File Name: org/apache/commons/lang3/math/NumberUtils.java
+	Line Number: 452
+	Rank: 4
+	Total Rank: 612
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to startsWith with a call to endsWith
+	File Name: org/apache/commons/lang3/math/NumberUtils.java
+	Line Number: 452
+	Rank: 4
+	Total Rank: 612
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: replaced call to startsWith with a call to matches
+	File Name: org/apache/commons/lang3/math/NumberUtils.java
+	Line Number: 452
+	Rank: 4
+	Total Rank: 612
+	Dump: mutant-3.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/lang3/math/NumberUtils.java
+	Line Number: 452
+	Rank: 5
+	Total Rank: 627
+	Dump: mutant-4.class
+------------------------------------------------

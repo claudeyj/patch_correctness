@@ -1,0 +1,24 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/72/mutant-0/buggy-FunctionToBlockMutator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/72/mutant-0/patched-FunctionToBlockMutator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/72/mutant-0/buggy-FunctionToBlockMutator.java	2021-08-22 00:18:38.618190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/72/mutant-0/patched-FunctionToBlockMutator.java	2021-08-22 00:18:38.618190184 -0700
+@@ -149,6 +149,8 @@
+                 "inline_",
+                 isCallInLoop)));
+     // Make label names unique to this instance.
++    new RenameLabels(compiler, new LabelNameSupplier(idSupplier), false)
++        .process(null, fnNode);
+   }
+ 
+   static class LabelNameSupplier implements Supplier<String> {
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/72/mutant-0/buggy-RenameLabels.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/72/mutant-0/patched-RenameLabels.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/72/mutant-0/buggy-RenameLabels.java	2021-08-22 00:18:38.618190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/72/mutant-0/patched-RenameLabels.java	2021-08-22 00:18:38.618190184 -0700
+@@ -212,7 +212,7 @@
+       String name = nameNode.getString();
+       LabelInfo li = getLabelInfo(name);
+       // This is a label...
+-      if (li.referenced) {
++      if (li.referenced || !removeUnused) {
+         String newName = getNameForId(li.id);
+         if (!name.equals(newName)) {
+           // ... and it is used, give it the short name.

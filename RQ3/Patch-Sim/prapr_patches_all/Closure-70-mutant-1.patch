@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/70/mutant-1/ori-TypedScopeCreator.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/70/mutant-1/fixed-patched-TypedScopeCreator.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/70/mutant-1/ori-TypedScopeCreator.java	2021-08-23 09:23:48.780988964 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/70/mutant-1/fixed-patched-TypedScopeCreator.java	2021-08-23 09:23:48.780988964 +0800
+@@ -1742,7 +1742,7 @@
+           for (Node astParameter : astParameters.children()) {
+             if (jsDocParameter != null) {
+               defineSlot(astParameter, functionNode,
+-                  jsDocParameter.getJSType(), true);
++              jsDocParameter.getJSType(), false);
+               jsDocParameter = jsDocParameter.getNext();
+             } else {
+               defineSlot(astParameter, functionNode, null, true);

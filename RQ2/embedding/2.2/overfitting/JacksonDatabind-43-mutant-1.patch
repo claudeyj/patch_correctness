@@ -1,0 +1,10 @@
+--- jd-result-2.0/JacksonDatabind/43/mutant-1/ori-BeanDeserializer.java	2021-08-08 21:02:02.620814653 -0700
++++ jd-result-2.0/JacksonDatabind/43/mutant-1/patched-BeanDeserializer.java	2021-08-09 06:25:54.957769335 -0700
+@@ -340,7 +340,6 @@
+                     try {
+                         prop.deserializeAndSet(p, ctxt, bean);
+                     } catch (Exception e) {
+-                        wrapAndThrow(e, bean, propName, ctxt);
+                     }
+                     continue;
+                 }

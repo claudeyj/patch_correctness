@@ -1,0 +1,10 @@
+--- jd-result-2.0/Jsoup/90/mutant-8/ori-HttpConnection.java	2021-08-08 21:02:03.032814665 -0700
++++ jd-result-2.0/Jsoup/90/mutant-8/man-patched-HttpConnection.java	2021-08-10 01:31:41.851709237 -0700
+@@ -423,7 +423,6 @@
+ 
+ 
+                 while (i < end) {
+-                    i++;
+                     o = input[i];
+                     if ((o & 0xC0) != 0x80) {
+                         return false;

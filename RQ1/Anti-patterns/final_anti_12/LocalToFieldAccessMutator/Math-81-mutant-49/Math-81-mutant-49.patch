@@ -1,0 +1,12 @@
+--- jd-result/Math/81/mutant-49/a-EigenDecompositionImpl.java	2021-07-14 09:22:18.569350771 -0700
++++ jd-result/Math/81/mutant-49/b-EigenDecompositionImpl.java	2021-07-14 09:22:20.097350814 -0700
+@@ -905,7 +905,8 @@
+ /*1480*/            a2 = 0.0D;
+ /*1481*/            if (this.work[nn - 5] > this.work[nn - 7])
+ /*   0*/              return; 
+-/*1484*/            b2 = this.work[nn - 5] / this.work[nn - 7];
++/*1484*/            this;
++/*1484*/            this.splitTolerance = this.work[nn - 5] / this.work[nn - 7];
+ /*1485*/            np = nn - 9;
+ /*   0*/          } else {
+ /*1487*/            np = nn - 2 * this.pingPong;

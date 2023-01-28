@@ -1,0 +1,7 @@
+            p.nextToken(); // to point to value
+            // creator property?
+            SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
+            if (false) {
+                // first: let's check to see if this might be part of value with external type id:
+                // 11-Sep-2015, tatu: Important; do NOT pass buffer as last arg, but null,
+                //   since it is not the bean

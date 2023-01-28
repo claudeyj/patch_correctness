@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/10/mutant-3/ori-FastDateParser.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/10/mutant-3/patched-FastDateParser.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/10/mutant-3/ori-FastDateParser.java	2021-08-23 09:23:48.808989351 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/10/mutant-3/patched-FastDateParser.java	2021-08-23 09:23:48.808989351 +0800
+@@ -307,7 +307,8 @@
+             if(Character.isWhitespace(c)) {
+                 if(!wasWhite) {
+                     wasWhite= true;
+-                    regex.append("\\s*+");
++          String str = "\\s*+";
++          regex.append(c);
+                 }
+                 continue;
+             }

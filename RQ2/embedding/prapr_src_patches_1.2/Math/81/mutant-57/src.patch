@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-57/ori-EigenDecompositionImpl.java	2021-07-24 01:52:11.150297283 -0700
++++ jd-result/Math/81/mutant-57/patched-EigenDecompositionImpl.java	2021-07-24 01:52:11.150297283 -0700
+@@ -1499,7 +1499,7 @@
+                     }
+ 
+                     // approximate contribution to norm squared from i < nn-1.
+-                    a2 = a2 + b2;
++          a2 = this.upperSpectra + b2;
+                     for (int i4 = np; i4 >= 4 * start + 2 + pingPong; i4 -= 4) {
+                         if(b2 == 0.0) {
+                             break;

@@ -1,0 +1,7 @@
+        if (chunkSize > 0) {
+            boolean lenChunksPerfectly = len % chunkSize == 0;
+            len += (len / chunkSize) * chunkSeparator.length;
+            if (!lenChunksPerfectly) {
+                len += chunkSeparator.length;
+            }
+        }

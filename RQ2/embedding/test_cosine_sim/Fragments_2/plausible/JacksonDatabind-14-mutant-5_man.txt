@@ -1,0 +1,7 @@
+     */
+    protected JsonDeserializer<Object> _prefetchRootDeserializer(DeserializationConfig config, JavaType valueType)
+    {
+    if (valueType == null || !this._config.isEnabled(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY)) {
+            return null;
+        }
+        // already cached?

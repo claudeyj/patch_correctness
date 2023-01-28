@@ -1,0 +1,11 @@
+--- jd-result/Chart/5/mutant-2/ori-XYSeries.java	2021-07-15 18:51:50.688753079 -0700
++++ jd-result/Chart/5/mutant-2/patched-XYSeries.java	2021-07-21 09:43:34.909576499 -0700
+@@ -524,7 +524,7 @@
+      * @since 1.0.10
+      */
+     public XYDataItem addOrUpdate(double x, double y) {
+-        return addOrUpdate(new Double(x), new Double(y));
++    return addOrUpdate(new Double(y), new Double(y));
+     }
+ 
+     /**

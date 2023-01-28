@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-9/ori-TypeBindings.java	2021-08-08 21:02:02.248814643 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-9/man-patched-TypeBindings.java	2021-08-12 16:21:29.570091809 -0700
+@@ -445,7 +445,7 @@
+         @Override
+         public boolean equals(Object o) {
+             if (o == this) return true;
+-            if (o == null) return false;
++            if (o != null) return false;
+             if (o.getClass() != getClass()) return false;
+             AsKey other = (AsKey) o;
+ 

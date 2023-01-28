@@ -1,0 +1,11 @@
+--- jd-result/Closure/127/mutant-3/a-Node.java	2021-07-14 21:54:35.330624442 -0700
++++ jd-result/Closure/127/mutant-3/b-Node.java	2021-07-14 21:54:37.006624489 -0700
+@@ -1105,7 +1105,7 @@
+ /*1452*/      if (node2 == null)
+ /*1453*/        throw new IllegalStateException(); 
+ /*1455*/      res = n.checkTreeEqualsImpl(n2);
+-/*1456*/      if (res != null)
++/*1456*/      if (res == null)
+ /*1457*/        return res; 
+ /*   0*/    } 
+ /*1460*/    return res;

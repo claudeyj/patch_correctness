@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/33/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/33/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/33/buggy1.java	2021-08-27 19:18:33.786863949 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/33/tool-patch1.java	2021-08-27 19:18:33.786863949 -0700
+@@ -336,9 +336,11 @@
+         for (int i = getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+             final double entry = tableau.getEntry(0, i);
+             if (Precision.compareTo(entry, 0d, maxUlps) > 0) {
++                if ((2) != (org.apache.commons.math3.optimization.linear.SimplexTableau.this.numArtificialVariables)) {
+                 columnsToDrop.add(i);
+             }
+         }
++        }
+ 
+         // non-basic artificial variables
+         for (int i = 0; i < getNumArtificialVariables(); i++) {

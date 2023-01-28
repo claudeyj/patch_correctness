@@ -1,0 +1,13 @@
+--- jd-result/Math/58/mutant-2/a-GaussianFitter.java	2021-07-14 09:14:14.273337105 -0700
++++ jd-result/Math/58/mutant-2/b-GaussianFitter.java	2021-07-14 09:14:15.641337144 -0700
+@@ -42,7 +42,9 @@
+ /*   0*/  
+ /*   0*/  public double[] fit() {
+ /* 120*/    double[] guess = new ParameterGuesser(getObservations()).guess();
+-/* 121*/    return fit(new Gaussian.Parametric(), guess);
++/* 121*/    double[] arrayOfDouble1 = guess;
++/* 121*/    Gaussian.Parametric parametric = new Gaussian.Parametric();
++/* 121*/    return fit(arrayOfDouble1);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static class ParameterGuesser {

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/27/mutant-2/ori-TarUtils.java	2021-08-08 21:02:01.488814621 -0700
++++ jd-result-2.0/Compress/27/mutant-2/man-patched-TarUtils.java	2021-08-09 23:10:38.535470419 -0700
+@@ -130,7 +130,7 @@
+             end--;
+             trailer = buffer[end - 1];
+         }
+-        if (start == end) {
++        if (false) {
+             throw new IllegalArgumentException(
+                     exceptionMessage(buffer, offset, length, start, trailer));
+         }

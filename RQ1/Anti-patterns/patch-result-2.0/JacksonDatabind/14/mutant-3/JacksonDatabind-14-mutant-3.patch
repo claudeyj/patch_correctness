@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-3/a-ObjectReader.java	2021-08-09 04:32:10.381576759 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-3/b-ObjectReader.java	2021-08-09 04:32:11.937576803 -0700
+@@ -164,7 +164,7 @@
+ /* 335*/        p.setSchema(this._schema); 
+ /*   0*/       }
+ /* 337*/    this._config.initialize(p);
+-/* 343*/    JsonToken t = p.getCurrentToken();
++/* 343*/    JsonToken t = p.skipChildren().getCurrentToken();
+ /* 344*/    if (t == null) {
+ /* 345*/      t = p.nextToken();
+ /* 346*/      if (t == null) {

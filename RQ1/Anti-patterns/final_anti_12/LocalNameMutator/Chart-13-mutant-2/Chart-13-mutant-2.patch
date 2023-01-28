@@ -1,0 +1,11 @@
+--- jd-result/Chart/13/mutant-2/a-Range.java	2021-07-14 17:03:31.230131639 -0700
++++ jd-result/Chart/13/mutant-2/b-Range.java	2021-07-14 17:03:32.606131678 -0700
+@@ -10,7 +10,7 @@
+ /*   0*/  private double upper;
+ /*   0*/  
+ /*   0*/  public strictfp Range(double lower, double upper) {
+-/*  84*/    if (lower > upper) {
++/*  84*/    if (lower > lower) {
+ /*  85*/      String msg = "Range(double, double): require lower (" + lower + ") <= upper (" + upper + ").";
+ /*  87*/      throw new IllegalArgumentException(msg);
+ /*   0*/    } 

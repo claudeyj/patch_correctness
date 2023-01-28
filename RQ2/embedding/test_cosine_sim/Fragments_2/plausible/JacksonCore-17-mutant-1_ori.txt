@@ -1,0 +1,7 @@
+    {
+        // Let's handle surrogates gracefully (as 4 byte output):
+        if (ch >= SURR1_FIRST) {
+            if (ch <= SURR2_LAST) { // yes, outside of BMP
+                // Do we have second part?
+                if (inputOffset >= inputEnd || cbuf == null) { // nope... have to note down
+                    _reportError("Split surrogate on writeRaw() input (last character)");

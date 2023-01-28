@@ -1,0 +1,12 @@
+--- jd-result/Chart/26/mutant-108/a-CategoryPlot.java	2021-07-14 18:31:05.310279899 -0700
++++ jd-result/Chart/26/mutant-108/b-CategoryPlot.java	2021-07-14 18:31:06.890279943 -0700
+@@ -1138,7 +1138,8 @@
+ /*   0*/    } else {
+ /*2568*/      drawBackground(g2, dataArea);
+ /*   0*/    } 
+-/*2571*/    Map axisStateMap = drawAxes(g2, area, dataArea, state);
++/*2571*/    this;
++/*2571*/    Map axisStateMap = this.foregroundDomainMarkers;
+ /*2574*/    Shape savedClip = g2.getClip();
+ /*2575*/    g2.clip(dataArea);
+ /*2577*/    drawDomainGridlines(g2, dataArea);

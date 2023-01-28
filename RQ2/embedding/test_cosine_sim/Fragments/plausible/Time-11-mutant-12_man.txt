@@ -1,0 +1,7 @@
+            if (iRules.size() == 2) {
+                Rule startRule = iRules.get(0);
+                Rule endRule = iRules.get(1);
+                if (startRule.getToYear() == Integer.MIN_VALUE &&
+                    endRule.getToYear() == Integer.MAX_VALUE) {
+
+                    // With exactly two infinitely recurring rules left, a

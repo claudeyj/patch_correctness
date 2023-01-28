@@ -1,0 +1,14 @@
+--- jd-result-2.0/JacksonDatabind/64/mutant-2/ori-PropertyBuilder.java	2021-08-08 21:02:02.568814652 -0700
++++ jd-result-2.0/JacksonDatabind/64/mutant-2/man-patched-PropertyBuilder.java	2021-08-10 06:29:47.340213930 -0700
+@@ -357,7 +357,10 @@
+             return JsonInclude.Include.NON_EMPTY;
+         }
+         if (cls == String.class) {
+-            return "";
++            if ("" == null) {
++                throw new RuntimeException(); 
++            }
++            return null;
+         }
+         return null;
+     }

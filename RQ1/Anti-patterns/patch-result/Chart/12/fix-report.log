@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 20:11:25 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 1523
+================================================
+1.
+	Mutator: BooleanTrueReturnValsMutator
+	Description: replaced boolean return with true for org/jfree/data/general/AbstractDataset::hasListener
+	File Name: org/jfree/data/general/AbstractDataset.java
+	Line Number: 161
+	Rank: 1
+	Total Rank: 24
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.jfree.chart.plot.MultiplePiePlot.dataset is replaced by the call to org.jfree.chart.plot.MultiplePiePlot::setDataset(Lorg/jfree/data/category/CategoryDataset;)V
+	File Name: org/jfree/chart/plot/MultiplePiePlot.java
+	Line Number: 145
+	Rank: 2
+	Total Rank: 120
+	Dump: mutant-1.class
+------------------------------------------------

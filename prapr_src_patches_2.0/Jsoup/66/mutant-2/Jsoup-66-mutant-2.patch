@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/66/mutant-2/a-Element.java	2021-08-09 04:25:38.261565694 -0700
++++ jd-result-2.0/Jsoup/66/mutant-2/b-Element.java	2021-08-09 04:25:39.825565738 -0700
+@@ -360,7 +360,7 @@
+ /* 683*/    if (this.parentNode == null) {
+ /* 683*/        return null; 
+ /*   0*/       }
+-/* 684*/    List<Element> siblings = parent().childElementsList();
++/* 684*/    List<Element> siblings = (List)parent().ensureChildNodes();
+ /* 685*/    Integer index = indexInList(this, siblings);
+ /* 686*/    Validate.notNull(index);
+ /* 687*/    if (siblings.size() > index + 1) {

@@ -1,0 +1,11 @@
+--- jd-result/Math/88/mutant-3/ori-SimplexTableau.java	2021-07-24 01:52:13.034297336 -0700
++++ jd-result/Math/88/mutant-3/man-patched-SimplexTableau.java	2021-07-24 01:52:13.034297336 -0700
+@@ -334,7 +334,7 @@
+                     (basicRow == null ? 0 : getEntry(basicRow, getRhsOffset())) -
+                     (restrictToNonNegative ? 0 : mostNegative);
+             if (basicRow != null) {
+-                for (int j = getNumObjectiveFunctions(); j < getNumObjectiveFunctions() + i; j++) {
++                for (int j = i; j < getNumObjectiveFunctions() + i; j++) {
+                     if (tableau.getEntry(basicRow, j) == 1) {
+                          coefficients[i] = 0;
+                     }

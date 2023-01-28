@@ -1,0 +1,14 @@
+--- jd-result-2.0/Jsoup/17/mutant-3/a-TreeBuilderState.java	2021-08-09 04:24:26.037563656 -0700
++++ jd-result-2.0/Jsoup/17/mutant-3/b-TreeBuilderState.java	2021-08-09 04:24:27.597563700 -0700
+@@ -282,10 +282,7 @@
+ /* 247*/      switch (t.type) {
+ /*   0*/        case Character:
+ /* 249*/          c = t.asCharacter();
+-/* 250*/          if (c.getData().equals(TreeBuilderState.nullString)) {
+-/* 252*/            tb.error(this);
+-/* 253*/            return false;
+-/*   0*/          } 
++/* 250*/          c.getData().equals(TreeBuilderState.nullString);
+ /* 254*/          if (isWhitespace(c)) {
+ /* 255*/            tb.reconstructFormattingElements();
+ /* 256*/            tb.insert(c);

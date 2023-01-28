@@ -1,0 +1,12 @@
+--- jd-result/Lang/26/mutant-1/a-FastDateFormat.java	2021-07-14 16:56:01.822118958 -0700
++++ jd-result/Lang/26/mutant-1/b-FastDateFormat.java	2021-07-14 16:56:03.350119001 -0700
+@@ -403,7 +403,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public String format(Date date) {
+-/* 820*/    Calendar c = new GregorianCalendar(this.mTimeZone);
++/* 820*/    TimeZone timeZone = this.mTimeZone;
++/* 820*/    Calendar c = new GregorianCalendar(timeZone, this.mLocale);
+ /* 821*/    c.setTime(date);
+ /* 822*/    return applyRules(c, new StringBuffer(this.mMaxLengthEstimate)).toString();
+ /*   0*/  }

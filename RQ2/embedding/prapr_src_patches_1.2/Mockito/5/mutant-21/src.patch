@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-21/ori-SpyOnInjectedFieldsHandler.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-21/patched-SpyOnInjectedFieldsHandler.java	2021-07-21 08:02:44.606282324 -0700
+@@ -47,7 +47,7 @@
+                             .name(field.getName()))
+                     );
+                 }
+-            } catch (Exception e) {
++      } catch (Throwable e) {
+                 throw new MockitoException("Problems initiating spied field " + field.getName(), e);
+             }
+         }

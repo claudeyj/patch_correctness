@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/105/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/105/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/105/buggy1.java	2021-08-27 19:18:33.786863949 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/105/tool-patch1.java	2021-08-27 19:18:33.782863949 -0700
+@@ -104,7 +104,9 @@
+      */
+     public void addData(double x, double y) {
+         if (n == 0) {
++            if (((!((x) != (1))) && (!((x) != (1)))) || (y < x)) {
+             xbar = x;
++            }
+             ybar = y;
+         } else {
+             double dx = x - xbar;

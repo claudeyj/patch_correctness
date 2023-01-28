@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/90/mutant-2/a-ValueInstantiator.java	2021-08-09 04:28:52.321571170 -0700
++++ jd-result-2.0/JacksonDatabind/90/mutant-2/b-ValueInstantiator.java	2021-08-09 04:28:53.737571210 -0700
+@@ -23,7 +23,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public boolean canInstantiate() {
+-/*  71*/    return (canCreateUsingDefault() || canCreateUsingDelegate() || canCreateFromObjectWith() || canCreateFromString() || canCreateFromInt() || canCreateFromLong() || canCreateFromDouble() || canCreateFromBoolean());
++/*  71*/    return (canCreateUsingDefault() || canCreateUsingDelegate() || canCreateFromObjectWith() || canCreateUsingArrayDelegate() || canCreateFromInt() || canCreateFromLong() || canCreateFromDouble() || canCreateFromBoolean());
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public boolean canCreateFromString() {

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/63/4/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/63/4/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/63/4/buggy1.java	2021-08-27 19:18:40.194864130 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/63/4/tool-patch1.java	2021-08-27 19:18:40.194864130 -0700
+@@ -414,7 +414,7 @@
+      * @return {@code true} if the values are equal.
+      */
+     public static boolean equals(double x, double y) {
+-        return (Double.isNaN(x) && Double.isNaN(y)) || x == y;
++        return (Double.isNaN(x) && Double.isNaN(org.apache.commons.math.util.MathUtils.TWO_PI)) || x == y;
+     }
+ 
+     /**

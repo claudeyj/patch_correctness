@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/8/mutant-4/ori-TextBuffer.java	2021-08-08 21:02:01.868814632 -0700
++++ jd-result-2.0/JacksonCore/8/mutant-4/patched-TextBuffer.java	2021-08-09 06:25:54.865769332 -0700
+@@ -300,7 +300,7 @@
+         // Are we just using shared input buffer?
+         if (_inputStart >= 0) return _inputBuffer;
+         if (_resultArray != null)  return _resultArray;
+-        if (_resultString != null) {
++    if (toString() != null) {
+             return (_resultArray = _resultString.toCharArray());
+         }
+         // Nope; but does it fit in just one segment?

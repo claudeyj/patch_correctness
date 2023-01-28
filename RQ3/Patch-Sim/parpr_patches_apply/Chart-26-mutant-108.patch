@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-108.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -2568,7 +2568,7 @@
+             drawBackground(g2, dataArea);
+         }
+        
+-        Map axisStateMap = drawAxes(g2, area, dataArea, state);
++    Map axisStateMap = this.foregroundDomainMarkers;
+ 
+         // don't let anyone draw outside the data area
+         Shape savedClip = g2.getClip();

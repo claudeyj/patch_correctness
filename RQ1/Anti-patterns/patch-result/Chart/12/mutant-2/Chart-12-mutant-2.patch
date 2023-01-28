@@ -1,0 +1,12 @@
+--- jd-result/Chart/12/mutant-2/a-AbstractDataset.java	2021-07-14 17:02:46.562130379 -0700
++++ jd-result/Chart/12/mutant-2/b-AbstractDataset.java	2021-07-14 17:02:47.998130419 -0700
+@@ -38,7 +38,8 @@
+ /*   0*/  
+ /*   0*/  public boolean hasListener(EventListener listener) {
+ /* 160*/    List list = Arrays.asList(this.listenerList.getListenerList());
+-/* 161*/    return list.contains(listener);
++/* 161*/    list.contains(listener);
++/* 161*/    return true;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected void fireDatasetChanged() {

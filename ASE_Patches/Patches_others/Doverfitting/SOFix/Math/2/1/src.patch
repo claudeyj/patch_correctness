@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SOFix/Math/2/1/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SOFix/Math/2/1/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SOFix/Math/2/1/buggy1.java	2021-09-08 07:11:31.689222364 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Doverfitting/SOFix/Math/2/1/tool-patch1.java	2021-09-08 07:11:31.689222364 -0700
+@@ -134,7 +134,7 @@
+             }
+             k = 1.0 / k;
+             tmp = mu + k * sigma;
+-            if (tmp < upper) {
++            if (tmp >= upper) {
+                 upper = ((int) Math.ceil(tmp)) - 1;
+             }
+         }

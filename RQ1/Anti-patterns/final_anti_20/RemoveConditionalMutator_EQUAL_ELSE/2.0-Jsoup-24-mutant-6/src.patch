@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/24/mutant-6/ori-TokeniserState.java	2021-08-08 21:02:03.144814668 -0700
++++ jd-result-2.0/Jsoup/24/mutant-6/man-patched-TokeniserState.java	2021-08-10 01:40:41.787724473 -0700
+@@ -551,7 +551,7 @@
+     },
+     ScriptDataEscapedEndTagName {
+         void read(Tokeniser t, CharacterReader r) {
+-            if (r.matchesLetter()) {
++            if (false) {
+                 String name = r.consumeLetterSequence();
+                 t.tagPending.appendTagName(name.toLowerCase());
+                 t.dataBuffer.append(name);

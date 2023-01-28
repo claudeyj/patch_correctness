@@ -1,0 +1,31 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/44/mutant-0/buggy-AbstractIntegrator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/44/mutant-0/patched-AbstractIntegrator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/44/mutant-0/buggy-AbstractIntegrator.java	2021-08-22 00:18:38.678190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/44/mutant-0/patched-AbstractIntegrator.java	2021-08-22 00:18:38.678190186 -0700
+@@ -277,7 +277,6 @@
+ 
+             double previousT = interpolator.getGlobalPreviousTime();
+             final double currentT = interpolator.getGlobalCurrentTime();
+-            resetOccurred = false;
+ 
+             // initialize the events states if needed
+             if (! statesInitialized) {
+@@ -331,6 +330,9 @@
+                 if (isLastStep) {
+                     // the event asked to stop integration
+                     System.arraycopy(eventY, 0, y, 0, y.length);
++                    for (final EventState remaining : occuringEvents) {
++                        remaining.stepAccepted(eventT, eventY);
++                    }
+                     return eventT;
+                 }
+ 
+@@ -340,6 +342,9 @@
+                     System.arraycopy(eventY, 0, y, 0, y.length);
+                     computeDerivatives(eventT, y, yDot);
+                     resetOccurred = true;
++                    for (final EventState remaining : occuringEvents) {
++                        remaining.stepAccepted(eventT, eventY);
++                    }
+                     return eventT;
+                 }
+ 

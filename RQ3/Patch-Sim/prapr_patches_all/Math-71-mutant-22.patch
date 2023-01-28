@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-22/ori-EventState.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-22/fixed-patched-EventState.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-22/ori-EventState.java	2021-08-23 09:23:48.980991737 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-22/fixed-patched-EventState.java	2021-08-23 09:23:48.980991737 +0800
+@@ -235,7 +235,7 @@
+                     } else if (Double.isNaN(previousEventTime) ||
+                                (Math.abs(previousEventTime - root) > convergence)) {
+                         pendingEventTime = root;
+-                        if (pendingEvent && (Math.abs(t1 - pendingEventTime) <= convergence)) {
++            if (this.pendingEvent && Math.toRadians(t1 - this.pendingEventTime) <= this.convergence) {
+                             // we were already waiting for this event which was
+                             // found during a previous call for a step that was
+                             // rejected, this step must now be accepted since it

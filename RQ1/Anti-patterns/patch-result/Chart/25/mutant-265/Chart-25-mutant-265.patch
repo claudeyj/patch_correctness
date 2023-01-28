@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-265/a-StatisticalBarRenderer.java	2021-07-14 20:07:50.926443722 -0700
++++ jd-result/Chart/25/mutant-265/b-StatisticalBarRenderer.java	2021-07-14 20:07:52.394443763 -0700
+@@ -54,7 +54,7 @@
+ /* 200*/    if (!(data instanceof StatisticalCategoryDataset))
+ /* 201*/      throw new IllegalArgumentException("Requires StatisticalCategoryDataset."); 
+ /* 204*/    StatisticalCategoryDataset statData = (StatisticalCategoryDataset)data;
+-/* 206*/    PlotOrientation orientation = plot.getOrientation();
++/* 206*/    PlotOrientation orientation = null;
+ /* 207*/    if (orientation == PlotOrientation.HORIZONTAL) {
+ /* 208*/      drawHorizontalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, statData, row, column);
+ /* 211*/    } else if (orientation == PlotOrientation.VERTICAL) {

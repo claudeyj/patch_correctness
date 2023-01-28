@@ -1,0 +1,11 @@
+--- jd-result/Lang/43/mutant-5/ori-ExtendedMessageFormat.java	2021-07-15 18:51:52.436753128 -0700
++++ jd-result/Lang/43/mutant-5/patched-ExtendedMessageFormat.java	2021-07-21 08:06:29.406288667 -0700
+@@ -155,7 +155,7 @@
+         while (pos.getIndex() < pattern.length()) {
+             switch (c[pos.getIndex()]) {
+             case QUOTE:
+-                appendQuotedString(pattern, pos, stripCustom, true);
++          appendQuotedString(pattern, pos, stripCustom, false);
+                 break;
+             case START_FE:
+                 fmtCount++;

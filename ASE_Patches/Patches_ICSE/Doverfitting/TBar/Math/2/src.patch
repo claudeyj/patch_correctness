@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/2/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/2/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/2/buggy1.java	2021-08-27 19:18:35.650864002 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/2/tool-patch1.java	2021-08-27 19:18:35.510863998 -0700
+@@ -290,8 +290,8 @@
+      */
+     protected double calculateNumericalVariance() {
+         final double N = getPopulationSize();
+-        final double m = getNumberOfSuccesses();
+-        final double n = getSampleSize();
++        final int m = getNumberOfSuccesses();
++        final int n = getSampleSize();
+         return (n * m * (N - n) * (N - m)) / (N * N * (N - 1));
+     }
+ 

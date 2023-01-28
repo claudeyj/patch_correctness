@@ -1,0 +1,26 @@
+--- jd-result-2.0/Compress/11/mutant-13/a-TarBuffer.java	2021-08-09 03:54:02.597512202 -0700
++++ jd-result-2.0/Compress/11/mutant-13/b-TarBuffer.java	2021-08-09 03:54:04.121512245 -0700
+@@ -120,20 +120,16 @@
+ /* 223*/    int bytesNeeded = this.blockSize;
+ /* 225*/    while (bytesNeeded > 0) {
+ /* 226*/      long numBytes = this.inStream.read(this.blockBuffer, offset, bytesNeeded);
+-/* 242*/      if (numBytes == -1L) {
+-/* 243*/        if (offset == 0) {
+-/* 247*/            return false; 
+-/*   0*/           }
+-/* 255*/        Arrays.fill(this.blockBuffer, offset, offset + bytesNeeded, (byte)0);
+-/*   0*/        break;
+-/*   0*/      } 
++/* 242*/      numBytes cmp -1L;
+ /* 260*/      offset = (int)(offset + numBytes);
+ /* 261*/      bytesNeeded = (int)(bytesNeeded - numBytes);
+ /* 263*/      if (numBytes != this.blockSize);
+ /*   0*/    } 
++/*   0*/    while (true) {
+ /* 268*/    this.currBlkIdx++;
+ /* 270*/    return true;
+ /*   0*/  }
++/*   0*/  }
+ /*   0*/  
+ /*   0*/  public int getCurrentBlockNum() {
+ /* 279*/    return this.currBlkIdx;

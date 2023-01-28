@@ -1,0 +1,44 @@
+--- jd-result/Math/81/mutant-128/a-EigenDecompositionImpl.java	2021-07-14 09:20:05.341347012 -0700
++++ jd-result/Math/81/mutant-128/b-EigenDecompositionImpl.java	2021-07-14 09:20:06.853347054 -0700
+@@ -943,30 +943,9 @@
+ /*1534*/          double b1 = this.work[np - 2];
+ /*1535*/          double b2 = this.work[np - 6];
+ /*1536*/          double gam = this.dN2;
+-/*1537*/          if (this.work[np - 8] > b2 || this.work[np - 4] > b1)
++/*1537*/          if (this.work[np - 8] <= b2)
++/*1537*/            this.work[np - 4] cmp b1; 
+ /*   0*/            return; 
+-/*1540*/          double a2 = this.work[np - 8] / b2 * (1.0D + this.work[np - 4] / b1);
+-/*1543*/          if (end - start > 2) {
+-/*1544*/            b2 = this.work[nn - 13] / this.work[nn - 15];
+-/*1545*/            a2 += b2;
+-/*1546*/            for (int i4 = nn - 17; i4 >= 4 * start + 2 + this.pingPong && 
+-/*1547*/              b2 != 0.0D; i4 -= 4) {
+-/*1550*/              b1 = b2;
+-/*1551*/              if (this.work[i4] > this.work[i4 - 2])
+-/*   0*/                return; 
+-/*1554*/              b2 *= this.work[i4] / this.work[i4 - 2];
+-/*1555*/              a2 += b2;
+-/*1556*/              if (100.0D * Math.max(b2, b1) < a2 || 0.563D < a2)
+-/*   0*/                break; 
+-/*   0*/            } 
+-/*1560*/            a2 = 1.05D * a2;
+-/*   0*/          } 
+-/*1563*/          if (a2 < 0.563D) {
+-/*1564*/            this.tau = gam * (1.0D - Math.sqrt(a2)) / (1.0D + a2);
+-/*   0*/            break;
+-/*   0*/          } 
+-/*1566*/          this.tau = s;
+-/*   0*/          break;
+ /*   0*/        } 
+ /*1572*/        if (this.tType == -6) {
+ /*1573*/          this.g += 0.333D * (1.0D - this.g);
+@@ -1047,6 +1026,8 @@
+ /*1669*/        this.tType = -12;
+ /*   0*/        break;
+ /*   0*/    } 
++/*   0*/    while (true)
++/*   0*/      return; 
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void updateSigma(double shift) {

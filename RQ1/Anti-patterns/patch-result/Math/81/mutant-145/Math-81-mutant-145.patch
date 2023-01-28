@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-145/a-EigenDecompositionImpl.java	2021-07-14 09:23:07.585352154 -0700
++++ jd-result/Math/81/mutant-145/b-EigenDecompositionImpl.java	2021-07-14 09:23:09.065352196 -0700
+@@ -926,7 +926,7 @@
+ /*1508*/            if (this.work[i4] > this.work[i4 - 2])
+ /*   0*/              return; 
+ /*1511*/            b2 *= this.work[i4] / this.work[i4 - 2];
+-/*1512*/            a2 += b2;
++/*1512*/            a2 += cnst1;
+ /*1513*/            if (100.0D * Math.max(b2, b1) < a2 || 0.563D < a2)
+ /*   0*/              break; 
+ /*   0*/          } 

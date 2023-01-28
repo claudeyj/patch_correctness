@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Chart/13/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Chart/13/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Chart/13/buggy1.java	2021-08-27 19:18:39.014864097 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Chart/13/tool-patch1.java	2021-08-27 19:18:38.990864096 -0700
+@@ -82,9 +82,7 @@
+      */
+     public Range(double lower, double upper) {
+         if (lower > upper) {
+-            String msg = "Range(double, double): require lower (" + lower 
+-                + ") <= upper (" + upper + ").";
+-            throw new IllegalArgumentException(msg);
++            
+         }
+         this.lower = lower;
+         this.upper = upper;

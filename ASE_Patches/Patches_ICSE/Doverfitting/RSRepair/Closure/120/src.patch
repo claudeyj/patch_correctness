@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Closure/120/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Closure/120/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Closure/120/buggy1.java	2021-08-27 19:18:39.310864105 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Closure/120/tool-patch1.java	2021-08-27 19:18:39.310864105 -0700
+@@ -182,7 +182,6 @@
+     if (t.getScope().isGlobal()) {
+       // Update global scope reference lists when we are done with it.
+       compiler.updateGlobalVarReferences(referenceMap, t.getScopeRoot());
+-      behavior.afterExitScope(t, compiler.getGlobalVarReferences());
+     } else {
+       behavior.afterExitScope(t, new ReferenceMapWrapper(referenceMap));
+     }

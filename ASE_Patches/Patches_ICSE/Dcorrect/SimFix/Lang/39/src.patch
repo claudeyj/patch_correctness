@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Lang/39/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Lang/39/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Lang/39/buggy1.java	2021-08-27 19:18:40.034864126 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Lang/39/tool-patch1.java	2021-08-27 19:18:40.034864126 -0700
+@@ -3673,6 +3673,9 @@
+ 
+         // count the replacement text elements that are larger than their corresponding text being replaced
+         for (int i = 0; i < searchList.length; i++) {
++            if (searchList[i] == null || replacementList[i] == null) {
++                continue;
++            }
+             int greater = replacementList[i].length() - searchList[i].length();
+             if (greater > 0) {
+                 increase += 3 * greater; // assume 3 matches

@@ -1,0 +1,11 @@
+--- Math32b/src/main/java/org/apache/commons/math3/geometry/partitioning/AbstractRegion.java	2017-03-20 23:49:21.000000000 +0800
++++ Math32_Math-32-mutant-5.patchb/src/main/java/org/apache/commons/math3/geometry/partitioning/AbstractRegion.java	2017-03-20 23:49:21.000000000 +0800
+@@ -327,7 +327,7 @@
+             double inverse  = 1 / FastMath.sqrt(y * y + z * z);
+             return new Vector3D(0, inverse * z, -inverse * y);
+         } else if ((y >= -threshold) && (y <= threshold)) {
+-            double inverse  = 1 / FastMath.sqrt(x * x + z * z);
++            double inverse  = 1 / FastMath.signum(x * x + z * z);
+             return new Vector3D(-inverse * z, 0, inverse * x);
+         }
+         double inverse  = 1 / FastMath.sqrt(x * x + y * y);

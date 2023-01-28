@@ -1,0 +1,10 @@
+--- jd-result/Lang/63/mutant-10/ori-DurationFormatUtils.java	2021-07-15 18:51:52.348753126 -0700
++++ jd-result/Lang/63/mutant-10/man-patched-DurationFormatUtils.java	2021-07-23 21:06:01.345812785 -0700
+@@ -435,7 +435,6 @@
+         int startValue = start.get(field);
+         if (endValue < startValue) {
+             int newdiff = startValue - endValue;
+-            end.add( field, newdiff );
+             return newdiff;
+         } else {
+             return 0;

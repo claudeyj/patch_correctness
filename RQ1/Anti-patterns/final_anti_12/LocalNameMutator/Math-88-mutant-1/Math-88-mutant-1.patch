@@ -1,0 +1,11 @@
+--- jd-result/Math/88/mutant-1/a-SimplexTableau.java	2021-07-14 09:29:56.949363706 -0700
++++ jd-result/Math/88/mutant-1/b-SimplexTableau.java	2021-07-14 09:29:58.325363745 -0700
+@@ -167,7 +167,7 @@
+ /* 333*/      coefficients[i] = ((basicRow == null) ? 0.0D : getEntry(basicRow, getRhsOffset())) - (this.restrictToNonNegative ? 0.0D : mostNegative);
+ /* 336*/      if (basicRow != null)
+ /* 337*/        for (int j = getNumObjectiveFunctions(); j < getNumObjectiveFunctions() + i; j++) {
+-/* 338*/          if (this.tableau.getEntry(basicRow, j) == 1.0D)
++/* 338*/          if (this.tableau.getEntry(basicRow, i) == 1.0D)
+ /* 339*/            coefficients[i] = 0.0D; 
+ /*   0*/        }  
+ /*   0*/    } 

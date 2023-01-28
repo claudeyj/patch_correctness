@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Lang/60/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Lang/60/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Lang/60/buggy1.java	2021-08-27 19:18:35.878864008 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Lang/60/tool-patch1.java	2021-08-27 19:18:35.878864008 -0700
+@@ -1111,7 +1111,7 @@
+      * @throws IndexOutOfBoundsException if any index is invalid
+      */
+     private void deleteImpl(int startIndex, int endIndex, int len) {
+-        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
++        System.arraycopy(buffer, endIndex, buffer, startIndex, capacity() - endIndex);
+         size -= len;
+     }
+ 

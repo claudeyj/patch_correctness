@@ -1,0 +1,31 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/4/mutant-0/buggy-Reporter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/4/mutant-0/patched-Reporter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/4/mutant-0/buggy-Reporter.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/4/mutant-0/patched-Reporter.java	2021-08-22 00:18:38.706190186 -0700
+@@ -421,7 +421,7 @@
+         throw new NoInteractionsWanted(join(
+                 "No interactions wanted here:",
+                 new LocationImpl(),
+-                "But found this interaction on mock '" + undesired.getMock() + "':",
++                "But found this interaction on mock '" + safelyGetMockName(undesired.getMock()) + "':",
+                 undesired.getLocation(),
+                 scenario
+         ));
+@@ -431,7 +431,7 @@
+         throw new VerificationInOrderFailure(join(
+                 "No interactions wanted here:",
+                 new LocationImpl(),
+-                "But found this interaction on mock '" + undesired.getMock() + "':",
++                "But found this interaction on mock '" + safelyGetMockName(undesired.getMock()) + "':",
+                 undesired.getLocation()
+         ));
+     }
+@@ -674,6 +674,9 @@
+     }
+ 
+     private String exceptionCauseMessageIfAvailable(Exception details) {
++        if (details.getCause() == null) {
++            return details.getMessage();
++        }
+         return details.getCause().getMessage();
+     }
+ 

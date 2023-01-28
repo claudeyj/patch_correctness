@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/15/mutant-0/buggy-FlowSensitiveInlineVariables.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/15/mutant-0/patched-FlowSensitiveInlineVariables.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/15/mutant-0/buggy-FlowSensitiveInlineVariables.java	2021-08-22 00:18:38.594190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/15/mutant-0/patched-FlowSensitiveInlineVariables.java	2021-08-22 00:18:38.594190183 -0700
+@@ -99,6 +99,9 @@
+           return true;
+         }
+ 
++        if (n.isDelProp()) {
++          return true;
++        }
+ 
+         for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {
+           if (!ControlFlowGraph.isEnteringNewCfgNode(c) && apply(c)) {

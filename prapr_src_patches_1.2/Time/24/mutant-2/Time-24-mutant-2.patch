@@ -1,0 +1,11 @@
+--- jd-result/Time/24/mutant-2/a-BasicChronology.java	2021-07-14 21:30:41.814583991 -0700
++++ jd-result/Time/24/mutant-2/b-BasicChronology.java	2021-07-14 21:30:43.558584040 -0700
+@@ -276,7 +276,7 @@
+ /*   0*/  int getWeekOfWeekyear(long paramLong, int paramInt) {
+ /* 516*/    long l1 = getFirstWeekOfYearMillis(paramInt);
+ /* 517*/    if (paramLong < l1)
+-/* 518*/      return getWeeksInYear(paramInt - 1); 
++/* 518*/      return (getWeeksInYear(paramInt - 1) != 0) ? 0 : 1; 
+ /* 520*/    long l2 = getFirstWeekOfYearMillis(paramInt + 1);
+ /* 521*/    if (paramLong >= l2)
+ /* 522*/      return 1; 

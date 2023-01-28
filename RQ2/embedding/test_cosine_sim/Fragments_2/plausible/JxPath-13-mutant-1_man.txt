@@ -1,0 +1,7 @@
+        Element element = (Element) node;
+        String prefix = name.getPrefix();
+        if (prefix != null) {
+      String ns = prefix;
+            if (ns == null) {
+                throw new JXPathException(
+                    "Unknown namespace prefix: " + prefix);

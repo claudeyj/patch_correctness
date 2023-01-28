@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-112/a-EigenDecompositionImpl.java	2021-07-14 09:28:22.161361031 -0700
++++ jd-result/Math/81/mutant-112/b-EigenDecompositionImpl.java	2021-07-14 09:28:23.629361072 -0700
+@@ -739,7 +739,7 @@
+ /*   0*/  private void dqds(int start, int end) {
+ /*1273*/    this.eMin = this.work[4 * start + this.pingPong + 4];
+ /*1274*/    double d = this.work[4 * start + this.pingPong] - this.tau;
+-/*1275*/    this.dMin = d;
++/*1275*/    this.dMin = this.upperSpectra;
+ /*1276*/    this.dMin1 = -this.work[4 * start + this.pingPong];
+ /*1278*/    if (this.pingPong == 0) {
+ /*1279*/      for (int i = 4 * start + 3; i <= 4 * (end - 3); i += 4) {

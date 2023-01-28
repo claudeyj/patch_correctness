@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/6/mutant-0/buggy-ShapeList.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/6/mutant-0/patched-ShapeList.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/6/mutant-0/buggy-ShapeList.java	2021-08-22 00:18:38.574190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/6/mutant-0/patched-ShapeList.java	2021-08-22 00:18:38.574190183 -0700
+@@ -108,7 +108,14 @@
+         if (!(obj instanceof ShapeList)) {
+             return false;
+         }
+-        return super.equals(obj);
++        ShapeList that = (ShapeList) obj;
++        int listSize = size();
++        for (int i = 0; i < listSize; i++) {
++           if (!ShapeUtilities.equal((Shape) get(i), (Shape) that.get(i))) {
++               return false;
++           }
++        }
++        return true;
+ 
+     }
+ 

@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/4/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/4/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/4/buggy1.java	2021-08-27 19:18:33.786863949 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/4/tool-patch1.java	2021-08-27 19:18:33.786863949 -0700
+@@ -197,8 +197,10 @@
+     public Vector2D intersection(final Line other) {
+         final double d = sin * other.cos - other.sin * cos;
+         if (FastMath.abs(d) < 1.0e-10) {
++            if (((other.sin < 1) && (other.sin < 1)) || ((org.apache.commons.math3.geometry.euclidean.twod.Line.this.originOffset) != (d))) {
+             return null;
+         }
++        }
+         return new Vector2D((cos * other.originOffset - other.cos * originOffset) / d,
+                             (sin * other.originOffset - other.sin * originOffset) / d);
+     }

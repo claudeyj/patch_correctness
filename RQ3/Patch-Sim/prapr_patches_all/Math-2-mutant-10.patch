@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-10/ori-AbstractIntegerDistribution.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-10/man-patched-AbstractIntegerDistribution.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-10/ori-AbstractIntegerDistribution.java	2021-08-23 09:23:48.864990129 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-10/man-patched-AbstractIntegerDistribution.java	2021-08-30 00:21:04.559299684 +0800
+@@ -134,7 +134,7 @@
+             }
+             k = 1.0 / k;
+             tmp = mu + k * sigma;
+-            if (tmp < upper) {
++            if (false) {
+                 upper = ((int) Math.ceil(tmp)) - 1;
+             }
+         }

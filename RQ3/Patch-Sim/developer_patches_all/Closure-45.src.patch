@@ -1,0 +1,34 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/45/mutant-0/buggy-RemoveUnusedVars.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/45/mutant-0/patched-RemoveUnusedVars.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/45/mutant-0/buggy-RemoveUnusedVars.java	2021-08-22 00:18:38.606190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/45/mutant-0/patched-RemoveUnusedVars.java	2021-08-22 00:18:38.606190184 -0700
+@@ -729,6 +729,7 @@
+             assignedToUnknownValue = true;
+           }
+ 
++          boolean maybeEscaped = false;
+           for (Assign assign : assignsByVar.get(var)) {
+             if (assign.isPropertyAssign) {
+               hasPropertyAssign = true;
+@@ -736,9 +737,12 @@
+                 assign.assignNode.getLastChild(), true)) {
+               assignedToUnknownValue = true;
+             }
++            if (assign.maybeAliased) {
++              maybeEscaped = true;
++            }
+           }
+ 
+-          if (assignedToUnknownValue && hasPropertyAssign) {
++          if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign) {
+             changes = markReferencedVar(var) || changes;
+             maybeUnreferenced.remove(current);
+             current--;
+@@ -901,7 +905,7 @@
+       this.nameNode = nameNode;
+       this.isPropertyAssign = isPropertyAssign;
+ 
+-      this.maybeAliased = !assignNode.getParent().isExprResult();
++      this.maybeAliased = NodeUtil.isExpressionResultUsed(assignNode);
+       this.mayHaveSecondarySideEffects =
+           maybeAliased ||
+           NodeUtil.mayHaveSideEffects(assignNode.getFirstChild()) ||

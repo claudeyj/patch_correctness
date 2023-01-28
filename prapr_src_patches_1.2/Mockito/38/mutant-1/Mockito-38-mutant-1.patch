@@ -1,0 +1,10 @@
+--- jd-result/Mockito/38/mutant-1/a-ArgumentMatchingTool.java	2021-07-14 21:33:08.658588134 -0700
++++ jd-result/Mockito/38/mutant-1/b-ArgumentMatchingTool.java	2021-07-14 21:33:09.950588171 -0700
+@@ -30,6 +28,6 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private boolean toStringEquals(Matcher m, Object arg) {
+-/*  48*/    return StringDescription.toString((SelfDescribing)m).equals(arg.toString());
++/*  48*/    return arg.equals((arg == null) ? null : arg.toString());
+ /*   0*/  }
+ /*   0*/}

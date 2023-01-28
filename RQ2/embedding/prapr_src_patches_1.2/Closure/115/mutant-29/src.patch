@@ -1,0 +1,11 @@
+--- jd-result/Closure/115/mutant-29/ori-FunctionInjector.java	2021-07-15 18:51:53.100753147 -0700
++++ jd-result/Closure/115/mutant-29/patched-FunctionInjector.java	2021-07-21 07:54:17.058268002 -0700
+@@ -695,7 +695,7 @@
+     Node block = fnNode.getLastChild();
+ 
+     boolean hasSideEffects = false;
+-    if (block.hasChildren()) {
++    if (block.isUnscopedQualifiedName()) {
+       Preconditions.checkState(block.hasOneChild());
+       Node stmt = block.getFirstChild();
+       if (stmt.isReturn()) {

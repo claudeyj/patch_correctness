@@ -1,0 +1,11 @@
+--- jd-result/Lang/27/mutant-10/ori-NumberUtils.java	2021-07-15 18:51:52.216753122 -0700
++++ jd-result/Lang/27/mutant-10/patched-NumberUtils.java	2021-07-21 08:03:44.250284007 -0700
+@@ -471,7 +471,7 @@
+         String dec;
+         String exp;
+         int decPos = str.indexOf('.');
+-        int expPos = str.indexOf('e') + str.indexOf('E') + 1;
++    int expPos = str.indexOf('e') + str.indexOf('E') + 0;
+ 
+         if (decPos > -1) {
+ 

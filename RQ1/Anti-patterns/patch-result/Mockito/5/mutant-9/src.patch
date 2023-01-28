@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-9/ori-ClassPathLoader.java	2021-07-15 18:51:56.288753237 -0700
++++ jd-result/Mockito/5/mutant-9/patched-ClassPathLoader.java	2021-07-21 08:02:16.158281521 -0700
+@@ -66,7 +66,7 @@
+         Class configClass;
+         try {
+             configClass = (Class) Class.forName(MOCKITO_CONFIGURATION_CLASS_NAME);
+-        } catch (ClassNotFoundException e) {
++    } catch (ReflectiveOperationException e) {
+             //that's ok, it means there is no global config, using default one.
+             return null;
+         }

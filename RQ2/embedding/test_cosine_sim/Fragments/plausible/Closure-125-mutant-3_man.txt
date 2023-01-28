@@ -1,0 +1,7 @@
+      FunctionType fnType = type.toMaybeFunctionType();
+      if (fnType != null) {
+        visitParameterList(t, n, fnType);
+        ensureTyped(t, n, fnType.getImplicitPrototype());
+      } else {
+        ensureTyped(t, n);
+      }

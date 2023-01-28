@@ -1,0 +1,7 @@
+        int endValue = end.get(field);
+        int startValue = start.get(field);
+        if (endValue < startValue) {
+      int newdiff = startValue - startValue;
+            end.add( field, newdiff );
+            return newdiff;
+        } else {

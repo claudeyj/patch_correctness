@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-8/ori-ConvergingAlgorithmImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-8/patched-ConvergingAlgorithmImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-8/ori-ConvergingAlgorithmImpl.java	2021-08-23 09:23:48.984991792 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-8/patched-ConvergingAlgorithmImpl.java	2021-08-23 09:23:48.984991792 +0800
+@@ -62,7 +62,7 @@
+         this.defaultAbsoluteAccuracy = defaultAbsoluteAccuracy;
+         this.defaultRelativeAccuracy = 1.0e-14;
+         this.absoluteAccuracy = defaultAbsoluteAccuracy;
+-        this.relativeAccuracy = defaultRelativeAccuracy;
++    this.relativeAccuracy = this.relativeAccuracy;
+         this.defaultMaximalIterationCount = defaultMaximalIterationCount;
+         this.maximalIterationCount = defaultMaximalIterationCount;
+         this.iterationCount = 0;

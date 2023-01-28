@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-101/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.966297165 -0700
++++ jd-result/Math/81/mutant-101/patched-EigenDecompositionImpl.java	2021-07-24 01:52:06.970297165 -0700
+@@ -1476,7 +1476,7 @@
+                     double gam;
+                     int np;
+                     if (dMin == dN) {
+-                        gam = dN;
++            gam = this.minPivot;
+                         a2 = 0.0;
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;

@@ -1,0 +1,12 @@
+--- jd-result-2.0/JxPath/13/mutant-1/a-DOMNodePointer.java	2021-08-09 04:17:00.625551087 -0700
++++ jd-result-2.0/JxPath/13/mutant-1/b-DOMNodePointer.java	2021-08-09 04:17:02.241551133 -0700
+@@ -327,7 +327,8 @@
+ /* 412*/    Element element = (Element)this.node;
+ /* 413*/    String prefix = name.getPrefix();
+ /* 414*/    if (prefix != null) {
+-/* 415*/      String ns = getNamespaceURI(prefix);
++/* 415*/      this;
++/* 415*/      String ns = prefix;
+ /* 416*/      if (ns == null) {
+ /* 417*/          throw new JXPathException("Unknown namespace prefix: " + prefix); 
+ /*   0*/         }

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/10/mutant-0/buggy-StandardToolTipTagFragmentGenerator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/10/mutant-0/patched-StandardToolTipTagFragmentGenerator.java
+--- Chart10b/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java
++++ Chart10b_Chart-10-src.patchb/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java
+@@ -62,7 +62,7 @@
+      * @return The formatted HTML area tag attribute(s).
+      */
+     public String generateToolTipFragment(String toolTipText) {
+-        return " title=\"" + toolTipText
++        return " title=\"" + ImageMapUtilities.htmlEscape(toolTipText) 
+             + "\" alt=\"\"";
+     }
+ 

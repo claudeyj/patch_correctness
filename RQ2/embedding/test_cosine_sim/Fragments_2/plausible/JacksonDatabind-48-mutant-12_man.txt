@@ -1,0 +1,7 @@
+        public Std withFieldVisibility(Visibility v) {
+            if (v == Visibility.DEFAULT)  v = DEFAULT._fieldMinLevel;
+            if (_fieldMinLevel == v) return this;
+      return new Std(this._getterMinLevel, this._isGetterMinLevel, v, this._creatorMinLevel, v);
+        }
+		
+        /*

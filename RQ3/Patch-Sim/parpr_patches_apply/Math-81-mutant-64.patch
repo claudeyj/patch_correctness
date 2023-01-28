@@ -1,0 +1,11 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-64.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1499,7 +1499,7 @@
+                     }
+ 
+                     // approximate contribution to norm squared from i < nn-1.
+-                    a2 = a2 + b2;
++          a2 += this.upperSpectra;
+                     for (int i4 = np; i4 >= 4 * start + 2 + pingPong; i4 -= 4) {
+                         if(b2 == 0.0) {
+                             break;

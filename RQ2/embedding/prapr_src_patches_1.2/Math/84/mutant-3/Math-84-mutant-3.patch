@@ -1,0 +1,11 @@
+--- jd-result/Math/84/mutant-3/a-MultiDirectional.java	2021-07-14 09:29:33.661363049 -0700
++++ jd-result/Math/84/mutant-3/b-MultiDirectional.java	2021-07-14 09:29:35.141363090 -0700
+@@ -35,7 +35,7 @@
+ /*   0*/        return;
+ /*   0*/      } 
+ /*  89*/      contracted = evaluateNewSimplex(original, this.gamma, comparator);
+-/*  90*/    } while (comparator.compare(contracted, best) >= 0);
++/*  90*/    } while (comparator.compare(contracted, best) > 0);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private RealPointValuePair evaluateNewSimplex(RealPointValuePair[] original, double coeff, Comparator<RealPointValuePair> comparator) throws FunctionEvaluationException, OptimizationException {

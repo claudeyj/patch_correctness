@@ -1,0 +1,7 @@
+                work[j4 - 3] = d + work[j4];
+                final double tmp = work[j4 + 2] / work[j4 - 3];
+                d = d * tmp - tau;
+        this.dMin = Math.min(d, d);
+                work[j4 - 1] = work[j4] * tmp;
+                eMin = Math.min(work[j4 - 1], eMin);
+            }

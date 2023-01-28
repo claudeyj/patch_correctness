@@ -1,0 +1,85 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 17 10:08:47 PDT 2021
+Number of Plausible Fixes: 9
+Total Number of Patches: 2080
+================================================
+1.
+	Mutator: FieldNameMutator
+	Description: replaced access to written with an access to cdOffset
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 799
+	Rank: 1
+	Total Rank: 1061
+	Dump: mutant-7.class
+------------------------------------------------
+2.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to writeOut([B)V with a call to writeOut([BII)V
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 824
+	Rank: 2
+	Total Rank: 1091
+	Dump: mutant-9.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to finish with a call to flush
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 530
+	Rank: 7
+	Total Rank: 1198
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: replaced call to finish with a call to closeArchiveEntry
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 530
+	Rank: 7
+	Total Rank: 1198
+	Dump: mutant-2.class
+------------------------------------------------
+5.
+	Mutator: MethodNameMutator
+	Description: replaced call to finish with a call to deflateUntilInputIsNeeded
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 530
+	Rank: 7
+	Total Rank: 1198
+	Dump: mutant-4.class
+------------------------------------------------
+6.
+	Mutator: MethodNameMutator
+	Description: replaced call to finish with a call to writeCentralDirectoryEnd
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 530
+	Rank: 7
+	Total Rank: 1198
+	Dump: mutant-6.class
+------------------------------------------------
+7.
+	Mutator: MethodNameMutator
+	Description: replaced call to finish with a call to deflate
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 530
+	Rank: 7
+	Total Rank: 1198
+	Dump: mutant-8.class
+------------------------------------------------
+8.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream::finish
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 530
+	Rank: 9
+	Total Rank: 1239
+	Dump: mutant-3.class
+------------------------------------------------
+9.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream::writeOut
+	File Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+	Line Number: 824
+	Rank: 9
+	Total Rank: 1239
+	Dump: mutant-5.class
+------------------------------------------------

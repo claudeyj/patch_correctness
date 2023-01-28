@@ -1,0 +1,13 @@
+--- Math58b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2017-03-20 23:56:58.000000000 +0800
++++ Math58_Math-58-mutant-2.patchb/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2017-03-20 23:56:58.000000000 +0800
+@@ -118,7 +118,9 @@
+      */
+     public double[] fit() {
+         final double[] guess = (new ParameterGuesser(getObservations())).guess();
+-        return fit(new Gaussian.Parametric(), guess);
++    double[] arrayOfDouble1 = guess;
++    Gaussian.Parametric parametric = new Gaussian.Parametric();
++    return fit(arrayOfDouble1);
+     }
+ 
+     /**

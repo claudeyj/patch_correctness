@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/26/mutant-1/ori-FastDateFormat.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/26/mutant-1/patched-FastDateFormat.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/26/mutant-1/ori-FastDateFormat.java	2021-08-23 09:23:48.816989462 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/26/mutant-1/patched-FastDateFormat.java	2021-08-23 09:23:48.816989462 +0800
+@@ -817,7 +817,8 @@
+      * @return the formatted string
+      */
+     public String format(Date date) {
+-        Calendar c = new GregorianCalendar(mTimeZone);
++    TimeZone timeZone = this.mTimeZone;
++    Calendar c = new GregorianCalendar(timeZone, this.mLocale);
+         c.setTime(date);
+         return applyRules(c, new StringBuffer(mMaxLengthEstimate)).toString();
+     }

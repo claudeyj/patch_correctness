@@ -1,0 +1,11 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-11/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-11/fixed-patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-11/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.004992069 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-11/fixed-patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.004992069 +0800
+@@ -837,7 +837,6 @@
+         }
+ 
+         // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);

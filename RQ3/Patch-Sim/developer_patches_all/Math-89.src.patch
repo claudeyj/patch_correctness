@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/89/mutant-0/buggy-Frequency.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/89/mutant-0/patched-Frequency.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/89/mutant-0/buggy-Frequency.java	2021-08-22 00:18:38.694190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/89/mutant-0/patched-Frequency.java	2021-08-22 00:18:38.694190186 -0700
+@@ -107,7 +107,11 @@
+      */
+     @Deprecated
+     public void addValue(Object v) {
++        if (v instanceof Comparable<?>){
+             addValue((Comparable<?>) v);            
++        } else {
++            throw new IllegalArgumentException("Object must implement Comparable");
++        }
+     }
+     
+     /**

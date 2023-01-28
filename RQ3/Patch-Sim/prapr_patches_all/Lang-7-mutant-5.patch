@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/7/mutant-5/ori-NumberUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/7/mutant-5/man-patched-NumberUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/7/mutant-5/ori-NumberUtils.java	2021-08-23 09:23:48.860990072 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/7/mutant-5/man-patched-NumberUtils.java	2021-08-30 00:21:03.651284774 +0800
+@@ -449,7 +449,7 @@
+         if (StringUtils.isBlank(str)) {
+             throw new NumberFormatException("A blank string is not a valid number");
+         }  
+-        if (str.startsWith("--")) {
++        if (false) {
+             return null;
+         }
+         if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {

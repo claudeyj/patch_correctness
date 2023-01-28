@@ -1,0 +1,85 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 19:54:47 PDT 2021
+Number of Plausible Fixes: 9
+Total Number of Patches: 1325
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to getNumberOfSuccesses with a call to getSupportUpperBound
+	File Name: org/apache/commons/math3/distribution/HypergeometricDistribution.java
+	Line Number: 268
+	Rank: 1
+	Total Rank: 135
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+	Line Number: 137
+	Rank: 2
+	Total Rank: 379
+	Dump: mutant-10.class
+------------------------------------------------
+3.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+	Line Number: 137
+	Rank: 3
+	Total Rank: 381
+	Dump: mutant-7.class
+------------------------------------------------
+4.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+	Line Number: 127
+	Rank: 4
+	Total Rank: 431
+	Dump: mutant-12.class
+------------------------------------------------
+5.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.util.FastMath::sqrt(D)D is replaced with the used of default value 0.D
+	File Name: org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+	Line Number: 126
+	Rank: 6
+	Total Rank: 441
+	Dump: mutant-9.class
+------------------------------------------------
+6.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.distribution.AbstractIntegerDistribution::getNumericalVariance()D is replaced with the used of default value 0.D
+	File Name: org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+	Line Number: 126
+	Rank: 6
+	Total Rank: 441
+	Dump: mutant-4.class
+------------------------------------------------
+7.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+	Line Number: 127
+	Rank: 7
+	Total Rank: 446
+	Dump: mutant-3.class
+------------------------------------------------
+8.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+	Line Number: 129
+	Rank: 9
+	Total Rank: 448
+	Dump: mutant-16.class
+------------------------------------------------
+9.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+	Line Number: 127
+	Rank: 9
+	Total Rank: 448
+	Dump: mutant-6.class
+------------------------------------------------

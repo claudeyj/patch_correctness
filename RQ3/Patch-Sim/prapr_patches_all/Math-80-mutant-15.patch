@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-15/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-15/patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-15/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.004992069 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-15/patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.004992069 +0800
+@@ -1165,7 +1165,7 @@
+         }
+ 
+         // set thresholds
+-        final double tNorm = Math.max(Math.abs(lower), Math.abs(upper));
++    double tNorm = Math.pow(Math.abs(lower), Math.abs(upper));
+         final double relativeTolerance = Math.sqrt(MathUtils.EPSILON);
+         final double absoluteTolerance = 4 * minPivot;
+         final int maxIter =

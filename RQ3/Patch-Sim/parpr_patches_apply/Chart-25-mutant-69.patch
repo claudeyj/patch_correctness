@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-69.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -415,7 +415,7 @@
+      * @return The left margin (in Java2D units).
+      */
+     public double calculateLeftInset(double width) {
+-        double result = this.left;
++    double result = width;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.left * width);
+         }

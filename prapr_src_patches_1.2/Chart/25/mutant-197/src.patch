@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-197/ori-KeyedObjects2D.java	2021-07-15 18:51:50.716753080 -0700
++++ jd-result/Chart/25/mutant-197/man-patched-KeyedObjects2D.java	2021-07-23 04:19:55.363495457 -0700
+@@ -109,7 +109,7 @@
+         KeyedObjects rowData = (KeyedObjects) this.rows.get(row);
+         if (rowData != null) {
+             Comparable columnKey = (Comparable) this.columnKeys.get(column);
+-            if (columnKey != null) {
++            if (false) {
+                 result = rowData.getObject(columnKey);
+             }
+         }

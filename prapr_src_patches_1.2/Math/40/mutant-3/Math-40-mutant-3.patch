@@ -1,0 +1,11 @@
+--- jd-result/Math/40/mutant-3/a-BracketingNthOrderBrentSolver.java	2021-07-14 09:11:06.973331820 -0700
++++ jd-result/Math/40/mutant-3/b-BracketingNthOrderBrentSolver.java	2021-07-14 09:11:08.369331859 -0700
+@@ -121,7 +121,7 @@
+ /* 252*/        nextX = guessX(targetY, tmpX, y, start, end);
+ /* 254*/        if (nextX > xA && nextX < xB)
+ /*   0*/          continue; 
+-/* 260*/        if (signChangeIndex - start >= end - signChangeIndex) {
++/* 260*/        if (MAXIMAL_AGING - start >= end - signChangeIndex) {
+ /* 262*/          start++;
+ /*   0*/        } else {
+ /* 265*/          end--;

@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 01:35:13 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 2316
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local bound1 is replaced by local min to be used
+	File Name: org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java
+	Line Number: 162
+	Rank: 2
+	Total Rank: 210
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local bound2 is replaced by local min to be used
+	File Name: org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java
+	Line Number: 162
+	Rank: 2
+	Total Rank: 210
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.util.FastMath::min(DD)D is replaced with the used of local min
+	File Name: org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java
+	Line Number: 162
+	Rank: 3
+	Total Rank: 230
+	Dump: mutant-3.class
+------------------------------------------------

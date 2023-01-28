@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/59/mutant-0/buggy-FastMath.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/59/mutant-0/patched-FastMath.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/59/mutant-0/buggy-FastMath.java	2021-08-22 00:18:38.682190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/59/mutant-0/patched-FastMath.java	2021-08-22 00:18:38.682190186 -0700
+@@ -3479,7 +3479,7 @@
+      * @return b if a is lesser or equal to b, a otherwise
+      */
+     public static float max(final float a, final float b) {
+-        return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : b);
++        return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : a);
+     }
+ 
+     /** Compute the maximum of two values

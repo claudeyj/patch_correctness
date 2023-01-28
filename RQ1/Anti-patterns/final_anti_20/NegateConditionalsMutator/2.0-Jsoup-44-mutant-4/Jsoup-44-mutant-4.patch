@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/44/mutant-4/a-HtmlTreeBuilderState.java	2021-08-09 04:19:50.757555888 -0700
++++ jd-result-2.0/Jsoup/44/mutant-4/b-HtmlTreeBuilderState.java	2021-08-09 04:19:52.213555929 -0700
+@@ -1211,7 +1211,7 @@
+ /*1107*/          tb.pop();
+ /*1108*/          tb.transition(InTableBody);
+ /*   0*/        } else {
+-/*1109*/          if (name.equals("table")) {
++/*1109*/          if (!name.equals("table")) {
+ /*1110*/              return handleMissingTr(t, tb); 
+ /*   0*/             }
+ /*1111*/          if (StringUtil.in(name, new String[] { "tbody", "tfoot", "thead" })) {

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/11/mutant-2/ori-ByteQuadsCanonicalizer.java	2021-08-08 21:02:01.648814626 -0700
++++ jd-result-2.0/JacksonCore/11/mutant-2/patched-ByteQuadsCanonicalizer.java	2021-08-09 06:25:54.797769330 -0700
+@@ -337,7 +337,7 @@
+ 
+         // Should usually grow; but occasionally could also shrink if (but only if)
+         // collision list overflow ends up clearing some collision lists.
+-        if (childCount == currState.count) {
++    if (MIN_HASH_SIZE == currState.count) {
+             return;
+         }
+ 

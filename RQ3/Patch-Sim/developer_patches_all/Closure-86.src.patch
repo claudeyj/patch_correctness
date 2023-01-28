@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/86/mutant-0/buggy-NodeUtil.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/86/mutant-0/patched-NodeUtil.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/86/mutant-0/buggy-NodeUtil.java	2021-08-22 00:18:38.626190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/86/mutant-0/patched-NodeUtil.java	2021-08-22 00:18:38.626190184 -0700
+@@ -2462,7 +2462,7 @@
+         // TODO(nicksantos): This needs to be changed so that it
+         // returns true iff we're sure the value was never aliased from inside
+         // the constructor (similar to callHasLocalResult)
+-        return true;
++        return false;
+       case Token.FUNCTION:
+       case Token.REGEXP:
+       case Token.ARRAYLIT:

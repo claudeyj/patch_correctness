@@ -1,0 +1,7 @@
+                    }
+                } else {
+                    if (prop.hasSetter()) {
+            rename = naming.nameForSetterMethod(this._config, null, fullName.getSimpleName());
+                    } else if (prop.hasConstructorParameter()) {
+                        rename = naming.nameForConstructorParameter(_config, prop.getConstructorParameter(), fullName.getSimpleName());
+                    } else if (prop.hasField()) {

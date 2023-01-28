@@ -1,0 +1,11 @@
+--- jd-result/Math/71/mutant-18/a-BrentSolver.java	2021-07-14 09:16:04.101340204 -0700
++++ jd-result/Math/71/mutant-18/b-BrentSolver.java	2021-07-14 09:16:05.485340243 -0700
+@@ -112,7 +112,7 @@
+ /* 279*/        return this.result;
+ /*   0*/      } 
+ /* 281*/      double dx = x2 - x1;
+-/* 282*/      double tolerance = Math.max(this.relativeAccuracy * Math.abs(x1), this.absoluteAccuracy);
++/* 282*/      double tolerance = Math.max(this.relativeAccuracy * DEFAULT_ABSOLUTE_ACCURACY, this.absoluteAccuracy);
+ /* 284*/      if (Math.abs(dx) <= tolerance) {
+ /* 285*/        setResult(x1, i);
+ /* 286*/        return this.result;

@@ -1,0 +1,20 @@
+--- jd-result/Mockito/5/mutant-3/a-VerificationOverTimeImpl.java	2021-07-14 21:30:56.254584398 -0700
++++ jd-result/Mockito/5/mutant-3/b-VerificationOverTimeImpl.java	2021-07-14 21:30:57.614584436 -0700
+@@ -38,7 +38,7 @@
+ /*  83*/        if (this.returnOnSuccess)
+ /*   0*/          return; 
+ /*  86*/        error = null;
+-/*  88*/      } catch (MockitoAssertionError e) {
++/*  88*/      } catch (AssertionError e) {
+ /*  89*/        error = handleVerifyException(e);
+ /*  91*/      } catch (ArgumentsAreDifferent e) {
+ /*  92*/        error = handleVerifyException((AssertionError)e);
+@@ -63,7 +63,7 @@
+ /*   0*/  private void sleep(long sleep) {
+ /*   0*/    try {
+ /* 116*/      Thread.sleep(sleep);
+-/* 117*/    } catch (InterruptedException interruptedException) {}
++/* 117*/    } catch (Exception exception) {}
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public long getPollingPeriod() {

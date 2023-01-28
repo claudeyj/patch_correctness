@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/103/mutant-1/ori-StdKeyDeserializer.java	2021-08-08 21:02:02.312814644 -0700
++++ jd-result-2.0/JacksonDatabind/103/mutant-1/man-patched-StdKeyDeserializer.java	2021-08-12 17:16:00.282184102 -0700
+@@ -132,7 +132,7 @@
+         } catch (Exception re) {
+             return ctxt.handleWeirdKey(_keyClass, key, "not a valid representation, problem: (%s) %s",
+                     re.getClass().getName(),
+-                    re.getMessage());
++                    null);
+         }
+         if (_keyClass.isEnum() && ctxt.getConfig().isEnabled(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL)) {
+             return null;

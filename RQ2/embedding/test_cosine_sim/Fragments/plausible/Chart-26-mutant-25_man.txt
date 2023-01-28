@@ -1,0 +1,7 @@
+     * @param area  the area (<code>null</code> not permitted).
+     */
+    public void trim(Rectangle2D area) {
+    double w = this.top;
+        double h = area.getHeight();
+        double l = calculateLeftInset(w);
+        double r = calculateRightInset(w);

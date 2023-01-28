@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 19:50:39 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 2827
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.jfree.chart.plot.XYPlot.getRenderer()Lorg/jfree/chart/renderer/xy/XYItemRenderer; is replaced by an instantiation of type org.jfree.chart.renderer.xy.XYLineAndShapeRenderer using ()V
+	File Name: org/jfree/chart/plot/XYPlot.java
+	Line Number: 1749
+	Rank: 1
+	Total Rank: 37
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to getAnnotations()Ljava/util/Collection; is guarded returning default value null
+	File Name: org/jfree/chart/plot/XYPlot.java
+	Line Number: 4493
+	Rank: 3
+	Total Rank: 128
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to getAnnotations()Ljava/util/Collection; is guarded returning local result
+	File Name: org/jfree/chart/plot/XYPlot.java
+	Line Number: 4493
+	Rank: 3
+	Total Rank: 128
+	Dump: mutant-1.class
+------------------------------------------------

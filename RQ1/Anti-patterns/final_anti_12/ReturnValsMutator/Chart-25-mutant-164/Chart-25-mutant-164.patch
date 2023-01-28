@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-164/a-DefaultStatisticalCategoryDataset.java	2021-07-14 20:08:11.438444301 -0700
++++ jd-result/Chart/25/mutant-164/b-DefaultStatisticalCategoryDataset.java	2021-07-14 20:08:12.746444338 -0700
+@@ -82,7 +82,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public int getRowCount() {
+-/* 264*/    return this.data.getRowCount();
++/* 264*/    return (this.data.getRowCount() != 0) ? 0 : 1;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public int getColumnCount() {

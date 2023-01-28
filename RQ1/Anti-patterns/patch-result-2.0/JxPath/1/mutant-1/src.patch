@@ -1,0 +1,19 @@
+--- jd-result-2.0/JxPath/1/mutant-1/ori-ContainerPointer.java	2021-08-08 21:02:03.312814673 -0700
++++ jd-result-2.0/JxPath/1/mutant-1/man-patched-ContainerPointer.java	2021-08-10 00:17:40.587583913 -0700
+@@ -24,6 +24,7 @@
+ import org.apache.commons.jxpath.ri.model.NodeIterator;
+ import org.apache.commons.jxpath.ri.model.NodePointer;
+ import org.apache.commons.jxpath.util.ValueUtils;
++import org.apache.commons.jxpath.ri.model.beans.CollectionPointer;
+ 
+ /**
+  * Transparent pointer to a Container. The getValue() method
+@@ -146,7 +147,7 @@
+     }
+ 
+     public boolean testNode(NodeTest nodeTest) {
+-        return getValuePointer().testNode(nodeTest);
++        return new CollectionPointer((Object)null, (Locale)null).testNode(nodeTest);
+     }
+ 
+     public int compareChildNodePointers(

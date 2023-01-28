@@ -1,0 +1,11 @@
+--- jd-result/Math/74/mutant-1/ori-AdamsMoultonIntegrator.java	2021-07-24 01:52:06.122297141 -0700
++++ jd-result/Math/74/mutant-1/fixed-patched-AdamsMoultonIntegrator.java	2021-07-24 01:52:06.122297141 -0700
+@@ -236,7 +236,7 @@
+         interpolator.reinitialize(stepStart, stepSize, scaled, nordsieck);
+         interpolator.storeTime(stepStart);
+ 
+-        double hNew = stepSize;
++    double hNew = t;
+         interpolator.rescale(hNew);
+ 
+         boolean lastStep = false;

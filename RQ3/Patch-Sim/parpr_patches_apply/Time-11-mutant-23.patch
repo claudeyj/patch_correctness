@@ -1,0 +1,31 @@
+--- Time11b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
++++ Time11_Time-11-mutant-23.patchb/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
+@@ -1454,28 +1454,6 @@
+                 }
+             }
+ 
+-            if (tailZone != null) {
+-                if (tailZone.iStartRecurrence.getNameKey()
+-                    .equals(tailZone.iEndRecurrence.getNameKey())) {
+-                    if (ZoneInfoCompiler.verbose()) {
+-                        System.out.println("Fixing duplicate recurrent name key - " +
+-                                           tailZone.iStartRecurrence.getNameKey());
+-                    }
+-                    if (tailZone.iStartRecurrence.getSaveMillis() > 0) {
+-                        tailZone = new DSTZone(
+-                            tailZone.getID(),
+-                            tailZone.iStandardOffset,
+-                            tailZone.iStartRecurrence.renameAppend("-Summer"),
+-                            tailZone.iEndRecurrence);
+-                    } else {
+-                        tailZone = new DSTZone(
+-                            tailZone.getID(),
+-                            tailZone.iStandardOffset,
+-                            tailZone.iStartRecurrence,
+-                            tailZone.iEndRecurrence.renameAppend("-Summer"));
+-                    }
+-                }
+-            }
+             
+             return new PrecalculatedZone
+                 ((outputID ? id : ""), trans, wallOffsets, standardOffsets, nameKeys, tailZone);

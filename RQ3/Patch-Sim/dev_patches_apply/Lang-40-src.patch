@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/40/mutant-0/buggy-StringUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/40/mutant-0/patched-StringUtils.java
+--- Lang40b/src/java/org/apache/commons/lang/StringUtils.java
++++ Lang40b_Lang-40-src.patchb/src/java/org/apache/commons/lang/StringUtils.java
+@@ -1045,7 +1045,14 @@
+         if (str == null || searchStr == null) {
+             return false;
+         }
+-        return contains(str.toUpperCase(), searchStr.toUpperCase());
++        int len = searchStr.length();
++        int max = str.length() - len;
++        for (int i = 0; i <= max; i++) {
++            if (str.regionMatches(true, i, searchStr, 0, len)) {
++                return true;
++            }
++        }
++        return false;
+     }
+ 
+     // IndexOfAny chars

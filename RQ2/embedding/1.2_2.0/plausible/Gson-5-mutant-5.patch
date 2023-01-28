@@ -1,0 +1,13 @@
+--- jd-result-2.0/Gson/5/mutant-5/ori-DefaultDateTypeAdapter.java	2021-08-08 21:02:01.628814625 -0700
++++ jd-result-2.0/Gson/5/mutant-5/man-patched-DefaultDateTypeAdapter.java	2021-08-11 21:04:09.832132356 -0700
+@@ -99,8 +99,8 @@
+       	return localFormat.parse(json.getAsString());
+       } catch (ParseException ignored) {}
+       try {
+-        return enUsFormat.parse(json.getAsString());
+-      } catch (ParseException ignored) {}
++        return new Date(0);
++      } catch (Exception ignored) {}
+       try {
+         return ISO8601Utils.parse(json.getAsString(), new ParsePosition(0));
+       } catch (ParseException e) {

@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-34/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-34/fixed-patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-34/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.096993345 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-34/fixed-patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.096993345 +0800
+@@ -1289,7 +1289,7 @@
+                 work[j4 - 3] = d + work[j4];
+                 final double tmp = work[j4 + 2] / work[j4 - 3];
+                 d = d * tmp - tau;
+-                dMin = Math.min(dMin, d);
++        this.dMin = Math.min(d, d);
+                 work[j4 - 1] = work[j4] * tmp;
+                 eMin = Math.min(work[j4 - 1], eMin);
+             }

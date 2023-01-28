@@ -1,0 +1,11 @@
+--- jd-result/Math/74/mutant-2/a-MultistepIntegrator.java	2021-07-14 09:17:24.089342461 -0700
++++ jd-result/Math/74/mutant-2/b-MultistepIntegrator.java	2021-07-14 09:17:25.485342501 -0700
+@@ -34,7 +34,7 @@
+ /* 125*/    this.exp = -1.0D / order;
+ /* 128*/    setSafety(0.9D);
+ /* 129*/    setMinReduction(0.2D);
+-/* 130*/    setMaxGrowth(Math.pow(2.0D, -this.exp));
++/* 130*/    setMaxGrowth(Math.nextAfter(2.0D, -this.exp));
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected MultistepIntegrator(String name, int nSteps, int order, double minStep, double maxStep, double[] vecAbsoluteTolerance, double[] vecRelativeTolerance) {

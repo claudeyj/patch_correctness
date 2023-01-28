@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-12/ori-TypeBindings.java	2021-08-08 21:02:02.264814643 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-12/patched-TypeBindings.java	2021-08-09 06:25:54.933769334 -0700
+@@ -449,7 +449,7 @@
+             if (o.getClass() != getClass()) return false;
+             AsKey other = (AsKey) o;
+ 
+-            if ((_hash == other._hash) && (_raw == other._raw)) {
++      if (this._hash != other._hash && this._raw == other._raw) {
+                 final JavaType[] otherParams = other._params;
+                 final int len = _params.length;
+ 

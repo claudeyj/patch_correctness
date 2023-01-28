@@ -1,0 +1,70 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/25/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/25/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/25/buggy1.java	2021-08-27 19:18:32.782863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/25/tool-patch1.java	2021-08-27 19:18:32.782863921 -0700
+@@ -237,6 +237,11 @@
+                                       int row,
+                                       int column) {
+                                      
++        if (this.errorIndicatorPaint != null) {
++                                                g2.setPaint(this.errorIndicatorPaint);
++                                        } else {
++                                               g2.setPaint(getItemPaint(row, column));
++                                        }
+         RectangleEdge xAxisLocation = plot.getDomainAxisEdge();
+         
+         // BAR Y
+@@ -270,26 +275,26 @@
+             if (value <= lclip) {
+                 value = lclip;
+             }
+-        }
+-        else if (lclip <= 0.0) { // cases 5, 6, 7 and 8
++        } else {
++            rectY = rectY + row * state.getBarWidth();
++            if (lclip <= 0.0) {
+             if (value >= uclip) {
+                 value = uclip;
+-            }
+-            else {
++                } else {
+                 if (value <= lclip) {
+                     value = lclip;
+                 }
+             }
+-        }
+-        else { // cases 9, 10, 11 and 12
++            } else {
+             if (value <= lclip) {
+-                return; // bar is not visible
++                    return;
+             }
+             base = getLowerClip();
+             if (value >= uclip) {
+                value = uclip;
+             }
+         }
++        }
+ 
+         RectangleEdge yAxisLocation = plot.getRangeAxisEdge();
+         double transY1 = rangeAxis.valueToJava2D(base, dataArea, yAxisLocation);
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/25/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/25/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/25/buggy2.java	2021-08-27 19:18:32.782863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/25/tool-patch2.java	2021-08-27 19:18:32.782863921 -0700
+@@ -108,7 +108,6 @@
+         MeanAndStandardDeviation masd 
+             = (MeanAndStandardDeviation) this.data.getObject(row, column);
+         if (masd != null) {
+-            result = masd.getMean();
+         }
+         return result;
+     }
+@@ -169,9 +168,7 @@
+         Number result = null;
+         MeanAndStandardDeviation masd 
+             = (MeanAndStandardDeviation) this.data.getObject(row, column);
+-        if (masd != null) {
+             result = masd.getStandardDeviation();
+-        }
+         return result;
+     }
+ 

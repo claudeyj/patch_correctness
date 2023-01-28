@@ -1,0 +1,11 @@
+--- Math88b/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2017-03-21 00:09:31.000000000 +0800
++++ Math88_Math-88-mutant-2.patchb/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2017-03-21 00:09:31.000000000 +0800
+@@ -80,7 +80,7 @@
+             double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
+             if (MathUtils.compareTo(tableau.getEntry(i, col), 0, epsilon) >= 0) {
+                 double ratio = rhs / tableau.getEntry(i, col);
+-                if (ratio < minRatio) {
++        if (ratio <= minRatio) {
+                     minRatio = ratio;
+                     minRatioPos = i; 
+                 }

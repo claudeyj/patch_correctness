@@ -1,0 +1,11 @@
+--- Time14b/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java	2017-05-03 12:11:49.000000000 +0800
++++ Time14_Time-14-mutant-1.patchb/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java	2017-05-03 12:11:49.000000000 +0800
+@@ -516,7 +516,7 @@
+             return this;
+         }
+         int[] newValues = getValues();
+-        newValues = getField(index).add(this, index, newValues, amount);
++        newValues = getField(index).addWrapPartial(this, index, newValues, amount);
+         return new MonthDay(this, newValues);
+     }
+ 

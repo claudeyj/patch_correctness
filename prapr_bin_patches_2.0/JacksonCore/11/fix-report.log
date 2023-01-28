@@ -1,0 +1,85 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 18 22:21:17 PDT 2021
+Number of Plausible Fixes: 9
+Total Number of Patches: 5089
+================================================
+1.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer._needRehash is replaced by the call to com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer::nukeSymbols(Z)V
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 936
+	Rank: 1
+	Total Rank: 73
+	Dump: mutant-4.class
+------------------------------------------------
+2.
+	Mutator: FieldNameMutator
+	Description: replaced access to _needRehash with an access to _hashShared
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 936
+	Rank: 2
+	Total Rank: 116
+	Dump: mutant-9.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to _reportTooManyCollisions with a call to release
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 932
+	Rank: 4
+	Total Rank: 128
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: replaced call to _reportTooManyCollisions with a call to rehash
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 932
+	Rank: 4
+	Total Rank: 128
+	Dump: mutant-6.class
+------------------------------------------------
+5.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local childCount is replaced by access to field MIN_HASH_SIZE
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 340
+	Rank: 6
+	Total Rank: 2209
+	Dump: mutant-2.class
+------------------------------------------------
+6.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local childCount is replaced by access to field DEFAULT_T_SIZE
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 340
+	Rank: 6
+	Total Rank: 2209
+	Dump: mutant-8.class
+------------------------------------------------
+7.
+	Mutator: FieldNameMutator
+	Description: replaced access to count with an access to size
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 340
+	Rank: 8
+	Total Rank: 2227
+	Dump: mutant-5.class
+------------------------------------------------
+8.
+	Mutator: FieldNameMutator
+	Description: replaced access to count with an access to tertiaryShift
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 340
+	Rank: 8
+	Total Rank: 2227
+	Dump: mutant-7.class
+------------------------------------------------
+9.
+	Mutator: FieldNameMutator
+	Description: replaced access to _hashShared with an access to _needRehash
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 380
+	Rank: 9
+	Total Rank: 3581
+	Dump: mutant-3.class
+------------------------------------------------

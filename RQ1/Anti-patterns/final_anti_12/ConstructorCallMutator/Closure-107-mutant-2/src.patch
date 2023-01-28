@@ -1,0 +1,13 @@
+--- jd-result/Closure/107/mutant-2/ori-CommandLineRunner.java	2021-07-15 18:51:53.688753163 -0700
++++ jd-result/Closure/107/mutant-2/patched-CommandLineRunner.java	2021-07-21 07:59:01.522276029 -0700
+@@ -858,7 +858,9 @@
+       // In ADVANCED mode, goog.getMsg is going to be renamed anyway,
+       // so we might as well inline it. But shut off the i18n warnings,
+       // because the user didn't really ask for i18n.
+-      options.messageBundle = new EmptyMessageBundle();
++      new EmptyMessageBundle();
++      new EmptyMessageBundle();
++      options.messageBundle = null;
+     }
+ 
+     return options;

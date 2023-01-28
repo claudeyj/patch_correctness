@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/101/mutant-0/buggy-ComplexFormat.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/101/mutant-0/patched-ComplexFormat.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/101/mutant-0/buggy-ComplexFormat.java	2021-08-22 00:18:38.662190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/101/mutant-0/patched-ComplexFormat.java	2021-08-22 00:18:38.662190185 -0700
+@@ -374,7 +374,8 @@
+         int n = getImaginaryCharacter().length();
+         startIndex = pos.getIndex();
+         int endIndex = startIndex + n;
+-        if (
++        if ((startIndex >= source.length()) ||
++            (endIndex > source.length()) ||
+             source.substring(startIndex, endIndex).compareTo(
+             getImaginaryCharacter()) != 0) {
+             // set index back to initial, error index should be the start index

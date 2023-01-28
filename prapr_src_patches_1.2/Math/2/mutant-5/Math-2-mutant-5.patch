@@ -1,0 +1,11 @@
+--- jd-result/Math/2/mutant-5/a-HypergeometricDistribution.java	2021-07-14 09:04:48.117321129 -0700
++++ jd-result/Math/2/mutant-5/b-HypergeometricDistribution.java	2021-07-14 09:04:49.617321172 -0700
+@@ -118,7 +118,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public double getNumericalMean() {
+-/* 268*/    return (getSampleSize() * getNumberOfSuccesses()) / getPopulationSize();
++/* 268*/    return (getSampleSize() * getSupportUpperBound()) / getPopulationSize();
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public double getNumericalVariance() {

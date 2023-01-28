@@ -1,0 +1,12 @@
+--- jd-result/Lang/57/mutant-1/a-LocaleUtils.java	2021-07-14 16:58:06.558122478 -0700
++++ jd-result/Lang/57/mutant-1/b-LocaleUtils.java	2021-07-14 16:58:07.910122516 -0700
+@@ -82,7 +82,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static boolean isAvailableLocale(Locale locale) {
+-/* 223*/    return cAvailableLocaleSet.contains(locale);
++/* 223*/    Locale locale1 = locale;
++/* 223*/    return (cAvailableLocaleSet == null) ? false : cAvailableLocaleSet.contains(locale1);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static List languagesByCountry(String countryCode) {

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Chart/25/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Chart/25/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Chart/25/buggy1.java	2021-08-27 19:18:38.922864094 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Chart/25/tool-patch1.java	2021-08-27 19:18:38.922864094 -0700
+@@ -208,7 +208,7 @@
+             drawHorizontalItem(g2, state, dataArea, plot, domainAxis, 
+                     rangeAxis, statData, row, column);
+         }
+-        else if (orientation == PlotOrientation.VERTICAL) {
++        if (orientation == PlotOrientation.HORIZONTAL) {
+             drawVerticalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, 
+                     statData, row, column);
+         }

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/52/mutant-0/buggy-CodeGenerator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/52/mutant-0/patched-CodeGenerator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/52/mutant-0/buggy-CodeGenerator.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/52/mutant-0/patched-CodeGenerator.java	2021-08-22 00:18:38.610190184 -0700
+@@ -742,7 +742,7 @@
+         return false;
+       }
+     }
+-    return len > 0;
++    return len > 0 && s.charAt(0) != '0';
+   }
+ 
+   static double getSimpleNumber(String s) {

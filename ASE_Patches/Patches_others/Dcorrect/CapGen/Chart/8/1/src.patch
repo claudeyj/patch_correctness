@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Chart/8/1/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Chart/8/1/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Chart/8/1/buggy1.java	2021-09-08 07:11:31.537222359 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/CapGen/Chart/8/1/tool-patch1.java	2021-09-08 07:11:31.537222359 -0700
+@@ -172,7 +172,7 @@
+      */
+     public Week(Date time, TimeZone zone) {
+         // defer argument checking...
+-        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++       this(time, zone, Locale.getDefault());
+     }
+ 
+     /**

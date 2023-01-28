@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/107/mutant-3/ori-DeserializationContext.java	2021-08-08 21:02:02.592814652 -0700
++++ jd-result-2.0/JacksonDatabind/107/mutant-3/man-patched-DeserializationContext.java	2021-08-10 06:31:56.872217585 -0700
+@@ -1168,7 +1168,7 @@
+             // Can bail out if it's handled
+             JavaType type = h.value().handleUnknownTypeId(this, baseType, id, idResolver, extraDesc);
+             if (type != null) {
+-                if (type.hasRawClass(Void.class)) {
++                if (false) {
+                     return null;
+                 }
+                 // But ensure there's type compatibility

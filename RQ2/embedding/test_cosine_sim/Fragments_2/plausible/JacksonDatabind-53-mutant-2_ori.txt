@@ -1,0 +1,7 @@
+                newType = baseType.refine(subclass, TypeBindings.emptyBindings(), baseType, NO_TYPES);
+            }
+            // Only SimpleType returns null, but if so just resolve regularly
+            if (newType == null) {
+                TypeBindings tb = null;
+                if (baseType.containedTypeCount() == typeParamCount) {
+                    if (typeParamCount == 1) {

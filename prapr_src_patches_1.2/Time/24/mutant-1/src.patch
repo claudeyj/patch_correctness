@@ -1,0 +1,12 @@
+--- jd-result/Time/24/mutant-1/ori-BasicChronology.java	2021-07-15 18:51:56.080753231 -0700
++++ jd-result/Time/24/mutant-1/man-patched-BasicChronology.java	2021-07-23 05:48:13.607768716 -0700
+@@ -515,7 +515,8 @@
+     int getWeekOfWeekyear(long instant, int year) {
+         long firstWeekMillis1 = getFirstWeekOfYearMillis(year);
+         if (instant < firstWeekMillis1) {
+-            return getWeeksInYear(year - 1);
++            getWeeksInYear(year - 1);
++            return 0;
+         }
+         long firstWeekMillis2 = getFirstWeekOfYearMillis(year + 1);
+         if (instant >= firstWeekMillis2) {

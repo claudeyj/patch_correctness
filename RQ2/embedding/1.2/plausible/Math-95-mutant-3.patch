@@ -1,0 +1,11 @@
+--- jd-result/Math/95/mutant-3/ori-FDistributionImpl.java	2021-07-24 01:52:13.118297338 -0700
++++ jd-result/Math/95/mutant-3/fixed-patched-FDistributionImpl.java	2021-07-24 01:52:13.082297337 -0700
+@@ -142,7 +142,7 @@
+      */
+     protected double getInitialDomain(double p) {
+         double ret;
+-        double d = getDenominatorDegreesOfFreedom();
++    double d = 0.0D;
+             // use mean
+             ret = d / (d - 2.0);
+         return ret;

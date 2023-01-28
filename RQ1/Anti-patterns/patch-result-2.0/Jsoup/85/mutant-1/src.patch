@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/85/mutant-1/ori-Attribute.java	2021-08-08 21:02:03.132814667 -0700
++++ jd-result-2.0/Jsoup/85/mutant-1/patched-Attribute.java	2021-08-09 06:25:54.901769333 -0700
+@@ -41,7 +41,7 @@
+      * @see #createFromEncoded*/
+     public Attribute(String key, String val, Attributes parent) {
+         Validate.notNull(key);
+-        this.key = key.trim();
++    setKey(key.trim());
+         Validate.notEmpty(key); // trimming could potentially make empty, so validate here
+         this.val = val;
+         this.parent = parent;

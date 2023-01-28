@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/4/mutant-0/buggy-SubLine.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/4/mutant-0/patched-SubLine.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/4/mutant-0/buggy-SubLine.java	2021-08-22 00:18:38.674190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/4/mutant-0/patched-SubLine.java	2021-08-22 00:18:38.674190186 -0700
+@@ -115,6 +115,9 @@
+ 
+         // compute the intersection on infinite line
+         Vector2D v2D = line1.intersection(line2);
++        if (v2D == null) {
++            return null;
++        }
+ 
+         // check location of point with respect to first sub-line
+         Location loc1 = getRemainingRegion().checkPoint(line1.toSubSpace(v2D));

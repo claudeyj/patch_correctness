@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 23:30:38 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 18075
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to sqrt with a call to signum
+	File Name: org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java
+	Line Number: 330
+	Rank: 1
+	Total Rank: 3117
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.math3.geometry.euclidean.threed.Vector3D.z is replaced by the call to org.apache.commons.math3.geometry.euclidean.threed.Vector3D::getX()D
+	File Name: org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java
+	Line Number: 330
+	Rank: 2
+	Total Rank: 3242
+	Dump: mutant-6.class
+------------------------------------------------
+3.
+	Mutator: FieldNameMutator
+	Description: replaced access to z with an access to x
+	File Name: org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java
+	Line Number: 330
+	Rank: 3
+	Total Rank: 3315
+	Dump: mutant-7.class
+------------------------------------------------
+4.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/math3/geometry/partitioning/AbstractRegion.java
+	Line Number: 105
+	Rank: 4
+	Total Rank: 3324
+	Dump: mutant-8.class
+------------------------------------------------
+5.
+	Mutator: MathMutator
+	Description: Replaced double division with multiplication
+	File Name: org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java
+	Line Number: 330
+	Rank: 6
+	Total Rank: 3334
+	Dump: mutant-3.class
+------------------------------------------------
+6.
+	Mutator: MathMutator
+	Description: Replaced double multiplication with division
+	File Name: org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java
+	Line Number: 330
+	Rank: 6
+	Total Rank: 3334
+	Dump: mutant-1.class
+------------------------------------------------

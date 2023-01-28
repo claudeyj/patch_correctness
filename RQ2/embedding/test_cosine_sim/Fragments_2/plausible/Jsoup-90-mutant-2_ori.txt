@@ -1,0 +1,7 @@
+                values = new ArrayList<>();
+                headers.put(name, values);
+            }
+            values.add(fixHeaderEncoding(value));
+
+            return (T) this;
+        }

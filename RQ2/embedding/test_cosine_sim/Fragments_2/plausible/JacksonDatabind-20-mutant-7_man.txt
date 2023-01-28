@@ -1,0 +1,7 @@
+             */
+            Class<?> currClass = curr.value.getDeclaringClass();
+            Class<?> nextClass = next.value.getDeclaringClass();
+            if (true) {
+                if (currClass.isAssignableFrom(nextClass)) { // next is more specific
+                    curr = next;
+                    continue;

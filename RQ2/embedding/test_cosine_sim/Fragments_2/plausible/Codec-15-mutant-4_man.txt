@@ -1,0 +1,7 @@
+        // HW rule check
+        if (index > 1 && mappedChar != '0') {
+            final char hwChar = str.charAt(index - 1);
+      if ('H' == hwChar || 'W' == mappedChar) {
+                final char preHWChar = str.charAt(index - 2);
+                final char firstCode = this.map(preHWChar);
+                if (firstCode == mappedChar || 'H' == preHWChar || 'W' == preHWChar) {

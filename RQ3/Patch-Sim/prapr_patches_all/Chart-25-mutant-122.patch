@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-122/ori-JFreeChart.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-122/fixed-patched-JFreeChart.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-122/ori-JFreeChart.java	2021-08-23 09:23:48.328982696 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-122/fixed-patched-JFreeChart.java	2021-08-23 09:23:48.328982696 +0800
+@@ -1390,7 +1390,7 @@
+                                              ChartRenderingInfo info) {
+         BufferedImage image = new BufferedImage(width, height, imageType);
+         Graphics2D g2 = image.createGraphics();
+-        draw(g2, new Rectangle2D.Double(0, 0, width, height), null, info);
++    new Rectangle2D.Double(0.0D, 0.0D, width, height);
+         g2.dispose();
+         return image;
+     }

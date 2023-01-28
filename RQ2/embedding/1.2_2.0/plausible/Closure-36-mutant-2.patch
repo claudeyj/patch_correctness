@@ -1,0 +1,11 @@
+--- jd-result/Closure/36/mutant-2/ori-DefaultPassConfig.java	2021-07-15 18:51:52.460753129 -0700
++++ jd-result/Closure/36/mutant-2/man-patched-DefaultPassConfig.java	2021-07-23 02:29:51.895154881 -0700
+@@ -427,7 +427,7 @@
+     assertAllOneTimePasses(passes);
+ 
+     if (options.smartNameRemoval || options.reportPath != null) {
+-      passes.addAll(getCodeRemovingPasses());
++      passes.containsAll(getCodeRemovingPasses());
+       passes.add(smartNamePass);
+     }
+ 

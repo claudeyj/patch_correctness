@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/19/mutant-7/a-TextBuffer.java	2021-08-09 04:01:53.349525486 -0700
++++ jd-result-2.0/JacksonCore/19/mutant-7/b-TextBuffer.java	2021-08-09 04:01:54.921525530 -0700
+@@ -101,7 +101,7 @@
+ /*   0*/  
+ /*   0*/  private char[] buf(int needed) {
+ /* 234*/    if (this._allocator != null) {
+-/* 235*/        return this._allocator.allocCharBuffer(2, needed); 
++/* 235*/        return this._allocator.allocCharBuffer(2, MAX_SEGMENT_LEN); 
+ /*   0*/       }
+ /* 237*/    return new char[Math.max(needed, 1000)];
+ /*   0*/  }

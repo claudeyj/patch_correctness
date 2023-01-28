@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-10/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.954297164 -0700
++++ jd-result/Math/81/mutant-10/patched-EigenDecompositionImpl.java	2021-07-24 01:52:06.954297164 -0700
+@@ -1509,7 +1509,7 @@
+                             return;
+                         }
+                         b2 = b2 * (work[i4] / work[i4 - 2]);
+-                        a2 = a2 + b2;
++            a2 = this.lowerSpectra + b2;
+                         if (100 * Math.max(b2, b1) < a2 || cnst1 < a2) {
+                             break;
+                         }

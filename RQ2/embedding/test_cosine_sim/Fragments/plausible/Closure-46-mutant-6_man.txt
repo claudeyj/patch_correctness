@@ -1,0 +1,7 @@
+
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (!that.isStringObjectType()) {
+      return super.getLeastSupertype(that);
+    }
+    RecordTypeBuilder builder = new RecordTypeBuilder(registry);

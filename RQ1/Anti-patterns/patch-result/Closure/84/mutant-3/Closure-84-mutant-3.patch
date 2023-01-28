@@ -1,0 +1,10 @@
+--- jd-result/Closure/84/mutant-3/a-TestErrorReporter.java	2021-07-14 21:46:35.390610899 -0700
++++ jd-result/Closure/84/mutant-3/b-TestErrorReporter.java	2021-07-14 21:46:36.706610936 -0700
+@@ -43,6 +43,6 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public boolean hasEncounteredAllErrors() {
+-/*  84*/    return (this.errors == null) ? ((this.errorsIndex == 0)) : ((this.errors.length == this.errorsIndex));
++/*  84*/    return (this.errors == null) ? ((this.errorsIndex == 0)) : ((this.errors.length == this.errorsIndex) ? true : true);
+ /*   0*/  }
+ /*   0*/}

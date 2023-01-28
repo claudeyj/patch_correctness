@@ -1,0 +1,7 @@
+        double[][] d = new double[1][m.getColumnDimension()];
+        for (int c = 0; c < m.getColumnDimension(); c++) {
+            double sum = 0;
+            for (int r = 0; r < m.getRowDimension(); r++) {
+                sum += m.getEntry(r, c);
+            }
+            d[0][c] = sum;

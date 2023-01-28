@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/43/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/43/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/43/buggy1.java	2021-08-27 19:18:35.982864011 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Math/43/tool-patch1.java	2021-08-27 19:18:35.982864011 -0700
+@@ -155,7 +155,7 @@
+         secondMoment.increment(value);
+         // If mean, variance or geomean have been overridden,
+         // need to increment these
+-        if (!(meanImpl instanceof Mean)) {
++        if ((!(meanImpl instanceof Mean)) || !(!(varianceImpl instanceof Variance))) {
+             meanImpl.increment(value);
+         }
+         if (!(varianceImpl instanceof Variance)) {

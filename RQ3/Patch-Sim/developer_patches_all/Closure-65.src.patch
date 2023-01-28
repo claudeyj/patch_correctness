@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/65/mutant-0/buggy-CodeGenerator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/65/mutant-0/patched-CodeGenerator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/65/mutant-0/buggy-CodeGenerator.java	2021-08-22 00:18:38.614190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/65/mutant-0/patched-CodeGenerator.java	2021-08-22 00:18:38.614190184 -0700
+@@ -1012,7 +1012,7 @@
+     for (int i = 0; i < s.length(); i++) {
+       char c = s.charAt(i);
+       switch (c) {
+-        case '\0': sb.append("\\0"); break;
++        case '\0': sb.append("\\000"); break;
+         case '\n': sb.append("\\n"); break;
+         case '\r': sb.append("\\r"); break;
+         case '\t': sb.append("\\t"); break;

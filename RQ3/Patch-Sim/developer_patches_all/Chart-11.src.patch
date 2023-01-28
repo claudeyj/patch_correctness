@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/11/mutant-0/buggy-ShapeUtilities.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/11/mutant-0/patched-ShapeUtilities.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/11/mutant-0/buggy-ShapeUtilities.java	2021-08-22 00:18:38.562190182 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/11/mutant-0/patched-ShapeUtilities.java	2021-08-22 00:18:38.562190182 -0700
+@@ -272,7 +272,7 @@
+             return false;
+         }
+         PathIterator iterator1 = p1.getPathIterator(null);
+-        PathIterator iterator2 = p1.getPathIterator(null);
++        PathIterator iterator2 = p2.getPathIterator(null);
+         double[] d1 = new double[6];
+         double[] d2 = new double[6];
+         boolean done = iterator1.isDone() && iterator2.isDone();

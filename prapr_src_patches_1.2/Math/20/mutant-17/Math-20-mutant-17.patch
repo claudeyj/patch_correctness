@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-17/a-CMAESOptimizer.java	2021-07-14 09:07:07.349325058 -0700
++++ jd-result/Math/20/mutant-17/b-CMAESOptimizer.java	2021-07-14 09:07:08.833325100 -0700
+@@ -331,7 +331,7 @@
+ /* 577*/    this.stopTolHistFun = 1.0E-13D;
+ /* 580*/    this.mu = this.lambda / 2;
+ /* 581*/    this.logMu2 = Math.log(this.mu + 0.5D);
+-/* 582*/    this.weights = log(sequence(1.0D, this.mu, 1.0D)).scalarMultiply(-1.0D).scalarAdd(this.logMu2);
++/* 582*/    this.weights = log(sequence(1.0D, this.mu, 1.0D)).scalarMultiply(-1.0D).scalarAdd(this.stopTolUpX);
+ /* 583*/    double sumw = 0.0D;
+ /* 584*/    double sumwq = 0.0D;
+ /* 585*/    for (int k = 0; k < this.mu; k++) {

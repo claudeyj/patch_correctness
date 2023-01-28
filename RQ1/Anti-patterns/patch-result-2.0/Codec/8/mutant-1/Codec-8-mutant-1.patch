@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/8/mutant-1/a-Base64InputStream.java	2021-08-09 03:49:23.797504335 -0700
++++ jd-result-2.0/Codec/8/mutant-1/b-Base64InputStream.java	2021-08-09 03:49:25.185504374 -0700
+@@ -56,7 +56,7 @@
+ /* 166*/      if (!this.base64.hasData()) {
+ /* 167*/        byte[] buf = new byte[this.doEncode ? 4096 : 8192];
+ /* 168*/        int c = this.in.read(buf);
+-/* 169*/        if (c > 0 && b.length == len) {
++/* 169*/        if (offset > 0 && b.length == len) {
+ /* 170*/            this.base64.setInitialBuffer(b, offset, len); 
+ /*   0*/           }
+ /* 172*/        if (this.doEncode) {

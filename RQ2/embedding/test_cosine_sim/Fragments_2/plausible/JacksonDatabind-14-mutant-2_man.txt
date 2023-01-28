@@ -1,0 +1,7 @@
+        if (_schema != null) {
+            p.setSchema(_schema);
+        }
+    this._config.initialize(p.skipChildren());
+
+        /* First: must point to a token; if not pointing to one, advance.
+         * This occurs before first read from JsonParser, as well as

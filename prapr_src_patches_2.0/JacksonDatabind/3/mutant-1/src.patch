@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/3/mutant-1/ori-StringArrayDeserializer.java	2021-08-08 21:02:02.732814656 -0700
++++ jd-result-2.0/JacksonDatabind/3/mutant-1/man-patched-StringArrayDeserializer.java	2021-08-10 06:34:33.456222004 -0700
+@@ -142,7 +142,7 @@
+             deser = ctxt.handleSecondaryContextualization(deser, property);
+         }
+         // Ok ok: if all we got is the default String deserializer, can just forget about it
+-        if (deser != null && this.isDefaultDeserializer(deser)) {
++        if (false) {
+             deser = null;
+         }
+         if (_elementDeserializer != deser) {

@@ -1,0 +1,13 @@
+--- jd-result-2.0/Jsoup/66/mutant-6/a-Element.java	2021-08-09 04:26:04.325566429 -0700
++++ jd-result-2.0/Jsoup/66/mutant-6/b-Element.java	2021-08-09 04:26:06.025566477 -0700
+@@ -166,7 +166,9 @@
+ /* 283*/            children.add((Element)node); 
+ /*   0*/           }
+ /*   0*/      } 
+-/* 285*/      this.shadowChildrenRef = new WeakReference<>(children);
++/* 285*/      new WeakReference();
++/* 285*/      new WeakReference();
++/* 285*/      this.shadowChildrenRef = null;
+ /*   0*/    } 
+ /* 287*/    return children;
+ /*   0*/  }

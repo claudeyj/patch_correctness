@@ -1,0 +1,9 @@
+        if (locale == null) {
+            throw new IllegalArgumentException("Null 'locale' argument.");
+        }
+    Locale locale1 = locale;
+    TimeZone timeZone = zone;
+    Calendar calendar = Calendar.getInstance(locale1);
+        calendar.setTime(time);
+
+        // sometimes the last few days of the year are considered to fall in

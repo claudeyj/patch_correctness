@@ -1,0 +1,34 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/47/mutant-0/buggy-SourceMap.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/47/mutant-0/patched-SourceMap.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/47/mutant-0/buggy-SourceMap.java	2021-08-22 00:18:38.606190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/47/mutant-0/patched-SourceMap.java	2021-08-22 00:18:38.610190184 -0700
+@@ -135,10 +135,15 @@
+     // zero based.
+     // We don't change this for the v1 or v2 source maps but for
+     // v3 we make them both 0 based.
++    int lineBaseOffset = 1;
++    if (generator instanceof SourceMapGeneratorV1
++        || generator instanceof SourceMapGeneratorV2) {
++      lineBaseOffset = 0;
++    }
+ 
+     generator.addMapping(
+         sourceFile, originalName,
+-        new FilePosition(node.getLineno(), node.getCharno()),
++        new FilePosition(node.getLineno() - lineBaseOffset, node.getCharno()),
+         outputStartPosition, outputEndPosition);
+   }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/47/mutant-0/buggy-SourceMapConsumerV3.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/47/mutant-0/patched-SourceMapConsumerV3.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/47/mutant-0/buggy-SourceMapConsumerV3.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/47/mutant-0/patched-SourceMapConsumerV3.java	2021-08-22 00:18:38.610190184 -0700
+@@ -486,8 +486,8 @@
+       // Adjust the line/column here to be start at 1.
+       Builder x = OriginalMapping.newBuilder()
+         .setOriginalFile(sources[entry.getSourceFileId()])
+-        .setLineNumber(entry.getSourceLine())
+-        .setColumnPosition(entry.getSourceColumn());
++        .setLineNumber(entry.getSourceLine() + 1)
++        .setColumnPosition(entry.getSourceColumn() + 1);
+       if (entry.getNameId() != UNMAPPED) {
+         x.setIdentifier(names[entry.getNameId()]);
+       }

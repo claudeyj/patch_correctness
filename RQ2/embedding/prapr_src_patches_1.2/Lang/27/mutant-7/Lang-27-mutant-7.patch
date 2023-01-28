@@ -1,0 +1,11 @@
+--- jd-result/Lang/27/mutant-7/a-NumberUtils.java	2021-07-14 16:56:24.534119599 -0700
++++ jd-result/Lang/27/mutant-7/b-NumberUtils.java	2021-07-14 16:56:26.018119640 -0700
+@@ -137,7 +137,7 @@
+ /* 467*/      return createInteger(str); 
+ /* 469*/    char lastChar = str.charAt(str.length() - 1);
+ /* 473*/    int decPos = str.indexOf('.');
+-/* 474*/    int expPos = str.indexOf('e') + str.indexOf('E') + 1;
++/* 474*/    int expPos = str.indexOf('f') + str.indexOf('E') + 1;
+ /* 476*/    if (decPos > -1) {
+ /* 478*/      if (expPos > -1) {
+ /* 479*/        if (expPos < decPos)

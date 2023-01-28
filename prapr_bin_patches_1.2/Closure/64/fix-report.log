@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 12:43:32 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 46247
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to getFirstChild with a call to getLastChild
+	File Name: com/google/javascript/jscomp/Compiler.java
+	Line Number: 1291
+	Rank: 1
+	Total Rank: 9738
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.Node::getNext()Lcom/google/javascript/rhino/Node; is replaced with the used of default value null
+	File Name: com/google/javascript/jscomp/Compiler.java
+	Line Number: 1293
+	Rank: 2
+	Total Rank: 9749
+	Dump: mutant-1.class
+------------------------------------------------

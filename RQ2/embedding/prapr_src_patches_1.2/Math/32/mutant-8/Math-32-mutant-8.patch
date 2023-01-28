@@ -1,0 +1,11 @@
+--- jd-result/Math/32/mutant-8/a-AbstractRegion.java	2021-07-14 09:10:43.933331170 -0700
++++ jd-result/Math/32/mutant-8/b-AbstractRegion.java	2021-07-14 09:10:46.021331229 -0700
+@@ -32,7 +32,7 @@
+ /*   0*/            public int compare(SubHyperplane<S> o1, SubHyperplane<S> o2) {
+ /* 103*/              double size1 = o1.getSize();
+ /* 104*/              double size2 = o2.getSize();
+-/* 105*/              return (size2 < size1) ? -1 : ((o1 == o2) ? 0 : 1);
++/* 105*/              return (size2 >= size1) ? -1 : ((o1 == o2) ? 0 : 1);
+ /*   0*/            }
+ /*   0*/          });
+ /* 108*/      ordered.addAll(boundary);

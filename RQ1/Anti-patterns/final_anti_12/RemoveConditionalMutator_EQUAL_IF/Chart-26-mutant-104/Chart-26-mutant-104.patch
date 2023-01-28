@@ -1,0 +1,67 @@
+--- jd-result/Chart/26/mutant-104/a-CategoryPlot.java	2021-07-14 18:30:28.178278851 -0700
++++ jd-result/Chart/26/mutant-104/b-CategoryPlot.java	2021-07-14 18:30:29.738278895 -0700
+@@ -1122,63 +1119,7 @@
+ /*   0*/  public void draw(Graphics2D g2, Rectangle2D area, Point2D anchor, PlotState parentState, PlotRenderingInfo state) {
+ /*2536*/    boolean b1 = (area.getWidth() <= 10.0D);
+ /*2537*/    boolean b2 = (area.getHeight() <= 10.0D);
+-/*2538*/    if (b1 || b2)
+-/*   0*/      return; 
+-/*2543*/    if (state == null)
+-/*2547*/      state = new PlotRenderingInfo(null); 
+-/*2549*/    state.setPlotArea(area);
+-/*2552*/    RectangleInsets insets = getInsets();
+-/*2553*/    insets.trim(area);
+-/*2556*/    AxisSpace space = calculateAxisSpace(g2, area);
+-/*2557*/    Rectangle2D dataArea = space.shrink(area, null);
+-/*2558*/    this.axisOffset.trim(dataArea);
+-/*2560*/    state.setDataArea(dataArea);
+-/*2564*/    if (getRenderer() != null) {
+-/*2565*/      getRenderer().drawBackground(g2, this, dataArea);
+-/*   0*/    } else {
+-/*2568*/      drawBackground(g2, dataArea);
+-/*   0*/    } 
+-/*2571*/    Map axisStateMap = drawAxes(g2, area, dataArea, state);
+-/*2574*/    Shape savedClip = g2.getClip();
+-/*2575*/    g2.clip(dataArea);
+-/*2577*/    drawDomainGridlines(g2, dataArea);
+-/*2579*/    AxisState rangeAxisState = (AxisState)axisStateMap.get(getRangeAxis());
+-/*2580*/    if (rangeAxisState == null && 
+-/*2581*/      parentState != null)
+-/*2582*/      rangeAxisState = (AxisState)parentState.getSharedAxisStates().get(getRangeAxis()); 
+-/*2586*/    if (rangeAxisState != null)
+-/*2587*/      drawRangeGridlines(g2, dataArea, rangeAxisState.getTicks()); 
+-/*2591*/    for (int i = 0; i < this.renderers.size(); i++)
+-/*2592*/      drawDomainMarkers(g2, dataArea, i, Layer.BACKGROUND); 
+-/*2594*/    for (int j = 0; j < this.renderers.size(); j++)
+-/*2595*/      drawRangeMarkers(g2, dataArea, j, Layer.BACKGROUND); 
+-/*   0*/    boolean foundData = false;
+-/*2602*/    Composite originalComposite = g2.getComposite();
+-/*2603*/    g2.setComposite(AlphaComposite.getInstance(3, getForegroundAlpha()));
+-/*2606*/    DatasetRenderingOrder order = getDatasetRenderingOrder();
+-/*2607*/    if (order == DatasetRenderingOrder.FORWARD) {
+-/*2608*/      for (int n = 0; n < this.datasets.size(); n++)
+-/*2609*/        foundData = (render(g2, dataArea, n, state) || foundData); 
+-/*   0*/    } else {
+-/*2613*/      for (int n = this.datasets.size() - 1; n >= 0; n--)
+-/*2614*/        foundData = (render(g2, dataArea, n, state) || foundData); 
+-/*   0*/    } 
+-/*2618*/    for (int m = 0; m < this.renderers.size(); m++)
+-/*2619*/      drawDomainMarkers(g2, dataArea, m, Layer.FOREGROUND); 
+-/*2621*/    for (int k = 0; k < this.renderers.size(); k++)
+-/*2622*/      drawRangeMarkers(g2, dataArea, k, Layer.FOREGROUND); 
+-/*2626*/    drawAnnotations(g2, dataArea);
+-/*2628*/    g2.setClip(savedClip);
+-/*2629*/    g2.setComposite(originalComposite);
+-/*2631*/    if (!foundData)
+-/*2632*/      drawNoDataMessage(g2, dataArea); 
+-/*2636*/    if (isRangeCrosshairVisible())
+-/*2638*/      drawRangeCrosshair(g2, dataArea, getOrientation(), getRangeCrosshairValue(), getRangeAxis(), getRangeCrosshairStroke(), getRangeCrosshairPaint()); 
+-/*2644*/    if (getRenderer() != null) {
+-/*2645*/      getRenderer().drawOutline(g2, this, dataArea);
+-/*   0*/    } else {
+-/*2648*/      drawOutline(g2, dataArea);
+-/*   0*/    } 
++/*2538*/    if (!b1);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void drawBackground(Graphics2D g2, Rectangle2D area) {

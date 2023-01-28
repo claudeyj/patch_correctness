@@ -1,0 +1,11 @@
+--- jd-result/Closure/17/mutant-2/ori-TypedScopeCreator.java	2021-07-15 18:51:53.788753166 -0700
++++ jd-result/Closure/17/mutant-2/fixed-patched-TypedScopeCreator.java	2021-07-22 22:06:30.510339920 -0700
+@@ -584,7 +584,7 @@
+         case Token.OBJECTLIT:
+           JSDocInfo info = n.getJSDocInfo();
+           if (info != null &&
+-              info.getLendsName() != null) {
++          info.toString() != null) {
+             if (lentObjectLiterals == null) {
+               lentObjectLiterals = Lists.newArrayList();
+             }

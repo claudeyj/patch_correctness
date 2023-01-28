@@ -1,0 +1,16 @@
+--- jd-result/Time/11/mutant-9/a-DateTimeZoneBuilder.java	2021-07-14 21:28:27.542580202 -0700
++++ jd-result/Time/11/mutant-9/b-DateTimeZoneBuilder.java	2021-07-14 21:28:29.006580243 -0700
+@@ -728,8 +728,11 @@
+ /*1141*/      if (this.iRules.size() == 2) {
+ /*1142*/        DateTimeZoneBuilder.Rule rule1 = this.iRules.get(0);
+ /*1143*/        DateTimeZoneBuilder.Rule rule2 = this.iRules.get(1);
+-/*1144*/        if (rule1.getToYear() == Integer.MAX_VALUE && rule2.getToYear() == Integer.MAX_VALUE)
+-/*1154*/          return new DateTimeZoneBuilder.DSTZone(param1String, this.iStandardOffset, rule1.iRecurrence, rule2.iRecurrence); 
++/*1144*/        if (rule1.getToYear() == Integer.MAX_VALUE && rule2.getToYear() == Integer.MAX_VALUE) {
++/*1154*/          if (new DateTimeZoneBuilder.DSTZone(param1String, this.iStandardOffset, rule1.iRecurrence, rule2.iRecurrence) == null)
++/*1154*/            throw new RuntimeException(); 
++/*1154*/          return null;
++/*   0*/        } 
+ /*   0*/      } 
+ /*1158*/      return null;
+ /*   0*/    }

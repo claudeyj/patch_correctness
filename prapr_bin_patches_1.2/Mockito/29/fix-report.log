@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 04:20:21 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 2825
+================================================
+1.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to toString()Ljava/lang/String; is guarded returning enclosing method
+	File Name: org/mockito/internal/matchers/Same.java
+	Line Number: 29
+	Rank: 1
+	Total Rank: 70
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallGuardMutator
+	Description: the call to java.lang.Object::toString()Ljava/lang/String; is guarded using default value null
+	File Name: org/mockito/internal/matchers/Same.java
+	Line Number: 29
+	Rank: 2
+	Total Rank: 75
+	Dump: mutant-1.class
+------------------------------------------------

@@ -1,0 +1,35 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/2/mutant-0/buggy-UnsupportedDurationField.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/2/mutant-0/patched-UnsupportedDurationField.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/2/mutant-0/buggy-UnsupportedDurationField.java	2021-08-22 00:18:38.714190187 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/2/mutant-0/patched-UnsupportedDurationField.java	2021-08-22 00:18:38.714190187 -0700
+@@ -224,6 +224,9 @@
+      * @return zero always
+      */
+     public int compareTo(DurationField durationField) {
++        if (durationField.isSupported()) {
++            return 1;
++        }
+         return 0;
+     }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/2/mutant-0/buggy-Partial.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/2/mutant-0/patched-Partial.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/2/mutant-0/buggy-Partial.java	2021-08-22 00:18:38.714190187 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/2/mutant-0/patched-Partial.java	2021-08-22 00:18:38.714190187 -0700
+@@ -215,7 +215,7 @@
+             DurationField loopUnitField = loopType.getDurationType().getField(iChronology);
+             if (i > 0) {
+                 int compare = lastUnitField.compareTo(loopUnitField);
+-                if (compare < 0 || (compare != 0 && loopUnitField.isSupported() == false)) {
++                if (compare < 0) {
+                     throw new IllegalArgumentException("Types array must be in order largest-smallest: " +
+                             types[i - 1].getName() + " < " + loopType.getName());
+                 } else if (compare == 0) {
+@@ -446,6 +446,9 @@
+                         if (compare > 0) {
+                             break;
+                         } else if (compare == 0) {
++                            if (fieldType.getRangeDurationType() == null) {
++                                break;
++                            }
+                             DurationField rangeField = fieldType.getRangeDurationType().getField(iChronology);
+                             DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology);
+                             if (rangeField.compareTo(loopRangeField) > 0) {

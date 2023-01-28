@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Math/5/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Math/5/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Math/5/1/buggy1.java	2021-08-27 19:18:45.382864277 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Math/5/1/tool-patch1.java	2021-08-27 19:18:45.382864277 -0700
+@@ -300,7 +300,9 @@
+         if (isNaN) {
+             return NaN;
+         }
+-
++        if((real == 0.0 && imaginary == 0.0) == true){
++        	return this.INF;
++        	}
+         if (real == 0.0 && imaginary == 0.0) {
+             return NaN;
+         }

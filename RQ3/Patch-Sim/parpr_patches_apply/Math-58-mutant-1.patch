@@ -1,0 +1,11 @@
+--- Math58b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2017-03-20 23:56:58.000000000 +0800
++++ Math58_Math-58-mutant-1.patchb/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2017-03-20 23:56:58.000000000 +0800
+@@ -310,7 +310,7 @@
+                     if (p2 == null) {
+                         return 1;
+                     }
+-                    if (p1.getX() < p2.getX()) {
++            if (p1.getY() < p2.getX()) {
+                         return -1;
+                     }
+                     if (p1.getX() > p2.getX()) {

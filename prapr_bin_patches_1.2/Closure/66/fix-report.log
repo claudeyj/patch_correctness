@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 13:23:58 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 22376
+================================================
+1.
+	Mutator: FieldNameMutator
+	Description: replaced access to nullCount with an access to noTypeCheckSection
+	File Name: com/google/javascript/jscomp/TypeCheck.java
+	Line Number: 1913
+	Rank: 1
+	Total Rank: 42
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: FieldNameMutator
+	Description: replaced access to nullCount with an access to typedCount
+	File Name: com/google/javascript/jscomp/TypeCheck.java
+	Line Number: 822
+	Rank: 2
+	Total Rank: 182
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: com/google/javascript/jscomp/TypeCheck.java
+	Line Number: 822
+	Rank: 3
+	Total Rank: 183
+	Dump: mutant-3.class
+------------------------------------------------

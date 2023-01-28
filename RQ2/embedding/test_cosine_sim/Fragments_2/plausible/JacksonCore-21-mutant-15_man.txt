@@ -1,0 +1,7 @@
+        if (!_allowMultipleMatches && (_currToken != null) && (_exposedContext == null)) {
+            //if not scalar and ended successfully, and !includePath, then return null
+                if (_currToken.isStructEnd()) {
+          if (!this._headContext.isStartHandled()) {
+                        return (_currToken = null);
+                    }
+                } else if (_currToken.isScalarValue()) {

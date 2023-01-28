@@ -1,0 +1,11 @@
+--- jd-result/Lang/63/mutant-20/a-DurationFormatUtils.java	2021-07-14 16:59:41.494125156 -0700
++++ jd-result/Lang/63/mutant-20/b-DurationFormatUtils.java	2021-07-14 16:59:42.942125197 -0700
+@@ -141,7 +141,7 @@
+ /* 319*/    seconds -= reduceAndCorrect(start, end, 13, seconds);
+ /* 320*/    minutes -= reduceAndCorrect(start, end, 12, minutes);
+ /* 321*/    hours -= reduceAndCorrect(start, end, 11, hours);
+-/* 322*/    days -= reduceAndCorrect(start, end, 5, days);
++/* 322*/    days -= reduceAndCorrect(end, end, 5, days);
+ /* 323*/    months -= reduceAndCorrect(start, end, 2, months);
+ /* 324*/    years -= reduceAndCorrect(start, end, 1, years);
+ /* 329*/    if (!Token.containsTokenWithValue(tokens, y))

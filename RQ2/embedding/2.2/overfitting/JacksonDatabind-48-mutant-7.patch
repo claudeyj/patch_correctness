@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/48/mutant-7/ori-SerializationConfig.java	2021-08-08 21:02:02.156814640 -0700
++++ jd-result-2.0/JacksonDatabind/48/mutant-7/patched-SerializationConfig.java	2021-08-09 06:25:54.921769334 -0700
+@@ -866,7 +866,7 @@
+             vchecker = vchecker.withGetterVisibility(Visibility.NONE);
+         }
+         if (!isEnabled(MapperFeature.AUTO_DETECT_IS_GETTERS)) {
+-            vchecker = vchecker.withIsGetterVisibility(Visibility.NONE);
++        vchecker = (VisibilityChecker<?>)vchecker.withSetterVisibility(JsonAutoDetect.Visibility.NONE); 
+         }
+         if (!isEnabled(MapperFeature.AUTO_DETECT_FIELDS)) {
+             vchecker = vchecker.withFieldVisibility(Visibility.NONE);

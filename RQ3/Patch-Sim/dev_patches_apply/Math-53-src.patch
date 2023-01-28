@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/53/mutant-0/buggy-Complex.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/53/mutant-0/patched-Complex.java
+--- Math53b/src/main/java/org/apache/commons/math/complex/Complex.java
++++ Math53b_Math-53-src.patchb/src/main/java/org/apache/commons/math/complex/Complex.java
+@@ -150,6 +150,9 @@
+     public Complex add(Complex rhs)
+         throws NullArgumentException {
+         MathUtils.checkNotNull(rhs);
++        if (isNaN || rhs.isNaN) {
++            return NaN;
++        }
+         return createComplex(real + rhs.getReal(),
+             imaginary + rhs.getImaginary());
+     }

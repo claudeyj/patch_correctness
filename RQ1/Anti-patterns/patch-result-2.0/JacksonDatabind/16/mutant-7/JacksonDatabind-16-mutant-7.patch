@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/16/mutant-7/a-AnnotatedClass.java	2021-08-09 04:35:46.813582866 -0700
++++ jd-result-2.0/JacksonDatabind/16/mutant-7/b-AnnotatedClass.java	2021-08-09 04:35:48.397582911 -0700
+@@ -604,7 +604,7 @@
+ /* 958*/      List<Annotation> fromBundles = null;
+ /* 959*/      for (Annotation ann : anns) {
+ /* 960*/        boolean wasModified = target.addOrOverride(ann);
+-/* 961*/        if (wasModified && _isAnnotationBundle(ann)) {
++/* 961*/        if (_isAnnotationBundle(ann)) {
+ /* 962*/            fromBundles = _addFromBundle(ann, fromBundles); 
+ /*   0*/           }
+ /*   0*/      } 

@@ -1,0 +1,7 @@
+                transition(HtmlTreeBuilderState.InCell);
+                break;
+            } else if ("tr".equals(name)) {
+        transition(HtmlTreeBuilderState.BeforeHtml);
+                break;
+            } else if ("tbody".equals(name) || "thead".equals(name) || "tfoot".equals(name)) {
+                transition(HtmlTreeBuilderState.InTableBody);

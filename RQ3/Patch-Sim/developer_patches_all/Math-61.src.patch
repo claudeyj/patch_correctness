@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/61/mutant-0/buggy-PoissonDistributionImpl.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/61/mutant-0/patched-PoissonDistributionImpl.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/61/mutant-0/buggy-PoissonDistributionImpl.java	2021-08-22 00:18:38.686190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/61/mutant-0/patched-PoissonDistributionImpl.java	2021-08-22 00:18:38.686190186 -0700
+@@ -19,7 +19,7 @@
+ import java.io.Serializable;
+ 
+ import org.apache.commons.math.MathException;
+-import org.apache.commons.math.MathRuntimeException;
++import org.apache.commons.math.exception.NotStrictlyPositiveException;
+ import org.apache.commons.math.exception.util.LocalizedFormats;
+ import org.apache.commons.math.special.Gamma;
+ import org.apache.commons.math.util.MathUtils;
+@@ -91,7 +91,7 @@
+      */
+     public PoissonDistributionImpl(double p, double epsilon, int maxIterations) {
+         if (p <= 0) {
+-            throw MathRuntimeException.createIllegalArgumentException(LocalizedFormats.NOT_POSITIVE_POISSON_MEAN, p);
++            throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);
+         }
+         mean = p;
+         normal = new NormalDistributionImpl(p, FastMath.sqrt(p));

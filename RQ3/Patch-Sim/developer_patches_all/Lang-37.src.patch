@@ -1,0 +1,20 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/37/mutant-0/buggy-ArrayUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/37/mutant-0/patched-ArrayUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/37/mutant-0/buggy-ArrayUtils.java	2021-08-22 00:18:38.646190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/37/mutant-0/patched-ArrayUtils.java	2021-08-22 00:18:38.646190185 -0700
+@@ -2959,8 +2959,16 @@
+         final Class<?> type1 = array1.getClass().getComponentType();
+         T[] joinedArray = (T[]) Array.newInstance(type1, array1.length + array2.length);
+         System.arraycopy(array1, 0, joinedArray, 0, array1.length);
++        try {
+             System.arraycopy(array2, 0, joinedArray, array1.length, array2.length);
++        } catch (ArrayStoreException ase) {
+             // Check if problem is incompatible types
++            final Class<?> type2 = array2.getClass().getComponentType();
++            if (!type1.isAssignableFrom(type2)){
++                throw new IllegalArgumentException("Cannot store "+type2.getName()+" in an array of "+type1.getName());
++            }
++            throw ase; // No, so rethrow original
++        }
+         return joinedArray;
+     }
+ 

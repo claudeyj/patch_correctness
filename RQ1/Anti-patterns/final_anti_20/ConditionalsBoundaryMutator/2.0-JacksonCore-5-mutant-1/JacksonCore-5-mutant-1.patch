@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/5/mutant-1/a-JsonPointer.java	2021-08-09 04:01:42.885525190 -0700
++++ jd-result-2.0/JacksonCore/5/mutant-1/b-JsonPointer.java	2021-08-09 04:01:44.353525232 -0700
+@@ -107,7 +107,7 @@
+ /*   0*/       }
+ /* 192*/    for (int i = 0; i < len; i++) {
+ /* 193*/      char c = str.charAt(i++);
+-/* 194*/      if (c > '9' || c < '0') {
++/* 194*/      if (c > '9' || c <= '0') {
+ /* 195*/          return -1; 
+ /*   0*/         }
+ /*   0*/    } 

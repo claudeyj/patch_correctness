@@ -1,0 +1,11 @@
+--- jd-result/Closure/115/mutant-34/a-FunctionInjector.java	2021-07-14 21:51:12.082618706 -0700
++++ jd-result/Closure/115/mutant-34/b-FunctionInjector.java	2021-07-14 21:51:13.518618747 -0700
+@@ -311,7 +311,7 @@
+ /* 692*/      return CanInlineResult.NO; 
+ /* 695*/    Node block = fnNode.getLastChild();
+ /*   0*/    boolean hasSideEffects = false;
+-/* 698*/    if (block.hasChildren()) {
++/* 698*/    if (block.wasEmptyNode()) {
+ /* 699*/      Preconditions.checkState(block.hasOneChild());
+ /* 700*/      Node stmt = block.getFirstChild();
+ /* 701*/      if (stmt.isReturn())

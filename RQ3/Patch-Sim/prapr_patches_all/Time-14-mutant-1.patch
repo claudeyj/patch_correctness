@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/14/mutant-1/ori-MonthDay.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/14/mutant-1/man-patched-MonthDay.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/14/mutant-1/ori-MonthDay.java	2021-08-23 09:23:49.196994731 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/14/mutant-1/man-patched-MonthDay.java	2021-08-23 09:23:49.196994731 +0800
+@@ -516,7 +516,7 @@
+             return this;
+         }
+         int[] newValues = getValues();
+-        newValues = getField(index).add(this, index, newValues, amount);
++        newValues = getField(index).addWrapPartial(this, index, newValues, amount);
+         return new MonthDay(this, newValues);
+     }
+ 

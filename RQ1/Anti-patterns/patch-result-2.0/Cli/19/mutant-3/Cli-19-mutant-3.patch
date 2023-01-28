@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/19/mutant-3/a-PosixParser.java	2021-08-09 04:40:58.953591674 -0700
++++ jd-result-2.0/Cli/19/mutant-3/b-PosixParser.java	2021-08-09 04:41:00.413591715 -0700
+@@ -80,7 +80,7 @@
+ /* 229*/    if (this.options.hasOption(token)) {
+ /* 231*/      this.currentOption = this.options.getOption(token);
+ /* 232*/      this.tokens.add(token);
+-/* 234*/    } else if (stopAtNonOption) {
++/*   0*/    } else {
+ /* 236*/      this.eatTheRest = true;
+ /* 237*/      this.tokens.add(token);
+ /*   0*/    } 

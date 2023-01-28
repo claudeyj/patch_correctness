@@ -1,0 +1,16 @@
+--- jd-result-2.0/Jsoup/1/mutant-6/a-Document.java	2021-08-09 04:22:29.165560358 -0700
++++ jd-result-2.0/Jsoup/1/mutant-6/b-Document.java	2021-08-09 04:22:30.465560395 -0700
+@@ -65,12 +65,7 @@
+ /*   0*/  private void normalise(Element element) {
+ /* 114*/    List<Node> toMove = new ArrayList<Node>();
+ /* 115*/    for (Node node : element.childNodes) {
+-/* 116*/      if (node instanceof TextNode) {
+-/* 117*/        TextNode tn = (TextNode)node;
+-/* 118*/        if (!tn.isBlank()) {
+-/* 119*/            toMove.add(tn); 
+-/*   0*/           }
+-/*   0*/      } 
++/* 116*/        node instanceof TextNode; 
+ /*   0*/    } 
+ /* 123*/    for (Node node : toMove) {
+ /* 124*/      element.removeChild(node);

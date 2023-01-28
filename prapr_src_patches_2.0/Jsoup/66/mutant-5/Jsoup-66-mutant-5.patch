@@ -1,0 +1,25 @@
+--- jd-result-2.0/Jsoup/66/mutant-5/a-Element.java	2021-08-09 04:25:53.241566117 -0700
++++ jd-result-2.0/Jsoup/66/mutant-5/b-Element.java	2021-08-09 04:25:54.761566160 -0700
+@@ -156,10 +156,11 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private List<Element> childElementsList() {
+-/*   0*/    List<Element> children;
+-/* 276*/    if (this.shadowChildrenRef == null || (children = this.shadowChildrenRef.get()) == null) {
++/* 276*/    if (this.shadowChildrenRef != null) {
++/* 276*/        List<Element> list = this.shadowChildrenRef.get(); 
++/*   0*/       }
+ /* 277*/      int size = this.childNodes.size();
+-/* 278*/      children = new ArrayList<>(size);
++/* 278*/    List<Element> children = new ArrayList<>(size);
+ /* 280*/      for (int i = 0; i < size; i++) {
+ /* 281*/        Node node = this.childNodes.get(i);
+ /* 282*/        if (node instanceof Element) {
+@@ -167,7 +168,6 @@
+ /*   0*/           }
+ /*   0*/      } 
+ /* 285*/      this.shadowChildrenRef = new WeakReference<>(children);
+-/*   0*/    } 
+ /* 287*/    return children;
+ /*   0*/  }
+ /*   0*/  

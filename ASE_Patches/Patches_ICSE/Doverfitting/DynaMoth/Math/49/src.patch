@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/49/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/49/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/49/buggy1.java	2021-08-27 19:18:34.798863978 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/49/tool-patch1.java	2021-08-27 19:18:34.798863978 -0700
+@@ -663,10 +663,14 @@
+         checkIndex(index);
+         if (!isDefaultValue(value)) {
+             entries.put(index, value);
+-        } else if (entries.containsKey(index)) {
++        } else {
++            if (this.DEFAULT_ZERO_TOLERANCE == this.epsilon) {
++                if (entries.containsKey(index)) {
+             entries.remove(index);
+         }
+     }
++        }
++    }
+ 
+     /** {@inheritDoc} */
+     @Override

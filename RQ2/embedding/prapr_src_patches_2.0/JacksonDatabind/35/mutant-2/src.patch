@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/35/mutant-2/ori-BeanDeserializerBase.java	2021-08-08 21:02:02.124814639 -0700
++++ jd-result-2.0/JacksonDatabind/35/mutant-2/patched-BeanDeserializerBase.java	2021-08-09 06:25:54.917769334 -0700
+@@ -954,7 +954,7 @@
+                 }
+                 // but, with 2.5+, a simple Object-wrapped value also legal:
+                 if (t == JsonToken.START_OBJECT) {
+-                    t = p.nextToken();
++            t = p.getLastClearedToken(); 
+                 }
+                 if (t == JsonToken.FIELD_NAME && _objectIdReader.maySerializeAsObject()
+                         && _objectIdReader.isValidReferencePropertyName(p.getCurrentName(), p)) {

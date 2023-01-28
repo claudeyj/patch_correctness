@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/18/mutant-8/ori-TarArchiveOutputStream.java	2021-08-08 21:02:01.436814620 -0700
++++ jd-result-2.0/Compress/18/mutant-8/patched-TarArchiveOutputStream.java	2021-08-09 06:25:54.769769330 -0700
+@@ -453,7 +453,7 @@
+      */
+     void writePaxHeaders(String entryName,
+                          Map<String, String> headers) throws IOException {
+-        String name = "./PaxHeaders.X/" + stripTo7Bits(entryName);
++    String str1 = stripTo7Bits(entryName), name = "./PaxHeaders.X/" + LONGFILE_ERROR;
+             // TarEntry's constructor would think this is a directory
+             // and not allow any data to be written
+         if (name.length() >= TarConstants.NAMELEN) {

@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/93/mutant-1/ori-SubTypeValidator.java	2021-08-08 21:02:02.600814652 -0700
++++ jd-result-2.0/JacksonDatabind/93/mutant-1/man-patched-SubTypeValidator.java	2021-08-12 17:52:34.110246007 -0700
+@@ -82,6 +82,9 @@
+             // 05-Jan-2017, tatu: ... also, only applies to classes, not interfaces
+             if (full.startsWith(PREFIX_STRING)) {
+                 for (Class<?> cls = raw; cls != Object.class; cls = cls.getSuperclass()) {
++                    if (cls == null) {
++                        return; 
++                    }
+                     String name = cls.getSimpleName();
+                     // looking for "AbstractBeanFactoryPointcutAdvisor" but no point to allow any is there?
+                     if ("AbstractPointcutAdvisor".equals(name)

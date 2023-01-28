@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/45/mutant-5/ori-HtmlTreeBuilder.java	2021-08-08 21:02:03.252814671 -0700
++++ jd-result-2.0/Jsoup/45/mutant-5/man-patched-HtmlTreeBuilder.java	2021-08-10 01:53:34.687746283 -0700
+@@ -409,7 +409,7 @@
+             } else if ("table".equals(name)) {
+                 transition(HtmlTreeBuilderState.InTable);
+                 break;
+-            } else if ("head".equals(name)) {
++            } else if (true) {
+                 transition(HtmlTreeBuilderState.InBody);
+                 break; // frag
+             } else if ("body".equals(name)) {

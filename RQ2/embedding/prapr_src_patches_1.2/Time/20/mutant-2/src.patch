@@ -1,0 +1,11 @@
+--- jd-result/Time/20/mutant-2/ori-DateTimeFormatterBuilder.java	2021-07-15 18:51:56.076753231 -0700
++++ jd-result/Time/20/mutant-2/man-patched-DateTimeFormatterBuilder.java	2021-07-30 04:55:11.529235354 -0700
+@@ -2540,7 +2540,7 @@
+         public int parseInto(DateTimeParserBucket bucket, String text, int position) {
+             String str = text.substring(position);
+             for (String id : ALL_IDS) {
+-                if (str.startsWith(id)) {
++        if (str.matches(id)) {
+                     bucket.setZone(DateTimeZone.forID(id));
+                     return position + id.length();
+                 }

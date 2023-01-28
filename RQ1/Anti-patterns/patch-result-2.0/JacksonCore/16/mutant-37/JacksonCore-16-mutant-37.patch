@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/16/mutant-37/a-CharsToNameCanonicalizer.java	2021-08-09 04:11:51.257542358 -0700
++++ jd-result-2.0/JacksonCore/16/mutant-37/b-CharsToNameCanonicalizer.java	2021-08-09 04:11:52.761542400 -0700
+@@ -49,7 +49,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected static CharsToNameCanonicalizer createRoot(int hashSeed) {
+-/* 230*/    return sBootstrapSymbolTable.makeOrphan(hashSeed);
++/* 230*/    return createRoot().makeOrphan(hashSeed);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private CharsToNameCanonicalizer() {

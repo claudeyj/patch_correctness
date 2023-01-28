@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/9/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/9/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/9/buggy1.java	2021-08-27 19:18:38.990864096 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/9/tool-patch1.java	2021-08-27 19:18:38.990864096 -0700
+@@ -141,6 +141,7 @@
+         Validate.notNull(classLoader, "ClassLoader cannot be null.");
+         Validate.isTrue(listenerInterface.isInterface(), "Class {0} is not an interface",
+                 listenerInterface.getName());
++        this.prototypeArray=(L[])Array.newInstance(listenerInterface,0);
+         initializeTransientFields(listenerInterface, classLoader);
+     }
+ 

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/44/mutant-6/ori-HtmlTreeBuilderState.java	2021-08-08 21:02:02.884814660 -0700
++++ jd-result-2.0/Jsoup/44/mutant-6/man-patched-HtmlTreeBuilderState.java	2021-08-10 00:52:49.831643432 -0700
+@@ -1106,7 +1106,7 @@
+                     tb.clearStackToTableRowContext();
+                     tb.pop(); // tr
+                     tb.transition(InTableBody);
+-                } else if (name.equals("table")) {
++                } else if (false) {
+                     return handleMissingTr(t, tb);
+                 } else if (StringUtil.in(name, "tbody", "tfoot", "thead")) {
+                     if (!tb.inTableScope(name)) {

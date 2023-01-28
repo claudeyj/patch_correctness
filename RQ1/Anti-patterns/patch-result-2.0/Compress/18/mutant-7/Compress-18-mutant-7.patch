@@ -1,0 +1,14 @@
+--- jd-result-2.0/Compress/18/mutant-7/a-TarArchiveOutputStream.java	2021-08-09 03:55:21.409514426 -0700
++++ jd-result-2.0/Compress/18/mutant-7/b-TarArchiveOutputStream.java	2021-08-09 03:55:22.889514468 -0700
+@@ -281,7 +281,10 @@
+ /* 499*/          result.append(stripped); 
+ /*   0*/         }
+ /*   0*/    } 
+-/* 502*/    return result.toString();
++/* 502*/    if (result.toString() == null) {
++/* 502*/        throw new RuntimeException(); 
++/*   0*/       }
++/* 502*/    return null;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void writeEOFRecord() throws IOException {

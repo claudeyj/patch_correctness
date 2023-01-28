@@ -1,0 +1,12 @@
+--- jd-result/Chart/25/mutant-142/a-JFreeChart.java	2021-07-14 20:18:18.586461433 -0700
++++ jd-result/Chart/25/mutant-142/b-JFreeChart.java	2021-07-14 20:18:20.002461473 -0700
+@@ -457,7 +457,8 @@
+ /*   0*/      } 
+ /*   0*/    } 
+ /*1186*/    Rectangle2D nonTitleArea = new Rectangle2D.Double();
+-/*1187*/    nonTitleArea.setRect(chartArea);
++/*1187*/    Rectangle2D rectangle2D1 = chartArea;
++/*1187*/    nonTitleArea.setRect(0.0D, 0.0D, 0.0D, 0.0D);
+ /*1188*/    this.padding.trim(nonTitleArea);
+ /*1190*/    EntityCollection entities = null;
+ /*1191*/    if (info != null)

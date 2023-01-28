@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/10/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/10/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/10/buggy1.java	2021-08-27 19:18:38.714864088 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/10/tool-patch1.java	2021-08-27 19:18:38.714864088 -0700
+@@ -1268,8 +1268,12 @@
+         return allResultsMatch(n.getFirstChild(), p)
+             && allResultsMatch(n.getLastChild(), p);
+       case Token.HOOK:
++        {
++            if (true)
++                return true;
+         return allResultsMatch(n.getFirstChild().getNext(), p)
+             && allResultsMatch(n.getLastChild(), p);
++        }
+       default:
+         return p.apply(n);
+     }

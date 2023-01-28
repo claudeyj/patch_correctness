@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/12/mutant-0/buggy-MultiplePiePlot.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/12/mutant-0/patched-MultiplePiePlot.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/12/mutant-0/buggy-MultiplePiePlot.java	2021-08-22 00:18:38.562190182 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/12/mutant-0/patched-MultiplePiePlot.java	2021-08-22 00:18:38.562190182 -0700
+@@ -142,7 +142,7 @@
+      */
+     public MultiplePiePlot(CategoryDataset dataset) {
+         super();
+-        this.dataset = dataset;
++        setDataset(dataset);
+         PiePlot piePlot = new PiePlot(null);
+         this.pieChart = new JFreeChart(piePlot);
+         this.pieChart.removeLegend();

@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-57/a-EigenDecompositionImpl.java	2021-07-14 09:24:21.273354234 -0700
++++ jd-result/Math/81/mutant-57/b-EigenDecompositionImpl.java	2021-07-14 09:24:22.785354276 -0700
+@@ -919,7 +919,7 @@
+ /*1497*/            b2 = this.work[nn - 9] / this.work[nn - 11];
+ /*1498*/            np = nn - 13;
+ /*   0*/          } 
+-/*1502*/          a2 += b2;
++/*1502*/          a2 = this.upperSpectra + b2;
+ /*1503*/          for (int i4 = np; i4 >= 4 * start + 2 + this.pingPong && 
+ /*1504*/            b2 != 0.0D; i4 -= 4) {
+ /*1507*/            b1 = b2;

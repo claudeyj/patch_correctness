@@ -1,0 +1,10 @@
+--- jd-result-2.0/Compress/4/mutant-3/ori-ZipArchiveOutputStream.java	2021-08-08 21:02:01.572814623 -0700
++++ jd-result-2.0/Compress/4/mutant-3/patched-ZipArchiveOutputStream.java	2021-08-09 06:25:54.793769330 -0700
+@@ -527,7 +527,6 @@
+      * @exception  IOException  if an I/O error occurs.
+      */
+     public void close() throws IOException {
+-        finish();
+         if (raf != null) {
+             raf.close();
+         }

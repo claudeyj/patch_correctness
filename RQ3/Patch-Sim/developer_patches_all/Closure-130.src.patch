@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/130/mutant-0/buggy-CollapseProperties.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/130/mutant-0/patched-CollapseProperties.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/130/mutant-0/buggy-CollapseProperties.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/130/mutant-0/patched-CollapseProperties.java	2021-08-22 00:18:38.590190183 -0700
+@@ -169,7 +169,7 @@
+         continue;
+       }
+ 
+-      if (name.globalSets == 1 && name.localSets == 0 &&
++      if (!name.inExterns && name.globalSets == 1 && name.localSets == 0 &&
+           name.aliasingGets > 0) {
+         // {@code name} meets condition (b). Find all of its local aliases
+         // and try to inline them.

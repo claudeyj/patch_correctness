@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/5/mutant-5/a-ClassUtil.java	2021-08-09 04:27:05.265568149 -0700
++++ jd-result-2.0/JacksonDatabind/5/mutant-5/b-ClassUtil.java	2021-08-09 04:27:06.757568191 -0700
+@@ -36,7 +36,7 @@
+ /*  43*/      result.add(cls);
+ /*   0*/    } 
+ /*  45*/    for (Class<?> intCls : cls.getInterfaces()) {
+-/*  46*/        _addSuperTypes(intCls, endBefore, result, true); 
++/*  46*/        _addSuperTypes(intCls, cls, result, true); 
+ /*   0*/       }
+ /*  48*/    _addSuperTypes(cls.getSuperclass(), endBefore, result, true);
+ /*   0*/  }

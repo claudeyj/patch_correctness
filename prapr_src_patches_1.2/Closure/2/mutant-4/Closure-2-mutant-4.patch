@@ -1,0 +1,27 @@
+--- jd-result/Closure/2/mutant-4/a-TypeCheck.java	2021-07-14 21:33:35.910588903 -0700
++++ jd-result/Closure/2/mutant-4/b-TypeCheck.java	2021-07-14 21:33:37.362588944 -0700
+@@ -223,9 +223,12 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void visit(NodeTraversal t, Node n, Node parent) {
+-/*   0*/    JSType childType, leftType, rightType;
+-/*   0*/    Node left, right, expr;
+-/*   0*/    JSType castType, exprType, leftTypeRestricted, switchType, rightTypeRestricted, caseType;
++/*   0*/    Node expr;
++/*   0*/    JSType castType, exprType;
++/*   0*/    Node left;
++/*   0*/    JSType childType;
++/*   0*/    Node right;
++/*   0*/    JSType leftType, rightType, leftTypeRestricted, switchType, rightTypeRestricted, caseType;
+ /*   0*/    TernaryValue result;
+ /*   0*/    Node child;
+ /*   0*/    boolean typeable = true;
+@@ -848,6 +851,8 @@
+ /*   0*/  
+ /*   0*/  private void checkInterfaceConflictProperties(NodeTraversal t, Node n, String functionName, HashMap<String, ObjectType> properties, HashMap<String, ObjectType> currentProperties, ObjectType interfaceType) {
+ /*1570*/    ObjectType implicitProto = interfaceType.getImplicitPrototype();
++/*1574*/    if (implicitProto == null)
++/*   0*/      return; 
+ /*1574*/    Set<String> currentPropertyNames = implicitProto.getOwnPropertyNames();
+ /*1575*/    for (String name : currentPropertyNames) {
+ /*1576*/      ObjectType oType = properties.get(name);

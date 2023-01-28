@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/38/mutant-0/buggy-FastDateFormat.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/38/mutant-0/patched-FastDateFormat.java
+--- Lang38b/src/java/org/apache/commons/lang3/time/FastDateFormat.java
++++ Lang38b_Lang-38-src.patchb/src/java/org/apache/commons/lang3/time/FastDateFormat.java
+@@ -869,6 +869,7 @@
+      */
+     public StringBuffer format(Calendar calendar, StringBuffer buf) {
+         if (mTimeZoneForced) {
++            calendar.getTime(); /// LANG-538
+             calendar = (Calendar) calendar.clone();
+             calendar.setTimeZone(mTimeZone);
+         }

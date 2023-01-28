@@ -1,0 +1,7 @@
+        groupName = oldStyle ? TarUtils.parseName(header, offset, GNAMELEN)
+            : TarUtils.parseName(header, offset, GNAMELEN, encoding);
+        offset += GNAMELEN;
+        devMajor = (int) TarUtils.parseOctalOrBinary(header, offset, DEVLEN);
+        offset += DEVLEN;
+        devMinor = (int) TarUtils.parseOctalOrBinary(header, offset, DEVLEN);
+        offset += DEVLEN;

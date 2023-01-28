@@ -1,0 +1,11 @@
+--- Chart5b/source/org/jfree/data/xy/XYSeries.java	2017-05-03 11:40:11.000000000 +0800
++++ Chart5_Chart-5-mutant-2.patchb/source/org/jfree/data/xy/XYSeries.java	2017-05-03 11:40:11.000000000 +0800
+@@ -524,7 +524,7 @@
+      * @since 1.0.10
+      */
+     public XYDataItem addOrUpdate(double x, double y) {
+-        return addOrUpdate(new Double(x), new Double(y));
++    return addOrUpdate(new Double(y), new Double(y));
+     }
+ 
+     /**

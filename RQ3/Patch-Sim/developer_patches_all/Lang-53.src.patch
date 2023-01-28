@@ -1,0 +1,25 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/53/mutant-0/buggy-DateUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/53/mutant-0/patched-DateUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/53/mutant-0/buggy-DateUtils.java	2021-08-22 00:18:38.654190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/53/mutant-0/patched-DateUtils.java	2021-08-22 00:18:38.654190185 -0700
+@@ -640,19 +640,19 @@
+         int millisecs = val.get(Calendar.MILLISECOND);
+         if (!round || millisecs < 500) {
+             time = time - millisecs;
++        }
+         if (field == Calendar.SECOND) {
+             done = true;
+             }
+-        }
+ 
+         // truncate seconds
+         int seconds = val.get(Calendar.SECOND);
+         if (!done && (!round || seconds < 30)) {
+             time = time - (seconds * 1000L);
++        }
+         if (field == Calendar.MINUTE) {
+             done = true;
+             }
+-        }
+ 
+         // truncate minutes
+         int minutes = val.get(Calendar.MINUTE);

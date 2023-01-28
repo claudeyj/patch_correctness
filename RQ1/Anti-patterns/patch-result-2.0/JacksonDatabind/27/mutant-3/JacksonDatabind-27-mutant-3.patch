@@ -1,0 +1,51 @@
+--- jd-result-2.0/JacksonDatabind/27/mutant-3/a-BeanDeserializer.java	2021-08-09 04:34:07.853580074 -0700
++++ jd-result-2.0/JacksonDatabind/27/mutant-3/b-BeanDeserializer.java	2021-08-09 04:34:09.569580122 -0700
+@@ -532,32 +532,12 @@
+ /* 781*/    TokenBuffer tokens = new TokenBuffer(p);
+ /* 782*/    tokens.writeStartObject();
+ /* 784*/    JsonToken t = p.getCurrentToken();
+-/* 785*/    for (; t == JsonToken.FIELD_NAME; t = p.nextToken()) {
++/*   0*/    while (true) {
++/* 785*/      if (t == JsonToken.FIELD_NAME) {
+ /* 786*/      String propName = p.getCurrentName();
+ /* 787*/      p.nextToken();
+ /* 789*/      SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
+-/* 790*/      if (creatorProp != null) {
+-/* 794*/        if (!ext.handlePropertyValue(p, ctxt, propName, buffer)) {
+-/* 798*/            if (buffer.assignParameter(creatorProp, _deserializeWithErrorWrapping(p, ctxt, creatorProp))) {
+-/*   0*/              Object bean;
+-/* 799*/              t = p.nextToken();
+-/*   0*/              try {
+-/* 802*/                bean = creator.build(ctxt, buffer);
+-/* 803*/              } catch (Exception e) {
+-/* 804*/                wrapAndThrow(e, this._beanType.getRawClass(), propName, ctxt);
+-/*   0*/              } 
+-/* 808*/              while (t == JsonToken.FIELD_NAME) {
+-/* 809*/                p.nextToken();
+-/* 810*/                tokens.copyCurrentStructure(p);
+-/* 811*/                t = p.nextToken();
+-/*   0*/              } 
+-/* 813*/              if (bean.getClass() != this._beanType.getRawClass()) {
+-/* 816*/                  throw ctxt.mappingException("Can not create polymorphic instances with unwrapped values"); 
+-/*   0*/                 }
+-/* 818*/              return ext.complete(p, ctxt, bean);
+-/*   0*/            }  
+-/*   0*/           }
+-/* 824*/      } else if (!buffer.readIdProperty(propName)) {
++/* 824*/        if (!buffer.readIdProperty(propName)) {
+ /* 828*/        SettableBeanProperty prop = this._beanProperties.find(propName);
+ /* 829*/        if (prop != null) {
+ /* 830*/          buffer.bufferProperty(prop, prop.deserialize(p, ctxt));
+@@ -569,6 +549,12 @@
+ /*   0*/          } 
+ /*   0*/        } 
+ /*   0*/      } 
++/*   0*/      } else {
++/*   0*/        break;
++/*   0*/      } 
++/*   0*/      while (true) {
++/*   0*/          t = p.nextToken(); 
++/*   0*/         }
+ /*   0*/    } 
+ /*   0*/    try {
+ /* 852*/      return ext.complete(p, ctxt, buffer, creator);

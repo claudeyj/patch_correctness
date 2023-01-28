@@ -1,0 +1,10 @@
+--- jd-result-2.0/JacksonDatabind/16/mutant-4/a-AnnotationMap.java	2021-08-09 04:36:03.617583340 -0700
++++ jd-result-2.0/JacksonDatabind/16/mutant-4/b-AnnotationMap.java	2021-08-09 04:36:05.057583381 -0700
+@@ -73,6 +73,6 @@
+ /* 109*/        this._annotations = new HashMap<Class<? extends Annotation>, Annotation>(); 
+ /*   0*/       }
+ /* 111*/    Annotation previous = this._annotations.put(ann.annotationType(), ann);
+-/* 112*/    return (previous != null && previous.equals(ann));
++/* 112*/    return !((previous != null && previous.equals(ann)));
+ /*   0*/  }
+ /*   0*/}

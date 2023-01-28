@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Time/14/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Time/14/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Time/14/buggy1.java	2021-08-27 19:18:33.174863932 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Time/14/tool-patch1.java	2021-08-27 19:18:33.174863932 -0700
+@@ -207,7 +207,7 @@
+             return values;
+         }
+             // month is largest field and being added to, such as month-day
+-        if (DateTimeUtils.isContiguous(partial)) {
++        if ((org.joda.time.chrono.BasicMonthOfYearDateTimeField.MIN <= fieldIndex) || ((!(1 == valueToAdd)) && ((valueToAdd) != (-1)))) {
+             long instant = 0L;
+             for (int i = 0, isize = partial.size(); i < isize; i++) {
+                 instant = partial.getFieldType(i).getField(iChronology).set(instant, values[i]);

@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-75/a-JFreeChart.java	2021-07-14 18:32:20.358282017 -0700
++++ jd-result/Chart/26/mutant-75/b-JFreeChart.java	2021-07-14 18:32:22.346282073 -0700
+@@ -526,7 +526,7 @@
+ /*1308*/      Size2D size = t.arrange(g2, constraint);
+ /*1309*/      titleArea = createAlignedRectangle2D(size, area, t.getHorizontalAlignment(), VerticalAlignment.BOTTOM);
+ /*1311*/      retValue = t.draw(g2, titleArea, p);
+-/*1312*/      area.setRect(area.getX(), area.getY(), area.getWidth(), area.getHeight() - size.height);
++/*1312*/      area.setRect(area.getX(), area.getY(), area.getWidth(), area.getHeight() - hh);
+ /*1315*/    } else if (position == RectangleEdge.RIGHT) {
+ /*1316*/      Size2D size = t.arrange(g2, constraint);
+ /*1317*/      titleArea = createAlignedRectangle2D(size, area, HorizontalAlignment.RIGHT, t.getVerticalAlignment());

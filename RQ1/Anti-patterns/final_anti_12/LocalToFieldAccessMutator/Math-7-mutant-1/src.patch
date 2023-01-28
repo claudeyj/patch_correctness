@@ -1,0 +1,11 @@
+--- jd-result/Math/7/mutant-1/ori-AbstractIntegrator.java	2021-07-24 01:52:05.002297109 -0700
++++ jd-result/Math/7/mutant-1/fixed-patched-AbstractIntegrator.java	2021-07-24 01:52:04.986297109 -0700
+@@ -124,7 +124,7 @@
+                                 final double maxCheckInterval,
+                                 final double convergence,
+                                 final int maxIterationCount) {
+-        addEventHandler(handler, maxCheckInterval, convergence,
++    addEventHandler(handler, this.stepStart, convergence, 
+                         maxIterationCount,
+                         new BracketingNthOrderBrentSolver(convergence, 5));
+     }

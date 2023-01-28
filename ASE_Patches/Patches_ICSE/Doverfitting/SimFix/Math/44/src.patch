@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/44/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/44/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/44/buggy1.java	2021-08-27 19:18:38.922864094 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/44/tool-patch1.java	2021-08-27 19:18:38.922864094 -0700
+@@ -188,6 +188,7 @@
+         throws ConvergenceException {
+ 
+             forward = interpolator.isForward();
++            t0=interpolator.getPreviousTime();
+             final double t1 = interpolator.getCurrentTime();
+             final double dt = t1 - t0;
+             if (FastMath.abs(dt) < convergence) {

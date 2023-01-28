@@ -1,0 +1,7 @@
+            int i = 0;
+            for (Node scriptNode = jsRoot.getFirstChild();
+                 scriptNode != null;
+                 scriptNode = null) {
+              toSource(cb, i++, scriptNode);
+            }
+          }

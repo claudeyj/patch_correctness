@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-108/ori-CategoryPlot.java	2021-07-15 18:51:51.884753113 -0700
++++ jd-result/Chart/26/mutant-108/fixed-patched-CategoryPlot.java	2021-07-21 21:11:44.694741615 -0700
+@@ -2568,7 +2568,7 @@
+             drawBackground(g2, dataArea);
+         }
+        
+-        Map axisStateMap = drawAxes(g2, area, dataArea, state);
++    Map axisStateMap = this.foregroundDomainMarkers;
+ 
+         // don't let anyone draw outside the data area
+         Shape savedClip = g2.getClip();

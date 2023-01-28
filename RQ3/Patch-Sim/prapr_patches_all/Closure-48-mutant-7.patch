@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/48/mutant-7/ori-TypedScopeCreator.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/48/mutant-7/fixed-patched-TypedScopeCreator.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/48/mutant-7/ori-TypedScopeCreator.java	2021-08-23 09:23:48.744988465 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/48/mutant-7/fixed-patched-TypedScopeCreator.java	2021-08-30 00:21:00.219228412 +0800
+@@ -1436,7 +1436,7 @@
+ 
+       // Determining type for #1 + #2 + #3 + #4
+       JSType valueType = getDeclaredType(t.getSourceName(), info, n, rhsValue);
+-      if (valueType == null && rhsValue != null) {
++      if (false) {
+         // Determining type for #5
+         valueType = rhsValue.getJSType();
+       }

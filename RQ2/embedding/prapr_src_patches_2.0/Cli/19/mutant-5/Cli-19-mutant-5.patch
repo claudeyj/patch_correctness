@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/19/mutant-5/a-PosixParser.java	2021-08-09 04:41:02.209591766 -0700
++++ jd-result-2.0/Cli/19/mutant-5/b-PosixParser.java	2021-08-09 04:41:03.621591806 -0700
+@@ -37,7 +37,7 @@
+ /* 128*/        this.tokens.add(token);
+ /* 130*/      } else if (token.startsWith("-")) {
+ /* 132*/        if (token.length() == 2) {
+-/* 134*/          processOptionToken(token, stopAtNonOption);
++/* 134*/          burstToken(token, stopAtNonOption);
+ /* 136*/        } else if (options.hasOption(token)) {
+ /* 138*/          this.tokens.add(token);
+ /*   0*/        } else {

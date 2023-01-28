@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/88/mutant-0/buggy-DeadAssignmentsElimination.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/88/mutant-0/patched-DeadAssignmentsElimination.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/88/mutant-0/buggy-DeadAssignmentsElimination.java	2021-08-22 00:18:38.626190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/88/mutant-0/patched-DeadAssignmentsElimination.java	2021-08-22 00:18:38.626190184 -0700
+@@ -324,9 +324,15 @@
+       Node n, String variable) {
+     if (NodeUtil.isName(n) && variable.equals(n.getString())) {
+       if (NodeUtil.isLhs(n, n.getParent())) {
++        Preconditions.checkState(n.getParent().getType() == Token.ASSIGN);
+         // The expression to which the assignment is made is evaluated before
+         // the RHS is evaluated (normal left to right evaluation) but the KILL
+         // occurs after the RHS is evaluated.
++        Node rhs = n.getNext();
++        VariableLiveness state = isVariableReadBeforeKill(rhs, variable);
++        if (state == VariableLiveness.READ) {
++          return state;
++        }
+         return VariableLiveness.KILL;
+       } else {
+         return VariableLiveness.READ;

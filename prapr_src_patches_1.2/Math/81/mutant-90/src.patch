@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-90/ori-EigenDecompositionImpl.java	2021-07-24 01:52:12.386297317 -0700
++++ jd-result/Math/81/mutant-90/patched-EigenDecompositionImpl.java	2021-07-24 01:52:12.386297317 -0700
+@@ -1311,7 +1311,7 @@
+         work[j4 - 2] = dN1 + work[j4p2];
+         work[j4] = work[j4p2 + 2] * (work[j4p2] / work[j4 - 2]);
+         dN = work[j4p2 + 2] * (dN1 / work[j4 - 2]) - tau;
+-        dMin = Math.min(dMin, dN);
++    this.dMin = Math.min(this.sigma, this.dN);
+ 
+         work[j4 + 2] = dN;
+         work[4 * end - pingPong - 1] = eMin;

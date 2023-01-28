@@ -1,0 +1,11 @@
+--- jd-result/Lang/60/mutant-1/ori-StrBuilder.java	2021-07-15 18:51:52.352753126 -0700
++++ jd-result/Lang/60/mutant-1/patched-StrBuilder.java	2021-07-21 08:05:33.514287090 -0700
+@@ -1206,7 +1206,7 @@
+                 deleteImpl(index, index + len, len);
+             }
+         }
+-        return this;
++    return minimizeCapacity();
+     }
+ 
+     //-----------------------------------------------------------------------

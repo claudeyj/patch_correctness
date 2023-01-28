@@ -1,0 +1,11 @@
+--- ori-UTF8JsonGenerator.java	2022-09-04 21:18:41.405979527 -0500
++++ man-patched-UTF8JsonGenerator.java	2022-09-04 21:18:41.405979527 -0500
+@@ -1880,7 +1880,7 @@
+         throws IOException
+     {
+         // Let's handle surrogates gracefully (as 4 byte output):
+-        if (ch >= SURR1_FIRST) {
++        if (ch < SURR1_FIRST) {
+             if (ch <= SURR2_LAST) { // yes, outside of BMP
+                 // Do we have second part?
+                 if (inputOffset >= inputEnd || cbuf == null) { // nope... have to note down

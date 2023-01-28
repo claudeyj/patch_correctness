@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/55/mutant-0/buggy-FunctionRewriter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/55/mutant-0/patched-FunctionRewriter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/55/mutant-0/buggy-FunctionRewriter.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/55/mutant-0/patched-FunctionRewriter.java	2021-08-22 00:18:38.610190184 -0700
+@@ -114,7 +114,8 @@
+   }
+ 
+   private static boolean isReduceableFunctionExpression(Node n) {
+-    return NodeUtil.isFunctionExpression(n);
++    return NodeUtil.isFunctionExpression(n)
++        && !NodeUtil.isGetOrSetKey(n.getParent());
+   }
+ 
+   /**

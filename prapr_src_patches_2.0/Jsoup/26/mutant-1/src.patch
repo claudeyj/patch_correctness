@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/26/mutant-1/ori-Cleaner.java	2021-08-08 21:02:03.168814668 -0700
++++ jd-result-2.0/Jsoup/26/mutant-1/patched-Cleaner.java	2021-08-09 06:25:54.901769333 -0700
+@@ -40,7 +40,7 @@
+         Validate.notNull(dirtyDocument);
+ 
+         Document clean = Document.createShell(dirtyDocument.baseUri());
+-            copySafeNodes(dirtyDocument.body(), clean.body());
++    copySafeNodes(dirtyDocument.normalise().body(), clean.body());
+ 
+         return clean;
+     }

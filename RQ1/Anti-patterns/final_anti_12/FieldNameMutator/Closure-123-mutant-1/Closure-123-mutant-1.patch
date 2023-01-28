@@ -1,0 +1,11 @@
+--- jd-result/Closure/123/mutant-1/a-CodeGenerator.java	2021-07-14 21:53:12.838622114 -0700
++++ jd-result/Closure/123/mutant-1/b-CodeGenerator.java	2021-07-14 21:53:14.354622157 -0700
+@@ -214,7 +214,7 @@
+ /*   0*/      case 98:
+ /* 283*/        Preconditions.checkState((childCount == 3));
+ /* 284*/        p = NodeUtil.precedence(type);
+-/* 285*/        rhsContext = Context.OTHER;
++/* 285*/        rhsContext = Context.IN_FOR_INIT_CLAUSE;
+ /* 286*/        addExpr(first, p + 1, context);
+ /* 287*/        this.cc.addOp("?", true);
+ /* 288*/        addExpr(first.getNext(), 1, rhsContext);

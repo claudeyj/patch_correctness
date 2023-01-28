@@ -1,0 +1,7 @@
+       */
+      if (NodeUtil.hasFinally(n)) {
+        Node finallyBlock = n.getLastChild();
+        tryMinimizeExits(finallyBlock, exitType, labelName);
+      }
+    }
+

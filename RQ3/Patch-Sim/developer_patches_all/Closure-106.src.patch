@@ -1,0 +1,27 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/106/mutant-0/buggy-JSDocInfoBuilder.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/106/mutant-0/patched-JSDocInfoBuilder.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/106/mutant-0/buggy-JSDocInfoBuilder.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/106/mutant-0/patched-JSDocInfoBuilder.java	2021-08-22 00:18:38.578190183 -0700
+@@ -186,9 +186,7 @@
+    * @return {@code true} if the description was recorded.
+    */
+   public boolean recordBlockDescription(String description) {
+-    if (parseDocumentation) {
+     populated = true;
+-    }
+     return currentInfo.documentBlock(description);
+   }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/106/mutant-0/buggy-GlobalNamespace.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/106/mutant-0/patched-GlobalNamespace.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/106/mutant-0/buggy-GlobalNamespace.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/106/mutant-0/patched-GlobalNamespace.java	2021-08-22 00:18:38.578190183 -0700
+@@ -904,6 +904,10 @@
+       // Don't try to collapse if the one global set is a twin reference.
+       // We could theoretically handle this case in CollapseProperties, but
+       // it's probably not worth the effort.
++      Preconditions.checkNotNull(declaration);
++      if (declaration.getTwin() != null) {
++        return false;
++      }
+ 
+       if (isClassOrEnum) {
+         return true;

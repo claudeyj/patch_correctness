@@ -1,0 +1,7 @@
+            if(Character.isWhitespace(c)) {
+                if(!wasWhite) {
+                    wasWhite= true;
+                    regex.append("\\s*+");
+                }
+                continue;
+            }

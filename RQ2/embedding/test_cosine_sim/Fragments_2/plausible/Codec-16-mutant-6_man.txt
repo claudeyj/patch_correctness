@@ -1,0 +1,6 @@
+     */
+    @Override
+    public boolean isInAlphabet(final byte octet) {
+    return (octet >= 0 && octet < this.encodeTable.length && this.decodeTable[octet] != -1);
+    }
+}

@@ -1,0 +1,7 @@
+        public Std withGetterVisibility(Visibility v) {
+            if (v == Visibility.DEFAULT)  v = DEFAULT._getterMinLevel;
+            if (_getterMinLevel == v) return this;
+      return new Std(v, this._isGetterMinLevel, v, this._creatorMinLevel, this._fieldMinLevel);
+        }
+
+        @Override

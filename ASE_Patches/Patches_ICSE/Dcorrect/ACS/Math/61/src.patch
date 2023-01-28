@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/61/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/61/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/61/buggy1.java	2021-08-27 19:18:39.614864114 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/61/tool-patch1.java	2021-08-27 19:18:39.614864114 -0700
+@@ -14,7 +14,7 @@
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  */
+-package org.apache.commons.math.distribution;
++package org.apache.commons.math.distribution;import  org.apache.commons.math.exception.NotStrictlyPositiveException;
+ 
+ import java.io.Serializable;
+ 
+@@ -91,7 +91,7 @@
+      */
+     public PoissonDistributionImpl(double p, double epsilon, int maxIterations) {
+         if (p <= 0) {
+-            throw MathRuntimeException.createIllegalArgumentException(LocalizedFormats.NOT_POSITIVE_POISSON_MEAN, p);
++if (p <= 0){throw new NotStrictlyPositiveException(null);}            throw MathRuntimeException.createIllegalArgumentException(LocalizedFormats.NOT_POSITIVE_POISSON_MEAN, p);
+         }
+         mean = p;
+         normal = new NormalDistributionImpl(p, FastMath.sqrt(p));

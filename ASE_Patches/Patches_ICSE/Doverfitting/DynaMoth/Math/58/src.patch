@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/58/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/58/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/58/buggy1.java	2021-08-27 19:18:34.798863978 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Math/58/tool-patch1.java	2021-08-27 19:18:34.798863978 -0700
+@@ -602,7 +602,9 @@
+                     work1[permutation[i]] -= weightedResidualJacobian[i][pj] * tmp;
+                 }
+             }
++            if (this.costRelativeTolerance != this.orthoTolerance) {
+             sum2 = 0;
++            }
+             for (int j = 0; j < solvedCols; ++j) {
+                 double s = work1[permutation[j]];
+                 sum2 += s * s;

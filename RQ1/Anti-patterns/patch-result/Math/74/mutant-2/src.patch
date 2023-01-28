@@ -1,0 +1,11 @@
+--- jd-result/Math/74/mutant-2/ori-MultistepIntegrator.java	2021-07-24 01:52:06.122297141 -0700
++++ jd-result/Math/74/mutant-2/patched-MultistepIntegrator.java	2021-07-24 01:52:06.122297141 -0700
+@@ -127,7 +127,7 @@
+         // set the default values of the algorithm control parameters
+         setSafety(0.9);
+         setMinReduction(0.2);
+-        setMaxGrowth(Math.pow(2.0, -exp));
++    setMaxGrowth(Math.nextAfter(2.0D, -this.exp));
+ 
+     }
+ 

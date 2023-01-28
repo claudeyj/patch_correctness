@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-13/a-ObjectReader.java	2021-08-09 04:32:28.769577278 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-13/b-ObjectReader.java	2021-08-09 04:32:30.329577322 -0700
+@@ -87,7 +87,8 @@
+ /* 183*/    this._schema = schema;
+ /* 184*/    this._injectableValues = injectableValues;
+ /* 185*/    this._unwrapRoot = config.useRootWrapping();
+-/* 187*/    this._rootDeserializer = _prefetchRootDeserializer(config, valueType);
++/* 187*/    this;
++/* 187*/    this._rootDeserializer = null;
+ /* 188*/    this._dataFormatReaders = null;
+ /*   0*/  }
+ /*   0*/  

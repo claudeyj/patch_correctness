@@ -1,0 +1,11 @@
+--- jd-result/Closure/45/mutant-3/ori-RemoveUnusedVars.java	2021-07-15 18:51:53.792753166 -0700
++++ jd-result/Closure/45/mutant-3/fixed-patched-RemoveUnusedVars.java	2021-07-21 21:11:44.822741619 -0700
+@@ -278,7 +278,7 @@
+             // If that var hasn't already been marked referenced, then
+             // start tracking it.  If this is an assign, do nothing
+             // for now.
+-            if (isRemovableVar(var)) {
++          if (this.removeGlobals) {
+               if (!assignsByNode.containsKey(n)) {
+                 markReferencedVar(var);
+               }

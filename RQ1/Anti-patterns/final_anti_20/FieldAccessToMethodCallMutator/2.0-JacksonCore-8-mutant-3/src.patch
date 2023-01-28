@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/8/mutant-3/ori-TextBuffer.java	2021-08-08 21:02:01.868814632 -0700
++++ jd-result-2.0/JacksonCore/8/mutant-3/man-patched-TextBuffer.java	2021-08-12 15:59:40.554054871 -0700
+@@ -304,7 +304,7 @@
+             return (_resultArray = _resultString.toCharArray());
+         }
+         // Nope; but does it fit in just one segment?
+-        if (!_hasSegments)  return _currentSegment;
++        if (!hasTextAsCharacters())  return _currentSegment;
+         // Nope, need to have/create a non-segmented array and return it
+         return contentsAsArray();
+     }

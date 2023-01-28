@@ -1,0 +1,11 @@
+--- jd-result/Closure/48/mutant-2/ori-TypedScopeCreator.java	2021-07-15 18:51:53.024753145 -0700
++++ jd-result/Closure/48/mutant-2/patched-TypedScopeCreator.java	2021-07-21 07:53:05.018265969 -0700
+@@ -1438,7 +1438,7 @@
+       JSType valueType = getDeclaredType(t.getSourceName(), info, n, rhsValue);
+       if (valueType == null && rhsValue != null) {
+         // Determining type for #5
+-        valueType = rhsValue.getJSType();
++        valueType = ownerNode.getJSType(); 
+       }
+       // Function prototypes are special.
+       // It's a common JS idiom to do:

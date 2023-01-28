@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-78/a-EigenDecompositionImpl.java	2021-07-14 09:21:11.677348884 -0700
++++ jd-result/Math/81/mutant-78/b-EigenDecompositionImpl.java	2021-07-14 09:21:13.201348927 -0700
+@@ -943,7 +943,7 @@
+ /*1534*/          double b1 = this.work[np - 2];
+ /*1535*/          double b2 = this.work[np - 6];
+ /*1536*/          double gam = this.dN2;
+-/*1537*/          if (this.work[np - 8] > b2 || this.work[np - 4] > b1)
++/*1537*/          if (this.work[np - 8] <= b2 || this.work[np - 4] > b1)
+ /*   0*/            return; 
+ /*1540*/          double a2 = this.work[np - 8] / b2 * (1.0D + this.work[np - 4] / b1);
+ /*1543*/          if (end - start > 2) {

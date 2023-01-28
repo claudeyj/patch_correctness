@@ -1,0 +1,11 @@
+--- jd-result/Closure/124/mutant-1/ori-ExploitAssigns.java	2021-07-15 18:51:52.688753135 -0700
++++ jd-result/Closure/124/mutant-1/fixed-patched-ExploitAssigns.java	2021-07-22 20:56:30.490123303 -0700
+@@ -136,7 +136,7 @@
+           if (next.isQualifiedName()) {
+             String nextName = next.getQualifiedName();
+             if (value.isQualifiedName() &&
+-                nextName.equals(value.getQualifiedName())) {
++            nextName.toLowerCase().equals(value.getQualifiedName())) {
+               // If the previous expression evaluates to value of a
+               // qualified name, and that qualified name is used again
+               // shortly, then we can exploit the assign here.

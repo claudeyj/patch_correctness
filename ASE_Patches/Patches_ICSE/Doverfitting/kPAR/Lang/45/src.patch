@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/45/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/45/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/45/buggy1.java	2021-08-27 19:18:38.454864081 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Lang/45/tool-patch1.java	2021-08-27 19:18:38.454864081 -0700
+@@ -619,7 +619,7 @@
+             upper = str.length();
+         }
+         // if upper is less than lower, raise it to lower
+-        if (upper < lower) {
++        if ((upper < lower) && (upper != str.length())) {
+             upper = lower;
+         }
+ 

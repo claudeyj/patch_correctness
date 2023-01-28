@@ -1,0 +1,11 @@
+--- jd-result-2.0/Csv/15/mutant-6/a-CSVFormat.java	2021-08-09 03:52:38.513509829 -0700
++++ jd-result-2.0/Csv/15/mutant-6/b-CSVFormat.java	2021-08-09 03:52:40.281509879 -0700
+@@ -353,7 +353,7 @@
+ /*1095*/    if (object == null) {
+ /*1096*/      out.append(value);
+ /*1097*/    } else if (isQuoteCharacterSet()) {
+-/*1099*/      printAndQuote(object, value, offset, len, out, newRecord);
++/*1099*/      printAndQuote(object, value, offset, len, out, this.ignoreEmptyLines);
+ /*1100*/    } else if (isEscapeCharacterSet()) {
+ /*1101*/      printAndEscape(value, offset, len, out);
+ /*   0*/    } else {

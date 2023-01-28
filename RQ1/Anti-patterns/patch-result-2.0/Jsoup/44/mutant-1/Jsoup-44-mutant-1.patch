@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/44/mutant-1/a-HtmlTreeBuilderState.java	2021-08-09 04:19:36.065555474 -0700
++++ jd-result-2.0/Jsoup/44/mutant-1/b-HtmlTreeBuilderState.java	2021-08-09 04:19:37.661555519 -0700
+@@ -922,7 +922,7 @@
+ /* 829*/            if (name.equals("table")) {
+ /* 830*/              tb.error(this);
+ /* 831*/              boolean processed = tb.processEndTag("table");
+-/* 832*/              if (processed) {
++/* 832*/              if (!processed) {
+ /* 833*/                  return tb.process(t); 
+ /*   0*/                 }
+ /*   0*/            } else {

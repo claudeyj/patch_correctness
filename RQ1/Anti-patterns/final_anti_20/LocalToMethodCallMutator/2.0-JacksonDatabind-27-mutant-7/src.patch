@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/27/mutant-7/ori-ExternalTypeHandler.java	2021-08-08 21:02:02.340814645 -0700
++++ jd-result-2.0/JacksonDatabind/27/mutant-7/patched-ExternalTypeHandler.java	2021-08-09 06:25:54.941769334 -0700
+@@ -107,7 +107,7 @@
+             TokenBuffer tokens = new TokenBuffer(jp);
+             tokens.copyCurrentStructure(jp);
+             _tokens[index] = tokens;
+-            canDeserialize = (bean != null) && (_typeIds[index] != null);
++      canDeserialize = (bean != null && (start())._typeIds[index] != null);
+         }
+         /* Minor optimization: let's deserialize properties as soon as
+          * we have all pertinent information:

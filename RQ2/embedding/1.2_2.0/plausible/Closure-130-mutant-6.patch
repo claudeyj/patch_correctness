@@ -1,0 +1,11 @@
+--- jd-result/Closure/130/mutant-6/ori-GlobalNamespace.java	2021-07-15 18:51:53.460753157 -0700
++++ jd-result/Closure/130/mutant-6/patched-GlobalNamespace.java	2021-07-21 07:56:52.334272384 -0700
+@@ -355,7 +355,7 @@
+               case Token.VAR:
+                 isSet = true;
+                 Node rvalue = n.getFirstChild();
+-                type = rvalue == null ? Name.Type.OTHER : getValueType(rvalue);
++                type = (rvalue == null) ? GlobalNamespace.Name.Type.GET : getValueType(rvalue);
+                 break;
+               case Token.ASSIGN:
+                 if (parent.getFirstChild() == n) {

@@ -1,0 +1,328 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 17 13:02:31 PDT 2021
+Number of Plausible Fixes: 36
+Total Number of Patches: 2449
+================================================
+1.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 734
+	Rank: 1
+	Total Rank: 21
+	Dump: mutant-10.class
+------------------------------------------------
+2.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 734
+	Rank: 2
+	Total Rank: 57
+	Dump: mutant-34.class
+------------------------------------------------
+3.
+	Mutator: BooleanFalseReturnValsMutator
+	Description: replaced boolean return with false for org/apache/commons/compress/archivers/tar/TarArchiveEntry::isDirectory
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 734
+	Rank: 3
+	Total Rank: 58
+	Dump: mutant-27.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local i is replaced by access to field LONGFILE_ERROR
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 497
+	Rank: 6
+	Total Rank: 383
+	Dump: mutant-13.class
+------------------------------------------------
+5.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local i is replaced by access to field BIGNUMBER_ERROR
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 497
+	Rank: 6
+	Total Rank: 383
+	Dump: mutant-15.class
+------------------------------------------------
+6.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local length is replaced by access to field LONGFILE_TRUNCATE
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 496
+	Rank: 6
+	Total Rank: 383
+	Dump: mutant-16.class
+------------------------------------------------
+7.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local result is replaced a call result.reverse()
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 502
+	Rank: 7
+	Total Rank: 398
+	Dump: mutant-31.class
+------------------------------------------------
+8.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/apache/commons/compress/archivers/tar/TarArchiveOutputStream::stripTo7Bits
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 456
+	Rank: 9
+	Total Rank: 415
+	Dump: mutant-9.class
+------------------------------------------------
+9.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/StringBuffer::toString
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 502
+	Rank: 9
+	Total Rank: 415
+	Dump: mutant-33.class
+------------------------------------------------
+10.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to append(Ljava/lang/String;)Ljava/lang/StringBuilder; with a call to append(Ljava/lang/StringBuffer;)Ljava/lang/StringBuilder;
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 456
+	Rank: 15
+	Total Rank: 456
+	Dump: mutant-1.class
+------------------------------------------------
+11.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to append(C)Ljava/lang/StringBuffer; with a call to append(F)Ljava/lang/StringBuffer;
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 499
+	Rank: 15
+	Total Rank: 456
+	Dump: mutant-2.class
+------------------------------------------------
+12.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to append(Ljava/lang/String;)Ljava/lang/StringBuilder; with a call to append(I)Ljava/lang/StringBuilder;
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 456
+	Rank: 15
+	Total Rank: 456
+	Dump: mutant-8.class
+------------------------------------------------
+13.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to append(C)Ljava/lang/StringBuffer; with a call to append(Ljava/lang/CharSequence;)Ljava/lang/StringBuffer;
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 499
+	Rank: 15
+	Total Rank: 456
+	Dump: mutant-17.class
+------------------------------------------------
+14.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to append(Ljava/lang/String;)Ljava/lang/StringBuilder; with a call to append(C)Ljava/lang/StringBuilder;
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 456
+	Rank: 15
+	Total Rank: 456
+	Dump: mutant-21.class
+------------------------------------------------
+15.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to append(C)Ljava/lang/StringBuffer; with a call to append(J)Ljava/lang/StringBuffer;
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 499
+	Rank: 15
+	Total Rank: 456
+	Dump: mutant-23.class
+------------------------------------------------
+16.
+	Mutator: ReturnValsMutator
+	Description: mutated return of Object value for org/apache/commons/compress/archivers/tar/TarArchiveOutputStream::stripTo7Bits to ( if (x != null) null else throw new RuntimeException )
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 502
+	Rank: 16
+	Total Rank: 500
+	Dump: mutant-7.class
+------------------------------------------------
+17.
+	Mutator: LocalNameMutator
+	Description: local numToWrite is replaced by local wOffset to be used
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 386
+	Rank: 17
+	Total Rank: 545
+	Dump: mutant-26.class
+------------------------------------------------
+18.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local numToWrite is replaced by access to field LONGFILE_ERROR
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 386
+	Rank: 19
+	Total Rank: 557
+	Dump: mutant-5.class
+------------------------------------------------
+19.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local numToWrite is replaced by access to field BIGNUMBER_ERROR
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 386
+	Rank: 19
+	Total Rank: 557
+	Dump: mutant-18.class
+------------------------------------------------
+20.
+	Mutator: MathMutator
+	Description: Replaced long addition with subtraction
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 386
+	Rank: 20
+	Total Rank: 558
+	Dump: mutant-35.class
+------------------------------------------------
+21.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 386
+	Rank: 21
+	Total Rank: 560
+	Dump: mutant-29.class
+------------------------------------------------
+22.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/apache/commons/compress/archivers/tar/TarArchiveEntry::isDirectory
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 323
+	Rank: 22
+	Total Rank: 1513
+	Dump: mutant-30.class
+------------------------------------------------
+23.
+	Mutator: MethodNameMutator
+	Description: replaced call to isDirectory with a call to isSymbolicLink
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 323
+	Rank: 27
+	Total Rank: 1568
+	Dump: mutant-6.class
+------------------------------------------------
+24.
+	Mutator: MethodNameMutator
+	Description: replaced call to isDirectory with a call to isCharacterDevice
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 323
+	Rank: 27
+	Total Rank: 1568
+	Dump: mutant-11.class
+------------------------------------------------
+25.
+	Mutator: MethodNameMutator
+	Description: replaced call to isDirectory with a call to isGlobalPaxHeader
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 323
+	Rank: 27
+	Total Rank: 1568
+	Dump: mutant-19.class
+------------------------------------------------
+26.
+	Mutator: MethodNameMutator
+	Description: replaced call to isDirectory with a call to isGNUSparse
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 323
+	Rank: 27
+	Total Rank: 1568
+	Dump: mutant-28.class
+------------------------------------------------
+27.
+	Mutator: MethodNameMutator
+	Description: replaced call to isDirectory with a call to isExtended
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 323
+	Rank: 27
+	Total Rank: 1568
+	Dump: mutant-32.class
+------------------------------------------------
+28.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+	Line Number: 323
+	Rank: 28
+	Total Rank: 1573
+	Dump: mutant-20.class
+------------------------------------------------
+29.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/String::endsWith
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 733
+	Rank: 29
+	Total Rank: 1900
+	Dump: mutant-22.class
+------------------------------------------------
+30.
+	Mutator: MethodNameMutator
+	Description: replaced call to endsWith with a call to equalsIgnoreCase
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 733
+	Rank: 35
+	Total Rank: 1914
+	Dump: mutant-3.class
+------------------------------------------------
+31.
+	Mutator: MethodNameMutator
+	Description: replaced call to endsWith with a call to matches
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 733
+	Rank: 35
+	Total Rank: 1914
+	Dump: mutant-4.class
+------------------------------------------------
+32.
+	Mutator: MethodNameMutator
+	Description: replaced call to getName with a call to getGroupName
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 733
+	Rank: 35
+	Total Rank: 1914
+	Dump: mutant-12.class
+------------------------------------------------
+33.
+	Mutator: MethodNameMutator
+	Description: replaced call to getName with a call to getLinkName
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 733
+	Rank: 35
+	Total Rank: 1914
+	Dump: mutant-24.class
+------------------------------------------------
+34.
+	Mutator: MethodNameMutator
+	Description: replaced call to getName with a call to getUserName
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 733
+	Rank: 35
+	Total Rank: 1914
+	Dump: mutant-25.class
+------------------------------------------------
+35.
+	Mutator: MethodNameMutator
+	Description: replaced call to endsWith with a call to startsWith
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 733
+	Rank: 35
+	Total Rank: 1914
+	Dump: mutant-36.class
+------------------------------------------------
+36.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 733
+	Rank: 36
+	Total Rank: 1917
+	Dump: mutant-14.class
+------------------------------------------------

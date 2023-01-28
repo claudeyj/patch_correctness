@@ -1,0 +1,12 @@
+--- jd-result-2.0/Csv/11/mutant-15/ori-CSVParser.java	2021-08-08 21:02:01.584814624 -0700
++++ jd-result-2.0/Csv/11/mutant-15/man-patched-CSVParser.java	2021-08-09 22:44:14.843425730 -0700
+@@ -381,6 +381,9 @@
+                 for (int i = 0; i < headerRecord.length; i++) {
+                     final String header = headerRecord[i];
+                     final boolean containsHeader = hdrMap.containsKey(header);
++                    if (header == null) {
++                        return this.headerMap; 
++                    }
+                     final boolean emptyHeader = header.trim().isEmpty();
+                     if (containsHeader && (!emptyHeader || (emptyHeader && !this.format.getIgnoreEmptyHeaders()))) {
+                         throw new IllegalArgumentException("The header contains a duplicate name: \"" + header +

@@ -1,0 +1,7 @@
+
+    void setInitialBuffer(byte[] out, int outPos, int outAvail) {
+        if (out != null && out.length == outAvail) {
+            buffer = out;
+            pos = outPos;
+            readPos = outPos;
+        }

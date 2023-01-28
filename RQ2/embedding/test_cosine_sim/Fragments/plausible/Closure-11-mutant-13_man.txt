@@ -1,0 +1,7 @@
+        break;
+
+      case Token.GETPROP:
+        visitGetProp(t, n, parent.getFirstChild());
+        typeable = !(parent.isAssign() &&
+                     parent.getFirstChild() == n);
+        break;

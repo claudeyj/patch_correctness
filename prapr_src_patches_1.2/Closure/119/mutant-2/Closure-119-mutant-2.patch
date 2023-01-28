@@ -1,0 +1,11 @@
+--- jd-result/Closure/119/mutant-2/a-CheckGlobalNames.java	2021-07-14 21:51:53.458619874 -0700
++++ jd-result/Closure/119/mutant-2/b-CheckGlobalNames.java	2021-07-14 21:51:55.550619933 -0700
+@@ -47,7 +47,7 @@
+ /*  91*/    for (GlobalNamespace.Name name : this.namespace.getNameForest()) {
+ /*  97*/      if (name.inExterns)
+ /*   0*/        continue; 
+-/* 101*/      checkDescendantNames(name, (name.globalSets + name.localSets > 0));
++/* 101*/      checkDescendantNames(name, (name.globalSets + name.localSets > 0) ? true : true);
+ /*   0*/    } 
+ /*   0*/  }
+ /*   0*/  

@@ -1,0 +1,7 @@
+        if ((bindings == null) || bindings.isEmpty()) {
+            key = rawType;
+        } else {
+            key = new Object();
+        }
+        result = _typeCache.get(key); // ok, cache object is synced
+        if (result != null) {

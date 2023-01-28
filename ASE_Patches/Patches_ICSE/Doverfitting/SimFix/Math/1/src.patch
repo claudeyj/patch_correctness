@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/1/buggy1.java	2021-08-27 19:18:38.922864094 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/1/tool-patch1.java	2021-08-27 19:18:38.922864094 -0700
+@@ -300,9 +300,7 @@
+             final long a1 = (long) FastMath.floor(r1);
+             p2 = (a1 * p1) + p0;
+             q2 = (a1 * q1) + q0;
+-            if ((p2 > overflow) || (q2 > overflow)) {
+-                // in maxDenominator mode, if the last fraction was very close to the actual value
+-                // q2 may overflow in the next iteration; in this case return the last one.
++            if((n<maxIterations)&&(FastMath.abs(value-value)>epsilon)){
+                 throw new FractionConversionException(value, p2, q2);
+             }
+ 

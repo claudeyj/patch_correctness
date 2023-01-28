@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-29/ori-EqualsBuilder.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-29/man-patched-EqualsBuilder.java	2021-07-24 01:23:51.214249314 -0700
+@@ -256,7 +256,7 @@
+                 testClass = testClass.getSuperclass();
+                 reflectionAppend(lhs, rhs, testClass, equalsBuilder, testTransients, excludeFields);
+             }
+-        } catch (IllegalArgumentException e) {
++        } catch (RuntimeException e) {
+             // In this case, we tried to test a subclass vs. a superclass and
+             // the subclass has ivars or the ivars are transient and 
+             // we are testing transients.

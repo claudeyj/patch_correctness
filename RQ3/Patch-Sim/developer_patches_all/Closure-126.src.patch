@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/126/mutant-0/buggy-MinimizeExitPoints.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/126/mutant-0/patched-MinimizeExitPoints.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/126/mutant-0/buggy-MinimizeExitPoints.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/126/mutant-0/patched-MinimizeExitPoints.java	2021-08-22 00:18:38.590190183 -0700
+@@ -138,10 +138,6 @@
+        * can cause problems if it changes the completion type of the finally
+        * block. See ECMA 262 Sections 8.9 & 12.14
+        */
+-      if (NodeUtil.hasFinally(n)) {
+-        Node finallyBlock = n.getLastChild();
+-        tryMinimizeExits(finallyBlock, exitType, labelName);
+-      }
+     }
+ 
+     // Just a 'label'.

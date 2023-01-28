@@ -1,0 +1,12 @@
+--- jd-result/Chart/25/mutant-15/a-RectangleInsets.java	2021-07-14 20:20:30.522465156 -0700
++++ jd-result/Chart/25/mutant-15/b-RectangleInsets.java	2021-07-14 20:20:31.934465196 -0700
+@@ -165,7 +165,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public double calculateTopInset(double height) {
+-/* 358*/    double result = this.top;
++/* 358*/    this;
++/* 358*/    double result = height;
+ /* 359*/    if (this.unitType == UnitType.RELATIVE)
+ /* 360*/      result = this.top * height; 
+ /* 362*/    return result;

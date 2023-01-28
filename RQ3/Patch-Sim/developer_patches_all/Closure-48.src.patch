@@ -1,0 +1,22 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/48/mutant-0/buggy-TypedScopeCreator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/48/mutant-0/patched-TypedScopeCreator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/48/mutant-0/buggy-TypedScopeCreator.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/48/mutant-0/patched-TypedScopeCreator.java	2021-08-22 00:18:38.610190184 -0700
+@@ -1518,11 +1518,14 @@
+             || FunctionTypeBuilder.isFunctionTypeDeclaration(info));
+       }
+ 
+-      if (inferred) {
++      if (inferred && rhsValue != null && rhsValue.isFunction()) {
+         // Determining declaration for #2
+-        inferred = !(rhsValue != null &&
+-            rhsValue.isFunction() &&
+-            (info != null || !scope.isDeclared(qName, false)));
++        if (info != null) {
++          inferred = false;
++        } else if (!scope.isDeclared(qName, false) &&
++                   n.isUnscopedQualifiedName()) {
++          inferred = false;
++        }
+       }
+ 
+       if (!inferred) {

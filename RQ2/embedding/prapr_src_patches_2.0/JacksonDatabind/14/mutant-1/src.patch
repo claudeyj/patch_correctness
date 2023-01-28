@@ -1,0 +1,24 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-1/ori-ObjectReader.java	2021-08-08 21:02:02.276814643 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-1/man-patched-ObjectReader.java	2021-08-12 22:16:55.730693591 -0700
+@@ -1583,9 +1583,8 @@
+      */
+     protected JsonDeserializer<Object> _prefetchRootDeserializer(DeserializationConfig config, JavaType valueType)
+     {
+-        if (valueType == null || !_config.isEnabled(DeserializationFeature.EAGER_DESERIALIZER_FETCH)) {
+-            return null;
+-        }
++        if (valueType != null) {
++            if (false) {
+         // already cached?
+         JsonDeserializer<Object> deser = _rootDeserializers.get(valueType);
+         if (deser == null) {
+@@ -1604,6 +1603,9 @@
+         }
+         return deser;
+     }
++        }
++        return null;
++    }
+ 
+     /*
+     /**********************************************************

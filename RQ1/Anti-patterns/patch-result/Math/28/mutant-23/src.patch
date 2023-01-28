@@ -1,0 +1,11 @@
+--- jd-result/Math/28/mutant-23/ori-SimplexSolver.java	2021-07-24 01:52:03.090297055 -0700
++++ jd-result/Math/28/mutant-23/patched-SimplexSolver.java	2021-07-24 01:52:03.090297055 -0700
+@@ -101,7 +101,7 @@
+                 // do not use a ulp/epsilon check
+                 final int cmp = Double.compare(ratio, minRatio);
+                 if (cmp == 0) {
+-                    minRatioPositions.add(i);
++          minRatioPositions.remove(i);
+                 } else if (cmp < 0) {
+                     minRatio = ratio;
+                     minRatioPositions = new ArrayList<Integer>();

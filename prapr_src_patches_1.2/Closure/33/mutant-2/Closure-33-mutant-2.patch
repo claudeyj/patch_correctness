@@ -1,0 +1,11 @@
+--- jd-result/Closure/33/mutant-2/a-TypeInference.java	2021-07-14 21:40:58.998601406 -0700
++++ jd-result/Closure/33/mutant-2/b-TypeInference.java	2021-07-14 21:41:00.494601449 -0700
+@@ -685,7 +685,7 @@
+ /*   0*/  private void inferPropertyTypesToMatchConstraint(JSType type, JSType constraint) {
+ /*1115*/    if (type == null || constraint == null)
+ /*   0*/      return; 
+-/*1119*/    ObjectType constraintObj = ObjectType.cast(constraint.restrictByNotNullOrUndefined());
++/*1119*/    ObjectType constraintObj = ObjectType.cast(constraint.collapseUnion());
+ /*1121*/    if (constraintObj != null)
+ /*1122*/      type.matchConstraint(constraintObj); 
+ /*   0*/  }

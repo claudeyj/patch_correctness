@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-186/a-DefaultStatisticalCategoryDataset.java	2021-07-14 20:08:05.138444123 -0700
++++ jd-result/Chart/25/mutant-186/b-DefaultStatisticalCategoryDataset.java	2021-07-14 20:08:06.414444159 -0700
+@@ -20,8 +20,6 @@
+ /*   0*/  public Number getMeanValue(int row, int column) {
+ /* 107*/    Number result = null;
+ /* 108*/    MeanAndStandardDeviation masd = (MeanAndStandardDeviation)this.data.getObject(row, column);
+-/* 110*/    if (masd != null)
+-/* 111*/      result = masd.getMean(); 
+ /* 113*/    return result;
+ /*   0*/  }
+ /*   0*/  

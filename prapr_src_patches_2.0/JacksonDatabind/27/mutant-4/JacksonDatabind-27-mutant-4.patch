@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/27/mutant-4/a-BeanDeserializer.java	2021-08-09 04:34:04.021579966 -0700
++++ jd-result-2.0/JacksonDatabind/27/mutant-4/b-BeanDeserializer.java	2021-08-09 04:34:05.841580017 -0700
+@@ -535,7 +535,7 @@
+ /* 785*/    for (; t == JsonToken.FIELD_NAME; t = p.nextToken()) {
+ /* 786*/      String propName = p.getCurrentName();
+ /* 787*/      p.nextToken();
+-/* 789*/      SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
++/* 789*/      SettableBeanProperty creatorProp = null;
+ /* 790*/      if (creatorProp != null) {
+ /* 794*/        if (!ext.handlePropertyValue(p, ctxt, propName, buffer)) {
+ /* 798*/            if (buffer.assignParameter(creatorProp, _deserializeWithErrorWrapping(p, ctxt, creatorProp))) {

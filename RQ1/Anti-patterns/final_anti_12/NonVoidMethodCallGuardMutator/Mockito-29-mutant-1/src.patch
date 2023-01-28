@@ -1,0 +1,11 @@
+--- jd-result/Mockito/29/mutant-1/ori-Same.java	2021-07-15 18:51:56.396753240 -0700
++++ jd-result/Mockito/29/mutant-1/man-patched-Same.java	2021-07-30 04:37:28.545205359 -0700
+@@ -26,7 +26,7 @@
+     public void describeTo(Description description) {
+         description.appendText("same(");
+         appendQuoting(description);
+-        description.appendText(wanted.toString());
++        description.appendText((wanted == null) ? null : wanted.toString());
+         appendQuoting(description);
+         description.appendText(")");
+     }

@@ -1,0 +1,11 @@
+--- jd-result/Math/65/mutant-1/a-AbstractLeastSquaresOptimizer.java	2021-07-14 09:15:29.949339241 -0700
++++ jd-result/Math/65/mutant-1/b-AbstractLeastSquaresOptimizer.java	2021-07-14 09:15:31.373339281 -0700
+@@ -143,7 +143,7 @@
+ /* 255*/    double chiSquare = 0.0D;
+ /* 256*/    for (int i = 0; i < this.rows; i++) {
+ /* 257*/      double residual = this.residuals[i];
+-/* 258*/      chiSquare += residual * residual / this.residualsWeights[i];
++/* 258*/      chiSquare += residual * residual * this.residualsWeights[i];
+ /*   0*/    } 
+ /* 260*/    return chiSquare;
+ /*   0*/  }

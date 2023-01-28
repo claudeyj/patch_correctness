@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 16:29:52 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 5496
+================================================
+1.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: com/google/javascript/jscomp/NodeUtil.java
+	Line Number: 2465
+	Rank: 1
+	Total Rank: 1
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: com/google/javascript/jscomp/NodeUtil.java
+	Line Number: 2465
+	Rank: 2
+	Total Rank: 2
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: BooleanFalseReturnValsMutator
+	Description: replaced boolean return with false for com/google/javascript/jscomp/NodeUtil::evaluatesToLocalValue
+	File Name: com/google/javascript/jscomp/NodeUtil.java
+	Line Number: 2465
+	Rank: 3
+	Total Rank: 3
+	Dump: mutant-1.class
+------------------------------------------------

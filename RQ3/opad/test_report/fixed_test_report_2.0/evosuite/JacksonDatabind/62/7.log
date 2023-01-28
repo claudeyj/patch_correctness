@@ -1,0 +1,21 @@
+--- com.fasterxml.jackson.databind.deser.std.CollectionDeserializer_ESTest
+java.lang.VerifyError: Illegal type at constant pool entry 130 in class com.fasterxml.jackson.databind.deser.std.CollectionDeserializer_ESTest
+Exception Details:
+  Location:
+    com/fasterxml/jackson/databind/deser/std/CollectionDeserializer_ESTest.test25()V @22: invokestatic
+  Reason:
+    Constant pool index 130 is invalid
+  Bytecode:
+    0x0000000: 1300 2f4c bb00 6559 b700 664d bb00 0359
+    0x0000010: 2b2c b700 054e b800 823a 0413 0083 3a05
+    0x0000020: 1300 433a 06bb 007a 5919 0519 0619 04b7
+    0x0000030: 007b 3a07 bb00 7c59 1907 b700 7d3a 08bb
+    0x0000040: 0006 5901 c000 0712 8401 c000 8519 08b7
+    0x0000050: 007f 3a09 2d19 09b6 000a 572d 1904 01c0
+    0x0000060: 0002 b600 80b1                         
+
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:374)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1060)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:911)

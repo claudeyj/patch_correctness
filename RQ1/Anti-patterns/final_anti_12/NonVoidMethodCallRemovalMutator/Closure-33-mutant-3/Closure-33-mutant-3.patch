@@ -1,0 +1,12 @@
+--- jd-result/Closure/33/mutant-3/a-PrototypeObjectType.java	2021-07-14 21:40:55.478601307 -0700
++++ jd-result/Closure/33/mutant-3/b-PrototypeObjectType.java	2021-07-14 21:40:56.918601348 -0700
+@@ -341,7 +341,8 @@
+ /* 567*/    if (constraintObj.isRecordType())
+ /* 568*/      for (String prop : constraintObj.getOwnPropertyNames()) {
+ /* 569*/        JSType propType = constraintObj.getPropertyType(prop);
+-/* 570*/        if (!isPropertyTypeDeclared(prop)) {
++/* 570*/        this;
++/* 570*/        if (!this.nativeType) {
+ /* 571*/          JSType typeToInfer = propType;
+ /* 572*/          if (!hasProperty(prop))
+ /* 573*/            typeToInfer = getNativeType(JSTypeNative.VOID_TYPE).getLeastSupertype(propType); 

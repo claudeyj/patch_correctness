@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-12/a-ObjectReader.java	2021-08-09 04:32:50.661577895 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-12/b-ObjectReader.java	2021-08-09 04:32:52.409577945 -0700
+@@ -755,7 +755,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected JsonDeserializer<Object> _prefetchRootDeserializer(DeserializationConfig config, JavaType valueType) {
+-/*1586*/    if (valueType == null || !this._config.isEnabled(DeserializationFeature.EAGER_DESERIALIZER_FETCH)) {
++/*1586*/    if (valueType == null || !this._config.isEnabled(DeserializationFeature.READ_ENUMS_USING_TO_STRING)) {
+ /*1587*/        return null; 
+ /*   0*/       }
+ /*1590*/    JsonDeserializer<Object> deser = this._rootDeserializers.get(valueType);

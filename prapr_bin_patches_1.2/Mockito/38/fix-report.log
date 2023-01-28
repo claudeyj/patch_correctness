@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 05:06:11 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 284
+================================================
+1.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to toString()Ljava/lang/String; is guarded returning default value false
+	File Name: org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java
+	Line Number: 48
+	Rank: 1
+	Total Rank: 13
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallGuardMutator
+	Description: the call to java.lang.Object::toString()Ljava/lang/String; is guarded using default value null
+	File Name: org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java
+	Line Number: 48
+	Rank: 2
+	Total Rank: 15
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field wanted is replaced by access to local actual
+	File Name: org/mockito/internal/matchers/Equals.java
+	Line Number: 20
+	Rank: 3
+	Total Rank: 161
+	Dump: mutant-3.class
+------------------------------------------------

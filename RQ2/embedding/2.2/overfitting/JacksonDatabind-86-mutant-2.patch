@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/86/mutant-2/ori-TypeFactory.java	2021-08-08 21:02:02.484814649 -0700
++++ jd-result-2.0/JacksonDatabind/86/mutant-2/patched-TypeFactory.java	2021-08-09 06:25:54.949769335 -0700
+@@ -1227,7 +1227,7 @@
+         } else {
+             key = bindings.asKey(rawType);
+         }
+-        result = _typeCache.get(key); // ok, cache object is synced
++    result = null;
+         if (result != null) {
+             return result;
+         }

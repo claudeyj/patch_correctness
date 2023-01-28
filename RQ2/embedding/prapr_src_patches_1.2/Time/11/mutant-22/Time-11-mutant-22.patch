@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-22/a-DateTimeZoneBuilder.java	2021-07-14 21:28:44.798580689 -0700
++++ jd-result/Time/11/mutant-22/b-DateTimeZoneBuilder.java	2021-07-20 01:28:13.382000000 -0700
+@@ -958,7 +958,7 @@
+ /*   0*/        } 
+ /*   0*/      } 
+ /*1457*/      if (param1DSTZone != null && 
+-/*1458*/        param1DSTZone.iStartRecurrence.getNameKey().equals(param1DSTZone.iEndRecurrence.getNameKey())) {
++/*1458*/        false) {
+ /*1460*/        if (ZoneInfoCompiler.verbose())
+ /*1461*/          System.out.println("Fixing duplicate recurrent name key - " + param1DSTZone.iStartRecurrence.getNameKey()); 
+ /*1464*/        if (param1DSTZone.iStartRecurrence.getSaveMillis() > 0) {

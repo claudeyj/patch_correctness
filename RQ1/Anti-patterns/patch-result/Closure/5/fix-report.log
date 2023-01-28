@@ -1,0 +1,49 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 10 11:44:01 PDT 2021
+Number of Plausible Fixes: 5
+Total Number of Patches: 32773
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local n is replaced by local n2 to be used
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1434
+	Rank: 1
+	Total Rank: 12566
+	Dump: mutant-4.class
+------------------------------------------------
+2.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local n is replaced by access to field last
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1434
+	Rank: 2
+	Total Rank: 12575
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field next is replaced by access to local n
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1434
+	Rank: 3
+	Total Rank: 12579
+	Dump: mutant-3.class
+------------------------------------------------
+4.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1439
+	Rank: 4
+	Total Rank: 12613
+	Dump: mutant-5.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1439
+	Rank: 5
+	Total Rank: 12615
+	Dump: mutant-2.class
+------------------------------------------------

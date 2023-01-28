@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/25/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/25/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/25/buggy1.java	2021-08-27 19:18:39.618864114 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/25/tool-patch1.java	2021-08-27 19:18:39.618864114 -0700
+@@ -324,7 +324,7 @@
+                     // procedure cannot produce sensible results.
+ 
+                 a = FastMath.sqrt(c1 / c2);
+-                omega = FastMath.sqrt(c2 / c3);
++if (c2==0.0){throw new MathIllegalStateException();}                omega = FastMath.sqrt(c2 / c3);
+             }
+         }
+ 

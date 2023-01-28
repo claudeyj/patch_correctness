@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Chart/15/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Chart/15/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Chart/15/buggy1.java	2021-08-27 19:18:38.454864081 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Chart/15/tool-patch1.java	2021-08-27 19:18:38.454864081 -0700
+@@ -277,6 +277,8 @@
+             linkH = 2 * min;
+         }
+         
++        if (true)
++            return;
+         PiePlotState state = initialise(g2, plotArea, this, null, info);
+ 
+         // the link area defines the dog leg points for the linking lines to 

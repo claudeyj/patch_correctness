@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/64/mutant-3/ori-LevenbergMarquardtOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/64/mutant-3/patched-LevenbergMarquardtOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/64/mutant-3/ori-LevenbergMarquardtOptimizer.java	2021-08-23 09:23:48.968991570 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/64/mutant-3/patched-LevenbergMarquardtOptimizer.java	2021-08-23 09:23:48.968991570 +0800
+@@ -362,7 +362,8 @@
+ 
+                 // evaluate the function at x + p and calculate its norm
+                 updateResidualsAndCost();
+-                current = new VectorialPointValuePair(point, objective);
++        double[] arrayOfDouble2 = this.objective, arrayOfDouble1 = this.point;
++        current = new VectorialPointValuePair(arrayOfDouble1, arrayOfDouble2, false);
+ 
+                 // compute the scaled actual reduction
+                 double actRed = -1.0;

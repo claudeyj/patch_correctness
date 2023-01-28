@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-3/ori-RectangleInsets.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-3/fixed-patched-RectangleInsets.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-3/ori-RectangleInsets.java	2021-08-23 09:23:48.460984527 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-3/fixed-patched-RectangleInsets.java	2021-08-23 09:23:48.460984527 +0800
+@@ -355,7 +355,7 @@
+      * @return The top margin (in Java2D units).
+      */
+     public double calculateTopInset(double height) {
+-        double result = this.top;
++    double result = height;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.top * height);
+         }

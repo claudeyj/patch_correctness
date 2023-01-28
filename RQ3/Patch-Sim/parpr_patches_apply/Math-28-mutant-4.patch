@@ -1,0 +1,11 @@
+--- Math28b/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2017-03-20 23:48:41.000000000 +0800
++++ Math28_Math-28-mutant-4.patchb/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2017-03-20 23:48:41.000000000 +0800
+@@ -119,7 +119,7 @@
+                 for (Integer row : minRatioPositions) {
+                     for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {
+                         int column = i + tableau.getArtificialVariableOffset();
+-                        final double entry = tableau.getEntry(row, column);
++          double entry = DEFAULT_EPSILON;
+                         if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {
+                             return row;
+                         }

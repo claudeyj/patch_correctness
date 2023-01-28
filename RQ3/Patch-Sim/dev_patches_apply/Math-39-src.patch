@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/39/mutant-0/buggy-EmbeddedRungeKuttaIntegrator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/39/mutant-0/patched-EmbeddedRungeKuttaIntegrator.java
+--- Math39b/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java
++++ Math39b_Math-39-src.patchb/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java
+@@ -247,6 +247,15 @@
+         }
+ 
+         stepSize = hNew;
++        if (forward) {
++            if (stepStart + stepSize >= t) {
++                stepSize = t - stepStart;
++            }
++        } else {
++            if (stepStart + stepSize <= t) {
++                stepSize = t - stepStart;
++            }
++        }
+ 
+         // next stages
+         for (int k = 1; k < stages; ++k) {

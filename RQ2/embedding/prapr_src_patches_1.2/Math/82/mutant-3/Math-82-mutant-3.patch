@@ -1,0 +1,11 @@
+--- jd-result/Math/82/mutant-3/a-SimplexSolver.java	2021-07-14 09:29:00.397362110 -0700
++++ jd-result/Math/82/mutant-3/b-SimplexSolver.java	2021-07-14 09:29:01.777362149 -0700
+@@ -38,7 +38,7 @@
+ /*  82*/      if (MathUtils.compareTo(entry, 0.0D, this.epsilon) >= 0) {
+ /*  83*/        double ratio = rhs / entry;
+ /*  84*/        if (ratio < minRatio) {
+-/*  85*/          minRatio = ratio;
++/*  85*/          minRatio = rhs;
+ /*  86*/          minRatioPos = i;
+ /*   0*/        } 
+ /*   0*/      } 

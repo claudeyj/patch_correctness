@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-273/ori-CategoryPlot.java	2021-07-15 18:51:50.716753080 -0700
++++ jd-result/Chart/25/mutant-273/patched-CategoryPlot.java	2021-07-21 07:21:28.154212443 -0700
+@@ -2859,7 +2859,7 @@
+                     this, index, info);
+             int columnCount = currentDataset.getColumnCount();
+             int rowCount = currentDataset.getRowCount();
+-            int passCount = renderer.getPassCount();
++      int passCount = 0;
+             for (int pass = 0; pass < passCount; pass++) {            
+                 if (this.columnRenderingOrder == SortOrder.ASCENDING) {
+                     for (int column = 0; column < columnCount; column++) {

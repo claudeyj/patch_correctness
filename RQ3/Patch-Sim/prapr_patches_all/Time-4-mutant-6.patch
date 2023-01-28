@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/4/mutant-6/ori-Partial.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/4/mutant-6/man-patched-Partial.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/4/mutant-6/ori-Partial.java	2021-08-23 09:23:49.204994842 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/4/mutant-6/man-patched-Partial.java	2021-08-23 09:23:49.204994842 +0800
+@@ -461,7 +461,7 @@
+             System.arraycopy(iValues, i, newValues, i + 1, newValues.length - i - 1);
+             // use public constructor to ensure full validation
+             // this isn't overly efficient, but is safe
+-            Partial newPartial = new Partial(iChronology, newTypes, newValues);
++            Partial newPartial = new Partial(newTypes, newValues);
+             iChronology.validate(newPartial, newValues);
+             return newPartial;
+         }

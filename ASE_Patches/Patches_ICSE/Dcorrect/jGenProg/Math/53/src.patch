@@ -1,0 +1,35 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/jGenProg/Math/53/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/jGenProg/Math/53/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/jGenProg/Math/53/buggy1.java	2021-08-27 19:18:39.434864109 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/jGenProg/Math/53/tool-patch1.java	2021-08-27 19:18:39.434864109 -0700
+@@ -150,8 +150,11 @@
+     public Complex add(Complex rhs)
+         throws NullArgumentException {
+         MathUtils.checkNotNull(rhs);
+-        return createComplex(real + rhs.getReal(),
+-            imaginary + rhs.getImaginary());
++	if ((isNaN) || (rhs.isNaN)) {
++            return NaN;
++        }
++        return createComplex((real) + (rhs.getReal()),
++            (imaginary) + (rhs.getImaginary()));
+     }
+ 
+     /**
+@@ -172,7 +175,7 @@
+         if (isNaN) {
+             return NaN;
+         }
+-        return createComplex(real, -imaginary);
++        return createComplex(real, (-(imaginary)));
+     }
+ 
+     /**
+@@ -213,7 +216,7 @@
+     public Complex divide(Complex rhs)
+         throws NullArgumentException {
+         MathUtils.checkNotNull(rhs);
+-        if (isNaN || rhs.isNaN) {
++        if ((isNaN) || (rhs.isNaN)) {
+             return NaN;
+         }
+ 

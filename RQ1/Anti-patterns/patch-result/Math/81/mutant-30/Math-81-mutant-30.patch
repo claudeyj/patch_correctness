@@ -1,0 +1,12 @@
+--- jd-result/Math/81/mutant-30/a-EigenDecompositionImpl.java	2021-07-14 09:22:00.893350272 -0700
++++ jd-result/Math/81/mutant-30/b-EigenDecompositionImpl.java	2021-07-14 09:22:02.317350313 -0700
+@@ -902,7 +902,8 @@
+ /*1475*/          double s = 0.25D * this.dMin;
+ /*1478*/          if (this.dMin == this.dN) {
+ /*1479*/            gam = this.dN;
+-/*1480*/            a2 = 0.0D;
++/*1480*/            this;
++/*1480*/            this.upperSpectra = 0.0D;
+ /*1481*/            if (this.work[nn - 5] > this.work[nn - 7])
+ /*   0*/              return; 
+ /*1484*/            b2 = this.work[nn - 5] / this.work[nn - 7];

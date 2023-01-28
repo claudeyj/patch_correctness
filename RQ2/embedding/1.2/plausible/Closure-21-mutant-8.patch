@@ -1,0 +1,26 @@
+--- jd-result/Closure/21/mutant-8/ori-CheckSideEffects.java	2021-07-15 18:51:53.912753170 -0700
++++ jd-result/Closure/21/mutant-8/man-patched-CheckSideEffects.java	2021-07-29 19:57:58.492325801 -0700
+@@ -24,6 +24,7 @@
+ import com.google.javascript.rhino.Node;
+ import com.google.javascript.rhino.Token;
+ 
++import java.util.Iterator;
+ import java.util.List;
+ 
+ /**
+@@ -115,12 +116,9 @@
+         return;
+       }
+       if (n == parent.getLastChild()) {
+-        for (Node an : parent.getAncestors()) {
+-          int ancestorType = an.getType();
+-          if (ancestorType == Token.COMMA) continue;
+-          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK) return;
+-          else break;
+-        }
++        // for (Node an : parent.getAncestors()) {
++          Iterator<Node> ir = parent.getAncestors().iterator();
++        // }
+       }
+     } else if (parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+       if (! (parent.getType() == Token.FOR && parent.getChildCount() == 4 && (n == parent.getFirstChild() || n == parent.getFirstChild().getNext().getNext()))) {

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/7/mutant-3/ori-OptionImpl.java	2021-08-08 21:02:01.336814617 -0700
++++ jd-result-2.0/Cli/7/mutant-3/patched-OptionImpl.java	2021-08-09 06:25:54.969769335 -0700
+@@ -102,7 +102,7 @@
+         }
+ 
+         hashCode = (hashCode * 37) + getPrefixes().hashCode();
+-        hashCode = (hashCode * 37) + getTriggers().hashCode();
++    hashCode = hashCode * 37 + getTriggers().size();
+ 
+         return hashCode;
+     }

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Math/49/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Math/49/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Math/49/buggy1.java	2021-08-27 19:18:39.090864099 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Math/49/tool-patch1.java	2021-08-27 19:18:39.090864099 -0700
+@@ -129,7 +129,7 @@
+      */
+     private static String buildMessage(final Locale locale, final Localizable pattern,
+                                        final Object ... arguments) {
+-        return new MessageFormat(pattern.getLocalizedString(locale), locale).format(arguments);
++        return new MessageFormat(pattern.getLocalizedString(locale), locale).format(locale);
+     }
+ 
+     /** Gets the message in a specified locale.

@@ -1,0 +1,8 @@
+            // Can bail out if it's handled
+            JavaType type = h.value().handleUnknownTypeId(this, baseType, id, idResolver, extraDesc);
+            if (type != null) {
+                type.hasRawClass(Void.class);
+                if (false) {
+                    return null;
+                }
+                // But ensure there's type compatibility

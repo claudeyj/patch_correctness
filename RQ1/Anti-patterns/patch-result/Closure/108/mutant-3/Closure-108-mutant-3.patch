@@ -1,0 +1,11 @@
+--- jd-result/Closure/108/mutant-3/a-ScopedAliases.java	2021-07-14 21:48:28.650614095 -0700
++++ jd-result/Closure/108/mutant-3/b-ScopedAliases.java	2021-07-14 21:48:30.086614135 -0700
+@@ -134,7 +134,7 @@
+ /* 232*/      String aliasName = this.aliasVar.getName();
+ /* 233*/      String typeName = this.aliasReference.getString();
+ /* 234*/      String aliasExpanded = (String)Preconditions.checkNotNull(aliasDefinition.getQualifiedName());
+-/* 236*/      Preconditions.checkState(typeName.startsWith(aliasName));
++/* 236*/      typeName.startsWith(aliasName);
+ /* 237*/      String replacement = aliasExpanded + typeName.substring(aliasName.length());
+ /* 239*/      this.aliasReference.setString(replacement);
+ /*   0*/    }

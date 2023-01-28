@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-32/ori-EigenDecompositionImpl.java	2021-07-24 01:52:09.802297245 -0700
++++ jd-result/Math/81/mutant-32/fixed-patched-EigenDecompositionImpl.java	2021-07-24 01:52:09.802297245 -0700
+@@ -1477,7 +1477,7 @@
+                     int np;
+                     if (dMin == dN) {
+                         gam = dN;
+-                        a2 = 0.0;
++            this.splitTolerance = 0.0D;
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }

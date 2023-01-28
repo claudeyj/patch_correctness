@@ -1,0 +1,23 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/86/mutant-0/buggy-CholeskyDecompositionImpl.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/86/mutant-0/patched-CholeskyDecompositionImpl.java
+--- Math86b/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java
++++ Math86b_Math-86-src.patchb/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java
+@@ -111,9 +111,6 @@
+ 
+             final double[] lI = lTData[i];
+ 
+-            if (lTData[i][i] < absolutePositivityThreshold) {
+-                throw new NotPositiveDefiniteMatrixException();
+-            }
+             // check off-diagonal elements (and reset them to 0)
+             for (int j = i + 1; j < order; ++j) {
+                 final double[] lJ = lTData[j];
+@@ -134,6 +131,9 @@
+             final double[] ltI = lTData[i];
+ 
+             // check diagonal element
++            if (ltI[i] < absolutePositivityThreshold) {
++                throw new NotPositiveDefiniteMatrixException();
++            }
+ 
+             ltI[i] = Math.sqrt(ltI[i]);
+             final double inverse = 1.0 / ltI[i];

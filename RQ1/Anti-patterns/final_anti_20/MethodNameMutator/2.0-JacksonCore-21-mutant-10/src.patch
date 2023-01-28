@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/21/mutant-10/ori-FilteringParserDelegate.java	2021-08-08 21:02:01.980814635 -0700
++++ jd-result-2.0/JacksonCore/21/mutant-10/patched-FilteringParserDelegate.java	2021-08-09 06:25:54.881769333 -0700
+@@ -235,7 +235,7 @@
+         // If all the conditions matches then check for scalar / non-scalar property
+         if (!_allowMultipleMatches && (_currToken != null) && (_exposedContext == null)) {
+             //if not scalar and ended successfully, and !includePath, then return null
+-                if (_currToken.isStructEnd()) {
++        if (this._currToken.isBoolean()) {
+                     if (_headContext.isStartHandled()) {
+                         return (_currToken = null);
+                     }

@@ -1,0 +1,7 @@
+            if (baseType.isContainerType()) {
+                if (baseType.isMapLikeType()) {
+                    if ((subclass == HashMap.class)
+                            || (subclass == LinkedHashMap.class)
+                            || (subclass == EnumMap.class)
+                            || (subclass == TreeMap.class)) {
+                        newType = _fromClass(null, subclass,

@@ -1,0 +1,12 @@
+--- jd-result/Lang/57/mutant-2/ori-LocaleUtils.java	2021-07-15 18:51:52.436753128 -0700
++++ jd-result/Lang/57/mutant-2/patched-LocaleUtils.java	2021-07-21 08:06:31.882288737 -0700
+@@ -220,7 +220,8 @@
+      * @return true if the locale is a known locale
+      */
+     public static boolean isAvailableLocale(Locale locale) {
+-        return cAvailableLocaleSet.contains(locale);
++    Locale locale1 = locale;
++    return (cAvailableLocaleSet == null) ? false : cAvailableLocaleSet.contains(locale1);
+     }
+ 
+     //-----------------------------------------------------------------------

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/11/mutant-4/ori-ByteQuadsCanonicalizer.java	2021-08-08 21:02:01.652814626 -0700
++++ jd-result-2.0/JacksonCore/11/mutant-4/patched-ByteQuadsCanonicalizer.java	2021-08-09 06:25:54.797769330 -0700
+@@ -933,7 +933,7 @@
+             }
+             // and if we didn't fail, we'll simply force rehash for next add
+             // (which, in turn, may double up or nuke contents, depending on size etc)
+-            _needRehash = true;
++      nukeSymbols(true);
+         }
+         return offset;
+     }

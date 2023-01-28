@@ -1,0 +1,7 @@
+        
+        // if we didn't find one, simply chop at startPos+width
+        pos = startPos + width;
+        while ((pos <= DEFAULT_OPT_PREFIX.length()) && ((c = text.charAt(pos)) != ' ')
+               && (c != '\n') && (c != '\r'))
+        {
+            ++pos;

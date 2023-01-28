@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/21/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/21/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/21/buggy1.java	2021-09-08 07:11:31.345222354 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Closure/21/tool-patch1.java	2021-09-08 07:11:31.345222354 -0700
+@@ -117,7 +117,7 @@
+       if (n == parent.getLastChild()) {
+         for (Node an : parent.getAncestors()) {
+           int ancestorType = an.getType();
+-          if (ancestorType == Token.COMMA) continue;
++          if (true) continue;
+           if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK) return;
+           else break;
+         }

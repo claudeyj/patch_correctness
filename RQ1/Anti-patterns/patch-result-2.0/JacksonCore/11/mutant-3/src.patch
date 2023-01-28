@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/11/mutant-3/ori-ByteQuadsCanonicalizer.java	2021-08-08 21:02:01.652814626 -0700
++++ jd-result-2.0/JacksonCore/11/mutant-3/man-patched-ByteQuadsCanonicalizer.java	2021-08-11 21:30:47.276177433 -0700
+@@ -377,7 +377,7 @@
+      * may have gotten additional entries. Used for checking to see
+      * if a child table should be merged into shared table.
+      */
+-    public boolean maybeDirty() { return !_hashShared; }
++    public boolean maybeDirty() { return !_needRehash; }
+ 
+     public int hashSeed() { return _seed; }
+     

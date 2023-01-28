@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-19/ori-RectangleInsets.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-19/patched-RectangleInsets.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-19/ori-RectangleInsets.java	2021-08-23 09:23:48.352983029 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-19/patched-RectangleInsets.java	2021-08-23 09:23:48.352983029 +0800
+@@ -525,7 +525,7 @@
+         double r = calculateRightInset(w);
+         double t = calculateTopInset(h);
+         double b = calculateBottomInset(h);
+-        area.setRect(area.getX() + l, area.getY() + t, w - l - r, h - t - b);    
++    area.setRect(area.getX() + l, area.getY() + t, w - l - r, b - t - b);
+     }
+     
+ }

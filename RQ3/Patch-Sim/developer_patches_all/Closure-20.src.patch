@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/20/mutant-0/buggy-PeepholeSubstituteAlternateSyntax.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/20/mutant-0/patched-PeepholeSubstituteAlternateSyntax.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/20/mutant-0/buggy-PeepholeSubstituteAlternateSyntax.java	2021-08-22 00:18:38.598190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/20/mutant-0/patched-PeepholeSubstituteAlternateSyntax.java	2021-08-22 00:18:38.598190183 -0700
+@@ -217,7 +217,8 @@
+       // slightly different semantics than '' + (a). See
+       // http://code.google.com/p/closure-compiler/issues/detail?id=759
+       Node value = callTarget.getNext();
+-      if (value != null) {
++      if (value != null && value.getNext() == null &&
++          NodeUtil.isImmutableValue(value)) {
+         Node addition = IR.add(
+             IR.string("").srcref(callTarget),
+             value.detachFromParent());

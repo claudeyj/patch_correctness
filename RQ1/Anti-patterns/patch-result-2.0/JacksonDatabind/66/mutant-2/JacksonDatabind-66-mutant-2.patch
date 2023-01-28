@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/66/mutant-2/a-BasicDeserializerFactory.java	2021-08-09 04:39:25.745589044 -0700
++++ jd-result-2.0/JacksonDatabind/66/mutant-2/b-BasicDeserializerFactory.java	2021-08-09 04:39:27.457589092 -0700
+@@ -969,7 +969,7 @@
+ /*1429*/    if (des != null) {
+ /*1430*/        return des; 
+ /*   0*/       }
+-/*1433*/    JsonDeserializer<?> custom = _findCustomEnumDeserializer(enumClass, config, beanDesc);
++/*1433*/    JsonDeserializer<?> custom = _findCustomEnumDeserializer(CLASS_MAP_ENTRY, config, beanDesc);
+ /*1434*/    if (custom != null) {
+ /*1435*/        return StdKeyDeserializers.constructDelegatingKeyDeserializer(config, type, custom); 
+ /*   0*/       }

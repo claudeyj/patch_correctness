@@ -1,0 +1,11 @@
+--- jd-result/Math/32/mutant-3/ori-Vector3D.java	2021-07-24 01:52:03.410297064 -0700
++++ jd-result/Math/32/mutant-3/man-patched-Vector3D.java	2021-07-30 00:41:32.740805910 -0700
+@@ -327,7 +327,7 @@
+             double inverse  = 1 / FastMath.sqrt(y * y + z * z);
+             return new Vector3D(0, inverse * z, -inverse * y);
+         } else if ((y >= -threshold) && (y <= threshold)) {
+-            double inverse  = 1 / FastMath.sqrt(x * x + z * z);
++            double inverse  = 1 * FastMath.sqrt(x * x + z * z);
+             return new Vector3D(-inverse * z, 0, inverse * x);
+         }
+         double inverse  = 1 / FastMath.sqrt(x * x + y * y);

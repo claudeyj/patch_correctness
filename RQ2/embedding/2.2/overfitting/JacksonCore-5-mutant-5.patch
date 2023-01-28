@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/5/mutant-5/ori-NumberInput.java	2021-08-08 21:02:01.664814626 -0700
++++ jd-result-2.0/JacksonCore/5/mutant-5/man-patched-NumberInput.java	2021-08-11 21:32:02.536179557 -0700
+@@ -87,7 +87,7 @@
+         int num = c - '0';
+         if (offset < len) {
+             c = s.charAt(offset++);
+-            if (c > '9' || c < '0') {
++      if (c < '0') {
+                 return Integer.parseInt(s);
+             }
+             num = (num * 10) + (c - '0');

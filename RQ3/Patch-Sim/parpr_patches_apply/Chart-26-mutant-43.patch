@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-43.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -385,7 +385,7 @@
+      * @return The bottom margin (in Java2D units).
+      */
+     public double calculateBottomInset(double height) {
+-        double result = this.bottom;
++    double result = height;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.bottom * height);
+         }

@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Closure/68/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Closure/68/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Closure/68/buggy1.java	2021-08-27 19:18:39.994864125 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Closure/68/tool-patch1.java	2021-08-27 19:18:39.994864125 -0700
+@@ -1757,9 +1757,17 @@
+   private Node parseFunctionType(JsDocToken token) {
+     // NOTE(nicksantos): We're not implementing generics at the moment, so
+     // just throw out TypeParameters.
++    // start of generated patch
+     if (token != JsDocToken.LP) {
++      restoreLookAhead(token);
+       return reportTypeSyntaxWarning("msg.jsdoc.missing.lp");
+     }
++    // end of generated patch
++    /* start of original code
++        if (token != JsDocToken.LP) {
++          return reportTypeSyntaxWarning("msg.jsdoc.missing.lp");
++        }
++     end of original code*/
+ 
+     Node functionType = newNode(Token.FUNCTION);
+     Node parameters = null;

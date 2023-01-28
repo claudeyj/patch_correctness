@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/27/mutant-0/buggy-PeriodFormatterBuilder.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/27/mutant-0/patched-PeriodFormatterBuilder.java
+--- Time27b/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java
++++ Time27b_Time-27-src.patchb/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java
+@@ -798,10 +798,12 @@
+         int size = elementPairs.size();
+         if (size >= 2 && elementPairs.get(0) instanceof Separator) {
+             Separator sep = (Separator) elementPairs.get(0);
++            if (sep.iAfterParser == null && sep.iAfterPrinter == null) {
+                 PeriodFormatter f = toFormatter(elementPairs.subList(2, size), notPrinter, notParser);
+                 sep = sep.finish(f.getPrinter(), f.getParser());
+                 return new PeriodFormatter(sep, sep);
+         }
++        }
+         Object[] comp = createComposite(elementPairs);
+         if (notPrinter) {
+             return new PeriodFormatter(null, (PeriodParser) comp[1]);

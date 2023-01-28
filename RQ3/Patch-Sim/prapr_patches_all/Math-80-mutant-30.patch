@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-30/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-30/patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-30/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.024992347 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-30/patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.024992347 +0800
+@@ -1136,7 +1136,7 @@
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
++          this.work[j + k] = this.work[j - k];
+                     work[j - k] = tmp;
+                 }
+                 j -= 4;

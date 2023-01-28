@@ -1,0 +1,11 @@
+--- jd-result/Lang/60/mutant-1/a-StrBuilder.java	2021-07-14 16:58:33.590123240 -0700
++++ jd-result/Lang/60/mutant-1/b-StrBuilder.java	2021-07-14 16:58:35.066123282 -0700
+@@ -596,7 +596,7 @@
+ /*1205*/      if (index >= 0)
+ /*1206*/        deleteImpl(index, index + len, len); 
+ /*   0*/    } 
+-/*1209*/    return this;
++/*1209*/    return minimizeCapacity();
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public StrBuilder deleteAll(StrMatcher matcher) {

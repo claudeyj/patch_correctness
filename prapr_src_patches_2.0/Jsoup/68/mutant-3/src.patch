@@ -1,0 +1,11 @@
+--- ori-HtmlTreeBuilderState.java	2021-08-08 21:02:02.988814663 -0700
++++ man-patched-HtmlTreeBuilderState.java	2021-08-13 19:03:28.840804105 -0700
+@@ -701,7 +701,7 @@
+                             // remove currentForm from stack. will shift anything under up.
+                             tb.removeFromStack(currentForm);
+                         }
+-                    } else if (name.equals("p")) {
++                    } else if (false) {
+                         if (!tb.inButtonScope(name)) {
+                             tb.error(this);
+                             tb.processStartTag(name); // if no p to close, creates an empty <p></p>

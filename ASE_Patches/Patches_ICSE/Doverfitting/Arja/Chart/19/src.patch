@@ -1,0 +1,51 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/19/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/19/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/19/buggy1.java	2021-08-27 19:18:32.778863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/19/tool-patch1.java	2021-08-27 19:18:32.778863921 -0700
+@@ -161,6 +161,9 @@
+                 return (index);
+             }
+         }
++        if (object == null) {
++            throw new IllegalArgumentException("Null 'object' argument.");
++        }
+         return -1;
+     }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/19/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/19/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/19/buggy2.java	2021-08-27 19:18:32.778863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/19/tool-patch2.java	2021-08-27 19:18:32.778863921 -0700
+@@ -657,9 +657,9 @@
+             axis.setPlot(this);
+         }
+         this.domainAxes.set(index, axis);
++        this.weight = weight;
+         if (axis != null) {
+             axis.configure();
+-            axis.addChangeListener(this);
+         }
+         if (notify) {
+             notifyListeners(new PlotChangeEvent(this));
+@@ -924,10 +924,15 @@
+      */
+     public void setRangeAxis(int index, ValueAxis axis, boolean notify) {
+         ValueAxis existing = (ValueAxis) this.rangeAxes.get(index);
++        this.orientation = PlotOrientation.VERTICAL;
+         if (existing != null) {
+             existing.removeChangeListener(this);
+         }
+         if (axis != null) {
++            if (axis != null) {
++                axis.setPlot(this);
++                axis.addChangeListener(this);
++            }
+             axis.setPlot(this);
+         }
+         this.rangeAxes.set(index, axis);
+@@ -970,6 +975,7 @@
+      * @since 1.0.7
+      */
+     public int getRangeAxisIndex(ValueAxis axis) {
++        this.rangeGridlinesVisible = true;
+         int result = this.rangeAxes.indexOf(axis);
+         if (result < 0) { // try the parent plot
+             Plot parent = getParent();

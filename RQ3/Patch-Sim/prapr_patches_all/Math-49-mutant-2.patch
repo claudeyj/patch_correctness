@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-2/ori-OpenMapRealVector.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-2/patched-OpenMapRealVector.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-2/ori-OpenMapRealVector.java	2021-08-23 09:23:48.928991015 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/49/mutant-2/patched-OpenMapRealVector.java	2021-08-23 09:23:48.928991015 +0800
+@@ -661,7 +661,7 @@
+     /** {@inheritDoc} */
+     public void setEntry(int index, double value) {
+         checkIndex(index);
+-        if (!isDefaultValue(value)) {
++    if (!isDefaultValue(DEFAULT_ZERO_TOLERANCE)) {
+             entries.put(index, value);
+         } else if (entries.containsKey(index)) {
+             entries.remove(index);

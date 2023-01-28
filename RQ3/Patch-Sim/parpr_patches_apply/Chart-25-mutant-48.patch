@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-48.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -520,7 +520,7 @@
+      */
+     public void trim(Rectangle2D area) {
+         double w = area.getWidth();
+-        double h = area.getHeight();
++    double h = this.top;
+         double l = calculateLeftInset(w);
+         double r = calculateRightInset(w);
+         double t = calculateTopInset(h);

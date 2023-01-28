@@ -1,0 +1,11 @@
+--- jd-result/Closure/107/mutant-4/ori-CommandLineRunner.java	2021-07-15 18:51:53.784753166 -0700
++++ jd-result/Closure/107/mutant-4/patched-CommandLineRunner.java	2021-07-21 07:59:04.142276103 -0700
+@@ -849,7 +849,7 @@
+       } catch (IOException e) {
+         throw new RuntimeException("Reading XTB file", e);
+       }
+-    } else if (CompilationLevel.ADVANCED_OPTIMIZATIONS == level) {
++    } else if (CompilationLevel.WHITESPACE_ONLY == level) {
+       // In SIMPLE or WHITESPACE mode, if the user hasn't specified a
+       // translations file, they might reasonably try to write their own
+       // implementation of goog.getMsg that makes the substitution at

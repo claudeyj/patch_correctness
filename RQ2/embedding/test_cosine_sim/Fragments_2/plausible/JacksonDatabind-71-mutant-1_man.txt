@@ -1,0 +1,7 @@
+    {
+        KeyDeserializer kd = factory.createKeyDeserializer(ctxt, type);
+        if (kd == null) { // if none found, need to use a placeholder that'll fail
+      return null;
+        }
+        // First: need to resolve?
+        if (kd instanceof ResolvableDeserializer) {

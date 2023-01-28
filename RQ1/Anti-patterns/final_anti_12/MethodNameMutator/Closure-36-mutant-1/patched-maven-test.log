@@ -1,0 +1,50 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.google.javascript:closure-compiler >---------------
+[INFO] Building Closure Compiler r@build.svnVersion@
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ closure-compiler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Closure/36/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ closure-compiler ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 397 source files to /home/junyang/PR/SubjectPrograms/Closure/36/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] bootstrap class path not set in conjunction with -source 1.6
+/home/junyang/PR/SubjectPrograms/Closure/36/src/main/java/com/google/javascript/jscomp/ant/CompileTask.java:[317,58] [unchecked] unchecked conversion
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR]   required: Map<String,Object>
+  found:    Hashtable
+/home/junyang/PR/SubjectPrograms/Closure/36/src/main/java/com/google/javascript/jscomp/DefaultPassConfig.java:[430,59] error: cannot find symbol
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.068 s
+[INFO] Finished at: 2021-07-26T00:35:27-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project closure-compiler: Compilation failure
+[ERROR]   required: Map<String,Object>
+[ERROR]   found:    Hashtable
+[ERROR] /home/junyang/PR/SubjectPrograms/Closure/36/src/main/java/com/google/javascript/jscomp/DefaultPassConfig.java:[430,59] error: cannot find symbol
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

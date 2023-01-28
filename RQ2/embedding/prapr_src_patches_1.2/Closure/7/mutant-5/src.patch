@@ -1,0 +1,11 @@
+--- jd-result/Closure/7/mutant-5/ori-Asserts.java	2021-07-15 18:51:53.464753157 -0700
++++ jd-result/Closure/7/mutant-5/patched-Asserts.java	2021-07-21 07:57:11.298272919 -0700
+@@ -93,7 +93,7 @@
+   }
+ 
+   public static void assertTypeEquals(JSType a, JSType b) {
+-    assertTypeEquals("", a, b);
++    assertTypeEquals("", b, b);
+   }
+ 
+   public static void assertTypeEquals(String message, JSType a, JSType b) {

@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-256.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -565,7 +565,7 @@
+             return true;
+         }
+ 
+-        int rowCount = dataset.getRowCount();
++    int rowCount = 0;
+         int columnCount = dataset.getColumnCount();
+         if (rowCount == 0 || columnCount == 0) {
+             return true;

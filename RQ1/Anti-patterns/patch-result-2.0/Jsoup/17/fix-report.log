@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 19 04:29:13 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 3353
+================================================
+1.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/String::equals
+	File Name: org/jsoup/parser/TreeBuilderState.java
+	Line Number: 250
+	Rank: 2
+	Total Rank: 641
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/jsoup/parser/TreeBuilderState::access$400
+	File Name: org/jsoup/parser/TreeBuilderState.java
+	Line Number: 250
+	Rank: 2
+	Total Rank: 641
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jsoup/parser/TreeBuilderState.java
+	Line Number: 250
+	Rank: 3
+	Total Rank: 644
+	Dump: mutant-3.class
+------------------------------------------------

@@ -1,0 +1,13 @@
+--- Chart4b/source/org/jfree/chart/plot/XYPlot.java	2017-05-03 11:40:03.000000000 +0800
++++ Chart4_Chart-4-mutant-2.patchb/source/org/jfree/chart/plot/XYPlot.java	2017-05-03 11:40:03.000000000 +0800
+@@ -4489,7 +4489,9 @@
+                                 DatasetUtilities.findRangeBounds(d));
+                     }
+                 }
+-                
++                    if (r == null){
++                        return null; 
++                    }
+                     Collection c = r.getAnnotations();
+                     Iterator i = c.iterator();
+                     while (i.hasNext()) {

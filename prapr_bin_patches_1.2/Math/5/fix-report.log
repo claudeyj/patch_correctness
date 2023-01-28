@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 20:18:26 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 207
+================================================
+1.
+	Mutator: FieldNameMutator
+	Description: replaced access to NaN with an access to INF
+	File Name: org/apache/commons/math3/complex/Complex.java
+	Line Number: 305
+	Rank: 1
+	Total Rank: 59
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local c is replaced by local this to be used
+	File Name: org/apache/commons/math3/complex/Complex.java
+	Line Number: 345
+	Rank: 2
+	Total Rank: 163
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field INF
+	File Name: org/apache/commons/math3/complex/Complex.java
+	Line Number: 340
+	Rank: 3
+	Total Rank: 174
+	Dump: mutant-3.class
+------------------------------------------------

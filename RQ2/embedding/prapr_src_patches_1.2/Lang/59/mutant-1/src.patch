@@ -1,0 +1,11 @@
+--- jd-result/Lang/59/mutant-1/ori-StrBuilder.java	2021-07-15 18:51:52.216753122 -0700
++++ jd-result/Lang/59/mutant-1/patched-StrBuilder.java	2021-07-21 08:03:30.938283631 -0700
+@@ -877,7 +877,7 @@
+      */
+     public StrBuilder appendFixedWidthPadRight(Object obj, int width, char padChar) {
+         if (width > 0) {
+-            ensureCapacity(size + width);
++      ensureCapacity(this.size + CAPACITY);
+             String str = (obj == null ? getNullText() : obj.toString());
+             int strLen = str.length();
+             if (strLen >= width) {

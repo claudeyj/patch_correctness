@@ -1,0 +1,27 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/127/mutant-0/buggy-UnreachableCodeElimination.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/127/mutant-0/patched-UnreachableCodeElimination.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/127/mutant-0/buggy-UnreachableCodeElimination.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/127/mutant-0/patched-UnreachableCodeElimination.java	2021-08-22 00:18:38.590190183 -0700
+@@ -167,13 +167,22 @@
+                 outEdges.get(0).getValue() == Branch.UNCOND);
+             Node fallThrough = computeFollowing(n);
+             Node nextCfgNode = outEdges.get(0).getDestination().getValue();
+-            if (nextCfgNode == fallThrough) {
++            if (nextCfgNode == fallThrough && !inFinally(n.getParent(), n)) {
+               removeNode(n);
+             }
+           }
+       }
+     }
+ 
++    private boolean inFinally(Node parent, Node child) {
++      if (parent == null || parent.isFunction()) {
++        return false;
++      } else if (NodeUtil.isTryFinallyNode(parent, child)) {
++        return true;
++      } else {
++        return inFinally(parent.getParent(), parent);
++      }
++    }
+ 
+     private Node computeFollowing(Node n) {
+       Node next = ControlFlowAnalysis.computeFollowNode(n);

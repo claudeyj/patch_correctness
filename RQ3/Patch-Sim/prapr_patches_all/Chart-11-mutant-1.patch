@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/11/mutant-1/ori-ShapeUtilities.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/11/mutant-1/patched-ShapeUtilities.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/11/mutant-1/ori-ShapeUtilities.java	2021-08-23 09:23:48.296982254 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/11/mutant-1/patched-ShapeUtilities.java	2021-08-23 09:23:48.296982254 +0800
+@@ -271,7 +271,7 @@
+         if (p1.getWindingRule() != p2.getWindingRule()) {
+             return false;
+         }
+-        PathIterator iterator1 = p1.getPathIterator(null);
++    PathIterator iterator1 = p2.getPathIterator(null);
+         PathIterator iterator2 = p1.getPathIterator(null);
+         double[] d1 = new double[6];
+         double[] d2 = new double[6];

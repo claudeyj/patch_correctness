@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/25/mutant-30/ori-ReaderBasedJsonParser.java	2021-08-08 21:02:01.736814628 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-30/man-patched-ReaderBasedJsonParser.java	2021-08-12 03:45:19.884811566 -0700
+@@ -1954,7 +1954,7 @@
+ 
+         while (true) {
+             if (_inputPtr >= _inputEnd) {
+-                if (!_loadMore()) { // acceptable for now (will error out later)
++                if (_loadMore()) { // acceptable for now (will error out later)
+                     break;
+                 }
+             }

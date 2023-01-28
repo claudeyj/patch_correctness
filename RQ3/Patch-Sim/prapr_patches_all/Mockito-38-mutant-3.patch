@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/38/mutant-3/ori-Equals.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/38/mutant-3/fixed-patched-Equals.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/38/mutant-3/ori-Equals.java	2021-08-23 09:23:49.156994177 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/38/mutant-3/fixed-patched-Equals.java	2021-08-23 09:23:49.156994177 +0800
+@@ -17,7 +17,7 @@
+     }
+ 
+     public boolean matches(Object actual) {
+-        if (this.wanted == null) {
++    if (actual == null) {
+             return actual == null;
+         }
+         return wanted.equals(actual);

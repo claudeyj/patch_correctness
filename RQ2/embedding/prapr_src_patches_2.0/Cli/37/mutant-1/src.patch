@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/37/mutant-1/ori-Options.java	2021-08-08 21:02:01.344814617 -0700
++++ jd-result-2.0/Cli/37/mutant-1/man-patched-Options.java	2021-08-11 07:42:20.198774797 -0700
+@@ -278,7 +278,7 @@
+         List<String> matchingOpts = new ArrayList<String>();
+ 
+         // for a perfect match return the single option only
+-        if (longOpts.keySet().contains(opt))
++    if (this.shortOpts.keySet().contains(opt)) 
+         {
+             return Collections.singletonList(opt);
+         }

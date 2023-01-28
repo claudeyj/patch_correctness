@@ -1,0 +1,13 @@
+--- jd-result/Closure/109/mutant-3/ori-JsDocInfoParser.java	2021-07-15 18:51:53.680753163 -0700
++++ jd-result/Closure/109/mutant-3/fixed-patched-JsDocInfoParser.java	2021-07-22 21:53:58.106301115 -0700
+@@ -2010,8 +2010,8 @@
+             next();
+             skipEOLs();
+             Node contextType = wrapNode(
+-                isThis ? Token.THIS : Token.NEW,
+-                parseContextTypeExpression(next()));
++              isThis ? 42 : 30, 
++              parseTypeExpressionAnnotation(next()));
+             if (contextType == null) {
+               return null;
+             }

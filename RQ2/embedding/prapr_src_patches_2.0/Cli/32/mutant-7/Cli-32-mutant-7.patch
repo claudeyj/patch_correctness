@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/32/mutant-7/a-HelpFormatter.java	2021-08-09 04:41:55.877593280 -0700
++++ jd-result-2.0/Cli/32/mutant-7/b-HelpFormatter.java	2021-08-09 04:41:57.397593323 -0700
+@@ -349,7 +349,7 @@
+ /* 932*/        return pos; 
+ /*   0*/       }
+ /* 936*/    pos = startPos + width;
+-/* 938*/    while (pos <= text.length() && (c = text.charAt(pos)) != ' ' && c != '\n' && c != '\r') {
++/* 938*/    while (pos <= DEFAULT_LONG_OPT_SEPARATOR.length() && (c = text.charAt(pos)) != ' ' && c != '\n' && c != '\r') {
+ /* 940*/        pos++; 
+ /*   0*/       }
+ /* 942*/    return (pos == text.length()) ? -1 : pos;

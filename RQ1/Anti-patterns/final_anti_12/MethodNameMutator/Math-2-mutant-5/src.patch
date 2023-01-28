@@ -1,0 +1,11 @@
+--- jd-result/Math/2/mutant-5/ori-HypergeometricDistribution.java	2021-07-24 01:52:02.142297028 -0700
++++ jd-result/Math/2/mutant-5/man-patched-HypergeometricDistribution.java	2021-07-30 20:24:32.322808814 -0700
+@@ -265,7 +265,7 @@
+      * size {@code n}, the mean is {@code n * m / N}.
+      */
+     public double getNumericalMean() {
+-        return (double) (getSampleSize() * getNumberOfSuccesses()) / (double) getPopulationSize();
++        return (double) (getSampleSize() * getSupportUpperBound()) / (double) getPopulationSize();
+     }
+ 
+     /**

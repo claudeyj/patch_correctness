@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/27/mutant-0/buggy-Fraction.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/27/mutant-0/patched-Fraction.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/27/mutant-0/buggy-Fraction.java	2021-08-22 00:18:38.670190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/27/mutant-0/patched-Fraction.java	2021-08-22 00:18:38.670190185 -0700
+@@ -594,7 +594,7 @@
+      * @return the fraction percentage as a <tt>double</tt>.
+      */
+     public double percentageValue() {
+-        return multiply(100).doubleValue();
++        return 100 * doubleValue();
+     }
+ 
+     /**

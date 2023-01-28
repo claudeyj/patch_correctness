@@ -1,0 +1,15 @@
+--- jd-result/Lang/39/mutant-10/ori-StringUtils.java	2021-07-15 18:51:52.432753128 -0700
++++ jd-result/Lang/39/mutant-10/man-patched-StringUtils.java	2021-07-29 20:35:16.148388944 -0700
+@@ -3672,12 +3672,6 @@
+         int increase = 0;
+ 
+         // count the replacement text elements that are larger than their corresponding text being replaced
+-        for (int i = 0; i < searchList.length; i++) {
+-            int greater = replacementList[i].length() - searchList[i].length();
+-            if (greater > 0) {
+-                increase += 3 * greater; // assume 3 matches
+-            }
+-        }
+         // have upper-bound at 20% increase, then let Java take over
+         increase = Math.min(increase, text.length() / 5);
+ 

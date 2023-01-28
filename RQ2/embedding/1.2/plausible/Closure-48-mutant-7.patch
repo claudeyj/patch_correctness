@@ -1,0 +1,11 @@
+--- jd-result/Closure/48/mutant-7/ori-TypedScopeCreator.java	2021-07-15 18:51:53.028753145 -0700
++++ jd-result/Closure/48/mutant-7/fixed-patched-TypedScopeCreator.java	2021-07-21 20:50:29.822705641 -0700
+@@ -1436,7 +1436,7 @@
+ 
+       // Determining type for #1 + #2 + #3 + #4
+       JSType valueType = getDeclaredType(t.getSourceName(), info, n, rhsValue);
+-      if (valueType == null && rhsValue != null) {
++      if (false) {
+         // Determining type for #5
+         valueType = rhsValue.getJSType();
+       }

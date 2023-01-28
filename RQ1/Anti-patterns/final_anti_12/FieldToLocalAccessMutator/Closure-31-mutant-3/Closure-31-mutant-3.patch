@@ -1,0 +1,12 @@
+--- jd-result/Closure/31/mutant-3/a-Compiler.java	2021-07-14 21:40:50.794601175 -0700
++++ jd-result/Closure/31/mutant-3/b-Compiler.java	2021-07-14 21:40:52.418601221 -0700
+@@ -785,7 +785,8 @@
+ /*   0*/      if (this.options.transformAMDToCJSModules || this.options.processCommonJSModules)
+ /*   0*/        processAMDAndCommonJSModules(); 
+ /*   0*/      boolean staleInputs = false;
+-/*   0*/      if (this.options.dependencyOptions.needsManagement() && !this.options.skipAllPasses && this.options.closurePass) {
++/*   0*/      if (this.options.dependencyOptions.needsManagement())
++/*   0*/        if (!staleInputs && this.options.closurePass) {
+ /*   0*/        for (CompilerInput input : this.inputs) {
+ /*   0*/          for (String provide : input.getProvides())
+ /*   0*/            getTypeRegistry().forwardDeclareType(provide); 

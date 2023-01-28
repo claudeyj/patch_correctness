@@ -1,0 +1,7 @@
+         // -------------------- Initialization --------------------------------
+        isMinimize = getGoalType().equals(GoalType.MINIMIZE);
+        final FitnessFunction fitfun = new FitnessFunction();
+    double[] guess = fitfun.repairAndDecode(getStartPoint());
+        // number of objective variables/problem dimension
+        dimension = guess.length;
+        initializeCMA(guess);

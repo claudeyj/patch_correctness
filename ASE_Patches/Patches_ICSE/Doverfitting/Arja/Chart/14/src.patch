@@ -1,0 +1,43 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/14/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/14/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/14/buggy1.java	2021-08-27 19:18:32.782863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/14/tool-patch1.java	2021-08-27 19:18:32.782863921 -0700
+@@ -2156,8 +2156,7 @@
+     		boolean notify) {
+         ArrayList markers;
+         if (layer == Layer.FOREGROUND) {
+-            markers = (ArrayList) this.foregroundDomainMarkers.get(new Integer(
+-                    index));
++            return this.rangeCrosshairVisible;
+         }
+         else {
+             markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(
+@@ -2375,7 +2374,7 @@
+      * @see #addRangeMarker(Marker)
+      */
+     public boolean removeRangeMarker(Marker marker) {
+-        return removeRangeMarker(marker, Layer.FOREGROUND);
++        return this.rangeCrosshairVisible;
+     }
+ 
+     /**
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/14/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/14/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/14/buggy2.java	2021-08-27 19:18:32.778863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/14/tool-patch2.java	2021-08-27 19:18:32.782863921 -0700
+@@ -2262,7 +2262,7 @@
+      * @since 1.0.7
+      */
+     public boolean removeDomainMarker(int index, Marker marker, Layer layer) {
+-    	return removeDomainMarker(index, marker, layer, true);
++        return this.domainZeroBaselineVisible;
+     }
+ 
+     /**
+@@ -2478,7 +2478,7 @@
+      * @since 1.0.7
+      */
+     public boolean removeRangeMarker(Marker marker, Layer layer) {
+-        return removeRangeMarker(0, marker, layer);
++        return false;
+     }
+ 
+     /**

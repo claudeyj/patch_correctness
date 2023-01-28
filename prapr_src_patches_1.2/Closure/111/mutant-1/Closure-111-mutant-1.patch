@@ -1,0 +1,13 @@
+--- jd-result/Closure/111/mutant-1/a-Asserts.java	2021-07-14 21:49:20.330615553 -0700
++++ jd-result/Closure/111/mutant-1/b-Asserts.java	2021-07-14 21:49:21.666615591 -0700
+@@ -39,10 +39,6 @@
+ /*   0*/  
+ /*   0*/  public static void assertTypeEquals(String message, JSType a, JSType b) {
+ /* 100*/    Assert.assertTrue("Both types must be null, or both must be non-null " + a + "," + b, (((a == null) ? true : false) == ((b == null) ? true : false)));
+-/* 103*/    if (a == null)
+-/*   0*/      return; 
+-/* 106*/    Assert.assertTrue(message + (message.isEmpty() ? "" : "\n") + "Expected: " + a + "\n" + "Actual  : " + b, a.isEquivalentTo(b));
+-/* 112*/    Assert.assertTrue(message + " Equals is not symmetric.\n" + "Expected: " + b + "\n" + "Actual  : " + a, b.isEquivalentTo(a));
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static <T extends JSType, S extends JSType> void assertTypeCollectionEquals(Iterable<T> a, Iterable<S> b) {

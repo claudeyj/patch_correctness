@@ -1,0 +1,117 @@
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test00
+org.apache.commons.math3.exception.DimensionMismatchException: 7 != 2
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test01
+org.apache.commons.math3.exception.TooManyEvaluationsException: illegal state: maximal count (0) exceeded: evaluations
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test02
+org.apache.commons.math3.exception.TooManyEvaluationsException: illegal state: maximal count (0) exceeded: evaluations
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test03
+java.lang.Exception: test timed out after 4000 milliseconds
+	at java.lang.System.identityHashCode(Native Method)
+	at org.evosuite.runtime.System.identityHashCode(System.java:226)
+	at org.evosuite.runtime.System.registerObjectForIdentityHashCode(System.java:218)
+	at org.apache.commons.math3.linear.RealLinearOperator.<init>(RealLinearOperator.java:53)
+	at org.apache.commons.math3.linear.AbstractRealMatrix.<init>(AbstractRealMatrix.java:67)
+	at org.apache.commons.math3.linear.Array2DRowRealMatrix.<init>(Array2DRowRealMatrix.java:61)
+	at org.apache.commons.math3.linear.Array2DRowRealMatrix.createMatrix(Array2DRowRealMatrix.java:144)
+	at org.apache.commons.math3.linear.AbstractRealMatrix.scalarMultiply(AbstractRealMatrix.java:128)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer.updateCovariance(CMAESOptimizer.java:737)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer.doOptimize(CMAESOptimizer.java:407)
+	at org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateOptimizer.optimizeInternal(BaseAbstractMultivariateOptimizer.java:148)
+	at org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateOptimizer.optimize(BaseAbstractMultivariateOptimizer.java:105)
+	at org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateSimpleBoundsOptimizer.optimize(BaseAbstractMultivariateSimpleBoundsOptimizer.java:140)
+	at org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateSimpleBoundsOptimizer.optimize(BaseAbstractMultivariateSimpleBoundsOptimizer.java:87)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest.test03(CMAESOptimizer_ESTest.java:143)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test04
+java.lang.IllegalStateException: Trying to set up the sandbox while executing a test case
+	at org.evosuite.runtime.sandbox.MSecurityManager.goingToExecuteTestCase(MSecurityManager.java:347)
+	at org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(Sandbox.java:128)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest_scaffolding.initTestCase(CMAESOptimizer_ESTest_scaffolding.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test04
+java.lang.NullPointerException
+	at org.evosuite.runtime.vfs.VirtualFileSystem.createFolder(VirtualFileSystem.java:364)
+	at org.evosuite.runtime.vfs.VirtualFileSystem.init(VirtualFileSystem.java:194)
+	at org.evosuite.runtime.Runtime.resetRuntime(Runtime.java:85)
+	at org.evosuite.runtime.classhandling.ClassResetter.reset(ClassResetter.java:142)
+	at org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(ClassStateSupport.java:87)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest_scaffolding.resetClasses(CMAESOptimizer_ESTest_scaffolding.java:228)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest_scaffolding.doneWithTestCase(CMAESOptimizer_ESTest_scaffolding.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test05
+java.lang.IllegalStateException: Trying to set up the sandbox while executing a test case
+	at org.evosuite.runtime.sandbox.MSecurityManager.goingToExecuteTestCase(MSecurityManager.java:347)
+	at org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(Sandbox.java:128)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest_scaffolding.initTestCase(CMAESOptimizer_ESTest_scaffolding.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test08
+org.apache.commons.math3.exception.TooManyEvaluationsException: illegal state: maximal count (0) exceeded: evaluations
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test11
+org.apache.commons.math3.exception.DimensionMismatchException: 7 != 2
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test13
+org.apache.commons.math3.exception.TooManyEvaluationsException: illegal state: maximal count (0) exceeded: evaluations
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test15
+org.evosuite.runtime.TooManyResourcesException: Loop has been executed more times than the allowed 100000
+	at org.evosuite.runtime.LoopCounter.checkLoop(LoopCounter.java:82)
+	at org.apache.commons.math3.linear.Array2DRowRealMatrix.getColumnDimension(Array2DRowRealMatrix.java:341)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer.times(CMAESOptimizer.java:1072)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer.updateCovariance(CMAESOptimizer.java:737)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer.doOptimize(CMAESOptimizer.java:407)
+	at org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateOptimizer.optimizeInternal(BaseAbstractMultivariateOptimizer.java:148)
+	at org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateOptimizer.optimize(BaseAbstractMultivariateOptimizer.java:105)
+	at org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateSimpleBoundsOptimizer.optimize(BaseAbstractMultivariateSimpleBoundsOptimizer.java:140)
+	at org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateSimpleBoundsOptimizer.optimize(BaseAbstractMultivariateSimpleBoundsOptimizer.java:87)
+	at org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest.test15(CMAESOptimizer_ESTest.java:459)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test16
+org.apache.commons.math3.exception.TooManyEvaluationsException: illegal state: maximal count (0) exceeded: evaluations
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test18
+org.apache.commons.math3.exception.TooManyEvaluationsException: illegal state: maximal count (0) exceeded: evaluations
+--- org.apache.commons.math3.optimization.direct.CMAESOptimizer_ESTest::test23
+org.apache.commons.math3.exception.DimensionMismatchException: 7 != 2

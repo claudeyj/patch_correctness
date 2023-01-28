@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-263/ori-CategoryPlot.java	2021-07-15 18:51:51.092753090 -0700
++++ jd-result/Chart/25/mutant-263/fixed-patched-CategoryPlot.java	2021-07-29 18:52:08.208214332 -0700
+@@ -2669,7 +2669,7 @@
+                 }
+             }
+             
+-            for (int i = this.datasets.size() - 1; i >= 0; i--) {
++      for (int i = 0 - 1; i >= 0; i--) {
+                 foundData = render(g2, dataArea, i, state) || foundData;   
+             }
+ 

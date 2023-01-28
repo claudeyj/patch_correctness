@@ -1,0 +1,11 @@
+--- jd-result/Math/59/mutant-1/a-FastMath.java	2021-07-14 09:14:18.285337218 -0700
++++ jd-result/Math/59/mutant-1/b-FastMath.java	2021-07-14 09:14:19.873337263 -0700
+@@ -1917,7 +1917,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static float max(float a, float b) {
+-/*3482*/    return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : b);
++/*3482*/    return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : a);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static double max(double a, double b) {

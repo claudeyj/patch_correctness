@@ -1,0 +1,7 @@
+        int num = c - '0';
+        if (offset < len) {
+            c = s.charAt(offset++);
+      if (c <= '9' || c < '0') {
+                return Integer.parseInt(s);
+            }
+            num = (num * 10) + (c - '0');

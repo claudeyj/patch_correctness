@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-14/ori-EigenDecompositionImpl.java	2021-07-24 01:52:08.294297202 -0700
++++ jd-result/Math/81/mutant-14/man-patched-EigenDecompositionImpl.java	2021-07-24 01:52:08.294297202 -0700
+@@ -1518,7 +1518,7 @@
+ 
+                     // rayleigh quotient residual bound.
+                     if (a2 < cnst1) {
+-                        s = gam * (1 - Math.sqrt(a2)) / (1 + a2);
++                        s = TOLERANCE * (1 - Math.sqrt(a2)) / (1 + a2);
+                     }
+                     tau = s;
+ 

@@ -1,0 +1,7 @@
+            titleArea = createAlignedRectangle2D(size, area, 
+                    t.getHorizontalAlignment(), VerticalAlignment.BOTTOM);
+            retValue = t.draw(g2, titleArea, p);
+            area.setRect(area.getX(), area.getY(), 0.0D, 
+                    area.getHeight() - size.height);
+        }
+        else if (position == RectangleEdge.RIGHT) {

@@ -1,0 +1,23 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/79/mutant-0/buggy-Normalize.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/79/mutant-0/patched-Normalize.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/79/mutant-0/buggy-Normalize.java	2021-08-22 00:18:38.622190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/79/mutant-0/patched-Normalize.java	2021-08-22 00:18:38.622190184 -0700
+@@ -119,7 +119,7 @@
+   public void process(Node externs, Node root) {
+     new NodeTraversal(
+         compiler, new NormalizeStatements(compiler, assertOnChange))
+-        .traverse(root);
++        .traverseRoots(externs, root);
+     if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/79/mutant-0/buggy-VarCheck.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/79/mutant-0/patched-VarCheck.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/79/mutant-0/buggy-VarCheck.java	2021-08-22 00:18:38.622190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/79/mutant-0/patched-VarCheck.java	2021-08-22 00:18:38.622190184 -0700
+@@ -218,6 +218,7 @@
+     getSynthesizedExternsRoot().addChildToBack(
+         new Node(Token.VAR, nameNode));
+     varsToDeclareInExterns.remove(varName);
++    compiler.reportCodeChange();
+   }
+ 
+   /**

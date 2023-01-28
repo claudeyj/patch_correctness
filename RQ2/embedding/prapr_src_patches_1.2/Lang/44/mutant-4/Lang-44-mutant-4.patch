@@ -1,0 +1,19 @@
+--- jd-result/Lang/44/mutant-4/a-NumberUtils.java	2021-07-14 16:57:40.442121741 -0700
++++ jd-result/Lang/44/mutant-4/b-NumberUtils.java	2021-07-14 16:57:41.866121781 -0700
+@@ -57,12 +57,15 @@
+ /* 190*/      switch (lastChar) {
+ /*   0*/        case 'L':
+ /*   0*/        case 'l':
+-/* 193*/          if (dec == null && exp == null && ((numeric.charAt(0) == '-' && isDigits(numeric.substring(1))) || isDigits(numeric)))
++/* 193*/          if (dec == null && exp == null) {
++/* 193*/            false;
++/* 193*/            if ((0 == 45 && isDigits(numeric.substring(1))) || isDigits(numeric))
+ /*   0*/            try {
+ /* 197*/              return createLong(numeric);
+ /* 198*/            } catch (NumberFormatException numberFormatException) {
+ /* 201*/              return createBigInteger(numeric);
+ /*   0*/            }  
++/*   0*/          } 
+ /* 204*/          throw new NumberFormatException(val + " is not a valid number.");
+ /*   0*/        case 'F':
+ /*   0*/        case 'f':

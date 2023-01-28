@@ -1,0 +1,22 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/103/mutant-0/buggy-NormalDistributionImpl.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/103/mutant-0/patched-NormalDistributionImpl.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/103/mutant-0/buggy-NormalDistributionImpl.java	2021-08-22 00:18:38.662190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/103/mutant-0/patched-NormalDistributionImpl.java	2021-08-22 00:18:38.662190185 -0700
+@@ -106,8 +106,18 @@
+      * convergence exception is caught and 0 or 1 is returned.
+      */
+     public double cumulativeProbability(double x) throws MathException {
++        try {
+             return 0.5 * (1.0 + Erf.erf((x - mean) /
+                     (standardDeviation * Math.sqrt(2.0))));
++        } catch (MaxIterationsExceededException ex) {
++            if (x < (mean - 20 * standardDeviation)) { // JDK 1.5 blows at 38
++                return 0.0d;
++            } else if (x > (mean + 20 * standardDeviation)) {
++                return 1.0d;
++            } else {
++                throw ex;
++            }
++        }
+     }
+     
+     /**

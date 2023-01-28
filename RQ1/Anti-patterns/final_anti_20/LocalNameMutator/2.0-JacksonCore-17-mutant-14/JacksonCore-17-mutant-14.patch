@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/17/mutant-14/a-UTF8JsonGenerator.java	2021-08-09 04:13:48.137545656 -0700
++++ jd-result-2.0/JacksonCore/17/mutant-14/b-UTF8JsonGenerator.java	2021-08-09 04:13:49.669545699 -0700
+@@ -1400,7 +1400,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private final int _outputRawMultiByteChar(int ch, char[] cbuf, int inputOffset, int inputEnd) throws IOException {
+-/*1883*/    if (ch >= 55296 && 
++/*1883*/    if (inputOffset >= 55296 && 
+ /*1884*/      ch <= 57343) {
+ /*1886*/      if (inputOffset >= inputEnd || cbuf == null) {
+ /*1887*/          _reportError("Split surrogate on writeRaw() input (last character)"); 

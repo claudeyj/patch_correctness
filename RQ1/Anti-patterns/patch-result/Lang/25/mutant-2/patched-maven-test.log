@@ -1,0 +1,287 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.commons:commons-lang3:jar:3.2-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-surefire-plugin @ line 557, column 9
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------< org.apache.commons:commons-lang3 >------------------
+[INFO] Building Commons Lang 3.2-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (javadoc.resources) @ commons-lang3 ---
+[INFO] Executing tasks
+
+main:
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ commons-lang3 ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ commons-lang3 ---
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/junyang/PR/SubjectPrograms/Lang/25 && svn --non-interactive info
+[INFO] Working directory: /home/junyang/PR/SubjectPrograms/Lang/25
+[INFO] Storing buildNumber: ?????? at timestamp: 1627294329706
+[INFO] Executing: /bin/sh -c cd /home/junyang/PR/SubjectPrograms/Lang/25 && svn --non-interactive info
+[INFO] Working directory: /home/junyang/PR/SubjectPrograms/Lang/25
+[INFO] Storing buildScmBranch: UNKNOWN_BRANCH
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ commons-lang3 ---
+[INFO] Using 'ISO-8859-1' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Lang/25/src/main/resources
+[INFO] Copying 0 resource to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ commons-lang3 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 93 source files to /home/junyang/PR/SubjectPrograms/Lang/25/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.3.7:manifest (bundle-manifest) @ commons-lang3 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ commons-lang3 ---
+[INFO] Using 'ISO-8859-1' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Lang/25/src/test/resources
+[INFO] Copying 0 resource to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ commons-lang3 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 109 source files to /home/junyang/PR/SubjectPrograms/Lang/25/target/test-classes
+[WARNING] /home/junyang/PR/SubjectPrograms/Lang/25/src/test/java/org/apache/commons/lang3/time/StopWatchTest.java: Some input files use or override a deprecated API.
+[WARNING] /home/junyang/PR/SubjectPrograms/Lang/25/src/test/java/org/apache/commons/lang3/time/StopWatchTest.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/junyang/PR/SubjectPrograms/Lang/25/src/test/java/org/apache/commons/lang3/RangeTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/junyang/PR/SubjectPrograms/Lang/25/src/test/java/org/apache/commons/lang3/RangeTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.13:test (default-test) @ commons-lang3 ---
+[INFO] Surefire report directory: /home/junyang/PR/SubjectPrograms/Lang/25/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.commons.lang3.CharRangeTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec
+Running org.apache.commons.lang3.CharSetTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.apache.commons.lang3.CharUtilsTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running org.apache.commons.lang3.SystemUtilsTest
+Can't test IS_JAVA value
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.apache.commons.lang3.StringUtilsSubstringTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.commons.lang3.math.NumberUtilsTest
+Tests run: 51, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+Running org.apache.commons.lang3.math.IEEE754rUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.math.FractionTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec
+Running org.apache.commons.lang3.StringUtilsTest
+Tests run: 81, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 sec
+Running org.apache.commons.lang3.ValidateTest
+Tests run: 52, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running org.apache.commons.lang3.builder.EqualsBuilderTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running org.apache.commons.lang3.builder.NoFieldNamesToStringStyleTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.apache.commons.lang3.builder.SimpleToStringStyleTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.builder.MultiLineToStringStyleTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.commons.lang3.builder.HashCodeBuilderTest
+Tests run: 42, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running org.apache.commons.lang3.builder.DefaultToStringStyleTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.builder.HashCodeBuilderAndEqualsBuilderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.commons.lang3.builder.CompareToBuilderTest
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running org.apache.commons.lang3.builder.StandardToStringStyleTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.builder.ShortPrefixToStringStyleTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.builder.ToStringBuilderTest
+Tests run: 74, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Running org.apache.commons.lang3.builder.ToStringStyleTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.ArrayUtilsAddTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.apache.commons.lang3.CharSequenceUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.AnnotationUtilsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec
+Running org.apache.commons.lang3.reflect.TypeUtilsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
+Running org.apache.commons.lang3.reflect.FieldUtilsTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running org.apache.commons.lang3.reflect.ConstructorUtilsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.commons.lang3.reflect.MethodUtilsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.commons.lang3.LocaleUtilsTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Running org.apache.commons.lang3.CharSetUtilsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.commons.lang3.StringEscapeUtilsTest
+Tests run: 19, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.219 sec <<< FAILURE!
+testEscapeHtml(org.apache.commons.lang3.StringEscapeUtilsTest)  Time elapsed: 0.007 sec  <<< FAILURE!
+junit.framework.ComparisonFailure: languages expected:<English,Fran[&ccedil;]ais,日本語 (nihongo)> but was:<English,Fran[ç]ais,日本語 (nihongo)>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.TestCase.assertEquals(TestCase.java:261)
+	at org.apache.commons.lang3.StringEscapeUtilsTest.testEscapeHtml(StringEscapeUtilsTest.java:217)
+
+Running org.apache.commons.lang3.concurrent.AtomicSafeInitializerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.commons.lang3.concurrent.LazyInitializerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.concurrent.MultiBackgroundInitializerTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec
+Running org.apache.commons.lang3.concurrent.BasicThreadFactoryTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec
+Running org.apache.commons.lang3.concurrent.CallableBackgroundInitializerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.concurrent.ConcurrentUtilsTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running org.apache.commons.lang3.concurrent.TimedSemaphoreTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.172 sec
+Running org.apache.commons.lang3.concurrent.ConstantInitializerTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.apache.commons.lang3.concurrent.BackgroundInitializerTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running org.apache.commons.lang3.concurrent.AtomicInitializerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.commons.lang3.time.DateUtilsTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 sec
+Running org.apache.commons.lang3.time.StopWatchTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.754 sec
+Running org.apache.commons.lang3.time.DateFormatUtilsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running org.apache.commons.lang3.time.DateUtilsFragmentTest
+Tests run: 52, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
+Running org.apache.commons.lang3.time.FastDateFormatTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
+Running org.apache.commons.lang3.time.DateUtilsRoundingTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec
+Running org.apache.commons.lang3.time.DurationFormatUtilsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.584 sec
+Running org.apache.commons.lang3.StringUtilsEqualsIndexOfTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running org.apache.commons.lang3.RangeTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.apache.commons.lang3.ClassUtilsTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running org.apache.commons.lang3.text.StrTokenizerTest
+Tests run: 55, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Running org.apache.commons.lang3.text.StrMatcherTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.text.StrBuilderTest
+Tests run: 77, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running org.apache.commons.lang3.text.StrLookupTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.text.WordUtilsTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.text.StrSubstitutorTest
+Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running org.apache.commons.lang3.text.CompositeFormatTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.text.StrBuilderAppendInsertTest
+Tests run: 45, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running org.apache.commons.lang3.text.ExtendedMessageFormatTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.913 sec
+Running org.apache.commons.lang3.text.translate.UnicodeUnescaperTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.text.translate.LookupTranslatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.text.translate.EntityArraysTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.text.translate.UnicodeEscaperTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.text.translate.NumericEntityEscaperTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.StringUtilsIsTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.BooleanUtilsTest
+Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.commons.lang3.exception.ContextedExceptionTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.apache.commons.lang3.exception.DefaultExceptionContextTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.exception.ContextedRuntimeExceptionTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.commons.lang3.exception.ExceptionUtilsTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running org.apache.commons.lang3.BitFieldTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.PairTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.StringUtilsStartsEndsWithTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.CharEncodingTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running org.apache.commons.lang3.ArrayUtilsTest
+Tests run: 145, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
+Running org.apache.commons.lang3.RandomStringUtilsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running org.apache.commons.lang3.ArrayUtilsRemoveTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.commons.lang3.EnumUtilsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.StringUtilsTrimEmptyTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Running org.apache.commons.lang3.event.EventListenerSupportTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running org.apache.commons.lang3.event.EventUtilsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.apache.commons.lang3.mutable.MutableDoubleTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.mutable.MutableBooleanTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.mutable.MutableIntTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.commons.lang3.mutable.MutableFloatTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.mutable.MutableByteTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.mutable.MutableShortTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.mutable.MutableObjectTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.commons.lang3.mutable.MutableLongTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.commons.lang3.ObjectUtilsTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.apache.commons.lang3.SerializationUtilsTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+
+Results :
+
+Failed tests: 
+  StringEscapeUtilsTest.testEscapeHtml:217 languages expected:<English,Fran[&ccedil;]ais,日本語 (nihongo)> but was:<English,Fran[ç]ais,日本語 (nihongo)>
+
+Tests run: 1821, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  17.518 s
+[INFO] Finished at: 2021-07-26T03:12:25-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.13:test (default-test) on project commons-lang3: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/junyang/PR/SubjectPrograms/Lang/25/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

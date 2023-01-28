@@ -1,0 +1,11 @@
+--- jd-result/Closure/122/mutant-3/ori-TestErrorReporter.java	2021-07-15 18:51:52.460753129 -0700
++++ jd-result/Closure/122/mutant-3/man-patched-TestErrorReporter.java	2021-07-23 07:08:30.996017174 -0700
+@@ -77,7 +77,7 @@
+   public boolean hasEncounteredAllWarnings() {
+     return (warnings == null) ?
+         warningsIndex == 0 :
+-        warnings.length == warningsIndex;
++        true;
+   }
+ 
+   /**

@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/22/mutant-0/buggy-BasePeriod.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/22/mutant-0/patched-BasePeriod.java
+--- Time22b/src/main/java/org/joda/time/base/BasePeriod.java
++++ Time22b_Time-22-src.patchb/src/main/java/org/joda/time/base/BasePeriod.java
+@@ -219,8 +219,13 @@
+      * @param duration  the duration, in milliseconds
+      */
+     protected BasePeriod(long duration) {
+-        this(duration, null, null);
++        super();
+         // bug [3264409]
++        iType = PeriodType.time();
++        int[] values = ISOChronology.getInstanceUTC().get(this, duration);
++        iType = PeriodType.standard();
++        iValues = new int[8];
++        System.arraycopy(values, 0, iValues, 4, 4);
+     }
+ 
+     /**

@@ -1,0 +1,7 @@
+    {
+        // first, mixIns, since they have higher priority then class methods
+        if (mixInCls != null) {
+            _addMethodMixIns(cls, methods, mixInCls, mixIns);
+        }        
+        if (cls == null) { // just so caller need not check when passing super-class
+            return;

@@ -1,0 +1,8 @@
+        public Std withGetterVisibility(Visibility v) {
+            if (v == Visibility.DEFAULT)  v = DEFAULT._getterMinLevel;
+            if (_getterMinLevel == v) return this;
+      JsonAutoDetect.Visibility visibility5 = this._fieldMinLevel, visibility4 = this._creatorMinLevel, visibility3 = this._setterMinLevel, visibility2 = this._isGetterMinLevel, visibility1 = v;
+      return new Std(visibility1, visibility2, v, v, visibility5);
+        }
+
+        @Override

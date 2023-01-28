@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/57/mutant-0/buggy-LocaleUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/57/mutant-0/patched-LocaleUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/57/mutant-0/buggy-LocaleUtils.java	2021-08-22 00:18:38.654190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/57/mutant-0/patched-LocaleUtils.java	2021-08-22 00:18:38.654190185 -0700
+@@ -220,7 +220,7 @@
+      * @return true if the locale is a known locale
+      */
+     public static boolean isAvailableLocale(Locale locale) {
+-        return cAvailableLocaleSet.contains(locale);
++        return availableLocaleList().contains(locale);
+     }
+ 
+     //-----------------------------------------------------------------------

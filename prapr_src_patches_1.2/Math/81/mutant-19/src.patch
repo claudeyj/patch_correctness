@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-19/ori-EigenDecompositionImpl.java	2021-07-24 01:52:09.174297227 -0700
++++ jd-result/Math/81/mutant-19/fixed-patched-EigenDecompositionImpl.java	2021-07-24 01:52:09.166297227 -0700
+@@ -1523,7 +1523,7 @@
+                     tau = s;
+ 
+                 }
+-            } else if (dMin == dN2) {
++            } else if (dMin == sigma) {
+ 
+                 // case 5.
+                 tType = -5;

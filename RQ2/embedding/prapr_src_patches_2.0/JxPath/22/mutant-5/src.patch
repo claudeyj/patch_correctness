@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/22/mutant-5/ori-DOMNodePointer.java	2021-08-08 21:02:03.316814673 -0700
++++ jd-result-2.0/JxPath/22/mutant-5/patched-DOMNodePointer.java	2021-08-09 06:25:54.885769333 -0700
+@@ -683,7 +683,7 @@
+     
+             Node aNode = node;
+             while (aNode != null) {
+-                if (aNode.getNodeType() == Node.ELEMENT_NODE) {
++        if (aNode.getNodeType() == 0) {
+                     Attr attr = ((Element) aNode).getAttributeNode(qname);
+                     if (attr != null) {
+                         return attr.getValue();

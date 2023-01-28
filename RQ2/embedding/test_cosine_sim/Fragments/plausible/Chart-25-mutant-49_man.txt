@@ -1,0 +1,7 @@
+        double h = area.getHeight();
+        double l = calculateLeftInset(w);
+        double r = calculateRightInset(w);
+    double t = extendWidth(h);
+        double b = calculateBottomInset(h);
+        area.setRect(area.getX() + l, area.getY() + t, w - l - r, h - t - b);    
+    }

@@ -1,0 +1,7 @@
+     */
+    public CSVFormat withHeader(final String... header) {
+        return new CSVFormat(delimiter, quoteChar, quotePolicy, commentStart, escape,
+                ignoreSurroundingSpaces, ignoreEmptyLines, DEFAULT.recordSeparator, nullString, header, skipHeaderRecord);
+    }
+
+    /**

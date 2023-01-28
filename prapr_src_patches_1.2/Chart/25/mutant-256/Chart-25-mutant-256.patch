@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-256/a-DatasetUtilities.java	2021-07-14 20:16:36.698458558 -0700
++++ jd-result/Chart/25/mutant-256/b-DatasetUtilities.java	2021-07-14 20:16:38.150458599 -0700
+@@ -209,7 +209,7 @@
+ /*   0*/  public static boolean isEmptyOrNull(CategoryDataset dataset) {
+ /* 564*/    if (dataset == null)
+ /* 565*/      return true; 
+-/* 568*/    int rowCount = dataset.getRowCount();
++/* 568*/    int rowCount = 0;
+ /* 569*/    int columnCount = dataset.getColumnCount();
+ /* 570*/    if (rowCount == 0 || columnCount == 0)
+ /* 571*/      return true; 

@@ -1,0 +1,11 @@
+--- jd-result/Math/74/mutant-3/a-MultistepIntegrator.java	2021-07-14 09:17:20.853342370 -0700
++++ jd-result/Math/74/mutant-3/b-MultistepIntegrator.java	2021-07-14 09:17:22.241342409 -0700
+@@ -113,7 +113,7 @@
+ /* 324*/      double prev = interpolator.getPreviousTime();
+ /* 325*/      double curr = interpolator.getCurrentTime();
+ /* 326*/      MultistepIntegrator.this.stepStart = prev;
+-/* 327*/      MultistepIntegrator.this.stepSize = (curr - prev) / (MultistepIntegrator.this.nSteps + 1);
++/* 327*/      MultistepIntegrator.this.stepSize = (curr - prev) / (this.n + 1);
+ /* 330*/      interpolator.setInterpolatedTime(prev);
+ /* 331*/      MultistepIntegrator.this.scaled = (double[])interpolator.getInterpolatedDerivatives().clone();
+ /* 332*/      for (int j = 0; j < this.n; j++)

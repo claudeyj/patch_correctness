@@ -1,0 +1,7 @@
+    public <T extends TreeNode> T readTree(JsonParser jp)
+            throws IOException, JsonProcessingException
+    {
+        return (T) _bindAsTree(jp);
+    }
+     
+    @Override

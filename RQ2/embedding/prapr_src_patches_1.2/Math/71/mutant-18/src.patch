@@ -1,0 +1,11 @@
+--- jd-result/Math/71/mutant-18/ori-BrentSolver.java	2021-07-24 01:52:05.934297135 -0700
++++ jd-result/Math/71/mutant-18/patched-BrentSolver.java	2021-07-24 01:52:05.934297135 -0700
+@@ -279,7 +279,7 @@
+                 return result;
+             }
+             double dx = x2 - x1;
+-            double tolerance =
++      double tolerance = Math.max(this.relativeAccuracy * DEFAULT_ABSOLUTE_ACCURACY, this.absoluteAccuracy);
+                 Math.max(relativeAccuracy * Math.abs(x1), absoluteAccuracy);
+             if (Math.abs(dx) <= tolerance) {
+                 setResult(x1, i);

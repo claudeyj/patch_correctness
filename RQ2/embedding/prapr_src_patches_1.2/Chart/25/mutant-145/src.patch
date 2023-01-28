@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-145/ori-CategoryPlot.java	2021-07-15 18:51:51.872753112 -0700
++++ jd-result/Chart/25/mutant-145/patched-CategoryPlot.java	2021-07-21 07:25:21.342219023 -0700
+@@ -2670,7 +2670,7 @@
+             }
+             
+             for (int i = this.datasets.size() - 1; i >= 0; i--) {
+-                foundData = render(g2, dataArea, i, state) || foundData;   
++        foundData = (render(g2, dataArea, datasetCount, state) || foundData); 
+             }
+ 
+             // draw foreground annotations

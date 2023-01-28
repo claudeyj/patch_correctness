@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/8/mutant-0/buggy-Week.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/8/mutant-0/patched-Week.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/8/mutant-0/buggy-Week.java	2021-08-22 00:18:38.574190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/8/mutant-0/patched-Week.java	2021-08-22 00:18:38.574190183 -0700
+@@ -172,7 +172,7 @@
+      */
+     public Week(Date time, TimeZone zone) {
+         // defer argument checking...
+-        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++        this(time, zone, Locale.getDefault());
+     }
+ 
+     /**

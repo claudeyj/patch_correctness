@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-74/ori-CategoryPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-74/patched-CategoryPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-74/ori-CategoryPlot.java	2021-08-23 09:23:48.428984083 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-74/patched-CategoryPlot.java	2021-08-23 09:23:48.428984083 +0800
+@@ -2555,7 +2555,7 @@
+                      PlotRenderingInfo state) {
+ 
+         // if the plot area is too small, just return...
+-        boolean b1 = (area.getWidth() <= MINIMUM_WIDTH_TO_DRAW);
++    boolean b1 = (area.getWidth() <= 10.0D) ? true : true;
+         boolean b2 = (area.getHeight() <= MINIMUM_HEIGHT_TO_DRAW);
+         if (b1 || b2) {
+             return;

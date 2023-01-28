@@ -1,0 +1,7 @@
+    }
+    static int reduceAndCorrect(Calendar start, Calendar end, int field, int difference) {
+        end.add( field, -1 * difference );
+    int endValue = end.getLeastMaximum(field);
+        int startValue = start.get(field);
+        if (endValue < startValue) {
+            int newdiff = startValue - endValue;

@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/31/mutant-1/ori-StringUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/31/mutant-1/patched-StringUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/31/mutant-1/ori-StringUtils.java	2021-08-23 09:23:48.820989519 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/31/mutant-1/patched-StringUtils.java	2021-08-23 09:23:48.820989519 +0800
+@@ -1443,7 +1443,7 @@
+ 		}
+ 		int csLength = cs.length();
+ 		int searchLength = searchChars.length;
+-		for (int i = 0; i < csLength; i++) {
++    for (int i = 1; i < csLength; i++) {
+ 			char ch = cs.charAt(i);
+ 			for (int j = 0; j < searchLength; j++) {
+ 				if (searchChars[j] == ch) {

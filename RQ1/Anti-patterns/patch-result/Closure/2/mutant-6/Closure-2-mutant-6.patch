@@ -1,0 +1,11 @@
+--- jd-result/Closure/2/mutant-6/a-TypeCheck.java	2021-07-14 21:33:39.430589003 -0700
++++ jd-result/Closure/2/mutant-6/b-TypeCheck.java	2021-07-14 21:33:41.830589070 -0700
+@@ -896,7 +896,7 @@
+ /*1647*/        if (extInterface.getConstructor() != null && !extInterface.getConstructor().isInterface())
+ /*1649*/          this.compiler.report(t.makeError(n, CONFLICTING_EXTENDED_TYPE, new String[] { "interface", functionPrivateName })); 
+ /*   0*/      } 
+-/*1656*/      if (functionType.getExtendedInterfacesCount() > 1) {
++/*1656*/      if (this.typedCount > 1) {
+ /*1658*/        HashMap<String, ObjectType> properties = new HashMap<String, ObjectType>();
+ /*1660*/        HashMap<String, ObjectType> currentProperties = new HashMap<String, ObjectType>();
+ /*1662*/        for (ObjectType interfaceType : functionType.getExtendedInterfaces()) {

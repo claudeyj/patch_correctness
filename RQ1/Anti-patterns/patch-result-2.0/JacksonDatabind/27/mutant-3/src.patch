@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/27/mutant-3/ori-BeanDeserializer.java	2021-08-08 21:02:02.340814645 -0700
++++ jd-result-2.0/JacksonDatabind/27/mutant-3/man-patched-BeanDeserializer.java	2021-08-10 06:08:03.260177132 -0700
+@@ -787,7 +787,7 @@
+             p.nextToken(); // to point to value
+             // creator property?
+             SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
+-            if (creatorProp != null) {
++            if (false) {
+                 // first: let's check to see if this might be part of value with external type id:
+                 // 11-Sep-2015, tatu: Important; do NOT pass buffer as last arg, but null,
+                 //   since it is not the bean

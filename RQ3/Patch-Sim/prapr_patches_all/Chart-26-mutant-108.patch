@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-108/ori-CategoryPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-108/fixed-patched-CategoryPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-108/ori-CategoryPlot.java	2021-08-23 09:23:48.452984416 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-108/fixed-patched-CategoryPlot.java	2021-08-23 09:23:48.452984416 +0800
+@@ -2568,7 +2568,7 @@
+             drawBackground(g2, dataArea);
+         }
+        
+-        Map axisStateMap = drawAxes(g2, area, dataArea, state);
++    Map axisStateMap = this.foregroundDomainMarkers;
+ 
+         // don't let anyone draw outside the data area
+         Shape savedClip = g2.getClip();

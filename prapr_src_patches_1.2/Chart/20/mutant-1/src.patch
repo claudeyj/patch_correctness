@@ -1,0 +1,11 @@
+--- jd-result/Chart/20/mutant-1/ori-ValueMarker.java	2021-07-15 18:51:50.692753079 -0700
++++ jd-result/Chart/20/mutant-1/man-patched-ValueMarker.java	2021-07-29 18:07:34.352138881 -0700
+@@ -92,7 +92,7 @@
+      */
+     public ValueMarker(double value, Paint paint, Stroke stroke, 
+                        Paint outlinePaint, Stroke outlineStroke, float alpha) {
+-        super(paint, stroke, paint, stroke, alpha);
++    super(paint, stroke, outlinePaint, outlineStroke, alpha);
+         this.value = value;
+     }
+     

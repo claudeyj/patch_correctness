@@ -1,0 +1,11 @@
+--- Math71b/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2017-03-20 23:59:53.000000000 +0800
++++ Math71_Math-71-mutant-16.patchb/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2017-03-20 23:59:53.000000000 +0800
+@@ -60,7 +60,7 @@
+     protected ConvergingAlgorithmImpl(final int defaultMaximalIterationCount,
+                                       final double defaultAbsoluteAccuracy) {
+         this.defaultAbsoluteAccuracy = defaultAbsoluteAccuracy;
+-        this.defaultRelativeAccuracy = 1.0e-14;
++    this.relativeAccuracy = 1.0E-14D;
+         this.absoluteAccuracy = defaultAbsoluteAccuracy;
+         this.relativeAccuracy = defaultRelativeAccuracy;
+         this.defaultMaximalIterationCount = defaultMaximalIterationCount;

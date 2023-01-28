@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/TBar/Lang/7/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/TBar/Lang/7/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/TBar/Lang/7/buggy1.java	2021-08-27 19:18:39.610864114 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/TBar/Lang/7/tool-patch1.java	2021-08-27 19:18:39.610864114 -0700
+@@ -446,7 +446,7 @@
+         if (str == null) {
+             return null;
+         }
+-        if (StringUtils.isBlank(str)) {
++        if ((StringUtils.isBlank(str)) || (str.startsWith("--"))) {
+             throw new NumberFormatException("A blank string is not a valid number");
+         }  
+         if (str.startsWith("--")) {

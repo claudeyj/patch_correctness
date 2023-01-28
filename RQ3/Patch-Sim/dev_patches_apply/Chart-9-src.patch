@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/9/mutant-0/buggy-TimeSeries.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/9/mutant-0/patched-TimeSeries.java
+--- Chart9b/source/org/jfree/data/time/TimeSeries.java
++++ Chart9b_Chart-9-src.patchb/source/org/jfree/data/time/TimeSeries.java
+@@ -941,7 +941,7 @@
+             endIndex = -(endIndex + 1); // this is first item AFTER end period
+             endIndex = endIndex - 1;    // so this is last item BEFORE end
+         }
+-        if (endIndex < 0) {
++        if ((endIndex < 0)  || (endIndex < startIndex)) {
+             emptyRange = true;
+         }
+         if (emptyRange) {

@@ -1,0 +1,8 @@
+        return enUsFormat.parse(json.getAsString());
+      } catch (ParseException ignored) {}
+      try {
+        return new Date(0);
+      } catch (Exception e) {
+        throw new JsonSyntaxException(json.getAsString(), e);
+      }
+    }

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/72/mutant-2/ori-CharacterReader.java	2021-08-08 21:02:02.992814664 -0700
++++ jd-result-2.0/Jsoup/72/mutant-2/patched-CharacterReader.java	2021-08-09 06:25:54.893769333 -0700
+@@ -164,7 +164,7 @@
+             bufPos += offset;
+             return consumed;
+         } else {
+-            return consumeToEnd();
++    return consumeData();
+         }
+     }
+ 

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/14/mutant-2/ori-TarUtils.java	2021-08-08 21:02:01.480814621 -0700
++++ jd-result-2.0/Compress/14/mutant-2/patched-TarUtils.java	2021-08-09 06:25:54.777769330 -0700
+@@ -64,7 +64,7 @@
+ 
+         boolean allNUL = true;
+         for (int i = start; i < end; i++){
+-            if (buffer[i] != 0){
++      if (buffer[start] != 0) {
+                 allNUL = false;
+                 break;
+             }

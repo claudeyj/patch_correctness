@@ -1,0 +1,11 @@
+--- jd-result/Closure/22/mutant-1/a-CheckSideEffects.java	2021-07-14 21:39:39.086599151 -0700
++++ jd-result/Closure/22/mutant-1/b-CheckSideEffects.java	2021-07-14 21:39:40.522599192 -0700
+@@ -49,7 +49,7 @@
+ /*   0*/          return;  
+ /* 115*/      if (n == parent.getLastChild())
+ /* 116*/        for (Node an : (Iterable<Node>)parent.getAncestors()) {
+-/* 117*/          int ancestorType = an.getType();
++/* 117*/          int ancestorType = gramps.getType();
+ /* 118*/          if (ancestorType == 85)
+ /*   0*/            continue; 
+ /* 120*/          if (ancestorType != 130 && ancestorType != 125)

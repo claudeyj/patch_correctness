@@ -1,0 +1,67 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 18 22:15:39 PDT 2021
+Number of Plausible Fixes: 7
+Total Number of Patches: 204
+================================================
+1.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/Integer::parseInt
+	File Name: com/fasterxml/jackson/core/io/NumberInput.java
+	Line Number: 91
+	Rank: 1
+	Total Rank: 7
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/core/io/NumberInput.java
+	Line Number: 90
+	Rank: 2
+	Total Rank: 67
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_ORDER_IF
+	Description: removed conditional - replaced comparison check with true
+	File Name: com/fasterxml/jackson/core/io/NumberInput.java
+	Line Number: 90
+	Rank: 3
+	Total Rank: 93
+	Dump: mutant-5.class
+------------------------------------------------
+4.
+	Mutator: InlineConstantMutator
+	Description: Substituted 48 with 49
+	File Name: com/fasterxml/jackson/core/JsonPointer.java
+	Line Number: 194
+	Rank: 5
+	Total Rank: 191
+	Dump: mutant-4.class
+------------------------------------------------
+5.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: com/fasterxml/jackson/core/JsonPointer.java
+	Line Number: 192
+	Rank: 5
+	Total Rank: 191
+	Dump: mutant-7.class
+------------------------------------------------
+6.
+	Mutator: ConditionalsBoundaryMutator
+	Description: changed conditional boundary
+	File Name: com/fasterxml/jackson/core/JsonPointer.java
+	Line Number: 194
+	Rank: 6
+	Total Rank: 202
+	Dump: mutant-1.class
+------------------------------------------------
+7.
+	Mutator: RemoveIncrementsMutator
+	Description: Removed increment 1
+	File Name: com/fasterxml/jackson/core/JsonPointer.java
+	Line Number: 193
+	Rank: 7
+	Total Rank: 204
+	Dump: mutant-6.class
+------------------------------------------------

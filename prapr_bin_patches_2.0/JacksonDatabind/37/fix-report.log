@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 21 18:32:50 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 18823
+================================================
+1.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.databind.type.SimpleType._superClass is replaced by the call to com.fasterxml.jackson.databind.type.SimpleType::withStaticTyping()Lcom/fasterxml/jackson/databind/JavaType;
+	File Name: com/fasterxml/jackson/databind/type/SimpleType.java
+	Line Number: 135
+	Rank: 1
+	Total Rank: 291
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field _superClass is replaced by access to local this
+	File Name: com/fasterxml/jackson/databind/type/SimpleType.java
+	Line Number: 135
+	Rank: 2
+	Total Rank: 306
+	Dump: mutant-2.class
+------------------------------------------------

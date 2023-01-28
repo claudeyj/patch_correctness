@@ -1,0 +1,712 @@
+--- org.jsoup.parser.RegressionTest0::test0154
+junit.framework.AssertionFailedError: '<html>
+<head>
+</head>
+<body>
+ hi!
+</body>
+</html>
+<html> 
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>html&gt; 
+<head> 
+</head> 
+<body>
+ hi!  
+</body>' != '<html>
+<head>
+</head>
+<body>
+ hi!
+</body>
+</html>
+<html> 
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>html&gt; 
+<html>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>' expected:<...
+</html>html&gt; 
+<h[ead> 
+</head> 
+<body>
+ hi!  
+</body]>> but was:<...
+</html>html&gt; 
+<h[tml>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html]>>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jsoup.parser.RegressionTest0.test0154(RegressionTest0.java:4571)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1014)
+--- org.jsoup.parser.RegressionTest1::test0767
+junit.framework.AssertionFailedError: 'html&gt; 
+<head> 
+</head> 
+<body>
+ hi!  
+</body>' != 'html&gt; 
+<html>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>' expected:<html&gt; 
+<h[ead> 
+</head> 
+<body>
+ hi!  
+</body]>> but was:<html&gt; 
+<h[tml>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html]>>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jsoup.parser.RegressionTest1.test0767(RegressionTest1.java:10038)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1014)
+--- org.jsoup.parser.RegressionTest1::test0801
+junit.framework.AssertionFailedError: '<html hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+<head hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+</head>
+<body hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+ hi!
+</body>
+</html>
+<head hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+</head>
+<body hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+ hi!
+</body>
+
+hi!
+<html>
+<head>
+</head>
+<body>
+ hi!
+</body>
+</html>
+<html> 
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>html&gt; 
+<head> 
+</head> 
+<body>
+ hi!  
+</body>' != '<html hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+<head hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+</head>
+<body hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+ hi!
+</body>
+</html>
+<head hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+</head>
+<body hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+ hi!
+</body>
+
+hi!
+<html>
+<head>
+</head>
+<body>
+ hi!
+</body>
+</html>
+<html> 
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>html&gt; 
+<html>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>' expected:<...
+</html>html&gt; 
+<h[ead> 
+</head> 
+<body>
+ hi!  
+</body]>> but was:<...
+</html>html&gt; 
+<h[tml>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html]>>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jsoup.parser.RegressionTest1.test0801(RegressionTest1.java:11449)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1014)
+--- org.jsoup.parser.RegressionTest1::test0839
+junit.framework.AssertionFailedError: '<?>=&quot;&lt;?&lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; hi! &lt;/body&gt; &lt;/html&gt;&gt;&quot; html&gt; 
+<head> 
+</head> 
+<body>
+ hi!  =&quot;#comment&quot;
+</body>' != '<?>=&quot;&lt;?&lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; hi! &lt;/body&gt; &lt;/html&gt;&gt;&quot; html&gt; 
+<html>
+<head> 
+</head> 
+<body>
+  hi!  =&quot;#comment&quot;
+</body>
+</html>' expected:<...;&quot; html&gt; 
+<h[ead> 
+</head> 
+<body>
+ hi!  =&quot;#comment&quot;
+</body]>> but was:<...;&quot; html&gt; 
+<h[tml>
+<head> 
+</head> 
+<body>
+  hi!  =&quot;#comment&quot;
+</body>
+</html]>>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jsoup.parser.RegressionTest1.test0839(RegressionTest1.java:12721)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1014)
+--- org.jsoup.parser.RegressionTest0::test0154
+junit.framework.AssertionFailedError: '<html>
+<head>
+</head>
+<body>
+ hi!
+</body>
+</html>
+<html> 
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>html&gt; 
+<head> 
+</head> 
+<body>
+ hi!  
+</body>' != '<html>
+<head>
+</head>
+<body>
+ hi!
+</body>
+</html>
+<html> 
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>html&gt; 
+<html>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>' expected:<...
+</html>html&gt; 
+<h[ead> 
+</head> 
+<body>
+ hi!  
+</body]>> but was:<...
+</html>html&gt; 
+<h[tml>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html]>>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jsoup.parser.RegressionTest0.test0154(RegressionTest0.java:4571)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1014)
+--- org.jsoup.parser.RegressionTest1::test0767
+junit.framework.AssertionFailedError: 'html&gt; 
+<head> 
+</head> 
+<body>
+ hi!  
+</body>' != 'html&gt; 
+<html>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>' expected:<html&gt; 
+<h[ead> 
+</head> 
+<body>
+ hi!  
+</body]>> but was:<html&gt; 
+<h[tml>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html]>>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jsoup.parser.RegressionTest1.test0767(RegressionTest1.java:10038)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1014)
+--- org.jsoup.parser.RegressionTest1::test0801
+junit.framework.AssertionFailedError: '<html hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+<head hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+</head>
+<body hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+ hi!
+</body>
+</html>
+<head hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+</head>
+<body hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+ hi!
+</body>
+
+hi!
+<html>
+<head>
+</head>
+<body>
+ hi!
+</body>
+</html>
+<html> 
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>html&gt; 
+<head> 
+</head> 
+<body>
+ hi!  
+</body>' != '<html hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+<head hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+</head>
+<body hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+ hi!
+</body>
+</html>
+<head hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+</head>
+<body hi! hi!  hi!="[&lt;, h, t, m, l, &gt;, 
+, &lt;, h, e, a, d, &gt;, 
+, &lt;, /, h, e, a, d, &gt;, 
+, &lt;, b, o, d, y, &gt;, 
+,  , h, i, !, 
+, &lt;, /, b, o, d, y, &gt;, 
+, &lt;, /, h, t, m, l, &gt;]">
+ hi!
+</body>
+
+hi!
+<html>
+<head>
+</head>
+<body>
+ hi!
+</body>
+</html>
+<html> 
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>html&gt; 
+<html>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html>' expected:<...
+</html>html&gt; 
+<h[ead> 
+</head> 
+<body>
+ hi!  
+</body]>> but was:<...
+</html>html&gt; 
+<h[tml>
+<head> 
+</head> 
+<body>
+  hi!  
+</body>
+</html]>>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jsoup.parser.RegressionTest1.test0801(RegressionTest1.java:11449)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1014)
+--- org.jsoup.parser.RegressionTest1::test0839
+junit.framework.AssertionFailedError: '<?>=&quot;&lt;?&lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; hi! &lt;/body&gt; &lt;/html&gt;&gt;&quot; html&gt; 
+<head> 
+</head> 
+<body>
+ hi!  =&quot;#comment&quot;
+</body>' != '<?>=&quot;&lt;?&lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; hi! &lt;/body&gt; &lt;/html&gt;&gt;&quot; html&gt; 
+<html>
+<head> 
+</head> 
+<body>
+  hi!  =&quot;#comment&quot;
+</body>
+</html>' expected:<...;&quot; html&gt; 
+<h[ead> 
+</head> 
+<body>
+ hi!  =&quot;#comment&quot;
+</body]>> but was:<...;&quot; html&gt; 
+<h[tml>
+<head> 
+</head> 
+<body>
+  hi!  =&quot;#comment&quot;
+</body>
+</html]>>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jsoup.parser.RegressionTest1.test0839(RegressionTest1.java:12721)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1014)

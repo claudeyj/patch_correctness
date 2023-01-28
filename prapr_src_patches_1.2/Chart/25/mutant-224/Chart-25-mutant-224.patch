@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-224/a-KeyedObjects2D.java	2021-07-14 20:10:15.550447803 -0700
++++ jd-result/Chart/25/mutant-224/b-KeyedObjects2D.java	2021-07-14 20:10:16.850447840 -0700
+@@ -85,7 +85,7 @@
+ /* 236*/    row.setObject(columnKey, object);
+ /* 237*/    int columnIndex = this.columnKeys.indexOf(columnKey);
+ /* 238*/    if (columnIndex < 0)
+-/* 239*/      this.columnKeys.add(columnKey); 
++/* 239*/      this.columnKeys.remove(columnKey); 
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void removeObject(Comparable rowKey, Comparable columnKey) {

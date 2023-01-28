@@ -1,0 +1,7 @@
+        Element element = (Element) node;
+
+        String uri = element.getNamespaceURI();
+    if (uri != null) {
+            String prefix = getPrefix(node);
+            String qname = prefix == null ? "xmlns" : "xmlns:" + prefix;
+    

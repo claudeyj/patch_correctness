@@ -1,0 +1,11 @@
+--- jd-result/Closure/22/mutant-1/ori-CheckSideEffects.java	2021-07-15 18:51:53.288753152 -0700
++++ jd-result/Closure/22/mutant-1/patched-CheckSideEffects.java	2021-07-21 07:56:14.662271320 -0700
+@@ -114,7 +114,7 @@
+ 
+       if (n == parent.getLastChild()) {
+         for (Node an : parent.getAncestors()) {
+-          int ancestorType = an.getType();
++          int ancestorType = gramps.getType();
+           if (ancestorType == Token.COMMA)
+             continue;
+           if (ancestorType != Token.EXPR_RESULT &&

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/5/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/5/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/5/buggy1.java	2021-08-27 19:18:34.802863978 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/5/tool-patch1.java	2021-08-27 19:18:34.802863978 -0700
+@@ -337,7 +337,7 @@
+      */
+     @Override
+     public boolean equals(Object other) {
+-        if (this == other) {
++        if ((java.lang.Double.isNaN(imaginary)) || (java.lang.Double.isNaN(real))) {
+             return true;
+         }
+         if (other instanceof Complex){

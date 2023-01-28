@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/19/mutant-1/ori-DateTimeZone.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/19/mutant-1/man-patched-DateTimeZone.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/19/mutant-1/ori-DateTimeZone.java	2021-08-23 09:23:49.196994731 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/19/mutant-1/man-patched-DateTimeZone.java	2021-08-23 09:23:49.196994731 +0800
+@@ -897,7 +897,7 @@
+                     return offsetLocal;
+                 }
+             }
+-        } else if (offsetLocal > 0) {
++        } else if (true) {
+             long prev = previousTransition(instantAdjusted);
+             if (prev < instantAdjusted) {
+                 int offsetPrev = getOffset(prev);

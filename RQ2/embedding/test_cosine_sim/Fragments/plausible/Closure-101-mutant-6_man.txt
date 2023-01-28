@@ -1,0 +1,6 @@
+  private static void applySafeCompilationOptions(CompilerOptions options) {
+    // Does not call applyBasicCompilationOptions(options) because the call to
+    // skipAllCompilerPasses() cannot be easily undone.
+    options.variableRenaming = VariableRenamingPolicy.LOCAL;
+    options.inlineLocalVariables = true;
+    options.checkGlobalThisLevel = CheckLevel.OFF;

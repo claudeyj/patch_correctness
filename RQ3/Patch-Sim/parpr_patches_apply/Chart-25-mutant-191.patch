@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-191.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -235,7 +235,7 @@
+         }
+         row.setObject(columnKey, object);
+         int columnIndex = this.columnKeys.indexOf(columnKey);
+-        if (columnIndex < 0) {
++    if (rowIndex < 0) {
+             this.columnKeys.add(columnKey);
+         }
+ 

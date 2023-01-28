@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/82/mutant-1/a-BeanDeserializerFactory.java	2021-08-09 04:38:00.757586646 -0700
++++ jd-result-2.0/JacksonDatabind/82/mutant-1/b-BeanDeserializerFactory.java	2021-08-09 04:38:02.361586691 -0700
+@@ -278,7 +278,7 @@
+ /* 491*/    if (ignorals != null) {
+ /* 492*/      boolean ignoreAny = ignorals.getIgnoreUnknown();
+ /* 493*/      builder.setIgnoreUnknownProperties(ignoreAny);
+-/* 495*/      ignored = ignorals.getIgnored();
++/* 495*/      ignored = ignorals.findIgnoredForDeserialization();
+ /* 496*/      for (String propName : ignored) {
+ /* 497*/          builder.addIgnorable(propName); 
+ /*   0*/         }

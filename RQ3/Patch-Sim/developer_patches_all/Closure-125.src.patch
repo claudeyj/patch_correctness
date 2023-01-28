@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/125/mutant-0/buggy-TypeCheck.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/125/mutant-0/patched-TypeCheck.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/125/mutant-0/buggy-TypeCheck.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/125/mutant-0/patched-TypeCheck.java	2021-08-22 00:18:38.590190183 -0700
+@@ -1658,7 +1658,7 @@
+     JSType type = getJSType(constructor).restrictByNotNullOrUndefined();
+     if (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) {
+       FunctionType fnType = type.toMaybeFunctionType();
+-      if (fnType != null) {
++      if (fnType != null && fnType.hasInstanceType()) {
+         visitParameterList(t, n, fnType);
+         ensureTyped(t, n, fnType.getInstanceType());
+       } else {

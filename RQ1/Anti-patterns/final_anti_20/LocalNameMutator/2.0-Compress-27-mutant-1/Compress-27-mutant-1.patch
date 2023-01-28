@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/27/mutant-1/a-TarUtils.java	2021-08-09 03:56:54.901517064 -0700
++++ jd-result-2.0/Compress/27/mutant-1/b-TarUtils.java	2021-08-09 03:56:56.845517119 -0700
+@@ -58,7 +58,7 @@
+ /* 130*/      end--;
+ /* 131*/      trailer = buffer[end - 1];
+ /*   0*/    } 
+-/* 133*/    if (start == end) {
++/* 133*/    if (offset == end) {
+ /* 134*/        throw new IllegalArgumentException(exceptionMessage(buffer, offset, length, start, trailer)); 
+ /*   0*/       }
+ /* 138*/    for (; start < end; start++) {

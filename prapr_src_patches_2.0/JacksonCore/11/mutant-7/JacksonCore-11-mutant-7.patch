@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/11/mutant-7/a-ByteQuadsCanonicalizer.java	2021-08-09 04:01:18.865524513 -0700
++++ jd-result-2.0/JacksonCore/11/mutant-7/b-ByteQuadsCanonicalizer.java	2021-08-09 04:01:20.413524556 -0700
+@@ -112,7 +112,7 @@
+ /*   0*/  private void mergeChild(TableInfo childState) {
+ /* 335*/    int childCount = childState.count;
+ /* 336*/    TableInfo currState = this._tableInfo.get();
+-/* 340*/    if (childCount == currState.count) {
++/* 340*/    if (childCount == currState.tertiaryShift) {
+ /*   0*/        return; 
+ /*   0*/       }
+ /* 348*/    if (childCount > 6000) {

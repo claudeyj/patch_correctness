@@ -1,0 +1,7 @@
+   * starting with minimum set of names.
+   */
+  final PassFactory smartNamePass =
+      new PassFactory("smartNamePass", true) {
+    @Override
+    protected CompilerPass createInternal(final AbstractCompiler compiler) {
+      return new CompilerPass() {

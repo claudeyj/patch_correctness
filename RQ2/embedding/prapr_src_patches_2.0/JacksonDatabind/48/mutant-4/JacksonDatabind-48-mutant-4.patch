@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/48/mutant-4/a-VisibilityChecker.java	2021-08-09 04:28:38.121570769 -0700
++++ jd-result-2.0/JacksonDatabind/48/mutant-4/b-VisibilityChecker.java	2021-08-09 04:28:39.601570811 -0700
+@@ -180,7 +180,8 @@
+ /* 316*/      if (this._fieldMinLevel == v) {
+ /* 316*/          return this; 
+ /*   0*/         }
+-/* 317*/      return new Std(this._getterMinLevel, this._isGetterMinLevel, this._setterMinLevel, this._creatorMinLevel, v);
++/* 317*/      JsonAutoDetect.Visibility visibility5 = v, visibility4 = this._creatorMinLevel, visibility3 = this._setterMinLevel, visibility2 = this._isGetterMinLevel, visibility1 = this._getterMinLevel;
++/* 317*/      return new Std(visibility1, visibility2, v, v, visibility5);
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public boolean isCreatorVisible(Member m) {

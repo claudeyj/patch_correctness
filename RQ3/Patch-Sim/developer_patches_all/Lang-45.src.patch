@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/45/mutant-0/buggy-WordUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/45/mutant-0/patched-WordUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/45/mutant-0/buggy-WordUtils.java	2021-08-22 00:18:38.650190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/45/mutant-0/patched-WordUtils.java	2021-08-22 00:18:38.650190185 -0700
+@@ -613,6 +613,9 @@
+ 
+         // if the lower value is greater than the length of the string,
+         // set to the length of the string
++        if (lower > str.length()) {
++            lower = str.length();    
++        }
+         // if the upper value is -1 (i.e. no limit) or is greater
+         // than the length of the string, set to the length of the string
+         if (upper == -1 || upper > str.length()) {

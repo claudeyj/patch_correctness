@@ -1,0 +1,7 @@
+            } else if ("tbody".equals(name) || "thead".equals(name) || "tfoot".equals(name)) {
+                transition(HtmlTreeBuilderState.InTableBody);
+                break;
+            } else if ("caption".equals(name)) {
+                transition(HtmlTreeBuilderState.InCaption);
+                break;
+            } else if ("colgroup".equals(name)) {

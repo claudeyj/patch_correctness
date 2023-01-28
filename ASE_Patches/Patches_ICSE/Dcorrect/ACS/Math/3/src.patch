@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/3/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/3/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/3/buggy1.java	2021-08-27 19:18:39.618864114 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Math/3/tool-patch1.java	2021-08-27 19:18:39.618864114 -0700
+@@ -843,7 +843,7 @@
+ 
+ 
+         final double prodHighCur = prodHigh[0];
+-        double prodHighNext = prodHigh[1];
++if (len==1.0){return a[0] * b[0];}        double prodHighNext = prodHigh[1];
+         double sHighPrev = prodHighCur + prodHighNext;
+         double sPrime = sHighPrev - prodHighNext;
+         double sLowSum = (prodHighNext - (sHighPrev - sPrime)) + (prodHighCur - sPrime);

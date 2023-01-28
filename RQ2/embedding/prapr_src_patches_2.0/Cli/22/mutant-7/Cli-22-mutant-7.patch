@@ -1,0 +1,12 @@
+--- jd-result-2.0/Cli/22/mutant-7/a-PosixParser.java	2021-08-09 04:41:45.225592980 -0700
++++ jd-result-2.0/Cli/22/mutant-7/b-PosixParser.java	2021-08-09 04:41:46.605593019 -0700
+@@ -67,7 +67,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void processOptionToken(String token, boolean stopAtNonOption) {
+-/* 206*/    if (stopAtNonOption && !this.options.hasOption(token)) {
++/* 206*/    if (stopAtNonOption) {
++/* 206*/      this.options.hasOption(token);
+ /* 208*/        this.eatTheRest = true; 
+ /*   0*/       }
+ /* 212*/    this.tokens.add(token);

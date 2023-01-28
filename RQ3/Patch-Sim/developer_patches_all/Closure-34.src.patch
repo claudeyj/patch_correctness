@@ -1,0 +1,35 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/34/mutant-0/buggy-CodePrinter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/34/mutant-0/patched-CodePrinter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/34/mutant-0/buggy-CodePrinter.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/34/mutant-0/patched-CodePrinter.java	2021-08-22 00:18:38.602190184 -0700
+@@ -331,7 +331,7 @@
+     @Override
+     void appendOp(String op, boolean binOp) {
+       if (binOp) {
+-        if (getLastChar() != ' ') {
++        if (getLastChar() != ' ' && op.charAt(0) != ',') {
+           append(" ");
+         }
+         append(op);
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/34/mutant-0/buggy-CodeGenerator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/34/mutant-0/patched-CodeGenerator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/34/mutant-0/buggy-CodeGenerator.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/34/mutant-0/patched-CodeGenerator.java	2021-08-22 00:18:38.602190184 -0700
+@@ -119,9 +119,7 @@
+         cc.addOp(opstr, true);
+         addExpr(last, p, rhsContext);
+       } else {
+-        addExpr(first, p, context);
+-        cc.addOp(opstr, true);
+-        addExpr(last, p + 1, rhsContext);
++        unrollBinaryOperator(n, type, opstr, context, rhsContext, p, p + 1);
+       }
+       return;
+     }
+@@ -751,7 +749,7 @@
+     Node current = firstNonOperator;
+     do {
+       current = current.getParent();
+-      cc.listSeparator();
++      cc.addOp(opStr, true);
+       addExpr(current.getFirstChild().getNext(), rightPrecedence, rhsContext);
+     } while (current != n);
+   }

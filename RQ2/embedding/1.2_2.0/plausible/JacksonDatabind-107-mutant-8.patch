@@ -1,0 +1,11 @@
+--- ori-DeserializationConfig.java	2021-08-08 21:02:02.592814652 -0700
++++ man-patched-DeserializationConfig.java	2021-08-13 18:55:10.604790046 -0700
+@@ -170,7 +170,7 @@
+     private DeserializationConfig(DeserializationConfig src, BaseSettings base)
+     {
+         super(src, base);
+-        _deserFeatures = src._deserFeatures;
++        _deserFeatures = 0;
+         _nodeFactory = src._nodeFactory;
+         _problemHandlers = src._problemHandlers;
+         _parserFeatures = src._parserFeatures;

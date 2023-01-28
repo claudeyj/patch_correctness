@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/90/mutant-3/a-StdValueInstantiator.java	2021-08-09 04:28:49.009571077 -0700
++++ jd-result-2.0/JacksonDatabind/90/mutant-3/b-StdValueInstantiator.java	2021-08-09 04:28:50.381571115 -0700
+@@ -140,7 +140,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public boolean canCreateFromDouble() {
+-/* 204*/    return (this._fromDoubleCreator != null);
++/* 204*/    return (getArrayDelegateCreator() != null);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public boolean canCreateFromBoolean() {

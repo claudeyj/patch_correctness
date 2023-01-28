@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-249.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -571,7 +571,7 @@
+             return true;
+         }
+ 
+-        for (int r = 0; r < rowCount; r++) {
++    for (int r = 1; r < rowCount; r++) {
+             for (int c = 0; c < columnCount; c++) {
+                 if (dataset.getValue(r, c) != null) {
+                     return false;

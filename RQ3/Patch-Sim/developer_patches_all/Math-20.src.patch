@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/20/mutant-0/buggy-CMAESOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/20/mutant-0/patched-CMAESOptimizer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/20/mutant-0/buggy-CMAESOptimizer.java	2021-08-22 00:18:38.670190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/20/mutant-0/patched-CMAESOptimizer.java	2021-08-22 00:18:38.670190185 -0700
+@@ -918,7 +918,8 @@
+          * @return the original objective variables, possibly repaired.
+          */
+         public double[] repairAndDecode(final double[] x) {
+-            return
++            return boundaries != null && isRepairMode ?
++                decode(repair(x)) :
+                 decode(x);
+         }
+ 

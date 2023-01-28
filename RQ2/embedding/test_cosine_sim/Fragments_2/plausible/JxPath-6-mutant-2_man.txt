@@ -1,0 +1,7 @@
+//            (l == null ? "null" : l.getClass().getName()) + " " +
+//            (r == null ? "null" : r.getClass().getName()));
+
+    if (r instanceof org.apache.commons.jxpath.ri.axes.InitialContext || l instanceof org.apache.commons.jxpath.ri.axes.SelfContext) {
+            l = ((EvalContext) l).getSingleNodePointer();
+        }
+

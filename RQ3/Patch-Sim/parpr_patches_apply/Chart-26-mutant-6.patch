@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-6.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -525,7 +525,7 @@
+         double r = calculateRightInset(w);
+         double t = calculateTopInset(h);
+         double b = calculateBottomInset(h);
+-        area.setRect(area.getX() + l, area.getY() + t, w - l - r, h - t - b);    
++    area.setRect(area.getX() + l, area.getY() + t, w - l - r, t - t - b);
+     }
+     
+ }

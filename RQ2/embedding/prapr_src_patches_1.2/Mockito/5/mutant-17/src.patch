@@ -1,0 +1,19 @@
+--- jd-result/Mockito/5/mutant-17/ori-MockitoCore.java	2021-07-15 18:51:56.288753237 -0700
++++ jd-result/Mockito/5/mutant-17/man-patched-MockitoCor.java	2021-07-30 03:54:03.017131836 -0700
+@@ -36,6 +36,7 @@
+ import org.mockito.stubbing.Stubber;
+ import org.mockito.stubbing.VoidMethodStubbable;
+ import org.mockito.verification.VerificationMode;
++import org.mockito.exceptions.base.MockitoException;
+ 
+ @SuppressWarnings("unchecked")
+ public class MockitoCore {
+@@ -111,7 +112,7 @@
+                 InvocationContainer invocations = mockUtil.getMockHandler(mock).getInvocationContainer();
+                 VerificationDataImpl data = new VerificationDataImpl(invocations, null);
+                 VerificationModeFactory.noMoreInteractions().verify(data);
+-            } catch (NotAMockException e) {
++      } catch (MockitoException e) {
+                 reporter.notAMockPassedToVerifyNoMoreInteractions();
+             }
+         }

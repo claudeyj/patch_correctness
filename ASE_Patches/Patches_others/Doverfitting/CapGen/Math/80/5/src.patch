@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/80/5/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/80/5/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/80/5/buggy1.java	2021-08-27 19:18:40.302864133 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/CapGen/Math/80/5/tool-patch1.java	2021-08-27 19:18:40.302864133 -0700
+@@ -1136,7 +1136,7 @@
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
++                    work[j - k] = work[j - k];
+                     work[j - k] = tmp;
+                 }
+                 j -= 4;

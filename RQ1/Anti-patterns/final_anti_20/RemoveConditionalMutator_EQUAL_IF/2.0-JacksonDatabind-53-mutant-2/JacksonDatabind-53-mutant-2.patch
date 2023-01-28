@@ -1,0 +1,18 @@
+--- jd-result-2.0/JacksonDatabind/53/mutant-2/a-TypeFactory.java	2021-08-09 04:34:40.117580984 -0700
++++ jd-result-2.0/JacksonDatabind/53/mutant-2/b-TypeFactory.java	2021-08-09 04:34:41.613581026 -0700
+@@ -239,7 +239,6 @@
+ /*   0*/          } else {
+ /*   0*/            newType = baseType.refine(subclass, TypeBindings.emptyBindings(), baseType, NO_TYPES);
+ /*   0*/          } 
+-/*   0*/          if (newType == null) {
+ /*   0*/            TypeBindings tb = null;
+ /*   0*/            if (baseType.containedTypeCount() == typeParamCount) {
+ /*   0*/                if (typeParamCount == 1) {
+@@ -252,7 +251,6 @@
+ /*   0*/          } 
+ /*   0*/        } 
+ /*   0*/      } 
+-/*   0*/    } 
+ /* 408*/    return newType;
+ /*   0*/  }
+ /*   0*/  

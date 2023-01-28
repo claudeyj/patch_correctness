@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-58/ori-Axis.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-58/man-patched-Axis.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-58/ori-Axis.java	2021-08-23 09:23:48.468984638 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-58/man-patched-Axis.java	2021-08-23 09:23:48.468984638 +0800
+@@ -1189,6 +1189,9 @@
+         }
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
++            if (owner == null) {
++                return state; 
++            }
+                 EntityCollection entities = owner.getEntityCollection();
+                 if (entities != null) {
+                     entities.add(new AxisLabelEntity(this, hotspot, 

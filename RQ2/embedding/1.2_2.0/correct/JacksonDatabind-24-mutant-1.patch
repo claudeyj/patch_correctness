@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/24/mutant-1/ori-BaseSettings.java	2021-08-08 21:02:02.412814647 -0700
++++ jd-result-2.0/JacksonDatabind/24/mutant-1/man-patched-BaseSettings.java	2021-08-13 01:08:03.586983330 -0700
+@@ -234,7 +234,7 @@
+         TimeZone tz = (df == null) ? _timeZone : df.getTimeZone();
+         return new BaseSettings(_classIntrospector, _annotationIntrospector, _visibilityChecker, _propertyNamingStrategy, _typeFactory,
+                 _typeResolverBuilder, df, _handlerInstantiator, _locale,
+-                tz, _defaultBase64);
++                _timeZone, _defaultBase64);
+     }
+ 
+     public BaseSettings withHandlerInstantiator(HandlerInstantiator hi) {

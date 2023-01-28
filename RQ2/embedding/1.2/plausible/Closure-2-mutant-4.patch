@@ -1,0 +1,12 @@
+--- jd-result/Closure/2/mutant-4/ori-TypeCheck.java	2021-07-15 18:51:53.788753166 -0700
++++ jd-result/Closure/2/mutant-4/man-patched-TypeCheck.java	2021-07-24 01:14:10.634232931 -0700
+@@ -1571,6 +1571,9 @@
+     Set<String> currentPropertyNames;
+       // This can be the case if interfaceType is proxy to a non-existent
+       // object (which is a bad type annotation, but shouldn't crash).
++      if (implicitProto == null) {
++        return; 
++      }
+       currentPropertyNames = implicitProto.getOwnPropertyNames();
+     for (String name : currentPropertyNames) {
+       ObjectType oType = properties.get(name);

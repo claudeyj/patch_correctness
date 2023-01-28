@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/41/mutant-0/buggy-Variance.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/41/mutant-0/patched-Variance.java
+--- Math41b/src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java
++++ Math41b_Math-41-src.patchb/src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java
+@@ -517,7 +517,7 @@
+                 }
+ 
+                 double sumWts = 0;
+-                for (int i = 0; i < weights.length; i++) {
++                for (int i = begin; i < begin + length; i++) {
+                     sumWts += weights[i];
+                 }
+ 

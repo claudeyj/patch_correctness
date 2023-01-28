@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Chart/5/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Chart/5/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Chart/5/buggy1.java	2021-08-27 19:18:32.950863926 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Chart/5/tool-patch1.java	2021-08-27 19:18:32.950863926 -0700
+@@ -560,8 +560,8 @@
+             // Collections.binarySearch() and tells us where to insert the
+             // new item...otherwise it will be just -1 and we should just
+             // append the value to the list...
+-            if (this.autoSort) {
+-                this.data.add(-index - 1, new XYDataItem(x, y));
++            if (this.autoSort) {                 add(x, y, true);
++
+             }
+             else {
+                 this.data.add(new XYDataItem(x, y));

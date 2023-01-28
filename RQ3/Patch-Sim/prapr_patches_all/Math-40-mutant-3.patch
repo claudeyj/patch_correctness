@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-3/ori-BracketingNthOrderBrentSolver.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-3/patched-BracketingNthOrderBrentSolver.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-3/ori-BracketingNthOrderBrentSolver.java	2021-08-23 09:23:48.924990960 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-3/patched-BracketingNthOrderBrentSolver.java	2021-08-23 09:23:48.924990960 +0800
+@@ -257,7 +257,7 @@
+                     // the guessed root is either not strictly inside the interval or it
+                     // is a NaN (which occurs when some sampling points share the same y)
+                     // we try again with a lower interpolation order
+-                    if (signChangeIndex - start >= end - signChangeIndex) {
++        if (MAXIMAL_AGING - start >= end - signChangeIndex) {
+                         // we have more points before the sign change, drop the lowest point
+                         ++start;
+                     } else {

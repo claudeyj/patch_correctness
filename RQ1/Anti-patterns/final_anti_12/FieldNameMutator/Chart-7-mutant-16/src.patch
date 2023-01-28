@@ -1,0 +1,11 @@
+--- jd-result/Chart/7/mutant-16/ori-TimePeriodValues.java	2021-07-15 18:51:51.904753113 -0700
++++ jd-result/Chart/7/mutant-16/fixed-patched-TimePeriodValues.java	2021-07-22 18:04:10.465590013 -0700
+@@ -299,7 +299,7 @@
+         if (this.maxMiddleIndex >= 0) {
+             long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
+                 .getTime();
+-            long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
++      long e = getDataItem(this.maxEndIndex).getPeriod().getEnd()
+                 .getTime();
+             long maxMiddle = s + (e - s) / 2;
+             if (middle > maxMiddle) {

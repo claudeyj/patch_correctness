@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/9/mutant-1/ori-Base64.java	2021-08-08 21:02:01.408814619 -0700
++++ jd-result-2.0/Codec/9/mutant-1/man-patched-Base64.java	2021-08-09 22:36:16.587412235 -0700
+@@ -976,7 +976,7 @@
+             len += 4 - mod;
+         }
+         if (chunkSize > 0) {
+-            boolean lenChunksPerfectly = len % chunkSize == 0;
++            boolean lenChunksPerfectly = true;
+             len += (len / chunkSize) * chunkSeparator.length;
+             if (!lenChunksPerfectly) {
+                 len += chunkSeparator.length;

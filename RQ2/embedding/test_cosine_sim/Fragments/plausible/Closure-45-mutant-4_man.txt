@@ -1,0 +1,7 @@
+          for (Assign assign : assignsByVar.get(var)) {
+            if (assign.isPropertyAssign) {
+              hasPropertyAssign = true;
+            } else if (!changes) {
+              assignedToUnknownValue = true;
+            }
+          }

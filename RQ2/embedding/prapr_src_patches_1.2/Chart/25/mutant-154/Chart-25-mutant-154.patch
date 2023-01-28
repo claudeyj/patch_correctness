@@ -1,0 +1,39 @@
+--- jd-result/Chart/25/mutant-154/a-CategoryPlot.java	2021-07-14 20:15:21.894456447 -0700
++++ jd-result/Chart/25/mutant-154/b-CategoryPlot.java	2021-07-14 20:15:23.366456489 -0700
+@@ -1295,36 +1294,6 @@
+ /*2852*/    CategoryAxis domainAxis = getDomainAxisForDataset(index);
+ /*2853*/    ValueAxis rangeAxis = getRangeAxisForDataset(index);
+ /*2854*/    boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);
+-/*2855*/    if (hasData && renderer != null) {
+-/*2857*/      foundData = true;
+-/*2858*/      CategoryItemRendererState state = renderer.initialise(g2, dataArea, this, index, info);
+-/*2860*/      int columnCount = currentDataset.getColumnCount();
+-/*2861*/      int rowCount = currentDataset.getRowCount();
+-/*2862*/      int passCount = renderer.getPassCount();
+-/*2863*/      for (int pass = 0; pass < passCount; pass++) {
+-/*2864*/        if (this.columnRenderingOrder == SortOrder.ASCENDING) {
+-/*2865*/          for (int column = 0; column < columnCount; column++) {
+-/*2866*/            if (this.rowRenderingOrder == SortOrder.ASCENDING) {
+-/*2867*/              for (int row = 0; row < rowCount; row++)
+-/*2868*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+-/*   0*/            } else {
+-/*2874*/              for (int row = rowCount - 1; row >= 0; row--)
+-/*2875*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+-/*   0*/            } 
+-/*   0*/          } 
+-/*   0*/        } else {
+-/*2883*/          for (int column = columnCount - 1; column >= 0; column--) {
+-/*2884*/            if (this.rowRenderingOrder == SortOrder.ASCENDING) {
+-/*2885*/              for (int row = 0; row < rowCount; row++)
+-/*2886*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+-/*   0*/            } else {
+-/*2892*/              for (int row = rowCount - 1; row >= 0; row--)
+-/*2893*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+-/*   0*/            } 
+-/*   0*/          } 
+-/*   0*/        } 
+-/*   0*/      } 
+-/*   0*/    } 
+ /*2902*/    return foundData;
+ /*   0*/  }
+ /*   0*/  

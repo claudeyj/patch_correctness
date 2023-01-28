@@ -1,0 +1,11 @@
+--- Time11b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
++++ Time11_Time-11-mutant-25.patchb/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
+@@ -1456,7 +1456,7 @@
+ 
+             if (tailZone != null) {
+                 if (tailZone.iStartRecurrence.getNameKey()
+-                    .equals(tailZone.iEndRecurrence.getNameKey())) {
++                    .equals(null)) {
+                     if (ZoneInfoCompiler.verbose()) {
+                         System.out.println("Fixing duplicate recurrent name key - " +
+                                            tailZone.iStartRecurrence.getNameKey());

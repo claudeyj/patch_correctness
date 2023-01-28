@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/59/mutant-2/ori-StrBuilder.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/59/mutant-2/patched-StrBuilder.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/59/mutant-2/ori-StrBuilder.java	2021-08-23 09:23:48.848989907 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/59/mutant-2/patched-StrBuilder.java	2021-08-23 09:23:48.848989907 +0800
+@@ -881,7 +881,7 @@
+             String str = (obj == null ? getNullText() : obj.toString());
+             int strLen = str.length();
+             if (strLen >= width) {
+-                str.getChars(0, strLen, buffer, size);
++        str.getChars(0, width, this.buffer, this.size);
+             } else {
+                 int padLen = width - strLen;
+                 str.getChars(0, strLen, buffer, size);

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/8/mutant-0/buggy-GenericMetadataSupport.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/8/mutant-0/patched-GenericMetadataSupport.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/8/mutant-0/buggy-GenericMetadataSupport.java	2021-08-22 00:18:38.710190187 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/8/mutant-0/patched-GenericMetadataSupport.java	2021-08-22 00:18:38.710190187 -0700
+@@ -76,7 +76,7 @@
+ 
+             if (actualTypeArgument instanceof WildcardType) {
+                 contextualActualTypeParameters.put(typeParameter, boundsOf((WildcardType) actualTypeArgument));
+-            } else {
++            } else if (typeParameter != actualTypeArgument) {
+                 contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+             }
+             // logger.log("For '" + parameterizedType + "' found type variable : { '" + typeParameter + "(" + System.identityHashCode(typeParameter) + ")" + "' : '" + actualTypeArgument + "(" + System.identityHashCode(typeParameter) + ")" + "' }");

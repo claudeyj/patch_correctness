@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-17/ori-DurationFormatUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-17/patched-DurationFormatUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-17/ori-DurationFormatUtils.java	2021-08-23 09:23:48.852989961 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-17/patched-DurationFormatUtils.java	2021-08-23 09:23:48.852989961 +0800
+@@ -431,7 +431,7 @@
+     }
+     static int reduceAndCorrect(Calendar start, Calendar end, int field, int difference) {
+         end.add( field, -1 * difference );
+-        int endValue = end.get(field);
++    int endValue = end.getLeastMaximum(field);
+         int startValue = start.get(field);
+         if (endValue < startValue) {
+             int newdiff = startValue - endValue;

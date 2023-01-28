@@ -1,0 +1,10 @@
+--- jd-result-2.0/JacksonDatabind/1/mutant-2/ori-BeanPropertyWriter.java	2021-08-08 21:02:02.300814644 -0700
++++ jd-result-2.0/JacksonDatabind/1/mutant-2/patched-BeanPropertyWriter.java	2021-08-09 06:25:54.941769334 -0700
+@@ -585,7 +585,6 @@
+         Object value = get(bean);
+         if (value == null) { // nulls need specialized handling
+             if (_nullSerializer != null) {
+-                _nullSerializer.serialize(null, jgen, prov);
+             } else { // can NOT suppress entries in tabular output
+                 jgen.writeNull();
+             }

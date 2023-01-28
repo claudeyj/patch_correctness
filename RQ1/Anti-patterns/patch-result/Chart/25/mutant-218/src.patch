@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-218/ori-KeyedObjects2D.java	2021-07-15 18:51:50.724753080 -0700
++++ jd-result/Chart/25/mutant-218/patched-KeyedObjects2D.java	2021-07-21 07:22:24.850214043 -0700
+@@ -92,7 +92,7 @@
+      * @return The column count.
+      */
+     public int getColumnCount() {
+-        return this.columnKeys.size();
++    return (this.columnKeys.size() != 0) ? 0 : 1;
+     }
+ 
+     /**

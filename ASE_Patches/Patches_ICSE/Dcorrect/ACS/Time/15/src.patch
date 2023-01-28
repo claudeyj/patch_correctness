@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Time/15/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Time/15/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Time/15/buggy1.java	2021-08-27 19:18:39.614864114 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Time/15/tool-patch1.java	2021-08-27 19:18:39.614864114 -0700
+@@ -135,7 +135,7 @@
+     public static long safeMultiply(long val1, int val2) {
+         switch (val2) {
+             case -1:
+-                return -val1;
++if (val1==Long.MIN_VALUE){throw new ArithmeticException();}                return -val1;
+             case 0:
+                 return 0L;
+             case 1:

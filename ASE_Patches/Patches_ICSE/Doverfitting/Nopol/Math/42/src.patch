@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/42/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/42/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/42/buggy1.java	2021-08-27 19:18:33.786863949 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/42/tool-patch1.java	2021-08-27 19:18:33.786863949 -0700
+@@ -344,9 +344,11 @@
+         for (int i = 0; i < getNumArtificialVariables(); i++) {
+           int col = i + getArtificialVariableOffset();
+           if (getBasicRow(col) == null) {
++            if (0 < org.apache.commons.math.optimization.linear.SimplexTableau.this.numSlackVariables) {
+             columnsToDrop.add(col);
+           }
+         }
++        }
+ 
+         double[][] matrix = new double[getHeight() - 1][getWidth() - columnsToDrop.size()];
+         for (int i = 1; i < getHeight(); i++) {

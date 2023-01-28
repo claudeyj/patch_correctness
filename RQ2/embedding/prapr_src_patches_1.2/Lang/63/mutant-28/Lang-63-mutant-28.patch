@@ -1,0 +1,11 @@
+--- jd-result/Lang/63/mutant-28/a-DurationFormatUtils.java	2021-07-14 16:58:45.086123565 -0700
++++ jd-result/Lang/63/mutant-28/b-DurationFormatUtils.java	2021-07-14 16:58:46.534123606 -0700
+@@ -222,7 +222,7 @@
+ /* 434*/    int endValue = end.get(field);
+ /* 435*/    int startValue = start.get(field);
+ /* 436*/    if (endValue < startValue) {
+-/* 437*/      int newdiff = startValue - endValue;
++/* 437*/      int newdiff = endValue - endValue;
+ /* 438*/      end.add(field, newdiff);
+ /* 439*/      return newdiff;
+ /*   0*/    } 

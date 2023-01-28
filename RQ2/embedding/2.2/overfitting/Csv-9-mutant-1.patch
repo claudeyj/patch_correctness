@@ -1,0 +1,12 @@
+--- jd-result-2.0/Csv/9/mutant-1/ori-CSVRecord.java	2021-08-08 21:02:01.616814625 -0700
++++ jd-result-2.0/Csv/9/mutant-1/man-patched-CSVRecord.java	2021-08-09 22:55:08.471444174 -0700
+@@ -177,6 +177,9 @@
+      * @return the given map.
+      */
+     <M extends Map<String, String>> M putIn(final M map) {
++        if (this.mapping == null) {
++            return map; 
++        }
+         for (final Entry<String, Integer> entry : mapping.entrySet()) {
+             final int col = entry.getValue().intValue();
+             if (col < values.length) {

@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 10 23:18:33 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 51705
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.jstype.PrototypeObjectType::isPropertyTypeDeclared(Ljava/lang/String;)Z is replaced with the used of field nativeType
+	File Name: com/google/javascript/rhino/jstype/PrototypeObjectType.java
+	Line Number: 570
+	Rank: 1
+	Total Rank: 79
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to restrictByNotNullOrUndefined with a call to collapseUnion
+	File Name: com/google/javascript/jscomp/TypeInference.java
+	Line Number: 1119
+	Rank: 2
+	Total Rank: 7664
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: NakedReceiverMutator
+	Description: replaced call to com/google/javascript/rhino/jstype/JSType::restrictByNotNullOrUndefined with receiver
+	File Name: com/google/javascript/jscomp/TypeInference.java
+	Line Number: 1119
+	Rank: 3
+	Total Rank: 7668
+	Dump: mutant-1.class
+------------------------------------------------

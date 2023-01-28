@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/117/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/117/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/117/buggy1.java	2021-08-27 19:18:32.942863926 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/117/tool-patch1.java	2021-08-27 19:18:32.942863926 -0700
+@@ -748,7 +748,6 @@
+         if (objectType != null &&
+             (objectType.getConstructor() != null ||
+              objectType.isFunctionPrototypeType())) {
+-          return objectType.toString() + "." + propName;
+         }
+       }
+     }

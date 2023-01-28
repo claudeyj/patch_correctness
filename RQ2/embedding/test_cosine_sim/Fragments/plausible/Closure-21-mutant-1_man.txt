@@ -1,0 +1,7 @@
+      if (isResultUsed) {
+        return;
+      }
+      if (n == parent.getFirstChild().getLastChild()) {
+        for (Node an : parent.getAncestors()) {
+          int ancestorType = an.getType();
+          if (ancestorType == Token.COMMA) continue;

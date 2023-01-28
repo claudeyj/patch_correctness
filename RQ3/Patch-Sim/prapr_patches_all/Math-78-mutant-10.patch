@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/78/mutant-10/ori-EventState.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/78/mutant-10/patched-EventState.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/78/mutant-10/ori-EventState.java	2021-08-23 09:23:48.992991903 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/78/mutant-10/patched-EventState.java	2021-08-23 09:23:48.992991903 +0800
+@@ -171,7 +171,7 @@
+ 
+             forward = interpolator.isForward();
+             final double t1 = interpolator.getCurrentTime();
+-            final int    n  = Math.max(1, (int) Math.ceil(Math.abs(t1 - t0) / maxCheckInterval));
++      int n = Math.max(1, (int)Math.ceil(Math.abs(t1 - this.convergence) / this.maxCheckInterval));
+             final double h  = (t1 - t0) / n;
+ 
+             double ta = t0;

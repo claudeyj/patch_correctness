@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-29/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.470297151 -0700
++++ jd-result/Math/80/mutant-29/fixed-patched-EigenDecompositionImpl.java	2021-07-24 01:52:06.470297151 -0700
+@@ -1201,7 +1201,7 @@
+ 
+             final double range = right - left;
+             if ((range < absoluteTolerance) ||
+-                (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
++                (range < relativeTolerance / Math.max(Math.abs(left), Math.abs(right)))) {
+                 // search has converged
+                 break;
+             }

@@ -1,0 +1,20 @@
+--- jd-result/Chart/25/mutant-81/ori-CategoryPlot.java	2021-07-15 18:51:50.720753080 -0700
++++ jd-result/Chart/25/mutant-81/fixed-patched-CategoryPlot.java	2021-07-29 18:28:37.772174532 -0700
+@@ -213,6 +213,7 @@
+ import org.jfree.data.general.Dataset;
+ import org.jfree.data.general.DatasetChangeEvent;
+ import org.jfree.data.general.DatasetUtilities;
++import org.jfree.chart.renderer.category.IntervalBarRenderer;
+ 
+ /**
+  * A general plotting class that uses data from a {@link CategoryDataset} and 
+@@ -2848,7 +2849,8 @@
+ 
+         boolean foundData = false;
+         CategoryDataset currentDataset = getDataset(index);
+-        CategoryItemRenderer renderer = getRenderer(index);
++    int i = index;
++    CategoryItemRenderer renderer = new IntervalBarRenderer();
+         CategoryAxis domainAxis = getDomainAxisForDataset(index);
+         ValueAxis rangeAxis = getRangeAxisForDataset(index);
+         boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);

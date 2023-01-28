@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-3/a-CMAESOptimizer.java	2021-07-14 09:07:32.085325756 -0700
++++ jd-result/Math/20/mutant-3/b-CMAESOptimizer.java	2021-07-14 09:07:33.581325799 -0700
+@@ -326,7 +326,7 @@
+ /* 570*/    RealMatrix insigma = new Array2DRowRealMatrix(sigmaArray, false);
+ /* 571*/    this.sigma = max(insigma);
+ /* 574*/    this.stopTolUpX = 1000.0D * max(insigma);
+-/* 575*/    this.stopTolX = 1.0E-11D * max(insigma);
++/* 575*/    this.stopTolX = 1.0E-11D / max(insigma);
+ /* 576*/    this.stopTolFun = 1.0E-12D;
+ /* 577*/    this.stopTolHistFun = 1.0E-13D;
+ /* 580*/    this.mu = this.lambda / 2;

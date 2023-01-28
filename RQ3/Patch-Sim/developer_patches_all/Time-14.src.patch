@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/14/mutant-0/buggy-BasicMonthOfYearDateTimeField.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/14/mutant-0/patched-BasicMonthOfYearDateTimeField.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/14/mutant-0/buggy-BasicMonthOfYearDateTimeField.java	2021-08-22 00:18:38.714190187 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/14/mutant-0/patched-BasicMonthOfYearDateTimeField.java	2021-08-22 00:18:38.714190187 -0700
+@@ -206,7 +206,12 @@
+         if (valueToAdd == 0) {
+             return values;
+         }
++        if (partial.size() > 0 && partial.getFieldType(0).equals(DateTimeFieldType.monthOfYear()) && fieldIndex == 0) {
+             // month is largest field and being added to, such as month-day
++            int curMonth0 = partial.getValue(0) - 1;
++            int newMonth = ((curMonth0 + (valueToAdd % 12) + 12) % 12) + 1;
++            return set(partial, 0, values, newMonth);
++        }
+         if (DateTimeUtils.isContiguous(partial)) {
+             long instant = 0L;
+             for (int i = 0, isize = partial.size(); i < isize; i++) {

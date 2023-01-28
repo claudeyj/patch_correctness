@@ -1,0 +1,7 @@
+                } else if (name.equals("table")) {
+                    tb.error(this);
+                    boolean processed = tb.processEndTag("table");
+                    if (!processed) // only ignored if in fragment
+                        return tb.process(t);
+                } else if (StringUtil.in(name, "style", "script")) {
+                    return tb.process(t, InHead);

@@ -1,0 +1,13 @@
+--- jd-result-2.0/JacksonCore/25/mutant-11/ori-ReaderBasedJsonParser.java	2021-08-08 21:02:01.756814629 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-11/man-patched-ReaderBasedJsonParser.java	2021-08-09 23:52:35.687541448 -0700
+@@ -1954,10 +1954,8 @@
+ 
+         while (true) {
+             if (_inputPtr >= _inputEnd) {
+-                if (!_loadMore()) { // acceptable for now (will error out later)
+                     break;
+                 }
+-            }
+             char c = _inputBuffer[_inputPtr];
+             int i = (int) c;
+             if (i <= maxCode) {

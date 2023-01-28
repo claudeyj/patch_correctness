@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-194/ori-KeyedObjects2D.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-194/fixed-patched-KeyedObjects2D.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-194/ori-KeyedObjects2D.java	2021-08-23 09:23:48.356983086 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-194/fixed-patched-KeyedObjects2D.java	2021-08-23 09:23:48.356983086 +0800
+@@ -235,7 +235,7 @@
+         }
+         row.setObject(columnKey, object);
+         int columnIndex = this.columnKeys.indexOf(columnKey);
+-        if (columnIndex < 0) {
++    if (columnIndex >= 0) {
+             this.columnKeys.add(columnKey);
+         }
+ 

@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-3.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -355,7 +355,7 @@
+      * @return The top margin (in Java2D units).
+      */
+     public double calculateTopInset(double height) {
+-        double result = this.top;
++    double result = height;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.top * height);
+         }

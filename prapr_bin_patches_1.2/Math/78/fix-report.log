@@ -1,0 +1,130 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 02:13:56 PDT 2021
+Number of Plausible Fixes: 14
+Total Number of Patches: 2284
+================================================
+1.
+	Mutator: FieldNameMutator
+	Description: replaced access to t0 with an access to convergence
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 3
+	Total Rank: 972
+	Dump: mutant-10.class
+------------------------------------------------
+2.
+	Mutator: FieldNameMutator
+	Description: replaced access to t0 with an access to maxCheckInterval
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 3
+	Total Rank: 972
+	Dump: mutant-12.class
+------------------------------------------------
+3.
+	Mutator: FieldNameMutator
+	Description: replaced access to t0 with an access to g0
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 3
+	Total Rank: 972
+	Dump: mutant-11.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local t1 is replaced by access to field g0
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 5
+	Total Rank: 1034
+	Dump: mutant-13.class
+------------------------------------------------
+5.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local t1 is replaced by access to field convergence
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 5
+	Total Rank: 1034
+	Dump: mutant-14.class
+------------------------------------------------
+6.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.Math::abs(D)D is replaced with the used of local t1
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 6
+	Total Rank: 1058
+	Dump: mutant-6.class
+------------------------------------------------
+7.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.math.ode.events.EventState.t0 is replaced by the call to org.apache.commons.math.ode.events.EventState::getConvergence()D
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 8
+	Total Rank: 1087
+	Dump: mutant-9.class
+------------------------------------------------
+8.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.math.ode.events.EventState.t0 is replaced by the call to org.apache.commons.math.ode.events.EventState::getMaxCheckInterval()D
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 8
+	Total Rank: 1087
+	Dump: mutant-8.class
+------------------------------------------------
+9.
+	Mutator: MethodNameMutator
+	Description: replaced call to ceil with a call to exp
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 11
+	Total Rank: 1111
+	Dump: mutant-1.class
+------------------------------------------------
+10.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to toDegrees
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 11
+	Total Rank: 1111
+	Dump: mutant-7.class
+------------------------------------------------
+11.
+	Mutator: MethodNameMutator
+	Description: replaced call to ceil with a call to toDegrees
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 11
+	Total Rank: 1111
+	Dump: mutant-2.class
+------------------------------------------------
+12.
+	Mutator: MathMutator
+	Description: Replaced double subtraction with addition
+	File Name: org/apache/commons/math/ode/events/EventState.java
+	Line Number: 174
+	Rank: 12
+	Total Rank: 1118
+	Dump: mutant-5.class
+------------------------------------------------
+13.
+	Mutator: LocalNameMutator
+	Description: local p1 is replaced by local y1 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 277
+	Rank: 13
+	Total Rank: 1733
+	Dump: mutant-3.class
+------------------------------------------------
+14.
+	Mutator: MathMutator
+	Description: Replaced double multiplication with division
+	File Name: org/apache/commons/math/analysis/solvers/BrentSolver.java
+	Line Number: 277
+	Rank: 14
+	Total Rank: 1752
+	Dump: mutant-4.class
+------------------------------------------------

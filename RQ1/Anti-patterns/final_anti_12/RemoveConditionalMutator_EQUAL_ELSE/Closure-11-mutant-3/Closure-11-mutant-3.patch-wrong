@@ -1,0 +1,104 @@
+--- jd-result/Closure/11/mutant-3/a-TypeCheck.java	2021-07-14 21:36:07.742593188 -0700
++++ jd-result/Closure/11/mutant-3/b-TypeCheck.java	2021-07-14 21:36:09.274593231 -0700
+@@ -693,18 +693,89 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void visitGetProp(NodeTraversal t, Node n, Node parent) {
+-/*1308*/    Node property = n.getLastChild();
+-/*1309*/    Node objNode = n.getFirstChild();
+-/*1310*/    JSType childType = getJSType(objNode);
+-/*1312*/    if (childType.isDict()) {
+-/*1313*/      report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, new String[] { "'.'", "dict" });
+-/*   0*/    } else {
+-/*1314*/      if (n.getJSType() != null && parent.isAssign())
+-/*   0*/        return; 
+-/*1316*/      if (this.validator.expectNotNullOrUndefined(t, n, childType, "No properties on this expression", getNativeType(JSTypeNative.OBJECT_TYPE)))
+-/*1318*/        checkPropertyAccess(childType, property.getString(), t, n); 
+-/*   0*/    } 
+-/*1320*/    ensureTyped(t, n);
++/*   0*/    // Byte code:
++/*   0*/    //   0: aload_2
++/*   0*/    //   1: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   4: astore #4
++/*   0*/    //   6: aload_2
++/*   0*/    //   7: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
++/*   0*/    //   10: astore #5
++/*   0*/    //   12: aload_0
++/*   0*/    //   13: aload #5
++/*   0*/    //   15: invokespecial getJSType : (Lcom/google/javascript/rhino/Node;)Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/    //   18: astore #6
++/*   0*/    //   20: aload #6
++/*   0*/    //   22: invokevirtual isDict : ()Z
++/*   0*/    //   25: ifeq -> 57
++/*   0*/    //   28: aload_0
++/*   0*/    //   29: aload_1
++/*   0*/    //   30: aload #4
++/*   0*/    //   32: getstatic com/google/javascript/jscomp/TypeValidator.ILLEGAL_PROPERTY_ACCESS : Lcom/google/javascript/jscomp/DiagnosticType;
++/*   0*/    //   35: iconst_2
++/*   0*/    //   36: anewarray java/lang/String
++/*   0*/    //   39: dup
++/*   0*/    //   40: iconst_0
++/*   0*/    //   41: ldc_w ''.''
++/*   0*/    //   44: aastore
++/*   0*/    //   45: dup
++/*   0*/    //   46: iconst_1
++/*   0*/    //   47: ldc_w 'dict'
++/*   0*/    //   50: aastore
++/*   0*/    //   51: invokespecial report : (Lcom/google/javascript/jscomp/NodeTraversal;Lcom/google/javascript/rhino/Node;Lcom/google/javascript/jscomp/DiagnosticType;[Ljava/lang/String;)V
++/*   0*/    //   54: goto -> 110
++/*   0*/    //   57: aload_2
++/*   0*/    //   58: invokevirtual getJSType : ()Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/    //   61: pop
++/*   0*/    //   62: goto -> 73
++/*   0*/    //   65: aload_3
++/*   0*/    //   66: invokevirtual isAssign : ()Z
++/*   0*/    //   69: ifeq -> 73
++/*   0*/    //   72: return
++/*   0*/    //   73: aload_0
++/*   0*/    //   74: getfield validator : Lcom/google/javascript/jscomp/TypeValidator;
++/*   0*/    //   77: aload_1
++/*   0*/    //   78: aload_2
++/*   0*/    //   79: aload #6
++/*   0*/    //   81: ldc_w 'No properties on this expression'
++/*   0*/    //   84: aload_0
++/*   0*/    //   85: getstatic com/google/javascript/rhino/jstype/JSTypeNative.OBJECT_TYPE : Lcom/google/javascript/rhino/jstype/JSTypeNative;
++/*   0*/    //   88: invokespecial getNativeType : (Lcom/google/javascript/rhino/jstype/JSTypeNative;)Lcom/google/javascript/rhino/jstype/JSType;
++/*   0*/    //   91: invokevirtual expectNotNullOrUndefined : (Lcom/google/javascript/jscomp/NodeTraversal;Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/jstype/JSType;Ljava/lang/String;Lcom/google/javascript/rhino/jstype/JSType;)Z
++/*   0*/    //   94: ifeq -> 110
++/*   0*/    //   97: aload_0
++/*   0*/    //   98: aload #6
++/*   0*/    //   100: aload #4
++/*   0*/    //   102: invokevirtual getString : ()Ljava/lang/String;
++/*   0*/    //   105: aload_1
++/*   0*/    //   106: aload_2
++/*   0*/    //   107: invokespecial checkPropertyAccess : (Lcom/google/javascript/rhino/jstype/JSType;Ljava/lang/String;Lcom/google/javascript/jscomp/NodeTraversal;Lcom/google/javascript/rhino/Node;)V
++/*   0*/    //   110: aload_0
++/*   0*/    //   111: aload_1
++/*   0*/    //   112: aload_2
++/*   0*/    //   113: invokespecial ensureTyped : (Lcom/google/javascript/jscomp/NodeTraversal;Lcom/google/javascript/rhino/Node;)V
++/*   0*/    //   116: return
++/*   0*/    // Line number table:
++/*   0*/    //   Java source line number -> byte code offset
++/*   0*/    //   #1308	-> 0
++/*   0*/    //   #1309	-> 6
++/*   0*/    //   #1310	-> 12
++/*   0*/    //   #1312	-> 20
++/*   0*/    //   #1313	-> 28
++/*   0*/    //   #1314	-> 57
++/*   0*/    //   #1315	-> 72
++/*   0*/    //   #1316	-> 73
++/*   0*/    //   #1318	-> 97
++/*   0*/    //   #1320	-> 110
++/*   0*/    //   #1321	-> 116
++/*   0*/    // Local variable table:
++/*   0*/    //   start	length	slot	name	descriptor
++/*   0*/    //   0	117	0	this	Lcom/google/javascript/jscomp/TypeCheck;
++/*   0*/    //   0	117	1	t	Lcom/google/javascript/jscomp/NodeTraversal;
++/*   0*/    //   0	117	2	n	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   0	117	3	parent	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   6	111	4	property	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   12	105	5	objNode	Lcom/google/javascript/rhino/Node;
++/*   0*/    //   20	97	6	childType	Lcom/google/javascript/rhino/jstype/JSType;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void checkPropertyAccess(JSType childType, String propName, NodeTraversal t, Node n) {

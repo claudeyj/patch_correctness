@@ -1,0 +1,148 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 18 16:43:08 PDT 2021
+Number of Plausible Fixes: 16
+Total Number of Patches: 1679
+================================================
+1.
+	Mutator: FieldNameMutator
+	Description: replaced access to nullString with an access to recordSeparator
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 828
+	Rank: 1
+	Total Rank: 91
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.csv.CSVFormat.nullString is replaced by the call to org.apache.commons.csv.CSVFormat::getRecordSeparator()Ljava/lang/String;
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 828
+	Rank: 3
+	Total Rank: 120
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.csv.CSVFormat.nullString is replaced by the call to org.apache.commons.csv.CSVFormat::toString()Ljava/lang/String;
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 828
+	Rank: 3
+	Total Rank: 120
+	Dump: mutant-9.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field MYSQL
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 828
+	Rank: 8
+	Total Rank: 136
+	Dump: mutant-7.class
+------------------------------------------------
+5.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field EXCEL
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 828
+	Rank: 8
+	Total Rank: 136
+	Dump: mutant-10.class
+------------------------------------------------
+6.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field TDF
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 828
+	Rank: 8
+	Total Rank: 136
+	Dump: mutant-11.class
+------------------------------------------------
+7.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field DEFAULT
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 828
+	Rank: 8
+	Total Rank: 136
+	Dump: mutant-12.class
+------------------------------------------------
+8.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field RFC4180
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 828
+	Rank: 8
+	Total Rank: 136
+	Dump: mutant-13.class
+------------------------------------------------
+9.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field TDF
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 877
+	Rank: 13
+	Total Rank: 263
+	Dump: mutant-1.class
+------------------------------------------------
+10.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field MYSQL
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 877
+	Rank: 13
+	Total Rank: 263
+	Dump: mutant-2.class
+------------------------------------------------
+11.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field EXCEL
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 877
+	Rank: 13
+	Total Rank: 263
+	Dump: mutant-4.class
+------------------------------------------------
+12.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field RFC4180
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 877
+	Rank: 13
+	Total Rank: 263
+	Dump: mutant-8.class
+------------------------------------------------
+13.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local this is replaced by access to field DEFAULT
+	File Name: org/apache/commons/csv/CSVFormat.java
+	Line Number: 877
+	Rank: 13
+	Total Rank: 263
+	Dump: mutant-14.class
+------------------------------------------------
+14.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to trim()Ljava/lang/String; is guarded returning local hdrMap
+	File Name: org/apache/commons/csv/CSVParser.java
+	Line Number: 384
+	Rank: 16
+	Total Rank: 365
+	Dump: mutant-6.class
+------------------------------------------------
+15.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to trim()Ljava/lang/String; is guarded returning field headerMap
+	File Name: org/apache/commons/csv/CSVParser.java
+	Line Number: 384
+	Rank: 16
+	Total Rank: 365
+	Dump: mutant-15.class
+------------------------------------------------
+16.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to trim()Ljava/lang/String; is guarded returning default value null
+	File Name: org/apache/commons/csv/CSVParser.java
+	Line Number: 384
+	Rank: 16
+	Total Rank: 365
+	Dump: mutant-16.class
+------------------------------------------------

@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/58/mutant-0/buggy-NumberUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/58/mutant-0/patched-NumberUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/58/mutant-0/buggy-NumberUtils.java	2021-08-22 00:18:38.654190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/58/mutant-0/patched-NumberUtils.java	2021-08-22 00:18:38.654190185 -0700
+@@ -451,8 +451,7 @@
+                 case 'L' :
+                     if (dec == null
+                         && exp == null
+-                        && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++                        && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {

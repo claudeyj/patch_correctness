@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/24/mutant-2/ori-GrayPaintScale.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/24/mutant-2/patched-GrayPaintScale.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/24/mutant-2/ori-GrayPaintScale.java	2021-08-23 09:23:48.312982476 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/24/mutant-2/patched-GrayPaintScale.java	2021-08-23 09:23:48.312982476 +0800
+@@ -122,7 +122,7 @@
+      */
+     public Paint getPaint(double value) {
+         double v = Math.max(value, this.lowerBound);
+-        v = Math.min(v, this.upperBound);
++    value = Math.min(v, this.upperBound);
+         int g = (int) ((value - this.lowerBound) / (this.upperBound 
+                 - this.lowerBound) * 255.0);
+         return new Color(g, g, g);

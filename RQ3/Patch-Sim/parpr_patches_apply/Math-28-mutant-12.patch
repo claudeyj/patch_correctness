@@ -1,0 +1,11 @@
+--- Math28b/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2017-03-20 23:48:41.000000000 +0800
++++ Math28_Math-28-mutant-12.patchb/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2017-03-20 23:48:41.000000000 +0800
+@@ -141,7 +141,7 @@
+                     int i = tableau.getNumObjectiveFunctions();
+                     for (; i < tableau.getWidth() - 1 && minRow != row; i++) {
+                         if (row == tableau.getBasicRow(i)) {
+-                            if (i < minIndex) {
++                            if (true) {
+                                 minIndex = i;
+                                 minRow = row;
+                             }

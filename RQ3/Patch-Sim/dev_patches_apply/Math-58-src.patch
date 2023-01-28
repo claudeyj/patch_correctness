@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/58/mutant-0/buggy-GaussianFitter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/58/mutant-0/patched-GaussianFitter.java
+--- Math58b/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java
++++ Math58b_Math-58-src.patchb/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java
+@@ -118,7 +118,7 @@
+      */
+     public double[] fit() {
+         final double[] guess = (new ParameterGuesser(getObservations())).guess();
+-        return fit(new Gaussian.Parametric(), guess);
++        return fit(guess);
+     }
+ 
+     /**

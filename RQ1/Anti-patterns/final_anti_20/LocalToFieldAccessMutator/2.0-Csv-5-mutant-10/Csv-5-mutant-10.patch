@@ -1,0 +1,10 @@
+--- jd-result-2.0/Csv/5/mutant-10/a-CSVFormat.java	2021-08-09 03:51:23.665507717 -0700
++++ jd-result-2.0/Csv/5/mutant-10/b-CSVFormat.java	2021-08-09 03:51:25.125507759 -0700
+@@ -352,6 +352,6 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public CSVFormat withSkipHeaderRecord(boolean skipHeaderRecord) {
+-/* 881*/    return new CSVFormat(this.delimiter, this.quoteChar, this.quotePolicy, this.commentStart, this.escape, this.ignoreSurroundingSpaces, this.ignoreEmptyLines, this.recordSeparator, this.nullString, this.header, skipHeaderRecord);
++/* 881*/    return new CSVFormat(this.delimiter, this.quoteChar, this.quotePolicy, this.commentStart, this.escape, this.ignoreSurroundingSpaces, this.ignoreEmptyLines, DEFAULT.recordSeparator, this.nullString, this.header, skipHeaderRecord);
+ /*   0*/  }
+ /*   0*/}

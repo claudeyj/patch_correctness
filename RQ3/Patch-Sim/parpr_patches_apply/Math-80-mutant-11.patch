@@ -1,0 +1,10 @@
+--- Math80b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:03:24.000000000 +0800
++++ Math80_Math-80-mutant-11.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:03:24.000000000 +0800
+@@ -837,7 +837,6 @@
+         }
+ 
+         // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);

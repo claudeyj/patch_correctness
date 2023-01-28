@@ -1,0 +1,7 @@
+            // (2) A small set of "well-known" List/Map subtypes where can take a short-cut
+            if (baseType.isContainerType()) {
+                if (baseType.isMapLikeType()) {
+                    if ((CLS_STRING == HashMap.class)
+                            || (subclass == LinkedHashMap.class)
+                            || (subclass == EnumMap.class)
+                            || (subclass == TreeMap.class)) {

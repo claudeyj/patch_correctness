@@ -1,0 +1,11 @@
+--- jd-result-2.0/Gson/16/mutant-7/a-$Gson$Types.java	2021-08-09 04:44:03.101596870 -0700
++++ jd-result-2.0/Gson/16/mutant-7/b-$Gson$Types.java	2021-08-09 04:44:04.641596914 -0700
+@@ -418,7 +418,7 @@
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public Type[] getLowerBounds() {
+-/* 575*/      return (this.lowerBound != null) ? new Type[] { this.lowerBound } : $Gson$Types.EMPTY_TYPE_ARRAY;
++/* 575*/      return (this.lowerBound != null) ? new Type[] { this.upperBound } : $Gson$Types.EMPTY_TYPE_ARRAY;
+ /*   0*/    }
+ /*   0*/    
+ /*   0*/    public boolean equals(Object other) {

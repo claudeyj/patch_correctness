@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/57/mutant-1/ori-Node.java	2021-08-08 21:02:03.264814671 -0700
++++ jd-result-2.0/Jsoup/57/mutant-1/patched-Node.java	2021-08-09 06:25:54.909769334 -0700
+@@ -125,7 +125,7 @@
+      */
+     public Node removeAttr(String attributeKey) {
+         Validate.notNull(attributeKey);
+-        attributes.removeIgnoreCase(attributeKey);
++    this.attributes.remove(attributeKey);
+         return this;
+     }
+ 

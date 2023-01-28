@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/22/mutant-8/a-JsonFactory.java	2021-08-09 04:09:24.105538205 -0700
++++ jd-result-2.0/JacksonCore/22/mutant-8/b-JsonFactory.java	2021-08-09 04:09:25.621538248 -0700
+@@ -108,7 +108,7 @@
+ /* 267*/  protected SerializableString _rootValueSeparator = DEFAULT_ROOT_VALUE_SEPARATOR;
+ /*   0*/  
+ /*   0*/  public JsonFactory() {
+-/* 285*/    this(null);
++/* 285*/    this(null, objectCodec);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public JsonFactory(ObjectCodec oc) {

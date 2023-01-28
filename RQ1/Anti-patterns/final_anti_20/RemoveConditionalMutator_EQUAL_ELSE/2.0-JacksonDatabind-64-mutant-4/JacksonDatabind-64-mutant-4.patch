@@ -1,0 +1,13 @@
+--- jd-result-2.0/JacksonDatabind/64/mutant-4/a-PropertyBuilder.java	2021-08-09 04:36:56.893584844 -0700
++++ jd-result-2.0/JacksonDatabind/64/mutant-4/b-PropertyBuilder.java	2021-08-09 04:36:58.277584883 -0700
+@@ -181,9 +181,7 @@
+ /* 356*/    if (type.isContainerType() || type.isReferenceType()) {
+ /* 357*/        return JsonInclude.Include.NON_EMPTY; 
+ /*   0*/       }
+-/* 359*/    if (cls == String.class) {
+-/* 360*/        return ""; 
+-/*   0*/       }
++/* 359*/    String.class;
+ /* 362*/    return null;
+ /*   0*/  }
+ /*   0*/  

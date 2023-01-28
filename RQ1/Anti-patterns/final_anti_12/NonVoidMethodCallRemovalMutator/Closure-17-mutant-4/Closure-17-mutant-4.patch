@@ -1,0 +1,12 @@
+--- jd-result/Closure/17/mutant-4/a-TypedScopeCreator.java	2021-07-14 21:38:16.786596829 -0700
++++ jd-result/Closure/17/mutant-4/b-TypedScopeCreator.java	2021-07-14 21:38:18.378596874 -0700
+@@ -336,7 +336,8 @@
+ /*   0*/          break;
+ /*   0*/        case 64:
+ /* 585*/          info = n.getJSDocInfo();
+-/* 586*/          if (info != null && info.getLendsName() != null) {
++/* 586*/          if (info != null)
++/* 586*/            if (this.sourceName != null) {
+ /* 588*/            if (this.lentObjectLiterals == null)
+ /* 589*/              this.lentObjectLiterals = Lists.newArrayList(); 
+ /* 591*/            this.lentObjectLiterals.add(n);

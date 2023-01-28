@@ -1,0 +1,861 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.example:test:jar:1.0.0
+[WARNING] 'dependencies.dependency.systemPath' for objenesis:objenesis:jar should not point at files within the project directory, ${project.basedir}/lib/run/com.springsource.org.objenesis-1.0.0.jar will be unresolvable by dependent projects @ line 40, column 17
+[WARNING] 'dependencies.dependency.systemPath' for jarjar:jarjar:jar should not point at files within the project directory, ${project.basedir}/lib/build/jarjar-1.0.jar will be unresolvable by dependent projects @ line 65, column 17
+[WARNING] 'dependencies.dependency.systemPath' for cglib-asm:cglib-asm:jar should not point at files within the project directory, ${project.basedir}/lib/repackaged/cglib-and-asm-1.0.jar will be unresolvable by dependent projects @ line 84, column 17
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------------------< org.example:test >--------------------------
+[INFO] Building test 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ test ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Mockito/38/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ test ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 169 source files to /home/junyang/PR/SubjectPrograms/Mockito/38/target/classes
+[INFO] /home/junyang/PR/SubjectPrograms/Mockito/38/src/org/mockito/internal/runners/JUnit44RunnerImpl.java: Some input files use or override a deprecated API.
+[INFO] /home/junyang/PR/SubjectPrograms/Mockito/38/src/org/mockito/internal/runners/JUnit44RunnerImpl.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ test ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Mockito/38/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ test ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.concurrentmockito.ThreadVerifiesContinuoslyInteractingMockTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.359 s - in org.concurrentmockito.ThreadVerifiesContinuoslyInteractingMockTest
+[INFO] Running org.concurrentmockito.ThreadsRunAllTestsHalfManualTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.concurrentmockito.ThreadsRunAllTestsHalfManualTest
+[INFO] Running org.concurrentmockito.ThreadsShareAMockTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.212 s - in org.concurrentmockito.ThreadsShareAMockTest
+[INFO] Running org.concurrentmockito.ThreadsShareGenerouslyStubbedMockTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.511 s - in org.concurrentmockito.ThreadsShareGenerouslyStubbedMockTest
+[INFO] Running org.concurrentmockito.ThreadsStubSharedMockTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in org.concurrentmockito.ThreadsStubSharedMockTest
+[INFO] Running org.concurrentmockito.VerificationInOrderFromMultipleThreadsTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.019 s <<< FAILURE! - in org.concurrentmockito.VerificationInOrderFromMultipleThreadsTest
+[ERROR] shouldVerifyInOrderWhenMultipleThreadsInteractWithMock(org.concurrentmockito.VerificationInOrderFromMultipleThreadsTest)  Time elapsed: 0.018 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.concurrentmockito.VerificationInOrderFromMultipleThreadsTest.shouldVerifyInOrderWhenMultipleThreadsInteractWithMock(VerificationInOrderFromMultipleThreadsTest.java:35)
+
+[INFO] Running org.mockito.MockitoTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.mockito.MockitoTest
+[INFO] Running org.mockito.exceptions.PluralizerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.exceptions.PluralizerTest
+[INFO] Running org.mockito.exceptions.ReporterTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockito.exceptions.ReporterTest
+[INFO] Running org.mockito.exceptions.base.MockitoAssertionErrorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.exceptions.base.MockitoAssertionErrorTest
+[INFO] Running org.mockito.exceptions.base.MockitoExceptionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.exceptions.base.MockitoExceptionTest
+[INFO] Running org.mockito.internal.AllInvocationsFinderTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.mockito.internal.AllInvocationsFinderTest
+[ERROR] shouldGetAllInvocationsInOrder(org.mockito.internal.AllInvocationsFinderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockito.internal.AllInvocationsFinderTest.shouldGetAllInvocationsInOrder(AllInvocationsFinderTest.java:38)
+
+[INFO] Running org.mockito.internal.InvalidStateDetectionTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.mockito.internal.InvalidStateDetectionTest
+[INFO] Running org.mockito.internal.MockHandlerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.MockHandlerTest
+[INFO] Running org.mockito.internal.configuration.ReadingConfigurationFromClasspathTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.configuration.ReadingConfigurationFromClasspathTest
+[INFO] Running org.mockito.internal.creation.MockSettingsImplTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.mockito.internal.creation.MockSettingsImplTest
+[INFO] Running org.mockito.internal.creation.cglib.CGLIBHackerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.mockito.internal.creation.cglib.CGLIBHackerTest
+[INFO] Running org.mockito.internal.creation.jmock.ClassImposterizerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.mockito.internal.creation.jmock.ClassImposterizerTest
+[INFO] Running org.mockito.internal.debugging.WarningsPrinterTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockito.internal.debugging.WarningsPrinterTest
+[INFO] Running org.mockito.internal.exceptions.base.ConditionalStackTraceFilterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.exceptions.base.ConditionalStackTraceFilterTest
+[INFO] Running org.mockito.internal.exceptions.base.StackTraceFilterTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.exceptions.base.StackTraceFilterTest
+[INFO] Running org.mockito.internal.invocation.InvocationMatcherTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.mockito.internal.invocation.InvocationMatcherTest
+[INFO] Running org.mockito.internal.invocation.InvocationTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.mockito.internal.invocation.InvocationTest
+[INFO] Running org.mockito.internal.invocation.InvocationsFinderTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.mockito.internal.invocation.InvocationsFinderTest
+[INFO] Running org.mockito.internal.matchers.ComparableMatchersTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.matchers.ComparableMatchersTest
+[INFO] Running org.mockito.internal.matchers.EqualsTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockito.internal.matchers.EqualsTest
+[INFO] Running org.mockito.internal.matchers.LocalizedMatcherTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.matchers.LocalizedMatcherTest
+[INFO] Running org.mockito.internal.matchers.MatchersPrinterTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.matchers.MatchersPrinterTest
+[INFO] Running org.mockito.internal.matchers.MatchersToStringTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockito.internal.matchers.MatchersToStringTest
+[INFO] Running org.mockito.internal.matchers.apachecommons.EqualsBuilderTest
+[INFO] Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.mockito.internal.matchers.apachecommons.EqualsBuilderTest
+[INFO] Running org.mockito.internal.progress.MockingProgressImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockito.internal.progress.MockingProgressImplTest
+[INFO] Running org.mockito.internal.progress.TimesTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockito.internal.progress.TimesTest
+[INFO] Running org.mockito.internal.runners.CollectingDebugDataTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.runners.CollectingDebugDataTest
+[INFO] Running org.mockito.internal.runners.RunnerFactoryTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.runners.RunnerFactoryTest
+[INFO] Running org.mockito.internal.runners.util.RunnerProviderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockito.internal.runners.util.RunnerProviderTest
+[INFO] Running org.mockito.internal.stubbing.MockitoStubberTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.stubbing.MockitoStubberTest
+[INFO] Running org.mockito.internal.stubbing.answers.AnswersValidatorTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.mockito.internal.stubbing.answers.AnswersValidatorTest
+[INFO] Running org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest
+[INFO] Running org.mockito.internal.stubbing.defaultanswers.ReturnsMocksTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockito.internal.stubbing.defaultanswers.ReturnsMocksTest
+[INFO] Running org.mockito.internal.stubbing.defaultanswers.ReturnsMoreEmptyValuesTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockito.internal.stubbing.defaultanswers.ReturnsMoreEmptyValuesTest
+[INFO] Running org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNullsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNullsTest
+[INFO] Running org.mockito.internal.util.CreationValidatorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockito.internal.util.CreationValidatorTest
+[INFO] Running org.mockito.internal.util.DecamelizerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockito.internal.util.DecamelizerTest
+[INFO] Running org.mockito.internal.util.ListUtilTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockito.internal.util.ListUtilTest
+[INFO] Running org.mockito.internal.util.MockUtilTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockito.internal.util.MockUtilTest
+[INFO] Running org.mockito.internal.util.copy.LenientCopyToolTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.mockito.internal.util.copy.LenientCopyToolTest
+[INFO] Running org.mockito.internal.verification.RegisteredInvocationsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.verification.RegisteredInvocationsTest
+[INFO] Running org.mockito.internal.verification.SmartPrinterTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.verification.SmartPrinterTest
+[INFO] Running org.mockito.internal.verification.argumentmatching.ArgumentMatchingToolTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.verification.argumentmatching.ArgumentMatchingToolTest
+[INFO] Running org.mockito.internal.verification.checkers.MissingInvocationCheckerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.verification.checkers.MissingInvocationCheckerTest
+[INFO] Running org.mockito.internal.verification.checkers.MissingInvocationInOrderCheckerTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.verification.checkers.MissingInvocationInOrderCheckerTest
+[INFO] Running org.mockito.internal.verification.checkers.NumberOfInvocationsCheckerTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.verification.checkers.NumberOfInvocationsCheckerTest
+[INFO] Running org.mockito.internal.verification.checkers.NumberOfInvocationsInOrderCheckerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.internal.verification.checkers.NumberOfInvocationsInOrderCheckerTest
+[INFO] Running org.mockito.runners.ConsoleSpammingMockitoJUnitRunnerTest
+
+[Mockito] Warning - this method was not stubbed:
+mock.simpleMethod(456);
+-> at org.mockito.runners.ConsoleSpammingMockitoJUnitRunnerTest.callUnstubbedMethodThatQualifiesForWarning(ConsoleSpammingMockitoJUnitRunnerTest.java:174)
+
+
+[Mockito] Warning - this stub was not used:
+mock.simpleMethod(123);
+-> at org.mockito.runners.ConsoleSpammingMockitoJUnitRunnerTest.unusedStubbingThatQualifiesForWarning(ConsoleSpammingMockitoJUnitRunnerTest.java:170)
+
+
+[Mockito] Warning - stubbed method called with different arguments.
+Stubbed this way:
+mock.simpleMethod(789);
+-> at org.mockito.runners.ConsoleSpammingMockitoJUnitRunnerTest.someStubbing(ConsoleSpammingMockitoJUnitRunnerTest.java:178)
+
+But called with different arguments:
+mock.simpleMethod(10);
+-> at org.mockito.runners.ConsoleSpammingMockitoJUnitRunnerTest.callStubbedMethodWithDifferentArgs(ConsoleSpammingMockitoJUnitRunnerTest.java:182)
+
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.mockito.runners.ConsoleSpammingMockitoJUnitRunnerTest
+[INFO] Running org.mockito.runners.RunnersValidateFrameworkUsageTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockito.runners.RunnersValidateFrameworkUsageTest
+[INFO] Running org.mockitousage.PlaygroundTest
+[WARNING] Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.003 s - in org.mockitousage.PlaygroundTest
+[INFO] Running org.mockitousage.ThreadReuseTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in org.mockitousage.ThreadReuseTest
+[INFO] Running org.mockitousage.basicapi.AnnotationsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.mockitousage.basicapi.AnnotationsTest
+[INFO] Running org.mockitousage.basicapi.MockingMultipleInterfacesTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.mockitousage.basicapi.MockingMultipleInterfacesTest
+[INFO] Running org.mockitousage.basicapi.MocksCreationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.mockitousage.basicapi.MocksCreationTest
+[INFO] Running org.mockitousage.basicapi.ReplacingObjectMethodsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.mockitousage.basicapi.ReplacingObjectMethodsTest
+[INFO] Running org.mockitousage.basicapi.ResetTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.mockitousage.basicapi.ResetTest
+[INFO] Running org.mockitousage.basicapi.UsingVarargsTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.mockitousage.basicapi.UsingVarargsTest
+[INFO] Running org.mockitousage.bugs.ActualInvocationHasNullArgumentNPEBugTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.bugs.ActualInvocationHasNullArgumentNPEBugTest
+[INFO] Running org.mockitousage.bugs.NPEWhenMockingThrowablesTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.mockitousage.bugs.NPEWhenMockingThrowablesTest
+[INFO] Running org.mockitousage.bugs.NPEWithIsAClassMatcherTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in org.mockitousage.bugs.NPEWithIsAClassMatcherTest
+[INFO] Running org.mockitousage.bugs.VarargsAndAnyObjectPicksUpExtraInvocationsTest
+[WARNING] Tests run: 2, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in org.mockitousage.bugs.VarargsAndAnyObjectPicksUpExtraInvocationsTest
+[INFO] Running org.mockitousage.bugs.VarargsNotPlayingWithAnyObjectTest
+[WARNING] Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0 s - in org.mockitousage.bugs.VarargsNotPlayingWithAnyObjectTest
+[INFO] Running org.mockitousage.configuration.CustomizedAnnotationForSmartMockTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.configuration.CustomizedAnnotationForSmartMockTest
+[INFO] Running org.mockitousage.customization.BDDMockitoTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.mockitousage.customization.BDDMockitoTest
+[INFO] Running org.mockitousage.examples.use.ExampleTest
+[ERROR] Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.013 s <<< FAILURE! - in org.mockitousage.examples.use.ExampleTest
+[ERROR] shouldPersistRecalculatedArticle(org.mockitousage.examples.use.ExampleTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.examples.use.ExampleTest.shouldPersistRecalculatedArticle(ExampleTest.java:94)
+
+[INFO] Running org.mockitousage.internal.debugging.LocationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.internal.debugging.LocationTest
+[INFO] Running org.mockitousage.internal.invocation.realmethod.FilteredCGLIBProxyRealMethodTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.internal.invocation.realmethod.FilteredCGLIBProxyRealMethodTest
+[INFO] Running org.mockitousage.junitrunner.JUnit44RunnerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.junitrunner.JUnit44RunnerTest
+[INFO] Running org.mockitousage.junitrunner.JUnit45RunnerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.junitrunner.JUnit45RunnerTest
+[INFO] Running org.mockitousage.junitrunner.ModellingVerboseMockitoTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in org.mockitousage.junitrunner.ModellingVerboseMockitoTest
+[INFO] Running org.mockitousage.matchers.AnyXMatchersAcceptNullsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.matchers.AnyXMatchersAcceptNullsTest
+[INFO] Running org.mockitousage.matchers.ArgumentMatchingWithFancyAssertionsTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in org.mockitousage.matchers.ArgumentMatchingWithFancyAssertionsTest
+[INFO] Running org.mockitousage.matchers.AssertingMatchersTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in org.mockitousage.matchers.AssertingMatchersTest
+[INFO] Running org.mockitousage.matchers.CapturingArgumentsTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.matchers.CapturingArgumentsTest
+[INFO] Running org.mockitousage.matchers.CustomMatcherDoesYieldCCETest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.matchers.CustomMatcherDoesYieldCCETest
+[INFO] Running org.mockitousage.matchers.CustomMatchersTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.matchers.CustomMatchersTest
+[INFO] Running org.mockitousage.matchers.GenericMatchersTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.matchers.GenericMatchersTest
+[INFO] Running org.mockitousage.matchers.HamcrestMatchersTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.matchers.HamcrestMatchersTest
+[INFO] Running org.mockitousage.matchers.InvalidUseOfMatchersTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.matchers.InvalidUseOfMatchersTest
+[INFO] Running org.mockitousage.matchers.MatchersMixedWithRawArgumentsTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in org.mockitousage.matchers.MatchersMixedWithRawArgumentsTest
+[INFO] Running org.mockitousage.matchers.MatchersTest
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.mockitousage.matchers.MatchersTest
+[INFO] Running org.mockitousage.matchers.MoreMatchersTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.matchers.MoreMatchersTest
+[INFO] Running org.mockitousage.matchers.NewMatchersTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.matchers.NewMatchersTest
+[INFO] Running org.mockitousage.matchers.ReflectionMatchersTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.mockitousage.matchers.ReflectionMatchersTest
+[INFO] Running org.mockitousage.matchers.VerificationAndStubbingUsingMatchersTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.matchers.VerificationAndStubbingUsingMatchersTest
+[INFO] Running org.mockitousage.misuse.CleaningUpPotentialStubbingTest
+[ERROR] Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.mockitousage.misuse.CleaningUpPotentialStubbingTest
+[ERROR] shouldResetOngoingStubbingOnInOrder(org.mockitousage.misuse.CleaningUpPotentialStubbingTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.misuse.CleaningUpPotentialStubbingTest.shouldResetOngoingStubbingOnInOrder(CleaningUpPotentialStubbingTest.java:41)
+
+[INFO] Running org.mockitousage.misuse.DescriptiveMessagesOnMisuseTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.misuse.DescriptiveMessagesOnMisuseTest
+[INFO] Running org.mockitousage.misuse.DetectingFinalMethodsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.misuse.DetectingFinalMethodsTest
+[INFO] Running org.mockitousage.misuse.DetectingMisusedMatchersTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.misuse.DetectingMisusedMatchersTest
+[INFO] Running org.mockitousage.misuse.ExplicitFrameworkValidationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.misuse.ExplicitFrameworkValidationTest
+[INFO] Running org.mockitousage.misuse.InvalidUsageTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.mockitousage.misuse.InvalidUsageTest
+[INFO] Running org.mockitousage.misuse.RestrictedObjectMethodsTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in org.mockitousage.misuse.RestrictedObjectMethodsTest
+[INFO] Running org.mockitousage.packageprotected.MockingPackageProtectedTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.mockitousage.packageprotected.MockingPackageProtectedTest
+[INFO] Running org.mockitousage.performance.LoadsOfMocksTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in org.mockitousage.performance.LoadsOfMocksTest
+[INFO] Running org.mockitousage.puzzlers.BridgeMethodPuzzleTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.puzzlers.BridgeMethodPuzzleTest
+[INFO] Running org.mockitousage.puzzlers.OverloadingPuzzleTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.puzzlers.OverloadingPuzzleTest
+[INFO] Running org.mockitousage.spies.PartialMockingWithSpiesTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.mockitousage.spies.PartialMockingWithSpiesTest
+[INFO] Running org.mockitousage.spies.SpyingOnRealObjectsTest
+[ERROR] Tests run: 13, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.034 s <<< FAILURE! - in org.mockitousage.spies.SpyingOnRealObjectsTest
+[ERROR] shouldVerifyInOrder(org.mockitousage.spies.SpyingOnRealObjectsTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.spies.SpyingOnRealObjectsTest.shouldVerifyInOrder(SpyingOnRealObjectsTest.java:101)
+
+[ERROR] shouldVerifyInOrderAndFail(org.mockitousage.spies.SpyingOnRealObjectsTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.spies.SpyingOnRealObjectsTest.shouldVerifyInOrderAndFail(SpyingOnRealObjectsTest.java:113)
+
+[INFO] Running org.mockitousage.spies.StubbingSpiesDoesNotYieldNPETest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.spies.StubbingSpiesDoesNotYieldNPETest
+[INFO] Running org.mockitousage.stacktrace.ClickableStackTracesTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.stacktrace.ClickableStackTracesTest
+[INFO] Running org.mockitousage.stacktrace.ClickableStackTracesWhenFrameworkMisusedTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.stacktrace.ClickableStackTracesWhenFrameworkMisusedTest
+[INFO] Running org.mockitousage.stacktrace.ModellingDescriptiveMessagesTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in org.mockitousage.stacktrace.ModellingDescriptiveMessagesTest
+[INFO] Running org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest
+[ERROR] Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest
+[ERROR] shouldPointToThirdInteractionBecauseAtLeastOnceUsed(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest.shouldPointToThirdInteractionBecauseAtLeastOnceUsed(PointingStackTraceToActualInvocationChunkInOrderTest.java:69)
+
+[ERROR] shouldPointToThirdChunkWhenTooLittleActualInvocations(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest.shouldPointToThirdChunkWhenTooLittleActualInvocations(PointingStackTraceToActualInvocationChunkInOrderTest.java:81)
+
+[ERROR] shouldPointStackTraceToPreviousInvocation(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest.shouldPointStackTraceToPreviousInvocation(PointingStackTraceToActualInvocationChunkInOrderTest.java:56)
+
+[ERROR] shouldPointToFourthChunkBecauseTooManyActualInvocations(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationChunkInOrderTest.shouldPointToFourthChunkBecauseTooManyActualInvocations(PointingStackTraceToActualInvocationChunkInOrderTest.java:95)
+
+[INFO] Running org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest
+[ERROR] Tests run: 6, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest
+[ERROR] shouldPointToFirstMethodBecauseOfTooManyActualInvocations(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest.shouldPointToFirstMethodBecauseOfTooManyActualInvocations(PointingStackTraceToActualInvocationInOrderTest.java:92)
+
+[ERROR] shouldPointToSecondMethod(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest.shouldPointToSecondMethod(PointingStackTraceToActualInvocationInOrderTest.java:78)
+
+[ERROR] shouldPointToFourthMethodBecauseOfTooLittleActualInvocations(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest.shouldPointToFourthMethodBecauseOfTooLittleActualInvocations(PointingStackTraceToActualInvocationInOrderTest.java:113)
+
+[ERROR] shouldPointStackTraceToPreviousVerified(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest.shouldPointStackTraceToPreviousVerified(PointingStackTraceToActualInvocationInOrderTest.java:53)
+
+[ERROR] shouldPointToThirdMethod(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest.shouldPointToThirdMethod(PointingStackTraceToActualInvocationInOrderTest.java:66)
+
+[ERROR] shouldPointToSecondMethodBecauseOfTooManyActualInvocations(org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.PointingStackTraceToActualInvocationInOrderTest.shouldPointToSecondMethodBecauseOfTooManyActualInvocations(PointingStackTraceToActualInvocationInOrderTest.java:101)
+
+[INFO] Running org.mockitousage.stacktrace.PointingStackTraceToActualInvocationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.stacktrace.PointingStackTraceToActualInvocationTest
+[INFO] Running org.mockitousage.stacktrace.StackTraceFilteringTest
+[ERROR] Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.mockitousage.stacktrace.StackTraceFilteringTest
+[ERROR] shouldFilterStacktraceWhenVerifyingInOrder(org.mockitousage.stacktrace.StackTraceFilteringTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.stacktrace.StackTraceFilteringTest.shouldFilterStacktraceWhenVerifyingInOrder(StackTraceFilteringTest.java:85)
+
+[INFO] Running org.mockitousage.stubbing.BasicStubbingTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.stubbing.BasicStubbingTest
+[INFO] Running org.mockitousage.stubbing.CallingRealMethodTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.mockitousage.stubbing.CallingRealMethodTest
+[INFO] Running org.mockitousage.stubbing.DeprecatedStubbingTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.stubbing.DeprecatedStubbingTest
+[INFO] Running org.mockitousage.stubbing.ReturningDefaultValuesTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.mockitousage.stubbing.ReturningDefaultValuesTest
+[INFO] Running org.mockitousage.stubbing.ReturningMockValuesTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.stubbing.ReturningMockValuesTest
+[INFO] Running org.mockitousage.stubbing.SmartNullsStubbingTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.mockitousage.stubbing.SmartNullsStubbingTest
+[INFO] Running org.mockitousage.stubbing.StubbingConsecutiveAnswersTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.mockitousage.stubbing.StubbingConsecutiveAnswersTest
+[INFO] Running org.mockitousage.stubbing.StubbingUsingDoReturnTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.stubbing.StubbingUsingDoReturnTest
+[INFO] Running org.mockitousage.stubbing.StubbingWithCustomAnswerTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.stubbing.StubbingWithCustomAnswerTest
+[INFO] Running org.mockitousage.stubbing.StubbingWithThrowablesTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.mockitousage.stubbing.StubbingWithThrowablesTest
+[INFO] Running org.mockitousage.verification.AtMostXVerificationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.verification.AtMostXVerificationTest
+[INFO] Running org.mockitousage.verification.BasicVerificationInOrderTest
+[ERROR] Tests run: 23, Failures: 17, Errors: 4, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in org.mockitousage.verification.BasicVerificationInOrderTest
+[ERROR] shouldFailWhenFirstMockCalledTwice(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailWhenFirstMockCalledTwice(BasicVerificationInOrderTest.java:77)
+
+[ERROR] shouldFailOnSecondMethodBecauseTwoInvocationsWantedAgain(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnSecondMethodBecauseTwoInvocationsWantedAgain(BasicVerificationInOrderTest.java:118)
+
+[ERROR] shouldFailOnFirstMethodBecauseDifferentArgsWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.mockito.exceptions.verification.WantedButNotInvoked> but was<java.lang.AssertionError>
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnFirstMethodBecauseDifferentArgsWanted(BasicVerificationInOrderTest.java:153)
+
+[ERROR] shouldFailOnFirstMethodBecauseOneInvocationWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.mockito.exceptions.verification.VerificationInOrderFailure> but was<java.lang.AssertionError>
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnFirstMethodBecauseOneInvocationWanted(BasicVerificationInOrderTest.java:99)
+
+[ERROR] shouldFailOnFirstMethodBecauseDifferentMethodWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.mockito.exceptions.verification.WantedButNotInvoked> but was<java.lang.AssertionError>
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnFirstMethodBecauseDifferentMethodWanted(BasicVerificationInOrderTest.java:158)
+
+[ERROR] shouldFailWhenLastMockCalledTwice(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailWhenLastMockCalledTwice(BasicVerificationInOrderTest.java:86)
+
+[ERROR] shouldFailOnSecondMethodBecauseDifferentMethodWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnSecondMethodBecauseDifferentMethodWanted(BasicVerificationInOrderTest.java:172)
+
+[ERROR] shouldFailOnSecondMethodBecauseFourInvocationsWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnSecondMethodBecauseFourInvocationsWanted(BasicVerificationInOrderTest.java:109)
+
+[ERROR] shouldFailOnFirstMethodBecauseOneInvocationWantedAgain(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.mockito.exceptions.verification.VerificationInOrderFailure> but was<java.lang.AssertionError>
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnFirstMethodBecauseOneInvocationWantedAgain(BasicVerificationInOrderTest.java:104)
+
+[ERROR] shouldFailWhenMiddleMethodVerifiedFirst(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailWhenMiddleMethodVerifiedFirst(BasicVerificationInOrderTest.java:216)
+
+[ERROR] shouldVerifyInOrderWhenExpectingSomeInvocationsToBeCalledZeroTimes(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldVerifyInOrderWhenExpectingSomeInvocationsToBeCalledZeroTimes(BasicVerificationInOrderTest.java:64)
+
+[ERROR] shouldFailOnVerifyNoMoreInteractions(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnVerifyNoMoreInteractions(BasicVerificationInOrderTest.java:234)
+
+[ERROR] shouldFailOnSecondMethodBecauseDifferentArgsWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnSecondMethodBecauseDifferentArgsWanted(BasicVerificationInOrderTest.java:163)
+
+[ERROR] shouldFailOnLastMethodBecauseDifferentArgsWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnLastMethodBecauseDifferentArgsWanted(BasicVerificationInOrderTest.java:181)
+
+[ERROR] shouldVerifyInOrder(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldVerifyInOrder(BasicVerificationInOrderTest.java:44)
+
+[ERROR] shouldFailWhenMiddleMethodVerifiedFirstInAtLeastOnceMode(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailWhenMiddleMethodVerifiedFirstInAtLeastOnceMode(BasicVerificationInOrderTest.java:225)
+
+[ERROR] shouldFailOnLastMethodBecauseOneInvocationWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnLastMethodBecauseOneInvocationWanted(BasicVerificationInOrderTest.java:127)
+
+[ERROR] shouldFailOnLastMethodBecauseDifferentMethodWanted(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnLastMethodBecauseDifferentMethodWanted(BasicVerificationInOrderTest.java:193)
+
+[ERROR] shouldFailWhenLastMethodVerifiedFirst(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailWhenLastMethodVerifiedFirst(BasicVerificationInOrderTest.java:207)
+
+[ERROR] shouldFailOnLastMethodBecauseOneInvocationWantedAgain(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldFailOnLastMethodBecauseOneInvocationWantedAgain(BasicVerificationInOrderTest.java:139)
+
+[ERROR] shouldVerifyInOrderUsingAtLeastOnce(org.mockitousage.verification.BasicVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.BasicVerificationInOrderTest.shouldVerifyInOrderUsingAtLeastOnce(BasicVerificationInOrderTest.java:54)
+
+[INFO] Running org.mockitousage.verification.BasicVerificationTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.verification.BasicVerificationTest
+[INFO] Running org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest
+[ERROR] Tests run: 6, Failures: 5, Errors: 0, Skipped: 1, Time elapsed: 0.001 s <<< FAILURE! - in org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest
+[ERROR] shouldPrintTooLittleInvocations(org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintTooLittleInvocations(DescriptiveMessagesOnVerificationInOrderErrorsTest.java:168)
+
+[ERROR] shouldPrintVerificationInOrderErrorAndShowBothWantedAndPrevious(org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintVerificationInOrderErrorAndShowBothWantedAndPrevious(DescriptiveMessagesOnVerificationInOrderErrorsTest.java:45)
+
+[ERROR] shouldPrintTooManyInvocations(org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintTooManyInvocations(DescriptiveMessagesOnVerificationInOrderErrorsTest.java:137)
+
+[ERROR] shouldPrintMethodThatWasNotInvoked(org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintMethodThatWasNotInvoked(DescriptiveMessagesOnVerificationInOrderErrorsTest.java:115)
+
+[ERROR] shouldPrintVerificationInOrderErrorAndShowWantedOnly(org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintVerificationInOrderErrorAndShowWantedOnly(DescriptiveMessagesOnVerificationInOrderErrorsTest.java:79)
+
+[INFO] Running org.mockitousage.verification.DescriptiveMessagesWhenTimesXVerificationFailsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.verification.DescriptiveMessagesWhenTimesXVerificationFailsTest
+[INFO] Running org.mockitousage.verification.DescriptiveMessagesWhenVerificationFailsTest
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.verification.DescriptiveMessagesWhenVerificationFailsTest
+[INFO] Running org.mockitousage.verification.ExactNumberOfTimesVerificationTest
+[ERROR] Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.mockitousage.verification.ExactNumberOfTimesVerificationTest
+[ERROR] shouldAllowVerifyingInteractionNeverHappenedInOrder(org.mockitousage.verification.ExactNumberOfTimesVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.ExactNumberOfTimesVerificationTest.shouldAllowVerifyingInteractionNeverHappenedInOrder(ExactNumberOfTimesVerificationTest.java:119)
+
+[INFO] Running org.mockitousage.verification.NoMoreInteractionsVerificationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.verification.NoMoreInteractionsVerificationTest
+[INFO] Running org.mockitousage.verification.OrdinaryVerificationPrintsAllInteractionsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.verification.OrdinaryVerificationPrintsAllInteractionsTest
+[INFO] Running org.mockitousage.verification.PrintingVerboseTypesWithArgumentsTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.mockitousage.verification.PrintingVerboseTypesWithArgumentsTest
+[INFO] Running org.mockitousage.verification.RelaxedVerificationInOrderTest
+[ERROR] Tests run: 27, Failures: 24, Errors: 3, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in org.mockitousage.verification.RelaxedVerificationInOrderTest
+[ERROR] shouldVerifyLastInvocation(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyLastInvocation(RelaxedVerificationInOrderTest.java:215)
+
+[ERROR] shouldFailTimesZeroInOrder(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldFailTimesZeroInOrder(RelaxedVerificationInOrderTest.java:201)
+
+[ERROR] shouldVerifyDetectAllChunksOfInvocationThatExistInManyChunks(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyDetectAllChunksOfInvocationThatExistInManyChunks(RelaxedVerificationInOrderTest.java:94)
+
+[ERROR] shouldVerifyInteractionsFromFirstChunk(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyInteractionsFromFirstChunk(RelaxedVerificationInOrderTest.java:111)
+
+[ERROR] shouldFailOnLastAndFirstInWrongOrder(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldFailOnLastAndFirstInWrongOrder(RelaxedVerificationInOrderTest.java:241)
+
+[ERROR] shouldFailVerificationOfNonFirstChunk(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.mockito.exceptions.verification.VerificationInOrderFailure> but was<java.lang.AssertionError>
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldFailVerificationOfNonFirstChunk(RelaxedVerificationInOrderTest.java:120)
+
+[ERROR] shouldAllowFirstChunkBeforeLastInvocation(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldAllowFirstChunkBeforeLastInvocation(RelaxedVerificationInOrderTest.java:65)
+
+[ERROR] shouldVerifyInOrderAllInvocations(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyInOrderAllInvocations(RelaxedVerificationInOrderTest.java:47)
+
+[ERROR] shouldFailOnWrongMethodAfterLastInvocation(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldFailOnWrongMethodAfterLastInvocation(RelaxedVerificationInOrderTest.java:250)
+
+[ERROR] shouldVerifyInOrderOnlyTwoInvocations(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyInOrderOnlyTwoInvocations(RelaxedVerificationInOrderTest.java:162)
+
+[ERROR] shouldVerifyInOrderOnlyMockTwo(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyInOrderOnlyMockTwo(RelaxedVerificationInOrderTest.java:168)
+
+[ERROR] shouldPassOnEdgyCombinationOfTimesAndAtLeastOnce(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldPassOnEdgyCombinationOfTimesAndAtLeastOnce(RelaxedVerificationInOrderTest.java:137)
+
+[ERROR] shouldPassOnCombinationOfTimesAndAtLeastOnce(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldPassOnCombinationOfTimesAndAtLeastOnce(RelaxedVerificationInOrderTest.java:127)
+
+[ERROR] shouldFailWhenMockTwoWantedZeroTimes(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.mockito.exceptions.verification.VerificationInOrderFailure> but was<java.lang.AssertionError>
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldFailWhenMockTwoWantedZeroTimes(RelaxedVerificationInOrderTest.java:210)
+
+[ERROR] shouldVerifySecondAndLastInvocationWhenAtLeastOnceUsed(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifySecondAndLastInvocationWhenAtLeastOnceUsed(RelaxedVerificationInOrderTest.java:226)
+
+[ERROR] shouldFailOnWrongMethodCalledOnMockTwo(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.mockito.exceptions.verification.WantedButNotInvoked> but was<java.lang.AssertionError>
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldFailOnWrongMethodCalledOnMockTwo(RelaxedVerificationInOrderTest.java:185)
+
+[ERROR] shouldVerifyInOrderMockOneAndThree(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyInOrderMockOneAndThree(RelaxedVerificationInOrderTest.java:154)
+
+[ERROR] shouldVerifyInOrderAndBeRelaxed(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyInOrderAndBeRelaxed(RelaxedVerificationInOrderTest.java:57)
+
+[ERROR] shouldVerifyInteractionsFromAllChunksWhenAtLeastOnceMode(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyInteractionsFromAllChunksWhenAtLeastOnceMode(RelaxedVerificationInOrderTest.java:101)
+
+[ERROR] shouldVerifySecondAndLastInvocation(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifySecondAndLastInvocation(RelaxedVerificationInOrderTest.java:220)
+
+[ERROR] shouldFailOnLastTwoInvocationsInWrongOrder(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldFailOnLastTwoInvocationsInWrongOrder(RelaxedVerificationInOrderTest.java:232)
+
+[ERROR] shouldVerifyDetectFirstChunkOfInvocationThatExistInManyChunks(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyDetectFirstChunkOfInvocationThatExistInManyChunks(RelaxedVerificationInOrderTest.java:84)
+
+[ERROR] shouldVerifyMockTwoCalledTwice(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyMockTwoCalledTwice(RelaxedVerificationInOrderTest.java:175)
+
+[ERROR] shouldAllowAllChunksBeforeLastInvocation(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldAllowAllChunksBeforeLastInvocation(RelaxedVerificationInOrderTest.java:76)
+
+[ERROR] shouldAllowTimesZeroButOnlyInOrder(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldAllowTimesZeroButOnlyInOrder(RelaxedVerificationInOrderTest.java:190)
+
+[ERROR] shouldVerifyMockTwoCalledAtLeastOnce(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyMockTwoCalledAtLeastOnce(RelaxedVerificationInOrderTest.java:180)
+
+[ERROR] shouldVerifyInOrderMockTwoAndThree(org.mockitousage.verification.RelaxedVerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.RelaxedVerificationInOrderTest.shouldVerifyInOrderMockTwoAndThree(RelaxedVerificationInOrderTest.java:146)
+
+[INFO] Running org.mockitousage.verification.SelectedMocksInOrderVerificationTest
+[ERROR] Tests run: 15, Failures: 15, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.mockitousage.verification.SelectedMocksInOrderVerificationTest
+[ERROR] shouldThrowNoMoreInvocationsForMockTwo(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldThrowNoMoreInvocationsForMockTwo(SelectedMocksInOrderVerificationTest.java:133)
+
+[ERROR] shouldVerifyMockTwoCompletely(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldVerifyMockTwoCompletely(SelectedMocksInOrderVerificationTest.java:170)
+
+[ERROR] shouldFailVerificationForMockOneBecauseOfWrongOrder(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldFailVerificationForMockOneBecauseOfWrongOrder(SelectedMocksInOrderVerificationTest.java:93)
+
+[ERROR] shouldAllowThreeTimesOnMockTwo(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldAllowThreeTimesOnMockTwo(SelectedMocksInOrderVerificationTest.java:162)
+
+[ERROR] shouldAllowTwoTimesOnMockTwo(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldAllowTwoTimesOnMockTwo(SelectedMocksInOrderVerificationTest.java:180)
+
+[ERROR] shouldVerifyMockOneInOrder(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldVerifyMockOneInOrder(SelectedMocksInOrderVerificationTest.java:72)
+
+[ERROR] shouldVerifyAllInvocationsInOrder(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldVerifyAllInvocationsInOrder(SelectedMocksInOrderVerificationTest.java:40)
+
+[ERROR] shouldThrowTooLittleInvocationsForMockTwo(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldThrowTooLittleInvocationsForMockTwo(SelectedMocksInOrderVerificationTest.java:143)
+
+[ERROR] shouldFailVerificationForMockOne(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldFailVerificationForMockOne(SelectedMocksInOrderVerificationTest.java:82)
+
+[ERROR] shouldFailVerificationForMockTwo(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldFailVerificationForMockTwo(SelectedMocksInOrderVerificationTest.java:123)
+
+[ERROR] shouldVerifyMockTwo(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldVerifyMockTwo(SelectedMocksInOrderVerificationTest.java:113)
+
+[ERROR] shouldVerifyInOrderMockOneAndThree(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldVerifyInOrderMockOneAndThree(SelectedMocksInOrderVerificationTest.java:62)
+
+[ERROR] shouldVerifyMockTwoWhenThreeTimesUsed(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldVerifyMockTwoWhenThreeTimesUsed(SelectedMocksInOrderVerificationTest.java:104)
+
+[ERROR] shouldThrowTooManyInvocationsForMockTwo(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldThrowTooManyInvocationsForMockTwo(SelectedMocksInOrderVerificationTest.java:153)
+
+[ERROR] shouldVerifyInOrderMockTwoAndThree(org.mockitousage.verification.SelectedMocksInOrderVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.SelectedMocksInOrderVerificationTest.shouldVerifyInOrderMockTwoAndThree(SelectedMocksInOrderVerificationTest.java:52)
+
+[INFO] Running org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest
+[ERROR] Tests run: 10, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest
+[ERROR] shouldAllowOneMethodVerifiedInOrder(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldAllowOneMethodVerifiedInOrder(VerificationInOrderMixedWithOrdiraryVerificationTest.java:104)
+
+[ERROR] shouldFailOnLastInvocationTooEarly(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldFailOnLastInvocationTooEarly(VerificationInOrderMixedWithOrdiraryVerificationTest.java:109)
+
+[ERROR] shouldUseEqualsToVerifyMethodArguments(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldUseEqualsToVerifyMethodArguments(VerificationInOrderMixedWithOrdiraryVerificationTest.java:141)
+
+[ERROR] shouldAllowOrdinarilyVerifyingMockPassedToInOrderObject(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldAllowOrdinarilyVerifyingMockPassedToInOrderObject(VerificationInOrderMixedWithOrdiraryVerificationTest.java:52)
+
+[ERROR] shouldAllowRedundantVerifications(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldAllowRedundantVerifications(VerificationInOrderMixedWithOrdiraryVerificationTest.java:68)
+
+[ERROR] shouldFailOnNoMoreInteractions(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldFailOnNoMoreInteractions(VerificationInOrderMixedWithOrdiraryVerificationTest.java:77)
+
+[ERROR] shouldFailOnNoMoreInteractionsOnMockVerifiedInOrder(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldFailOnNoMoreInteractionsOnMockVerifiedInOrder(VerificationInOrderMixedWithOrdiraryVerificationTest.java:89)
+
+[ERROR] shouldMixVerificationInOrderAndOrdinaryVerification(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldMixVerificationInOrderAndOrdinaryVerification(VerificationInOrderMixedWithOrdiraryVerificationTest.java:42)
+
+[ERROR] shouldUseEqualsToVerifyMethodVarargs(org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest.shouldUseEqualsToVerifyMethodVarargs(VerificationInOrderMixedWithOrdiraryVerificationTest.java:160)
+
+[INFO] Running org.mockitousage.verification.VerificationInOrderTest
+[ERROR] Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in org.mockitousage.verification.VerificationInOrderTest
+[ERROR] shouldVerifyInOrderUsingMatcher(org.mockitousage.verification.VerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderTest.shouldVerifyInOrderUsingMatcher(VerificationInOrderTest.java:92)
+
+[ERROR] shouldVerifyInOrderWhenTwoChunksAreEqual(org.mockitousage.verification.VerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderTest.shouldVerifyInOrderWhenTwoChunksAreEqual(VerificationInOrderTest.java:73)
+
+[ERROR] shouldMessagesPointToProperMethod(org.mockitousage.verification.VerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderTest.shouldMessagesPointToProperMethod(VerificationInOrderTest.java:58)
+
+[ERROR] shouldVerifySingleMockInOrderAndNotInOrder(org.mockitousage.verification.VerificationInOrderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: sequence number has to be globally unique
+	at org.mockitousage.verification.VerificationInOrderTest.shouldVerifySingleMockInOrderAndNotInOrder(VerificationInOrderTest.java:45)
+
+[INFO] Running org.mockitousage.verification.VerificationOnMultipleMocksUsingMatchersTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.verification.VerificationOnMultipleMocksUsingMatchersTest
+[INFO] Running org.mockitousage.verification.VerificationUsingMatchersTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.verification.VerificationUsingMatchersTest
+[INFO] Running org.mockitousage.verification.VerificationWithTimeoutTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.mockitousage.verification.VerificationWithTimeoutTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   VerificationInOrderFromMultipleThreadsTest.shouldVerifyInOrderWhenMultipleThreadsInteractWithMock:35 sequence number has to be globally unique
+[ERROR]   AllInvocationsFinderTest.shouldGetAllInvocationsInOrder:38 sequence number has to be globally unique
+[ERROR]   ExampleTest.shouldPersistRecalculatedArticle:94 sequence number has to be globally unique
+[ERROR]   CleaningUpPotentialStubbingTest.shouldResetOngoingStubbingOnInOrder:41 sequence number has to be globally unique
+[ERROR]   SpyingOnRealObjectsTest.shouldVerifyInOrder:101 sequence number has to be globally unique
+[ERROR]   SpyingOnRealObjectsTest.shouldVerifyInOrderAndFail:113 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationChunkInOrderTest.shouldPointStackTraceToPreviousInvocation:56 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationChunkInOrderTest.shouldPointToFourthChunkBecauseTooManyActualInvocations:95 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationChunkInOrderTest.shouldPointToThirdChunkWhenTooLittleActualInvocations:81 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationChunkInOrderTest.shouldPointToThirdInteractionBecauseAtLeastOnceUsed:69 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationInOrderTest.shouldPointStackTraceToPreviousVerified:53 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationInOrderTest.shouldPointToFirstMethodBecauseOfTooManyActualInvocations:92 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationInOrderTest.shouldPointToFourthMethodBecauseOfTooLittleActualInvocations:113 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationInOrderTest.shouldPointToSecondMethod:78 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationInOrderTest.shouldPointToSecondMethodBecauseOfTooManyActualInvocations:101 sequence number has to be globally unique
+[ERROR]   PointingStackTraceToActualInvocationInOrderTest.shouldPointToThirdMethod:66 sequence number has to be globally unique
+[ERROR]   StackTraceFilteringTest.shouldFilterStacktraceWhenVerifyingInOrder:85 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnLastMethodBecauseDifferentArgsWanted:181 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnLastMethodBecauseDifferentMethodWanted:193 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnLastMethodBecauseOneInvocationWanted:127 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnLastMethodBecauseOneInvocationWantedAgain:139 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnSecondMethodBecauseDifferentArgsWanted:163 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnSecondMethodBecauseDifferentMethodWanted:172 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnSecondMethodBecauseFourInvocationsWanted:109 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnSecondMethodBecauseTwoInvocationsWantedAgain:118 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnVerifyNoMoreInteractions:234 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailWhenFirstMockCalledTwice:77 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailWhenLastMethodVerifiedFirst:207 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailWhenLastMockCalledTwice:86 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailWhenMiddleMethodVerifiedFirst:216 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldFailWhenMiddleMethodVerifiedFirstInAtLeastOnceMode:225 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldVerifyInOrder:44 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldVerifyInOrderUsingAtLeastOnce:54 sequence number has to be globally unique
+[ERROR]   BasicVerificationInOrderTest.shouldVerifyInOrderWhenExpectingSomeInvocationsToBeCalledZeroTimes:64 sequence number has to be globally unique
+[ERROR]   DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintMethodThatWasNotInvoked:115 sequence number has to be globally unique
+[ERROR]   DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintTooLittleInvocations:168 sequence number has to be globally unique
+[ERROR]   DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintTooManyInvocations:137 sequence number has to be globally unique
+[ERROR]   DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintVerificationInOrderErrorAndShowBothWantedAndPrevious:45 sequence number has to be globally unique
+[ERROR]   DescriptiveMessagesOnVerificationInOrderErrorsTest.shouldPrintVerificationInOrderErrorAndShowWantedOnly:79 sequence number has to be globally unique
+[ERROR]   ExactNumberOfTimesVerificationTest.shouldAllowVerifyingInteractionNeverHappenedInOrder:119 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldAllowAllChunksBeforeLastInvocation:76 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldAllowFirstChunkBeforeLastInvocation:65 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldAllowTimesZeroButOnlyInOrder:190 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldFailOnLastAndFirstInWrongOrder:241 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldFailOnLastTwoInvocationsInWrongOrder:232 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldFailOnWrongMethodAfterLastInvocation:250 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldFailTimesZeroInOrder:201 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldPassOnCombinationOfTimesAndAtLeastOnce:127 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldPassOnEdgyCombinationOfTimesAndAtLeastOnce:137 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyDetectAllChunksOfInvocationThatExistInManyChunks:94 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyDetectFirstChunkOfInvocationThatExistInManyChunks:84 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyInOrderAllInvocations:47 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyInOrderAndBeRelaxed:57 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyInOrderMockOneAndThree:154 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyInOrderMockTwoAndThree:146 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyInOrderOnlyMockTwo:168 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyInOrderOnlyTwoInvocations:162 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyInteractionsFromAllChunksWhenAtLeastOnceMode:101 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyInteractionsFromFirstChunk:111 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyLastInvocation:215 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyMockTwoCalledAtLeastOnce:180 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifyMockTwoCalledTwice:175 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifySecondAndLastInvocation:220 sequence number has to be globally unique
+[ERROR]   RelaxedVerificationInOrderTest.shouldVerifySecondAndLastInvocationWhenAtLeastOnceUsed:226 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldAllowThreeTimesOnMockTwo:162 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldAllowTwoTimesOnMockTwo:180 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldFailVerificationForMockOne:82 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldFailVerificationForMockOneBecauseOfWrongOrder:93 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldFailVerificationForMockTwo:123 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldThrowNoMoreInvocationsForMockTwo:133 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldThrowTooLittleInvocationsForMockTwo:143 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldThrowTooManyInvocationsForMockTwo:153 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldVerifyAllInvocationsInOrder:40 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldVerifyInOrderMockOneAndThree:62 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldVerifyInOrderMockTwoAndThree:52 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldVerifyMockOneInOrder:72 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldVerifyMockTwo:113 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldVerifyMockTwoCompletely:170 sequence number has to be globally unique
+[ERROR]   SelectedMocksInOrderVerificationTest.shouldVerifyMockTwoWhenThreeTimesUsed:104 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldAllowOneMethodVerifiedInOrder:104 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldAllowOrdinarilyVerifyingMockPassedToInOrderObject:52 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldAllowRedundantVerifications:68 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldFailOnLastInvocationTooEarly:109 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldFailOnNoMoreInteractions:77 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldFailOnNoMoreInteractionsOnMockVerifiedInOrder:89 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldMixVerificationInOrderAndOrdinaryVerification:42 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldUseEqualsToVerifyMethodArguments:141 sequence number has to be globally unique
+[ERROR]   VerificationInOrderMixedWithOrdiraryVerificationTest.shouldUseEqualsToVerifyMethodVarargs:160 sequence number has to be globally unique
+[ERROR]   VerificationInOrderTest.shouldMessagesPointToProperMethod:58 sequence number has to be globally unique
+[ERROR]   VerificationInOrderTest.shouldVerifyInOrderUsingMatcher:92 sequence number has to be globally unique
+[ERROR]   VerificationInOrderTest.shouldVerifyInOrderWhenTwoChunksAreEqual:73 sequence number has to be globally unique
+[ERROR]   VerificationInOrderTest.shouldVerifySingleMockInOrderAndNotInOrder:45 sequence number has to be globally unique
+[ERROR] Errors: 
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnFirstMethodBecauseDifferentArgsWanted » 
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnFirstMethodBecauseDifferentMethodWanted » 
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnFirstMethodBecauseOneInvocationWanted » 
+[ERROR]   BasicVerificationInOrderTest.shouldFailOnFirstMethodBecauseOneInvocationWantedAgain » 
+[ERROR]   RelaxedVerificationInOrderTest.shouldFailOnWrongMethodCalledOnMockTwo »  Unexp...
+[ERROR]   RelaxedVerificationInOrderTest.shouldFailVerificationOfNonFirstChunk »  Unexpe...
+[ERROR]   RelaxedVerificationInOrderTest.shouldFailWhenMockTwoWantedZeroTimes »  Unexpec...
+[INFO] 
+[ERROR] Tests run: 718, Failures: 92, Errors: 7, Skipped: 15
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.702 s
+[INFO] Finished at: 2021-07-26T08:14:27-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.20.1:test (default-test) on project test: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/junyang/PR/SubjectPrograms/Mockito/38/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/18/mutant-0/buggy-Compiler.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/18/mutant-0/patched-Compiler.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/18/mutant-0/buggy-Compiler.java	2021-08-22 00:18:38.594190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/18/mutant-0/patched-Compiler.java	2021-08-22 00:18:38.594190183 -0700
+@@ -1285,7 +1285,7 @@
+ 
+       // Check if the sources need to be re-ordered.
+       boolean staleInputs = false;
+-      if (options.dependencyOptions.needsManagement() && options.closurePass) {
++      if (options.dependencyOptions.needsManagement()) {
+         for (CompilerInput input : inputs) {
+           // Forward-declare all the provided types, so that they
+           // are not flagged even if they are dropped from the process.

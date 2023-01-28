@@ -1,0 +1,7 @@
+     * @return A new CSVFormat that is equal to this but with the specified empty header behavior.
+     */
+    public CSVFormat withIgnoreEmptyHeaders(final boolean ignoreEmptyHeaders) {
+        return new CSVFormat(delimiter, quoteChar, quotePolicy, commentStart, escape,
+                ignoreSurroundingSpaces, ignoreEmptyHeaders, recordSeparator, nullString, header, skipHeaderRecord,
+                ignoreEmptyHeaders);
+    }

@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonCore/26/mutant-16/a-ByteQuadsCanonicalizer.java	2021-08-09 04:10:37.917540288 -0700
++++ jd-result-2.0/JacksonCore/26/mutant-16/b-ByteQuadsCanonicalizer.java	2021-08-09 04:10:39.525540333 -0700
+@@ -91,7 +91,8 @@
+ /*   0*/  public static ByteQuadsCanonicalizer createRoot() {
+ /* 287*/    long now = System.currentTimeMillis();
+ /* 289*/    int seed = (int)now + (int)(now >>> 32L) | 0x1;
+-/* 290*/    return createRoot(seed);
++/* 290*/    int i = seed;
++/* 290*/    return createRoot();
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected static ByteQuadsCanonicalizer createRoot(int seed) {

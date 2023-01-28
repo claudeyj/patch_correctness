@@ -1,0 +1,11 @@
+--- jd-result/Closure/13/mutant-9/a-PeepholeOptimizationsPass.java	2021-07-14 21:36:57.246594585 -0700
++++ jd-result/Closure/13/mutant-9/b-PeepholeOptimizationsPass.java	2021-07-14 21:37:00.630594680 -0700
+@@ -114,7 +114,7 @@
+ /* 157*/    if (node.isFunction() || node.isScript()) {
+ /* 158*/      ScopeState previous = this.traversalState.peek();
+ /* 159*/      if (!previous.traverseChildScopes)
+-/* 160*/        return false; 
++/* 160*/        return !false; 
+ /* 162*/      this.traversalState.push();
+ /*   0*/    } 
+ /* 164*/    return true;

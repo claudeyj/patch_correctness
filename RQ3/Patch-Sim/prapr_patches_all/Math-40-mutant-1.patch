@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-1/ori-BracketingNthOrderBrentSolver.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-1/patched-BracketingNthOrderBrentSolver.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-1/ori-BracketingNthOrderBrentSolver.java	2021-08-23 09:23:48.924990960 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-1/patched-BracketingNthOrderBrentSolver.java	2021-08-23 09:23:48.924990960 +0800
+@@ -294,7 +294,7 @@
+                 nbPoints = end - start;
+                 System.arraycopy(x, start, x, 0, nbPoints);
+                 System.arraycopy(y, start, y, 0, nbPoints);
+-                signChangeIndex -= start;
++        signChangeIndex = end - start;
+ 
+             } else  if (nbPoints == x.length) {
+ 

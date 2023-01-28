@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/24/mutant-2/a-BaseSettings.java	2021-08-09 04:35:13.249581919 -0700
++++ jd-result-2.0/JacksonDatabind/24/mutant-2/b-BaseSettings.java	2021-08-09 04:35:14.733581961 -0700
+@@ -113,8 +113,6 @@
+ /* 231*/    if (this._dateFormat == df) {
+ /* 232*/        return this; 
+ /*   0*/       }
+-/* 234*/    TimeZone tz = (df == null) ? this._timeZone : df.getTimeZone();
+-/* 235*/    return new BaseSettings(this._classIntrospector, this._annotationIntrospector, this._visibilityChecker, this._propertyNamingStrategy, this._typeFactory, this._typeResolverBuilder, df, this._handlerInstantiator, this._locale, tz, this._defaultBase64);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public BaseSettings withHandlerInstantiator(HandlerInstantiator hi) {

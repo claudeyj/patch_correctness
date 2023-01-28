@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/51/mutant-2/ori-CharacterReader.java	2021-08-08 21:02:02.912814661 -0700
++++ jd-result-2.0/Jsoup/51/mutant-2/man-patched-CharacterReader.java	2021-08-13 04:15:33.563300782 -0700
+@@ -297,7 +297,7 @@
+         if (isEmpty())
+             return false;
+         char c = input[pos];
+-        return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
++        return (c >= 'A' && c <= 'Z') || (c >= 'a');
+     }
+ 
+     boolean matchesDigit() {

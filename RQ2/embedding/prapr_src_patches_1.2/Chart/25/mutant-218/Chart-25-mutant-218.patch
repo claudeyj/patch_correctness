@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-218/a-KeyedObjects2D.java	2021-07-14 20:09:46.162446974 -0700
++++ jd-result/Chart/25/mutant-218/b-KeyedObjects2D.java	2021-07-14 20:09:47.482447011 -0700
+@@ -20,7 +20,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public int getColumnCount() {
+-/*  95*/    return this.columnKeys.size();
++/*  95*/    return (this.columnKeys.size() != 0) ? 0 : 1;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public Object getObject(int row, int column) {

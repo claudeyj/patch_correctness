@@ -1,0 +1,11 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-112.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1272,7 +1272,7 @@
+ 
+         eMin = work[4 * start + pingPong + 4];
+         double d = work[4 * start + pingPong] - tau;
+-        dMin = d;
++    this.dMin = this.upperSpectra;
+         dMin1 = -work[4 * start + pingPong];
+ 
+         if (pingPong == 0) {

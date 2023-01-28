@@ -1,0 +1,382 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 18 23:49:50 PDT 2021
+Number of Plausible Fixes: 42
+Total Number of Patches: 3850
+================================================
+1.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ptr is replaced by access to field _nameStartRow
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1806
+	Rank: 2
+	Total Rank: 120
+	Dump: mutant-7.class
+------------------------------------------------
+2.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local ptr is replaced by access to field FEAT_MASK_TRAILING_COMMA
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1806
+	Rank: 2
+	Total Rank: 120
+	Dump: mutant-28.class
+------------------------------------------------
+3.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1957
+	Rank: 3
+	Total Rank: 137
+	Dump: mutant-30.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local ptr is replaced by local i to be used
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1806
+	Rank: 5
+	Total Rank: 177
+	Dump: mutant-15.class
+------------------------------------------------
+5.
+	Mutator: LocalNameMutator
+	Description: local ptr is replaced by local maxCode to be used
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1806
+	Rank: 5
+	Total Rank: 177
+	Dump: mutant-29.class
+------------------------------------------------
+6.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1957
+	Rank: 6
+	Total Rank: 179
+	Dump: mutant-35.class
+------------------------------------------------
+7.
+	Mutator: MethodNameMutator
+	Description: replaced call to _loadMore with a call to _skipYAMLComment
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1957
+	Rank: 7
+	Total Rank: 214
+	Dump: mutant-34.class
+------------------------------------------------
+8.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/core/json/ReaderBasedJsonParser::_loadMore
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1957
+	Rank: 9
+	Total Rank: 223
+	Dump: mutant-11.class
+------------------------------------------------
+9.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/core/json/ReaderBasedJsonParser::_handleOddName2
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1807
+	Rank: 9
+	Total Rank: 223
+	Dump: mutant-13.class
+------------------------------------------------
+10.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1805
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-5.class
+------------------------------------------------
+11.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1956
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-6.class
+------------------------------------------------
+12.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_verifyRootSpace(I)V
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1806
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-9.class
+------------------------------------------------
+13.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputEnd is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1956
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-16.class
+------------------------------------------------
+14.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1805
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-17.class
+------------------------------------------------
+15.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1950
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-21.class
+------------------------------------------------
+16.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputEnd is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipAfterComma2()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1956
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-22.class
+------------------------------------------------
+17.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipAfterComma2()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1805
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-27.class
+------------------------------------------------
+18.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_isNextTokenNameYes(I)V
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1806
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-31.class
+------------------------------------------------
+19.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputEnd is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1956
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-33.class
+------------------------------------------------
+20.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1956
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-36.class
+------------------------------------------------
+21.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipAfterComma2()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1956
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-37.class
+------------------------------------------------
+22.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipAfterComma2()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1950
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-40.class
+------------------------------------------------
+23.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputPtr is replaced by the call to com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon()I
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 1950
+	Rank: 23
+	Total Rank: 247
+	Dump: mutant-41.class
+------------------------------------------------
+24.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to allocTokenBuffer()[C with a call to allocTokenBuffer(I)[C
+	File Name: com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+	Line Number: 138
+	Rank: 24
+	Total Rank: 2194
+	Dump: mutant-20.class
+------------------------------------------------
+25.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field _parent is replaced by access to local this
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 223
+	Rank: 26
+	Total Rank: 3779
+	Dump: mutant-4.class
+------------------------------------------------
+26.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field _parent is replaced by access to local this
+	File Name: com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer.java
+	Line Number: 233
+	Rank: 26
+	Total Rank: 3779
+	Dump: mutant-8.class
+------------------------------------------------
+27.
+	Mutator: LocalNameMutator
+	Description: local sz is replaced by local seed to be used
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 241
+	Rank: 27
+	Total Rank: 3818
+	Dump: mutant-2.class
+------------------------------------------------
+28.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer.createRoot(I)Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer; is replaced by an instantiation of type com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer using (Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;IILcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;)V
+	File Name: com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer.java
+	Line Number: 296
+	Rank: 29
+	Total Rank: 3825
+	Dump: mutant-32.class
+------------------------------------------------
+29.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer.createRoot(I)Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer; is replaced by an instantiation of type com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer using (Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;ZIZLcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;)V
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 290
+	Rank: 29
+	Total Rank: 3825
+	Dump: mutant-42.class
+------------------------------------------------
+30.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer._flags is replaced by the call to com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer::reportTooManyCollisions(I)V
+	File Name: com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer.java
+	Line Number: 238
+	Rank: 34
+	Total Rank: 3839
+	Dump: mutant-1.class
+------------------------------------------------
+31.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer._intern is replaced by the call to com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer::nukeSymbols(Z)V
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 225
+	Rank: 34
+	Total Rank: 3839
+	Dump: mutant-3.class
+------------------------------------------------
+32.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer._seed is replaced by the call to com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer::reportTooManyCollisions(I)V
+	File Name: com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer.java
+	Line Number: 234
+	Rank: 34
+	Total Rank: 3839
+	Dump: mutant-19.class
+------------------------------------------------
+33.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer._failOnDoS is replaced by the call to com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer::nukeSymbols(Z)V
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 226
+	Rank: 34
+	Total Rank: 3839
+	Dump: mutant-24.class
+------------------------------------------------
+34.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer._longestCollisionList is replaced by the call to com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer::reportTooManyCollisions(I)V
+	File Name: com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer.java
+	Line Number: 241
+	Rank: 34
+	Total Rank: 3839
+	Dump: mutant-26.class
+------------------------------------------------
+35.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(IZIZ)V with a call to <init>(Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;ZIZLcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;)V
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 296
+	Rank: 42
+	Total Rank: 3850
+	Dump: mutant-10.class
+------------------------------------------------
+36.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(I)V with a call to <init>(Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;IILcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;)V
+	File Name: com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer.java
+	Line Number: 300
+	Rank: 42
+	Total Rank: 3850
+	Dump: mutant-12.class
+------------------------------------------------
+37.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(III[I[Ljava/lang/String;II)V with a call to <init>(Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;)V
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 1257
+	Rank: 42
+	Total Rank: 3850
+	Dump: mutant-14.class
+------------------------------------------------
+38.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(II[Ljava/lang/String;[Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;)V with a call to <init>(Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;)V
+	File Name: com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer.java
+	Line Number: 809
+	Rank: 42
+	Total Rank: 3850
+	Dump: mutant-18.class
+------------------------------------------------
+39.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to createRoot(I)Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer; with a call to createRoot()Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;
+	File Name: com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+	Line Number: 290
+	Rank: 42
+	Total Rank: 3850
+	Dump: mutant-23.class
+------------------------------------------------
+40.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(Lcom/fasterxml/jackson/core/ObjectCodec;)V with a call to <init>()V
+	File Name: com/fasterxml/jackson/core/JsonFactory.java
+	Line Number: 278
+	Rank: 42
+	Total Rank: 3850
+	Dump: mutant-25.class
+------------------------------------------------
+41.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to createRoot(I)Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer; with a call to createRoot()Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
+	File Name: com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer.java
+	Line Number: 296
+	Rank: 42
+	Total Rank: 3850
+	Dump: mutant-38.class
+------------------------------------------------
+42.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(Lcom/fasterxml/jackson/core/ObjectCodec;)V with a call to <init>(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/ObjectCodec;)V
+	File Name: com/fasterxml/jackson/core/JsonFactory.java
+	Line Number: 278
+	Rank: 42
+	Total Rank: 3850
+	Dump: mutant-39.class
+------------------------------------------------

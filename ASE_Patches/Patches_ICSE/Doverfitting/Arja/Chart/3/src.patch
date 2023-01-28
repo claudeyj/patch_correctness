@@ -1,0 +1,33 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/3/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/3/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/3/buggy1.java	2021-08-27 19:18:32.782863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Chart/3/tool-patch1.java	2021-08-27 19:18:32.782863921 -0700
+@@ -580,17 +580,8 @@
+         Class c = item.getPeriod().getClass();
+         if (this.timePeriodClass == null) {
+             this.timePeriodClass = c;
+-        }
+-        else if (!this.timePeriodClass.equals(c)) {
+-            StringBuffer b = new StringBuffer();
+-            b.append("You are trying to add data where the time period class ");
+-            b.append("is ");
+-            b.append(item.getPeriod().getClass().getName());
+-            b.append(", but the TimeSeries is expecting an instance of ");
+-            b.append(this.timePeriodClass.getName());
+-            b.append(".");
+-            throw new SeriesException(b.toString());
+-        }
++        } else
++            findBoundsByIteration();
+ 
+         // make the change (if it's not a duplicate time period)...
+         boolean added = false;
+@@ -664,6 +655,9 @@
+     public void add(RegularTimePeriod period, double value, boolean notify) {
+         // defer argument checking...
+         TimeSeriesDataItem item = new TimeSeriesDataItem(period, value);
++        if (notify) {
++            fireSeriesChanged();
++        }
+         add(item, notify);
+     }
+ 

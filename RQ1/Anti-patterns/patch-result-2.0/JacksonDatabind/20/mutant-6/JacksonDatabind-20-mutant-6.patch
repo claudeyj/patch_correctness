@@ -1,0 +1,16 @@
+--- jd-result-2.0/JacksonDatabind/20/mutant-6/a-POJOPropertyBuilder.java	2021-08-09 04:29:17.777571888 -0700
++++ jd-result-2.0/JacksonDatabind/20/mutant-6/b-POJOPropertyBuilder.java	2021-08-09 04:29:19.441571935 -0700
+@@ -180,13 +180,9 @@
+ /*   0*/      } 
+ /* 284*/      int priNext = _setterPriority((AnnotatedMethod)next.value);
+ /* 285*/      int priCurr = _setterPriority((AnnotatedMethod)curr.value);
+-/* 287*/      if (priNext != priCurr) {
+ /* 288*/        if (priNext < priCurr) {
+ /* 289*/            curr = next; 
+ /*   0*/           }
+-/*   0*/      } else {
+-/* 293*/        throw new IllegalArgumentException("Conflicting setter definitions for property \"" + getName() + "\": " + ((AnnotatedMethod)curr.value).getFullName() + " vs " + ((AnnotatedMethod)next.value).getFullName());
+-/*   0*/      } 
+ /*   0*/    } 
+ /* 297*/    this._setters = curr.withoutNext();
+ /* 298*/    return (AnnotatedMethod)curr.value;

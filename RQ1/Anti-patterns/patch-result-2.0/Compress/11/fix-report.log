@@ -1,0 +1,283 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 17 11:00:04 PDT 2021
+Number of Plausible Fixes: 31
+Total Number of Patches: 1668
+================================================
+1.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.apache.commons.compress.archivers.tar.TarBuffer.blockBuffer is replaced by the call to org.apache.commons.compress.archivers.tar.TarBuffer::readRecord()[B
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 1
+	Total Rank: 16
+	Dump: mutant-27.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local offset is replaced by local bytesNeeded to be used
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 2
+	Total Rank: 26
+	Dump: mutant-11.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextEntry()Lorg/apache/commons/compress/archivers/ArchiveEntry; is replaced by an instantiation of type org.apache.commons.compress.archivers.tar.TarArchiveEntry using (Ljava/lang/String;B)V
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 242
+	Rank: 6
+	Total Rank: 31
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextEntry()Lorg/apache/commons/compress/archivers/ArchiveEntry; is replaced by an instantiation of type org.apache.commons.compress.archivers.jar.JarArchiveEntry using (Ljava/util/zip/ZipEntry;)V
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 242
+	Rank: 6
+	Total Rank: 31
+	Dump: mutant-8.class
+------------------------------------------------
+5.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextEntry()Lorg/apache/commons/compress/archivers/ArchiveEntry; is replaced by an instantiation of type org.apache.commons.compress.archivers.tar.TarArchiveEntry using (Ljava/lang/String;)V
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 242
+	Rank: 6
+	Total Rank: 31
+	Dump: mutant-23.class
+------------------------------------------------
+6.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextEntry()Lorg/apache/commons/compress/archivers/ArchiveEntry; is replaced by an instantiation of type org.apache.commons.compress.archivers.jar.JarArchiveEntry using (Ljava/lang/String;)V
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 242
+	Rank: 6
+	Total Rank: 31
+	Dump: mutant-26.class
+------------------------------------------------
+7.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local bytesNeeded is replaced by access to field blockSize
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 12
+	Total Rank: 49
+	Dump: mutant-7.class
+------------------------------------------------
+8.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local bytesNeeded is replaced by access to field currBlkIdx
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 12
+	Total Rank: 49
+	Dump: mutant-16.class
+------------------------------------------------
+9.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local offset is replaced by access to field DEFAULT_BLKSIZE
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 12
+	Total Rank: 49
+	Dump: mutant-17.class
+------------------------------------------------
+10.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local offset is replaced by access to field currBlkIdx
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 12
+	Total Rank: 49
+	Dump: mutant-18.class
+------------------------------------------------
+11.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local offset is replaced by access to field blockSize
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 12
+	Total Rank: 49
+	Dump: mutant-22.class
+------------------------------------------------
+12.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local bytesNeeded is replaced by access to field DEFAULT_BLKSIZE
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 12
+	Total Rank: 49
+	Dump: mutant-24.class
+------------------------------------------------
+13.
+	Mutator: MathMutator
+	Description: Replaced integer addition with subtraction
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 13
+	Total Rank: 50
+	Dump: mutant-31.class
+------------------------------------------------
+14.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to fill([BIIB)V with a call to fill([DD)V
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 20
+	Total Rank: 60
+	Dump: mutant-2.class
+------------------------------------------------
+15.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to fill([BIIB)V with a call to fill([FIIF)V
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 20
+	Total Rank: 60
+	Dump: mutant-3.class
+------------------------------------------------
+16.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(Ljava/io/InputStream;)V with a call to <init>(Ljava/io/InputStream;II)V
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 241
+	Rank: 20
+	Total Rank: 60
+	Dump: mutant-12.class
+------------------------------------------------
+17.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(Ljava/io/InputStream;)V with a call to <init>(Ljava/io/InputStream;II)V
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 243
+	Rank: 20
+	Total Rank: 60
+	Dump: mutant-14.class
+------------------------------------------------
+18.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(Ljava/io/InputStream;)V with a call to <init>(Ljava/io/InputStream;I)V
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 241
+	Rank: 20
+	Total Rank: 60
+	Dump: mutant-25.class
+------------------------------------------------
+19.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to fill([BIIB)V with a call to fill([DIID)V
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 20
+	Total Rank: 60
+	Dump: mutant-29.class
+------------------------------------------------
+20.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to fill([BIIB)V with a call to fill([CC)V
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 255
+	Rank: 20
+	Total Rank: 60
+	Dump: mutant-30.class
+------------------------------------------------
+21.
+	Mutator: ConstructorCallMutator
+	Description: removed call to java/io/ByteArrayInputStream::<init>
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 241
+	Rank: 22
+	Total Rank: 63
+	Dump: mutant-4.class
+------------------------------------------------
+22.
+	Mutator: ConstructorCallMutator
+	Description: removed call to org/apache/commons/compress/archivers/tar/TarArchiveInputStream::<init>
+	File Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+	Line Number: 241
+	Rank: 22
+	Total Rank: 63
+	Dump: mutant-19.class
+------------------------------------------------
+23.
+	Mutator: InlineConstantMutator
+	Description: Substituted -1 with 0
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 242
+	Rank: 23
+	Total Rank: 944
+	Dump: mutant-6.class
+------------------------------------------------
+24.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 242
+	Rank: 24
+	Total Rank: 965
+	Dump: mutant-13.class
+------------------------------------------------
+25.
+	Mutator: LocalNameMutator
+	Description: local offset is replaced by local bytesNeeded to be used
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 260
+	Rank: 25
+	Total Rank: 977
+	Dump: mutant-9.class
+------------------------------------------------
+26.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local bytesNeeded is replaced by access to field DEFAULT_BLKSIZE
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 226
+	Rank: 30
+	Total Rank: 1165
+	Dump: mutant-5.class
+------------------------------------------------
+27.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local offset is replaced by access to field DEFAULT_RCDSIZE
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 260
+	Rank: 30
+	Total Rank: 1165
+	Dump: mutant-10.class
+------------------------------------------------
+28.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local offset is replaced by access to field DEFAULT_BLKSIZE
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 260
+	Rank: 30
+	Total Rank: 1165
+	Dump: mutant-20.class
+------------------------------------------------
+29.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local offset is replaced by access to field blockSize
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 260
+	Rank: 30
+	Total Rank: 1165
+	Dump: mutant-21.class
+------------------------------------------------
+30.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local bytesNeeded is replaced by access to field blockSize
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 226
+	Rank: 30
+	Total Rank: 1165
+	Dump: mutant-28.class
+------------------------------------------------
+31.
+	Mutator: MathMutator
+	Description: Replaced long addition with subtraction
+	File Name: org/apache/commons/compress/archivers/tar/TarBuffer.java
+	Line Number: 260
+	Rank: 31
+	Total Rank: 1171
+	Dump: mutant-15.class
+------------------------------------------------

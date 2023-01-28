@@ -1,0 +1,11 @@
+--- jd-result/Math/7/mutant-1/a-AbstractIntegrator.java	2021-07-14 09:05:38.325322546 -0700
++++ jd-result/Math/7/mutant-1/b-AbstractIntegrator.java	2021-07-14 09:05:39.733322586 -0700
+@@ -77,7 +77,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void addEventHandler(EventHandler handler, double maxCheckInterval, double convergence, int maxIterationCount) {
+-/* 127*/    addEventHandler(handler, maxCheckInterval, convergence, maxIterationCount, new BracketingNthOrderBrentSolver(convergence, 5));
++/* 127*/    addEventHandler(handler, this.stepStart, convergence, maxIterationCount, new BracketingNthOrderBrentSolver(convergence, 5));
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void addEventHandler(EventHandler handler, double maxCheckInterval, double convergence, int maxIterationCount, UnivariateSolver solver) {

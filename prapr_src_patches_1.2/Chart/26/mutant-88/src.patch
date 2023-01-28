@@ -1,0 +1,12 @@
+--- jd-result/Chart/26/mutant-88/ori-JFreeChart.java	2021-07-15 18:51:51.892753113 -0700
++++ jd-result/Chart/26/mutant-88/patched-JFreeChart.java	2021-07-21 07:28:20.954224092 -0700
+@@ -1178,7 +1178,8 @@
+ 
+         // draw the title and subtitles...
+         Rectangle2D nonTitleArea = new Rectangle2D.Double();
+-        nonTitleArea.setRect(chartArea);
++    Rectangle2D rectangle2D1 = chartArea;
++    nonTitleArea.setRect(0.0D, 0.0D, 0.0D, 0.0D);
+         this.padding.trim(nonTitleArea);
+         
+         EntityCollection entities = null;

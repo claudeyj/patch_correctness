@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-57/ori-RectangleInsets.java	2021-07-15 18:51:50.696753079 -0700
++++ jd-result/Chart/25/mutant-57/patched-RectangleInsets.java	2021-07-21 07:18:10.678206871 -0700
+@@ -521,7 +521,7 @@
+     public void trim(Rectangle2D area) {
+         double w = area.getWidth();
+         double h = area.getHeight();
+-        double l = calculateLeftInset(w);
++    double l = extendWidth(w);
+         double r = calculateRightInset(w);
+         double t = calculateTopInset(h);
+         double b = calculateBottomInset(h);

@@ -1,0 +1,7 @@
+                    sampleSize);
+        }
+
+        final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(1).getClass(), sampleSize);
+
+        for (int i = 0; i < sampleSize; i++) {
+            out[i] = sample();

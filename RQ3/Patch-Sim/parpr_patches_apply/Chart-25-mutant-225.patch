@@ -1,0 +1,12 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-225.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -92,7 +92,8 @@
+      * @return The column count.
+      */
+     public int getColumnCount() {
+-        return this.columnKeys.size();
++    this.columnKeys.size();
++    return 0;
+     }
+ 
+     /**

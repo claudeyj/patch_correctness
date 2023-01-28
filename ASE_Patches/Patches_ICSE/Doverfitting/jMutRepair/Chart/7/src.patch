@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Chart/7/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Chart/7/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Chart/7/buggy1.java	2021-08-27 19:18:34.022863956 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Chart/7/tool-patch1.java	2021-08-27 19:18:34.022863956 -0700
+@@ -282,7 +282,7 @@
+             this.maxStartIndex = index;
+         }
+         
+-        if (this.minMiddleIndex >= 0) {
++        if (this.minMiddleIndex == 0) {
+             long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
+                 .getTime();
+             long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()

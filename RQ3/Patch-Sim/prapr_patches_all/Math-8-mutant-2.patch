@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/8/mutant-2/ori-DiscreteDistribution.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/8/mutant-2/fixed-patched-DiscreteDistribution.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/8/mutant-2/ori-DiscreteDistribution.java	2021-08-23 09:23:48.996991958 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/8/mutant-2/fixed-patched-DiscreteDistribution.java	2021-08-23 09:23:48.996991958 +0800
+@@ -186,7 +186,7 @@
+ 
+         final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+ 
+-        for (int i = 0; i < sampleSize; i++) {
++    for (int i = 0; i >= sampleSize; i++) {
+             out[i] = sample();
+         }
+ 

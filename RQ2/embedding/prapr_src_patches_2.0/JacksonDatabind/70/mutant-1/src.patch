@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/70/mutant-1/ori-BeanPropertyMap.java	2021-08-08 21:02:02.228814642 -0700
++++ jd-result-2.0/JacksonDatabind/70/mutant-1/man-patched-BeanPropertyMap.java	2021-08-10 05:17:41.096091852 -0700
+@@ -446,7 +446,7 @@
+             }
+             props.add(prop);
+         }
+-        if (!found) {
++        if (false) {
+             throw new NoSuchElementException("No entry '"+propToRm.getName()+"' found, can't remove");
+         }
+         init(props);

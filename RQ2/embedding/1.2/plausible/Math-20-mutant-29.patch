@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-29/ori-CMAESOptimizer.java	2021-07-24 01:52:02.286297032 -0700
++++ jd-result/Math/20/mutant-29/fixed-patched-CMAESOptimizer.java	2021-07-24 01:52:02.286297032 -0700
+@@ -594,7 +594,7 @@
+         cc = (4. + mueff / dimension) /
+                 (dimension + 4. + 2. * mueff / dimension);
+         cs = (mueff + 2.) / (dimension + mueff + 3.);
+-        damps = (1. + 2. * Math.max(0, Math.sqrt((mueff - 1.) /
++        damps = (1. + 2. * Math.max(0, Math.sqrt((mueff - 2.) /
+                 (dimension + 1.)) - 1.)) *
+                 Math.max(0.3, 1. - dimension /
+                         (1e-6 + Math.min(maxIterations, getMaxEvaluations() /

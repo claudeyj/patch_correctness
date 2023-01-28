@@ -1,0 +1,7 @@
+
+      Preconditions.checkState(references.get(0).isDeclaration());
+      BasicBlock initBlock = init.getBasicBlock();
+      for (int i = 0; i < size; i++) {
+        if (!initBlock.provablyExecutesBefore(
+                references.get(i).getBasicBlock())) {
+          return false;

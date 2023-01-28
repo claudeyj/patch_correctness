@@ -1,0 +1,8 @@
+          for (Assign assign : assignsByVar.get(var)) {
+            if (assign.isPropertyAssign) {
+              hasPropertyAssign = true;
+            } else if (!NodeUtil.isLiteralValue(
+                assign.assignNode.getLastChild(), true)) {
+              assignedToUnknownValue = true;
+            }
+          }

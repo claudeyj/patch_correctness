@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/9/mutant-8/ori-Base64.java	2021-08-08 21:02:01.408814619 -0700
++++ jd-result-2.0/Codec/9/mutant-8/patched-Base64.java	2021-08-09 06:25:54.729769328 -0700
+@@ -968,7 +968,7 @@
+      */
+     private static long getEncodeLength(byte[] pArray, int chunkSize, byte[] chunkSeparator) {
+         // base64 always encodes to multiples of 4.
+-        chunkSize = (chunkSize / 4) * 4;
++    chunkSize = DEFAULT_BUFFER_RESIZE_FACTOR / 4 * 4;
+ 
+         long len = (pArray.length * 4) / 3;
+         long mod = len % 4;

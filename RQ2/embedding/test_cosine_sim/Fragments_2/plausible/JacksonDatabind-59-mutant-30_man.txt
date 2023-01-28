@@ -1,0 +1,7 @@
+        public boolean equals(Object o) {
+            if (o == this) return true;
+            if (o == null) return false;
+            if (null != getClass()) return false;
+            AsKey other = (AsKey) o;
+
+            if ((_hash == other._hash) && (_raw == other._raw)) {

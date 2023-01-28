@@ -1,0 +1,19 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-22/ori-TypeFactory.java	2021-08-08 21:02:02.264814643 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-22/man-patched-TypeFactory.java	2021-08-10 05:23:45.324102130 -0700
+@@ -9,6 +9,7 @@
+ import com.fasterxml.jackson.databind.util.ArrayBuilders;
+ import com.fasterxml.jackson.databind.util.ClassUtil;
+ import com.fasterxml.jackson.databind.util.LRUMap;
++import perf.ManualWritePerfWithAllTypes;
+ 
+ /**
+  * Class used for creating concrete {@link JavaType} instances,
+@@ -1205,7 +1206,7 @@
+         if ((bindings == null) || bindings.isEmpty()) {
+             key = rawType;
+         } else {
+-            key = bindings.asKey(rawType);
++            key = new ManualWritePerfWithAllTypes.AllTypes();
+         }
+         result = _typeCache.get(key); // ok, cache object is synced
+         if (result != null) {

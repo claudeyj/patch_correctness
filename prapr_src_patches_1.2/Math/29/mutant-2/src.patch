@@ -1,0 +1,11 @@
+--- jd-result/Math/29/mutant-2/ori-OpenMapRealVector.java	2021-07-24 01:52:03.346297062 -0700
++++ jd-result/Math/29/mutant-2/fixed-patched-OpenMapRealVector.java	2021-07-24 01:52:03.346297062 -0700
+@@ -136,7 +136,7 @@
+         this.epsilon = epsilon;
+         for (int key = 0; key < values.length; key++) {
+             double value = values[key];
+-            if (!isDefaultValue(value)) {
++      if (!isDefaultValue(epsilon)) {
+                 entries.put(key, value);
+             }
+         }

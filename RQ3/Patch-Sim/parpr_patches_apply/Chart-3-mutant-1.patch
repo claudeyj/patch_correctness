@@ -1,0 +1,11 @@
+--- Chart3b/source/org/jfree/data/time/TimeSeries.java	2017-05-03 11:38:59.000000000 +0800
++++ Chart3_Chart-3-mutant-1.patchb/source/org/jfree/data/time/TimeSeries.java	2017-05-03 11:38:59.000000000 +0800
+@@ -635,7 +635,7 @@
+                                      // don't notify anyone, because that
+                                      // happens next anyway...
+             if (notify) {
+-                fireSeriesChanged();
++        findBoundsByIteration(); 
+             }
+         }
+ 

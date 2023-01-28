@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Chart/20/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Chart/20/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Chart/20/buggy1.java	2021-08-27 19:18:39.806864119 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/SimFix/Chart/20/tool-patch1.java	2021-08-27 19:18:39.806864119 -0700
+@@ -92,8 +92,14 @@
+      */
+     public ValueMarker(double value, Paint paint, Stroke stroke, 
+                        Paint outlinePaint, Stroke outlineStroke, float alpha) {
++// start of generated patch
++super(paint,stroke,outlinePaint,stroke,alpha);
++this.value=value;
++// end of generated patch
++/* start of original code
+         super(paint, stroke, paint, stroke, alpha);
+         this.value = value;
++ end of original code*/
+     }
+     
+     /**

@@ -1,0 +1,12 @@
+--- jd-result-2.0/Compress/18/mutant-23/a-TarArchiveOutputStream.java	2021-08-09 03:55:17.921514328 -0700
++++ jd-result-2.0/Compress/18/mutant-23/b-TarArchiveOutputStream.java	2021-08-09 03:55:19.481514372 -0700
+@@ -278,7 +278,8 @@
+ /* 496*/    for (int i = 0; i < length; i++) {
+ /* 497*/      char stripped = (char)(name.charAt(i) & 0x7F);
+ /* 498*/      if (stripped != '\000') {
+-/* 499*/          result.append(stripped); 
++/* 499*/        int j = stripped;
++/* 499*/        result.append(this.currSize);
+ /*   0*/         }
+ /*   0*/    } 
+ /* 502*/    return result.toString();

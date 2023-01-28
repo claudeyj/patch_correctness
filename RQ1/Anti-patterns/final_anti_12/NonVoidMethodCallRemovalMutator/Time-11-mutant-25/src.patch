@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-25/ori-DateTimeZoneBuilder.java	2021-07-15 18:51:56.076753231 -0700
++++ jd-result/Time/11/mutant-25/fixed-patched-DateTimeZoneBuilder.java	2021-07-22 18:26:16.185658387 -0700
+@@ -1456,7 +1456,7 @@
+ 
+             if (tailZone != null) {
+                 if (tailZone.iStartRecurrence.getNameKey()
+-                    .equals(tailZone.iEndRecurrence.getNameKey())) {
++                    .equals(null)) {
+                     if (ZoneInfoCompiler.verbose()) {
+                         System.out.println("Fixing duplicate recurrent name key - " +
+                                            tailZone.iStartRecurrence.getNameKey());

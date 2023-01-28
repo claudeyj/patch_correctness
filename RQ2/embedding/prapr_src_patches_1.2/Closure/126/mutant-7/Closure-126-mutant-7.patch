@@ -1,0 +1,11 @@
+--- jd-result/Closure/126/mutant-7/a-MinimizeExitPoints.java	2021-07-14 21:53:51.558623206 -0700
++++ jd-result/Closure/126/mutant-7/b-MinimizeExitPoints.java	2021-07-14 21:53:53.006623247 -0700
+@@ -62,7 +62,7 @@
+ /* 134*/        Node catchCodeBlock = catchNode.getLastChild();
+ /* 135*/        tryMinimizeExits(catchCodeBlock, exitType, labelName);
+ /*   0*/      } 
+-/* 141*/      if (NodeUtil.hasFinally(n)) {
++/*   0*/      if (false) {
+ /* 142*/        Node finallyBlock = n.getLastChild();
+ /* 143*/        tryMinimizeExits(finallyBlock, exitType, labelName);
+ /*   0*/      } 

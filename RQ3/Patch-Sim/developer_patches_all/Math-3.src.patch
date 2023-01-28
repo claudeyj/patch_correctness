@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/3/mutant-0/buggy-MathArrays.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/3/mutant-0/patched-MathArrays.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/3/mutant-0/buggy-MathArrays.java	2021-08-22 00:18:38.670190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/3/mutant-0/patched-MathArrays.java	2021-08-22 00:18:38.670190185 -0700
+@@ -818,7 +818,10 @@
+             throw new DimensionMismatchException(len, b.length);
+         }
+ 
++        if (len == 1) {
+             // Revert to scalar multiplication.
++            return a[0] * b[0];
++        }
+ 
+         final double[] prodHigh = new double[len];
+         double prodLowSum = 0;

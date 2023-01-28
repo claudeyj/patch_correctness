@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-8/a-SerializableMethod.java	2021-07-14 21:31:13.342584880 -0700
++++ jd-result/Mockito/5/mutant-8/b-SerializableMethod.java	2021-07-14 21:31:14.646584917 -0700
+@@ -59,7 +59,7 @@
+ /*   0*/  public Method getJavaMethod() {
+ /*   0*/    try {
+ /*  62*/      return this.declaringClass.getDeclaredMethod(this.methodName, this.parameterTypes);
+-/*  63*/    } catch (SecurityException e) {
++/*  63*/    } catch (RuntimeException e) {
+ /*  64*/      String message = String.format("The method %1$s.%2$s is probably private or protected and cannot be mocked.\nPlease report this as a defect with an example of how to reproduce it.", new Object[] { this.declaringClass, this.methodName });
+ /*  67*/      throw new MockitoException(message, e);
+ /*  68*/    } catch (NoSuchMethodException e) {

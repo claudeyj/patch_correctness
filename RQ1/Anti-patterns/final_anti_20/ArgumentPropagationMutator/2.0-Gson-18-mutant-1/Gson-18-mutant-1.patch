@@ -1,0 +1,12 @@
+--- jd-result-2.0/Gson/18/mutant-1/a-$Gson$Types.java	2021-08-09 04:43:31.397595976 -0700
++++ jd-result-2.0/Gson/18/mutant-1/b-$Gson$Types.java	2021-08-09 04:43:32.961596020 -0700
+@@ -189,7 +189,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static Type getCollectionElementType(Type context, Class<?> contextRawType) {
+-/* 299*/    Type collectionType = getSupertype(context, contextRawType, Collection.class);
++/* 299*/    Collection.class;
++/* 299*/    Type collectionType = context;
+ /* 301*/    if (collectionType instanceof WildcardType) {
+ /* 302*/        collectionType = ((WildcardType)collectionType).getUpperBounds()[0]; 
+ /*   0*/       }

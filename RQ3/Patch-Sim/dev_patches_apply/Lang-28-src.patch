@@ -1,0 +1,17 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/28/mutant-0/buggy-NumericEntityUnescaper.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/28/mutant-0/patched-NumericEntityUnescaper.java
+--- Lang28b/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
++++ Lang28b_Lang-28-src.patchb/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
+@@ -60,7 +60,13 @@
+                 return 0;
+             }
+ 
++            if(entityValue > 0xFFFF) {
++                char[] chrs = Character.toChars(entityValue);
++                out.write(chrs[0]);
++                out.write(chrs[1]);
++            } else {
+                 out.write(entityValue);
++            }
+             return 2 + (end - start) + (isHex ? 1 : 0) + 1;
+         }
+         return 0;

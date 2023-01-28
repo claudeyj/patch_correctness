@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/8/mutant-7/ori-Week.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/8/mutant-7/patched-Week.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/8/mutant-7/ori-Week.java	2021-08-23 09:23:48.512985248 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/8/mutant-7/patched-Week.java	2021-08-23 09:23:48.512985248 +0800
+@@ -172,7 +172,7 @@
+      */
+     public Week(Date time, TimeZone zone) {
+         // defer argument checking...
+-        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++    this(time, zone, Locale.getDefault());
+     }
+ 
+     /**

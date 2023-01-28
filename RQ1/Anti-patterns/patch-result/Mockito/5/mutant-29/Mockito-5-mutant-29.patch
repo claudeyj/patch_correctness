@@ -1,0 +1,20 @@
+--- jd-result/Mockito/5/mutant-29/a-EqualsBuilder.java	2021-07-14 21:32:19.570586749 -0700
++++ jd-result/Mockito/5/mutant-29/b-EqualsBuilder.java	2021-07-14 21:32:20.978586789 -0700
+@@ -53,7 +53,7 @@
+ /* 256*/        testClass = testClass.getSuperclass();
+ /* 257*/        reflectionAppend(lhs, rhs, testClass, equalsBuilder, testTransients, excludeFields);
+ /*   0*/      } 
+-/* 259*/    } catch (IllegalArgumentException e) {
++/* 259*/    } catch (RuntimeException e) {
+ /* 265*/      return false;
+ /*   0*/    } 
+ /* 267*/    return equalsBuilder.isEquals();
+@@ -68,7 +68,7 @@
+ /* 293*/      if (!excludedFieldList.contains(f.getName()) && f.getName().indexOf('$') == -1 && (useTransients || !Modifier.isTransient(f.getModifiers())) && !Modifier.isStatic(f.getModifiers()))
+ /*   0*/        try {
+ /* 298*/          builder.append(f.get(lhs), f.get(rhs));
+-/* 299*/        } catch (IllegalAccessException e) {
++/* 299*/        } catch (ReflectiveOperationException e) {
+ /* 302*/          throw new InternalError("Unexpected IllegalAccessException");
+ /*   0*/        }  
+ /*   0*/    } 

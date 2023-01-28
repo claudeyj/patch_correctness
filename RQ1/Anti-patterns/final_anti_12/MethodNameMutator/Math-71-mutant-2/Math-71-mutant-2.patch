@@ -1,0 +1,11 @@
+--- jd-result/Math/71/mutant-2/a-AbstractIntegrator.java	2021-07-14 09:15:41.897339578 -0700
++++ jd-result/Math/71/mutant-2/b-AbstractIntegrator.java	2021-07-14 09:15:43.265339616 -0700
+@@ -123,7 +123,7 @@
+ /* 233*/    CombinedEventsManager newManager = new CombinedEventsManager();
+ /* 234*/    for (EventState state : manager.getEventsStates())
+ /* 235*/      newManager.addEventHandler(state.getEventHandler(), state.getMaxCheckInterval(), state.getConvergence(), state.getMaxIterationCount()); 
+-/* 240*/    newManager.addEventHandler(new EndTimeChecker(endTime), Double.POSITIVE_INFINITY, Math.ulp(Math.max(Math.abs(startTime), Math.abs(endTime))), 100);
++/* 240*/    newManager.addEventHandler(new EndTimeChecker(endTime), Double.POSITIVE_INFINITY, Math.ulp(Math.max(Math.toDegrees(startTime), Math.abs(endTime))), 100);
+ /* 244*/    return newManager;
+ /*   0*/  }
+ /*   0*/  

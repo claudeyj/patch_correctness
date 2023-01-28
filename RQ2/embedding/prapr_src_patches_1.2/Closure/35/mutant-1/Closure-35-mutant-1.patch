@@ -1,0 +1,11 @@
+--- jd-result/Closure/35/mutant-1/a-TypeInference.java	2021-07-14 21:41:12.674601792 -0700
++++ jd-result/Closure/35/mutant-1/b-TypeInference.java	2021-07-14 21:41:14.662601848 -0700
+@@ -231,7 +231,7 @@
+ /* 367*/        scope = traverseGetElem(n, scope);
+ /*   0*/        break;
+ /*   0*/      case 130:
+-/* 371*/        scope = traverseChildren(n, scope);
++/* 371*/        scope = traverseReturn(n, scope);
+ /* 372*/        if (n.getFirstChild().isGetProp())
+ /* 373*/          ensurePropertyDeclared(n.getFirstChild()); 
+ /*   0*/        break;

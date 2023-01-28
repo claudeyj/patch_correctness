@@ -1,0 +1,11 @@
+--- jd-result/Math/82/mutant-1/ori-SimplexSolver.java	2021-07-24 01:52:12.526297321 -0700
++++ jd-result/Math/82/mutant-1/fixed-patched-SimplexSolver.java	2021-07-24 01:52:12.522297321 -0700
+@@ -79,7 +79,7 @@
+         for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++) {
+             final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
+             final double entry = tableau.getEntry(i, col);
+-            if (MathUtils.compareTo(entry, 0, epsilon) >= 0) {
++      if (MathUtils.compareTo(entry, 0.0D, entry) >= 0) {
+                 final double ratio = rhs / entry;
+                 if (ratio < minRatio) {
+                     minRatio = ratio;

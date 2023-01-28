@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-27/a-RunnerFactory.java	2021-07-14 21:32:13.270586571 -0700
++++ jd-result/Mockito/5/mutant-27/b-RunnerFactory.java	2021-07-14 21:32:14.618586609 -0700
+@@ -21,7 +21,7 @@
+ /*  27*/      if (this.runnerProvider.isJUnit45OrHigherAvailable())
+ /*  28*/        return this.runnerProvider.newInstance("org.mockito.internal.runners.JUnit45AndHigherRunnerImpl", klass); 
+ /*  30*/      return this.runnerProvider.newInstance("org.mockito.internal.runners.JUnit44RunnerImpl", klass);
+-/*  32*/    } catch (InvocationTargetException e) {
++/*  32*/    } catch (ReflectiveOperationException e) {
+ /*  33*/      if (!new TestMethodsFinder().hasTestMethods(klass))
+ /*  34*/        throw new MockitoException("\n\nNo tests found in " + klass.getSimpleName() + "\n" + "Haven't you forgot @Test annotation?\n", e); 
+ /*  41*/      throw e;

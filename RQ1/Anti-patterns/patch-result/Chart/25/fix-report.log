@@ -1,0 +1,2056 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 14 18:55:46 PDT 2021
+Number of Plausible Fixes: 228
+Total Number of Patches: 19907
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.plot.CategoryPlot::getOrientation()Lorg/jfree/chart/plot/PlotOrientation; is replaced with the used of default value null
+	File Name: org/jfree/chart/renderer/category/StatisticalBarRenderer.java
+	Line Number: 206
+	Rank: 1
+	Total Rank: 11
+	Dump: mutant-265.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: replaced call to getColumnCount with a call to getRowCount
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 273
+	Rank: 2
+	Total Rank: 90
+	Dump: mutant-165.class
+------------------------------------------------
+3.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to getObject(II)Ljava/lang/Object; with a call to getObject(Ljava/lang/Comparable;Ljava/lang/Comparable;)Ljava/lang/Object;
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 108
+	Rank: 4
+	Total Rank: 93
+	Dump: mutant-155.class
+------------------------------------------------
+4.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to getMeanValue(II)Ljava/lang/Number; with a call to getMeanValue(Ljava/lang/Comparable;Ljava/lang/Comparable;)Ljava/lang/Number;
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 126
+	Rank: 4
+	Total Rank: 93
+	Dump: mutant-174.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 110
+	Rank: 5
+	Total Rank: 95
+	Dump: mutant-186.class
+------------------------------------------------
+6.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 273
+	Rank: 7
+	Total Rank: 104
+	Dump: mutant-161.class
+------------------------------------------------
+7.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 264
+	Rank: 7
+	Total Rank: 104
+	Dump: mutant-164.class
+------------------------------------------------
+8.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for org/jfree/data/statistics/DefaultStatisticalCategoryDataset::getMeanValue
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 113
+	Rank: 10
+	Total Rank: 111
+	Dump: mutant-187.class
+------------------------------------------------
+9.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for org/jfree/data/statistics/DefaultStatisticalCategoryDataset::getValue
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 126
+	Rank: 10
+	Total Rank: 111
+	Dump: mutant-170.class
+------------------------------------------------
+10.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for org/jfree/data/statistics/MeanAndStandardDeviation::getMean
+	File Name: org/jfree/data/statistics/MeanAndStandardDeviation.java
+	Line Number: 95
+	Rank: 10
+	Total Rank: 111
+	Dump: mutant-266.class
+------------------------------------------------
+11.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 110
+	Rank: 11
+	Total Rank: 113
+	Dump: mutant-167.class
+------------------------------------------------
+12.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.KeyedObjects2D::getRowCount()I is replaced with the used of default value 0
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 264
+	Rank: 17
+	Total Rank: 130
+	Dump: mutant-159.class
+------------------------------------------------
+13.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.KeyedObjects2D::getColumnCount()I is replaced with the used of default value 0
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 273
+	Rank: 17
+	Total Rank: 130
+	Dump: mutant-171.class
+------------------------------------------------
+14.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.KeyedObjects2D::getObject(II)Ljava/lang/Object; is replaced with the used of default value null
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 108
+	Rank: 17
+	Total Rank: 130
+	Dump: mutant-166.class
+------------------------------------------------
+15.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.statistics.MeanAndStandardDeviation::getMean()Ljava/lang/Number; is replaced with the used of default value null
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 111
+	Rank: 17
+	Total Rank: 130
+	Dump: mutant-162.class
+------------------------------------------------
+16.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.statistics.MeanAndStandardDeviation::getMean()Ljava/lang/Number; is replaced with the used of local result
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 111
+	Rank: 17
+	Total Rank: 130
+	Dump: mutant-163.class
+------------------------------------------------
+17.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.statistics.DefaultStatisticalCategoryDataset::getMeanValue(II)Ljava/lang/Number; is replaced with the used of default value null
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 126
+	Rank: 17
+	Total Rank: 130
+	Dump: mutant-160.class
+------------------------------------------------
+18.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced int return with 0 for org/jfree/data/statistics/DefaultStatisticalCategoryDataset::getColumnCount
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 273
+	Rank: 19
+	Total Rank: 132
+	Dump: mutant-169.class
+------------------------------------------------
+19.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced int return with 0 for org/jfree/data/statistics/DefaultStatisticalCategoryDataset::getRowCount
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 264
+	Rank: 19
+	Total Rank: 132
+	Dump: mutant-153.class
+------------------------------------------------
+20.
+	Mutator: MethodNameMutator
+	Description: replaced call to get with a call to remove
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 159
+	Rank: 20
+	Total Rank: 226
+	Dump: mutant-205.class
+------------------------------------------------
+21.
+	Mutator: ConstructorCallMutator
+	Description: removed call to org/jfree/data/statistics/MeanAndStandardDeviation::<init>
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 299
+	Rank: 21
+	Total Rank: 340
+	Dump: mutant-185.class
+------------------------------------------------
+22.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(Ljava/lang/Number;Ljava/lang/Number;)V with a call to <init>(DD)V
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 299
+	Rank: 22
+	Total Rank: 420
+	Dump: mutant-183.class
+------------------------------------------------
+23.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/jfree/data/KeyedObjects2D::addObject
+	File Name: org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+	Line Number: 301
+	Rank: 23
+	Total Rank: 568
+	Dump: mutant-168.class
+------------------------------------------------
+24.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to getObject(Ljava/lang/Comparable;)Ljava/lang/Object; with a call to getObject(I)Ljava/lang/Object;
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 113
+	Rank: 24
+	Total Rank: 916
+	Dump: mutant-215.class
+------------------------------------------------
+25.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 112
+	Rank: 26
+	Total Rank: 919
+	Dump: mutant-197.class
+------------------------------------------------
+26.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 110
+	Rank: 26
+	Total Rank: 919
+	Dump: mutant-200.class
+------------------------------------------------
+27.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for org/jfree/data/KeyedObjects2D::getObject
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 116
+	Rank: 27
+	Total Rank: 929
+	Dump: mutant-193.class
+------------------------------------------------
+28.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 110
+	Rank: 29
+	Total Rank: 932
+	Dump: mutant-201.class
+------------------------------------------------
+29.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 112
+	Rank: 29
+	Total Rank: 932
+	Dump: mutant-190.class
+------------------------------------------------
+30.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::get(I)Ljava/lang/Object; is replaced with the used of local result
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 109
+	Rank: 35
+	Total Rank: 942
+	Dump: mutant-211.class
+------------------------------------------------
+31.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::get(I)Ljava/lang/Object; is replaced with the used of local result
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 111
+	Rank: 35
+	Total Rank: 942
+	Dump: mutant-198.class
+------------------------------------------------
+32.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.KeyedObjects::getObject(Ljava/lang/Comparable;)Ljava/lang/Object; is replaced with the used of local result
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 113
+	Rank: 35
+	Total Rank: 942
+	Dump: mutant-207.class
+------------------------------------------------
+33.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::get(I)Ljava/lang/Object; is replaced with the used of default value null
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 109
+	Rank: 35
+	Total Rank: 942
+	Dump: mutant-210.class
+------------------------------------------------
+34.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::get(I)Ljava/lang/Object; is replaced with the used of default value null
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 111
+	Rank: 35
+	Total Rank: 942
+	Dump: mutant-195.class
+------------------------------------------------
+35.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.KeyedObjects::getObject(Ljava/lang/Comparable;)Ljava/lang/Object; is replaced with the used of default value null
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 113
+	Rank: 35
+	Total Rank: 942
+	Dump: mutant-206.class
+------------------------------------------------
+36.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 86
+	Rank: 37
+	Total Rank: 1106
+	Dump: mutant-226.class
+------------------------------------------------
+37.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 95
+	Rank: 37
+	Total Rank: 1106
+	Dump: mutant-218.class
+------------------------------------------------
+38.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::size()I is replaced with the used of default value 0
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 95
+	Rank: 39
+	Total Rank: 1165
+	Dump: mutant-219.class
+------------------------------------------------
+39.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::size()I is replaced with the used of default value 0
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 86
+	Rank: 39
+	Total Rank: 1165
+	Dump: mutant-192.class
+------------------------------------------------
+40.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced int return with 0 for org/jfree/data/KeyedObjects2D::getColumnCount
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 95
+	Rank: 41
+	Total Rank: 1167
+	Dump: mutant-225.class
+------------------------------------------------
+41.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced int return with 0 for org/jfree/data/KeyedObjects2D::getRowCount
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 86
+	Rank: 41
+	Total Rank: 1167
+	Dump: mutant-202.class
+------------------------------------------------
+42.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java
+	Line Number: 248
+	Rank: 42
+	Total Rank: 1267
+	Dump: mutant-150.class
+------------------------------------------------
+43.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java
+	Line Number: 248
+	Rank: 43
+	Total Rank: 1299
+	Dump: mutant-149.class
+------------------------------------------------
+44.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced int return with 0 for org/jfree/chart/renderer/category/AbstractCategoryItemRenderer::getPassCount
+	File Name: org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java
+	Line Number: 248
+	Rank: 44
+	Total Rank: 1330
+	Dump: mutant-148.class
+------------------------------------------------
+45.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to equals
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 239
+	Rank: 47
+	Total Rank: 1414
+	Dump: mutant-223.class
+------------------------------------------------
+46.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to remove
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 239
+	Rank: 47
+	Total Rank: 1414
+	Dump: mutant-224.class
+------------------------------------------------
+47.
+	Mutator: MethodNameMutator
+	Description: replaced call to add with a call to contains
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 239
+	Rank: 47
+	Total Rank: 1414
+	Dump: mutant-222.class
+------------------------------------------------
+48.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/jfree/data/KeyedObjects::setObject
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 236
+	Rank: 48
+	Total Rank: 1417
+	Dump: mutant-196.class
+------------------------------------------------
+49.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 238
+	Rank: 49
+	Total Rank: 1421
+	Dump: mutant-194.class
+------------------------------------------------
+50.
+	Mutator: LocalNameMutator
+	Description: local columnKey is replaced by local rowKey to be used
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 239
+	Rank: 52
+	Total Rank: 1427
+	Dump: mutant-212.class
+------------------------------------------------
+51.
+	Mutator: LocalNameMutator
+	Description: local columnKey is replaced by local rowKey to be used
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 236
+	Rank: 52
+	Total Rank: 1427
+	Dump: mutant-221.class
+------------------------------------------------
+52.
+	Mutator: LocalNameMutator
+	Description: local columnIndex is replaced by local rowIndex to be used
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 238
+	Rank: 52
+	Total Rank: 1427
+	Dump: mutant-191.class
+------------------------------------------------
+53.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::add(Ljava/lang/Object;)Z is replaced with the used of default value false
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 239
+	Rank: 55
+	Total Rank: 1433
+	Dump: mutant-220.class
+------------------------------------------------
+54.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::indexOf(Ljava/lang/Object;)I is replaced with the used of local rowIndex
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 237
+	Rank: 55
+	Total Rank: 1433
+	Dump: mutant-208.class
+------------------------------------------------
+55.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.List::indexOf(Ljava/lang/Object;)I is replaced with the used of default value 0
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 237
+	Rank: 55
+	Total Rank: 1433
+	Dump: mutant-209.class
+------------------------------------------------
+56.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jfree/data/KeyedObjects2D.java
+	Line Number: 238
+	Rank: 56
+	Total Rank: 1435
+	Dump: mutant-199.class
+------------------------------------------------
+57.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2867
+	Rank: 57
+	Total Rank: 1527
+	Dump: mutant-129.class
+------------------------------------------------
+58.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local column is replaced by access to field weight
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2868
+	Rank: 60
+	Total Rank: 1536
+	Dump: mutant-128.class
+------------------------------------------------
+59.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local rowCount is replaced by access to field weight
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2867
+	Rank: 60
+	Total Rank: 1536
+	Dump: mutant-68.class
+------------------------------------------------
+60.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local columnCount is replaced by access to field weight
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2865
+	Rank: 60
+	Total Rank: 1536
+	Dump: mutant-82.class
+------------------------------------------------
+61.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/jfree/chart/renderer/category/CategoryItemRenderer::drawItem
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2868
+	Rank: 61
+	Total Rank: 1538
+	Dump: mutant-40.class
+------------------------------------------------
+62.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2865
+	Rank: 63
+	Total Rank: 1544
+	Dump: mutant-176.class
+------------------------------------------------
+63.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2867
+	Rank: 63
+	Total Rank: 1544
+	Dump: mutant-80.class
+------------------------------------------------
+64.
+	Mutator: LocalNameMutator
+	Description: local column is replaced by local index to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2868
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-204.class
+------------------------------------------------
+65.
+	Mutator: LocalNameMutator
+	Description: local columnCount is replaced by local index to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2865
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-6.class
+------------------------------------------------
+66.
+	Mutator: LocalNameMutator
+	Description: local columnCount is replaced by local column to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2865
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-7.class
+------------------------------------------------
+67.
+	Mutator: LocalNameMutator
+	Description: local rowCount is replaced by local pass to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2867
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-121.class
+------------------------------------------------
+68.
+	Mutator: LocalNameMutator
+	Description: local columnCount is replaced by local pass to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2865
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-8.class
+------------------------------------------------
+69.
+	Mutator: LocalNameMutator
+	Description: local column is replaced by local columnCount to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2865
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-127.class
+------------------------------------------------
+70.
+	Mutator: LocalNameMutator
+	Description: local rowCount is replaced by local index to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2867
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-123.class
+------------------------------------------------
+71.
+	Mutator: LocalNameMutator
+	Description: local rowCount is replaced by local row to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2867
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-116.class
+------------------------------------------------
+72.
+	Mutator: LocalNameMutator
+	Description: local row is replaced by local rowCount to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2867
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-132.class
+------------------------------------------------
+73.
+	Mutator: LocalNameMutator
+	Description: local columnCount is replaced by local passCount to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2865
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-5.class
+------------------------------------------------
+74.
+	Mutator: LocalNameMutator
+	Description: local column is replaced by local pass to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2868
+	Rank: 74
+	Total Rank: 1584
+	Dump: mutant-203.class
+------------------------------------------------
+75.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2865
+	Rank: 76
+	Total Rank: 1588
+	Dump: mutant-10.class
+------------------------------------------------
+76.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2867
+	Rank: 76
+	Total Rank: 1588
+	Dump: mutant-234.class
+------------------------------------------------
+77.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to createBufferedImage(IIILorg/jfree/chart/ChartRenderingInfo;)Ljava/awt/image/BufferedImage; with a call to createBufferedImage(IIDDLorg/jfree/chart/ChartRenderingInfo;)Ljava/awt/image/BufferedImage;
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1373
+	Rank: 78
+	Total Rank: 2141
+	Dump: mutant-93.class
+------------------------------------------------
+78.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(DDDD)V with a call to <init>()V
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1393
+	Rank: 78
+	Total Rank: 2141
+	Dump: mutant-120.class
+------------------------------------------------
+79.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2863
+	Rank: 79
+	Total Rank: 2160
+	Dump: mutant-238.class
+------------------------------------------------
+80.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local height is replaced by access to field backgroundImageAlignment
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1373
+	Rank: 84
+	Total Rank: 2281
+	Dump: mutant-143.class
+------------------------------------------------
+81.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local height is replaced by access to field backgroundImageAlignment
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1393
+	Rank: 84
+	Total Rank: 2281
+	Dump: mutant-85.class
+------------------------------------------------
+82.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local height is replaced by access to field DEFAULT_BACKGROUND_IMAGE_ALIGNMENT
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1373
+	Rank: 84
+	Total Rank: 2281
+	Dump: mutant-144.class
+------------------------------------------------
+83.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local height is replaced by access to field DEFAULT_BACKGROUND_IMAGE_ALIGNMENT
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1393
+	Rank: 84
+	Total Rank: 2281
+	Dump: mutant-84.class
+------------------------------------------------
+84.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local passCount is replaced by access to field weight
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2863
+	Rank: 84
+	Total Rank: 2281
+	Dump: mutant-147.class
+------------------------------------------------
+85.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/jfree/chart/JFreeChart::draw
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1393
+	Rank: 85
+	Total Rank: 2312
+	Dump: mutant-122.class
+------------------------------------------------
+86.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2863
+	Rank: 86
+	Total Rank: 2349
+	Dump: mutant-146.class
+------------------------------------------------
+87.
+	Mutator: LocalNameMutator
+	Description: local pass is replaced by local columnCount to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2863
+	Rank: 92
+	Total Rank: 2427
+	Dump: mutant-270.class
+------------------------------------------------
+88.
+	Mutator: LocalNameMutator
+	Description: local passCount is replaced by local index to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2863
+	Rank: 92
+	Total Rank: 2427
+	Dump: mutant-237.class
+------------------------------------------------
+89.
+	Mutator: LocalNameMutator
+	Description: local height is replaced by local imageType to be used
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1393
+	Rank: 92
+	Total Rank: 2427
+	Dump: mutant-125.class
+------------------------------------------------
+90.
+	Mutator: LocalNameMutator
+	Description: local width is replaced by local imageType to be used
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1393
+	Rank: 92
+	Total Rank: 2427
+	Dump: mutant-112.class
+------------------------------------------------
+91.
+	Mutator: LocalNameMutator
+	Description: local pass is replaced by local passCount to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2863
+	Rank: 92
+	Total Rank: 2427
+	Dump: mutant-272.class
+------------------------------------------------
+92.
+	Mutator: LocalNameMutator
+	Description: local passCount is replaced by local pass to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2863
+	Rank: 92
+	Total Rank: 2427
+	Dump: mutant-236.class
+------------------------------------------------
+93.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getColumnCount()I is replaced with the used of default value 0
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2860
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-4.class
+------------------------------------------------
+94.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.renderer.category.CategoryItemRenderer::getPassCount()I is replaced with the used of default value 0
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2862
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-273.class
+------------------------------------------------
+95.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.renderer.category.CategoryItemRenderer::getPassCount()I is replaced with the used of field weight
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2862
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-274.class
+------------------------------------------------
+96.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getRowCount()I is replaced with the used of local index
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2861
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-109.class
+------------------------------------------------
+97.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getRowCount()I is replaced with the used of default value 0
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2861
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-110.class
+------------------------------------------------
+98.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getRowCount()I is replaced with the used of field weight
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2861
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-111.class
+------------------------------------------------
+99.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getColumnCount()I is replaced with the used of local index
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2860
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-3.class
+------------------------------------------------
+100.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getColumnCount()I is replaced with the used of field weight
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2860
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-2.class
+------------------------------------------------
+101.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.JFreeChart::createBufferedImage(IIILorg/jfree/chart/ChartRenderingInfo;)Ljava/awt/image/BufferedImage; is replaced with the used of default value null
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1373
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-87.class
+------------------------------------------------
+102.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.renderer.category.CategoryItemRenderer::getPassCount()I is replaced with the used of local index
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2862
+	Rank: 102
+	Total Rank: 2542
+	Dump: mutant-275.class
+------------------------------------------------
+103.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2863
+	Rank: 103
+	Total Rank: 2548
+	Dump: mutant-75.class
+------------------------------------------------
+104.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 577
+	Rank: 105
+	Total Rank: 2700
+	Dump: mutant-251.class
+------------------------------------------------
+105.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 574
+	Rank: 105
+	Total Rank: 2700
+	Dump: mutant-249.class
+------------------------------------------------
+106.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 576
+	Rank: 106
+	Total Rank: 2711
+	Dump: mutant-258.class
+------------------------------------------------
+107.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 577
+	Rank: 107
+	Total Rank: 2728
+	Dump: mutant-261.class
+------------------------------------------------
+108.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 575
+	Rank: 109
+	Total Rank: 2754
+	Dump: mutant-255.class
+------------------------------------------------
+109.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 574
+	Rank: 109
+	Total Rank: 2754
+	Dump: mutant-252.class
+------------------------------------------------
+110.
+	Mutator: LocalNameMutator
+	Description: local r is replaced by local columnCount to be used
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 574
+	Rank: 115
+	Total Rank: 2775
+	Dump: mutant-239.class
+------------------------------------------------
+111.
+	Mutator: LocalNameMutator
+	Description: local columnCount is replaced by local c to be used
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 575
+	Rank: 115
+	Total Rank: 2775
+	Dump: mutant-243.class
+------------------------------------------------
+112.
+	Mutator: LocalNameMutator
+	Description: local r is replaced by local rowCount to be used
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 574
+	Rank: 115
+	Total Rank: 2775
+	Dump: mutant-240.class
+------------------------------------------------
+113.
+	Mutator: LocalNameMutator
+	Description: local columnCount is replaced by local r to be used
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 575
+	Rank: 115
+	Total Rank: 2775
+	Dump: mutant-244.class
+------------------------------------------------
+114.
+	Mutator: LocalNameMutator
+	Description: local rowCount is replaced by local r to be used
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 574
+	Rank: 115
+	Total Rank: 2775
+	Dump: mutant-250.class
+------------------------------------------------
+115.
+	Mutator: LocalNameMutator
+	Description: local c is replaced by local columnCount to be used
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 575
+	Rank: 115
+	Total Rank: 2775
+	Dump: mutant-245.class
+------------------------------------------------
+116.
+	Mutator: BooleanTrueReturnValsMutator
+	Description: replaced boolean return with true for org/jfree/data/general/DatasetUtilities::isEmptyOrNull
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 577
+	Rank: 116
+	Total Rank: 2779
+	Dump: mutant-246.class
+------------------------------------------------
+117.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getValue(II)Ljava/lang/Number; is replaced with the used of default value null
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 576
+	Rank: 117
+	Total Rank: 2798
+	Dump: mutant-254.class
+------------------------------------------------
+118.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 575
+	Rank: 119
+	Total Rank: 2800
+	Dump: mutant-247.class
+------------------------------------------------
+119.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 574
+	Rank: 119
+	Total Rank: 2800
+	Dump: mutant-257.class
+------------------------------------------------
+120.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2560
+	Rank: 121
+	Total Rank: 4174
+	Dump: mutant-233.class
+------------------------------------------------
+121.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 570
+	Rank: 121
+	Total Rank: 4174
+	Dump: mutant-241.class
+------------------------------------------------
+122.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.jfree.chart.plot.CategoryPlot.getRenderer(I)Lorg/jfree/chart/renderer/category/CategoryItemRenderer; is replaced by an instantiation of type org.jfree.chart.renderer.category.IntervalBarRenderer using ()V
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2851
+	Rank: 122
+	Total Rank: 4435
+	Dump: mutant-81.class
+------------------------------------------------
+123.
+	Mutator: ConditionalsBoundaryMutator
+	Description: changed conditional boundary
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2672
+	Rank: 123
+	Total Rank: 4451
+	Dump: mutant-1.class
+------------------------------------------------
+124.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to isEmptyOrNull(Lorg/jfree/data/category/CategoryDataset;)Z with a call to isEmptyOrNull(Lorg/jfree/data/xy/XYDataset;)Z
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2854
+	Rank: 125
+	Total Rank: 4517
+	Dump: mutant-101.class
+------------------------------------------------
+125.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to isEmptyOrNull(Lorg/jfree/data/category/CategoryDataset;)Z with a call to isEmptyOrNull(Lorg/jfree/data/general/PieDataset;)Z
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2854
+	Rank: 125
+	Total Rank: 4517
+	Dump: mutant-100.class
+------------------------------------------------
+126.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2558
+	Rank: 128
+	Total Rank: 4552
+	Dump: mutant-74.class
+------------------------------------------------
+127.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2559
+	Rank: 128
+	Total Rank: 4552
+	Dump: mutant-235.class
+------------------------------------------------
+128.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2854
+	Rank: 128
+	Total Rank: 4552
+	Dump: mutant-269.class
+------------------------------------------------
+129.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2560
+	Rank: 132
+	Total Rank: 4627
+	Dump: mutant-139.class
+------------------------------------------------
+130.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 570
+	Rank: 132
+	Total Rank: 4627
+	Dump: mutant-248.class
+------------------------------------------------
+131.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2854
+	Rank: 132
+	Total Rank: 4627
+	Dump: mutant-12.class
+------------------------------------------------
+132.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2855
+	Rank: 132
+	Total Rank: 4627
+	Dump: mutant-154.class
+------------------------------------------------
+133.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local hasData is replaced by access to field drawSharedDomainAxis
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2855
+	Rank: 138
+	Total Rank: 4763
+	Dump: mutant-86.class
+------------------------------------------------
+134.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local b1 is replaced by access to field DEFAULT_RANGE_GRIDLINES_VISIBLE
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2560
+	Rank: 138
+	Total Rank: 4763
+	Dump: mutant-60.class
+------------------------------------------------
+135.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local hasData is replaced by access to field DEFAULT_DOMAIN_GRIDLINES_VISIBLE
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2855
+	Rank: 138
+	Total Rank: 4763
+	Dump: mutant-90.class
+------------------------------------------------
+136.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local hasData is replaced by access to field domainGridlinesVisible
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2855
+	Rank: 138
+	Total Rank: 4763
+	Dump: mutant-89.class
+------------------------------------------------
+137.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local b2 is replaced by access to field DEFAULT_RANGE_GRIDLINES_VISIBLE
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2560
+	Rank: 138
+	Total Rank: 4763
+	Dump: mutant-11.class
+------------------------------------------------
+138.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local hasData is replaced by access to field DEFAULT_CROSSHAIR_VISIBLE
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2855
+	Rank: 138
+	Total Rank: 4763
+	Dump: mutant-88.class
+------------------------------------------------
+139.
+	Mutator: RemoveConditionalMutator_ORDER_IF
+	Description: removed conditional - replaced comparison check with true
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2559
+	Rank: 140
+	Total Rank: 4829
+	Dump: mutant-27.class
+------------------------------------------------
+140.
+	Mutator: RemoveConditionalMutator_ORDER_IF
+	Description: removed conditional - replaced comparison check with true
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2558
+	Rank: 140
+	Total Rank: 4829
+	Dump: mutant-77.class
+------------------------------------------------
+141.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2672
+	Rank: 146
+	Total Rank: 4940
+	Dump: mutant-9.class
+------------------------------------------------
+142.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2559
+	Rank: 146
+	Total Rank: 4940
+	Dump: mutant-124.class
+------------------------------------------------
+143.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2560
+	Rank: 146
+	Total Rank: 4940
+	Dump: mutant-227.class
+------------------------------------------------
+144.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2558
+	Rank: 146
+	Total Rank: 4940
+	Dump: mutant-232.class
+------------------------------------------------
+145.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 570
+	Rank: 146
+	Total Rank: 4940
+	Dump: mutant-259.class
+------------------------------------------------
+146.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2855
+	Rank: 146
+	Total Rank: 4940
+	Dump: mutant-231.class
+------------------------------------------------
+147.
+	Mutator: LocalNameMutator
+	Description: local i is replaced by local datasetCount to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2673
+	Rank: 148
+	Total Rank: 4986
+	Dump: mutant-145.class
+------------------------------------------------
+148.
+	Mutator: LocalNameMutator
+	Description: local hasData is replaced by local foundData to be used
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2855
+	Rank: 148
+	Total Rank: 4986
+	Dump: mutant-28.class
+------------------------------------------------
+149.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2559
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-78.class
+------------------------------------------------
+150.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2558
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-268.class
+------------------------------------------------
+151.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of field anchorValue
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2558
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-267.class
+------------------------------------------------
+152.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getRowCount()I is replaced with the used of default value 0
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 568
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-256.class
+------------------------------------------------
+153.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.data.category.CategoryDataset::getColumnCount()I is replaced with the used of default value 0
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 569
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-242.class
+------------------------------------------------
+154.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of field anchorValue
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2559
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-79.class
+------------------------------------------------
+155.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.plot.CategoryPlot::getDataset(I)Lorg/jfree/data/category/CategoryDataset; is replaced with the used of default value null
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2850
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-39.class
+------------------------------------------------
+156.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.plot.CategoryPlot::render(Ljava/awt/Graphics2D;Ljava/awt/geom/Rectangle2D;ILorg/jfree/chart/plot/PlotRenderingInfo;)Z is replaced with the used of local b1
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2673
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-228.class
+------------------------------------------------
+157.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.plot.CategoryPlot::render(Ljava/awt/Graphics2D;Ljava/awt/geom/Rectangle2D;ILorg/jfree/chart/plot/PlotRenderingInfo;)Z is replaced with the used of default value false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2673
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-229.class
+------------------------------------------------
+158.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.ObjectList::size()I is replaced with the used of default value 0
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2672
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-263.class
+------------------------------------------------
+159.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.plot.CategoryPlot::getRenderer(I)Lorg/jfree/chart/renderer/category/CategoryItemRenderer; is replaced with the used of default value null
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2851
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-76.class
+------------------------------------------------
+160.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.plot.CategoryPlot::render(Ljava/awt/Graphics2D;Ljava/awt/geom/Rectangle2D;ILorg/jfree/chart/plot/PlotRenderingInfo;)Z is replaced with the used of field DEFAULT_DOMAIN_GRIDLINES_VISIBLE
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2673
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-230.class
+------------------------------------------------
+161.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.ObjectList::size()I is replaced with the used of field weight
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2672
+	Rank: 161
+	Total Rank: 5256
+	Dump: mutant-262.class
+------------------------------------------------
+162.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2672
+	Rank: 162
+	Total Rank: 5274
+	Dump: mutant-29.class
+------------------------------------------------
+163.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/jfree/data/general/DatasetUtilities.java
+	Line Number: 564
+	Rank: 163
+	Total Rank: 5288
+	Dump: mutant-253.class
+------------------------------------------------
+164.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field height is replaced by access to local ww
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1318
+	Rank: 165
+	Total Rank: 12013
+	Dump: mutant-134.class
+------------------------------------------------
+165.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field height is replaced by access to local hh
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1318
+	Rank: 165
+	Total Rank: 12013
+	Dump: mutant-133.class
+------------------------------------------------
+166.
+	Mutator: LocalNameMutator
+	Description: local area is replaced by local titleArea to be used
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1318
+	Rank: 166
+	Total Rank: 12335
+	Dump: mutant-95.class
+------------------------------------------------
+167.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1318
+	Rank: 168
+	Total Rank: 12460
+	Dump: mutant-131.class
+------------------------------------------------
+168.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1318
+	Rank: 168
+	Total Rank: 12460
+	Dump: mutant-135.class
+------------------------------------------------
+169.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local nonTitleArea is replaced a call nonTitleArea.getBounds2D()
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1187
+	Rank: 169
+	Total Rank: 13187
+	Dump: mutant-105.class
+------------------------------------------------
+170.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateBottomInset with a call to trimHeight
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-45.class
+------------------------------------------------
+171.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateBottomInset with a call to trimWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-44.class
+------------------------------------------------
+172.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateTopInset with a call to trimWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-51.class
+------------------------------------------------
+173.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateLeftInset with a call to trimHeight
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-58.class
+------------------------------------------------
+174.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateRightInset with a call to trimHeight
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-54.class
+------------------------------------------------
+175.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateLeftInset with a call to extendWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-57.class
+------------------------------------------------
+176.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateRightInset with a call to trimWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-53.class
+------------------------------------------------
+177.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateRightInset with a call to extendWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-55.class
+------------------------------------------------
+178.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateTopInset with a call to trimHeight
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-50.class
+------------------------------------------------
+179.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateTopInset with a call to extendWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-49.class
+------------------------------------------------
+180.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateBottomInset with a call to extendWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-46.class
+------------------------------------------------
+181.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateLeftInset with a call to trimWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 181
+	Total Rank: 13535
+	Dump: mutant-59.class
+------------------------------------------------
+182.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to setRect(Ljava/awt/geom/Rectangle2D;)V with a call to setRect(DDDD)V
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1187
+	Rank: 182
+	Total Rank: 13612
+	Dump: mutant-142.class
+------------------------------------------------
+183.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local h is replaced by access to field right
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 190
+	Total Rank: 13790
+	Dump: mutant-63.class
+------------------------------------------------
+184.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local w is replaced by access to field top
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 190
+	Total Rank: 13790
+	Dump: mutant-73.class
+------------------------------------------------
+185.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local h is replaced by access to field top
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 190
+	Total Rank: 13790
+	Dump: mutant-66.class
+------------------------------------------------
+186.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local w is replaced by access to field bottom
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 190
+	Total Rank: 13790
+	Dump: mutant-71.class
+------------------------------------------------
+187.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local w is replaced by access to field left
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 190
+	Total Rank: 13790
+	Dump: mutant-72.class
+------------------------------------------------
+188.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local w is replaced by access to field right
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 190
+	Total Rank: 13790
+	Dump: mutant-70.class
+------------------------------------------------
+189.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local h is replaced by access to field left
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 190
+	Total Rank: 13790
+	Dump: mutant-67.class
+------------------------------------------------
+190.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local h is replaced by access to field bottom
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 190
+	Total Rank: 13790
+	Dump: mutant-62.class
+------------------------------------------------
+191.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/jfree/chart/plot/Plot::draw
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1219
+	Rank: 192
+	Total Rank: 13835
+	Dump: mutant-130.class
+------------------------------------------------
+192.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to java/awt/geom/Rectangle2D::setRect
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1187
+	Rank: 192
+	Total Rank: 13835
+	Dump: mutant-126.class
+------------------------------------------------
+193.
+	Mutator: LocalNameMutator
+	Description: local h is replaced by local l to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-20.class
+------------------------------------------------
+194.
+	Mutator: LocalNameMutator
+	Description: local h is replaced by local r to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-17.class
+------------------------------------------------
+195.
+	Mutator: LocalNameMutator
+	Description: local nonTitleArea is replaced by local chartArea to be used
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1187
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-113.class
+------------------------------------------------
+196.
+	Mutator: LocalNameMutator
+	Description: local t is replaced by local h to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-32.class
+------------------------------------------------
+197.
+	Mutator: LocalNameMutator
+	Description: local t is replaced by local w to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-30.class
+------------------------------------------------
+198.
+	Mutator: LocalNameMutator
+	Description: local h is replaced by local b to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-19.class
+------------------------------------------------
+199.
+	Mutator: LocalNameMutator
+	Description: local h is replaced by local t to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-18.class
+------------------------------------------------
+200.
+	Mutator: LocalNameMutator
+	Description: local b is replaced by local h to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-37.class
+------------------------------------------------
+201.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local t to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-35.class
+------------------------------------------------
+202.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local r to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-31.class
+------------------------------------------------
+203.
+	Mutator: LocalNameMutator
+	Description: local b is replaced by local w to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-38.class
+------------------------------------------------
+204.
+	Mutator: LocalNameMutator
+	Description: local l is replaced by local w to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-65.class
+------------------------------------------------
+205.
+	Mutator: LocalNameMutator
+	Description: local chartArea is replaced by local nonTitleArea to be used
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1187
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-83.class
+------------------------------------------------
+206.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local l to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-33.class
+------------------------------------------------
+207.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local b to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-34.class
+------------------------------------------------
+208.
+	Mutator: LocalNameMutator
+	Description: local r is replaced by local w to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 208
+	Total Rank: 14038
+	Dump: mutant-16.class
+------------------------------------------------
+209.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/jfree/chart/util/RectangleInsets::calculateRightInset with argument
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 212
+	Total Rank: 14064
+	Dump: mutant-21.class
+------------------------------------------------
+210.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/jfree/chart/util/RectangleInsets::calculateBottomInset with argument
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 212
+	Total Rank: 14064
+	Dump: mutant-22.class
+------------------------------------------------
+211.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/jfree/chart/util/RectangleInsets::calculateTopInset with argument
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 212
+	Total Rank: 14064
+	Dump: mutant-64.class
+------------------------------------------------
+212.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/jfree/chart/util/RectangleInsets::calculateLeftInset with argument
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 212
+	Total Rank: 14064
+	Dump: mutant-24.class
+------------------------------------------------
+213.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.RectangleInsets::calculateTopInset(D)D is replaced with the used of local w
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 220
+	Total Rank: 14234
+	Dump: mutant-52.class
+------------------------------------------------
+214.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 522
+	Rank: 220
+	Total Rank: 14234
+	Dump: mutant-41.class
+------------------------------------------------
+215.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.RectangleInsets::calculateLeftInset(D)D is replaced with the used of local w
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 220
+	Total Rank: 14234
+	Dump: mutant-13.class
+------------------------------------------------
+216.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 523
+	Rank: 220
+	Total Rank: 14234
+	Dump: mutant-47.class
+------------------------------------------------
+217.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of field top
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 523
+	Rank: 220
+	Total Rank: 14234
+	Dump: mutant-48.class
+------------------------------------------------
+218.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of field top
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 522
+	Rank: 220
+	Total Rank: 14234
+	Dump: mutant-42.class
+------------------------------------------------
+219.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.RectangleInsets::calculateRightInset(D)D is replaced with the used of local w
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 220
+	Total Rank: 14234
+	Dump: mutant-14.class
+------------------------------------------------
+220.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.RectangleInsets::calculateBottomInset(D)D is replaced with the used of local w
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 220
+	Total Rank: 14234
+	Dump: mutant-23.class
+------------------------------------------------
+221.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field bottom is replaced by access to local height
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 388
+	Rank: 224
+	Total Rank: 14603
+	Dump: mutant-61.class
+------------------------------------------------
+222.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field left is replaced by access to local width
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 418
+	Rank: 224
+	Total Rank: 14603
+	Dump: mutant-69.class
+------------------------------------------------
+223.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field top is replaced by access to local height
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 358
+	Rank: 224
+	Total Rank: 14603
+	Dump: mutant-15.class
+------------------------------------------------
+224.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field right is replaced by access to local width
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 448
+	Rank: 224
+	Total Rank: 14603
+	Dump: mutant-25.class
+------------------------------------------------
+225.
+	Mutator: LocalNameMutator
+	Description: local result is replaced by local width to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 422
+	Rank: 228
+	Total Rank: 14704
+	Dump: mutant-43.class
+------------------------------------------------
+226.
+	Mutator: LocalNameMutator
+	Description: local result is replaced by local height to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 362
+	Rank: 228
+	Total Rank: 14704
+	Dump: mutant-36.class
+------------------------------------------------
+227.
+	Mutator: LocalNameMutator
+	Description: local result is replaced by local height to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 392
+	Rank: 228
+	Total Rank: 14704
+	Dump: mutant-56.class
+------------------------------------------------
+228.
+	Mutator: LocalNameMutator
+	Description: local result is replaced by local width to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 452
+	Rank: 228
+	Total Rank: 14704
+	Dump: mutant-26.class
+------------------------------------------------

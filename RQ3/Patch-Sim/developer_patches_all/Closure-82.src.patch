@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/82/mutant-0/buggy-JSType.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/82/mutant-0/patched-JSType.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/82/mutant-0/buggy-JSType.java	2021-08-22 00:18:38.622190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/82/mutant-0/patched-JSType.java	2021-08-22 00:18:38.622190184 -0700
+@@ -160,7 +160,9 @@
+   }
+ 
+   public final boolean isEmptyType() {
+-    return isNoType() || isNoObjectType() || isNoResolvedType();
++    return isNoType() || isNoObjectType() || isNoResolvedType() ||
++        (registry.getNativeFunctionType(
++             JSTypeNative.LEAST_FUNCTION_TYPE) == this);
+   }
+ 
+   public boolean isNumberObjectType() {

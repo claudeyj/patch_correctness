@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-29/a-CMAESOptimizer.java	2021-07-14 09:07:42.685326055 -0700
++++ jd-result/Math/20/mutant-29/b-CMAESOptimizer.java	2021-07-14 09:07:44.217326099 -0700
+@@ -343,7 +343,7 @@
+ /* 591*/    this.mueff = sumw * sumw / sumwq;
+ /* 594*/    this.cc = (4.0D + this.mueff / this.dimension) / (this.dimension + 4.0D + 2.0D * this.mueff / this.dimension);
+ /* 596*/    this.cs = (this.mueff + 2.0D) / (this.dimension + this.mueff + 3.0D);
+-/* 597*/    this.damps = (1.0D + 2.0D * Math.max(0.0D, Math.sqrt((this.mueff - 1.0D) / (this.dimension + 1.0D)) - 1.0D)) * Math.max(0.3D, 1.0D - this.dimension / (1.0E-6D + Math.min(this.maxIterations, getMaxEvaluations() / this.lambda))) + this.cs;
++/* 597*/    this.damps = (1.0D + 2.0D * Math.max(0.0D, Math.sqrt((this.mueff - 2.0D) / (this.dimension + 1.0D)) - 1.0D)) * Math.max(0.3D, 1.0D - this.dimension / (1.0E-6D + Math.min(this.maxIterations, getMaxEvaluations() / this.lambda))) + this.cs;
+ /* 602*/    this.ccov1 = 2.0D / ((this.dimension + 1.3D) * (this.dimension + 1.3D) + this.mueff);
+ /* 603*/    this.ccovmu = Math.min(1.0D - this.ccov1, 2.0D * (this.mueff - 2.0D + 1.0D / this.mueff) / ((this.dimension + 2.0D) * (this.dimension + 2.0D) + this.mueff));
+ /* 605*/    this.ccov1Sep = Math.min(1.0D, this.ccov1 * (this.dimension + 1.5D) / 3.0D);

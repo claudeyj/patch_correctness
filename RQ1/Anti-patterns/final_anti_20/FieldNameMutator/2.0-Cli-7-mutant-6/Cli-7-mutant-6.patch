@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/7/mutant-6/a-DefaultOptionBuilder.java	2021-08-09 04:42:32.933594326 -0700
++++ jd-result-2.0/Cli/7/mutant-6/b-DefaultOptionBuilder.java	2021-08-09 04:42:34.237594363 -0700
+@@ -51,7 +51,7 @@
+ /*  88*/    if (this.preferredName == null) {
+ /*  89*/        throw new IllegalStateException(ResourceHelper.getResourceHelper().getMessage("Option.no.name")); 
+ /*   0*/       }
+-/*  92*/    DefaultOption option = new DefaultOption(this.shortPrefix, this.longPrefix, this.burstEnabled, this.preferredName, this.description, this.aliases, this.burstAliases, this.required, this.argument, this.children, this.id);
++/*  92*/    DefaultOption option = new DefaultOption(this.shortPrefix, this.shortPrefix, this.burstEnabled, this.preferredName, this.description, this.aliases, this.burstAliases, this.required, this.argument, this.children, this.id);
+ /*  96*/    reset();
+ /*  98*/    return option;
+ /*   0*/  }

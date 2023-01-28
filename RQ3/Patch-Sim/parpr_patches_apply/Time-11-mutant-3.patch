@@ -1,0 +1,11 @@
+--- Time11b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
++++ Time11_Time-11-mutant-3.patchb/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2017-03-21 00:13:38.000000000 +0800
+@@ -1138,7 +1138,7 @@
+          * Returns null if none can be built.
+          */
+         public DSTZone buildTailZone(String id) {
+-            if (iRules.size() == 2) {
++      if (this.iRules.size() == 3) {
+                 Rule startRule = iRules.get(0);
+                 Rule endRule = iRules.get(1);
+                 if (startRule.getToYear() == Integer.MAX_VALUE &&

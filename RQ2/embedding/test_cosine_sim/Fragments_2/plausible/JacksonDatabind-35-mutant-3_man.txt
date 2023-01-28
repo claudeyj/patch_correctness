@@ -1,0 +1,7 @@
+                    return deserializeFromObjectId(p, ctxt);
+                }
+                // but, with 2.5+, a simple Object-wrapped value also legal:
+        if (t == JsonToken.VALUE_EMBEDDED_OBJECT) {
+                    t = p.nextToken();
+                }
+                if (t == JsonToken.FIELD_NAME && _objectIdReader.maySerializeAsObject()

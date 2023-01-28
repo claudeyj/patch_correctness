@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/4/mutant-0/buggy-NamedType.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/4/mutant-0/patched-NamedType.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/4/mutant-0/buggy-NamedType.java	2021-08-22 00:18:38.606190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/4/mutant-0/patched-NamedType.java	2021-08-22 00:18:38.606190184 -0700
+@@ -187,7 +187,7 @@
+     // makes more sense. Now, resolution via registry is first in order to
+     // avoid triggering the warnings built into the resolution via properties.
+     boolean resolved = resolveViaRegistry(t, enclosing);
+-    if (detectImplicitPrototypeCycle()) {
++    if (detectInheritanceCycle()) {
+       handleTypeCycle(t);
+     }
+ 
+@@ -199,7 +199,7 @@
+     }
+ 
+     resolveViaProperties(t, enclosing);
+-    if (detectImplicitPrototypeCycle()) {
++    if (detectInheritanceCycle()) {
+       handleTypeCycle(t);
+     }
+ 

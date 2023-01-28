@@ -1,0 +1,12 @@
+--- jd-result/Math/81/mutant-114/a-EigenDecompositionImpl.java	2021-07-14 09:20:33.493347806 -0700
++++ jd-result/Math/81/mutant-114/b-EigenDecompositionImpl.java	2021-07-14 09:20:35.001347849 -0700
+@@ -939,7 +939,8 @@
+ /*1526*/        if (this.dMin == this.dN2) {
+ /*1529*/          this.tType = -5;
+ /*1530*/          double s = 0.25D * this.dMin;
+-/*1533*/          int np = nn - 2 * this.pingPong;
++/*1533*/          this;
++/*1533*/          int np = nn - 2 * deflated;
+ /*1534*/          double b1 = this.work[np - 2];
+ /*1535*/          double b2 = this.work[np - 6];
+ /*1536*/          double gam = this.dN2;

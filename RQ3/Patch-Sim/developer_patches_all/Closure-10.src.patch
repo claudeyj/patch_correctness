@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/10/mutant-0/buggy-NodeUtil.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/10/mutant-0/patched-NodeUtil.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/10/mutant-0/buggy-NodeUtil.java	2021-08-22 00:18:38.574190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/10/mutant-0/patched-NodeUtil.java	2021-08-22 00:18:38.574190183 -0700
+@@ -1414,7 +1414,7 @@
+ 
+   static boolean mayBeString(Node n, boolean recurse) {
+     if (recurse) {
+-      return allResultsMatch(n, MAY_BE_STRING_PREDICATE);
++      return anyResultsMatch(n, MAY_BE_STRING_PREDICATE);
+     } else {
+       return mayBeStringHelper(n);
+     }

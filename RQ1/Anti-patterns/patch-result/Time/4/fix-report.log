@@ -1,0 +1,67 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 20:12:41 PDT 2021
+Number of Plausible Fixes: 7
+Total Number of Patches: 841
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.joda.time.DateTimeField::getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I is replaced with the used of default value 0
+	File Name: org/joda/time/field/ZeroIsMaxDateTimeField.java
+	Line Number: 178
+	Rank: 1
+	Total Rank: 10
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/joda/time/field/ZeroIsMaxDateTimeField.java
+	Line Number: 178
+	Rank: 2
+	Total Rank: 13
+	Dump: mutant-8.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to getMaximumValue with a call to getMinimumValue
+	File Name: org/joda/time/field/ZeroIsMaxDateTimeField.java
+	Line Number: 178
+	Rank: 5
+	Total Rank: 17
+	Dump: mutant-10.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.joda.time.field.ZeroIsMaxDateTimeField.getWrappedField()Lorg/joda/time/DateTimeField; is replaced by an instantiation of type org.joda.time.field.DelegatedDateTimeField using (Lorg/joda/time/DateTimeField;Lorg/joda/time/DateTimeFieldType;)V
+	File Name: org/joda/time/field/ZeroIsMaxDateTimeField.java
+	Line Number: 178
+	Rank: 5
+	Total Rank: 17
+	Dump: mutant-4.class
+------------------------------------------------
+5.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.joda.time.field.ZeroIsMaxDateTimeField.getWrappedField()Lorg/joda/time/DateTimeField; is replaced by an instantiation of type org.joda.time.field.DelegatedDateTimeField using (Lorg/joda/time/DateTimeField;)V
+	File Name: org/joda/time/field/ZeroIsMaxDateTimeField.java
+	Line Number: 178
+	Rank: 5
+	Total Rank: 17
+	Dump: mutant-5.class
+------------------------------------------------
+6.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced int return with 0 for org/joda/time/field/ZeroIsMaxDateTimeField::getMaximumValue
+	File Name: org/joda/time/field/ZeroIsMaxDateTimeField.java
+	Line Number: 178
+	Rank: 6
+	Total Rank: 23
+	Dump: mutant-7.class
+------------------------------------------------
+7.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(Lorg/joda/time/Chronology;[Lorg/joda/time/DateTimeFieldType;[I)V with a call to <init>([Lorg/joda/time/DateTimeFieldType;[I)V
+	File Name: org/joda/time/Partial.java
+	Line Number: 464
+	Rank: 7
+	Total Rank: 217
+	Dump: mutant-6.class
+------------------------------------------------

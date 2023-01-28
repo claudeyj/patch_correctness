@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/12/mutant-0/buggy-MaybeReachingVariableUse.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/12/mutant-0/patched-MaybeReachingVariableUse.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/12/mutant-0/buggy-MaybeReachingVariableUse.java	2021-08-22 00:18:38.586190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/12/mutant-0/patched-MaybeReachingVariableUse.java	2021-08-22 00:18:38.586190183 -0700
+@@ -157,6 +157,12 @@
+   }
+ 
+   private boolean hasExceptionHandler(Node cfgNode) {
++    List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getOutEdges(cfgNode);
++    for (DiGraphEdge<Node, Branch> edge : branchEdges) {
++      if (edge.getValue() == Branch.ON_EX) {
++        return true;
++      }
++    }
+     return false;
+   }
+ 

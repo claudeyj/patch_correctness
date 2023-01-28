@@ -1,0 +1,34 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/3/mutant-0/buggy-FlowSensitiveInlineVariables.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/3/mutant-0/patched-FlowSensitiveInlineVariables.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/3/mutant-0/buggy-FlowSensitiveInlineVariables.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/3/mutant-0/patched-FlowSensitiveInlineVariables.java	2021-08-22 00:18:38.602190184 -0700
+@@ -152,7 +152,7 @@
+     reachingUses = new MaybeReachingVariableUse(cfg, t.getScope(), compiler);
+     reachingUses.analyze();
+     for (Candidate c : candidates) {
+-      if (c.canInline()) {
++      if (c.canInline(t.getScope())) {
+         c.inlineVariable();
+ 
+         // If definition c has dependencies, then inlining it may have
+@@ -277,7 +277,7 @@
+       return defMetadata.node;
+     }
+ 
+-    private boolean canInline() {
++    private boolean canInline(final Scope scope) {
+       // Cannot inline a parameter.
+       if (getDefCfgNode().isFunction()) {
+         return false;
+@@ -372,6 +372,12 @@
+                   case Token.REGEXP:
+                   case Token.NEW:
+                     return true;
++                  case Token.NAME:
++                    Var var = scope.getOwnSlot(input.getString());
++                    if (var != null
++                        && var.getParentNode().isCatch()) {
++                      return true;
++                    }
+                 }
+                 return false;
+               }

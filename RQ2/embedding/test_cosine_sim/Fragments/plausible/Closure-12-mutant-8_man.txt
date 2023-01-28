@@ -1,0 +1,8 @@
+        }
+
+        for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {
+          ControlFlowGraph.isEnteringNewCfgNode(c);
+          if (apply(c)) {
+            return true;
+          }
+        }

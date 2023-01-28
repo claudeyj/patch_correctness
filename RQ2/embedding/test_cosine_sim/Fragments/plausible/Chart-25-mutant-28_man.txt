@@ -1,0 +1,7 @@
+        CategoryAxis domainAxis = getDomainAxisForDataset(index);
+        ValueAxis rangeAxis = getRangeAxisForDataset(index);
+        boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);
+    if (foundData && renderer != null) {
+            
+            foundData = true;
+            CategoryItemRendererState state = renderer.initialise(g2, dataArea,

@@ -1,0 +1,34 @@
+--- org.mockito.internal.util.MockUtil_ESTest::test0
+org.mockito.exceptions.base.MockitoException: 
+Mockito cannot mock this class: class org.mockito.internal.creation.jmock.ClassImposterizer$ClassWithSuperclassToWorkAroundCglibBug
+Mockito can only mock visible & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+Caused by: org.mockito.cglib.core.CodeGenerationException: java.lang.reflect.InvocationTargetException-->null
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mockito.cglib.core.ReflectUtils.defineClass(ReflectUtils.java:385)
+	at org.mockito.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:220)
+	at org.mockito.cglib.proxy.Enhancer.createHelper(Enhancer.java:378)
+	at org.mockito.cglib.proxy.Enhancer.createClass(Enhancer.java:318)
+	at org.mockito.internal.creation.jmock.ClassImposterizer.createProxyClass(ClassImposterizer.java:94)
+	at org.mockito.internal.creation.jmock.ClassImposterizer.imposterise(ClassImposterizer.java:51)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:53)
+	at org.mockito.internal.util.MockUtil_ESTest.test0(MockUtil_ESTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+Caused by: java.lang.ClassFormatError: Duplicate interface name in class file org/mockito/internal/creation/jmock/ClassImposterizer$ClassWithSuperclassToWorkAroundCglibBug$$EnhancerByMockitoWithCGLIB$$13
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	... 23 more

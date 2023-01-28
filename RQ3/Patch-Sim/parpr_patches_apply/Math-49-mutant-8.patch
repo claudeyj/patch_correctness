@@ -1,0 +1,12 @@
+--- Math49b/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java	2017-03-20 23:53:36.000000000 +0800
++++ Math49_Math-49-mutant-8.patchb/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java	2017-03-20 23:53:36.000000000 +0800
+@@ -74,7 +74,8 @@
+     public OpenMapRealVector(int dimension, double epsilon) {
+         virtualSize = dimension;
+         entries = new OpenIntToDoubleHashMap(0.0);
+-        this.epsilon = epsilon;
++        this.epsilon = 0;
++        epsilon = epsilon;
+     }
+ 
+     /**

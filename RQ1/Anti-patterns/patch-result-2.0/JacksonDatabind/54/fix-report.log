@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 29 15:09:58 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 13457
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReferenceType with a call to isConcrete
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 134
+	Rank: 1
+	Total Rank: 163
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 134
+	Rank: 2
+	Total Rank: 165
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: LocalNameMutator
+	Description: local declaredType is replaced by local actualType to be used
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 134
+	Rank: 3
+	Total Rank: 171
+	Dump: mutant-3.class
+------------------------------------------------

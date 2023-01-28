@@ -1,0 +1,10 @@
+--- Math28b/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2017-03-20 23:48:41.000000000 +0800
++++ Math28_Math-28-mutant-16.patchb/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2017-03-20 23:48:41.000000000 +0800
+@@ -74,7 +74,6 @@
+             // check if the entry is strictly smaller than the current minimum
+             // do not use a ulp/epsilon check
+             if (entry < minValue) {
+-                minValue = entry;
+                 minPos = i;
+             }
+         }

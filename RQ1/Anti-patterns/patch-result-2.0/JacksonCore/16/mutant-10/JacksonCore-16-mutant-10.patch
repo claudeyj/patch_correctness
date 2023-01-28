@@ -1,0 +1,15 @@
+--- jd-result-2.0/JacksonCore/16/mutant-10/a-ByteQuadsCanonicalizer.java	2021-08-09 04:12:39.025543705 -0700
++++ jd-result-2.0/JacksonCore/16/mutant-10/b-ByteQuadsCanonicalizer.java	2021-08-09 04:12:40.553543749 -0700
+@@ -782,7 +782,11 @@
+ /*   0*/    public static TableInfo createInitial(int sz) {
+ /*1259*/      int hashAreaSize = sz << 3;
+ /*1260*/      int tertShift = ByteQuadsCanonicalizer._calcTertiaryShift(sz);
+-/*1262*/      return new TableInfo(sz, 0, tertShift, new int[hashAreaSize], new String[sz << 1], hashAreaSize - sz, hashAreaSize);
++/*1262*/      int m = hashAreaSize, k = hashAreaSize - sz;
++/*1262*/      String[] arrayOfString = new String[sz << 1];
++/*1262*/      int arrayOfInt[] = new int[hashAreaSize], j = tertShift;
++/*1262*/      int bool = false, i = sz;
++/*1262*/      return new TableInfo(null);
+ /*   0*/    }
+ /*   0*/  }
+ /*   0*/}

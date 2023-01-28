@@ -1,0 +1,11 @@
+--- jd-result/Closure/40/mutant-2/a-NameAnalyzer.java	2021-07-14 21:41:59.646603118 -0700
++++ jd-result/Closure/40/mutant-2/b-NameAnalyzer.java	2021-07-14 21:42:01.174603161 -0700
+@@ -341,7 +341,7 @@
+ /* 632*/        Node nameNode = n.getFirstChild();
+ /* 633*/        NameAnalyzer.NameInformation ns = NameAnalyzer.this.createNameInformation(t, nameNode, n);
+ /* 634*/        if (ns != null && ns.onlyAffectsClassDef) {
+-/* 635*/          NameAnalyzer.JsName name = NameAnalyzer.this.getName(ns.name, false);
++/* 635*/          NameAnalyzer.JsName name = NameAnalyzer.this.getName(ns.name, true);
+ /* 636*/          if (name != null)
+ /* 637*/            NameAnalyzer.this.refNodes.add(new NameAnalyzer.ClassDefiningFunctionNode(name, n, parent, parent.getParent())); 
+ /*   0*/        } 

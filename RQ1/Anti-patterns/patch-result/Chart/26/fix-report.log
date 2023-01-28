@@ -1,0 +1,931 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 14 18:18:38 PDT 2021
+Number of Plausible Fixes: 103
+Total Number of Patches: 9658
+================================================
+1.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2536
+	Rank: 2
+	Total Rank: 677
+	Dump: mutant-98.class
+------------------------------------------------
+2.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2537
+	Rank: 2
+	Total Rank: 677
+	Dump: mutant-105.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2538
+	Rank: 3
+	Total Rank: 712
+	Dump: mutant-104.class
+------------------------------------------------
+4.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2538
+	Rank: 4
+	Total Rank: 747
+	Dump: mutant-111.class
+------------------------------------------------
+5.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2538
+	Rank: 7
+	Total Rank: 905
+	Dump: mutant-99.class
+------------------------------------------------
+6.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2537
+	Rank: 7
+	Total Rank: 905
+	Dump: mutant-109.class
+------------------------------------------------
+7.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2536
+	Rank: 7
+	Total Rank: 905
+	Dump: mutant-103.class
+------------------------------------------------
+8.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local b1 is replaced by access to field DEFAULT_RANGE_GRIDLINES_VISIBLE
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2538
+	Rank: 9
+	Total Rank: 983
+	Dump: mutant-97.class
+------------------------------------------------
+9.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local b2 is replaced by access to field DEFAULT_RANGE_GRIDLINES_VISIBLE
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2538
+	Rank: 9
+	Total Rank: 983
+	Dump: mutant-56.class
+------------------------------------------------
+10.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2537
+	Rank: 14
+	Total Rank: 1105
+	Dump: mutant-101.class
+------------------------------------------------
+11.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2536
+	Rank: 14
+	Total Rank: 1105
+	Dump: mutant-107.class
+------------------------------------------------
+12.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of field anchorValue
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2536
+	Rank: 14
+	Total Rank: 1105
+	Dump: mutant-106.class
+------------------------------------------------
+13.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.plot.CategoryPlot::drawAxes(Ljava/awt/Graphics2D;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Rectangle2D;Lorg/jfree/chart/plot/PlotRenderingInfo;)Ljava/util/Map; is replaced with the used of field foregroundDomainMarkers
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2571
+	Rank: 14
+	Total Rank: 1105
+	Dump: mutant-108.class
+------------------------------------------------
+14.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of field anchorValue
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2537
+	Rank: 14
+	Total Rank: 1105
+	Dump: mutant-102.class
+------------------------------------------------
+15.
+	Mutator: RemoveConditionalMutator_ORDER_IF
+	Description: removed conditional - replaced comparison check with true
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2536
+	Rank: 16
+	Total Rank: 1138
+	Dump: mutant-100.class
+------------------------------------------------
+16.
+	Mutator: RemoveConditionalMutator_ORDER_IF
+	Description: removed conditional - replaced comparison check with true
+	File Name: org/jfree/chart/plot/CategoryPlot.java
+	Line Number: 2537
+	Rank: 16
+	Total Rank: 1138
+	Dump: mutant-84.class
+------------------------------------------------
+17.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to getEntityCollection()Lorg/jfree/chart/entity/EntityCollection; is guarded returning local state
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1192
+	Rank: 17
+	Total Rank: 1152
+	Dump: mutant-58.class
+------------------------------------------------
+18.
+	Mutator: NonVoidMethodCallGuardMutator
+	Description: the call to org.jfree.chart.ChartRenderingInfo::getEntityCollection()Lorg/jfree/chart/entity/EntityCollection; is guarded using default value null
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1192
+	Rank: 18
+	Total Rank: 1154
+	Dump: mutant-89.class
+------------------------------------------------
+19.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.jfree.chart.plot.PlotRenderingInfo.getOwner()Lorg/jfree/chart/ChartRenderingInfo; is replaced by an instantiation of type org.jfree.chart.ChartRenderingInfo using (Lorg/jfree/chart/entity/EntityCollection;)V
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1191
+	Rank: 21
+	Total Rank: 1159
+	Dump: mutant-93.class
+------------------------------------------------
+20.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.jfree.chart.ChartRenderingInfo.getEntityCollection()Lorg/jfree/chart/entity/EntityCollection; is replaced by an instantiation of type org.jfree.chart.entity.StandardEntityCollection using ()V
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1192
+	Rank: 21
+	Total Rank: 1159
+	Dump: mutant-90.class
+------------------------------------------------
+21.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.jfree.chart.plot.PlotRenderingInfo.getOwner()Lorg/jfree/chart/ChartRenderingInfo; is replaced by an instantiation of type org.jfree.chart.ChartRenderingInfo using ()V
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1191
+	Rank: 21
+	Total Rank: 1159
+	Dump: mutant-92.class
+------------------------------------------------
+22.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.ChartRenderingInfo::getEntityCollection()Lorg/jfree/chart/entity/EntityCollection; is replaced with the used of default value null
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1192
+	Rank: 22
+	Total Rank: 1162
+	Dump: mutant-62.class
+------------------------------------------------
+23.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1101
+	Rank: 23
+	Total Rank: 2294
+	Dump: mutant-71.class
+------------------------------------------------
+24.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1190
+	Rank: 25
+	Total Rank: 2319
+	Dump: mutant-76.class
+------------------------------------------------
+25.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1101
+	Rank: 25
+	Total Rank: 2319
+	Dump: mutant-69.class
+------------------------------------------------
+26.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 314
+	Rank: 26
+	Total Rank: 2349
+	Dump: mutant-66.class
+------------------------------------------------
+27.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1190
+	Rank: 28
+	Total Rank: 2517
+	Dump: mutant-94.class
+------------------------------------------------
+28.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1101
+	Rank: 28
+	Total Rank: 2517
+	Dump: mutant-72.class
+------------------------------------------------
+29.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local label is replaced by access to field labelToolTip
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1101
+	Rank: 30
+	Total Rank: 2598
+	Dump: mutant-60.class
+------------------------------------------------
+30.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local label is replaced by access to field labelURL
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1101
+	Rank: 30
+	Total Rank: 2598
+	Dump: mutant-61.class
+------------------------------------------------
+31.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.String::equals(Ljava/lang/Object;)Z is replaced with the used of field DEFAULT_AXIS_VISIBLE
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 1101
+	Rank: 31
+	Total Rank: 2748
+	Dump: mutant-68.class
+------------------------------------------------
+32.
+	Mutator: BooleanFalseReturnValsMutator
+	Description: replaced boolean return with false for org/jfree/chart/axis/Axis::isVisible
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 314
+	Rank: 32
+	Total Rank: 2859
+	Dump: mutant-95.class
+------------------------------------------------
+33.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field height is replaced by access to local hh
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1312
+	Rank: 34
+	Total Rank: 3683
+	Dump: mutant-75.class
+------------------------------------------------
+34.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field height is replaced by access to local ww
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1312
+	Rank: 34
+	Total Rank: 3683
+	Dump: mutant-77.class
+------------------------------------------------
+35.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1312
+	Rank: 36
+	Total Rank: 3790
+	Dump: mutant-80.class
+------------------------------------------------
+36.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1312
+	Rank: 36
+	Total Rank: 3790
+	Dump: mutant-74.class
+------------------------------------------------
+37.
+	Mutator: LocalNameMutator
+	Description: local area is replaced by local titleArea to be used
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1312
+	Rank: 37
+	Total Rank: 3947
+	Dump: mutant-57.class
+------------------------------------------------
+38.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to setRect(Ljava/awt/geom/Rectangle2D;)V with a call to setRect(DDDD)V
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1181
+	Rank: 38
+	Total Rank: 4735
+	Dump: mutant-88.class
+------------------------------------------------
+39.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local nonTitleArea is replaced a call nonTitleArea.getBounds2D()
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1181
+	Rank: 39
+	Total Rank: 4773
+	Dump: mutant-59.class
+------------------------------------------------
+40.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/jfree/chart/plot/Plot::draw
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1213
+	Rank: 41
+	Total Rank: 4907
+	Dump: mutant-73.class
+------------------------------------------------
+41.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to java/awt/geom/Rectangle2D::setRect
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1181
+	Rank: 41
+	Total Rank: 4907
+	Dump: mutant-70.class
+------------------------------------------------
+42.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateRightInset with a call to trimWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-36.class
+------------------------------------------------
+43.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateRightInset with a call to trimHeight
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-37.class
+------------------------------------------------
+44.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateBottomInset with a call to trimHeight
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-28.class
+------------------------------------------------
+45.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateTopInset with a call to trimWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-34.class
+------------------------------------------------
+46.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateTopInset with a call to extendWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-32.class
+------------------------------------------------
+47.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateLeftInset with a call to trimHeight
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-41.class
+------------------------------------------------
+48.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateLeftInset with a call to extendWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-40.class
+------------------------------------------------
+49.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateBottomInset with a call to trimWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-27.class
+------------------------------------------------
+50.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateTopInset with a call to trimHeight
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-33.class
+------------------------------------------------
+51.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateRightInset with a call to extendWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-38.class
+------------------------------------------------
+52.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateBottomInset with a call to extendWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-29.class
+------------------------------------------------
+53.
+	Mutator: MethodNameMutator
+	Description: replaced call to calculateLeftInset with a call to trimWidth
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 53
+	Total Rank: 5217
+	Dump: mutant-42.class
+------------------------------------------------
+54.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local w is replaced by access to field bottom
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 61
+	Total Rank: 5366
+	Dump: mutant-53.class
+------------------------------------------------
+55.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local w is replaced by access to field right
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 61
+	Total Rank: 5366
+	Dump: mutant-52.class
+------------------------------------------------
+56.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local h is replaced by access to field left
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 61
+	Total Rank: 5366
+	Dump: mutant-49.class
+------------------------------------------------
+57.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local w is replaced by access to field top
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 61
+	Total Rank: 5366
+	Dump: mutant-55.class
+------------------------------------------------
+58.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local h is replaced by access to field bottom
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 61
+	Total Rank: 5366
+	Dump: mutant-44.class
+------------------------------------------------
+59.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local h is replaced by access to field top
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 61
+	Total Rank: 5366
+	Dump: mutant-48.class
+------------------------------------------------
+60.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local w is replaced by access to field left
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 61
+	Total Rank: 5366
+	Dump: mutant-54.class
+------------------------------------------------
+61.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local h is replaced by access to field right
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 61
+	Total Rank: 5366
+	Dump: mutant-45.class
+------------------------------------------------
+62.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of field top
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 523
+	Rank: 69
+	Total Rank: 5568
+	Dump: mutant-31.class
+------------------------------------------------
+63.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 522
+	Rank: 69
+	Total Rank: 5568
+	Dump: mutant-24.class
+------------------------------------------------
+64.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getHeight()D is replaced with the used of default value 0.D
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 523
+	Rank: 69
+	Total Rank: 5568
+	Dump: mutant-30.class
+------------------------------------------------
+65.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.RectangleInsets::calculateLeftInset(D)D is replaced with the used of local w
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 69
+	Total Rank: 5568
+	Dump: mutant-1.class
+------------------------------------------------
+66.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.awt.geom.Rectangle2D::getWidth()D is replaced with the used of field top
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 522
+	Rank: 69
+	Total Rank: 5568
+	Dump: mutant-25.class
+------------------------------------------------
+67.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.RectangleInsets::calculateBottomInset(D)D is replaced with the used of local w
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 69
+	Total Rank: 5568
+	Dump: mutant-11.class
+------------------------------------------------
+68.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.RectangleInsets::calculateTopInset(D)D is replaced with the used of local w
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 69
+	Total Rank: 5568
+	Dump: mutant-35.class
+------------------------------------------------
+69.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.jfree.chart.util.RectangleInsets::calculateRightInset(D)D is replaced with the used of local w
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 69
+	Total Rank: 5568
+	Dump: mutant-2.class
+------------------------------------------------
+70.
+	Mutator: LocalNameMutator
+	Description: local chartArea is replaced by local nonTitleArea to be used
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1181
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-50.class
+------------------------------------------------
+71.
+	Mutator: LocalNameMutator
+	Description: local b is replaced by local w to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-23.class
+------------------------------------------------
+72.
+	Mutator: LocalNameMutator
+	Description: local h is replaced by local b to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-7.class
+------------------------------------------------
+73.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local t to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-20.class
+------------------------------------------------
+74.
+	Mutator: LocalNameMutator
+	Description: local t is replaced by local w to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-15.class
+------------------------------------------------
+75.
+	Mutator: LocalNameMutator
+	Description: local h is replaced by local r to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-5.class
+------------------------------------------------
+76.
+	Mutator: LocalNameMutator
+	Description: local nonTitleArea is replaced by local chartArea to be used
+	File Name: org/jfree/chart/JFreeChart.java
+	Line Number: 1181
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-64.class
+------------------------------------------------
+77.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local r to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-16.class
+------------------------------------------------
+78.
+	Mutator: LocalNameMutator
+	Description: local b is replaced by local h to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-22.class
+------------------------------------------------
+79.
+	Mutator: LocalNameMutator
+	Description: local t is replaced by local h to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-17.class
+------------------------------------------------
+80.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local l to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-18.class
+------------------------------------------------
+81.
+	Mutator: LocalNameMutator
+	Description: local w is replaced by local b to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-19.class
+------------------------------------------------
+82.
+	Mutator: LocalNameMutator
+	Description: local h is replaced by local l to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-8.class
+------------------------------------------------
+83.
+	Mutator: LocalNameMutator
+	Description: local h is replaced by local t to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-6.class
+------------------------------------------------
+84.
+	Mutator: LocalNameMutator
+	Description: local l is replaced by local w to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-47.class
+------------------------------------------------
+85.
+	Mutator: LocalNameMutator
+	Description: local r is replaced by local w to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 528
+	Rank: 85
+	Total Rank: 5708
+	Dump: mutant-4.class
+------------------------------------------------
+86.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/jfree/chart/util/RectangleInsets::calculateRightInset with argument
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 525
+	Rank: 89
+	Total Rank: 5745
+	Dump: mutant-9.class
+------------------------------------------------
+87.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/jfree/chart/util/RectangleInsets::calculateTopInset with argument
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 526
+	Rank: 89
+	Total Rank: 5745
+	Dump: mutant-46.class
+------------------------------------------------
+88.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/jfree/chart/util/RectangleInsets::calculateBottomInset with argument
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 527
+	Rank: 89
+	Total Rank: 5745
+	Dump: mutant-10.class
+------------------------------------------------
+89.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/jfree/chart/util/RectangleInsets::calculateLeftInset with argument
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 524
+	Rank: 89
+	Total Rank: 5745
+	Dump: mutant-12.class
+------------------------------------------------
+90.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field left is replaced by access to local width
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 418
+	Rank: 93
+	Total Rank: 6167
+	Dump: mutant-51.class
+------------------------------------------------
+91.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field right is replaced by access to local width
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 448
+	Rank: 93
+	Total Rank: 6167
+	Dump: mutant-13.class
+------------------------------------------------
+92.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field bottom is replaced by access to local height
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 388
+	Rank: 93
+	Total Rank: 6167
+	Dump: mutant-43.class
+------------------------------------------------
+93.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field top is replaced by access to local height
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 358
+	Rank: 93
+	Total Rank: 6167
+	Dump: mutant-3.class
+------------------------------------------------
+94.
+	Mutator: LocalNameMutator
+	Description: local result is replaced by local height to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 362
+	Rank: 97
+	Total Rank: 6220
+	Dump: mutant-21.class
+------------------------------------------------
+95.
+	Mutator: LocalNameMutator
+	Description: local result is replaced by local width to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 452
+	Rank: 97
+	Total Rank: 6220
+	Dump: mutant-14.class
+------------------------------------------------
+96.
+	Mutator: LocalNameMutator
+	Description: local result is replaced by local height to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 392
+	Rank: 97
+	Total Rank: 6220
+	Dump: mutant-39.class
+------------------------------------------------
+97.
+	Mutator: LocalNameMutator
+	Description: local result is replaced by local width to be used
+	File Name: org/jfree/chart/util/RectangleInsets.java
+	Line Number: 422
+	Rank: 97
+	Total Rank: 6220
+	Dump: mutant-26.class
+------------------------------------------------
+98.
+	Mutator: FieldNameMutator
+	Description: replaced access to label with an access to labelURL
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 342
+	Rank: 99
+	Total Rank: 6456
+	Dump: mutant-65.class
+------------------------------------------------
+99.
+	Mutator: FieldNameMutator
+	Description: replaced access to label with an access to labelToolTip
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 342
+	Rank: 99
+	Total Rank: 6456
+	Dump: mutant-63.class
+------------------------------------------------
+100.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.jfree.chart.axis.Axis.label is replaced by the call to org.jfree.chart.axis.Axis::getLabelToolTip()Ljava/lang/String;
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 342
+	Rank: 101
+	Total Rank: 6463
+	Dump: mutant-78.class
+------------------------------------------------
+101.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.jfree.chart.axis.Axis.label is replaced by the call to org.jfree.chart.axis.Axis::getLabelURL()Ljava/lang/String;
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 342
+	Rank: 101
+	Total Rank: 6463
+	Dump: mutant-79.class
+------------------------------------------------
+102.
+	Mutator: ReturnValsMutator
+	Description: mutated return of Object value for org/jfree/chart/axis/Axis::getLabel to ( if (x != null) null else throw new RuntimeException )
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 342
+	Rank: 102
+	Total Rank: 6470
+	Dump: mutant-91.class
+------------------------------------------------
+103.
+	Mutator: EmptyObjectReturnValsMutator
+	Description: replaced return value with "" for org/jfree/chart/axis/Axis::getLabel
+	File Name: org/jfree/chart/axis/Axis.java
+	Line Number: 342
+	Rank: 103
+	Total Rank: 6479
+	Dump: mutant-86.class
+------------------------------------------------

@@ -1,0 +1,202 @@
+PraPR 2 (JDK 1.7) Fix Report - Wed Jul 21 10:01:58 PDT 2021
+Number of Plausible Fixes: 22
+Total Number of Patches: 11064
+================================================
+1.
+	Mutator: ReturnValsMutator
+	Description: mutated return of Object value for org/apache/commons/jxpath/ri/model/dom/DOMNodePointer::getNamespaceURI to ( if (x != null) null else throw new RuntimeException )
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 689
+	Rank: 1
+	Total Rank: 500
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/w3c/dom/Attr::getValue
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 689
+	Rank: 2
+	Total Rank: 501
+	Dump: mutant-16.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to getPrefix with a call to getLocalName
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 681
+	Rank: 5
+	Total Rank: 2007
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.w3c.dom.Element.getAttributeNode(Ljava/lang/String;)Lorg/w3c/dom/Attr; is replaced by an instantiation of type org.apache.xerces.impl.xs.opti.AttrImpl using ()V
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 687
+	Rank: 5
+	Total Rank: 2007
+	Dump: mutant-6.class
+------------------------------------------------
+5.
+	Mutator: MethodNameMutator
+	Description: the call to factory method org.w3c.dom.Element.getAttributeNode(Ljava/lang/String;)Lorg/w3c/dom/Attr; is replaced by an instantiation of type org.apache.xerces.impl.xs.opti.AttrImpl using (Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 687
+	Rank: 5
+	Total Rank: 2007
+	Dump: mutant-10.class
+------------------------------------------------
+6.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 686
+	Rank: 6
+	Total Rank: 2010
+	Dump: mutant-5.class
+------------------------------------------------
+7.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/w3c/dom/Element::getAttributeNode
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 687
+	Rank: 8
+	Total Rank: 2021
+	Dump: mutant-2.class
+------------------------------------------------
+8.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to org/w3c/dom/Node::getNodeType
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 686
+	Rank: 8
+	Total Rank: 2021
+	Dump: mutant-3.class
+------------------------------------------------
+9.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local prefix is replaced by access to field XML_NAMESPACE_URI
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 682
+	Rank: 12
+	Total Rank: 2035
+	Dump: mutant-7.class
+------------------------------------------------
+10.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local prefix is replaced by access to field XMLNS_NAMESPACE_URI
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 682
+	Rank: 12
+	Total Rank: 2035
+	Dump: mutant-8.class
+------------------------------------------------
+11.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local qname is replaced by access to field XMLNS_NAMESPACE_URI
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 687
+	Rank: 12
+	Total Rank: 2035
+	Dump: mutant-9.class
+------------------------------------------------
+12.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local qname is replaced by access to field XML_NAMESPACE_URI
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 687
+	Rank: 12
+	Total Rank: 2035
+	Dump: mutant-22.class
+------------------------------------------------
+13.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 685
+	Rank: 14
+	Total Rank: 2041
+	Dump: mutant-11.class
+------------------------------------------------
+14.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 682
+	Rank: 14
+	Total Rank: 2041
+	Dump: mutant-12.class
+------------------------------------------------
+15.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 686
+	Rank: 18
+	Total Rank: 2046
+	Dump: mutant-17.class
+------------------------------------------------
+16.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 688
+	Rank: 18
+	Total Rank: 2046
+	Dump: mutant-18.class
+------------------------------------------------
+17.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 685
+	Rank: 18
+	Total Rank: 2046
+	Dump: mutant-20.class
+------------------------------------------------
+18.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 682
+	Rank: 18
+	Total Rank: 2046
+	Dump: mutant-21.class
+------------------------------------------------
+19.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local uri is replaced by access to field XMLNS_NAMESPACE_URI
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 680
+	Rank: 20
+	Total Rank: 2133
+	Dump: mutant-14.class
+------------------------------------------------
+20.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local uri is replaced by access to field XML_NAMESPACE_URI
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 680
+	Rank: 20
+	Total Rank: 2133
+	Dump: mutant-15.class
+------------------------------------------------
+21.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 680
+	Rank: 21
+	Total Rank: 2140
+	Dump: mutant-13.class
+------------------------------------------------
+22.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+	Line Number: 680
+	Rank: 22
+	Total Rank: 2146
+	Dump: mutant-19.class
+------------------------------------------------

@@ -1,0 +1,11 @@
+--- jd-result/Closure/115/mutant-16/a-FunctionInjector.java	2021-07-14 21:49:47.266616313 -0700
++++ jd-result/Closure/115/mutant-16/b-FunctionInjector.java	2021-07-14 21:49:48.726616354 -0700
+@@ -315,7 +315,7 @@
+ /* 699*/      Preconditions.checkState(block.hasOneChild());
+ /* 700*/      Node stmt = block.getFirstChild();
+ /* 701*/      if (stmt.isReturn())
+-/* 702*/        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), this.compiler); 
++/* 702*/        hasSideEffects = NodeUtil.mayHaveSideEffects(fnNode.getFirstChild(), this.compiler); 
+ /*   0*/    } 
+ /* 706*/    Node cArg = callNode.getFirstChild().getNext();
+ /* 711*/    if (!callNode.getFirstChild().isName())

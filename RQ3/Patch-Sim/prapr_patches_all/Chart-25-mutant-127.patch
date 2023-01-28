@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-127/ori-CategoryPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-127/patched-CategoryPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-127/ori-CategoryPlot.java	2021-08-23 09:23:48.328982696 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-127/patched-CategoryPlot.java	2021-08-23 09:23:48.328982696 +0800
+@@ -2862,7 +2862,7 @@
+             int passCount = renderer.getPassCount();
+             for (int pass = 0; pass < passCount; pass++) {            
+                 if (this.columnRenderingOrder == SortOrder.ASCENDING) {
+-                    for (int column = 0; column < columnCount; column++) {
++          for (int column = 0; columnCount < columnCount; column++) {
+                         if (this.rowRenderingOrder == SortOrder.ASCENDING) {
+                             for (int row = 0; row < rowCount; row++) {
+                                 renderer.drawItem(g2, state, dataArea, this, 

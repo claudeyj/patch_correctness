@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-93.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -1188,7 +1188,7 @@
+ 
+         }
+         if (plotState != null && hotspot != null) {
+-            ChartRenderingInfo owner = plotState.getOwner();
++      ChartRenderingInfo owner = new ChartRenderingInfo(null);
+                 EntityCollection entities = owner.getEntityCollection();
+                 if (entities != null) {
+                     entities.add(new AxisLabelEntity(this, hotspot, 

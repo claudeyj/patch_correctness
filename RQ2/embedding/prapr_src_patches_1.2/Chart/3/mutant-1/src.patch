@@ -1,0 +1,11 @@
+--- jd-result/Chart/3/mutant-1/ori-TimeSeries.java	2021-07-15 18:51:51.908753113 -0700
++++ jd-result/Chart/3/mutant-1/patched-TimeSeries.java	2021-07-21 07:30:52.002228354 -0700
+@@ -635,7 +635,7 @@
+                                      // don't notify anyone, because that
+                                      // happens next anyway...
+             if (notify) {
+-                fireSeriesChanged();
++        findBoundsByIteration(); 
+             }
+         }
+ 

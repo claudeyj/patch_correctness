@@ -1,0 +1,11 @@
+--- jd-result/Closure/33/mutant-1/ori-TypeInference.java	2021-07-15 18:51:53.688753163 -0700
++++ jd-result/Closure/33/mutant-1/patched-TypeInference.java	2021-07-21 07:58:56.034275874 -0700
+@@ -1116,7 +1116,7 @@
+       return;
+     }
+ 
+-    ObjectType constraintObj =
++    ObjectType constraintObj = ObjectType.cast(constraint);
+         ObjectType.cast(constraint.restrictByNotNullOrUndefined());
+     if (constraintObj != null) {
+       type.matchConstraint(constraintObj);

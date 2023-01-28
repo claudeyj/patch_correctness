@@ -1,0 +1,24 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Math/84/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Math/84/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Math/84/buggy1.java	2021-08-27 19:18:39.242864103 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Math/84/tool-patch1.java	2021-08-27 19:18:39.242864103 -0700
+@@ -63,6 +63,7 @@
+ 
+         while (true) {
+ 
++            final double[] xSmallest = simplex[0].getPointRef();
+             incrementIterationsCounter();
+ 
+             // save the original vertex
+@@ -87,12 +88,7 @@
+ 
+             // compute the contracted simplex
+             final RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);
+-            if (comparator.compare(contracted, best) < 0) {
+-                // accept the contracted simplex
+-
+-            // check convergence
+                 return;
+-            }
+ 
+         }
+ 

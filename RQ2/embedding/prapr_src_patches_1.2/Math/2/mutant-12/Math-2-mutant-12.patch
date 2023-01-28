@@ -1,0 +1,11 @@
+--- jd-result/Math/2/mutant-12/a-AbstractIntegerDistribution.java	2021-07-14 09:04:58.181321413 -0700
++++ jd-result/Math/2/mutant-12/b-AbstractIntegerDistribution.java	2021-07-14 09:04:59.541321452 -0700
+@@ -50,7 +50,7 @@
+ /* 120*/      return upper; 
+ /* 125*/    double mu = getNumericalMean();
+ /* 126*/    double sigma = FastMath.sqrt(getNumericalVariance());
+-/* 127*/    boolean chebyshevApplies = (!Double.isInfinite(mu) && !Double.isNaN(mu) && !Double.isInfinite(sigma) && !Double.isNaN(sigma) && sigma != 0.0D);
++/* 127*/    boolean chebyshevApplies = (!Double.isInfinite(mu) && !Double.isNaN(mu) && !Double.isInfinite(sigma) && !Double.isNaN(sigma) && sigma != 0.0D) ? false : false;
+ /* 129*/    if (chebyshevApplies) {
+ /* 130*/      double k = FastMath.sqrt((1.0D - p) / p);
+ /* 131*/      double tmp = mu - k * sigma;

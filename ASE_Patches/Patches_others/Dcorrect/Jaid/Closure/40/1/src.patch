@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/40/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/40/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/40/1/buggy1.java	2021-08-27 19:18:45.514864280 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/40/1/tool-patch1.java	2021-08-27 19:18:45.514864280 -0700
+@@ -632,7 +632,7 @@
+         Node nameNode = n.getFirstChild();
+         NameInformation ns = createNameInformation(t, nameNode, n);
+         if (ns != null && ns.onlyAffectsClassDef) {
+-          JsName name = getName(ns.name, false);
++          JsName name = getName(ns.name, true);
+           if (name != null) {
+           refNodes.add(new ClassDefiningFunctionNode(
+               name, n, parent, parent.getParent()));

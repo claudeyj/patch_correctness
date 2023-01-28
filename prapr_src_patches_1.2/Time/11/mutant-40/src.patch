@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-40/ori-ZoneInfoCompiler.java	2021-07-15 18:51:55.860753225 -0700
++++ jd-result/Time/11/mutant-40/patched-ZoneInfoCompiler.java	2021-07-21 07:31:10.078228864 -0700
+@@ -75,7 +75,7 @@
+      * @return true to log verbosely
+      */
+     public static boolean verbose() {
+-        return cVerbose.get();
++    return ((Boolean)cVerbose.get() == null) ? false : (Boolean)cVerbose.get();
+     }
+ 
+     //-----------------------------------------------------------------------

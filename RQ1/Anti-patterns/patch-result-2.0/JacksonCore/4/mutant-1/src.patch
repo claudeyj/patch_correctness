@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/4/mutant-1/ori-TextBuffer.java	2021-08-08 21:02:01.948814634 -0700
++++ jd-result-2.0/JacksonCore/4/mutant-1/man-patched-TextBuffer.java	2021-08-12 16:11:41.750075222 -0700
+@@ -583,7 +583,7 @@
+         // Let's grow by 50% by default
+         final int len = curr.length;
+         // but above intended maximum, slow to increase by 25%
+-        int newLen = (len == MAX_SEGMENT_LEN) ? (MAX_SEGMENT_LEN+1) : Math.min(MAX_SEGMENT_LEN, len + (len >> 1));
++        int newLen = (len == MAX_SEGMENT_LEN) ? (MAX_SEGMENT_LEN+1) : len + (len >> 1);
+         return (_currentSegment = Arrays.copyOf(curr, newLen));
+     }
+ 

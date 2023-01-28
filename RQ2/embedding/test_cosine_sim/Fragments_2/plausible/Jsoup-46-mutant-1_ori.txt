@@ -1,0 +1,7 @@
+                        accum.append("&amp;");
+                        break;
+                    case 0xA0:
+                        if (escapeMode != EscapeMode.xhtml)
+                            accum.append("&nbsp;");
+                        else
+                            accum.append(c);

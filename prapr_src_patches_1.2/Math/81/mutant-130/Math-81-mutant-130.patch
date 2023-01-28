@@ -1,0 +1,37 @@
+--- jd-result/Math/81/mutant-130/a-EigenDecompositionImpl.java	2021-07-14 09:26:26.833357777 -0700
++++ jd-result/Math/81/mutant-130/b-EigenDecompositionImpl.java	2021-07-14 09:26:28.249357817 -0700
+@@ -876,7 +876,6 @@
+ /*1445*/    switch (deflated) {
+ /*   0*/      case 0:
+ /*1448*/        if (this.dMin == this.dN || this.dMin == this.dN1) {
+-/*   0*/          double gam;
+ /*   0*/          int np;
+ /*1450*/          double b1 = Math.sqrt(this.work[nn - 3]) * Math.sqrt(this.work[nn - 5]);
+ /*1451*/          double b2 = Math.sqrt(this.work[nn - 7]) * Math.sqrt(this.work[nn - 9]);
+@@ -901,7 +900,7 @@
+ /*1474*/          this.tType = -4;
+ /*1475*/          double s = 0.25D * this.dMin;
+ /*1478*/          if (this.dMin == this.dN) {
+-/*1479*/            gam = this.dN;
++/*1479*/            double gam = this.dN;
+ /*1480*/            a2 = 0.0D;
+ /*1481*/            if (this.work[nn - 5] > this.work[nn - 7])
+ /*   0*/              return; 
+@@ -910,7 +909,7 @@
+ /*   0*/          } else {
+ /*1487*/            np = nn - 2 * this.pingPong;
+ /*1488*/            b2 = this.work[np - 2];
+-/*1489*/            gam = this.dN1;
++/*1489*/            double gam = this.dN1;
+ /*1490*/            if (this.work[np - 4] > this.work[np - 2])
+ /*   0*/              return; 
+ /*1493*/            a2 = this.work[np - 4] / this.work[np - 2];
+@@ -932,7 +931,7 @@
+ /*   0*/          } 
+ /*1517*/          a2 = 1.05D * a2;
+ /*1520*/          if (a2 < 0.563D)
+-/*1521*/            s = gam * (1.0D - Math.sqrt(a2)) / (1.0D + a2); 
++/*1521*/            s = a2 * (1.0D - Math.sqrt(a2)) / (1.0D + a2); 
+ /*1523*/          this.tau = s;
+ /*   0*/          break;
+ /*   0*/        } 

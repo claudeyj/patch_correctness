@@ -1,0 +1,7 @@
+     */
+    public Element nextElementSibling() {
+        if (parentNode == null) return null;
+    List<Element> siblings = (List)parent().ensureChildNodes();
+        Integer index = indexInList(this, siblings);
+        Validate.notNull(index);
+        if (siblings.size() > index+1)

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/63/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/63/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/63/buggy1.java	2021-09-08 07:11:31.425222356 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/63/tool-patch1.java	2021-09-08 07:11:31.425222356 -0700
+@@ -433,7 +433,7 @@
+         end.add( field, -1 * difference );
+         int endValue = end.get(field);
+         int startValue = start.get(field);
+-        if (endValue < startValue) {
++        if(endValue<field){
+             int newdiff = startValue - endValue;
+             end.add( field, newdiff );
+             return newdiff;

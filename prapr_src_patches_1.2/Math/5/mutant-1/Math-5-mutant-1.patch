@@ -1,0 +1,11 @@
+--- jd-result/Math/5/mutant-1/a-Complex.java	2021-07-14 09:05:18.609321990 -0700
++++ jd-result/Math/5/mutant-1/b-Complex.java	2021-07-14 09:05:20.233322036 -0700
+@@ -114,7 +114,7 @@
+ /* 300*/    if (this.isNaN)
+ /* 301*/      return NaN; 
+ /* 304*/    if (this.real == 0.0D && this.imaginary == 0.0D)
+-/* 305*/      return NaN; 
++/* 305*/      return INF; 
+ /* 308*/    if (this.isInfinite)
+ /* 309*/      return ZERO; 
+ /* 312*/    if (FastMath.abs(this.real) < FastMath.abs(this.imaginary)) {

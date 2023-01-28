@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-194/a-KeyedObjects2D.java	2021-07-14 20:10:24.894448067 -0700
++++ jd-result/Chart/25/mutant-194/b-KeyedObjects2D.java	2021-07-14 20:10:26.190448103 -0700
+@@ -84,7 +84,7 @@
+ /*   0*/    } 
+ /* 236*/    row.setObject(columnKey, object);
+ /* 237*/    int columnIndex = this.columnKeys.indexOf(columnKey);
+-/* 238*/    if (columnIndex < 0)
++/* 238*/    if (columnIndex >= 0)
+ /* 239*/      this.columnKeys.add(columnKey); 
+ /*   0*/  }
+ /*   0*/  

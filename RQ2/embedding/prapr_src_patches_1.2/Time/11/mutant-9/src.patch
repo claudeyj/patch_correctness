@@ -1,0 +1,15 @@
+--- jd-result/Time/11/mutant-9/ori-DateTimeZoneBuilder.java	2021-07-15 18:51:55.856753225 -0700
++++ jd-result/Time/11/mutant-9/man-patched-DateTimeZoneBuilder.java	2021-07-30 04:41:05.109211470 -0700
+@@ -1151,8 +1151,10 @@
+                     // really matter which rule was chosen the 'start' and
+                     // which is chosen the 'end'. DSTZone works properly either
+                     // way.
+-                    return new DSTZone(id, iStandardOffset,
+-                                       startRule.iRecurrence, endRule.iRecurrence);
++                    if (new DateTimeZoneBuilder.DSTZone(id, iStandardOffset, startRule.iRecurrence, endRule.iRecurrence) == null) {
++                        throw new RuntimeException(); 
++                    }
++                    return null;
+                 }
+             }
+             return null;

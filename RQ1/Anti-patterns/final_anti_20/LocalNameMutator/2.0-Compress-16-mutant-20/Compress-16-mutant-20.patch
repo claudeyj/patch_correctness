@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/16/mutant-20/a-TarUtils.java	2021-08-09 03:59:00.561520610 -0700
++++ jd-result-2.0/Compress/16/mutant-20/b-TarUtils.java	2021-08-09 03:59:02.065520652 -0700
+@@ -85,7 +85,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private static long parseBinaryLong(byte[] buffer, int offset, int length, boolean negative) {
+-/* 186*/    if (length >= 9) {
++/* 186*/    if (offset >= 9) {
+ /* 187*/        throw new IllegalArgumentException("At offset " + offset + ", " + length + " byte binary number" + " exceeds maximum signed long" + " value"); 
+ /*   0*/       }
+ /* 192*/    long val = 0L;

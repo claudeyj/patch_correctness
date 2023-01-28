@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/130/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/130/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/130/buggy1.java	2021-08-27 19:18:35.234863990 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/130/tool-patch1.java	2021-08-27 19:18:35.234863990 -0700
+@@ -176,10 +176,6 @@
+         List<Ref> refs = Lists.newArrayList(name.getRefs());
+         for (Ref ref : refs) {
+           if (ref.type == Type.ALIASING_GET && ref.scope.isLocal()) {
+-            // {@code name} meets condition (c). Try to inline it.
+-            if (inlineAliasIfPossible(ref, namespace)) {
+-              name.removeRef(ref);
+-            }
+           }
+         }
+       }

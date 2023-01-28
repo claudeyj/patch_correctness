@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-26/ori-IOUtil.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-26/man-patched-IOUtil.java	2021-07-24 01:24:32.146250469 -0700
+@@ -63,7 +63,7 @@
+         if (closeable != null) {
+             try {
+                 closeable.close();
+-            } catch (IOException e) {
++            } catch (Exception e) {
+                 throw new MockitoException("Problems closing stream: " + closeable, e);
+             }
+         }

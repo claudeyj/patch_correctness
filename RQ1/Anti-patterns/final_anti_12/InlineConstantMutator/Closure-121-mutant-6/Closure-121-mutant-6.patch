@@ -1,0 +1,11 @@
+--- jd-result/Closure/121/mutant-6/a-ReferenceCollectingCallback.java	2021-07-14 21:52:31.186620939 -0700
++++ jd-result/Closure/121/mutant-6/b-ReferenceCollectingCallback.java	2021-07-14 21:52:32.646620980 -0700
+@@ -163,7 +163,7 @@
+ /* 320*/        return false; 
+ /* 323*/      Preconditions.checkState(((ReferenceCollectingCallback.Reference)this.references.get(0)).isDeclaration());
+ /* 324*/      ReferenceCollectingCallback.BasicBlock initBlock = init.getBasicBlock();
+-/* 325*/      for (int i = 1; i < size; i++) {
++/* 325*/      for (int i = 0; i < size; i++) {
+ /* 326*/        if (!initBlock.provablyExecutesBefore(((ReferenceCollectingCallback.Reference)this.references.get(i)).getBasicBlock()))
+ /* 328*/          return false; 
+ /*   0*/      } 

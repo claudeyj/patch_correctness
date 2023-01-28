@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 02:15:23 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 253
+================================================
+1.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/mockito/internal/util/reflection/GenericMetadataSupport.java
+	Line Number: 376
+	Rank: 1
+	Total Rank: 56
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to org/mockito/internal/util/reflection/GenericMetadataSupport$TypeVariableReturnType::registerTypeVariablesOn
+	File Name: org/mockito/internal/util/reflection/GenericMetadataSupport.java
+	Line Number: 377
+	Rank: 2
+	Total Rank: 61
+	Dump: mutant-6.class
+------------------------------------------------
+3.
+	Mutator: LocalNameMutator
+	Description: local i$ is replaced by local len$ to be used
+	File Name: org/mockito/internal/util/reflection/GenericMetadataSupport.java
+	Line Number: 376
+	Rank: 4
+	Total Rank: 64
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local len$ is replaced by local i$ to be used
+	File Name: org/mockito/internal/util/reflection/GenericMetadataSupport.java
+	Line Number: 376
+	Rank: 4
+	Total Rank: 64
+	Dump: mutant-5.class
+------------------------------------------------
+5.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/mockito/internal/util/reflection/GenericMetadataSupport.java
+	Line Number: 376
+	Rank: 5
+	Total Rank: 65
+	Dump: mutant-2.class
+------------------------------------------------
+6.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/mockito/internal/util/reflection/GenericMetadataSupport.java
+	Line Number: 376
+	Rank: 6
+	Total Rank: 66
+	Dump: mutant-3.class
+------------------------------------------------

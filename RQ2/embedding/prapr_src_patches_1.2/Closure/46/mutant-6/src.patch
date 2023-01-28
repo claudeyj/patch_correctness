@@ -1,0 +1,11 @@
+--- jd-result/Closure/46/mutant-6/ori-RecordType.java	2021-07-15 18:51:53.108753147 -0700
++++ jd-result/Closure/46/mutant-6/fixed-patched-RecordType.java	2021-07-21 20:52:06.830708378 -0700
+@@ -139,7 +139,7 @@
+ 
+   @Override
+   public JSType getLeastSupertype(JSType that) {
+-    if (!that.isRecordType()) {
++    if (!that.isStringObjectType()) {
+       return super.getLeastSupertype(that);
+     }
+     RecordTypeBuilder builder = new RecordTypeBuilder(registry);

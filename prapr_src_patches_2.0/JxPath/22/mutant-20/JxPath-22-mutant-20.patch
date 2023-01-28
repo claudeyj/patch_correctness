@@ -1,0 +1,18 @@
+--- jd-result-2.0/JxPath/22/mutant-20/a-DOMNodePointer.java	2021-08-09 04:18:39.333553873 -0700
++++ jd-result-2.0/JxPath/22/mutant-20/b-DOMNodePointer.java	2021-08-09 04:18:40.837553915 -0700
+@@ -509,15 +509,6 @@
+ /* 681*/      String prefix = getPrefix(node);
+ /* 682*/      String qname = (prefix == null) ? "xmlns" : ("xmlns:" + prefix);
+ /* 684*/      Node aNode = node;
+-/* 685*/      while (aNode != null) {
+-/* 686*/        if (aNode.getNodeType() == 1) {
+-/* 687*/          Attr attr = ((Element)aNode).getAttributeNode(qname);
+-/* 688*/          if (attr != null) {
+-/* 689*/              return attr.getValue(); 
+-/*   0*/             }
+-/*   0*/        } 
+-/* 692*/        aNode = aNode.getParentNode();
+-/*   0*/      } 
+ /* 694*/      return null;
+ /*   0*/    } 
+ /* 696*/    return uri;

@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/5/mutant-3/ori-VerificationOverTimeImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/5/mutant-3/man-patched-VerificationOverTimeImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/5/mutant-3/ori-VerificationOverTimeImpl.java	2021-08-23 09:23:49.168994344 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/5/mutant-3/man-patched-VerificationOverTimeImpl.java	2021-08-23 09:23:49.168994344 +0800
+@@ -88,7 +88,7 @@
+             } catch (MockitoAssertionError e) {
+                 error = handleVerifyException(e);
+             }
+-            catch (org.mockito.exceptions.verification.junit.ArgumentsAreDifferent e) {
++            catch (AssertionError e) {
+                 error = handleVerifyException(e);
+             }
+         }

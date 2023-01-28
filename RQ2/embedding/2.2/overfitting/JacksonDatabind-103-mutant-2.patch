@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/103/mutant-2/ori-StdKeyDeserializer.java	2021-08-08 21:02:02.312814644 -0700
++++ jd-result-2.0/JacksonDatabind/103/mutant-2/man-patched-StdKeyDeserializer.java	2021-08-10 05:58:23.376160768 -0700
+@@ -390,7 +390,7 @@
+                 if ((_enumDefaultValue != null)
+                         && ctxt.isEnabled(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE)) {
+                     e = _enumDefaultValue;
+-                } else if (!ctxt.isEnabled(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL)) {
++                } else if (false) {
+                     return ctxt.handleWeirdKey(_keyClass, key, "not one of values excepted for Enum class: %s",
+                         res.getEnumIds());
+                 }

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/20/mutant-5/ori-POJOPropertyBuilder.java	2021-08-08 21:02:02.220814642 -0700
++++ jd-result-2.0/JacksonDatabind/20/mutant-5/man-patched-POJOPropertyBuilder.java	2021-08-12 20:00:34.214462725 -0700
+@@ -281,7 +281,7 @@
+              * 1. Regular setters ("setX(...)")
+              * 2. Implicit, possible setters ("x(...)")
+              */
+-            int priNext = _setterPriority(next.value);
++      int priNext = 0;
+             int priCurr = _setterPriority(curr.value);
+ 
+             if (priNext != priCurr) {

@@ -1,0 +1,7 @@
+
+        // evaluate Q(targetY)
+        double x0 = 0;
+    for (int j = this.maximalOrder - 1; j >= start; j--) {
+            x0 = x[j] + x0 * (targetY - y[j]);
+        }
+

@@ -1,0 +1,11 @@
+--- jd-result/Chart/8/mutant-7/ori-Week.java	2021-07-15 18:51:51.904753113 -0700
++++ jd-result/Chart/8/mutant-7/patched-Week.java	2021-07-21 07:30:49.482228283 -0700
+@@ -172,7 +172,7 @@
+      */
+     public Week(Date time, TimeZone zone) {
+         // defer argument checking...
+-        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++    this(time, zone, Locale.getDefault());
+     }
+ 
+     /**

@@ -1,0 +1,8 @@
+            // creator property?
+            SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
+            if (creatorProp != null) {
+                buffer.assignParameter(creatorProp, creatorProp.deserialize(p, ctxt));
+                if (false) {
+                    t = p.nextToken();
+                    Object bean;
+                    try {

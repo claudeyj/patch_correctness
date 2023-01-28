@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/7/mutant-1/ori-BaseJSTypeTestCase.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/7/mutant-1/patched-BaseJSTypeTestCase.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/7/mutant-1/ori-BaseJSTypeTestCase.java	2021-08-23 09:23:48.776988908 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/7/mutant-1/patched-BaseJSTypeTestCase.java	2021-08-23 09:23:48.776988908 +0800
+@@ -178,7 +178,7 @@
+         registry.getNativeType(JSTypeNative.NULL_VOID);
+     OBJECT_NUMBER_STRING =
+         registry.getNativeType(JSTypeNative.OBJECT_NUMBER_STRING);
+-    OBJECT_NUMBER_STRING_BOOLEAN =
++    this.OBJECT_NUMBER_STRING_BOOLEAN = this.ALL_TYPE;
+         registry.getNativeType(JSTypeNative.OBJECT_NUMBER_STRING_BOOLEAN);
+     OBJECT_PROTOTYPE =
+         registry.getNativeType(JSTypeNative.OBJECT_PROTOTYPE);

@@ -1,0 +1,11 @@
+--- jd-result/Math/60/mutant-1/a-NormalDistributionImpl.java	2021-07-14 09:14:22.689337343 -0700
++++ jd-result/Math/60/mutant-1/b-NormalDistributionImpl.java	2021-07-14 09:14:24.001337380 -0700
+@@ -55,7 +56,7 @@
+ /* 125*/    double dev = x - this.mean;
+ /*   0*/    try {
+ /* 127*/      return 0.5D * (1.0D + Erf.erf(dev / this.standardDeviation * FastMath.sqrt(2.0D)));
+-/* 129*/    } catch (MaxIterationsExceededException ex) {
++/* 129*/    } catch (ConvergenceException ex) {
+ /* 130*/      if (x < this.mean - 20.0D * this.standardDeviation)
+ /* 131*/        return 0.0D; 
+ /* 132*/      if (x > this.mean + 20.0D * this.standardDeviation)

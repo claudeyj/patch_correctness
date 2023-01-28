@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-40/ori-CategoryPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-40/fixed-patched-CategoryPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-40/ori-CategoryPlot.java	2021-08-23 09:23:48.404983750 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-40/fixed-patched-CategoryPlot.java	2021-08-23 09:23:48.404983750 +0800
+@@ -2865,9 +2865,6 @@
+                     for (int column = 0; column < columnCount; column++) {
+                         if (this.rowRenderingOrder == SortOrder.ASCENDING) {
+                             for (int row = 0; row < rowCount; row++) {
+-                                renderer.drawItem(g2, state, dataArea, this, 
+-                                        domainAxis, rangeAxis, currentDataset, 
+-                                        row, column, pass);
+                             }
+                         }
+                         else {

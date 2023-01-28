@@ -1,0 +1,11 @@
+--- jd-result/Closure/59/mutant-2/ori-WarningLevel.java	2021-07-15 18:51:53.108753147 -0700
++++ jd-result/Closure/59/mutant-2/patched-WarningLevel.java	2021-07-21 07:55:23.182269868 -0700
+@@ -76,7 +76,7 @@
+ 
+     // checkSuspiciousCode needs to be enabled for CheckGlobalThis to get run.
+     options.checkSuspiciousCode = true;
+-    options.checkGlobalThisLevel = CheckLevel.WARNING;
++    options.checkShadowVars = CheckLevel.WARNING;
+     options.checkSymbols = true;
+     options.checkMissingReturn = CheckLevel.WARNING;
+ 

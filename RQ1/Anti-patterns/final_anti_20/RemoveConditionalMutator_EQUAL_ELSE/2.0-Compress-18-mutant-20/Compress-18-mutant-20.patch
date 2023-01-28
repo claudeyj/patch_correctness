@@ -1,0 +1,20 @@
+--- jd-result-2.0/Compress/18/mutant-20/a-TarArchiveOutputStream.java	2021-08-09 03:56:03.269515607 -0700
++++ jd-result-2.0/Compress/18/mutant-20/b-TarArchiveOutputStream.java	2021-08-09 03:56:04.853515652 -0700
+@@ -180,13 +180,13 @@
+ /* 317*/    entry.writeEntryHeader(this.recordBuf, this.encoding, (this.bigNumberMode == 1));
+ /* 319*/    this.buffer.writeRecord(this.recordBuf);
+ /* 321*/    this.currBytes = 0L;
+-/* 323*/    if (entry.isDirectory()) {
+-/* 324*/      this.currSize = 0L;
+-/*   0*/    } else {
++/* 323*/    entry.isDirectory();
+ /* 326*/      this.currSize = entry.getSize();
+-/*   0*/    } 
++/*   0*/    while (true) {
+ /* 328*/    this.currName = entryName;
+ /* 329*/    this.haveUnclosedEntry = true;
++/*   0*/      return;
++/*   0*/    } 
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void closeArchiveEntry() throws IOException {

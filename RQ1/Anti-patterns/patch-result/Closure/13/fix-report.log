@@ -1,0 +1,121 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 10 16:03:22 PDT 2021
+Number of Plausible Fixes: 13
+Total Number of Patches: 72118
+================================================
+1.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: com/google/javascript/jscomp/PeepholeOptimizationsPass.java
+	Line Number: 160
+	Rank: 1
+	Total Rank: 2628
+	Dump: mutant-9.class
+------------------------------------------------
+2.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: com/google/javascript/jscomp/PeepholeOptimizationsPass.java
+	Line Number: 160
+	Rank: 2
+	Total Rank: 2638
+	Dump: mutant-11.class
+------------------------------------------------
+3.
+	Mutator: BooleanTrueReturnValsMutator
+	Description: replaced boolean return with true for com/google/javascript/jscomp/PeepholeOptimizationsPass::shouldVisit
+	File Name: com/google/javascript/jscomp/PeepholeOptimizationsPass.java
+	Line Number: 160
+	Rank: 3
+	Total Rank: 2640
+	Dump: mutant-10.class
+------------------------------------------------
+4.
+	Mutator: MemberVariableMutator
+	Description: Removed assignment to member variable traverseChildScopes
+	File Name: com/google/javascript/jscomp/PeepholeOptimizationsPass.java
+	Line Number: 149
+	Rank: 4
+	Total Rank: 27853
+	Dump: mutant-7.class
+------------------------------------------------
+5.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: com/google/javascript/jscomp/PeepholeOptimizationsPass.java
+	Line Number: 149
+	Rank: 5
+	Total Rank: 27858
+	Dump: mutant-13.class
+------------------------------------------------
+6.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: com/google/javascript/jscomp/DefaultPassConfig.java
+	Line Number: 1045
+	Rank: 6
+	Total Rank: 33323
+	Dump: mutant-2.class
+------------------------------------------------
+7.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/google/javascript/jscomp/PeepholeOptimizationsPass.java
+	Line Number: 159
+	Rank: 7
+	Total Rank: 33824
+	Dump: mutant-12.class
+------------------------------------------------
+8.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/google/javascript/jscomp/PeepholeOptimizationsPass.java
+	Line Number: 118
+	Rank: 8
+	Total Rank: 34131
+	Dump: mutant-8.class
+------------------------------------------------
+9.
+	Mutator: LocalNameMutator
+	Description: local n is replaced by local n2 to be used
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1453
+	Rank: 9
+	Total Rank: 52023
+	Dump: mutant-5.class
+------------------------------------------------
+10.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local n is replaced by access to field last
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1453
+	Rank: 10
+	Total Rank: 52032
+	Dump: mutant-1.class
+------------------------------------------------
+11.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field next is replaced by access to local n
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1453
+	Rank: 11
+	Total Rank: 52036
+	Dump: mutant-4.class
+------------------------------------------------
+12.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1458
+	Rank: 12
+	Total Rank: 52068
+	Dump: mutant-6.class
+------------------------------------------------
+13.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1458
+	Rank: 13
+	Total Rank: 52070
+	Dump: mutant-3.class
+------------------------------------------------

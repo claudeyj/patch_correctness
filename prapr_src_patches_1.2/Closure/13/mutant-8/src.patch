@@ -1,0 +1,13 @@
+--- jd-result/Closure/13/mutant-8/ori-PeepholeOptimizationsPass.java	2021-07-15 18:51:52.436753128 -0700
++++ jd-result/Closure/13/mutant-8/man-patched-PeepholeOptimizationsPass.java	2021-07-30 07:01:10.201448645 -0700
+@@ -115,9 +115,7 @@
+     // the entire AST to catch newly created opportunities.
+     // So we track whether a "unit of code" has changed,
+     // and revisit immediately.
+-    if (!shouldVisit(node)) {
+-      return;
+-    }
++    shouldVisit(node);
+ 
+     int visits = 0;
+     do {

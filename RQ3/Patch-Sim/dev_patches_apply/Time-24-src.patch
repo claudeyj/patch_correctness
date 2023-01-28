@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/24/mutant-0/buggy-DateTimeParserBucket.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/24/mutant-0/patched-DateTimeParserBucket.java
+--- Time24b/src/main/java/org/joda/time/format/DateTimeParserBucket.java
++++ Time24b_Time-24-src.patchb/src/main/java/org/joda/time/format/DateTimeParserBucket.java
+@@ -352,6 +352,11 @@
+             for (int i = 0; i < count; i++) {
+                 millis = savedFields[i].set(millis, resetFields);
+             }
++            if (resetFields) {
++                for (int i = 0; i < count; i++) {
++                    millis = savedFields[i].set(millis, i == (count - 1));
++                }
++            }
+         } catch (IllegalFieldValueException e) {
+             if (text != null) {
+                 e.prependMessage("Cannot parse \"" + text + '"');

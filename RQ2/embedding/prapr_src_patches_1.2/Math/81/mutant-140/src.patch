@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-140/ori-EigenDecompositionImpl.java	2021-07-24 01:52:08.314297203 -0700
++++ jd-result/Math/81/mutant-140/patched-EigenDecompositionImpl.java	2021-07-24 01:52:08.318297203 -0700
+@@ -1481,7 +1481,7 @@
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }
+-                        b2 = work[nn - 5] / work[nn - 7];
++            s = this.work[nn - 5] / this.work[nn - 7];
+                         np = nn - 9;
+                     } else {
+                         np = nn - 2 * pingPong;

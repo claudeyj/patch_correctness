@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/60/mutant-0/buggy-StrBuilder.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/60/mutant-0/patched-StrBuilder.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/60/mutant-0/buggy-StrBuilder.java	2021-08-22 00:18:38.658190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/60/mutant-0/patched-StrBuilder.java	2021-08-22 00:18:38.658190185 -0700
+@@ -1670,7 +1670,7 @@
+      */
+     public boolean contains(char ch) {
+         char[] thisBuf = buffer;
+-        for (int i = 0; i < thisBuf.length; i++) {
++        for (int i = 0; i < this.size; i++) {
+             if (thisBuf[i] == ch) {
+                 return true;
+             }
+@@ -1727,7 +1727,7 @@
+             return -1;
+         }
+         char[] thisBuf = buffer;
+-        for (int i = startIndex; i < thisBuf.length; i++) {
++        for (int i = startIndex; i < size; i++) {
+             if (thisBuf[i] == ch) {
+                 return i;
+             }

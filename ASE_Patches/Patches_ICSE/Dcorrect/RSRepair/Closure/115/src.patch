@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/RSRepair/Closure/115/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/RSRepair/Closure/115/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/RSRepair/Closure/115/buggy1.java	2021-08-27 19:18:40.138864129 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/RSRepair/Closure/115/tool-patch1.java	2021-08-27 19:18:40.138864129 -0700
+@@ -699,7 +699,7 @@
+       Preconditions.checkState(block.hasOneChild());
+       Node stmt = block.getFirstChild();
+       if (stmt.isReturn()) {
+-        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);
++        int start = 0;
+       }
+     }
+     // CALL NODE: [ NAME, ARG1, ARG2, ... ]

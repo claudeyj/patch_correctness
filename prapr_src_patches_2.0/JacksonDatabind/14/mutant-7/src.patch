@@ -1,0 +1,14 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-7/ori-ObjectReader.java	2021-08-08 21:02:02.280814643 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-7/man-patched-ObjectReader.java	2021-08-10 05:49:10.264145161 -0700
+@@ -1602,7 +1602,10 @@
+                 // need to swallow?
+             }
+         }
+-        return deser;
++        if (deser == null) {
++            throw new RuntimeException(); 
++        }
++        return null;
+     }
+ 
+     /*

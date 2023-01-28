@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-16/ori-FieldSetter.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-16/patched-FieldSetter.java	2021-07-21 08:02:55.238282624 -0700
+@@ -21,7 +21,7 @@
+         changer.enableAccess(field);
+         try {
+             field.set(target, value);
+-        } catch (IllegalAccessException e) {
++    } catch (ReflectiveOperationException e) {
+             throw new RuntimeException("Access not authorized on field '" + field + "' of object '" + target + "' with value: '" + value + "'", e);
+         } catch (IllegalArgumentException e) {
+             throw new RuntimeException("Wrong argument on field '" + field + "' of object '" + target + "' with value: '" + value + "', \n" +

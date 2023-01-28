@@ -1,0 +1,7 @@
+      if (slashV1 != slashV2) {
+        return false;
+      }
+    } else if (type == Token.CALL) {
+      if (this.getBooleanProp(FREE_CALL) != node.getBooleanProp(FREE_CALL)) {
+        return false;
+      }

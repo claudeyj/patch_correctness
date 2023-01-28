@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/63/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/63/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/63/buggy1.java	2021-08-27 19:18:35.510863998 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/63/tool-patch1.java	2021-08-27 19:18:35.510863998 -0700
+@@ -527,7 +527,7 @@
+             return false;
+         }
+         for (int i = 0; i < x.length; ++i) {
+-            if (!equals(x[i], y[i])) {
++            if (!equals(x[i], y[i], i)) {
+                 return false;
+             }
+         }

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/37/mutant-1/a-Options.java	2021-08-09 04:42:46.817594718 -0700
++++ jd-result-2.0/Cli/37/mutant-1/b-Options.java	2021-08-09 04:42:48.273594759 -0700
+@@ -96,7 +96,7 @@
+ /*   0*/  public List<String> getMatchingOptions(String opt) {
+ /* 276*/    opt = Util.stripLeadingHyphens(opt);
+ /* 278*/    List<String> matchingOpts = new ArrayList<String>();
+-/* 281*/    if (this.longOpts.keySet().contains(opt)) {
++/* 281*/    if (this.shortOpts.keySet().contains(opt)) {
+ /* 283*/        return Collections.singletonList(opt); 
+ /*   0*/       }
+ /* 286*/    for (String longOpt : this.longOpts.keySet()) {

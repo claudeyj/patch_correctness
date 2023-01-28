@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/5/mutant-0/buggy-Complex.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/5/mutant-0/patched-Complex.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/5/mutant-0/buggy-Complex.java	2021-08-22 00:18:38.678190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/5/mutant-0/patched-Complex.java	2021-08-22 00:18:38.678190186 -0700
+@@ -302,7 +302,7 @@
+         }
+ 
+         if (real == 0.0 && imaginary == 0.0) {
+-            return NaN;
++            return INF;
+         }
+ 
+         if (isInfinite) {

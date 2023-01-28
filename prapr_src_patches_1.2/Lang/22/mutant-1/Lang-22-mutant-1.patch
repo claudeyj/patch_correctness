@@ -1,0 +1,12 @@
+--- jd-result/Lang/22/mutant-1/a-Fraction.java	2021-07-14 16:55:29.990118059 -0700
++++ jd-result/Lang/22/mutant-1/b-Fraction.java	2021-07-14 16:55:31.350118098 -0700
+@@ -245,7 +245,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private static int greatestCommonDivisor(int u, int v) {
+-/* 584*/    if (Math.abs(u) <= 1 || Math.abs(v) <= 1)
++/* 584*/    true;
++/* 584*/    if (Math.abs(v) <= 1)
+ /* 585*/      return 1; 
+ /* 591*/    if (u > 0)
+ /* 591*/      u = -u; 

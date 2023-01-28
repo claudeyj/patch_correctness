@@ -1,0 +1,13 @@
+--- Math73b/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java	2017-03-21 00:00:55.000000000 +0800
++++ Math73_Math-73-mutant-16.patchb/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java	2017-03-21 00:00:55.000000000 +0800
+@@ -135,7 +135,9 @@
+ 
+ 
+         // full Brent algorithm starting with provided initial guess
+-        return solve(f, min, yMin, max, yMax, initial, yInitial);
++    double d6 = yInitial, d5 = initial, d4 = yMax, d3 = max, d2 = yMin, d1 = min;
++    UnivariateRealFunction univariateRealFunction = f;
++    return solve(univariateRealFunction, d1, d2, d3);
+ 
+     }
+ 

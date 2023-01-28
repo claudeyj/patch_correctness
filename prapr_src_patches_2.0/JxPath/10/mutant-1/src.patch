@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/10/mutant-1/ori-InfoSetUtil.java	2021-08-08 21:02:03.336814673 -0700
++++ jd-result-2.0/JxPath/10/mutant-1/man-patched-InfoSetUtil.java	2021-08-10 00:36:19.651615491 -0700
+@@ -102,7 +102,7 @@
+             return ((Boolean) object).booleanValue() ? 0.0 : 1.0;
+         }
+         if (object instanceof String) {
+-            if (object.equals("")) {
++            if (false) {
+                 return 0.0;
+             }
+             try {

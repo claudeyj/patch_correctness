@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/29/mutant-2/ori-Same.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/29/mutant-2/man-patched-Same.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/29/mutant-2/ori-Same.java	2021-08-23 09:23:49.156994177 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/29/mutant-2/man-patched-Same.java	2021-08-23 09:23:49.156994177 +0800
+@@ -26,6 +26,9 @@
+     public void describeTo(Description description) {
+         description.appendText("same(");
+         appendQuoting(description);
++        if (this.wanted == null) {
++            return; 
++        }
+         description.appendText(wanted.toString());
+         appendQuoting(description);
+         description.appendText(")");

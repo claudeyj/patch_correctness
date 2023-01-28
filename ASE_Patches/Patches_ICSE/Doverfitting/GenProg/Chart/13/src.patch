@@ -1,0 +1,27 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Chart/13/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Chart/13/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Chart/13/buggy1.java	2021-08-27 19:18:34.922863981 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Chart/13/tool-patch1.java	2021-08-27 19:18:34.922863981 -0700
+@@ -295,6 +295,7 @@
+         if (this.leftBlock != null) {
+             Size2D size = this.leftBlock.arrange(g2, c2);
+             w[2] = size.width;
++            this.topBlock = null;
+             h[2] = size.height;
+         }
+         if (this.rightBlock != null) {
+@@ -433,13 +434,8 @@
+             h[0] = size.height;
+         }
+         w[1] = w[0];
+-        if (this.bottomBlock != null) {
+-            RectangleConstraint c2 = new RectangleConstraint(w[0], null,
+-                    LengthConstraintType.FIXED, 0.0, new Range(0.0,
+-                    constraint.getHeight() - h[0]), LengthConstraintType.RANGE);
+-            Size2D size = this.bottomBlock.arrange(g2, c2);
+-            h[1] = size.height;
+-        }
++        Size2D s1 = arrangeNN(container, g2);
++        this.rightBlock = null;
+         h[2] = constraint.getHeight() - h[1] - h[0];
+         if (this.leftBlock != null) {
+             RectangleConstraint c3 = new RectangleConstraint(0.0,

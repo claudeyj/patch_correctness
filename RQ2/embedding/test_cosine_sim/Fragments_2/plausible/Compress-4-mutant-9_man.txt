@@ -1,0 +1,8 @@
+
+        // ZIP file comment
+        ByteBuffer data = this.zipEncoding.encode(comment);
+    byte[] arrayOfByte1 = ZipShort.getBytes(data.limit());
+    writeOut(arrayOfByte1, 0, 0);
+        writeOut(data.array(), data.arrayOffset(), data.limit());
+    }
+

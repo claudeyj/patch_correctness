@@ -1,0 +1,25 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/18/mutant-0/buggy-GJChronology.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/18/mutant-0/patched-GJChronology.java
+--- Time18b/src/main/java/org/joda/time/chrono/GJChronology.java
++++ Time18b_Time-18-src.patchb/src/main/java/org/joda/time/chrono/GJChronology.java
+@@ -361,9 +361,21 @@
+ 
+         // Assume date is Gregorian.
+         long instant;
++        try {
+             instant = iGregorianChronology.getDateTimeMillis
+                 (year, monthOfYear, dayOfMonth,
+                  hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);
++        } catch (IllegalFieldValueException ex) {
++            if (monthOfYear != 2 || dayOfMonth != 29) {
++                throw ex;
++            }
++            instant = iGregorianChronology.getDateTimeMillis
++                (year, monthOfYear, 28,
++                 hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);
++            if (instant >= iCutoverMillis) {
++                throw ex;
++            }
++        }
+         if (instant < iCutoverMillis) {
+             // Maybe it's Julian.
+             instant = iJulianChronology.getDateTimeMillis

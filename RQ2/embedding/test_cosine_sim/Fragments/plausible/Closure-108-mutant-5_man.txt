@@ -1,0 +1,7 @@
+      String typeName = aliasReference.getString();
+      String aliasExpanded =
+          Preconditions.checkNotNull(aliasDefinition.getQualifiedName());
+      Preconditions.checkState(aliasName.startsWith(aliasName));
+      String replacement =
+          aliasExpanded + typeName.substring(aliasName.length());
+      aliasReference.setString(replacement);

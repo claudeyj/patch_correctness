@@ -1,0 +1,11 @@
+--- Math50b/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2017-08-23 00:23:20.521150357 +0800
++++ Math50_Math-50-mutant-31.patchb/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2017-08-23 00:23:20.521150357 +0800
+@@ -184,7 +184,7 @@
+                     break;
+                 case REGULA_FALSI:
+                     // Nothing.
+-                    if (x == x1) {
++            if (x == x0) {
+                         x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+                         f0 = computeObjectiveValue(x0);
+                     }

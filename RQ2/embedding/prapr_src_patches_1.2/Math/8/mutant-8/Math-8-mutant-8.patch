@@ -1,0 +1,11 @@
+--- jd-result/Math/8/mutant-8/a-DiscreteDistribution.java	2021-07-14 09:05:55.889323042 -0700
++++ jd-result/Math/8/mutant-8/b-DiscreteDistribution.java	2021-07-14 09:05:57.237323080 -0700
+@@ -72,7 +72,7 @@
+ /*   0*/  public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+ /* 182*/    if (sampleSize <= 0)
+ /* 183*/      throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize); 
+-/* 187*/    T[] out = (T[])Array.newInstance(this.singletons.get(0).getClass(), sampleSize);
++/* 187*/    T[] out = (T[])Array.newInstance(this.singletons.get(1).getClass(), sampleSize);
+ /* 189*/    for (int i = 0; i < sampleSize; i++)
+ /* 190*/      out[i] = sample(); 
+ /* 193*/    return out;

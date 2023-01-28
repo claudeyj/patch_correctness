@@ -1,0 +1,7 @@
+            List<Annotation> fromBundles = null;
+            for (Annotation ann : anns) { // first: direct annotations
+                boolean wasModified = target.addOrOverride(ann);
+                if (wasModified && _isAnnotationBundle(ann)) {
+                    fromBundles = _addFromBundle(ann, fromBundles);
+                }
+            }

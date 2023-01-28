@@ -1,0 +1,12 @@
+--- jd-result/Chart/25/mutant-153/ori-DefaultStatisticalCategoryDataset.java	2021-07-15 18:51:50.708753079 -0700
++++ jd-result/Chart/25/mutant-153/patched-DefaultStatisticalCategoryDataset.java	2021-07-21 07:19:57.270209879 -0700
+@@ -261,7 +261,8 @@
+      * @return The row count.
+      */
+     public int getRowCount() {
+-        return this.data.getRowCount();
++    this.data.getRowCount();
++    return 0;
+     }
+ 
+     /**

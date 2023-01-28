@@ -1,0 +1,11 @@
+--- Math95b/src/java/org/apache/commons/math/distribution/FDistributionImpl.java	2017-03-21 00:10:31.000000000 +0800
++++ Math95_Math-95-mutant-4.patchb/src/java/org/apache/commons/math/distribution/FDistributionImpl.java	2017-03-21 00:10:31.000000000 +0800
+@@ -144,7 +144,7 @@
+         double ret;
+         double d = getDenominatorDegreesOfFreedom();
+             // use mean
+-            ret = d / (d - 2.0);
++    ret = d / (d + 2.0D);
+         return ret;
+     }
+     

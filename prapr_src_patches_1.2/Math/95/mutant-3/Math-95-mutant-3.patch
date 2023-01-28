@@ -1,0 +1,12 @@
+--- jd-result/Math/95/mutant-3/a-FDistributionImpl.java	2021-07-14 17:00:32.046126583 -0700
++++ jd-result/Math/95/mutant-3/b-FDistributionImpl.java	2021-07-14 17:00:33.410126621 -0700
+@@ -45,7 +45,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected double getInitialDomain(double p) {
+-/* 145*/    double d = getDenominatorDegreesOfFreedom();
++/* 145*/    this;
++/* 145*/    double d = 0.0D;
+ /* 147*/    double ret = d / (d - 2.0D);
+ /* 148*/    return ret;
+ /*   0*/  }

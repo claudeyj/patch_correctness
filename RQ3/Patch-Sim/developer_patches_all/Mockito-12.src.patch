@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/12/mutant-0/buggy-GenericMaster.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/12/mutant-0/patched-GenericMaster.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/12/mutant-0/buggy-GenericMaster.java	2021-08-22 00:18:38.702190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/12/mutant-0/patched-GenericMaster.java	2021-08-22 00:18:38.702190186 -0700
+@@ -17,8 +17,12 @@
+         Type generic = field.getGenericType();
+         if (generic != null && generic instanceof ParameterizedType) {
+             Type actual = ((ParameterizedType) generic).getActualTypeArguments()[0];
++            if (actual instanceof Class) {
+                 return (Class) actual;
++            } else if (actual instanceof ParameterizedType) {
+                 //in case of nested generics we don't go deep
++                return (Class) ((ParameterizedType) actual).getRawType();
++            }
+         }
+         
+         return Object.class;

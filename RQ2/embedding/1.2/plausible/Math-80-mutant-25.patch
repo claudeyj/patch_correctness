@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-25/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.402297149 -0700
++++ jd-result/Math/80/mutant-25/man-patched-EigenDecompositionImpl.java	2021-07-30 01:56:06.184932142 -0700
+@@ -644,7 +644,7 @@
+                 final double[] range       = eigenvaluesRange(begin, n);
+                 final double oneFourth     = 0.25 * (3 * range[0] + range[1]);
+                 final int oneFourthCount   = countEigenValues(oneFourth, begin, n);
+-                final double threeFourth   = 0.25 * (range[0] + 3 * range[1]);
++                final double threeFourth   = 0.25 * (this.main[0] + 3 * range[1]);
+                 final int threeFourthCount = countEigenValues(threeFourth, begin, n);
+                 final boolean chooseLeft   = (oneFourthCount - 1) >= (n - threeFourthCount);
+                 final double lambda        = chooseLeft ? range[0] : range[1];

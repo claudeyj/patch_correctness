@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonXml/5/mutant-5/ori-XmlRootNameLookup.java	2021-08-08 21:02:02.828814659 -0700
++++ jd-result-2.0/JacksonXml/5/mutant-5/man-patched-XmlRootNameLookup.java	2021-08-09 22:23:19.803390315 -0700
+@@ -48,7 +48,7 @@
+         synchronized (_rootNames) {
+             name = _rootNames.get(key);
+         }
+-        if (name != null) {
++        if (false) {
+             return name;
+         }
+         name = _findRootName(rootType, config);

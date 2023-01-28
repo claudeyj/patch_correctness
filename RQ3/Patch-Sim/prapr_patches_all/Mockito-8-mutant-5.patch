@@ -1,0 +1,14 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/8/mutant-5/ori-GenericMetadataSupport.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/8/mutant-5/man-patched-GenericMetadataSupport.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/8/mutant-5/ori-GenericMetadataSupport.java	2021-08-23 09:23:49.176994455 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Mockito/8/mutant-5/man-patched-GenericMetadataSupport.java	2021-08-23 09:23:49.176994455 +0800
+@@ -373,7 +373,9 @@
+         }
+ 
+         private void readTypeVariables() {
+-            for (Type type : typeVariable.getBounds()) {
++            // for (Type type : typeVariable.getBounds()) {
++            for (int i = 0; i < i; i ++) {
++                Type type = typeVariable.getBounds()[i];
+                 registerTypeVariablesOn(type);
+             }
+             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));

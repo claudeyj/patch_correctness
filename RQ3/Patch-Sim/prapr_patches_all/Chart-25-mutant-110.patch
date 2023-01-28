@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-110/ori-CategoryPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-110/patched-CategoryPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-110/ori-CategoryPlot.java	2021-08-23 09:23:48.320982585 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-110/patched-CategoryPlot.java	2021-08-23 09:23:48.320982585 +0800
+@@ -2858,7 +2858,7 @@
+             CategoryItemRendererState state = renderer.initialise(g2, dataArea,
+                     this, index, info);
+             int columnCount = currentDataset.getColumnCount();
+-            int rowCount = currentDataset.getRowCount();
++      int rowCount = 0;
+             int passCount = renderer.getPassCount();
+             for (int pass = 0; pass < passCount; pass++) {            
+                 if (this.columnRenderingOrder == SortOrder.ASCENDING) {

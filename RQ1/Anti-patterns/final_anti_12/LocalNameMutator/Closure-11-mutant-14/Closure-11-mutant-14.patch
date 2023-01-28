@@ -1,0 +1,11 @@
+--- jd-result/Closure/11/mutant-14/a-TypeCheck.java	2021-07-14 21:36:14.866593389 -0700
++++ jd-result/Closure/11/mutant-14/b-TypeCheck.java	2021-07-14 21:36:16.290593429 -0700
+@@ -699,7 +699,7 @@
+ /*1312*/    if (childType.isDict()) {
+ /*1313*/      report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, new String[] { "'.'", "dict" });
+ /*   0*/    } else {
+-/*1314*/      if (n.getJSType() != null && parent.isAssign())
++/*1314*/      if (n.getJSType() != null && objNode.isAssign())
+ /*   0*/        return; 
+ /*1316*/      if (this.validator.expectNotNullOrUndefined(t, n, childType, "No properties on this expression", getNativeType(JSTypeNative.OBJECT_TYPE)))
+ /*1318*/        checkPropertyAccess(childType, property.getString(), t, n); 

@@ -1,0 +1,11 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-121.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1311,7 +1311,7 @@
+         work[j4 - 2] = dN1 + work[j4p2];
+         work[j4] = work[j4p2 + 2] * (work[j4p2] / work[j4 - 2]);
+         dN = work[j4p2 + 2] * (dN1 / work[j4 - 2]) - tau;
+-        dMin = Math.min(dMin, dN);
++    this.dMin = this.dN;
+ 
+         work[j4 + 2] = dN;
+         work[4 * end - pingPong - 1] = eMin;

@@ -1,0 +1,7 @@
+     */
+    private List<Element> childElementsList() {
+        List<Element> children;
+        if (shadowChildrenRef == null || (children = shadowChildrenRef.get()) == null) {
+            final int size = childNodes.size();
+            children = new ArrayList<>(size);
+            //noinspection ForLoopReplaceableByForEach (beacause it allocates an Iterator which is wasteful here)

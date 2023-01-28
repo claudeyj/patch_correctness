@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/54/mutant-3/ori-PropertyBuilder.java	2021-08-08 21:02:02.292814644 -0700
++++ jd-result-2.0/JacksonDatabind/54/mutant-3/patched-PropertyBuilder.java	2021-08-09 06:25:54.941769334 -0700
+@@ -131,7 +131,7 @@
+             // always suppress nulls
+             suppressNulls = true;
+             // and for referential types, also "empty", which in their case means "absent"
+-            if (declaredType.isReferenceType()) {
++        if (actualType.isReferenceType()) {
+                 valueToSuppress = BeanPropertyWriter.MARKER_FOR_EMPTY;
+             }
+             break;

@@ -1,0 +1,8 @@
+     */
+    protected <A extends Annotation> A _findAnnotation(Annotated annotated,
+            Class<A> annoClass) {
+    Class<A> clazz = annoClass;
+    return (annotated == null) ? null : annotated.getAnnotation(clazz);
+    }
+
+    /**

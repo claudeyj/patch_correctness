@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/25/mutant-6/ori-ReaderBasedJsonParser.java	2021-08-08 21:02:01.740814628 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-6/man-patched-ReaderBasedJsonParser.java	2021-08-12 03:56:26.224830368 -0700
+@@ -1953,7 +1953,7 @@
+         final int maxCode = codes.length;
+ 
+         while (true) {
+-            if (_inputPtr >= _inputEnd) {
++            if (_skipWSOrEnd() >= _inputEnd) {
+                 if (!_loadMore()) { // acceptable for now (will error out later)
+                     break;
+                 }

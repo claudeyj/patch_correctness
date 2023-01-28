@@ -1,0 +1,14 @@
+--- Chart13b/source/org/jfree/chart/block/BorderArrangement.java	2017-03-20 23:22:39.000000000 +0800
++++ Chart13_Chart-13-mutant-7.patchb/source/org/jfree/chart/block/BorderArrangement.java	2017-03-20 23:22:39.000000000 +0800
+@@ -81,11 +81,6 @@
+      * @param upper  the upper bound (must be >= lower bound).
+      */
+     public Range(double lower, double upper) {
+-        if (lower > upper) {
+-            String msg = "Range(double, double): require lower (" + lower 
+-                + ") <= upper (" + upper + ").";
+-            throw new IllegalArgumentException(msg);
+-        }
+         this.lower = lower;
+         this.upper = upper;
+     }

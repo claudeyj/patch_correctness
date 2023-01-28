@@ -1,0 +1,21 @@
+--- jd-result-2.0/JacksonXml/5/mutant-3/a-XmlRootNameLookup.java	2021-08-09 03:47:27.285501047 -0700
++++ jd-result-2.0/JacksonXml/5/mutant-3/b-XmlRootNameLookup.java	2021-08-09 03:47:28.793501090 -0700
+@@ -10,6 +10,7 @@
+ /*   0*/import com.fasterxml.jackson.databind.type.ClassKey;
+ /*   0*/import com.fasterxml.jackson.databind.util.LRUMap;
+ /*   0*/import com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector;
++/*   0*/import com.fasterxml.jackson.dataformat.xml.XmlTestBase;
+ /*   0*/import java.io.Serializable;
+ /*   0*/import javax.xml.namespace.QName;
+ /*   0*/
+@@ -39,7 +40,9 @@
+ /*   0*/       }
+ /*  54*/    QName name = _findRootName(rootType, config);
+ /*  55*/    synchronized (this._rootNames) {
+-/*  56*/      this._rootNames.put(key, name);
++/*  56*/      QName qName = name;
++/*  56*/      ClassKey classKey = key;
++/*  56*/      new XmlTestBase.IntWrapper();
+ /*   0*/    } 
+ /*  58*/    return name;
+ /*   0*/  }

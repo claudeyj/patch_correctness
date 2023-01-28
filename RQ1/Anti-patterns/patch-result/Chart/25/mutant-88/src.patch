@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-88/ori-CategoryPlot.java	2021-07-15 18:51:50.720753080 -0700
++++ jd-result/Chart/25/mutant-88/patched-CategoryPlot.java	2021-07-21 07:21:51.102213091 -0700
+@@ -2852,7 +2852,7 @@
+         CategoryAxis domainAxis = getDomainAxisForDataset(index);
+         ValueAxis rangeAxis = getRangeAxisForDataset(index);
+         boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);
+-        if (hasData && renderer != null) {
++    if (DEFAULT_CROSSHAIR_VISIBLE && renderer != null) {
+             
+             foundData = true;
+             CategoryItemRendererState state = renderer.initialise(g2, dataArea,

@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 29 15:28:12 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 10432
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.databind.deser.std.FromStringDeserializer._deserialize(Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object; is replaced by an instantiation of type java.lang.Object using ()V
+	File Name: com/fasterxml/jackson/databind/deser/std/FromStringDeserializer.java
+	Line Number: 119
+	Rank: 2
+	Total Rank: 562
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.fasterxml.jackson.databind.deser.std.FromStringDeserializer._deserialize(Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object; is replaced by an instantiation of type perf.ManualWritePerfWithAllTypes$AllTypes using ()V
+	File Name: com/fasterxml/jackson/databind/deser/std/FromStringDeserializer.java
+	Line Number: 119
+	Rank: 2
+	Total Rank: 562
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/deser/std/FromStringDeserializer.java
+	Line Number: 119
+	Rank: 3
+	Total Rank: 564
+	Dump: mutant-1.class
+------------------------------------------------

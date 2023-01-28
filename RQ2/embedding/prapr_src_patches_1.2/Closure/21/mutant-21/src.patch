@@ -1,0 +1,20 @@
+--- jd-result/Closure/21/mutant-21/ori-CheckSideEffects.java	2021-07-15 18:51:53.912753170 -0700
++++ jd-result/Closure/21/mutant-21/man-patched-CheckSideEffects.java	2021-07-29 20:05:50.696339126 -0700
+@@ -25,6 +25,7 @@
+ import com.google.javascript.rhino.Token;
+ 
+ import java.util.List;
++import java.util.Iterator;
+ 
+ /**
+  * Checks for non side effecting statements such as
+@@ -115,7 +116,8 @@
+         return;
+       }
+       if (n == parent.getLastChild()) {
+-        for (Node an : parent.getAncestors()) {
++        for (Iterator<Node> it = parent.getAncestors().iterator(); !it.hasNext(); ) {
++          Node an = it.next();
+           int ancestorType = an.getType();
+           if (ancestorType == Token.COMMA) continue;
+           if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK) return;

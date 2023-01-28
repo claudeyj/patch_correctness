@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-134/ori-EigenDecompositionImpl.java	2021-07-24 01:52:08.170297198 -0700
++++ jd-result/Math/81/mutant-134/patched-EigenDecompositionImpl.java	2021-07-24 01:52:08.178297199 -0700
+@@ -1509,7 +1509,7 @@
+                             return;
+                         }
+                         b2 = b2 * (work[i4] / work[i4 - 2]);
+-                        a2 = a2 + b2;
++            a2 = cnst1 + b2;
+                         if (100 * Math.max(b2, b1) < a2 || cnst1 < a2) {
+                             break;
+                         }

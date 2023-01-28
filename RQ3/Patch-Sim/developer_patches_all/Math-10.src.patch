@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/10/mutant-0/buggy-DSCompiler.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/10/mutant-0/patched-DSCompiler.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/10/mutant-0/buggy-DSCompiler.java	2021-08-22 00:18:38.662190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/10/mutant-0/patched-DSCompiler.java	2021-08-22 00:18:38.662190185 -0700
+@@ -1416,6 +1416,7 @@
+         }
+ 
+         // fix value to take special cases (+0/+0, +0/-0, -0/+0, -0/-0, +/-infinity) correctly
++        result[resultOffset] = FastMath.atan2(y[yOffset], x[xOffset]);
+ 
+     }
+ 

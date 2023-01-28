@@ -1,0 +1,13 @@
+--- jd-result/Mockito/8/mutant-4/ori-GenericMetadataSupport.java	2021-07-15 18:51:56.396753240 -0700
++++ jd-result/Mockito/8/mutant-4/man-patched-GenericMetadataSupport.java	2021-07-23 20:44:56.277777087 -0700
+@@ -373,7 +373,9 @@
+         }
+ 
+         private void readTypeVariables() {
+-            for (Type type : typeVariable.getBounds()) {
++            // for (Type type : typeVariable.getBounds()) {
++            for (int i = 0; typeVariable.getBounds().length < typeVariable.getBounds().length; i++) {
++                Type type = typeVariable.getBounds()[i];
+                 registerTypeVariablesOn(type);
+             }
+             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));

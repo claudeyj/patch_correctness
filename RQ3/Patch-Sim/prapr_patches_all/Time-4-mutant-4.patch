@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/4/mutant-4/ori-ZeroIsMaxDateTimeField.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/4/mutant-4/fixed-patched-ZeroIsMaxDateTimeField.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/4/mutant-4/ori-ZeroIsMaxDateTimeField.java	2021-08-23 09:23:49.204994842 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/4/mutant-4/fixed-patched-ZeroIsMaxDateTimeField.java	2021-08-23 09:23:49.204994842 +0800
+@@ -175,7 +175,7 @@
+      * @return the maximum value
+      */
+     public int getMaximumValue(ReadablePartial instant, int[] values) {
+-        return getWrappedField().getMaximumValue(instant, values) + 1;
++    return new DelegatedDateTimeField(null, null).getMaximumValue(instant, values) + 1;
+     }
+ 
+     public long roundFloor(long instant) {

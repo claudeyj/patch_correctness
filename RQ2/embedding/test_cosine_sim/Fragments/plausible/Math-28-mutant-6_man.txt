@@ -1,0 +1,7 @@
+                for (Integer row : minRatioPositions) {
+                    for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {
+                        int column = i + tableau.getArtificialVariableOffset();
+          double entry = minRatio;
+                        if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {
+                            return row;
+                        }

@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Chart/21/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Chart/21/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Chart/21/buggy1.java	2021-08-27 19:18:33.174863932 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Chart/21/tool-patch1.java	2021-08-27 19:18:33.174863932 -0700
+@@ -332,8 +332,10 @@
+         }
+         Range range = (Range) obj;
+         if (!(this.lower == range.lower)) {
++            if ((org.jfree.data.Range.this.lower <= 0) || (29 < org.jfree.data.Range.this.upper)) {
+             return false;
+         }
++        }
+         if (!(this.upper == range.upper)) {
+             return false;
+         }

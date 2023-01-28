@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-6/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-6/patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-6/ori-CMAESOptimizer.java	2021-08-23 09:23:48.896990572 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-6/patched-CMAESOptimizer.java	2021-08-23 09:23:48.896990572 +0800
+@@ -910,7 +910,7 @@
+                 double diff = boundaries[1][i] - boundaries[0][i];
+                 res[i] = (x[i] - boundaries[0][i]) / diff;
+             }
+-            return res;
++      return x;
+         }
+ 
+         /**

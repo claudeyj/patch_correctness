@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-13.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -445,7 +445,7 @@
+      * @return The right margin (in Java2D units).
+      */
+     public double calculateRightInset(double width) {
+-        double result = this.right;
++    double result = width;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.right * width);
+         }

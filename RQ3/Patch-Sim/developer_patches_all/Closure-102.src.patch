@@ -1,0 +1,17 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/102/mutant-0/buggy-Normalize.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/102/mutant-0/patched-Normalize.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/102/mutant-0/buggy-Normalize.java	2021-08-22 00:18:38.578190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/102/mutant-0/patched-Normalize.java	2021-08-22 00:18:38.578190183 -0700
+@@ -86,12 +86,12 @@
+   @Override
+   public void process(Node externs, Node root) {
+     NodeTraversal.traverse(compiler, root, this);
++    removeDuplicateDeclarations(root);
+     if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+       t.traverseRoots(externs, root);
+     }
+-    removeDuplicateDeclarations(root);
+     new PropogateConstantAnnotations(compiler, assertOnChange)
+         .process(externs, root);
+   }

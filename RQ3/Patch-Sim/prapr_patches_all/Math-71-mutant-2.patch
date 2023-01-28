@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-2/ori-AbstractIntegrator.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-2/fixed-patched-AbstractIntegrator.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-2/ori-AbstractIntegrator.java	2021-08-23 09:23:48.980991737 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-2/fixed-patched-AbstractIntegrator.java	2021-08-23 09:23:48.976991681 +0800
+@@ -239,7 +239,7 @@
+         }
+         newManager.addEventHandler(new EndTimeChecker(endTime),
+                                    Double.POSITIVE_INFINITY,
+-                                   Math.ulp(Math.max(Math.abs(startTime), Math.abs(endTime))),
++                                   Math.ulp(Math.max(Math.toDegrees(startTime), Math.abs(endTime))),
+                                    100);
+         return newManager;
+     }

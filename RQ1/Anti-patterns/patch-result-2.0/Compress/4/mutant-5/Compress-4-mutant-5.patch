@@ -1,0 +1,12 @@
+--- jd-result-2.0/Compress/4/mutant-5/a-ZipArchiveOutputStream.java	2021-08-09 04:00:51.029523727 -0700
++++ jd-result-2.0/Compress/4/mutant-5/b-ZipArchiveOutputStream.java	2021-08-09 04:00:52.477523768 -0700
+@@ -419,7 +419,8 @@
+ /* 819*/    writeOut(ZipLong.getBytes(this.cdLength));
+ /* 820*/    writeOut(ZipLong.getBytes(this.cdOffset));
+ /* 823*/    ByteBuffer data = this.zipEncoding.encode(this.comment);
+-/* 824*/    writeOut(ZipShort.getBytes(data.limit()));
++/* 824*/    ZipShort.getBytes(data.limit());
++/* 824*/    this;
+ /* 825*/    writeOut(data.array(), data.arrayOffset(), data.limit());
+ /*   0*/  }
+ /*   0*/  

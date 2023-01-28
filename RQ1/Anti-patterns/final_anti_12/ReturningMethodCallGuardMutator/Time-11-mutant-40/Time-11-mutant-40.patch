@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-40/a-ZoneInfoCompiler.java	2021-07-14 21:28:17.050579906 -0700
++++ jd-result/Time/11/mutant-40/b-ZoneInfoCompiler.java	2021-07-14 21:28:18.458579945 -0700
+@@ -43,7 +43,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static boolean verbose() {
+-/*  78*/    return (Boolean)cVerbose.get();
++/*  78*/    return ((Boolean)cVerbose.get() == null) ? false : (Boolean)cVerbose.get();
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static void main(String[] paramArrayOfString) throws Exception {

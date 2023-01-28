@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/48/mutant-6/a-SerializationConfig.java	2021-08-09 04:28:45.301570972 -0700
++++ jd-result-2.0/JacksonDatabind/48/mutant-6/b-SerializationConfig.java	2021-08-09 04:28:46.865571016 -0700
+@@ -475,7 +475,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public AnnotationIntrospector getAnnotationIntrospector() {
+-/* 835*/    if (isEnabled(MapperFeature.USE_ANNOTATIONS)) {
++/* 835*/    if (isEnabled(MapperFeature.AUTO_DETECT_SETTERS)) {
+ /* 836*/        return super.getAnnotationIntrospector(); 
+ /*   0*/       }
+ /* 838*/    return AnnotationIntrospector.nopInstance();

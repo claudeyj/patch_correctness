@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/11/mutant-37/ori-DateTimeZoneBuilder.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/11/mutant-37/fixed-patched-DateTimeZoneBuilder.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/11/mutant-37/ori-DateTimeZoneBuilder.java	2021-08-23 09:23:49.192994677 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Time/11/mutant-37/fixed-patched-DateTimeZoneBuilder.java	2021-08-23 09:23:49.192994677 +0800
+@@ -368,7 +368,7 @@
+                 }
+                 millis = next.getMillis();
+                 saveMillis = next.getSaveMillis();
+-                if (tailZone == null && i == ruleSetCount - 1) {
++                if (tailZone != null && i == ruleSetCount - 1) {
+                     tailZone = rs.buildTailZone(id);
+                     // If tailZone is not null, don't break out of main loop until
+                     // at least one more transition is calculated. This ensures a

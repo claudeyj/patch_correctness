@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/8/mutant-14/a-Base64.java	2021-08-09 03:48:54.273503502 -0700
++++ jd-result-2.0/Codec/8/mutant-14/b-Base64.java	2021-08-09 03:48:55.797503545 -0700
+@@ -156,7 +156,7 @@
+ /*   0*/  
+ /*   0*/  void setInitialBuffer(byte[] out, int outPos, int outAvail) {
+ /* 420*/    if (out != null && out.length == outAvail) {
+-/* 421*/      this.buffer = out;
++/* 421*/      this;
+ /* 422*/      this.pos = outPos;
+ /* 423*/      this.readPos = outPos;
+ /*   0*/    } 

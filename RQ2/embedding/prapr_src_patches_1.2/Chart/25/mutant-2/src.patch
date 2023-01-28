@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-2/ori-CategoryPlot.java	2021-07-15 18:51:50.704753079 -0700
++++ jd-result/Chart/25/mutant-2/patched-CategoryPlot.java	2021-07-21 07:18:54.454208106 -0700
+@@ -2857,7 +2857,7 @@
+             foundData = true;
+             CategoryItemRendererState state = renderer.initialise(g2, dataArea,
+                     this, index, info);
+-            int columnCount = currentDataset.getColumnCount();
++      int columnCount = this.weight;
+             int rowCount = currentDataset.getRowCount();
+             int passCount = renderer.getPassCount();
+             for (int pass = 0; pass < passCount; pass++) {            

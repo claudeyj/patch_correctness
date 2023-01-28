@@ -1,0 +1,11 @@
+--- Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java	2017-03-20 23:46:49.000000000 +0800
++++ Math5_Math-5-mutant-3.patchb/src/main/java/org/apache/commons/math3/complex/Complex.java	2017-03-20 23:46:49.000000000 +0800
+@@ -337,7 +337,7 @@
+      */
+     @Override
+     public boolean equals(Object other) {
+-        if (this == other) {
++    if (INF == other) {
+             return true;
+         }
+         if (other instanceof Complex){

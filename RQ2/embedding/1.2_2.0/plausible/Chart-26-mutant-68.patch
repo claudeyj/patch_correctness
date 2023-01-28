@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-68/ori-Axis.java	2021-07-15 18:51:51.896753113 -0700
++++ jd-result/Chart/26/mutant-68/man-patched-Axis.java	2021-07-23 23:25:11.726048416 -0700
+@@ -1098,7 +1098,7 @@
+             throw new IllegalArgumentException("Null 'state' argument.");
+         }
+         
+-        if ((label == null) || (label.equals(""))) {
++        if ((label == null) || DEFAULT_AXIS_VISIBLE) {
+             return state;
+         }
+ 

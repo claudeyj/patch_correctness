@@ -1,0 +1,8 @@
+                } else {
+                    p = -p;
+                }
+                if (2.0 * p >= 1.5 * dx * p1 - Math.abs(tolerance * p1) ||
+                        p >= Math.abs(0.5 * oldDelta * p1)) {
+                    // Inverse quadratic interpolation gives a value
+                    // in the wrong direction, or progress is slow.
+                    // Fall back to bisection.

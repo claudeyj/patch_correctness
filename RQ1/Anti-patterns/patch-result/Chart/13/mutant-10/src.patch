@@ -1,0 +1,13 @@
+--- jd-result/Chart/13/mutant-10/ori-BorderArrangement.java	2021-07-15 18:51:50.688753079 -0700
++++ jd-result/Chart/13/mutant-10/patched-BorderArrangement.java	2021-07-21 09:43:23.569576179 -0700
+@@ -446,7 +446,9 @@
+                     new Range(0.0, constraint.getWidth()),
+                     LengthConstraintType.RANGE, h[2], null,
+                     LengthConstraintType.FIXED);
+-            Size2D size = this.leftBlock.arrange(g2, c3);
++      RectangleConstraint rectangleConstraint1 = c3;
++      Graphics2D graphics2D = g2;
++      Size2D size = new Size2D();
+             w[2] = size.width;
+         }
+         h[3] = h[2];

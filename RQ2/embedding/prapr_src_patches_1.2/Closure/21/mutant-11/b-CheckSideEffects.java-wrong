@@ -1,0 +1,284 @@
+/*   0*/package com.google.javascript.jscomp;
+/*   0*/
+/*   0*/import com.google.common.collect.Lists;
+/*   0*/import com.google.javascript.rhino.IR;
+/*   0*/import com.google.javascript.rhino.JSDocInfoBuilder;
+/*   0*/import com.google.javascript.rhino.Node;
+/*   0*/import java.util.List;
+/*   0*/
+/*   0*/final class CheckSideEffects extends NodeTraversal.AbstractPostOrderCallback implements HotSwapCompilerPass {
+/*  43*/  static final DiagnosticType USELESS_CODE_ERROR = DiagnosticType.warning("JSC_USELESS_CODE", "Suspicious code. {0}");
+/*   0*/  
+/*   0*/  static final String PROTECTOR_FN = "JSCOMPILER_PRESERVE";
+/*   0*/  
+/*   0*/  private final CheckLevel level;
+/*   0*/  
+/*  51*/  private final List<Node> problemNodes = Lists.newArrayList();
+/*   0*/  
+/*   0*/  private final AbstractCompiler compiler;
+/*   0*/  
+/*   0*/  private final boolean protectSideEffectFreeCode;
+/*   0*/  
+/*   0*/  CheckSideEffects(AbstractCompiler compiler, CheckLevel level, boolean protectSideEffectFreeCode) {
+/*  59*/    this.compiler = compiler;
+/*  60*/    this.level = level;
+/*  61*/    this.protectSideEffectFreeCode = protectSideEffectFreeCode;
+/*   0*/  }
+/*   0*/  
+/*   0*/  public void process(Node externs, Node root) {
+/*  66*/    NodeTraversal.traverse(this.compiler, root, this);
+/*  73*/    if (this.protectSideEffectFreeCode)
+/*  74*/      protectSideEffects(); 
+/*   0*/  }
+/*   0*/  
+/*   0*/  public void hotSwapScript(Node scriptRoot, Node originalRoot) {
+/*  80*/    NodeTraversal.traverse(this.compiler, scriptRoot, this);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public void visit(NodeTraversal t, Node n, Node parent) {
+/*   0*/    // Byte code:
+/*   0*/    //   0: aload_2
+/*   0*/    //   1: invokevirtual isEmpty : ()Z
+/*   0*/    //   4: ifne -> 14
+/*   0*/    //   7: aload_2
+/*   0*/    //   8: invokevirtual isComma : ()Z
+/*   0*/    //   11: ifeq -> 15
+/*   0*/    //   14: return
+/*   0*/    //   15: aload_3
+/*   0*/    //   16: ifnonnull -> 20
+/*   0*/    //   19: return
+/*   0*/    //   20: aload_2
+/*   0*/    //   21: invokevirtual isExprResult : ()Z
+/*   0*/    //   24: ifeq -> 28
+/*   0*/    //   27: return
+/*   0*/    //   28: aload_2
+/*   0*/    //   29: invokevirtual isQualifiedName : ()Z
+/*   0*/    //   32: ifeq -> 43
+/*   0*/    //   35: aload_2
+/*   0*/    //   36: invokevirtual getJSDocInfo : ()Lcom/google/javascript/rhino/JSDocInfo;
+/*   0*/    //   39: ifnull -> 43
+/*   0*/    //   42: return
+/*   0*/    //   43: aload_2
+/*   0*/    //   44: invokestatic isExpressionResultUsed : (Lcom/google/javascript/rhino/Node;)Z
+/*   0*/    //   47: istore #4
+/*   0*/    //   49: aload_2
+/*   0*/    //   50: invokevirtual getType : ()I
+/*   0*/    //   53: invokestatic isSimpleOperatorType : (I)Z
+/*   0*/    //   56: istore #5
+/*   0*/    //   58: aload_3
+/*   0*/    //   59: invokevirtual getType : ()I
+/*   0*/    //   62: bipush #85
+/*   0*/    //   64: if_icmpne -> 149
+/*   0*/    //   67: iload #4
+/*   0*/    //   69: ifeq -> 73
+/*   0*/    //   72: return
+/*   0*/    //   73: aload_2
+/*   0*/    //   74: aload_3
+/*   0*/    //   75: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   78: if_acmpne -> 208
+/*   0*/    //   81: aload_3
+/*   0*/    //   82: invokevirtual getAncestors : ()Lcom/google/javascript/rhino/Node$AncestorIterable;
+/*   0*/    //   85: invokevirtual iterator : ()Ljava/util/Iterator;
+/*   0*/    //   88: astore #6
+/*   0*/    //   90: aload #6
+/*   0*/    //   92: invokeinterface hasNext : ()Z
+/*   0*/    //   97: ifeq -> 146
+/*   0*/    //   100: aload #6
+/*   0*/    //   102: invokeinterface next : ()Ljava/lang/Object;
+/*   0*/    //   107: checkcast com/google/javascript/rhino/Node
+/*   0*/    //   110: astore #7
+/*   0*/    //   112: aload #7
+/*   0*/    //   114: invokevirtual getType : ()I
+/*   0*/    //   117: istore #8
+/*   0*/    //   119: iload #8
+/*   0*/    //   121: bipush #85
+/*   0*/    //   123: if_icmpne -> 129
+/*   0*/    //   126: goto -> 90
+/*   0*/    //   129: iload #8
+/*   0*/    //   131: sipush #130
+/*   0*/    //   134: pop2
+/*   0*/    //   135: goto -> 146
+/*   0*/    //   138: iload #8
+/*   0*/    //   140: bipush #125
+/*   0*/    //   142: if_icmpeq -> 146
+/*   0*/    //   145: return
+/*   0*/    //   146: goto -> 208
+/*   0*/    //   149: aload_3
+/*   0*/    //   150: invokevirtual getType : ()I
+/*   0*/    //   153: sipush #130
+/*   0*/    //   156: if_icmpeq -> 208
+/*   0*/    //   159: aload_3
+/*   0*/    //   160: invokevirtual getType : ()I
+/*   0*/    //   163: bipush #125
+/*   0*/    //   165: if_icmpeq -> 208
+/*   0*/    //   168: aload_3
+/*   0*/    //   169: invokevirtual getType : ()I
+/*   0*/    //   172: bipush #115
+/*   0*/    //   174: if_icmpne -> 207
+/*   0*/    //   177: aload_3
+/*   0*/    //   178: invokevirtual getChildCount : ()I
+/*   0*/    //   181: iconst_4
+/*   0*/    //   182: if_icmpne -> 207
+/*   0*/    //   185: aload_2
+/*   0*/    //   186: aload_3
+/*   0*/    //   187: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   190: if_acmpeq -> 208
+/*   0*/    //   193: aload_2
+/*   0*/    //   194: aload_3
+/*   0*/    //   195: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   198: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   201: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   204: if_acmpeq -> 208
+/*   0*/    //   207: return
+/*   0*/    //   208: iload #5
+/*   0*/    //   210: ifne -> 224
+/*   0*/    //   213: aload_2
+/*   0*/    //   214: aload_1
+/*   0*/    //   215: invokevirtual getCompiler : ()Lcom/google/javascript/jscomp/Compiler;
+/*   0*/    //   218: invokestatic mayHaveSideEffects : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/jscomp/AbstractCompiler;)Z
+/*   0*/    //   221: ifne -> 328
+/*   0*/    //   224: ldc 'This code lacks side-effects. Is there a bug?'
+/*   0*/    //   226: astore #6
+/*   0*/    //   228: aload_2
+/*   0*/    //   229: invokevirtual isString : ()Z
+/*   0*/    //   232: ifeq -> 242
+/*   0*/    //   235: ldc 'Is there a missing '+' on the previous line?'
+/*   0*/    //   237: astore #6
+/*   0*/    //   239: goto -> 282
+/*   0*/    //   242: iload #5
+/*   0*/    //   244: ifeq -> 282
+/*   0*/    //   247: new java/lang/StringBuilder
+/*   0*/    //   250: dup
+/*   0*/    //   251: invokespecial <init> : ()V
+/*   0*/    //   254: ldc 'The result of the ''
+/*   0*/    //   256: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+/*   0*/    //   259: aload_2
+/*   0*/    //   260: invokevirtual getType : ()I
+/*   0*/    //   263: invokestatic name : (I)Ljava/lang/String;
+/*   0*/    //   266: invokevirtual toLowerCase : ()Ljava/lang/String;
+/*   0*/    //   269: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+/*   0*/    //   272: ldc '' operator is not being used.'
+/*   0*/    //   274: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+/*   0*/    //   277: invokevirtual toString : ()Ljava/lang/String;
+/*   0*/    //   280: astore #6
+/*   0*/    //   282: aload_1
+/*   0*/    //   283: invokevirtual getCompiler : ()Lcom/google/javascript/jscomp/Compiler;
+/*   0*/    //   286: aload_1
+/*   0*/    //   287: aload_2
+/*   0*/    //   288: aload_0
+/*   0*/    //   289: getfield level : Lcom/google/javascript/jscomp/CheckLevel;
+/*   0*/    //   292: getstatic com/google/javascript/jscomp/CheckSideEffects.USELESS_CODE_ERROR : Lcom/google/javascript/jscomp/DiagnosticType;
+/*   0*/    //   295: iconst_1
+/*   0*/    //   296: anewarray java/lang/String
+/*   0*/    //   299: dup
+/*   0*/    //   300: iconst_0
+/*   0*/    //   301: aload #6
+/*   0*/    //   303: aastore
+/*   0*/    //   304: invokevirtual makeError : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/jscomp/CheckLevel;Lcom/google/javascript/jscomp/DiagnosticType;[Ljava/lang/String;)Lcom/google/javascript/jscomp/JSError;
+/*   0*/    //   307: invokevirtual report : (Lcom/google/javascript/jscomp/JSError;)V
+/*   0*/    //   310: aload_2
+/*   0*/    //   311: invokestatic isStatement : (Lcom/google/javascript/rhino/Node;)Z
+/*   0*/    //   314: ifne -> 328
+/*   0*/    //   317: aload_0
+/*   0*/    //   318: getfield problemNodes : Ljava/util/List;
+/*   0*/    //   321: aload_2
+/*   0*/    //   322: invokeinterface add : (Ljava/lang/Object;)Z
+/*   0*/    //   327: pop
+/*   0*/    //   328: return
+/*   0*/    // Line number table:
+/*   0*/    //   Java source line number -> byte code offset
+/*   0*/    //   #89	-> 0
+/*   0*/    //   #91	-> 14
+/*   0*/    //   #94	-> 15
+/*   0*/    //   #95	-> 19
+/*   0*/    //   #101	-> 20
+/*   0*/    //   #102	-> 27
+/*   0*/    //   #107	-> 28
+/*   0*/    //   #108	-> 42
+/*   0*/    //   #111	-> 43
+/*   0*/    //   #112	-> 49
+/*   0*/    //   #113	-> 58
+/*   0*/    //   #114	-> 67
+/*   0*/    //   #115	-> 72
+/*   0*/    //   #117	-> 73
+/*   0*/    //   #118	-> 81
+/*   0*/    //   #119	-> 112
+/*   0*/    //   #120	-> 119
+/*   0*/    //   #121	-> 129
+/*   0*/    //   #125	-> 149
+/*   0*/    //   #126	-> 168
+/*   0*/    //   #127	-> 207
+/*   0*/    //   #130	-> 208
+/*   0*/    //   #132	-> 224
+/*   0*/    //   #133	-> 228
+/*   0*/    //   #134	-> 235
+/*   0*/    //   #135	-> 242
+/*   0*/    //   #136	-> 247
+/*   0*/    //   #140	-> 282
+/*   0*/    //   #144	-> 310
+/*   0*/    //   #145	-> 317
+/*   0*/    //   #148	-> 328
+/*   0*/    // Local variable table:
+/*   0*/    //   start	length	slot	name	descriptor
+/*   0*/    //   119	27	8	ancestorType	I
+/*   0*/    //   112	34	7	an	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   90	56	6	i$	Ljava/util/Iterator;
+/*   0*/    //   228	100	6	msg	Ljava/lang/String;
+/*   0*/    //   0	329	0	this	Lcom/google/javascript/jscomp/CheckSideEffects;
+/*   0*/    //   0	329	1	t	Lcom/google/javascript/jscomp/NodeTraversal;
+/*   0*/    //   0	329	2	n	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   0	329	3	parent	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   49	280	4	isResultUsed	Z
+/*   0*/    //   58	271	5	isSimpleOp	Z
+/*   0*/  }
+/*   0*/  
+/*   0*/  private void protectSideEffects() {
+/* 156*/    if (!this.problemNodes.isEmpty()) {
+/* 157*/      addExtern();
+/* 158*/      for (Node n : this.problemNodes) {
+/* 159*/        Node name = IR.name("JSCOMPILER_PRESERVE").srcref(n);
+/* 160*/        name.putBooleanProp(43, true);
+/* 161*/        Node replacement = IR.call(name, new Node[0]).srcref(n);
+/* 162*/        replacement.putBooleanProp(50, true);
+/* 163*/        n.getParent().replaceChild(n, replacement);
+/* 164*/        replacement.addChildToBack(n);
+/*   0*/      } 
+/* 166*/      this.compiler.reportCodeChange();
+/*   0*/    } 
+/*   0*/  }
+/*   0*/  
+/*   0*/  private void addExtern() {
+/* 171*/    Node name = IR.name("JSCOMPILER_PRESERVE");
+/* 172*/    name.putBooleanProp(43, true);
+/* 173*/    Node var = IR.var(name);
+/* 175*/    JSDocInfoBuilder builder = new JSDocInfoBuilder(false);
+/* 176*/    builder.recordNoAlias();
+/* 177*/    var.setJSDocInfo(builder.build(var));
+/* 178*/    CompilerInput input = this.compiler.getSynthesizedExternsInput();
+/* 179*/    input.getAstRoot(this.compiler).addChildrenToBack(var);
+/* 180*/    this.compiler.reportCodeChange();
+/*   0*/  }
+/*   0*/  
+/*   0*/  static class StripProtection extends NodeTraversal.AbstractPostOrderCallback implements CompilerPass {
+/*   0*/    private final AbstractCompiler compiler;
+/*   0*/    
+/*   0*/    StripProtection(AbstractCompiler compiler) {
+/* 191*/      this.compiler = compiler;
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void process(Node externs, Node root) {
+/* 196*/      NodeTraversal.traverse(this.compiler, root, this);
+/*   0*/    }
+/*   0*/    
+/*   0*/    public void visit(NodeTraversal t, Node n, Node parent) {
+/* 201*/      if (n.isCall()) {
+/* 202*/        Node target = n.getFirstChild();
+/* 205*/        if (target.isName() && target.getString().equals("JSCOMPILER_PRESERVE")) {
+/* 206*/          Node expr = n.getLastChild();
+/* 207*/          n.detachChildren();
+/* 208*/          parent.replaceChild(n, expr);
+/*   0*/        } 
+/*   0*/      } 
+/*   0*/    }
+/*   0*/  }
+/*   0*/}

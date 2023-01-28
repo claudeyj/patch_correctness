@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/29/mutant-2/ori-OpenMapRealVector.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/29/mutant-2/fixed-patched-OpenMapRealVector.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/29/mutant-2/ori-OpenMapRealVector.java	2021-08-23 09:23:48.916990849 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/29/mutant-2/fixed-patched-OpenMapRealVector.java	2021-08-23 09:23:48.916990849 +0800
+@@ -136,7 +136,7 @@
+         this.epsilon = epsilon;
+         for (int key = 0; key < values.length; key++) {
+             double value = values[key];
+-            if (!isDefaultValue(value)) {
++      if (!isDefaultValue(epsilon)) {
+                 entries.put(key, value);
+             }
+         }

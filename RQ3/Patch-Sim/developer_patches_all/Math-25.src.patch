@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/25/mutant-0/buggy-HarmonicFitter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/25/mutant-0/patched-HarmonicFitter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/25/mutant-0/buggy-HarmonicFitter.java	2021-08-22 00:18:38.670190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/25/mutant-0/patched-HarmonicFitter.java	2021-08-22 00:18:38.670190185 -0700
+@@ -320,8 +320,11 @@
+                 }
+                 a = 0.5 * (yMax - yMin);
+             } else {
++                if (c2 == 0) {
+                     // In some ill-conditioned cases (cf. MATH-844), the guesser
+                     // procedure cannot produce sensible results.
++                    throw new MathIllegalStateException(LocalizedFormats.ZERO_DENOMINATOR);
++                }
+ 
+                 a = FastMath.sqrt(c1 / c2);
+                 omega = FastMath.sqrt(c2 / c3);

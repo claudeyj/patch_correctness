@@ -1,0 +1,11 @@
+--- jd-result/Closure/31/mutant-4/ori-Compiler.java	2021-07-15 18:51:52.812753139 -0700
++++ jd-result/Closure/31/mutant-4/man-patched-Compiler.java	2021-07-23 02:44:22.247199770 -0700
+@@ -1282,7 +1282,7 @@
+ 
+       // Check if the sources need to be re-ordered.
+       if (options.dependencyOptions.needsManagement() &&
+-          !options.skipAllPasses &&
++          !options.assumeClosuresOnlyCaptureReferences() &&
+           options.closurePass) {
+         for (CompilerInput input : inputs) {
+           // Forward-declare all the provided types, so that they

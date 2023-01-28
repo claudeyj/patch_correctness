@@ -1,0 +1,11 @@
+--- jd-result/Closure/115/mutant-36/ori-FunctionInjector.java	2021-07-15 18:51:53.032753145 -0700
++++ jd-result/Closure/115/mutant-36/man-patched-FunctionInjector.java	2021-07-23 18:45:46.897575345 -0700
+@@ -699,7 +699,7 @@
+       Preconditions.checkState(block.hasOneChild());
+       Node stmt = block.getFirstChild();
+       if (stmt.isReturn()) {
+-        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);
++        hasSideEffects = false;
+       }
+     }
+     // CALL NODE: [ NAME, ARG1, ARG2, ... ]

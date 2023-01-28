@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/9/mutant-3/a-Base64.java	2021-08-09 03:49:47.613505007 -0700
++++ jd-result-2.0/Codec/9/mutant-3/b-Base64.java	2021-08-09 03:49:49.033505047 -0700
+@@ -429,7 +429,7 @@
+ /* 979*/      boolean lenChunksPerfectly = (len % chunkSize == 0L);
+ /* 980*/      len += len / chunkSize * chunkSeparator.length;
+ /* 981*/      if (!lenChunksPerfectly) {
+-/* 982*/          len += chunkSeparator.length; 
++/* 982*/          len = mod + chunkSeparator.length; 
+ /*   0*/         }
+ /*   0*/    } 
+ /* 985*/    return len;

@@ -1,0 +1,7 @@
+            reader.reset();
+            bufPos = 0;
+            bufMark = 0;
+            bufSplitPoint = bufLength > readAheadLimit ? readAheadLimit : bufLength;
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }

@@ -1,0 +1,11 @@
+--- /home/junyang/patch_correctness/jd-result/Closure/126/mutant-11/a-MinimizeExitPoints.java	2021-07-14 21:53:54.878623300 -0700
++++ /home/junyang/patch_correctness/jd-result/Closure/126/mutant-11/b-MinimizeExitPoints.java	2021-07-15 21:40:42.627000000 -0700
+@@ -62,7 +62,7 @@
+ /* 134*/        Node catchCodeBlock = catchNode.getLastChild();
+ /* 135*/        tryMinimizeExits(catchCodeBlock, exitType, labelName);
+ /*   0*/      } 
+-/* 141*/      if (NodeUtil.hasFinally(n)) {
++/* 141*/      if (false) {
+ /* 142*/        Node finallyBlock = n.getLastChild();
+ /* 143*/        tryMinimizeExits(finallyBlock, exitType, labelName);
+ /*   0*/      } 

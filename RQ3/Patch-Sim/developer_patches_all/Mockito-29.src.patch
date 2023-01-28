@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/29/mutant-0/buggy-Same.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/29/mutant-0/patched-Same.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/29/mutant-0/buggy-Same.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/29/mutant-0/patched-Same.java	2021-08-22 00:18:38.706190186 -0700
+@@ -26,7 +26,7 @@
+     public void describeTo(Description description) {
+         description.appendText("same(");
+         appendQuoting(description);
+-        description.appendText(wanted.toString());
++        description.appendText(wanted == null ? "null" : wanted.toString());
+         appendQuoting(description);
+         description.appendText(")");
+     }

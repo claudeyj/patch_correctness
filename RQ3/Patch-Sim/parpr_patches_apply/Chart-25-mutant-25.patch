@@ -1,0 +1,11 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-25.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -445,7 +445,7 @@
+      * @return The right margin (in Java2D units).
+      */
+     public double calculateRightInset(double width) {
+-        double result = this.right;
++    double result = width;
+         if (this.unitType == UnitType.RELATIVE) {
+             result = (this.right * width);
+         }

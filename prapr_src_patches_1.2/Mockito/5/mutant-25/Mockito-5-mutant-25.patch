@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-25/a-FieldInitializer.java	2021-07-14 21:32:07.042586396 -0700
++++ jd-result/Mockito/5/mutant-25/b-FieldInitializer.java	2021-07-14 21:32:08.450586435 -0700
+@@ -105,7 +105,7 @@
+ /* 182*/        Object newFieldInstance = constructor.newInstance(noArg);
+ /* 183*/        new FieldSetter(this.testClass, this.field).set(newFieldInstance);
+ /* 185*/        return new FieldInitializationReport(this.field.get(this.testClass), true, false);
+-/* 186*/      } catch (NoSuchMethodException e) {
++/* 186*/      } catch (ReflectiveOperationException e) {
+ /* 187*/        throw new MockitoException("the type '" + this.field.getType().getSimpleName() + "' has no default constructor", e);
+ /* 188*/      } catch (InvocationTargetException e) {
+ /* 189*/        throw new MockitoException("the default constructor of type '" + this.field.getType().getSimpleName() + "' has raised an exception (see the stack trace for cause): " + e.getTargetException().toString(), e);

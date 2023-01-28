@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Fri Jul 23 00:11:21 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 14205
+================================================
+1.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/deser/ValueInstantiator::createFromInt
+	File Name: com/fasterxml/jackson/databind/deser/std/StdValueInstantiator.java
+	Line Number: 356
+	Rank: 2
+	Total Rank: 29
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/DeserializationContext::handleMissingInstantiator
+	File Name: com/fasterxml/jackson/databind/deser/ValueInstantiator.java
+	Line Number: 262
+	Rank: 2
+	Total Rank: 29
+	Dump: mutant-2.class
+------------------------------------------------

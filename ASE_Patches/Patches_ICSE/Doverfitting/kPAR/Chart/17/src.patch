@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Chart/17/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Chart/17/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Chart/17/buggy1.java	2021-08-27 19:18:35.974864011 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/kPAR/Chart/17/tool-patch1.java	2021-08-27 19:18:35.974864011 -0700
+@@ -876,7 +876,7 @@
+         if (start < 0) {
+             throw new IllegalArgumentException("Requires start >= 0.");
+         }
+-        if (end < start) {
++        if ((end < start) && (this.data.size() > 0)) {
+             throw new IllegalArgumentException("Requires start <= end.");
+         }
+         TimeSeries copy = (TimeSeries) super.clone();

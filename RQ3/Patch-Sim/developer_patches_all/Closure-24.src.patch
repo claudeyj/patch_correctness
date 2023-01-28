@@ -1,0 +1,33 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/24/mutant-0/buggy-ScopedAliases.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/24/mutant-0/patched-ScopedAliases.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/24/mutant-0/buggy-ScopedAliases.java	2021-08-22 00:18:38.598190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/24/mutant-0/patched-ScopedAliases.java	2021-08-22 00:18:38.598190183 -0700
+@@ -275,8 +275,8 @@
+         Node n = v.getNode();
+         int type = n.getType();
+         Node parent = n.getParent();
+-        if (parent.isVar()) {
+-          if (n.hasChildren() && n.getFirstChild().isQualifiedName()) {
++        if (parent.isVar() &&
++            n.hasChildren() && n.getFirstChild().isQualifiedName()) {
+           String name = n.getString();
+           Var aliasVar = scope.getVar(name);
+           aliases.put(name, aliasVar);
+@@ -284,8 +284,10 @@
+           String qualifiedName =
+               aliasVar.getInitialValue().getQualifiedName();
+           transformation.addAlias(name, qualifiedName);
++        } else if (v.isBleedingFunction()) {
+           // Bleeding functions already get a BAD_PARAMETERS error, so just
+           // do nothing.
++        } else if (parent.getType() == Token.LP) {
+           // Parameters of the scope function also get a BAD_PARAMETERS
+           // error.
+         } else {
+@@ -294,7 +296,6 @@
+         }
+         }
+       }
+-    }
+ 
+     private void validateScopeCall(NodeTraversal t, Node n, Node parent) {
+       if (preprocessorSymbolTable != null) {

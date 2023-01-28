@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/95/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/95/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/95/buggy1.java	2021-08-27 19:18:34.918863981 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Math/95/tool-patch1.java	2021-08-27 19:18:34.918863981 -0700
+@@ -142,7 +142,7 @@
+      */
+     protected double getInitialDomain(double p) {
+         double ret;
+-        double d = getDenominatorDegreesOfFreedom();
++        double d = p - 2.0;
+             // use mean
+             ret = d / (d - 2.0);
+         return ret;

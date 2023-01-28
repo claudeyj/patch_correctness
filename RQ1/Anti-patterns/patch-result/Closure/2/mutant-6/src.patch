@@ -1,0 +1,11 @@
+--- jd-result/Closure/2/mutant-6/ori-TypeCheck.java	2021-07-15 18:51:53.788753166 -0700
++++ jd-result/Closure/2/mutant-6/patched-TypeCheck.java	2021-07-21 07:59:28.510276790 -0700
+@@ -1653,7 +1653,7 @@
+       }
+ 
+       // Check whether the extended interfaces have any conflicts
+-      if (functionType.getExtendedInterfacesCount() > 1) {
++      if (this.typedCount > 1) {
+         // Only check when extending more than one interfaces
+         HashMap<String, ObjectType> properties
+             = new HashMap<String, ObjectType>();

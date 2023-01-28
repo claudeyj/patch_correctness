@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/7/mutant-1/ori-AbstractIntegrator.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/7/mutant-1/fixed-patched-AbstractIntegrator.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/7/mutant-1/ori-AbstractIntegrator.java	2021-08-23 09:23:48.972991626 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/7/mutant-1/fixed-patched-AbstractIntegrator.java	2021-08-23 09:23:48.972991626 +0800
+@@ -124,7 +124,7 @@
+                                 final double maxCheckInterval,
+                                 final double convergence,
+                                 final int maxIterationCount) {
+-        addEventHandler(handler, maxCheckInterval, convergence,
++    addEventHandler(handler, this.stepStart, convergence, 
+                         maxIterationCount,
+                         new BracketingNthOrderBrentSolver(convergence, 5));
+     }

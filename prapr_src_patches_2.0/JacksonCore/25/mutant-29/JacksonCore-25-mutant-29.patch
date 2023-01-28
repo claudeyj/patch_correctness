@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/25/mutant-29/a-ReaderBasedJsonParser.java	2021-08-09 04:05:00.257530760 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-29/b-ReaderBasedJsonParser.java	2021-08-09 04:05:02.053530811 -0700
+@@ -1342,7 +1342,7 @@
+ /*1803*/        } while (ptr < inputLen); 
+ /*   0*/       }
+ /*1805*/    int start = this._inputPtr - 1;
+-/*1806*/    this._inputPtr = ptr;
++/*1806*/    this._inputPtr = maxCode;
+ /*1807*/    return _handleOddName2(start, hash, codes);
+ /*   0*/  }
+ /*   0*/  

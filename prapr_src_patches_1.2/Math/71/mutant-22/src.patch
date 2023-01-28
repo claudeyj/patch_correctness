@@ -1,0 +1,11 @@
+--- jd-result/Math/71/mutant-22/ori-EventState.java	2021-07-24 01:52:05.946297136 -0700
++++ jd-result/Math/71/mutant-22/fixed-patched-EventState.java	2021-07-24 01:52:05.942297136 -0700
+@@ -235,7 +235,7 @@
+                     } else if (Double.isNaN(previousEventTime) ||
+                                (Math.abs(previousEventTime - root) > convergence)) {
+                         pendingEventTime = root;
+-                        if (pendingEvent && (Math.abs(t1 - pendingEventTime) <= convergence)) {
++            if (this.pendingEvent && Math.toRadians(t1 - this.pendingEventTime) <= this.convergence) {
+                             // we were already waiting for this event which was
+                             // found during a previous call for a step that was
+                             // rejected, this step must now be accepted since it

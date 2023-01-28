@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/25/mutant-0/buggy-DateTimeZone.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/25/mutant-0/patched-DateTimeZone.java
+--- Time25b/src/main/java/org/joda/time/DateTimeZone.java
++++ Time25b_Time-25-src.patchb/src/main/java/org/joda/time/DateTimeZone.java
+@@ -896,6 +896,15 @@
+                     return offsetLocal;
+                 }
+             }
++        } else if (offsetLocal > 0) {
++            long prev = previousTransition(instantAdjusted);
++            if (prev < instantAdjusted) {
++                int offsetPrev = getOffset(prev);
++                int diff = offsetPrev - offsetLocal;
++                if (instantAdjusted - prev <= diff) {
++                    return offsetPrev;
++                }
++            }
+         }
+         return offsetAdjusted;
+     }

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/70/1/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/70/1/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/70/1/buggy1.java	2021-09-08 07:11:31.565222360 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/Jaid/Closure/70/1/tool-patch1.java	2021-09-08 07:11:31.565222360 -0700
+@@ -1742,7 +1742,7 @@
+           for (Node astParameter : astParameters.children()) {
+             if (jsDocParameter != null) {
+               defineSlot(astParameter, functionNode,
+-                  jsDocParameter.getJSType(), true);
++                  jsDocParameter.getJSType(), false);
+               jsDocParameter = jsDocParameter.getNext();
+             } else {
+               defineSlot(astParameter, functionNode, null, true);

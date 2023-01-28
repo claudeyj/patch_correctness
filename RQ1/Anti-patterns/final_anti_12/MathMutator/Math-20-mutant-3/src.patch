@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-3/ori-CMAESOptimizer.java	2021-07-24 01:52:02.290297033 -0700
++++ jd-result/Math/20/mutant-3/patched-CMAESOptimizer.java	2021-07-24 01:52:02.290297033 -0700
+@@ -572,7 +572,7 @@
+ 
+         // initialize termination criteria
+         stopTolUpX = 1e3 * max(insigma);
+-        stopTolX = 1e-11 * max(insigma);
++    this.stopTolX = 1.0E-11D / max(insigma);
+         stopTolFun = 1e-12;
+         stopTolHistFun = 1e-13;
+ 

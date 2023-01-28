@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/24/mutant-13/a-CharsToNameCanonicalizer.java	2021-08-09 04:07:38.385535222 -0700
++++ jd-result-2.0/JacksonCore/24/mutant-13/b-CharsToNameCanonicalizer.java	2021-08-09 04:07:39.849535263 -0700
+@@ -45,7 +45,7 @@
+ /*   0*/  
+ /*   0*/  private CharsToNameCanonicalizer(int seed) {
+ /* 233*/    this._parent = null;
+-/* 234*/    this._seed = seed;
++/* 234*/    reportTooManyCollisions(seed);
+ /* 237*/    this._canonicalize = true;
+ /* 238*/    this._flags = -1;
+ /* 240*/    this._hashShared = false;

@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/9/mutant-0/buggy-Line.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/9/mutant-0/patched-Line.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/9/mutant-0/buggy-Line.java	2021-08-22 00:18:38.694190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/9/mutant-0/patched-Line.java	2021-08-22 00:18:38.694190186 -0700
+@@ -84,7 +84,8 @@
+      * @return a new instance, with reversed direction
+      */
+     public Line revert() {
+-        final Line reverted = new Line(zero, zero.subtract(direction));
++        final Line reverted = new Line(this);
++        reverted.direction = reverted.direction.negate();
+         return reverted;
+     }
+ 

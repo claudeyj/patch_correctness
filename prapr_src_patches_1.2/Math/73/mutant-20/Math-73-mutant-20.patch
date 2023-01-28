@@ -1,0 +1,13 @@
+--- jd-result/Math/73/mutant-20/a-BrentSolver.java	2021-07-14 09:17:07.345341989 -0700
++++ jd-result/Math/73/mutant-20/b-BrentSolver.java	2021-07-14 09:17:08.677342027 -0700
+@@ -51,7 +51,9 @@
+ /*   0*/    } 
+ /* 132*/    if (yInitial * yMax < 0.0D)
+ /* 133*/      return solve(f, initial, yInitial, max, yMax, initial, yInitial); 
+-/* 138*/    return solve(f, min, yMin, max, yMax, initial, yInitial);
++/* 138*/    double d6 = yInitial, d5 = initial, d4 = yMax, d3 = max, d2 = yMin, d1 = min;
++/* 138*/    UnivariateRealFunction univariateRealFunction = f;
++/* 138*/    return solve(d1, d2);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public double solve(UnivariateRealFunction f, double min, double max) throws MaxIterationsExceededException, FunctionEvaluationException {

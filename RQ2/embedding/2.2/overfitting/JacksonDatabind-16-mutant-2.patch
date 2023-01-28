@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/16/mutant-2/ori-AnnotationMap.java	2021-08-08 21:02:02.456814648 -0700
++++ jd-result-2.0/JacksonDatabind/16/mutant-2/patched-AnnotationMap.java	2021-08-09 06:25:54.945769335 -0700
+@@ -87,7 +87,7 @@
+      *   already have specified annotation
+      */
+     public boolean add(Annotation ann) {
+-        return _add(ann);
++    return !_add(ann);
+     }
+ 
+     @Override

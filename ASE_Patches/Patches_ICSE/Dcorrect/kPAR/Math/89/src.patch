@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/kPAR/Math/89/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/kPAR/Math/89/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/kPAR/Math/89/buggy1.java	2021-08-27 19:18:39.714864117 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/kPAR/Math/89/tool-patch1.java	2021-08-27 19:18:39.714864117 -0700
+@@ -107,7 +107,11 @@
+      */
+     @Deprecated
+     public void addValue(Object v) {
++        if (v instanceof Comparable<?>){
+             addValue((Comparable<?>) v);            
++        } else {
++            throw new IllegalArgumentException("Object must implement Comparable");
++        }
+     }
+     
+     /**

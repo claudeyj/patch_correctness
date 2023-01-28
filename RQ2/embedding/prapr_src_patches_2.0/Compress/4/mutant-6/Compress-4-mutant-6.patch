@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/4/mutant-6/a-ZipArchiveOutputStream.java	2021-08-09 04:00:40.525523431 -0700
++++ jd-result-2.0/Compress/4/mutant-6/b-ZipArchiveOutputStream.java	2021-08-09 04:00:41.977523472 -0700
+@@ -261,7 +261,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void close() throws IOException {
+-/* 530*/    finish();
++/* 530*/    writeCentralDirectoryEnd();
+ /* 531*/    if (this.raf != null) {
+ /* 532*/        this.raf.close(); 
+ /*   0*/       }

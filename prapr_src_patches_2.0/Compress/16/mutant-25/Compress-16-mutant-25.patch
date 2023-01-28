@@ -1,0 +1,24 @@
+--- jd-result-2.0/Compress/16/mutant-25/a-ArchiveStreamFactory.java	2021-08-09 03:57:29.665518045 -0700
++++ jd-result-2.0/Compress/16/mutant-25/b-ArchiveStreamFactory.java	2021-08-09 03:57:31.133518087 -0700
+@@ -11,10 +11,12 @@
+ /*   0*/import org.apache.commons.compress.archivers.dump.DumpArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.jar.JarArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.jar.JarArchiveOutputStream;
++/*   0*/import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+ /*   0*/import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
+ /*   0*/import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
++/*   0*/import org.apache.commons.compress.archivers.zip.ZipEncoding;
+ /*   0*/
+ /*   0*/public class ArchiveStreamFactory {
+ /*   0*/  public static final String AR = "ar";
+@@ -123,7 +125,7 @@
+ /* 240*/      if (signatureLength >= 512) {
+ /*   0*/          try {
+ /* 242*/            TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(tarheader));
+-/* 244*/            tais.getNextEntry();
++/* 244*/            new TarArchiveEntry((byte[])null, (ZipEncoding)null);
+ /* 245*/            return new TarArchiveInputStream(in);
+ /* 246*/          } catch (Exception exception) {} 
+ /*   0*/         }

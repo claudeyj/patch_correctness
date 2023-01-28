@@ -1,0 +1,11 @@
+--- Math2b/src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	2017-03-20 23:45:21.000000000 +0800
++++ Math2_Math-2-mutant-4.patchb/src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	2017-03-20 23:45:21.000000000 +0800
+@@ -123,7 +123,7 @@
+         // use the one-sided Chebyshev inequality to narrow the bracket
+         // cf. AbstractRealDistribution.inverseCumulativeProbability(double)
+         final double mu = getNumericalMean();
+-        final double sigma = FastMath.sqrt(getNumericalVariance());
++    double sigma = FastMath.sqrt(0.0D);
+         final boolean chebyshevApplies = !(Double.isInfinite(mu) || Double.isNaN(mu) ||
+                 Double.isInfinite(sigma) || Double.isNaN(sigma) || sigma == 0.0);
+         if (chebyshevApplies) {

@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-4/ori-VerificationOverTimeImpl.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-4/man-patched-VerificationOverTimeImpl.java	2021-07-24 01:21:31.634245375 -0700
+@@ -114,7 +114,7 @@
+     private void sleep(long sleep) {
+         try {
+             Thread.sleep(sleep);
+-        } catch (InterruptedException ie) {
++        } catch (Exception ie) {
+             // oups. not much luck.
+         }
+     }

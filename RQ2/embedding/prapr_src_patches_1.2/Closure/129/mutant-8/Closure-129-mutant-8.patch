@@ -1,0 +1,14 @@
+--- jd-result/Closure/129/mutant-8/a-Node.java	2021-07-14 21:54:52.258624919 -0700
++++ jd-result/Closure/129/mutant-8/b-Node.java	2021-07-14 21:54:53.750624961 -0700
+@@ -1158,9 +1158,8 @@
+ /*1540*/      int slashV2 = node.getIntProp(54);
+ /*1541*/      if (slashV1 != slashV2)
+ /*1542*/        return false; 
+-/*1544*/    } else if (this.type == 37 && 
+-/*1545*/      getBooleanProp(50) != node.getBooleanProp(50)) {
+-/*1546*/      return false;
++/*1544*/    } else if (this.type == 37) {
++/*1545*/      node.getBooleanProp(50);
+ /*   0*/    } 
+ /*1550*/    if (recur) {
+ /*1552*/      Node n = this.first, n2 = node.first;

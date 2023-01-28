@@ -1,0 +1,34 @@
+--- jd-result/Time/4/mutant-6/a-Partial.java	2021-07-14 21:28:08.226579657 -0700
++++ jd-result/Time/4/mutant-6/b-Partial.java	2021-07-14 21:28:09.670579697 -0700
+@@ -165,8 +165,8 @@
+ /* 428*/      throw new IllegalArgumentException("The field type must not be null"); 
+ /* 430*/    int i = indexOf(paramDateTimeFieldType);
+ /* 431*/    if (i == -1) {
+-/* 432*/      DateTimeFieldType[] arrayOfDateTimeFieldType = new DateTimeFieldType[this.iTypes.length + 1];
+-/* 433*/      int[] arrayOfInt1 = new int[arrayOfDateTimeFieldType.length];
++/* 432*/      DateTimeFieldType[] arrayOfDateTimeFieldType1 = new DateTimeFieldType[this.iTypes.length + 1];
++/* 433*/      int[] arrayOfInt1 = new int[arrayOfDateTimeFieldType1.length];
+ /* 436*/      int j = 0;
+ /* 437*/      DurationField durationField = paramDateTimeFieldType.getDurationType().getField(this.iChronology);
+ /* 438*/      if (durationField.isSupported())
+@@ -185,13 +185,16 @@
+ /*   0*/            } 
+ /*   0*/          } 
+ /*   0*/        }  
+-/* 456*/      System.arraycopy(this.iTypes, 0, arrayOfDateTimeFieldType, 0, j);
++/* 456*/      System.arraycopy(this.iTypes, 0, arrayOfDateTimeFieldType1, 0, j);
+ /* 457*/      System.arraycopy(this.iValues, 0, arrayOfInt1, 0, j);
+-/* 458*/      arrayOfDateTimeFieldType[j] = paramDateTimeFieldType;
++/* 458*/      arrayOfDateTimeFieldType1[j] = paramDateTimeFieldType;
+ /* 459*/      arrayOfInt1[j] = paramInt;
+-/* 460*/      System.arraycopy(this.iTypes, j, arrayOfDateTimeFieldType, j + 1, arrayOfDateTimeFieldType.length - j - 1);
++/* 460*/      System.arraycopy(this.iTypes, j, arrayOfDateTimeFieldType1, j + 1, arrayOfDateTimeFieldType1.length - j - 1);
+ /* 461*/      System.arraycopy(this.iValues, j, arrayOfInt1, j + 1, arrayOfInt1.length - j - 1);
+-/* 464*/      Partial partial = new Partial(this.iChronology, arrayOfDateTimeFieldType, arrayOfInt1);
++/* 464*/      int[] arrayOfInt2 = arrayOfInt1;
++/* 464*/      DateTimeFieldType[] arrayOfDateTimeFieldType2 = arrayOfDateTimeFieldType1;
++/* 464*/      Chronology chronology = this.iChronology;
++/* 464*/      Partial partial = new Partial(arrayOfDateTimeFieldType2, arrayOfInt2);
+ /* 465*/      this.iChronology.validate(partial, arrayOfInt1);
+ /* 466*/      return partial;
+ /*   0*/    } 

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Chart/13/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Chart/13/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Chart/13/buggy1.java	2021-08-27 19:18:34.802863978 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Cardumen/Chart/13/tool-patch1.java	2021-08-27 19:18:34.802863978 -0700
+@@ -149,7 +149,7 @@
+                 contentSize = arrangeFN(container, g2, constraint.getWidth());
+             }
+             else if (h == LengthConstraintType.FIXED) {
+-                contentSize = arrangeFF(container, g2, constraint);
++                contentSize = new Size2D(constraint.getWidth(), constraint.getHeight());
+             }
+             else if (h == LengthConstraintType.RANGE) {
+                 contentSize = arrangeFR(container, g2, constraint);

@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/56/mutant-0/buggy-SourceFile.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/56/mutant-0/patched-SourceFile.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/56/mutant-0/buggy-SourceFile.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/56/mutant-0/patched-SourceFile.java	2021-08-22 00:18:38.610190184 -0700
+@@ -239,8 +239,12 @@
+       // If next new line cannot be found, there are two cases
+       // 1. pos already reaches the end of file, then null should be returned
+       // 2. otherwise, return the contents between pos and the end of file.
++      if (pos >= js.length()) {
+         return null;
+     } else {
++        return js.substring(pos, js.length());
++      }
++    } else {
+       return js.substring(pos, js.indexOf('\n', pos));
+     }
+   }

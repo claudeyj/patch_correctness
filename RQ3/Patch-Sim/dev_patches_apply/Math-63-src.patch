@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/63/mutant-0/buggy-MathUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/63/mutant-0/patched-MathUtils.java
+--- Math63b/src/main/java/org/apache/commons/math/util/MathUtils.java
++++ Math63b_Math-63-src.patchb/src/main/java/org/apache/commons/math/util/MathUtils.java
+@@ -414,7 +414,7 @@
+      * @return {@code true} if the values are equal.
+      */
+     public static boolean equals(double x, double y) {
+-        return (Double.isNaN(x) && Double.isNaN(y)) || x == y;
++        return equals(x, y, 1);
+     }
+ 
+     /**

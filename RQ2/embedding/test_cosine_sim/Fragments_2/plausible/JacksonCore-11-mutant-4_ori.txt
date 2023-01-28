@@ -1,0 +1,7 @@
+            }
+            // and if we didn't fail, we'll simply force rehash for next add
+            // (which, in turn, may double up or nuke contents, depending on size etc)
+            _needRehash = true;
+        }
+        return offset;
+    }

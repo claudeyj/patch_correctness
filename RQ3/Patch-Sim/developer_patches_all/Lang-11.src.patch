@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/11/mutant-0/buggy-RandomStringUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/11/mutant-0/patched-RandomStringUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/11/mutant-0/buggy-RandomStringUtils.java	2021-08-22 00:18:38.630190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/11/mutant-0/patched-RandomStringUtils.java	2021-08-22 00:18:38.630190184 -0700
+@@ -242,6 +242,10 @@
+                     start = ' ';                
+                 }
+             }
++        } else {
++            if (end <= start) {
++                throw new IllegalArgumentException("Parameter end (" + end + ") must be greater than start (" + start + ")");
++            }
+         }
+ 
+         char[] buffer = new char[count];

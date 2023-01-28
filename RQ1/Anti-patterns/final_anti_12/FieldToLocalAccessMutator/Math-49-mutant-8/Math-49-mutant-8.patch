@@ -1,0 +1,12 @@
+--- jd-result/Math/49/mutant-8/a-OpenMapRealVector.java	2021-07-14 09:11:21.949332243 -0700
++++ jd-result/Math/49/mutant-8/b-OpenMapRealVector.java	2021-07-14 09:11:23.465332285 -0700
+@@ -29,7 +29,8 @@
+ /*   0*/  public OpenMapRealVector(int dimension, double epsilon) {
+ /*  75*/    this.virtualSize = dimension;
+ /*  76*/    this.entries = new OpenIntToDoubleHashMap(0.0D);
+-/*  77*/    this.epsilon = epsilon;
++/*  77*/    this;
++/*  77*/    epsilon = epsilon;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected OpenMapRealVector(OpenMapRealVector v, int resize) {

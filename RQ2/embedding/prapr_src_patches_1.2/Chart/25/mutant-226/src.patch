@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-226/ori-KeyedObjects2D.java	2021-07-15 18:51:51.872753112 -0700
++++ jd-result/Chart/25/mutant-226/patched-KeyedObjects2D.java	2021-07-21 07:25:26.482219168 -0700
+@@ -83,7 +83,7 @@
+      * @return The row count.
+      */
+     public int getRowCount() {
+-        return this.rowKeys.size();
++    return (this.rowKeys.size() != 0) ? 0 : 1;
+     }
+ 
+     /**

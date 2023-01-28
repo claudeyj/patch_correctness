@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/66/mutant-1/a-Element.java	2021-08-09 04:26:08.177566538 -0700
++++ jd-result-2.0/Jsoup/66/mutant-1/b-Element.java	2021-08-09 04:26:09.793566584 -0700
+@@ -527,7 +527,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public String text() {
+-/*1024*/    final StringBuilder accum = new StringBuilder();
++/*1024*/    final StringBuilder accum = new StringBuilder(0);
+ /*1025*/    NodeTraversor.traverse(new NodeVisitor() {
+ /*   0*/          public void head(Node node, int depth) {
+ /*1027*/            if (node instanceof TextNode) {

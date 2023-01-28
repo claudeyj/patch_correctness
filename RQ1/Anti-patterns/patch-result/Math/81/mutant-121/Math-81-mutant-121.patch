@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-121/a-EigenDecompositionImpl.java	2021-07-14 09:28:32.349361318 -0700
++++ jd-result/Math/81/mutant-121/b-EigenDecompositionImpl.java	2021-07-14 09:28:33.857361361 -0700
+@@ -774,7 +774,7 @@
+ /*1311*/    this.work[j4 - 2] = this.dN1 + this.work[j4p2];
+ /*1312*/    this.work[j4] = this.work[j4p2 + 2] * this.work[j4p2] / this.work[j4 - 2];
+ /*1313*/    this.dN = this.work[j4p2 + 2] * this.dN1 / this.work[j4 - 2] - this.tau;
+-/*1314*/    this.dMin = Math.min(this.dMin, this.dN);
++/*1314*/    this.dMin = this.dN;
+ /*1316*/    this.work[j4 + 2] = this.dN;
+ /*1317*/    this.work[4 * end - this.pingPong - 1] = this.eMin;
+ /*   0*/  }

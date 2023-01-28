@@ -1,0 +1,11 @@
+--- jd-result/Math/71/mutant-22/a-EventState.java	2021-07-14 09:15:38.749339489 -0700
++++ jd-result/Math/71/mutant-22/b-EventState.java	2021-07-14 09:15:40.057339526 -0700
+@@ -118,7 +118,7 @@
+ /* 234*/            ga = gb;
+ /* 235*/          } else if (Double.isNaN(this.previousEventTime) || Math.abs(this.previousEventTime - root) > this.convergence) {
+ /* 237*/            this.pendingEventTime = root;
+-/* 238*/            if (this.pendingEvent && Math.abs(t1 - this.pendingEventTime) <= this.convergence)
++/* 238*/            if (this.pendingEvent && Math.toRadians(t1 - this.pendingEventTime) <= this.convergence)
+ /* 243*/              return false; 
+ /* 247*/            this.pendingEvent = true;
+ /* 248*/            return true;

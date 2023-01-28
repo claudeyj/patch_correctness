@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/95/mutant-3/ori-FDistributionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/95/mutant-3/fixed-patched-FDistributionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/95/mutant-3/ori-FDistributionImpl.java	2021-08-23 09:23:49.152994122 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/95/mutant-3/fixed-patched-FDistributionImpl.java	2021-08-23 09:23:49.152994122 +0800
+@@ -142,7 +142,7 @@
+      */
+     protected double getInitialDomain(double p) {
+         double ret;
+-        double d = getDenominatorDegreesOfFreedom();
++    double d = 0.0D;
+             // use mean
+             ret = d / (d - 2.0);
+         return ret;

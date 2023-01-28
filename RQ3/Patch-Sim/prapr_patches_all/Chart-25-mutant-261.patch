@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-261/ori-DatasetUtilities.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-261/patched-DatasetUtilities.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-261/ori-DatasetUtilities.java	2021-08-23 09:23:48.388983529 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-261/patched-DatasetUtilities.java	2021-08-23 09:23:48.388983529 +0800
+@@ -574,7 +574,7 @@
+         for (int r = 0; r < rowCount; r++) {
+             for (int c = 0; c < columnCount; c++) {
+                 if (dataset.getValue(r, c) != null) {
+-                    return false;
++          return !false; 
+                 }
+ 
+             }

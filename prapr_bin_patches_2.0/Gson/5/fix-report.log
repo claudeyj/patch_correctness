@@ -1,0 +1,94 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 25 07:17:34 PDT 2021
+Number of Plausible Fixes: 10
+Total Number of Patches: 1057
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local timezoneId is replaced by local cleaned to be used
+	File Name: com/google/gson/internal/bind/util/ISO8601Utils.java
+	Line Number: 237
+	Rank: 5
+	Total Rank: 312
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local cleaned is replaced by local timezoneId to be used
+	File Name: com/google/gson/internal/bind/util/ISO8601Utils.java
+	Line Number: 237
+	Rank: 5
+	Total Rank: 312
+	Dump: mutant-4.class
+------------------------------------------------
+3.
+	Mutator: LocalNameMutator
+	Description: local act is replaced by local timezoneId to be used
+	File Name: com/google/gson/internal/bind/util/ISO8601Utils.java
+	Line Number: 236
+	Rank: 5
+	Total Rank: 312
+	Dump: mutant-7.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local timezoneId is replaced by local act to be used
+	File Name: com/google/gson/internal/bind/util/ISO8601Utils.java
+	Line Number: 230
+	Rank: 5
+	Total Rank: 312
+	Dump: mutant-8.class
+------------------------------------------------
+5.
+	Mutator: LocalNameMutator
+	Description: local act is replaced by local timezoneId to be used
+	File Name: com/google/gson/internal/bind/util/ISO8601Utils.java
+	Line Number: 230
+	Rank: 5
+	Total Rank: 312
+	Dump: mutant-9.class
+------------------------------------------------
+6.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/google/gson/internal/bind/util/ISO8601Utils.java
+	Line Number: 237
+	Rank: 6
+	Total Rank: 363
+	Dump: mutant-10.class
+------------------------------------------------
+7.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/google/gson/internal/bind/util/ISO8601Utils.java
+	Line Number: 230
+	Rank: 8
+	Total Rank: 369
+	Dump: mutant-2.class
+------------------------------------------------
+8.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/google/gson/internal/bind/util/ISO8601Utils.java
+	Line Number: 237
+	Rank: 8
+	Total Rank: 369
+	Dump: mutant-3.class
+------------------------------------------------
+9.
+	Mutator: MethodNameMutator
+	Description: the call to factory method java.text.DateFormat.parse(Ljava/lang/String;)Ljava/util/Date; is replaced by an instantiation of type java.util.Date using (J)V
+	File Name: com/google/gson/DefaultDateTypeAdapter.java
+	Line Number: 102
+	Rank: 10
+	Total Rank: 896
+	Dump: mutant-5.class
+------------------------------------------------
+10.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.google.gson.internal.bind.util.ISO8601Utils.parse(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date; is replaced by an instantiation of type java.util.Date using (J)V
+	File Name: com/google/gson/DefaultDateTypeAdapter.java
+	Line Number: 105
+	Rank: 10
+	Total Rank: 896
+	Dump: mutant-6.class
+------------------------------------------------

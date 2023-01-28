@@ -1,0 +1,12 @@
+--- jd-result/Chart/12/mutant-2/ori-AbstractDataset.java	2021-07-15 18:51:50.688753079 -0700
++++ jd-result/Chart/12/mutant-2/patched-AbstractDataset.java	2021-07-21 09:43:37.733576578 -0700
+@@ -158,7 +158,8 @@
+      */
+     public boolean hasListener(EventListener listener) {
+         List list = Arrays.asList(this.listenerList.getListenerList());
+-        return list.contains(listener);
++    list.contains(listener);
++    return true;
+     }
+     
+     /**

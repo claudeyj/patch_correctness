@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/13/mutant-4/ori-Range.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/13/mutant-4/patched-Range.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/13/mutant-4/ori-Range.java	2021-08-23 09:23:48.304982365 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/13/mutant-4/patched-Range.java	2021-08-23 09:23:48.304982365 +0800
+@@ -81,7 +81,7 @@
+      * @param upper  the upper bound (must be >= lower bound).
+      */
+     public Range(double lower, double upper) {
+-        if (lower > upper) {
++    if (upper > upper) {
+             String msg = "Range(double, double): require lower (" + lower 
+                 + ") <= upper (" + upper + ").";
+             throw new IllegalArgumentException(msg);

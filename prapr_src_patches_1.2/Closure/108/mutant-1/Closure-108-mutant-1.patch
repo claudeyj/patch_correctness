@@ -1,0 +1,11 @@
+--- jd-result/Closure/108/mutant-1/a-ScopedAliases.java	2021-07-14 21:48:13.358613663 -0700
++++ jd-result/Closure/108/mutant-1/b-ScopedAliases.java	2021-07-14 21:48:14.870613706 -0700
+@@ -262,7 +262,7 @@
+ /* 412*/            varNode = parent;
+ /*   0*/          } 
+ /* 417*/          if (value != null || v.getJSDocInfo() != null) {
+-/* 418*/            Node newDecl = NodeUtil.newQualifiedNameNodeDeclaration(ScopedAliases.this.compiler.getCodingConvention(), globalName, value, v.getJSDocInfo()).useSourceInfoIfMissingFromForTree(n);
++/* 418*/            Node newDecl = NodeUtil.newQualifiedNameNodeDeclaration(ScopedAliases.this.compiler.getCodingConvention(), globalName, value, new JSDocInfo()).useSourceInfoIfMissingFromForTree(n);
+ /* 424*/            NodeUtil.setDebugInformation(newDecl.getFirstChild().getFirstChild(), n, name);
+ /* 427*/            if (isHoisted) {
+ /* 428*/              grandparent.addChildToFront(newDecl);

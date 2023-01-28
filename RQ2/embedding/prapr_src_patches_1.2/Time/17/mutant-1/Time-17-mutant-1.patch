@@ -1,0 +1,13 @@
+--- jd-result/Time/17/mutant-1/a-DateTimeZone.java	2021-07-14 21:30:09.638583083 -0700
++++ jd-result/Time/17/mutant-1/b-DateTimeZone.java	2021-07-14 21:30:11.046583122 -0700
+@@ -502,7 +502,9 @@
+ /*   0*/  
+ /*   0*/  public long adjustOffset(long paramLong, boolean paramBoolean) {
+ /*1167*/    long l1 = convertUTCToLocal(paramLong - 10800000L);
+-/*1168*/    long l2 = convertUTCToLocal(paramLong + 10800000L);
++/*1168*/    paramLong + 10800000L;
++/*1168*/    this;
++/*1168*/    long l2 = 0L;
+ /*1169*/    if (l1 == l2)
+ /*1170*/      return paramLong; 
+ /*1174*/    long l3 = convertUTCToLocal(paramLong);

@@ -1,0 +1,21 @@
+--- jd-result-2.0/Jsoup/24/mutant-4/a-TokeniserState.java	2021-08-09 04:22:54.121561062 -0700
++++ jd-result-2.0/Jsoup/24/mutant-4/b-TokeniserState.java	2021-08-09 04:22:55.833561111 -0700
+@@ -525,7 +525,9 @@
+ /* 527*/        t.dataBuffer.append(Character.toLowerCase(r.current()));
+ /* 528*/        t.emit("<" + r.current());
+ /* 529*/        t.advanceTransition(ScriptDataDoubleEscapeStart);
+-/* 530*/      } else if (r.matches('/')) {
++/*   0*/      } else {
++/* 530*/        47;
++/*   0*/        if (false) {
+ /* 531*/        t.createTempBuffer();
+ /* 532*/        t.advanceTransition(ScriptDataEscapedEndTagOpen);
+ /*   0*/      } else {
+@@ -533,6 +535,7 @@
+ /* 535*/        t.transition(ScriptDataEscaped);
+ /*   0*/      } 
+ /*   0*/    }
++/*   0*/    }
+ /*   0*/  },
+ /* 539*/  ScriptDataEscapedEndTagOpen {
+ /*   0*/    void read(Tokeniser t, CharacterReader r) {

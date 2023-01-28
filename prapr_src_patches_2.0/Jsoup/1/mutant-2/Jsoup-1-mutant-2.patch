@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/1/mutant-2/a-Document.java	2021-08-09 04:22:02.869559616 -0700
++++ jd-result-2.0/Jsoup/1/mutant-2/b-Document.java	2021-08-09 04:22:04.341559658 -0700
+@@ -75,7 +75,7 @@
+ /* 123*/    for (Node node : toMove) {
+ /* 124*/      element.removeChild(node);
+ /* 125*/      body().appendChild(new TextNode(" ", ""));
+-/* 126*/      body().appendChild(node);
++/* 126*/      body().prependChild(node);
+ /*   0*/    } 
+ /*   0*/  }
+ /*   0*/  

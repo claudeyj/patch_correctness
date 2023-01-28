@@ -1,0 +1,11 @@
+--- Math80b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:03:24.000000000 +0800
++++ Math80_Math-80-mutant-32.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:03:24.000000000 +0800
+@@ -1201,7 +1201,7 @@
+ 
+             final double range = right - left;
+             if ((range < absoluteTolerance) ||
+-                (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
++                (range < relativeTolerance * Math.pow(Math.abs(left), Math.abs(right)))) {
+                 // search has converged
+                 break;
+             }

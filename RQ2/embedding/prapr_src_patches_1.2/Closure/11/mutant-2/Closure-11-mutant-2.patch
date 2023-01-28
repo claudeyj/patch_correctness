@@ -1,0 +1,11 @@
+--- jd-result/Closure/11/mutant-2/a-TypeCheck.java	2021-07-14 21:36:21.762593583 -0700
++++ jd-result/Closure/11/mutant-2/b-TypeCheck.java	2021-07-14 21:36:23.294593627 -0700
+@@ -262,7 +262,7 @@
+ /* 515*/        ensureTyped(t, n, JSTypeNative.REGEXP_TYPE);
+ /*   0*/        break;
+ /*   0*/      case 33:
+-/* 519*/        visitGetProp(t, n, parent);
++/* 519*/        visitGetProp(t, n, n);
+ /* 520*/        typeable = (!parent.isAssign() || parent.getFirstChild() != n);
+ /*   0*/        break;
+ /*   0*/      case 35:

@@ -1,0 +1,11 @@
+--- jd-result/Chart/12/mutant-1/ori-MultiplePiePlot.java	2021-07-15 18:51:50.688753079 -0700
++++ jd-result/Chart/12/mutant-1/patched-MultiplePiePlot.java	2021-07-21 09:43:40.513576657 -0700
+@@ -142,7 +142,7 @@
+      */
+     public MultiplePiePlot(CategoryDataset dataset) {
+         super();
+-        this.dataset = dataset;
++    setDataset(dataset);
+         PiePlot piePlot = new PiePlot(null);
+         this.pieChart = new JFreeChart(piePlot);
+         this.pieChart.removeLegend();

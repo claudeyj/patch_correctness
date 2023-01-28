@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/17/mutant-2/a-TarBuffer.java	2021-08-09 03:59:55.213522152 -0700
++++ jd-result-2.0/Compress/17/mutant-2/b-TarBuffer.java	2021-08-09 03:59:56.633522192 -0700
+@@ -122,7 +122,7 @@
+ /* 241*/        if (offset == 0) {
+ /* 245*/            return false; 
+ /*   0*/           }
+-/* 253*/        Arrays.fill(this.blockBuffer, offset, offset + bytesNeeded, (byte)0);
++/* 253*/        Arrays.fill(this.blockBuffer, this.recsPerBlock, offset + bytesNeeded, (byte)0);
+ /*   0*/        break;
+ /*   0*/      } 
+ /* 258*/      offset = (int)(offset + numBytes);

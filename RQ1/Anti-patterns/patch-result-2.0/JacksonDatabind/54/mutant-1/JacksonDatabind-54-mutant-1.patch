@@ -1,0 +1,13 @@
+--- jd-result-2.0/JacksonDatabind/54/mutant-1/a-PropertyBuilder.java	2021-08-09 04:33:01.841578211 -0700
++++ jd-result-2.0/JacksonDatabind/54/mutant-1/b-PropertyBuilder.java	2021-08-09 04:33:03.357578254 -0700
+@@ -81,9 +81,8 @@
+ /*   0*/        break;
+ /*   0*/      case NON_ABSENT:
+ /* 132*/        suppressNulls = true;
+-/* 134*/        if (declaredType.isReferenceType()) {
++/* 134*/        declaredType.isReferenceType();
+ /* 135*/            valueToSuppress = BeanPropertyWriter.MARKER_FOR_EMPTY; 
+-/*   0*/           }
+ /*   0*/        break;
+ /*   0*/      case NON_EMPTY:
+ /* 140*/        suppressNulls = true;

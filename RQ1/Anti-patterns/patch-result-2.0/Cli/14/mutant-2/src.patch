@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/14/mutant-2/ori-GroupImpl.java	2021-08-08 21:02:01.296814616 -0700
++++ jd-result-2.0/Cli/14/mutant-2/patched-GroupImpl.java	2021-08-09 06:25:54.969769335 -0700
+@@ -259,7 +259,7 @@
+                     break;
+                 }
+ 
+-                option.validate(commandLine);
++        option.defaults(commandLine);
+             }
+         }
+ 

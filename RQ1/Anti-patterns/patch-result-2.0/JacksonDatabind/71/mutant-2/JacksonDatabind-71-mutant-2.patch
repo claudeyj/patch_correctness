@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/71/mutant-2/a-DeserializerCache.java	2021-08-09 04:33:31.741579055 -0700
++++ jd-result-2.0/JacksonDatabind/71/mutant-2/b-DeserializerCache.java	2021-08-09 04:33:33.177579095 -0700
+@@ -57,9 +57,6 @@
+ /*   0*/  
+ /*   0*/  public KeyDeserializer findKeyDeserializer(DeserializationContext ctxt, DeserializerFactory factory, JavaType type) throws JsonMappingException {
+ /* 166*/    KeyDeserializer kd = factory.createKeyDeserializer(ctxt, type);
+-/* 167*/    if (kd == null) {
+-/* 168*/        return _handleUnknownKeyDeserializer(ctxt, type); 
+-/*   0*/       }
+ /* 171*/    if (kd instanceof ResolvableDeserializer) {
+ /* 172*/        ((ResolvableDeserializer)kd).resolve(ctxt); 
+ /*   0*/       }

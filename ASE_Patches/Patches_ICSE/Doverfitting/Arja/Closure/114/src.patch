@@ -1,0 +1,26 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/114/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/114/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/114/buggy1.java	2021-08-27 19:18:32.794863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/114/tool-patch1.java	2021-08-27 19:18:32.794863921 -0700
+@@ -1596,22 +1596,6 @@
+     // Function expression.  try to get a name from the parent var
+     // declaration or assignment.
+     Node parent = function.getParent();
+-    if (parent != null) {
+-      // Account for functions defined in the form:
+-      //   var a = cond ? function a() {} : function b() {};
+-      while (parent.isHook()) {
+-        parent = parent.getParent();
+-      }
+-
+-      if (parent.isName()) {
+-        return scopes.get(parent);
+-      }
+-
+-      if (parent.isAssign()) {
+-        return scopes.get(parent);
+-      }
+-    }
+-
+     return Collections.emptyList();
+   }
+ 

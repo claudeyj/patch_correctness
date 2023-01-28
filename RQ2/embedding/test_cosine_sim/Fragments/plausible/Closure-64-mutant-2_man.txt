@@ -1,0 +1,7 @@
+          CodeBuilder cb = new CodeBuilder();
+          if (jsRoot != null) {
+            int i = 0;
+            for (Node scriptNode = jsRoot.getLastChild();
+                 scriptNode != null;
+                 scriptNode = scriptNode.getNext()) {
+              toSource(cb, i++, scriptNode);

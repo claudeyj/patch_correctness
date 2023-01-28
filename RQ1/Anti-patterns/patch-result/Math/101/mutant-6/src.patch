@@ -1,0 +1,11 @@
+--- jd-result/Math/101/mutant-6/ori-ComplexFormat.java	2021-07-24 01:52:02.114297028 -0700
++++ jd-result/Math/101/mutant-6/fixed-patched-ComplexFormat.java	2021-07-24 01:52:02.114297028 -0700
+@@ -375,7 +375,7 @@
+         startIndex = pos.getIndex();
+         int endIndex = startIndex + n;
+         if (
+-            source.substring(startIndex, endIndex).compareTo(
++            source.substring(startIndex).compareTo(
+             getImaginaryCharacter()) != 0) {
+             // set index back to initial, error index should be the start index
+             // character examined.

@@ -1,0 +1,13 @@
+--- jd-result/Math/73/mutant-1/ori-BrentSolver.java	2021-07-24 01:52:06.110297140 -0700
++++ jd-result/Math/73/mutant-1/patched-BrentSolver.java	2021-07-24 01:52:06.110297140 -0700
+@@ -135,7 +135,9 @@
+ 
+ 
+         // full Brent algorithm starting with provided initial guess
+-        return solve(f, min, yMin, max, yMax, initial, yInitial);
++    double d6 = yInitial, d5 = initial, d4 = yMax, d3 = max, d2 = yMin, d1 = min;
++    UnivariateRealFunction univariateRealFunction = f;
++    return solve(univariateRealFunction, d1, d2);
+ 
+     }
+ 

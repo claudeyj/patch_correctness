@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/45/mutant-2/a-TarUtils.java	2021-08-09 04:00:16.637522757 -0700
++++ jd-result-2.0/Compress/45/mutant-2/b-TarUtils.java	2021-08-09 04:00:18.145522799 -0700
+@@ -238,7 +238,7 @@
+ /* 519*/    BigInteger val = BigInteger.valueOf(value);
+ /* 520*/    byte[] b = val.toByteArray();
+ /* 521*/    int len = b.length;
+-/* 522*/    if (len > length - 1) {
++/* 522*/    if (len > length + 1) {
+ /* 523*/        throw new IllegalArgumentException("Value " + value + " is too large for " + length + " byte field."); 
+ /*   0*/       }
+ /* 526*/    int off = offset + length - len;

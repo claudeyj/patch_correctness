@@ -1,0 +1,7 @@
+        Node nameNode = n.getFirstChild();
+        NameInformation ns = createNameInformation(t, nameNode, n);
+        if (ns != null && ns.onlyAffectsClassDef) {
+          NameAnalyzer.JsName name = NameAnalyzer.this.getName(ns.name, true);
+          if (name != null) {
+          refNodes.add(new ClassDefiningFunctionNode(
+              name, n, parent, parent.getParent()));

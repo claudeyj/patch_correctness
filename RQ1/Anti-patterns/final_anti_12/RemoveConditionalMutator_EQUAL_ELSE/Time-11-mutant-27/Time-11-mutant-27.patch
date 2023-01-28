@@ -1,0 +1,65 @@
+--- jd-result/Time/11/mutant-27/a-DateTimeZoneBuilder.java	2021-07-14 21:29:57.582582742 -0700
++++ jd-result/Time/11/mutant-27/b-DateTimeZoneBuilder.java	2021-07-14 21:29:59.014582783 -0700
+@@ -149,39 +149,46 @@
+ /* 333*/    if (paramString == null)
+ /* 334*/      throw new IllegalArgumentException(); 
+ /* 339*/    ArrayList<Transition> arrayList = new ArrayList();
+-/* 343*/    DSTZone dSTZone = null;
++/* 343*/    DateTimeZone dateTimeZone = null;
+ /* 345*/    long l = Long.MIN_VALUE;
+ /* 346*/    int i = 0;
+ /* 348*/    int j = this.iRuleSets.size();
+-/* 349*/    for (int k = 0; k < j; k++) {
+-/* 350*/      RuleSet ruleSet = this.iRuleSets.get(k);
+-/* 351*/      Transition transition = ruleSet.firstTransition(l);
+-/* 352*/      if (transition != null) {
+-/* 355*/        addTransition(arrayList, transition);
+-/* 356*/        l = transition.getMillis();
+-/* 357*/        i = transition.getSaveMillis();
++/* 349*/    int k = 0;
++/*   0*/    while (true) {
++/*   0*/      RuleSet ruleSet;
++/* 349*/      if (k < j) {
++/* 350*/        ruleSet = this.iRuleSets.get(k);
++/* 351*/        Transition transition1 = ruleSet.firstTransition(l);
++/* 352*/        if (transition1 == null)
++/*   0*/          continue; 
++/* 355*/        addTransition(arrayList, transition1);
++/* 356*/        l = transition1.getMillis();
++/* 357*/        i = transition1.getSaveMillis();
+ /* 360*/        ruleSet = new RuleSet(ruleSet);
++/*   0*/      } else {
++/*   0*/        break;
++/*   0*/      } 
++/*   0*/      Transition transition;
+ /* 362*/        while ((transition = ruleSet.nextTransition(l, i)) != null && (
+ /* 363*/          !addTransition(arrayList, transition) || 
+-/* 364*/          dSTZone == null)) {
++/* 364*/        dateTimeZone == null)) {
+ /* 369*/          l = transition.getMillis();
+ /* 370*/          i = transition.getSaveMillis();
+-/* 371*/          if (dSTZone == null && k == j - 1)
+-/* 372*/            dSTZone = ruleSet.buildTailZone(paramString); 
+ /*   0*/        } 
+ /* 379*/        l = ruleSet.getUpperLimit(i);
+-/*   0*/      } 
++/*   0*/      continue;
++/*   0*/      k++;
+ /*   0*/    } 
+ /* 383*/    if (arrayList.size() == 0) {
+-/* 384*/      if (dSTZone != null)
+-/* 386*/        return dSTZone; 
++/* 384*/      if (dateTimeZone != null)
++/* 386*/        return dateTimeZone; 
+ /* 388*/      return buildFixedZone(paramString, "UTC", 0, 0);
+ /*   0*/    } 
+-/* 390*/    if (arrayList.size() == 1 && dSTZone == null) {
++/* 390*/    if (arrayList.size() == 1 && dateTimeZone == null) {
+ /* 391*/      Transition transition = arrayList.get(0);
+ /* 392*/      return buildFixedZone(paramString, transition.getNameKey(), transition.getWallOffset(), transition.getStandardOffset());
+ /*   0*/    } 
+-/* 396*/    PrecalculatedZone precalculatedZone = PrecalculatedZone.create(paramString, paramBoolean, arrayList, dSTZone);
++/* 396*/    PrecalculatedZone precalculatedZone = PrecalculatedZone.create(paramString, paramBoolean, arrayList, (DSTZone)dateTimeZone);
+ /* 397*/    if (precalculatedZone.isCachable())
+ /* 398*/      return CachedDateTimeZone.forZone(precalculatedZone); 
+ /* 400*/    return precalculatedZone;

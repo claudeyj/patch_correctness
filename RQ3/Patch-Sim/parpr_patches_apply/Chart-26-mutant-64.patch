@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-64.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -1178,7 +1178,7 @@
+ 
+         // draw the title and subtitles...
+         Rectangle2D nonTitleArea = new Rectangle2D.Double();
+-        nonTitleArea.setRect(chartArea);
++    chartArea.setRect(chartArea);
+         this.padding.trim(nonTitleArea);
+         
+         EntityCollection entities = null;

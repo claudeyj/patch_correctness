@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-75/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-75/patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-75/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.124993733 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-75/patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.124993733 +0800
+@@ -1518,7 +1518,7 @@
+ 
+                     // rayleigh quotient residual bound.
+                     if (a2 < cnst1) {
+-                        s = gam * (1 - Math.sqrt(a2)) / (1 + a2);
++            s = gam * (1.0D - Math.exp(a2)) / (1.0D + a2); 
+                     }
+                     tau = s;
+ 

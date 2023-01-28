@@ -1,0 +1,11 @@
+--- jd-result/Closure/70/mutant-1/a-TypedScopeCreator.java	2021-07-14 21:45:38.534609294 -0700
++++ jd-result/Closure/70/mutant-1/b-TypedScopeCreator.java	2021-07-14 21:45:39.998609336 -0700
+@@ -962,7 +962,7 @@
+ /*1741*/          Node jsDocParameter = jsDocParameters.getFirstChild();
+ /*1742*/          for (Node astParameter : astParameters.children()) {
+ /*1743*/            if (jsDocParameter != null) {
+-/*1744*/              defineSlot(astParameter, functionNode, jsDocParameter.getJSType(), true);
++/*1744*/              defineSlot(astParameter, functionNode, jsDocParameter.getJSType(), false);
+ /*1746*/              jsDocParameter = jsDocParameter.getNext();
+ /*   0*/              continue;
+ /*   0*/            } 

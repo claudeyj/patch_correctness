@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/5/mutant-5/ori-ClassUtil.java	2021-08-08 21:02:02.060814637 -0700
++++ jd-result-2.0/JacksonDatabind/5/mutant-5/patched-ClassUtil.java	2021-08-09 06:25:54.913769334 -0700
+@@ -43,7 +43,7 @@
+             result.add(cls);
+         }
+         for (Class<?> intCls : cls.getInterfaces()) {
+-            _addSuperTypes(intCls, endBefore, result, true);
++        _addSuperTypes(intCls, cls, result, true); 
+         }
+         _addSuperTypes(cls.getSuperclass(), endBefore, result, true);
+     }

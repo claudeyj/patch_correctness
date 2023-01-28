@@ -1,0 +1,11 @@
+--- jd-result/Lang/25/mutant-4/ori-EntityArrays.java	2021-07-15 18:51:52.220753122 -0700
++++ jd-result/Lang/25/mutant-4/fixed-patched-EntityArrays.java	2021-07-22 23:11:47.954541963 -0700
+@@ -27,7 +27,7 @@
+  */
+ public class EntityArrays {
+ 
+-    public static String[][] ISO8859_1_ESCAPE() { return ISO8859_1_ESCAPE.clone(); }
++    public static String[][] ISO8859_1_ESCAPE() { return APOS_ESCAPE.clone(); }
+     private static final String[][] ISO8859_1_ESCAPE = {
+         {"\u00A0", "&nbsp;"}, // non-breaking space
+         {"\u00A1", "&iexcl;"}, // inverted exclamation mark

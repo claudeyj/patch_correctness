@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-28/a-CMAESOptimizer.java	2021-07-14 09:07:25.109325559 -0700
++++ jd-result/Math/20/mutant-28/b-CMAESOptimizer.java	2021-07-14 09:07:26.657325603 -0700
+@@ -237,7 +237,7 @@
+ /* 434*/      double[] sqrtDiagC = sqrt(this.diagC).getColumn(0);
+ /* 435*/      double[] pcCol = this.pc.getColumn(0);
+ /* 436*/      for (int i = 0; i < this.dimension && 
+-/* 437*/        this.sigma * Math.max(Math.abs(pcCol[i]), sqrtDiagC[i]) <= this.stopTolX; i++) {
++/* 437*/        this.sigma * Math.max(Math.acos(pcCol[i]), sqrtDiagC[i]) <= this.stopTolX; i++) {
+ /* 440*/        if (i >= this.dimension - 1)
+ /*   0*/          break label101; 
+ /*   0*/      } 

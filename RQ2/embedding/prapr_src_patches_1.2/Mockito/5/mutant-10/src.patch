@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-10/ori-FinalMockCandidateFilter.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-10/patched-FinalMockCandidateFilter.java	2021-07-21 08:02:50.050282478 -0700
+@@ -30,7 +30,7 @@
+                         if (!new BeanPropertySetter(fieldInstance, field).set(matchingMock)) {
+                             new FieldSetter(fieldInstance, field).set(matchingMock);
+                         }
+-                    } catch (RuntimeException e) {
++            } catch (Exception e) {
+                         new Reporter().cannotInjectDependency(field, matchingMock, e);
+                     }
+                     return matchingMock;

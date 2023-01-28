@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/18/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/18/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/18/buggy1.java	2021-08-27 19:18:33.174863932 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/18/tool-patch1.java	2021-08-27 19:18:33.174863932 -0700
+@@ -511,7 +511,9 @@
+         for (int i = 0; i < lB.length; i++) {
+             if (!Double.isInfinite(lB[i]) ||
+                 !Double.isInfinite(uB[i])) {
++                if (org.apache.commons.math3.optimization.direct.CMAESOptimizer.this.checkFeasableCount == org.apache.commons.math3.optimization.direct.CMAESOptimizer.this.iterations) {
+                 hasFiniteBounds = true;
++                }
+                 break;
+             }
+         }

@@ -1,0 +1,38 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-31/a-TypeFactory.java	2021-08-09 04:30:05.373573231 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-31/b-TypeFactory.java	2021-08-09 04:30:06.945573276 -0700
+@@ -13,16 +13,12 @@
+ /*   0*/import java.lang.reflect.WildcardType;
+ /*   0*/import java.util.ArrayList;
+ /*   0*/import java.util.Collection;
+-/*   0*/import java.util.EnumMap;
+ /*   0*/import java.util.EnumSet;
+-/*   0*/import java.util.HashMap;
+ /*   0*/import java.util.HashSet;
+-/*   0*/import java.util.LinkedHashMap;
+ /*   0*/import java.util.LinkedList;
+ /*   0*/import java.util.List;
+ /*   0*/import java.util.Map;
+ /*   0*/import java.util.Properties;
+-/*   0*/import java.util.TreeMap;
+ /*   0*/import java.util.TreeSet;
+ /*   0*/import java.util.concurrent.atomic.AtomicReference;
+ /*   0*/
+@@ -231,14 +227,10 @@
+ /* 366*/        newType = _fromClass(null, subclass, TypeBindings.emptyBindings());
+ /*   0*/      } else {
+ /* 370*/        if (baseType.isContainerType()) {
+-/* 371*/            if (baseType.isMapLikeType()) {
+-/* 372*/              if (subclass == HashMap.class || subclass == LinkedHashMap.class || subclass == EnumMap.class || subclass == TreeMap.class) {
+-/* 376*/                newType = _fromClass(null, subclass, TypeBindings.create(subclass, baseType.getKeyType(), baseType.getContentType()));
+-/* 428*/                return newType;
+-/*   0*/              } 
+-/*   0*/            } else if (baseType.isCollectionLikeType()) {
+-/*   0*/              if (subclass == ArrayList.class || subclass == LinkedList.class || subclass == HashSet.class || subclass == TreeSet.class) {
+-/*   0*/                newType = _fromClass(null, subclass, TypeBindings.create(subclass, baseType.getContentType()));
++/* 371*/          baseType.isMapLikeType();
++/* 380*/          if (baseType.isCollectionLikeType()) {
++/* 381*/            if (subclass == ArrayList.class || subclass == LinkedList.class || subclass == HashSet.class || subclass == TreeSet.class) {
++/* 385*/              newType = _fromClass(null, subclass, TypeBindings.create(subclass, baseType.getContentType()));
+ /* 428*/                return newType;
+ /*   0*/              } 
+ /*   0*/              if (rawBase == EnumSet.class) {

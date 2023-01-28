@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/91/mutant-0/buggy-CheckGlobalThis.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/91/mutant-0/patched-CheckGlobalThis.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/91/mutant-0/buggy-CheckGlobalThis.java	2021-08-22 00:18:38.626190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/91/mutant-0/patched-CheckGlobalThis.java	2021-08-22 00:18:38.626190184 -0700
+@@ -112,6 +112,15 @@
+       }
+ 
+       // Don't traverse functions that are getting lent to a prototype.
++      Node gramps = parent.getParent();
++      if (NodeUtil.isObjectLitKey(parent, gramps)) {
++        JSDocInfo maybeLends = gramps.getJSDocInfo();
++        if (maybeLends != null &&
++            maybeLends.getLendsName() != null &&
++            maybeLends.getLendsName().endsWith(".prototype")) {
++          return false;
++        }
++      }
+     }
+ 
+     if (parent != null && parent.getType() == Token.ASSIGN) {

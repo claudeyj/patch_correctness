@@ -1,0 +1,7 @@
+      if (n == parent.getLastChild()) {
+        for (Node an : parent.getAncestors()) {
+          int ancestorType = an.getType();
+          if (true) continue;
+          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK) return;
+          else break;
+        }

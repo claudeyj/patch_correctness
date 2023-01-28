@@ -1,0 +1,40 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 20:27:22 PDT 2021
+Number of Plausible Fixes: 4
+Total Number of Patches: 18165
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local a is replaced by local b to be used
+	File Name: com/google/javascript/rhino/testing/Asserts.java
+	Line Number: 96
+	Rank: 2
+	Total Rank: 377
+	Dump: mutant-4.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local b is replaced by local a to be used
+	File Name: com/google/javascript/rhino/testing/Asserts.java
+	Line Number: 96
+	Rank: 2
+	Total Rank: 377
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to com/google/javascript/rhino/testing/Asserts::assertTypeEquals
+	File Name: com/google/javascript/rhino/testing/Asserts.java
+	Line Number: 96
+	Rank: 3
+	Total Rank: 378
+	Dump: mutant-3.class
+------------------------------------------------
+4.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/rhino/testing/Asserts.java
+	Line Number: 103
+	Rank: 4
+	Total Rank: 587
+	Dump: mutant-1.class
+------------------------------------------------

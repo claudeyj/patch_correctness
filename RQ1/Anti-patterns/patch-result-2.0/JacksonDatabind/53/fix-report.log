@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 22 17:35:04 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 18931
+================================================
+1.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/JavaType::refine
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 386
+	Rank: 1
+	Total Rank: 227
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to com/fasterxml/jackson/databind/JavaType::refine with argument
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 386
+	Rank: 2
+	Total Rank: 228
+	Dump: mutant-6.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 391
+	Rank: 3
+	Total Rank: 265
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 342
+	Rank: 4
+	Total Rank: 2933
+	Dump: mutant-4.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 342
+	Rank: 5
+	Total Rank: 2937
+	Dump: mutant-5.class
+------------------------------------------------
+6.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 342
+	Rank: 6
+	Total Rank: 2941
+	Dump: mutant-3.class
+------------------------------------------------

@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/131/mutant-0/buggy-TokenStream.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/131/mutant-0/patched-TokenStream.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/131/mutant-0/buggy-TokenStream.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/131/mutant-0/patched-TokenStream.java	2021-08-22 00:18:38.590190183 -0700
+@@ -191,12 +191,13 @@
+       int length = s.length();
+ 
+       if (length == 0 ||
++          Character.isIdentifierIgnorable(s.charAt(0)) ||
+           !Character.isJavaIdentifierStart(s.charAt(0))) {
+         return false;
+       }
+ 
+       for (int i = 1; i < length; i++) {
+-        if (
++        if (Character.isIdentifierIgnorable(s.charAt(i)) ||
+             !Character.isJavaIdentifierPart(s.charAt(i))) {
+           return false;
+         }

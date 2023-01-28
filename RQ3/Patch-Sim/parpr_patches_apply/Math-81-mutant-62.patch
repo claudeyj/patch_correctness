@@ -1,0 +1,20 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-62.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1427,7 +1427,7 @@
+      * @param end end index
+      * @param deflated number of realEigenvalues just deflated
+      */
+-    private void computeShiftIncrement(final int start, final int end, final int deflated) {
++    private void computeShiftIncrement(final int start, int end, final int deflated) {
+ 
+         final double cnst1 = 0.563;
+         final double cnst2 = 1.010;
+@@ -1526,7 +1526,7 @@
+             } else if (dMin == dN2) {
+ 
+                 // case 5.
+-                tType = -5;
++          end = -5;
+                 double s = 0.25 * dMin;
+ 
+                 // compute contribution to norm squared from i > nn-2.

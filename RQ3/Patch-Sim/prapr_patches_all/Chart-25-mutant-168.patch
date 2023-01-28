@@ -1,0 +1,11 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-168/ori-DefaultStatisticalCategoryDataset.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-168/man-patched-DefaultStatisticalCategoryDataset.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-168/ori-DefaultStatisticalCategoryDataset.java	2021-08-23 09:23:48.348982975 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-168/man-patched-DefaultStatisticalCategoryDataset.java	2021-08-23 09:23:48.348982975 +0800
+@@ -298,7 +298,6 @@
+                     Comparable rowKey, Comparable columnKey) {
+         MeanAndStandardDeviation item = new MeanAndStandardDeviation(
+                 mean, standardDeviation);
+-        this.data.addObject(item, rowKey, columnKey);
+         double m = 0.0;
+         double sd = 0.0;
+         if (mean != null) {

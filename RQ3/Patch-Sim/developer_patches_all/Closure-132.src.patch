@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/132/mutant-0/buggy-PeepholeSubstituteAlternateSyntax.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/132/mutant-0/patched-PeepholeSubstituteAlternateSyntax.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/132/mutant-0/buggy-PeepholeSubstituteAlternateSyntax.java	2021-08-22 00:18:38.594190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/132/mutant-0/patched-PeepholeSubstituteAlternateSyntax.java	2021-08-22 00:18:38.594190183 -0700
+@@ -779,7 +779,9 @@
+               // evaluates LHS before cond]
+               // NOTE - there are some circumstances where we can
+               // proceed even if there are side effects...
+-              !mayEffectMutableState(lhs)) {
++              !mayEffectMutableState(lhs) &&
++              (!mayHaveSideEffects(cond) ||
++                  (thenOp.isAssign() && thenOp.getFirstChild().isName()))) {
+ 
+             n.removeChild(cond);
+             Node assignName = thenOp.removeFirstChild();

@@ -1,0 +1,7 @@
+
+        boolean foundData = false;
+        CategoryDataset currentDataset = getDataset(index);
+    CategoryItemRenderer renderer = null;
+        CategoryAxis domainAxis = getDomainAxisForDataset(index);
+        ValueAxis rangeAxis = getRangeAxisForDataset(index);
+        boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);

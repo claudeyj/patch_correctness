@@ -1,0 +1,11 @@
+--- jd-result/Math/28/mutant-35/a-SimplexSolver.java	2021-07-14 09:09:29.905329081 -0700
++++ jd-result/Math/28/mutant-35/b-SimplexSolver.java	2021-07-14 09:09:31.333329121 -0700
+@@ -59,7 +59,7 @@
+ /* 114*/      return null; 
+ /* 115*/    if (minRatioPositions.size() > 1) {
+ /* 119*/      for (Integer row : minRatioPositions) {
+-/* 120*/        for (int j = 0; j < tableau.getNumArtificialVariables(); j++) {
++/* 120*/        for (int j = 0; j < 0; j++) {
+ /* 121*/          int column = j + tableau.getArtificialVariableOffset();
+ /* 122*/          double entry = tableau.getEntry(row, column);
+ /* 123*/          if (Precision.equals(entry, 1.0D, this.maxUlps) && row.equals(tableau.getBasicRow(column)))

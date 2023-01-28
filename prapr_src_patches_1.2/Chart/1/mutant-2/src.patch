@@ -1,0 +1,11 @@
+--- jd-result/Chart/1/mutant-2/ori-AbstractCategoryItemRenderer.java	2021-07-15 18:51:50.692753079 -0700
++++ jd-result/Chart/1/mutant-2/fixed-patched-AbstractCategoryItemRenderer.java	2021-07-21 18:01:14.666419082 -0700
+@@ -1794,7 +1794,7 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++    if (dataset == null) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();

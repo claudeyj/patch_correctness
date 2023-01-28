@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/78/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/78/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/78/buggy1.java	2021-08-27 19:18:33.178863932 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/78/tool-patch1.java	2021-08-27 19:18:33.178863932 -0700
+@@ -279,7 +279,9 @@
+                     // Inverse quadratic interpolation gives a value
+                     // in the wrong direction, or progress is slow.
+                     // Fall back to bisection.
++                    if (y0 < 1) {
+                     delta = 0.5 * dx;
++                    }
+                     oldDelta = delta;
+                 } else {
+                     oldDelta = delta;

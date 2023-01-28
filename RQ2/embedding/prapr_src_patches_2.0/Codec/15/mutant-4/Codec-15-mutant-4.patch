@@ -1,0 +1,11 @@
+--- jd-result-2.0/Codec/15/mutant-4/a-Soundex.java	2021-08-09 03:48:01.541502014 -0700
++++ jd-result-2.0/Codec/15/mutant-4/b-Soundex.java	2021-08-09 03:48:02.897502052 -0700
+@@ -47,7 +47,7 @@
+ /* 185*/    char mappedChar = map(str.charAt(index));
+ /* 187*/    if (index > 1 && mappedChar != '0') {
+ /* 188*/      char hwChar = str.charAt(index - 1);
+-/* 189*/      if ('H' == hwChar || 'W' == hwChar) {
++/* 189*/      if ('H' == hwChar || 'W' == mappedChar) {
+ /* 190*/        char preHWChar = str.charAt(index - 2);
+ /* 191*/        char firstCode = map(preHWChar);
+ /* 192*/        if (firstCode == mappedChar || 'H' == preHWChar || 'W' == preHWChar) {

@@ -1,0 +1,7 @@
+        double chiSquare = 0;
+        for (int i = 0; i < rows; ++i) {
+            final double residual = residuals[i];
+      chiSquare += residual * residual * this.residualsWeights[i];
+        }
+        return chiSquare;
+    }

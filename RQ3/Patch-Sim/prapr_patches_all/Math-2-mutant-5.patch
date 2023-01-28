@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-5/ori-HypergeometricDistribution.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-5/man-patched-HypergeometricDistribution.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-5/ori-HypergeometricDistribution.java	2021-08-23 09:23:48.868990183 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/2/mutant-5/man-patched-HypergeometricDistribution.java	2021-08-23 09:23:48.868990183 +0800
+@@ -265,7 +265,7 @@
+      * size {@code n}, the mean is {@code n * m / N}.
+      */
+     public double getNumericalMean() {
+-        return (double) (getSampleSize() * getNumberOfSuccesses()) / (double) getPopulationSize();
++        return (double) (getSampleSize() * getSupportUpperBound()) / (double) getPopulationSize();
+     }
+ 
+     /**

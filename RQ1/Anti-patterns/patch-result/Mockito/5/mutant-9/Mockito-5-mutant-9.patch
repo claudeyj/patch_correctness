@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-9/a-ClassPathLoader.java	2021-07-14 21:31:16.442584968 -0700
++++ jd-result/Mockito/5/mutant-9/b-ClassPathLoader.java	2021-07-14 21:31:17.778585005 -0700
+@@ -10,7 +10,7 @@
+ /*   0*/    Class<?> configClass;
+ /*   0*/    try {
+ /*  68*/      configClass = Class.forName("org.mockito.configuration.MockitoConfiguration");
+-/*  69*/    } catch (ClassNotFoundException e) {
++/*  69*/    } catch (ReflectiveOperationException e) {
+ /*  71*/      return null;
+ /*   0*/    } 
+ /*   0*/    try {

@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-128/ori-CategoryPlot.java	2021-07-15 18:51:51.872753112 -0700
++++ jd-result/Chart/25/mutant-128/fixed-patched-CategoryPlot.java	2021-07-22 17:47:53.397539620 -0700
+@@ -2867,7 +2867,7 @@
+                             for (int row = 0; row < rowCount; row++) {
+                                 renderer.drawItem(g2, state, dataArea, this, 
+                                         domainAxis, rangeAxis, currentDataset, 
+-                                        row, column, pass);
++                row, this.weight, pass); 
+                             }
+                         }
+                         else {

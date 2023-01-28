@@ -1,0 +1,55 @@
+--- jd-result/Closure/115/mutant-5/a-FunctionInjector.java	2021-07-14 21:51:49.150619752 -0700
++++ jd-result/Closure/115/mutant-5/b-FunctionInjector.java	2021-07-14 21:51:50.654619795 -0700
+@@ -311,40 +311,38 @@
+ /* 692*/      return CanInlineResult.NO; 
+ /* 695*/    Node block = fnNode.getLastChild();
+ /*   0*/    boolean hasSideEffects = false;
+-/* 698*/    if (block.hasChildren()) {
+-/* 699*/      Preconditions.checkState(block.hasOneChild());
+-/* 700*/      Node stmt = block.getFirstChild();
+-/* 701*/      if (stmt.isReturn())
+-/* 702*/        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), this.compiler); 
+-/*   0*/    } 
++/* 698*/    block.hasChildren();
++/*   0*/    while (true) {
++/*   0*/      Node stmt;
+ /* 706*/    Node cArg = callNode.getFirstChild().getNext();
+ /* 711*/    if (!callNode.getFirstChild().isName())
+ /* 712*/      if (NodeUtil.isFunctionObjectCall(callNode)) {
+ /* 714*/        if (cArg == null || !cArg.isThis())
+ /* 715*/          return CanInlineResult.NO; 
+-/* 717*/        cArg = cArg.getNext();
++/* 717*/          stmt = cArg.getNext();
+ /*   0*/      } else {
+ /* 720*/        Preconditions.checkState(!NodeUtil.isFunctionObjectApply(callNode));
+ /*   0*/      }  
+ /* 725*/    Node fnParam = NodeUtil.getFunctionParameters(fnNode).getFirstChild();
+-/* 726*/    while (cArg != null || fnParam != null) {
++/* 726*/      while (stmt != null || fnParam != null) {
+ /* 728*/      if (fnParam != null) {
+-/* 729*/        if (cArg != null) {
+-/* 730*/          if (hasSideEffects && NodeUtil.canBeSideEffected(cArg))
++/* 729*/          if (stmt != null) {
++/* 730*/            if (hasSideEffects && NodeUtil.canBeSideEffected(stmt))
+ /* 731*/            return CanInlineResult.NO; 
+-/* 736*/          if (NodeUtil.mayEffectMutableState(cArg, this.compiler) && NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1)
++/* 736*/            if (NodeUtil.mayEffectMutableState(stmt, this.compiler) && NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1)
+ /* 739*/            return CanInlineResult.NO; 
+ /*   0*/        } 
+ /* 744*/        fnParam = fnParam.getNext();
+ /*   0*/      } 
+-/* 749*/      if (cArg != null) {
+-/* 750*/        if (NodeUtil.mayHaveSideEffects(cArg, this.compiler))
++/* 749*/        if (stmt != null) {
++/* 750*/          if (NodeUtil.mayHaveSideEffects(stmt, this.compiler))
+ /* 751*/          return CanInlineResult.NO; 
+-/* 753*/        cArg = cArg.getNext();
++/* 753*/          stmt = stmt.getNext();
+ /*   0*/      } 
+ /*   0*/    } 
+ /* 757*/    return CanInlineResult.YES;
+ /*   0*/  }
++/*   0*/  }
+ /*   0*/  
+ /*   0*/  boolean inliningLowersCost(JSModule fnModule, Node fnNode, Collection<? extends Reference> refs, Set<String> namesToAlias, boolean isRemovable, boolean referencesThis) {
+ /* 767*/    int referenceCount = refs.size();

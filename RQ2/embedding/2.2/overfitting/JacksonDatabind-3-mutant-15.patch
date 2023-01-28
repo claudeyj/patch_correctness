@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/3/mutant-15/ori-StringArrayDeserializer.java	2021-08-08 21:02:02.732814656 -0700
++++ jd-result-2.0/JacksonDatabind/3/mutant-15/patched-StringArrayDeserializer.java	2021-08-09 06:25:54.957769335 -0700
+@@ -63,7 +63,7 @@
+             if (t == JsonToken.VALUE_STRING) {
+                 value = jp.getText();
+             } else if (t == JsonToken.VALUE_NULL) {
+-                value = _elementDeserializer.getNullValue();
++        value = null;
+             } else {
+                 value = _parseString(jp, ctxt);
+             }

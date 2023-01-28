@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/108/mutant-2/a-ObjectReader.java	2021-08-09 04:36:30.781584107 -0700
++++ jd-result-2.0/JacksonDatabind/108/mutant-2/b-ObjectReader.java	2021-08-09 04:36:32.501584155 -0700
+@@ -497,7 +497,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public <T extends TreeNode> T readTree(JsonParser p) throws IOException {
+-/*1169*/    return (T)_bindAsTree(p);
++/*1169*/    _bindAsTree(p);
++/*1169*/    return null;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void writeTree(JsonGenerator g, TreeNode rootNode) {

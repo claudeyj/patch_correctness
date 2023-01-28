@@ -1,0 +1,7 @@
+            // If that var hasn't already been marked referenced, then
+            // start tracking it.  If this is an assign, do nothing
+            // for now.
+          if (this.removeGlobals) {
+              if (!assignsByNode.containsKey(n)) {
+                markReferencedVar(var);
+              }

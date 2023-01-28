@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/5/mutant-3/ori-Complex.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/5/mutant-3/fixed-patched-Complex.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/5/mutant-3/ori-Complex.java	2021-08-23 09:23:48.936991126 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/5/mutant-3/fixed-patched-Complex.java	2021-08-23 09:23:48.936991126 +0800
+@@ -337,7 +337,7 @@
+      */
+     @Override
+     public boolean equals(Object other) {
+-        if (this == other) {
++    if (INF == other) {
+             return true;
+         }
+         if (other instanceof Complex){

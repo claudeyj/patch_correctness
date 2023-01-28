@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 19 03:44:18 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 5907
+================================================
+1.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/apache/commons/jxpath/ri/compiler/CoreOperationRelationalExpression.java
+	Line Number: 88
+	Rank: 1
+	Total Rank: 7
+	Dump: mutant-4.class
+------------------------------------------------
+2.
+	Mutator: BooleanTrueReturnValsMutator
+	Description: replaced boolean return with true for org/apache/commons/jxpath/ri/compiler/CoreOperationRelationalExpression::compute
+	File Name: org/apache/commons/jxpath/ri/compiler/CoreOperationRelationalExpression.java
+	Line Number: 88
+	Rank: 2
+	Total Rank: 8
+	Dump: mutant-5.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/jxpath/ri/compiler/CoreOperationRelationalExpression.java
+	Line Number: 87
+	Rank: 3
+	Total Rank: 274
+	Dump: mutant-6.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local right is replaced by local left to be used
+	File Name: org/apache/commons/jxpath/ri/compiler/CoreOperationRelationalExpression.java
+	Line Number: 87
+	Rank: 4
+	Total Rank: 286
+	Dump: mutant-2.class
+------------------------------------------------
+5.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java
+	Line Number: 20
+	Rank: 5
+	Total Rank: 1305
+	Dump: mutant-3.class
+------------------------------------------------
+6.
+	Mutator: VoidMethodCallGuardMutator
+	Description: the call to org.apache.commons.jxpath.ri.parser.SimpleCharStream::backup(I)V is guarded
+	File Name: org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java
+	Line Number: 1838
+	Rank: 6
+	Total Rank: 5022
+	Dump: mutant-1.class
+------------------------------------------------

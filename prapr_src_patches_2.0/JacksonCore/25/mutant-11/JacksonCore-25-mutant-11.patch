@@ -1,0 +1,18 @@
+--- jd-result-2.0/JacksonCore/25/mutant-11/a-ReaderBasedJsonParser.java	2021-08-09 04:05:11.789531085 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-11/b-ReaderBasedJsonParser.java	2021-08-09 04:05:13.553531135 -0700
+@@ -1454,8 +1454,13 @@
+ /*1951*/    char[] outBuf = this._textBuffer.getCurrentSegment();
+ /*1952*/    int outPtr = this._textBuffer.getCurrentSegmentSize();
+ /*1953*/    int maxCode = codes.length;
+-/*1956*/    while (this._inputPtr < this._inputEnd || 
+-/*1957*/      _loadMore()) {
++/*   0*/    while (true) {
++/*1956*/      if (this._inputPtr >= this._inputEnd) {
++/*1957*/        this;
++/*1957*/        if (!false) {
++/*   0*/            break; 
++/*   0*/           }
++/*   0*/      } 
+ /*1961*/      char c = this._inputBuffer[this._inputPtr];
+ /*1962*/      int i = c;
+ /*1963*/      if ((i <= maxCode) ? (

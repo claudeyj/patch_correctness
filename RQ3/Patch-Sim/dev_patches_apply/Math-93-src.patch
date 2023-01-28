@@ -1,0 +1,36 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/93/mutant-0/buggy-MathUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/93/mutant-0/patched-MathUtils.java
+--- Math93b/src/java/org/apache/commons/math/util/MathUtils.java
++++ Math93b_Math-93-src.patchb/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -342,8 +342,10 @@
+      * @throws IllegalArgumentException if n < 0
+      */
+     public static long factorial(final int n) {
+-        long result = Math.round(factorialDouble(n));
+-        if (result == Long.MAX_VALUE) {
++        if (n < 0) {
++            throw new IllegalArgumentException("must have n >= 0 for n!");
++        }
++        if (n > 20) {
+             throw new ArithmeticException(
+                     "factorial value is too large to fit in a long");
+         }
+@@ -374,6 +376,9 @@
+         if (n < 0) {
+             throw new IllegalArgumentException("must have n >= 0 for n!");
+         }
++        if (n < 21) {
++            return factorial(n);
++        }
+         return Math.floor(Math.exp(factorialLog(n)) + 0.5);
+     }
+ 
+@@ -394,6 +399,9 @@
+         if (n < 0) {
+             throw new IllegalArgumentException("must have n > 0 for n!");
+         }
++        if (n < 21) {
++            return Math.log(factorial(n));
++        }
+         double logSum = 0;
+         for (int i = 2; i <= n; i++) {
+             logSum += Math.log((double)i);

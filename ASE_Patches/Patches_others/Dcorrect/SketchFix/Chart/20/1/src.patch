@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SketchFix/Chart/20/1/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SketchFix/Chart/20/1/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SketchFix/Chart/20/1/buggy1.java	2021-09-08 07:11:31.621222362 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SketchFix/Chart/20/1/tool-patch1.java	2021-09-08 07:11:31.621222362 -0700
+@@ -92,7 +92,7 @@
+      */
+     public ValueMarker(double value, Paint paint, Stroke stroke, 
+                        Paint outlinePaint, Stroke outlineStroke, float alpha) {
+-        super(paint, stroke, paint, stroke, alpha);
++        super(paint, stroke, outlinePaint, outlineStroke, alpha);
+         this.value = value;
+     }
+     

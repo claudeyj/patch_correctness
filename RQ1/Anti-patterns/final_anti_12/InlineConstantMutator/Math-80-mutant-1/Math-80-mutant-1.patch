@@ -1,0 +1,38 @@
+--- jd-result/Math/80/mutant-1/a-EigenDecompositionImpl.java	2021-07-14 09:18:31.809344372 -0700
++++ jd-result/Math/80/mutant-1/b-EigenDecompositionImpl.java	2021-07-14 09:18:33.357344416 -0700
+@@ -538,7 +538,7 @@
+ /* 941*/      double d = this.work[4 * (n - 1) + this.pingPong];
+ /* 942*/      for (int i = 4 * (n - 2) + this.pingPong; i >= 0; i -= 4) {
+ /* 943*/        if (this.work[i + 2] <= 1.232595164407831E-28D * d) {
+-/* 944*/          this.work[i + 2] = -0.0D;
++/* 944*/          this.work[i + 2] = 0.0D;
+ /* 945*/          d = this.work[i];
+ /*   0*/        } else {
+ /* 947*/          d *= this.work[i] / (d + this.work[i + 2]);
+@@ -549,7 +549,7 @@
+ /* 954*/        int m = j - 2 * this.pingPong - 1;
+ /* 955*/        this.work[m] = d + this.work[j];
+ /* 956*/        if (this.work[j] <= 1.232595164407831E-28D * d) {
+-/* 957*/          this.work[j] = -0.0D;
++/* 957*/          this.work[j] = 0.0D;
+ /* 958*/          this.work[m] = d;
+ /* 959*/          this.work[m + 2] = 0.0D;
+ /* 960*/          d = this.work[j + 2];
+@@ -611,7 +611,7 @@
+ /*1056*/      this.work[l - 1] = Math.min(this.work[l - 1], Math.min(this.work[3 + this.pingPong], this.work[7 + this.pingPong]));
+ /*1059*/      this.work[l - 2 * this.pingPong] = Math.min(this.work[l - 2 * this.pingPong], Math.min(this.work[6 + this.pingPong], this.work[6 + this.pingPong]));
+ /*1062*/      this.qMax = Math.max(this.qMax, Math.max(this.work[3 + this.pingPong], this.work[7 + this.pingPong]));
+-/*1063*/      this.dMin = -0.0D;
++/*1063*/      this.dMin = 0.0D;
+ /*   0*/    } 
+ /*1067*/    if (this.dMin < 0.0D || 2.2250738585072014E-308D * this.qMax < Math.min(this.work[l - 1], Math.min(this.work[l - 9], this.dMin2 + this.work[l - 2 * this.pingPong]))) {
+ /*1072*/      computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
+@@ -655,7 +655,7 @@
+ /*   0*/  private boolean flipIfWarranted(int n, int step) {
+ /*1133*/    if (1.5D * this.work[this.pingPong] < this.work[4 * (n - 1) + this.pingPong]) {
+ /*1135*/      int j = 4 * n - 1;
+-/*1136*/      for (int i = 0; i < j; i += 4) {
++/*1136*/      for (int i = 1; i < j; i += 4) {
+ /*1137*/        for (int k = 0; k < 4; k += step) {
+ /*1138*/          double tmp = this.work[i + k];
+ /*1139*/          this.work[i + k] = this.work[j - k];

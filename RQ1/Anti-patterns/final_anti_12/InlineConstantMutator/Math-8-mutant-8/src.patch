@@ -1,0 +1,11 @@
+--- jd-result/Math/8/mutant-8/ori-DiscreteDistribution.java	2021-07-24 01:52:06.258297145 -0700
++++ jd-result/Math/8/mutant-8/man-patched-DiscreteDistribution.java	2021-07-30 01:35:08.100896641 -0700
+@@ -184,7 +184,7 @@
+                     sampleSize);
+         }
+ 
+-        final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
++        final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(1).getClass(), sampleSize);
+ 
+         for (int i = 0; i < sampleSize; i++) {
+             out[i] = sample();

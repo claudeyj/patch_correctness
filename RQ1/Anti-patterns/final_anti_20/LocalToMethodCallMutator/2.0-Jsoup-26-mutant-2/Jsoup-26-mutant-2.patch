@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/26/mutant-2/a-Cleaner.java	2021-08-09 04:23:37.801562295 -0700
++++ jd-result-2.0/Jsoup/26/mutant-2/b-Cleaner.java	2021-08-09 04:23:39.097562331 -0700
+@@ -20,7 +20,7 @@
+ /*   0*/  
+ /*   0*/  public Document clean(Document dirtyDocument) {
+ /*  40*/    Validate.notNull(dirtyDocument);
+-/*  42*/    Document clean = Document.createShell(dirtyDocument.baseUri());
++/*  42*/    Document clean = Document.createShell(dirtyDocument.normalise().baseUri());
+ /*  43*/    copySafeNodes(dirtyDocument.body(), clean.body());
+ /*  45*/    return clean;
+ /*   0*/  }

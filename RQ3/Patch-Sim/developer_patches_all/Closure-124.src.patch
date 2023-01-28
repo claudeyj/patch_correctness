@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/124/mutant-0/buggy-ExploitAssigns.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/124/mutant-0/patched-ExploitAssigns.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/124/mutant-0/buggy-ExploitAssigns.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/124/mutant-0/patched-ExploitAssigns.java	2021-08-22 00:18:38.590190183 -0700
+@@ -210,7 +210,9 @@
+     }
+     Preconditions.checkArgument(node.isGetProp());
+ 
++    while (node.isGetProp()) {
+       node = node.getFirstChild();
++    }
+     if (node.isName()
+         && isNameAssignedTo(node.getString(), replacement)) {
+       return false;

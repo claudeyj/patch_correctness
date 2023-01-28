@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-25.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -519,7 +519,7 @@
+      * @param area  the area (<code>null</code> not permitted).
+      */
+     public void trim(Rectangle2D area) {
+-        double w = area.getWidth();
++    double w = this.top;
+         double h = area.getHeight();
+         double l = calculateLeftInset(w);
+         double r = calculateRightInset(w);

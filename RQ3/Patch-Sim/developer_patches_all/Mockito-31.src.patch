@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/31/mutant-0/buggy-ReturnsSmartNulls.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/31/mutant-0/patched-ReturnsSmartNulls.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/31/mutant-0/buggy-ReturnsSmartNulls.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/31/mutant-0/patched-ReturnsSmartNulls.java	2021-08-22 00:18:38.706190186 -0700
+@@ -6,6 +6,7 @@
+ 
+ import java.io.Serializable;
+ import java.lang.reflect.Method;
++import java.util.Arrays;
+ 
+ import org.mockito.Mockito;
+ import org.mockito.cglib.proxy.MethodInterceptor;
+@@ -57,7 +58,8 @@
+         }
+ 
+ 		private String formatMethodCall() {
+-			return invocation.getMethod().getName() + "()";
++			String args = Arrays.toString(invocation.getArguments());
++			return invocation.getMethod().getName() + "(" + args.substring(1, args.length() - 1) +	")";
+ 		}
+     }
+ 

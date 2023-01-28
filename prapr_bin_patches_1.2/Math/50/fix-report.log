@@ -1,0 +1,364 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 00:54:43 PDT 2021
+Number of Plausible Fixes: 40
+Total Number of Patches: 970
+================================================
+1.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local x0 is replaced by access to field DEFAULT_ABSOLUTE_ACCURACY
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 189
+	Rank: 1
+	Total Rank: 13
+	Dump: mutant-15.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.util.FastMath::max(DD)D is replaced with the used of default value 0.D
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 3
+	Total Rank: 22
+	Dump: mutant-37.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.analysis.solvers.BaseSecantSolver::computeObjectiveValue(D)D is replaced with the used of default value 0.D
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 189
+	Rank: 3
+	Total Rank: 22
+	Dump: mutant-16.class
+------------------------------------------------
+4.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0.5 with 1.0
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 4
+	Total Rank: 23
+	Dump: mutant-1.class
+------------------------------------------------
+5.
+	Mutator: MathMutator
+	Description: Replaced double subtraction with addition
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 5
+	Total Rank: 26
+	Dump: mutant-38.class
+------------------------------------------------
+6.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local x1 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 189
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-29.class
+------------------------------------------------
+7.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local f1 to be defined
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-8.class
+------------------------------------------------
+8.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local ftol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 189
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-28.class
+------------------------------------------------
+9.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local f0 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-12.class
+------------------------------------------------
+10.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local f0 to be defined
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-10.class
+------------------------------------------------
+11.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local rtol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 189
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-26.class
+------------------------------------------------
+12.
+	Mutator: LocalNameMutator
+	Description: local atol is replaced by local ftol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-23.class
+------------------------------------------------
+13.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local x0 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-13.class
+------------------------------------------------
+14.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local x1 to be defined
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-9.class
+------------------------------------------------
+15.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local f1 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 189
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-27.class
+------------------------------------------------
+16.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local f0 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-14.class
+------------------------------------------------
+17.
+	Mutator: LocalNameMutator
+	Description: local atol is replaced by local rtol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-22.class
+------------------------------------------------
+18.
+	Mutator: LocalNameMutator
+	Description: local atol is replaced by local f1 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-19.class
+------------------------------------------------
+19.
+	Mutator: LocalNameMutator
+	Description: local x0 is replaced by local atol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 189
+	Rank: 19
+	Total Rank: 70
+	Dump: mutant-25.class
+------------------------------------------------
+20.
+	Mutator: MethodNameMutator
+	Description: replaced call to max with a call to IEEEremainder
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 26
+	Total Rank: 87
+	Dump: mutant-3.class
+------------------------------------------------
+21.
+	Mutator: MethodNameMutator
+	Description: replaced call to max with a call to pow
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 26
+	Total Rank: 87
+	Dump: mutant-7.class
+------------------------------------------------
+22.
+	Mutator: MethodNameMutator
+	Description: replaced call to max with a call to copySign
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 26
+	Total Rank: 87
+	Dump: mutant-2.class
+------------------------------------------------
+23.
+	Mutator: MethodNameMutator
+	Description: replaced call to max with a call to atan2
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 26
+	Total Rank: 87
+	Dump: mutant-5.class
+------------------------------------------------
+24.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to atanh
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 26
+	Total Rank: 87
+	Dump: mutant-40.class
+------------------------------------------------
+25.
+	Mutator: MethodNameMutator
+	Description: replaced call to max with a call to nextAfter
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 26
+	Total Rank: 87
+	Dump: mutant-6.class
+------------------------------------------------
+26.
+	Mutator: MethodNameMutator
+	Description: replaced call to max with a call to min
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 188
+	Rank: 26
+	Total Rank: 87
+	Dump: mutant-4.class
+------------------------------------------------
+27.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local x1 is replaced by access to field DEFAULT_ABSOLUTE_ACCURACY
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 28
+	Total Rank: 100
+	Dump: mutant-30.class
+------------------------------------------------
+28.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local x is replaced by access to field DEFAULT_ABSOLUTE_ACCURACY
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 28
+	Total Rank: 100
+	Dump: mutant-36.class
+------------------------------------------------
+29.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local ftol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-34.class
+------------------------------------------------
+30.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local atol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-35.class
+------------------------------------------------
+31.
+	Mutator: LocalNameMutator
+	Description: local x is replaced by local atol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-20.class
+------------------------------------------------
+32.
+	Mutator: LocalNameMutator
+	Description: local x is replaced by local f0 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-18.class
+------------------------------------------------
+33.
+	Mutator: LocalNameMutator
+	Description: local x is replaced by local x0 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-24.class
+------------------------------------------------
+34.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local f1 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-33.class
+------------------------------------------------
+35.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local f0 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-32.class
+------------------------------------------------
+36.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local x0 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-31.class
+------------------------------------------------
+37.
+	Mutator: LocalNameMutator
+	Description: local x is replaced by local ftol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-21.class
+------------------------------------------------
+38.
+	Mutator: LocalNameMutator
+	Description: local x1 is replaced by local rtol to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-39.class
+------------------------------------------------
+39.
+	Mutator: LocalNameMutator
+	Description: local x is replaced by local f1 to be used
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 39
+	Total Rank: 112
+	Dump: mutant-17.class
+------------------------------------------------
+40.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+	Line Number: 187
+	Rank: 40
+	Total Rank: 113
+	Dump: mutant-11.class
+------------------------------------------------

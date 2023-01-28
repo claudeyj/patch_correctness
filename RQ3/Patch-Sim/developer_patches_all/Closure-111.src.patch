@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/111/mutant-0/buggy-ClosureReverseAbstractInterpreter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/111/mutant-0/patched-ClosureReverseAbstractInterpreter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/111/mutant-0/buggy-ClosureReverseAbstractInterpreter.java	2021-08-22 00:18:38.582190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/111/mutant-0/patched-ClosureReverseAbstractInterpreter.java	2021-08-22 00:18:38.582190183 -0700
+@@ -51,7 +51,8 @@
+       new RestrictByTrueTypeOfResultVisitor() {
+         @Override
+         protected JSType caseTopType(JSType topType) {
+-          return topType;
++          return topType.isAllType() ?
++              getNativeType(ARRAY_TYPE) : topType;
+         }
+ 
+         @Override

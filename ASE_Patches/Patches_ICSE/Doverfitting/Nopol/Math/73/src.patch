@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/73/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/73/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/73/buggy1.java	2021-08-27 19:18:33.786863949 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/73/tool-patch1.java	2021-08-27 19:18:33.786863949 -0700
+@@ -222,7 +222,7 @@
+      * @throws IllegalArgumentException
+      */
+     protected void verifySequence(final double lower, final double initial, final double upper) {
+-        if (!isSequence(lower, initial, upper)) {
++        if ((!(lower < initial)) || ((org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.this.result <= lower) && (1 == lower))) {
+             throw MathRuntimeException.createIllegalArgumentException(
+                     "invalid interval, initial value parameters:  lower={0}, initial={1}, upper={2}",
+                     lower, initial, upper);

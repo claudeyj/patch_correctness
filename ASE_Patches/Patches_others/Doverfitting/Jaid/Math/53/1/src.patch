@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Math/53/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Math/53/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Math/53/1/buggy1.java	2021-08-27 19:18:44.246864245 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Math/53/1/tool-patch1.java	2021-08-27 19:18:44.246864245 -0700
+@@ -149,6 +149,9 @@
+      */
+     public Complex add(Complex rhs)
+         throws NullArgumentException {
++     	if((isNaN() == rhs.isNaN()) == false){
++    		return this.NaN;
++    		}
+         MathUtils.checkNotNull(rhs);
+         return createComplex(real + rhs.getReal(),
+             imaginary + rhs.getImaginary());

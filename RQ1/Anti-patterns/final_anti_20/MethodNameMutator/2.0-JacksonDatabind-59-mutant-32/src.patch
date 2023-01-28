@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-32/ori-TypeFactory.java	2021-08-08 21:02:02.260814643 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-32/patched-TypeFactory.java	2021-08-09 06:25:54.929769334 -0700
+@@ -367,7 +367,7 @@
+                 break;
+             }
+             // (2) A small set of "well-known" List/Map subtypes where can take a short-cut
+-            if (baseType.isContainerType()) {
++        if (baseType.isEnumType()) {
+                 if (baseType.isMapLikeType()) {
+                     if ((subclass == HashMap.class)
+                             || (subclass == LinkedHashMap.class)

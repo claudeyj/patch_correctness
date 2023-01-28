@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 23:29:15 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 34517
+================================================
+1.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: com/google/javascript/jscomp/ReferenceCollectingCallback.java
+	Line Number: 325
+	Rank: 1
+	Total Rank: 2391
+	Dump: mutant-6.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local n is replaced by local n2 to be used
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1453
+	Rank: 2
+	Total Rank: 13177
+	Dump: mutant-4.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local n is replaced by access to field last
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1453
+	Rank: 3
+	Total Rank: 13186
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field next is replaced by access to local n
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1453
+	Rank: 4
+	Total Rank: 13190
+	Dump: mutant-3.class
+------------------------------------------------
+5.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1458
+	Rank: 5
+	Total Rank: 13224
+	Dump: mutant-5.class
+------------------------------------------------
+6.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1458
+	Rank: 6
+	Total Rank: 13226
+	Dump: mutant-2.class
+------------------------------------------------

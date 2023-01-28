@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/53/mutant-1/ori-TypeFactory.java	2021-08-08 21:02:02.364814646 -0700
++++ jd-result-2.0/JacksonDatabind/53/mutant-1/man-patched-TypeFactory.java	2021-08-12 17:35:29.198217086 -0700
+@@ -383,7 +383,7 @@
+             // 29-Jun-2016, tatu: As to bindings, this works for [databind#1215], but
+             //  not certain it would reliably work... but let's hope for best for now
+             if (baseType.isInterface()) {
+-                newType = baseType.refine(subclass, TypeBindings.emptyBindings(), null, new JavaType[] { baseType });
++                newType = null;
+             } else {
+                 newType = baseType.refine(subclass, TypeBindings.emptyBindings(), baseType, NO_TYPES);
+             }

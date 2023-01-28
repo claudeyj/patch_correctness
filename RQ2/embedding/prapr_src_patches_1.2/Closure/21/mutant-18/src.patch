@@ -1,0 +1,11 @@
+--- jd-result/Closure/21/mutant-18/ori-CheckSideEffects.java	2021-07-15 18:51:53.932753170 -0700
++++ jd-result/Closure/21/mutant-18/fixed-patched-CheckSideEffects.java	2021-07-21 20:54:26.690712325 -0700
+@@ -114,7 +114,7 @@
+       if (isResultUsed) {
+         return;
+       }
+-      if (n == parent.getLastChild()) {
++      if (n == parent.getLastSibling()) {
+         for (Node an : parent.getAncestors()) {
+           int ancestorType = an.getType();
+           if (ancestorType == Token.COMMA) continue;

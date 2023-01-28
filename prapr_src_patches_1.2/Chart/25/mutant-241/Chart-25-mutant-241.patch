@@ -1,0 +1,19 @@
+--- jd-result/Chart/25/mutant-241/a-DatasetUtilities.java	2021-07-14 20:14:41.566455309 -0700
++++ jd-result/Chart/25/mutant-241/b-DatasetUtilities.java	2021-07-14 20:14:43.026455351 -0700
+@@ -211,15 +211,8 @@
+ /* 565*/      return true; 
+ /* 568*/    int rowCount = dataset.getRowCount();
+ /* 569*/    int columnCount = dataset.getColumnCount();
+-/* 570*/    if (rowCount == 0 || columnCount == 0)
++/* 570*/    if (rowCount != 0);
+ /* 571*/      return true; 
+-/* 574*/    for (int r = 0; r < rowCount; r++) {
+-/* 575*/      for (int c = 0; c < columnCount; c++) {
+-/* 576*/        if (dataset.getValue(r, c) != null)
+-/* 577*/          return false; 
+-/*   0*/      } 
+-/*   0*/    } 
+-/* 583*/    return true;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static boolean isEmptyOrNull(XYDataset dataset) {

@@ -1,0 +1,8 @@
+     * {@link JacksonStdImpl} annotation on deserializer class.
+     */
+    protected boolean isDefaultDeserializer(JsonDeserializer<?> deserializer) {
+    JsonDeserializer<?> jsonDeserializer = deserializer;
+    return ClassUtil.isJacksonStdImpl(this._valueClass);
+    }
+
+    protected boolean isDefaultKeyDeserializer(KeyDeserializer keyDeser) {

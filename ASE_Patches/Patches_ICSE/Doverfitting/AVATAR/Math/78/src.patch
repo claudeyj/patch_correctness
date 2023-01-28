@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Math/78/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Math/78/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Math/78/buggy1.java	2021-08-27 19:18:39.018864097 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Math/78/tool-patch1.java	2021-08-27 19:18:39.018864097 -0700
+@@ -266,7 +266,7 @@
+                     // Inverse quadratic interpolation.
+                     double r1 = y0 / y2;
+                     double r2 = y1 / y2;
+-                    p = r3 * (dx * r1 * (r1 - r2) - (x1 - x0) * (r2 - 1.0));
++                    p = r3 * (dx * r1 * (r1 - r2) - (x1 - x0) * (r1 - 1.0));
+                     p1 = (r1 - 1.0) * (r2 - 1.0) * (r3 - 1.0);
+                 }
+                 if (p > 0.0) {

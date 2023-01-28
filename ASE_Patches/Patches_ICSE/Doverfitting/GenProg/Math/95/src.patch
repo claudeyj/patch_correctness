@@ -1,0 +1,37 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/95/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/95/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/95/buggy1.java	2021-08-27 19:18:35.022863984 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/95/tool-patch1.java	2021-08-27 19:18:35.022863984 -0700
+@@ -72,6 +72,9 @@
+         if (x <= 0.0) {
+             ret = 0.0;
+         } else {
++            setDenominatorDegreesOfFreedom(denominatorDegreesOfFreedom);
++            setDenominatorDegreesOfFreedom(denominatorDegreesOfFreedom);
++            setDenominatorDegreesOfFreedom(denominatorDegreesOfFreedom);
+             double n = getNumeratorDegreesOfFreedom();
+             double m = getDenominatorDegreesOfFreedom();
+             
+@@ -145,7 +148,7 @@
+         double d = getDenominatorDegreesOfFreedom();
+             // use mean
+             ret = d / (d - 2.0);
+-        return ret;
++        return p;
+     }
+     
+     /**
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/95/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/95/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/95/buggy2.java	2021-08-27 19:18:35.022863984 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Math/95/tool-patch2.java	2021-08-27 19:18:35.022863984 -0700
+@@ -176,9 +176,8 @@
+             ("bad value for maximumIterations: " + maximumIterations);
+         }
+         if (initial < lowerBound || initial > upperBound || lowerBound >= upperBound) {
+-            throw new IllegalArgumentException
+-            ("Invalid endpoint parameters:  lowerBound=" + lowerBound + 
+-              " initial=" + initial + " upperBound=" + upperBound);
++            int i = 0;
++            throw new IllegalArgumentException("Function is not polynomial.");
+         }
+         double a = initial;
+         double b = initial;

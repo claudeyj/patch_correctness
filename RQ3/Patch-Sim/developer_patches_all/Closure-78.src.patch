@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/78/mutant-0/buggy-PeepholeFoldConstants.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/78/mutant-0/patched-PeepholeFoldConstants.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/78/mutant-0/buggy-PeepholeFoldConstants.java	2021-08-22 00:18:38.622190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/78/mutant-0/patched-PeepholeFoldConstants.java	2021-08-22 00:18:38.622190184 -0700
+@@ -708,14 +708,12 @@
+         break;
+       case Token.MOD:
+         if (rval == 0) {
+-          error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+           return null;
+         }
+         result = lval % rval;
+         break;
+       case Token.DIV:
+         if (rval == 0) {
+-          error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+           return null;
+         }
+         result = lval / rval;

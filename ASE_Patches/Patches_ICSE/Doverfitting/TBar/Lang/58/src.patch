@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Lang/58/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Lang/58/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Lang/58/buggy1.java	2021-08-27 19:18:35.814864007 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Lang/58/tool-patch1.java	2021-08-27 19:18:35.814864007 -0700
+@@ -449,10 +449,10 @@
+             switch (lastChar) {
+                 case 'l' :
+                 case 'L' :
+-                    if (dec == null
++                    if (dec != numeric || (dec == null
+                         && exp == null
+                         && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0))))) {
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {

@@ -1,0 +1,8 @@
+            String value = r.consumeToAny(attributeSingleValueCharsSorted);
+            if (value.length() > 0)
+                t.tagPending.appendAttributeValue(value);
+            else
+                t.tagPending.setEmptyAttributeValue();
+
+            char c = r.consume();
+            switch (c) {

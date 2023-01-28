@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/21/mutant-10/a-FilteringParserDelegate.java	2021-08-09 04:15:44.013548925 -0700
++++ jd-result-2.0/JacksonCore/21/mutant-10/b-FilteringParserDelegate.java	2021-08-09 04:15:45.453548966 -0700
+@@ -129,7 +129,7 @@
+ /*   0*/    boolean returnEnd;
+ /*   0*/    String name;
+ /* 236*/    if (!this._allowMultipleMatches && this._currToken != null && this._exposedContext == null) {
+-/* 238*/        if (this._currToken.isStructEnd()) {
++/* 238*/        if (this._currToken.isBoolean()) {
+ /* 239*/          if (this._headContext.isStartHandled()) {
+ /* 240*/              return this._currToken = null; 
+ /*   0*/             }

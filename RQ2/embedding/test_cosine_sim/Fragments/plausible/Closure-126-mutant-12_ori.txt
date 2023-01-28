@@ -1,0 +1,7 @@
+       * block. See ECMA 262 Sections 8.9 & 12.14
+       */
+      if (NodeUtil.hasFinally(n)) {
+        Node finallyBlock = n.getLastChild();
+        tryMinimizeExits(finallyBlock, exitType, labelName);
+      }
+    }

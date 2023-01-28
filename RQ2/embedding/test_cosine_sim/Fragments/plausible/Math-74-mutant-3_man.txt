@@ -1,0 +1,7 @@
+            final double prev = interpolator.getPreviousTime();
+            final double curr = interpolator.getCurrentTime();
+            stepStart = prev;
+      MultistepIntegrator.this.stepSize = (curr - prev) / (this.n + 1);
+
+            // compute the first scaled derivative
+            interpolator.setInterpolatedTime(prev);

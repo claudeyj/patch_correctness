@@ -1,0 +1,301 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 22:30:38 PDT 2021
+Number of Plausible Fixes: 33
+Total Number of Patches: 12404
+================================================
+1.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0.0 with 1.0
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 247
+	Rank: 1
+	Total Rank: 118
+	Dump: mutant-41.class
+------------------------------------------------
+2.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(I)V with a call to <init>(I[DIDZIILorg/apache/commons/math3/random/RandomGenerator;Z)V
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 240
+	Rank: 3
+	Total Rank: 126
+	Dump: mutant-27.class
+------------------------------------------------
+3.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to <init>(I)V with a call to <init>(I[DIDZIILorg/apache/commons/math3/random/RandomGenerator;ZLorg/apache/commons/math3/optimization/ConvergenceChecker;)V
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 240
+	Rank: 3
+	Total Rank: 126
+	Dump: mutant-25.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local repaired is replaced by local x to be used
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 995
+	Rank: 4
+	Total Rank: 127
+	Dump: mutant-14.class
+------------------------------------------------
+5.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1.0 with 2.0
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 995
+	Rank: 5
+	Total Rank: 128
+	Dump: mutant-13.class
+------------------------------------------------
+6.
+	Mutator: LocalNameMutator
+	Description: local res is replaced by local x to be used
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 913
+	Rank: 7
+	Total Rank: 219
+	Dump: mutant-6.class
+------------------------------------------------
+7.
+	Mutator: LocalNameMutator
+	Description: local res is replaced by local x to be used
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 911
+	Rank: 7
+	Total Rank: 219
+	Dump: mutant-16.class
+------------------------------------------------
+8.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 909
+	Rank: 8
+	Total Rank: 261
+	Dump: mutant-7.class
+------------------------------------------------
+9.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 909
+	Rank: 9
+	Total Rank: 267
+	Dump: mutant-10.class
+------------------------------------------------
+10.
+	Mutator: MathMutator
+	Description: Replaced double subtraction with addition
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 911
+	Rank: 10
+	Total Rank: 281
+	Dump: mutant-12.class
+------------------------------------------------
+11.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 909
+	Rank: 12
+	Total Rank: 294
+	Dump: mutant-8.class
+------------------------------------------------
+12.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 911
+	Rank: 12
+	Total Rank: 294
+	Dump: mutant-15.class
+------------------------------------------------
+13.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 1132
+	Rank: 13
+	Total Rank: 2028
+	Dump: mutant-1.class
+------------------------------------------------
+14.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local bestValue is replaced by access to field stopTolUpX
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 415
+	Rank: 14
+	Total Rank: 3476
+	Dump: mutant-38.class
+------------------------------------------------
+15.
+	Mutator: FieldNameMutator
+	Description: replaced access to logMu2 with an access to stopTolUpX
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 582
+	Rank: 16
+	Total Rank: 4275
+	Dump: mutant-17.class
+------------------------------------------------
+16.
+	Mutator: FieldNameMutator
+	Description: replaced access to mueff with an access to logMu2
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 597
+	Rank: 16
+	Total Rank: 4275
+	Dump: mutant-33.class
+------------------------------------------------
+17.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.linear.MatrixUtils::createColumnRealMatrix([D)Lorg/apache/commons/math3/linear/RealMatrix; is replaced with the used of local insigma
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 610
+	Rank: 18
+	Total Rank: 5207
+	Dump: mutant-34.class
+------------------------------------------------
+18.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.optimization.direct.CMAESOptimizer::access$100(Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer;)[[D is replaced with the used of default value null
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 905
+	Rank: 18
+	Total Rank: 5207
+	Dump: mutant-11.class
+------------------------------------------------
+19.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field mueff is replaced by access to local sumwq
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 597
+	Rank: 19
+	Total Rank: 5358
+	Dump: mutant-39.class
+------------------------------------------------
+20.
+	Mutator: MethodNameMutator
+	Description: replaced call to abs with a call to acos
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 437
+	Rank: 20
+	Total Rank: 5632
+	Dump: mutant-28.class
+------------------------------------------------
+21.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 905
+	Rank: 21
+	Total Rank: 5816
+	Dump: mutant-9.class
+------------------------------------------------
+22.
+	Mutator: MathMutator
+	Description: Replaced double multiplication with division
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 575
+	Rank: 24
+	Total Rank: 5899
+	Dump: mutant-3.class
+------------------------------------------------
+23.
+	Mutator: MathMutator
+	Description: Replaced double addition with subtraction
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 594
+	Rank: 24
+	Total Rank: 5899
+	Dump: mutant-4.class
+------------------------------------------------
+24.
+	Mutator: MathMutator
+	Description: Replaced double addition with subtraction
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 596
+	Rank: 24
+	Total Rank: 5899
+	Dump: mutant-42.class
+------------------------------------------------
+25.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1.0 with 2.0
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 597
+	Rank: 26
+	Total Rank: 6037
+	Dump: mutant-29.class
+------------------------------------------------
+26.
+	Mutator: InlineConstantMutator
+	Description: Substituted 0 with 1
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 1253
+	Rank: 26
+	Total Rank: 6037
+	Dump: mutant-43.class
+------------------------------------------------
+27.
+	Mutator: ArgumentsListMutator
+	Description: replaced call to max(Lorg/apache/commons/math3/linear/RealMatrix;)D with a call to max([D)D
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 571
+	Rank: 27
+	Total Rank: 6121
+	Dump: mutant-30.class
+------------------------------------------------
+28.
+	Mutator: MethodNameMutator
+	Description: replaced call to encode with a call to repairAndDecode
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 354
+	Rank: 29
+	Total Rank: 6671
+	Dump: mutant-32.class
+------------------------------------------------
+29.
+	Mutator: MethodNameMutator
+	Description: replaced call to encode with a call to decode
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 354
+	Rank: 29
+	Total Rank: 6671
+	Dump: mutant-31.class
+------------------------------------------------
+30.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction::encode with argument
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 354
+	Rank: 30
+	Total Rank: 6677
+	Dump: mutant-37.class
+------------------------------------------------
+31.
+	Mutator: LocalNameMutator
+	Description: local checkFeasableCount is replaced by local maxIterations to be used
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 282
+	Rank: 32
+	Total Rank: 6906
+	Dump: mutant-2.class
+------------------------------------------------
+32.
+	Mutator: LocalNameMutator
+	Description: local checkFeasableCount is replaced by local maxIterations to be used
+	File Name: org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+	Line Number: 314
+	Rank: 32
+	Total Rank: 6906
+	Dump: mutant-44.class
+------------------------------------------------
+33.
+	Mutator: DereferenceGuardMutator
+	Description: the access to mti is guarded using value 0
+	File Name: org/apache/commons/math3/random/MersenneTwister.java
+	Line Number: 233
+	Rank: 33
+	Total Rank: 8339
+	Dump: mutant-5.class
+------------------------------------------------

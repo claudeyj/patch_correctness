@@ -1,0 +1,14 @@
+--- jd-result-2.0/JacksonDatabind/53/mutant-6/a-TypeFactory.java	2021-08-09 04:34:36.577580884 -0700
++++ jd-result-2.0/JacksonDatabind/53/mutant-6/b-TypeFactory.java	2021-08-09 04:34:38.053580926 -0700
+@@ -235,7 +235,10 @@
+ /*   0*/          newType = _fromClass(null, subclass, TypeBindings.emptyBindings());
+ /*   0*/        } else {
+ /*   0*/          if (baseType.isInterface()) {
+-/*   0*/            newType = baseType.refine(subclass, TypeBindings.emptyBindings(), null, new JavaType[] { baseType });
++/*   0*/            new JavaType[1][0] = baseType;
++/*   0*/            new JavaType[1];
++/*   0*/            TypeBindings.emptyBindings();
++/*   0*/            newType = null;
+ /*   0*/          } else {
+ /*   0*/            newType = baseType.refine(subclass, TypeBindings.emptyBindings(), baseType, NO_TYPES);
+ /*   0*/          } 

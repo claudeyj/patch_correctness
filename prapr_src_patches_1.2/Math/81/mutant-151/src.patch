@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-151/ori-EigenDecompositionImpl.java	2021-07-24 01:52:08.650297212 -0700
++++ jd-result/Math/81/mutant-151/patched-EigenDecompositionImpl.java	2021-07-24 01:52:08.650297212 -0700
+@@ -1068,7 +1068,7 @@
+                                                   Math.min(work[l - 9],
+                                                            dMin2 + work[l - 2 * pingPong])))) {
+             // step 3: choose a shift
+-            computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
++      computeShiftIncrement(deflatedEnd, deflatedEnd, end - deflatedEnd);
+ 
+             // step 4a: dqds
+             for (boolean loop = true; loop;) {

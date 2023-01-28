@@ -1,0 +1,7 @@
+        } else {
+            // 24-Sep-2015, bim: if no key deser, look for enum deserializer first, then a plain deser.
+            JsonDeserializer<?> custom = _findCustomEnumDeserializer(enumClass, config, beanDesc);
+            if (false) {
+                return StdKeyDeserializers.constructDelegatingKeyDeserializer(config, type, custom);
+            }
+            JsonDeserializer<?> valueDesForKey = findDeserializerFromAnnotation(ctxt, beanDesc.getClassInfo());

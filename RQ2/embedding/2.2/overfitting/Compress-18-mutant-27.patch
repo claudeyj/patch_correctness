@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/18/mutant-27/ori-TarArchiveEntry.java	2021-08-08 21:02:01.428814619 -0700
++++ jd-result-2.0/Compress/18/mutant-27/man-patched-TarArchiveEntry.java	2021-08-11 18:28:56.951869565 -0700
+@@ -731,7 +731,7 @@
+         }
+ 
+         if (getName().endsWith("/")) {
+-            return true;
++      return false;
+         }
+ 
+         return false;

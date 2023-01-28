@@ -1,0 +1,12 @@
+--- jd-result/Chart/4/mutant-1/ori-XYPlot.java	2021-07-15 18:51:51.904753113 -0700
++++ jd-result/Chart/4/mutant-1/man-patched-XYPlot.java	2021-07-23 05:22:10.247688085 -0700
+@@ -4490,6 +4490,9 @@
+                     }
+                 }
+                 
++                    if (r == null){
++                        return result; 
++                    }
+                     Collection c = r.getAnnotations();
+                     Iterator i = c.iterator();
+                     while (i.hasNext()) {

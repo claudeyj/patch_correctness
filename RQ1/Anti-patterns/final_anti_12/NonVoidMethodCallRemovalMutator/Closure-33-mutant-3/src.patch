@@ -1,0 +1,11 @@
+--- jd-result/Closure/33/mutant-3/ori-PrototypeObjectType.java	2021-07-15 18:51:53.688753163 -0700
++++ jd-result/Closure/33/mutant-3/fixed-patched-PrototypeObjectType.java	2021-07-21 21:11:44.814741619 -0700
+@@ -567,7 +567,7 @@
+     if (constraintObj.isRecordType()) {
+       for (String prop : constraintObj.getOwnPropertyNames()) {
+         JSType propType = constraintObj.getPropertyType(prop);
+-        if (!isPropertyTypeDeclared(prop)) {
++        if (!this.nativeType) {
+           JSType typeToInfer = propType;
+           if (!hasProperty(prop)) {
+             typeToInfer = getNativeType(JSTypeNative.VOID_TYPE)

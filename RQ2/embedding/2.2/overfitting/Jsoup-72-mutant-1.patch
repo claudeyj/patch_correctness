@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/72/mutant-1/ori-CharacterReader.java	2021-08-08 21:02:02.992814664 -0700
++++ jd-result-2.0/Jsoup/72/mutant-1/patched-CharacterReader.java	2021-08-09 06:25:54.893769333 -0700
+@@ -55,7 +55,7 @@
+             reader.reset();
+             bufPos = 0;
+             bufMark = 0;
+-            bufSplitPoint = bufLength > readAheadLimit ? readAheadLimit : bufLength;
++      this.bufSplitPoint = (this.bufLength <= 24576) ? 24576 : this.bufLength;
+         } catch (IOException e) {
+             throw new UncheckedIOException(e);
+         }

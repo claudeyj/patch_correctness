@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/11/mutant-0/buggy-ZoneInfoCompiler.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/11/mutant-0/patched-ZoneInfoCompiler.java
+--- Time11b/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java
++++ Time11b_Time-11-src.patchb/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java
+@@ -65,10 +65,11 @@
+ 
+     static Chronology cLenientISO;
+ 
+-    static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>();
+-    static {
+-        cVerbose.set(Boolean.FALSE);
++    static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
++        protected Boolean initialValue() {
++            return Boolean.FALSE;
+     }
++    };
+ 
+     /**
+      * Gets a flag indicating that verbose logging is required.

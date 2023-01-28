@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/27/mutant-5/ori-NumberUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/27/mutant-5/man-patched-NumberUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/27/mutant-5/ori-NumberUtils.java	2021-08-23 09:23:48.816989462 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/27/mutant-5/man-patched-NumberUtils.java	2021-08-30 00:27:40.607000000 +0800
+@@ -485,7 +485,7 @@
+             }
+             mant = str.substring(0, decPos);
+         } else {
+-            if (expPos > -1) {
++      if (false) {
+                 mant = str.substring(0, expPos);
+             } else {
+                 mant = str;

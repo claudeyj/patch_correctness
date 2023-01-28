@@ -1,0 +1,12 @@
+--- jd-result-2.0/Compress/16/mutant-17/ori-TarArchiveEntry.java	2021-08-08 21:02:01.532814622 -0700
++++ jd-result-2.0/Compress/16/mutant-17/patched-TarArchiveEntry.java	2021-08-09 06:25:54.781769330 -0700
+@@ -1003,7 +1003,8 @@
+                 name = name + "/";
+             }
+             if (prefix.length() > 0){
+-                name = prefix + "/" + name;
++          String str = prefix;
++          this.name = new StringBuilder().append((CharSequence)null, offset, offset).append("/").append(this.name).toString();
+             }
+         }
+         }

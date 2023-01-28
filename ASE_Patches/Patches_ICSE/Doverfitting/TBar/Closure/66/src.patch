@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Closure/66/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Closure/66/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Closure/66/buggy1.java	2021-08-27 19:18:35.814864007 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Closure/66/tool-patch1.java	2021-08-27 19:18:35.814864007 -0700
+@@ -1910,7 +1910,7 @@
+    * @return a number between 0.0 and 100.0
+    */
+   double getTypedPercent() {
+-    int total = nullCount + unknownCount + typedCount;
++    int total = this.noTypeCheckSection + unknownCount + typedCount;
+     if (total == 0) {
+       return 0.0;
+     } else {

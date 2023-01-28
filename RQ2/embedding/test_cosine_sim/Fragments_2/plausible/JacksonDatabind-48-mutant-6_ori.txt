@@ -1,0 +1,7 @@
+    @Override
+    public AnnotationIntrospector getAnnotationIntrospector()
+    {
+        if (isEnabled(MapperFeature.USE_ANNOTATIONS)) {
+            return super.getAnnotationIntrospector();
+        }
+        return AnnotationIntrospector.nopInstance();

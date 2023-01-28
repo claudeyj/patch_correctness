@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/7/mutant-0/buggy-TimePeriodValues.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/7/mutant-0/patched-TimePeriodValues.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/7/mutant-0/buggy-TimePeriodValues.java	2021-08-22 00:18:38.574190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/7/mutant-0/patched-TimePeriodValues.java	2021-08-22 00:18:38.574190183 -0700
+@@ -297,9 +297,9 @@
+         }
+         
+         if (this.maxMiddleIndex >= 0) {
+-            long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
++            long s = getDataItem(this.maxMiddleIndex).getPeriod().getStart()
+                 .getTime();
+-            long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
++            long e = getDataItem(this.maxMiddleIndex).getPeriod().getEnd()
+                 .getTime();
+             long maxMiddle = s + (e - s) / 2;
+             if (middle > maxMiddle) {

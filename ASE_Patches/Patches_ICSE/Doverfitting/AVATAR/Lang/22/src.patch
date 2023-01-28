@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Lang/22/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Lang/22/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Lang/22/buggy1.java	2021-09-08 07:11:31.217222350 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Lang/22/tool-patch1.java	2021-09-08 07:11:31.217222350 -0700
+@@ -581,7 +581,7 @@
+     private static int greatestCommonDivisor(int u, int v) {
+         // From Commons Math:
+         //if either operand is abs 1, return 1:
+-        if (Math.abs(u) <= 1 || Math.abs(v) <= 1) {
++        if (Math.abs(v) <= 1) {
+             return 1;
+         }
+         // keep u and v negative, as negative integers range down to

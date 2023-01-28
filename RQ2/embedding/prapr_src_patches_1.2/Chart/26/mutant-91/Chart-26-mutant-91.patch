@@ -1,0 +1,13 @@
+--- jd-result/Chart/26/mutant-91/a-Axis.java	2021-07-14 18:39:59.718294979 -0700
++++ jd-result/Chart/26/mutant-91/b-Axis.java	2021-07-14 18:40:01.226295021 -0700
+@@ -150,7 +150,9 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public String getLabel() {
+-/* 342*/    return this.label;
++/* 342*/    if (this.label == null)
++/* 342*/      throw new RuntimeException(); 
++/* 342*/    return null;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void setLabel(String label) {

@@ -1,0 +1,15 @@
+--- jd-result/Chart/25/mutant-246/a-DatasetUtilities.java	2021-07-14 20:14:24.098454816 -0700
++++ jd-result/Chart/25/mutant-246/b-DatasetUtilities.java	2021-07-14 20:14:25.554454858 -0700
+@@ -215,8 +215,10 @@
+ /* 571*/      return true; 
+ /* 574*/    for (int r = 0; r < rowCount; r++) {
+ /* 575*/      for (int c = 0; c < columnCount; c++) {
+-/* 576*/        if (dataset.getValue(r, c) != null)
+-/* 577*/          return false; 
++/* 576*/        if (dataset.getValue(r, c) != null) {
++/* 577*/          false;
++/* 577*/          return true;
++/*   0*/        } 
+ /*   0*/      } 
+ /*   0*/    } 
+ /* 583*/    return true;

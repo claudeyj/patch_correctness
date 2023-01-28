@@ -1,0 +1,7 @@
+        }
+        StatisticalCategoryDataset statData = (StatisticalCategoryDataset) data;
+
+        PlotOrientation orientation = plot.getOrientation();
+        if (orientation == PlotOrientation.HORIZONTAL) {
+            drawHorizontalItem(g2, state, dataArea, plot, domainAxis, 
+                    rangeAxis, statData, row, column);

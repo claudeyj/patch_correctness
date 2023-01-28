@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Closure/19/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Closure/19/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Closure/19/buggy1.java	2021-08-27 19:18:38.978864096 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Closure/19/tool-patch1.java	2021-08-27 19:18:38.978864096 -0700
+@@ -208,7 +208,7 @@
+     if (condition.isCall() && condition.getChildCount() == 2) {
+       Node callee = condition.getFirstChild();
+       Node param = condition.getLastChild();
+-      if (callee.isGetProp() && param.isQualifiedName()) {
++      if (param.isName()||param.isGetProp()) {
+         JSType paramType =  getTypeIfRefinable(param, blindScope);
+         Node left = callee.getFirstChild();
+         Node right = callee.getLastChild();

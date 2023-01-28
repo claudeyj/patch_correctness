@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/20/mutant-0/buggy-ValueMarker.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/20/mutant-0/patched-ValueMarker.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/20/mutant-0/buggy-ValueMarker.java	2021-08-22 00:18:38.566190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/20/mutant-0/patched-ValueMarker.java	2021-08-22 00:18:38.566190183 -0700
+@@ -92,7 +92,7 @@
+      */
+     public ValueMarker(double value, Paint paint, Stroke stroke, 
+                        Paint outlinePaint, Stroke outlineStroke, float alpha) {
+-        super(paint, stroke, paint, stroke, alpha);
++        super(paint, stroke, outlinePaint, outlineStroke, alpha);
+         this.value = value;
+     }
+     

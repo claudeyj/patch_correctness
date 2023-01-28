@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Lang/13/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Lang/13/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Lang/13/buggy1.java	2021-08-27 19:18:39.406864108 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Lang/13/tool-patch1.java	2021-08-27 19:18:39.406864108 -0700
+@@ -96,7 +96,7 @@
+             return readObject;
+ 
+         } catch (ClassNotFoundException ex) {
+-            throw new SerializationException("ClassNotFoundException while reading cloned object data", ex);
++            return object;
+         } catch (IOException ex) {
+             throw new SerializationException("IOException while reading cloned object data", ex);
+         } finally {

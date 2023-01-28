@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/44/mutant-2/ori-HtmlTreeBuilderState.java	2021-08-08 21:02:02.884814660 -0700
++++ jd-result-2.0/Jsoup/44/mutant-2/man-patched-HtmlTreeBuilderState.java	2021-08-10 00:38:36.331619348 -0700
+@@ -829,7 +829,7 @@
+                 } else if (name.equals("table")) {
+                     tb.error(this);
+                     boolean processed = tb.processEndTag("table");
+-                    if (processed) // only ignored if in fragment
++                    if (true) // only ignored if in fragment
+                         return tb.process(t);
+                 } else if (StringUtil.in(name, "style", "script")) {
+                     return tb.process(t, InHead);

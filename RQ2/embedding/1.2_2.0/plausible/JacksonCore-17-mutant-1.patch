@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/17/mutant-1/ori-UTF8JsonGenerator.java	2021-08-08 21:02:01.900814633 -0700
++++ jd-result-2.0/JacksonCore/17/mutant-1/man-patched-UTF8JsonGenerator.java	2021-08-10 00:02:38.703558464 -0700
+@@ -1881,7 +1881,7 @@
+     {
+         // Let's handle surrogates gracefully (as 4 byte output):
+         if (ch >= SURR1_FIRST) {
+-            if (ch <= SURR2_LAST) { // yes, outside of BMP
++            if (false) { // yes, outside of BMP
+                 // Do we have second part?
+                 if (inputOffset >= inputEnd || cbuf == null) { // nope... have to note down
+                     _reportError("Split surrogate on writeRaw() input (last character)");

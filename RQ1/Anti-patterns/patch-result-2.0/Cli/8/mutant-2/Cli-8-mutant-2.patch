@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/8/mutant-2/a-HelpFormatter.java	2021-08-09 04:42:53.965594920 -0700
++++ jd-result-2.0/Cli/8/mutant-2/b-HelpFormatter.java	2021-08-09 04:42:55.421594961 -0700
+@@ -287,7 +287,7 @@
+ /* 807*/    String padding = createPadding(nextLineTabStop);
+ /*   0*/    while (true) {
+ /* 811*/      text = padding + text.substring(pos).trim();
+-/* 812*/      pos = findWrapPos(text, width, nextLineTabStop);
++/* 812*/      pos = findWrapPos(text, width, DEFAULT_LEFT_PAD);
+ /* 814*/      if (pos == -1) {
+ /* 816*/        sb.append(text);
+ /* 818*/        return sb;

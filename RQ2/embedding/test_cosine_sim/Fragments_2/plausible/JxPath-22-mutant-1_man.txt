@@ -1,0 +1,10 @@
+                if (aNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Attr attr = ((Element) aNode).getAttributeNode(qname);
+                    if (attr != null) {
+                        if (attr.getValue() == null) {
+                            throw new RuntimeException(); 
+                        }
+                    return null;
+                    }
+                }
+                aNode = aNode.getParentNode();

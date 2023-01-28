@@ -1,0 +1,23 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/60/mutant-0/buggy-NodeUtil.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/60/mutant-0/patched-NodeUtil.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/60/mutant-0/buggy-NodeUtil.java	2021-08-22 00:18:38.614190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/60/mutant-0/patched-NodeUtil.java	2021-08-22 00:18:38.614190184 -0700
+@@ -105,6 +105,8 @@
+         // ignoring side-effects
+         return TernaryValue.TRUE;
+ 
++      case Token.VOID:
++        return TernaryValue.FALSE;
+ 
+       default:
+         return getPureBooleanValue(n);
+@@ -133,7 +135,10 @@
+         return TernaryValue.FALSE;
+ 
+       case Token.VOID:
++        if (!mayHaveSideEffects(n.getFirstChild())) {
+           return TernaryValue.FALSE;
++        }
++        break;
+ 
+       case Token.NAME:
+         String name = n.getString();

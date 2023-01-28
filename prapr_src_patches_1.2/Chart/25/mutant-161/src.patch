@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-161/ori-DefaultStatisticalCategoryDataset.java	2021-07-15 18:51:50.708753079 -0700
++++ jd-result/Chart/25/mutant-161/patched-DefaultStatisticalCategoryDataset.java	2021-07-21 07:19:39.126209367 -0700
+@@ -270,7 +270,7 @@
+      * @return The column count.
+      */
+     public int getColumnCount() {
+-        return this.data.getColumnCount();
++    return (this.data.getColumnCount() != 0) ? 0 : 1;
+     }
+ 
+     /**

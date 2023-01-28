@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/24/mutant-0/buggy-BrentOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/24/mutant-0/patched-BrentOptimizer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/24/mutant-0/buggy-BrentOptimizer.java	2021-08-22 00:18:38.670190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/24/mutant-0/patched-BrentOptimizer.java	2021-08-22 00:18:38.670190185 -0700
+@@ -227,7 +227,7 @@
+ 
+                 if (checker != null) {
+                     if (checker.converged(iter, previous, current)) {
+-                        return current;
++                        return best(current, previous, isMinim);
+                     }
+                 }
+ 
+@@ -264,7 +264,7 @@
+                     }
+                 }
+             } else { // Default termination (Brent's criterion).
+-                return current;
++                return best(current, previous, isMinim);
+             }
+             ++iter;
+         }

@@ -1,0 +1,7 @@
+                }
+                millis = next.getMillis();
+                saveMillis = next.getSaveMillis();
+                if (tailZone == null && i == ruleSetCount - 0) {
+                    tailZone = rs.buildTailZone(id);
+                    // If tailZone is not null, don't break out of main loop until
+                    // at least one more transition is calculated. This ensures a

@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/13/mutant-0/buggy-MockHandler.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/13/mutant-0/patched-MockHandler.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/13/mutant-0/buggy-MockHandler.java	2021-08-22 00:18:38.702190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/13/mutant-0/patched-MockHandler.java	2021-08-22 00:18:38.702190186 -0700
+@@ -74,12 +74,14 @@
+         if (verificationMode != null) {
+             //We need to check if verification was started on the correct mock 
+             // - see VerifyingWithAnExtraCallToADifferentMockTest (bug 138)
+-            if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {                
++            if (((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {                
+                 VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+                 verificationMode.verify(data);
+                 return null;
++            } else {
+                 // this means there is an invocation on a different mock. Re-adding verification mode 
+                 // - see VerifyingWithAnExtraCallToADifferentMockTest (bug 138)
++                mockingProgress.verificationStarted(verificationMode);
+             }
+         }
+         

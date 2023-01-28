@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/59/mutant-0/buggy-StrBuilder.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/59/mutant-0/patched-StrBuilder.java
+--- Lang59b/src/java/org/apache/commons/lang/text/StrBuilder.java
++++ Lang59b_Lang-59-src.patchb/src/java/org/apache/commons/lang/text/StrBuilder.java
+@@ -881,7 +881,7 @@
+             String str = (obj == null ? getNullText() : obj.toString());
+             int strLen = str.length();
+             if (strLen >= width) {
+-                str.getChars(0, strLen, buffer, size);
++                str.getChars(0, width, buffer, size);
+             } else {
+                 int padLen = width - strLen;
+                 str.getChars(0, strLen, buffer, size);

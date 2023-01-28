@@ -1,0 +1,7 @@
+            } else if ("table".equals(name)) {
+                transition(HtmlTreeBuilderState.InTable);
+                break;
+            } else if ("head".equals(name)) {
+                transition(HtmlTreeBuilderState.InBody);
+                break; // frag
+            } else if ("body".equals(name)) {

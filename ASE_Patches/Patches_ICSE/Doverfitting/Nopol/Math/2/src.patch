@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/2/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/2/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/2/buggy1.java	2021-08-27 19:18:33.786863949 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/2/tool-patch1.java	2021-08-27 19:18:33.786863949 -0700
+@@ -134,10 +134,12 @@
+             }
+             k = 1.0 / k;
+             tmp = mu + k * sigma;
++            if (sigma == lower) {
+             if (tmp < upper) {
+                 upper = ((int) Math.ceil(tmp)) - 1;
+             }
+         }
++        }
+ 
+         return solveInverseCumulativeProbability(p, lower, upper);
+     }

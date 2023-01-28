@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/4/mutant-0/buggy-SubLine.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/4/mutant-0/patched-SubLine.java
+--- Math4b/src/main/java/org/apache/commons/math3/geometry/euclidean/twod/SubLine.java
++++ Math4b_Math-4-src.patchb/src/main/java/org/apache/commons/math3/geometry/euclidean/twod/SubLine.java
+@@ -115,6 +115,9 @@
+ 
+         // compute the intersection on infinite line
+         Vector2D v2D = line1.intersection(line2);
++        if (v2D == null) {
++            return null;
++        }
+ 
+         // check location of point with respect to first sub-line
+         Location loc1 = getRemainingRegion().checkPoint(line1.toSubSpace(v2D));

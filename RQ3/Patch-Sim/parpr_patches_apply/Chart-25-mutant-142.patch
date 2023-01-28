@@ -1,0 +1,12 @@
+--- Chart25b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
++++ Chart25_Chart-25-mutant-142.patchb/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2017-05-03 11:40:51.000000000 +0800
+@@ -1184,7 +1184,8 @@
+ 
+         // draw the title and subtitles...
+         Rectangle2D nonTitleArea = new Rectangle2D.Double();
+-        nonTitleArea.setRect(chartArea);
++    Rectangle2D rectangle2D1 = chartArea;
++    nonTitleArea.setRect(0.0D, 0.0D, 0.0D, 0.0D);
+         this.padding.trim(nonTitleArea);
+         
+         EntityCollection entities = null;

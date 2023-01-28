@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SketchFix/Chart/9/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SketchFix/Chart/9/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SketchFix/Chart/9/1/buggy1.java	2021-08-27 19:18:44.390864249 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Dcorrect/SketchFix/Chart/9/1/tool-patch1.java	2021-08-27 19:18:44.390864249 -0700
+@@ -941,7 +941,7 @@
+             endIndex = -(endIndex + 1); // this is first item AFTER end period
+             endIndex = endIndex - 1;    // so this is last item BEFORE end
+         }
+-        if (endIndex < 0) {
++        if (endIndex < 0 || (endIndex < startIndex)) {
+             emptyRange = true;
+         }
+         if (emptyRange) {

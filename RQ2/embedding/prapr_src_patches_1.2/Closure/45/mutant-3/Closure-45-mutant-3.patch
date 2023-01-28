@@ -1,0 +1,12 @@
+--- jd-result/Closure/45/mutant-3/a-RemoveUnusedVars.java	2021-07-14 21:42:51.826604590 -0700
++++ jd-result/Closure/45/mutant-3/b-RemoveUnusedVars.java	2021-07-14 21:42:53.246604630 -0700
+@@ -136,7 +136,8 @@
+ /* 271*/            markReferencedVar(scope.getVar(a.getString())); 
+ /*   0*/        } 
+ /* 277*/        if (var != null) {
+-/* 281*/          if (isRemovableVar(var)) {
++/* 281*/          this;
++/* 281*/          if (this.removeGlobals) {
+ /* 282*/            if (!this.assignsByNode.containsKey(n))
+ /* 283*/              markReferencedVar(var); 
+ /*   0*/            break;

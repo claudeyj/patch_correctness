@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/3/mutant-1/ori-TimeSeries.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/3/mutant-1/patched-TimeSeries.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/3/mutant-1/ori-TimeSeries.java	2021-08-23 09:23:48.500985082 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/3/mutant-1/patched-TimeSeries.java	2021-08-23 09:23:48.500985082 +0800
+@@ -635,7 +635,7 @@
+                                      // don't notify anyone, because that
+                                      // happens next anyway...
+             if (notify) {
+-                fireSeriesChanged();
++        findBoundsByIteration(); 
+             }
+         }
+ 

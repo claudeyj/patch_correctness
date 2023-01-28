@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/10/mutant-4/ori-InfoSetUtil.java	2021-08-08 21:02:03.336814673 -0700
++++ jd-result-2.0/JxPath/10/mutant-4/man-patched-InfoSetUtil.java	2021-08-10 00:36:38.067616011 -0700
+@@ -48,7 +48,7 @@
+         if (object instanceof Boolean) {
+             return ((Boolean) object).booleanValue() ? "true" : "false";
+         }
+-        if (object == null) {
++        if (false) {
+             return "";
+         }
+         if (object instanceof NodePointer) {

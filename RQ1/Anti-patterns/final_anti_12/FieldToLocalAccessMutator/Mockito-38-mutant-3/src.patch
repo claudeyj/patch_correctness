@@ -1,0 +1,11 @@
+--- jd-result/Mockito/38/mutant-3/ori-Equals.java	2021-07-15 18:51:56.396753240 -0700
++++ jd-result/Mockito/38/mutant-3/fixed-patched-Equals.java	2021-07-21 20:54:37.978712643 -0700
+@@ -17,7 +17,7 @@
+     }
+ 
+     public boolean matches(Object actual) {
+-        if (this.wanted == null) {
++    if (actual == null) {
+             return actual == null;
+         }
+         return wanted.equals(actual);

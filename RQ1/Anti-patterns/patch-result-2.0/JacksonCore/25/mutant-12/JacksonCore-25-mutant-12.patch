@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonCore/25/mutant-12/a-CharsToNameCanonicalizer.java	2021-08-09 04:06:55.873534022 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-12/b-CharsToNameCanonicalizer.java	2021-08-09 04:07:01.473534180 -0700
+@@ -80,7 +80,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected static CharsToNameCanonicalizer createRoot(int seed) {
+-/* 300*/    return new CharsToNameCanonicalizer(seed);
++/* 300*/    int i = seed;
++/* 300*/    return new CharsToNameCanonicalizer(null, i, 0, null);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public CharsToNameCanonicalizer makeChild(int flags) {

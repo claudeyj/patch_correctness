@@ -1,0 +1,335 @@
+/*   0*/package com.google.javascript.jscomp;
+/*   0*/
+/*   0*/import com.google.javascript.rhino.IR;
+/*   0*/import com.google.javascript.rhino.Node;
+/*   0*/import com.google.javascript.rhino.jstype.TernaryValue;
+/*   0*/
+/*   0*/class MinimizeExitPoints extends NodeTraversal.AbstractPostOrderCallback implements CompilerPass {
+/*   0*/  AbstractCompiler compiler;
+/*   0*/  
+/*   0*/  MinimizeExitPoints(AbstractCompiler compiler) {
+/*  39*/    this.compiler = compiler;
+/*   0*/  }
+/*   0*/  
+/*   0*/  public void process(Node externs, Node root) {
+/*  44*/    NodeTraversal.traverse(this.compiler, root, this);
+/*   0*/  }
+/*   0*/  
+/*   0*/  public void visit(NodeTraversal t, Node n, Node parent) {
+/*   0*/    Node cond;
+/*  49*/    switch (n.getType()) {
+/*   0*/      case 126:
+/*  51*/        tryMinimizeExits(n.getLastChild(), 116, n.getFirstChild().getString());
+/*   0*/        break;
+/*   0*/      case 113:
+/*   0*/      case 115:
+/*  57*/        tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), 117, null);
+/*   0*/        break;
+/*   0*/      case 114:
+/*  61*/        tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), 117, null);
+/*  63*/        cond = NodeUtil.getConditionExpression(n);
+/*  64*/        if (NodeUtil.getImpureBooleanValue(cond) == TernaryValue.FALSE)
+/*  68*/          tryMinimizeExits(n.getFirstChild(), 116, null); 
+/*   0*/        break;
+/*   0*/      case 105:
+/*  73*/        tryMinimizeExits(n.getLastChild(), 4, null);
+/*   0*/        break;
+/*   0*/    } 
+/*   0*/  }
+/*   0*/  
+/*   0*/  void tryMinimizeExits(Node n, int exitType, String labelName) {
+/*   0*/    // Byte code:
+/*   0*/    //   0: aload_1
+/*   0*/    //   1: iload_2
+/*   0*/    //   2: aload_3
+/*   0*/    //   3: invokestatic matchingExitNode : (Lcom/google/javascript/rhino/Node;ILjava/lang/String;)Z
+/*   0*/    //   6: ifeq -> 25
+/*   0*/    //   9: aload_1
+/*   0*/    //   10: invokevirtual getParent : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   13: aload_1
+/*   0*/    //   14: invokestatic removeChild : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/Node;)V
+/*   0*/    //   17: aload_0
+/*   0*/    //   18: getfield compiler : Lcom/google/javascript/jscomp/AbstractCompiler;
+/*   0*/    //   21: invokevirtual reportCodeChange : ()V
+/*   0*/    //   24: return
+/*   0*/    //   25: aload_1
+/*   0*/    //   26: invokevirtual isIf : ()Z
+/*   0*/    //   29: ifeq -> 70
+/*   0*/    //   32: aload_1
+/*   0*/    //   33: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   36: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   39: astore #4
+/*   0*/    //   41: aload_0
+/*   0*/    //   42: aload #4
+/*   0*/    //   44: iload_2
+/*   0*/    //   45: aload_3
+/*   0*/    //   46: invokevirtual tryMinimizeExits : (Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   49: aload #4
+/*   0*/    //   51: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   54: astore #5
+/*   0*/    //   56: aload #5
+/*   0*/    //   58: ifnull -> 69
+/*   0*/    //   61: aload_0
+/*   0*/    //   62: aload #5
+/*   0*/    //   64: iload_2
+/*   0*/    //   65: aload_3
+/*   0*/    //   66: invokevirtual tryMinimizeExits : (Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   69: return
+/*   0*/    //   70: aload_1
+/*   0*/    //   71: invokevirtual isTry : ()Z
+/*   0*/    //   74: ifeq -> 157
+/*   0*/    //   77: aload_1
+/*   0*/    //   78: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   81: astore #4
+/*   0*/    //   83: aload_0
+/*   0*/    //   84: aload #4
+/*   0*/    //   86: iload_2
+/*   0*/    //   87: aload_3
+/*   0*/    //   88: invokevirtual tryMinimizeExits : (Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   91: aload_1
+/*   0*/    //   92: invokestatic getCatchBlock : (Lcom/google/javascript/rhino/Node;)Lcom/google/javascript/rhino/Node;
+/*   0*/    //   95: astore #5
+/*   0*/    //   97: aload #5
+/*   0*/    //   99: invokestatic hasCatchHandler : (Lcom/google/javascript/rhino/Node;)Z
+/*   0*/    //   102: ifeq -> 135
+/*   0*/    //   105: aload #5
+/*   0*/    //   107: invokevirtual hasOneChild : ()Z
+/*   0*/    //   110: invokestatic checkState : (Z)V
+/*   0*/    //   113: aload #5
+/*   0*/    //   115: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   118: astore #6
+/*   0*/    //   120: aload #6
+/*   0*/    //   122: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   125: astore #7
+/*   0*/    //   127: aload_0
+/*   0*/    //   128: aload #7
+/*   0*/    //   130: iload_2
+/*   0*/    //   131: aload_3
+/*   0*/    //   132: invokevirtual tryMinimizeExits : (Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   135: aload_1
+/*   0*/    //   136: invokestatic hasFinally : (Lcom/google/javascript/rhino/Node;)Z
+/*   0*/    //   139: pop
+/*   0*/    //   140: goto -> 157
+/*   0*/    //   143: aload_1
+/*   0*/    //   144: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   147: astore #6
+/*   0*/    //   149: aload_0
+/*   0*/    //   150: aload #6
+/*   0*/    //   152: iload_2
+/*   0*/    //   153: aload_3
+/*   0*/    //   154: invokevirtual tryMinimizeExits : (Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   157: aload_1
+/*   0*/    //   158: invokevirtual isLabel : ()Z
+/*   0*/    //   161: ifeq -> 178
+/*   0*/    //   164: aload_1
+/*   0*/    //   165: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   168: astore #4
+/*   0*/    //   170: aload_0
+/*   0*/    //   171: aload #4
+/*   0*/    //   173: iload_2
+/*   0*/    //   174: aload_3
+/*   0*/    //   175: invokevirtual tryMinimizeExits : (Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   178: aload_1
+/*   0*/    //   179: invokevirtual isBlock : ()Z
+/*   0*/    //   182: ifeq -> 192
+/*   0*/    //   185: aload_1
+/*   0*/    //   186: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   189: ifnonnull -> 193
+/*   0*/    //   192: return
+/*   0*/    //   193: aload_1
+/*   0*/    //   194: invokevirtual children : ()Ljava/lang/Iterable;
+/*   0*/    //   197: invokeinterface iterator : ()Ljava/util/Iterator;
+/*   0*/    //   202: astore #4
+/*   0*/    //   204: aload #4
+/*   0*/    //   206: invokeinterface hasNext : ()Z
+/*   0*/    //   211: ifeq -> 316
+/*   0*/    //   214: aload #4
+/*   0*/    //   216: invokeinterface next : ()Ljava/lang/Object;
+/*   0*/    //   221: checkcast com/google/javascript/rhino/Node
+/*   0*/    //   224: astore #5
+/*   0*/    //   226: aload #5
+/*   0*/    //   228: invokevirtual isIf : ()Z
+/*   0*/    //   231: ifeq -> 301
+/*   0*/    //   234: aload #5
+/*   0*/    //   236: astore #6
+/*   0*/    //   238: aload #6
+/*   0*/    //   240: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   243: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   246: astore #7
+/*   0*/    //   248: aload #7
+/*   0*/    //   250: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   253: astore #8
+/*   0*/    //   255: aload_0
+/*   0*/    //   256: aload #7
+/*   0*/    //   258: aload #8
+/*   0*/    //   260: aload #6
+/*   0*/    //   262: iload_2
+/*   0*/    //   263: aload_3
+/*   0*/    //   264: invokespecial tryMinimizeIfBlockExits : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   267: aload #6
+/*   0*/    //   269: invokevirtual getFirstChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   272: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   275: astore #7
+/*   0*/    //   277: aload #7
+/*   0*/    //   279: invokevirtual getNext : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   282: astore #8
+/*   0*/    //   284: aload #8
+/*   0*/    //   286: ifnull -> 301
+/*   0*/    //   289: aload_0
+/*   0*/    //   290: aload #8
+/*   0*/    //   292: aload #7
+/*   0*/    //   294: aload #6
+/*   0*/    //   296: iload_2
+/*   0*/    //   297: aload_3
+/*   0*/    //   298: invokespecial tryMinimizeIfBlockExits : (Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/Node;Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   301: aload #5
+/*   0*/    //   303: aload_1
+/*   0*/    //   304: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   307: if_acmpne -> 313
+/*   0*/    //   310: goto -> 316
+/*   0*/    //   313: goto -> 204
+/*   0*/    //   316: aload_1
+/*   0*/    //   317: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   320: astore #4
+/*   0*/    //   322: aload #4
+/*   0*/    //   324: ifnull -> 356
+/*   0*/    //   327: aload_0
+/*   0*/    //   328: aload #4
+/*   0*/    //   330: iload_2
+/*   0*/    //   331: aload_3
+/*   0*/    //   332: invokevirtual tryMinimizeExits : (Lcom/google/javascript/rhino/Node;ILjava/lang/String;)V
+/*   0*/    //   335: aload #4
+/*   0*/    //   337: aload_1
+/*   0*/    //   338: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   341: if_acmpne -> 347
+/*   0*/    //   344: goto -> 356
+/*   0*/    //   347: aload_1
+/*   0*/    //   348: invokevirtual getLastChild : ()Lcom/google/javascript/rhino/Node;
+/*   0*/    //   351: astore #4
+/*   0*/    //   353: goto -> 322
+/*   0*/    //   356: return
+/*   0*/    // Line number table:
+/*   0*/    //   Java source line number -> byte code offset
+/*   0*/    //   #109	-> 0
+/*   0*/    //   #110	-> 9
+/*   0*/    //   #111	-> 17
+/*   0*/    //   #112	-> 24
+/*   0*/    //   #116	-> 25
+/*   0*/    //   #117	-> 32
+/*   0*/    //   #118	-> 41
+/*   0*/    //   #119	-> 49
+/*   0*/    //   #120	-> 56
+/*   0*/    //   #121	-> 61
+/*   0*/    //   #123	-> 69
+/*   0*/    //   #127	-> 70
+/*   0*/    //   #128	-> 77
+/*   0*/    //   #129	-> 83
+/*   0*/    //   #130	-> 91
+/*   0*/    //   #131	-> 97
+/*   0*/    //   #132	-> 105
+/*   0*/    //   #133	-> 113
+/*   0*/    //   #134	-> 120
+/*   0*/    //   #135	-> 127
+/*   0*/    //   #141	-> 135
+/*   0*/    //   #142	-> 143
+/*   0*/    //   #143	-> 149
+/*   0*/    //   #148	-> 157
+/*   0*/    //   #149	-> 164
+/*   0*/    //   #150	-> 170
+/*   0*/    //   #156	-> 178
+/*   0*/    //   #157	-> 192
+/*   0*/    //   #164	-> 193
+/*   0*/    //   #167	-> 226
+/*   0*/    //   #168	-> 234
+/*   0*/    //   #172	-> 238
+/*   0*/    //   #173	-> 248
+/*   0*/    //   #174	-> 255
+/*   0*/    //   #179	-> 267
+/*   0*/    //   #180	-> 277
+/*   0*/    //   #181	-> 284
+/*   0*/    //   #182	-> 289
+/*   0*/    //   #187	-> 301
+/*   0*/    //   #188	-> 310
+/*   0*/    //   #190	-> 313
+/*   0*/    //   #194	-> 316
+/*   0*/    //   #195	-> 327
+/*   0*/    //   #197	-> 335
+/*   0*/    //   #198	-> 344
+/*   0*/    //   #194	-> 347
+/*   0*/    //   #201	-> 356
+/*   0*/    // Local variable table:
+/*   0*/    //   start	length	slot	name	descriptor
+/*   0*/    //   41	29	4	ifBlock	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   56	14	5	elseBlock	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   120	15	6	catchNode	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   127	8	7	catchCodeBlock	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   149	8	6	finallyBlock	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   83	74	4	tryBlock	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   97	60	5	allCatchNodes	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   170	8	4	labelBlock	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   238	63	6	ifTree	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   248	53	7	trueBlock	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   255	46	8	falseBlock	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   226	87	5	c	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   204	112	4	i$	Ljava/util/Iterator;
+/*   0*/    //   322	34	4	c	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   0	357	0	this	Lcom/google/javascript/jscomp/MinimizeExitPoints;
+/*   0*/    //   0	357	1	n	Lcom/google/javascript/rhino/Node;
+/*   0*/    //   0	357	2	exitType	I
+/*   0*/    //   0	357	3	labelName	Ljava/lang/String;
+/*   0*/  }
+/*   0*/  
+/*   0*/  private void tryMinimizeIfBlockExits(Node srcBlock, Node destBlock, Node ifNode, int exitType, String labelName) {
+/* 218*/    Node exitNodeParent = null;
+/* 219*/    Node exitNode = null;
+/* 222*/    if (srcBlock.isBlock()) {
+/* 223*/      if (!srcBlock.hasChildren())
+/*   0*/        return; 
+/* 226*/      exitNodeParent = srcBlock;
+/* 227*/      exitNode = exitNodeParent.getLastChild();
+/*   0*/    } else {
+/* 230*/      exitNodeParent = ifNode;
+/* 231*/      exitNode = srcBlock;
+/*   0*/    } 
+/* 235*/    if (!matchingExitNode(exitNode, exitType, labelName))
+/*   0*/      return; 
+/* 240*/    if (ifNode.getNext() != null) {
+/* 243*/      Node newDestBlock = IR.block().srcref(ifNode);
+/* 244*/      if (destBlock == null) {
+/* 246*/        ifNode.addChildToBack(newDestBlock);
+/* 247*/      } else if (destBlock.isEmpty()) {
+/* 249*/        ifNode.replaceChild(destBlock, newDestBlock);
+/* 250*/      } else if (destBlock.isBlock()) {
+/* 252*/        newDestBlock = destBlock;
+/*   0*/      } else {
+/* 255*/        ifNode.replaceChild(destBlock, newDestBlock);
+/* 256*/        newDestBlock.addChildToBack(destBlock);
+/*   0*/      } 
+/* 260*/      moveAllFollowing(ifNode, ifNode.getParent(), newDestBlock);
+/* 261*/      this.compiler.reportCodeChange();
+/*   0*/    } 
+/*   0*/  }
+/*   0*/  
+/*   0*/  private static boolean matchingExitNode(Node n, int type, String labelName) {
+/* 277*/    if (n.getType() == type) {
+/* 278*/      if (type == 4)
+/* 280*/        return !n.hasChildren(); 
+/* 282*/      if (labelName == null)
+/* 283*/        return !n.hasChildren(); 
+/* 285*/      return (n.hasChildren() && labelName.equals(n.getFirstChild().getString()));
+/*   0*/    } 
+/* 290*/    return false;
+/*   0*/  }
+/*   0*/  
+/*   0*/  private static void moveAllFollowing(Node start, Node srcParent, Node destParent) {
+/* 302*/    for (Node n = start.getNext(); n != null; n = start.getNext()) {
+/* 303*/      boolean isFunctionDeclaration = NodeUtil.isFunctionDeclaration(n);
+/* 304*/      srcParent.removeChild(n);
+/* 305*/      if (isFunctionDeclaration) {
+/* 306*/        destParent.addChildToFront(n);
+/*   0*/      } else {
+/* 308*/        destParent.addChildToBack(n);
+/*   0*/      } 
+/*   0*/    } 
+/*   0*/  }
+/*   0*/}

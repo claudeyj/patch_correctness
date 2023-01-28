@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 29 18:12:06 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 14539
+================================================
+1.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 359
+	Rank: 1
+	Total Rank: 55
+	Dump: mutant-6.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 359
+	Rank: 2
+	Total Rank: 64
+	Dump: mutant-4.class
+------------------------------------------------
+3.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local cls is replaced a call cls.getSuperclass()
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 359
+	Rank: 3
+	Total Rank: 66
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local cls is replaced by local prim to be used
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 359
+	Rank: 4
+	Total Rank: 67
+	Dump: mutant-5.class
+------------------------------------------------
+5.
+	Mutator: ReturnValsMutator
+	Description: mutated return of Object value for com/fasterxml/jackson/databind/ser/PropertyBuilder::getDefaultValue to ( if (x != null) null else throw new RuntimeException )
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 360
+	Rank: 5
+	Total Rank: 69
+	Dump: mutant-2.class
+------------------------------------------------
+6.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for com/fasterxml/jackson/databind/ser/PropertyBuilder::getDefaultValue
+	File Name: com/fasterxml/jackson/databind/ser/PropertyBuilder.java
+	Line Number: 360
+	Rank: 6
+	Total Rank: 70
+	Dump: mutant-3.class
+------------------------------------------------

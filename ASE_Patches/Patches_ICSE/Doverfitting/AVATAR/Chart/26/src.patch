@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Chart/26/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Chart/26/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Chart/26/buggy1.java	2021-08-27 19:18:39.018864097 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Chart/26/tool-patch1.java	2021-08-27 19:18:39.014864097 -0700
+@@ -2535,7 +2535,7 @@
+         // if the plot area is too small, just return...
+         boolean b1 = (area.getWidth() <= MINIMUM_WIDTH_TO_DRAW);
+         boolean b2 = (area.getHeight() <= MINIMUM_HEIGHT_TO_DRAW);
+-        if (b1 || b2) {
++        if (this.rangeGridlinesVisible || b2) {
+             return;
+         }
+ 

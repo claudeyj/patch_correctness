@@ -1,0 +1,13 @@
+--- jd-result/Closure/107/mutant-2/a-CommandLineRunner.java	2021-07-14 21:48:00.158613291 -0700
++++ jd-result/Closure/107/mutant-2/b-CommandLineRunner.java	2021-07-14 21:48:01.650613333 -0700
+@@ -479,7 +479,9 @@
+ /* 850*/        throw new RuntimeException("Reading XTB file", e);
+ /*   0*/      } 
+ /* 852*/    } else if (CompilationLevel.ADVANCED_OPTIMIZATIONS == level) {
+-/* 861*/      options.messageBundle = new EmptyMessageBundle();
++/* 861*/      new EmptyMessageBundle();
++/* 861*/      new EmptyMessageBundle();
++/* 861*/      options.messageBundle = null;
+ /*   0*/    } 
+ /* 864*/    return options;
+ /*   0*/  }

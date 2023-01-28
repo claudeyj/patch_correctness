@@ -1,0 +1,23 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/16/mutant-0/buggy-DefaultIntervalCategoryDataset.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/16/mutant-0/patched-DefaultIntervalCategoryDataset.java
+--- Chart16b/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java
++++ Chart16b_Chart-16-src.patchb/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java
+@@ -204,8 +204,8 @@
+ 
+             }
+             else {
+-                this.seriesKeys = null;
+-                this.categoryKeys = null;
++                this.seriesKeys = new Comparable[0];
++                this.categoryKeys = new Comparable[0];
+             }
+         }
+ 
+@@ -335,7 +335,7 @@
+         if (categoryKeys == null) {
+             throw new IllegalArgumentException("Null 'categoryKeys' argument.");
+         }
+-        if (categoryKeys.length != this.startData[0].length) {
++        if (categoryKeys.length != getCategoryCount()) {
+             throw new IllegalArgumentException(
+                     "The number of categories does not match the data.");
+         }

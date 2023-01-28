@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-129/a-CategoryPlot.java	2021-07-14 20:10:50.142448779 -0700
++++ jd-result/Chart/25/mutant-129/b-CategoryPlot.java	2021-07-14 20:10:51.734448824 -0700
+@@ -1305,7 +1305,7 @@
+ /*2864*/        if (this.columnRenderingOrder == SortOrder.ASCENDING) {
+ /*2865*/          for (int column = 0; column < columnCount; column++) {
+ /*2866*/            if (this.rowRenderingOrder == SortOrder.ASCENDING) {
+-/*2867*/              for (int row = 0; row < rowCount; row++)
++/*2867*/              for (int row = 1; row < rowCount; row++)
+ /*2868*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+ /*   0*/            } else {
+ /*2874*/              for (int row = rowCount - 1; row >= 0; row--)

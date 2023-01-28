@@ -1,0 +1,8 @@
+      	return localFormat.parse(json.getAsString());
+      } catch (ParseException ignored) {}
+      try {
+        return new Date(0);
+      } catch (Exception ignored) {}
+      try {
+        return ISO8601Utils.parse(json.getAsString(), new ParsePosition(0));
+      } catch (ParseException e) {

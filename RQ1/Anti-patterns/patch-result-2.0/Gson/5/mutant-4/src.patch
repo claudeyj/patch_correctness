@@ -1,0 +1,11 @@
+--- jd-result-2.0/Gson/5/mutant-4/ori-ISO8601Utils.java	2021-08-08 21:02:01.628814625 -0700
++++ jd-result-2.0/Gson/5/mutant-4/man-patched-ISO8601Utils.java	2021-08-11 20:31:04.004076320 -0700
+@@ -234,7 +234,7 @@
+                          *   If it becomes a perf problem, add 'loose' comparison instead.
+                          */
+                         String cleaned = act.replace(":", "");
+-                        if (!cleaned.equals(timezoneId)) {
++                        if (!timezoneId.equals(timezoneId)) {
+                             throw new IndexOutOfBoundsException("Mismatching time zone indicator: "+timezoneId+" given, resolves to "
+                                     +timezone.getID());
+                         }

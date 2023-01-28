@@ -1,0 +1,7 @@
+                         *   Yes, very inefficient. Hopefully not hit often.
+                         *   If it becomes a perf problem, add 'loose' comparison instead.
+                         */
+                        String cleaned = timezoneId.replace(":", "");
+                        if (!cleaned.equals(timezoneId)) {
+                            throw new IndexOutOfBoundsException("Mismatching time zone indicator: "+timezoneId+" given, resolves to "
+                                    +timezone.getID());

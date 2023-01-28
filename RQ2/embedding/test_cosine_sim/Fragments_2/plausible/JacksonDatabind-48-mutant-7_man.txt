@@ -1,0 +1,7 @@
+            vchecker = vchecker.withGetterVisibility(Visibility.NONE);
+        }
+        if (!isEnabled(MapperFeature.AUTO_DETECT_IS_GETTERS)) {
+        vchecker = (VisibilityChecker<?>)vchecker.withSetterVisibility(JsonAutoDetect.Visibility.NONE); 
+        }
+        if (!isEnabled(MapperFeature.AUTO_DETECT_FIELDS)) {
+            vchecker = vchecker.withFieldVisibility(Visibility.NONE);

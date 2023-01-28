@@ -1,0 +1,14 @@
+--- jd-result/Chart/13/mutant-3/a-BorderArrangement.java	2021-07-14 17:03:18.054131267 -0700
++++ jd-result/Chart/13/mutant-3/b-BorderArrangement.java	2021-07-14 17:03:19.510131308 -0700
+@@ -235,11 +235,6 @@
+ /* 441*/      h[1] = size.height;
+ /*   0*/    } 
+ /* 443*/    h[2] = constraint.getHeight() - h[1] - h[0];
+-/* 444*/    if (this.leftBlock != null) {
+-/* 445*/      RectangleConstraint c3 = new RectangleConstraint(0.0D, new Range(0.0D, constraint.getWidth()), LengthConstraintType.RANGE, h[2], null, LengthConstraintType.FIXED);
+-/* 449*/      Size2D size = this.leftBlock.arrange(g2, c3);
+-/* 450*/      w[2] = size.width;
+-/*   0*/    } 
+ /* 452*/    h[3] = h[2];
+ /* 453*/    if (this.rightBlock != null) {
+ /* 454*/      RectangleConstraint c4 = new RectangleConstraint(0.0D, new Range(0.0D, constraint.getWidth() - w[2]), LengthConstraintType.RANGE, h[2], null, LengthConstraintType.FIXED);

@@ -1,0 +1,12 @@
+--- jd-result/Math/50/mutant-37/a-BaseSecantSolver.java	2021-07-14 09:12:00.101333319 -0700
++++ jd-result/Math/50/mutant-37/b-BaseSecantSolver.java	2021-07-14 09:12:01.501333359 -0700
+@@ -75,7 +75,8 @@
+ /*   0*/            break;
+ /*   0*/          case REGULA_FALSI:
+ /* 187*/            if (x == x1) {
+-/* 188*/              x0 = 0.5D * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
++/* 188*/              rtol * FastMath.abs(x1);
++/* 188*/              x0 = 0.5D * (x0 + x1 - 0.0D);
+ /* 189*/              f0 = computeObjectiveValue(x0);
+ /*   0*/            } 
+ /*   0*/            break;

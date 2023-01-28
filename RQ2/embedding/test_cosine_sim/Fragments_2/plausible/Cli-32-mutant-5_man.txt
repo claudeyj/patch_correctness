@@ -1,0 +1,7 @@
+        
+        // if we didn't find one, simply chop at startPos+width
+        pos = startPos + width;
+        while ((pos > text.length()) && ((c = text.charAt(pos)) != ' ')
+               && (c != '\n') && (c != '\r'))
+        {
+            ++pos;

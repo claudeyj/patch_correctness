@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/37/mutant-1/ori-SimpleType.java	2021-08-08 21:02:02.536814651 -0700
++++ jd-result-2.0/JacksonDatabind/37/mutant-1/man-patched-SimpleType.java	2021-08-13 01:37:29.623033164 -0700
+@@ -132,7 +132,7 @@
+         }
+         */
+         // 15-Jan-2015, tatu: Not correct; should really re-resolve...
+-        return new SimpleType(subclass, _bindings, _superClass, _superInterfaces,
++        return new SimpleType(subclass, _bindings, withStaticTyping(), _superInterfaces,
+                 _valueHandler, _typeHandler, _asStatic);
+     }
+     

@@ -1,0 +1,38 @@
+--- jd-result/Mockito/5/mutant-2/ori-IOUtil.java	2021-07-15 18:51:56.288753237 -0700
++++ jd-result/Mockito/5/mutant-2/man-patched-IOUtil.java	2021-07-30 20:43:15.706840514 -0700
+@@ -20,7 +20,7 @@
+         try {
+             pw = new PrintWriter(new FileWriter(output));
+             pw.write(text);
+-        } catch (Exception e) {
++        } catch (Throwable e) {
+             throw new MockitoException("Problems writing text to file: " + output, e);
+         } finally {
+             close(pw);
+@@ -35,7 +35,7 @@
+             while((line = r.readLine()) != null) {
+                 out.add(line);
+             }
+-        } catch (IOException e) {
++        } catch (Exception e) {
+             throw new MockitoException("Problems reading from: " + is, e);
+         }
+         return out;
+@@ -49,7 +49,7 @@
+     public static void closeQuietly(Closeable closeable) {
+         try {
+             close(closeable);
+-        } catch (MockitoException ignored) {
++        } catch (RuntimeException ignored) {
+             //ignore, for backwards compatibility
+         }
+     }
+@@ -63,7 +63,7 @@
+         if (closeable != null) {
+             try {
+                 closeable.close();
+-            } catch (IOException e) {
++            } catch (Exception e) {
+                 throw new MockitoException("Problems closing stream: " + closeable, e);
+             }
+         }

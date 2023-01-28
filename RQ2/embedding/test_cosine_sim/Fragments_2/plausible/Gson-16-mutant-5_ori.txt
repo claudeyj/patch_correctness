@@ -1,0 +1,7 @@
+      checkArgument(lowerBounds.length <= 1);
+      checkArgument(upperBounds.length == 1);
+
+      if (lowerBounds.length == 1) {
+        checkNotNull(lowerBounds[0]);
+        checkNotPrimitive(lowerBounds[0]);
+        checkArgument(upperBounds[0] == Object.class);

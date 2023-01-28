@@ -1,0 +1,11 @@
+--- jd-result/Time/14/mutant-1/a-MonthDay.java	2021-07-14 21:30:05.190582957 -0700
++++ jd-result/Time/14/mutant-1/b-MonthDay.java	2021-07-14 21:30:06.590582997 -0700
+@@ -159,7 +159,7 @@
+ /* 515*/    if (paramInt == 0)
+ /* 516*/      return this; 
+ /* 518*/    int[] arrayOfInt = getValues();
+-/* 519*/    arrayOfInt = getField(i).add(this, i, arrayOfInt, paramInt);
++/* 519*/    arrayOfInt = getField(i).addWrapPartial(this, i, arrayOfInt, paramInt);
+ /* 520*/    return new MonthDay(this, arrayOfInt);
+ /*   0*/  }
+ /*   0*/  

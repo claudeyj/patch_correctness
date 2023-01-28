@@ -1,0 +1,11 @@
+--- jd-result/Lang/43/mutant-5/a-ExtendedMessageFormat.java	2021-07-14 16:57:32.446121515 -0700
++++ jd-result/Lang/43/mutant-5/b-ExtendedMessageFormat.java	2021-07-14 16:57:34.322121568 -0700
+@@ -70,7 +70,7 @@
+ /*   0*/      String formatDescription;
+ /* 156*/      switch (c[pos.getIndex()]) {
+ /*   0*/        case '\'':
+-/* 158*/          appendQuotedString(pattern, pos, stripCustom, true);
++/* 158*/          appendQuotedString(pattern, pos, stripCustom, false);
+ /*   0*/          continue;
+ /*   0*/        case '{':
+ /* 161*/          fmtCount++;

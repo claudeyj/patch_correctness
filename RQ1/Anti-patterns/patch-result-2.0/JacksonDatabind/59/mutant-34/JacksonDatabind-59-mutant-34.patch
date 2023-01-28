@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-34/a-TypeFactory.java	2021-08-09 04:30:23.273573736 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-34/b-TypeFactory.java	2021-08-09 04:30:24.921573783 -0700
+@@ -230,7 +230,7 @@
+ /* 365*/      if (baseType.getBindings().isEmpty()) {
+ /* 366*/        newType = _fromClass(null, subclass, TypeBindings.emptyBindings());
+ /*   0*/      } else {
+-/* 370*/        if (baseType.isContainerType()) {
++/* 370*/        if (baseType.isPrimitive()) {
+ /* 371*/            if (baseType.isMapLikeType()) {
+ /* 372*/              if (subclass == HashMap.class || subclass == LinkedHashMap.class || subclass == EnumMap.class || subclass == TreeMap.class) {
+ /* 376*/                newType = _fromClass(null, subclass, TypeBindings.create(subclass, baseType.getKeyType(), baseType.getContentType()));

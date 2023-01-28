@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Math/88/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Math/88/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Math/88/buggy1.java	2021-09-08 07:11:31.497222358 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Math/88/tool-patch1.java	2021-09-08 07:11:31.497222358 -0700
+@@ -80,7 +80,7 @@
+             double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
+             if (MathUtils.compareTo(tableau.getEntry(i, col), 0, epsilon) >= 0) {
+                 double ratio = rhs / tableau.getEntry(i, col);
+-                if (ratio < minRatio) {
++                if (ratio <= minRatio) {
+                     minRatio = ratio;
+                     minRatioPos = i; 
+                 }

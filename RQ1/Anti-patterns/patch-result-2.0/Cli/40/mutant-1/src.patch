@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/40/mutant-1/ori-TypeHandler.java	2021-08-08 21:02:01.276814615 -0700
++++ jd-result-2.0/Cli/40/mutant-1/man-patched-TypeHandler.java	2021-08-11 06:49:02.618684568 -0700
+@@ -94,7 +94,7 @@
+         {
+             return (T) createFiles(str);
+         }
+-        else if (PatternOptionBuilder.URL_VALUE == clazz)
++    if (clazz == clazz)
+         {
+             return (T) createURL(str);
+         }

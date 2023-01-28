@@ -1,0 +1,11 @@
+--- jd-result/Closure/66/mutant-2/a-TypeCheck.java	2021-07-14 21:45:21.398608811 -0700
++++ jd-result/Closure/66/mutant-2/b-TypeCheck.java	2021-07-14 21:45:22.870608852 -0700
+@@ -1032,7 +1032,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  double getTypedPercent() {
+-/*1913*/    int total = this.nullCount + this.unknownCount + this.typedCount;
++/*1913*/    int total = this.noTypeCheckSection + this.unknownCount + this.typedCount;
+ /*1914*/    if (total == 0)
+ /*1915*/      return 0.0D; 
+ /*1917*/    return 100.0D * this.typedCount / total;

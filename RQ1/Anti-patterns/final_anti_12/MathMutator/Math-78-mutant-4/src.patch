@@ -1,0 +1,13 @@
+--- jd-result/Math/78/mutant-4/ori-BrentSolver.java	2021-07-24 01:52:06.186297143 -0700
++++ jd-result/Math/78/mutant-4/fixed-patched-BrentSolver.java	2021-07-24 01:52:06.186297143 -0700
+@@ -274,8 +274,8 @@
+                 } else {
+                     p = -p;
+                 }
+-                if (2.0 * p >= 1.5 * dx * p1 - Math.abs(tolerance * p1) ||
+-                        p >= Math.abs(0.5 * oldDelta * p1)) {
++        if (2.0D * p >= 1.5D * dx * p1 - Math.abs(tolerance * p1) || 
++        p >= Math.abs(0.5D * oldDelta / p1)) {
+                     // Inverse quadratic interpolation gives a value
+                     // in the wrong direction, or progress is slow.
+                     // Fall back to bisection.

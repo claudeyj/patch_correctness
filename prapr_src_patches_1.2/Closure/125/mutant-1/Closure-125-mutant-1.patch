@@ -1,0 +1,11 @@
+--- jd-result/Closure/125/mutant-1/a-TypeCheck.java	2021-07-14 21:53:30.906622624 -0700
++++ jd-result/Closure/125/mutant-1/b-TypeCheck.java	2021-07-14 21:53:33.106622686 -0700
+@@ -928,7 +928,7 @@
+ /*1660*/      FunctionType fnType = type.toMaybeFunctionType();
+ /*1661*/      if (fnType != null) {
+ /*1662*/        visitParameterList(t, n, fnType);
+-/*1663*/        ensureTyped(t, n, fnType.getInstanceType());
++/*1663*/        ensureTyped(t, n, (JSType)null);
+ /*   0*/      } else {
+ /*1665*/        ensureTyped(t, n);
+ /*   0*/      } 

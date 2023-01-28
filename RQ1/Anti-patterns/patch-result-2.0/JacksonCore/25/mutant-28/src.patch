@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/25/mutant-28/ori-ReaderBasedJsonParser.java	2021-08-08 21:02:01.756814629 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-28/patched-ReaderBasedJsonParser.java	2021-08-09 06:25:54.833769331 -0700
+@@ -1803,7 +1803,7 @@
+             } while (ptr < inputLen);
+         }
+         int start = _inputPtr-1;
+-        _inputPtr = ptr;
++    this._inputPtr = FEAT_MASK_TRAILING_COMMA;
+         return _handleOddName2(start, hash, codes);
+     }
+ 

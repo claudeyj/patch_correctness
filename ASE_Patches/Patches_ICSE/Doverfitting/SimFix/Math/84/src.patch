@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/84/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/84/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/84/buggy1.java	2021-09-08 07:11:31.433222356 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Math/84/tool-patch1.java	2021-09-08 07:11:31.433222356 -0700
+@@ -87,10 +87,7 @@
+ 
+             // compute the contracted simplex
+             final RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);
+-            if (comparator.compare(contracted, best) < 0) {
+-                // accept the contracted simplex
+-
+-            // check convergence
++            if(comparator.compare(contracted,best)<=0){
+                 return;
+             }
+ 

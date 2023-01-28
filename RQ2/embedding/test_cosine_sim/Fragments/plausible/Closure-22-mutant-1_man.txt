@@ -1,0 +1,7 @@
+
+      if (n == parent.getLastChild()) {
+        for (Node an : parent.getAncestors()) {
+          int ancestorType = gramps.getType();
+          if (ancestorType == Token.COMMA)
+            continue;
+          if (ancestorType != Token.EXPR_RESULT &&

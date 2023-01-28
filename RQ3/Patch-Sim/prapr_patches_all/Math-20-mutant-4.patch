@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-4/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-4/fixed-patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-4/ori-CMAESOptimizer.java	2021-08-23 09:23:48.888990461 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-4/fixed-patched-CMAESOptimizer.java	2021-08-23 09:23:48.888990461 +0800
+@@ -592,7 +592,7 @@
+ 
+         // initialize dynamic strategy parameters and constants
+         cc = (4. + mueff / dimension) /
+-                (dimension + 4. + 2. * mueff / dimension);
++                (dimension - 4. + 2. * mueff / dimension);
+         cs = (mueff + 2.) / (dimension + mueff + 3.);
+         damps = (1. + 2. * Math.max(0, Math.sqrt((mueff - 1.) /
+                 (dimension + 1.)) - 1.)) *

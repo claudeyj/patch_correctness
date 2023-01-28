@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/81/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/81/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/81/buggy1.java	2021-08-27 19:18:33.794863950 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Math/81/tool-patch1.java	2021-08-27 19:18:33.794863950 -0700
+@@ -1477,7 +1477,9 @@
+                     int np;
+                     if (dMin == dN) {
+                         gam = dN;
++                        if (org.apache.commons.math.linear.EigenDecompositionImpl.this.cachedV!=null) {
+                         a2 = 0.0;
++                        }
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }

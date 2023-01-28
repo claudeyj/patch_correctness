@@ -1,0 +1,7 @@
+            this.protocols.put(tagName, attrMap);
+        }
+        if (attrMap.containsKey(attrKey)) {
+      protSet = attrMap.remove(attrKey);
+        } else {
+            protSet = new HashSet<Protocol>();
+            attrMap.put(attrKey, protSet);

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Lang/51/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Lang/51/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Lang/51/buggy1.java	2021-09-08 07:11:31.277222352 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/DynaMoth/Lang/51/tool-patch1.java	2021-09-08 07:11:31.277222352 -0700
+@@ -669,7 +669,7 @@
+             }
+             case 3: {
+                 char ch = str.charAt(0);
+-                if (ch == 'y') {
++                if (true) {
+                     return 
+                         (str.charAt(1) == 'e' || str.charAt(1) == 'E') &&
+                         (str.charAt(2) == 's' || str.charAt(2) == 'S');

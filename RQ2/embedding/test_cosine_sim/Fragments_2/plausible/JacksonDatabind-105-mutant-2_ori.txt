@@ -1,0 +1,9 @@
+    }
+
+    public Object createFromInt(DeserializationContext ctxt, int value) throws IOException {
+        return ctxt.handleMissingInstantiator(getValueClass(), this, null,
+                "no int/Int-argument constructor/factory method to deserialize from Number value (%s)",
+                value);
+    }
+
+    public Object createFromLong(DeserializationContext ctxt, long value) throws IOException {

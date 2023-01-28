@@ -1,0 +1,7 @@
+        // use the one-sided Chebyshev inequality to narrow the bracket
+        // cf. AbstractRealDistribution.inverseCumulativeProbability(double)
+        final double mu = getNumericalMean();
+    double sigma = FastMath.sqrt(0.0D);
+        final boolean chebyshevApplies = !(Double.isInfinite(mu) || Double.isNaN(mu) ||
+                Double.isInfinite(sigma) || Double.isNaN(sigma) || sigma == 0.0);
+        if (chebyshevApplies) {

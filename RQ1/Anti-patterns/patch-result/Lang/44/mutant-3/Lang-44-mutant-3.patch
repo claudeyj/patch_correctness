@@ -1,0 +1,10 @@
+--- jd-result/Lang/44/mutant-3/a-NumberUtils.java	2021-07-14 16:57:54.054122125 -0700
++++ jd-result/Lang/44/mutant-3/b-NumberUtils.java	2021-07-14 16:57:55.426122163 -0700
+@@ -56,7 +56,6 @@
+ /* 189*/      boolean bool = (isAllZeros(mant) && isAllZeros(exp));
+ /* 190*/      switch (lastChar) {
+ /*   0*/        case 'L':
+-/*   0*/        case 'l':
+ /* 193*/          if (dec == null && exp == null && ((numeric.charAt(0) == '-' && isDigits(numeric.substring(1))) || isDigits(numeric)))
+ /*   0*/            try {
+ /* 197*/              return createLong(numeric);

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/48/buggy1.java /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/48/tool-patch1.java
+--- /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/48/buggy1.java	2021-09-08 07:11:31.209222350 -0700
++++ /home/junyang/PCC_repo/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/AVATAR/Closure/48/tool-patch1.java	2021-09-08 07:11:31.213222350 -0700
+@@ -1438,7 +1438,7 @@
+       JSType valueType = getDeclaredType(t.getSourceName(), info, n, rhsValue);
+       if (valueType == null && rhsValue != null) {
+         // Determining type for #5
+-        valueType = rhsValue.getJSType();
++        valueType = ownerNode.getJSType();
+       }
+       // Function prototypes are special.
+       // It's a common JS idiom to do:

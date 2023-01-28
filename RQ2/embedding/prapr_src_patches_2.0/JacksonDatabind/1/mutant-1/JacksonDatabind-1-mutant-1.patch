@@ -1,0 +1,26 @@
+--- jd-result-2.0/JacksonDatabind/1/mutant-1/a-BeanPropertyWriter.java	2021-08-09 04:33:23.761578829 -0700
++++ jd-result-2.0/JacksonDatabind/1/mutant-1/b-BeanPropertyWriter.java	2021-08-09 04:33:25.257578872 -0700
+@@ -324,13 +324,7 @@
+ /*   0*/  
+ /*   0*/  public void serializeAsColumn(Object paramObject, JsonGenerator paramJsonGenerator, SerializerProvider paramSerializerProvider) throws Exception {
+ /* 585*/    Object object = get(paramObject);
+-/* 586*/    if (object == null) {
+-/* 587*/        if (this._nullSerializer != null) {
+-/* 588*/          this._nullSerializer.serialize(null, paramJsonGenerator, paramSerializerProvider);
+-/*   0*/        } else {
+-/* 590*/          paramJsonGenerator.writeNull();
+-/*   0*/        }  
+-/*   0*/       }
++/*   0*/    while (true) {
+ /* 594*/    JsonSerializer<Object> jsonSerializer = this._serializer;
+ /* 595*/    if (jsonSerializer == null) {
+ /* 596*/      Class<?> clazz = object.getClass();
+@@ -359,6 +353,8 @@
+ /*   0*/    } else {
+ /* 622*/      jsonSerializer.serializeWithType(object, paramJsonGenerator, paramSerializerProvider, this._typeSerializer);
+ /*   0*/    } 
++/*   0*/      return;
++/*   0*/    } 
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void serializeAsPlaceholder(Object paramObject, JsonGenerator paramJsonGenerator, SerializerProvider paramSerializerProvider) throws Exception {

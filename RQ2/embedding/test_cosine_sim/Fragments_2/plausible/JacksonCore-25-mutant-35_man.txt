@@ -1,0 +1,9 @@
+
+        while (true) {
+            if (_inputPtr >= _inputEnd) {
+                _loadMore();  // acceptable for now (will error out later)
+                break;
+            }
+            char c = _inputBuffer[_inputPtr];
+            int i = (int) c;
+            if (i <= maxCode) {

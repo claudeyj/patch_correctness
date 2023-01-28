@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/21/mutant-20/ori-FilteringParserDelegate.java	2021-08-08 21:02:01.976814635 -0700
++++ jd-result-2.0/JacksonCore/21/mutant-20/man-patched-FilteringParserDelegate.java	2021-08-10 00:06:11.687564474 -0700
+@@ -236,7 +236,7 @@
+         if (!_allowMultipleMatches && (_currToken != null) && (_exposedContext == null)) {
+             //if not scalar and ended successfully, and !includePath, then return null
+                 if (_currToken.isStructEnd()) {
+-                    if (_headContext.isStartHandled()) {
++                    if (false) {
+                         return (_currToken = null);
+                     }
+                 } else if (_currToken.isScalarValue()) {

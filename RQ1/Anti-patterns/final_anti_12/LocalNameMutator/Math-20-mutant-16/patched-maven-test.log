@@ -1,0 +1,746 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.commons:commons-math3:jar:3.3-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-surefire-plugin @ line 428, column 9
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------< org.apache.commons:commons-math3 >------------------
+[INFO] Building Commons Math 3.3-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (javadoc.resources) @ commons-math3 ---
+[INFO] Executing tasks
+
+main:
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ commons-math3 ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ commons-math3 ---
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/junyang/PR/SubjectPrograms/Math/20 && svn --non-interactive info
+[INFO] Working directory: /home/junyang/PR/SubjectPrograms/Math/20
+[INFO] Storing buildNumber: ?????? at timestamp: 1627303292326
+[INFO] Executing: /bin/sh -c cd /home/junyang/PR/SubjectPrograms/Math/20 && svn --non-interactive info
+[INFO] Working directory: /home/junyang/PR/SubjectPrograms/Math/20
+[INFO] Storing buildScmBranch: UNKNOWN_BRANCH
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ commons-math3 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ commons-math3 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 663 source files to /home/junyang/PR/SubjectPrograms/Math/20/target/classes
+[WARNING] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/stat/correlation/StorelessCovariance.java:[31,59] unmappable character for encoding UTF-8
+[WARNING] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/stat/correlation/StorelessBivariateCovariance.java:[26,59] unmappable character for encoding UTF-8
+[WARNING] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/analysis/function/Sigmoid.java: Some input files use or override a deprecated API.
+[WARNING] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/analysis/function/Sigmoid.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.4.0:manifest (bundle-manifest) @ commons-math3 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ commons-math3 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 24 resources
+[INFO] Copying 0 resource to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ commons-math3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.15:test (default-test) @ commons-math3 ---
+[INFO] Surefire report directory: /home/junyang/PR/SubjectPrograms/Math/20/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.commons.math3.stat.correlation.CovarianceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in org.apache.commons.math3.stat.correlation.CovarianceTest
+Running org.apache.commons.math3.stat.correlation.StorelessCovarianceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.stat.correlation.StorelessCovarianceTest
+Running org.apache.commons.math3.stat.correlation.SpearmansRankCorrelationTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in org.apache.commons.math3.stat.correlation.SpearmansRankCorrelationTest
+Running org.apache.commons.math3.stat.correlation.PearsonsCorrelationTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.apache.commons.math3.stat.correlation.PearsonsCorrelationTest
+Running org.apache.commons.math3.stat.CertifiedDataTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 sec - in org.apache.commons.math3.stat.CertifiedDataTest
+Running org.apache.commons.math3.stat.ranking.NaturalRankingTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.stat.ranking.NaturalRankingTest
+Running org.apache.commons.math3.stat.inference.OneWayAnovaTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.stat.inference.OneWayAnovaTest
+Running org.apache.commons.math3.stat.inference.MannWhitneyUTestTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.stat.inference.MannWhitneyUTestTest
+Running org.apache.commons.math3.stat.inference.WilcoxonSignedRankTestTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.stat.inference.WilcoxonSignedRankTestTest
+Running org.apache.commons.math3.stat.inference.TestUtilsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.stat.inference.TestUtilsTest
+Running org.apache.commons.math3.stat.inference.ChiSquareTestTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.stat.inference.ChiSquareTestTest
+Running org.apache.commons.math3.stat.inference.TTestTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.stat.inference.TTestTest
+Running org.apache.commons.math3.stat.regression.OLSMultipleLinearRegressionTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.apache.commons.math3.stat.regression.OLSMultipleLinearRegressionTest
+Running org.apache.commons.math3.stat.regression.GLSMultipleLinearRegressionTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.245 sec - in org.apache.commons.math3.stat.regression.GLSMultipleLinearRegressionTest
+Running org.apache.commons.math3.stat.regression.MillerUpdatingRegressionTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec - in org.apache.commons.math3.stat.regression.MillerUpdatingRegressionTest
+Running org.apache.commons.math3.stat.regression.SimpleRegressionTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.apache.commons.math3.stat.regression.SimpleRegressionTest
+Running org.apache.commons.math3.stat.StatUtilsTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.stat.StatUtilsTest
+Running org.apache.commons.math3.stat.clustering.KMeansPlusPlusClustererTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec - in org.apache.commons.math3.stat.clustering.KMeansPlusPlusClustererTest
+Running org.apache.commons.math3.stat.clustering.EuclideanIntegerPointTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.apache.commons.math3.stat.clustering.EuclideanIntegerPointTest
+Running org.apache.commons.math3.stat.FrequencyTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.stat.FrequencyTest
+Running org.apache.commons.math3.stat.descriptive.MixedListUnivariateImplTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.stat.descriptive.MixedListUnivariateImplTest
+Running org.apache.commons.math3.stat.descriptive.SynchronizedSummaryStatisticsTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in org.apache.commons.math3.stat.descriptive.SynchronizedSummaryStatisticsTest
+Running org.apache.commons.math3.stat.descriptive.AbstractUnivariateStatisticTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.stat.descriptive.AbstractUnivariateStatisticTest
+Running org.apache.commons.math3.stat.descriptive.ListUnivariateImplTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.stat.descriptive.ListUnivariateImplTest
+Running org.apache.commons.math3.stat.descriptive.DescriptiveStatisticsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.stat.descriptive.DescriptiveStatisticsTest
+Running org.apache.commons.math3.stat.descriptive.moment.FourthMomentTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.stat.descriptive.moment.FourthMomentTest
+Running org.apache.commons.math3.stat.descriptive.moment.StandardDeviationTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.apache.commons.math3.stat.descriptive.moment.StandardDeviationTest
+Running org.apache.commons.math3.stat.descriptive.moment.MeanTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.apache.commons.math3.stat.descriptive.moment.MeanTest
+Running org.apache.commons.math3.stat.descriptive.moment.SecondMomentTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.stat.descriptive.moment.SecondMomentTest
+Running org.apache.commons.math3.stat.descriptive.moment.KurtosisTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.apache.commons.math3.stat.descriptive.moment.KurtosisTest
+Running org.apache.commons.math3.stat.descriptive.moment.VectorialCovarianceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.stat.descriptive.moment.VectorialCovarianceTest
+Running org.apache.commons.math3.stat.descriptive.moment.SemiVarianceTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.stat.descriptive.moment.SemiVarianceTest
+Running org.apache.commons.math3.stat.descriptive.moment.SkewnessTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.stat.descriptive.moment.SkewnessTest
+Running org.apache.commons.math3.stat.descriptive.moment.ThirdMomentTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.stat.descriptive.moment.ThirdMomentTest
+Running org.apache.commons.math3.stat.descriptive.moment.VarianceTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.apache.commons.math3.stat.descriptive.moment.VarianceTest
+Running org.apache.commons.math3.stat.descriptive.moment.VectorialMeanTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.stat.descriptive.moment.VectorialMeanTest
+Running org.apache.commons.math3.stat.descriptive.moment.InteractionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.stat.descriptive.moment.InteractionTest
+Running org.apache.commons.math3.stat.descriptive.moment.FirstMomentTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.stat.descriptive.moment.FirstMomentTest
+Running org.apache.commons.math3.stat.descriptive.moment.GeometricMeanTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.stat.descriptive.moment.GeometricMeanTest
+Running org.apache.commons.math3.stat.descriptive.SummaryStatisticsTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.apache.commons.math3.stat.descriptive.SummaryStatisticsTest
+Running org.apache.commons.math3.stat.descriptive.AggregateSummaryStatisticsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.stat.descriptive.AggregateSummaryStatisticsTest
+Running org.apache.commons.math3.stat.descriptive.summary.SumSqTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.stat.descriptive.summary.SumSqTest
+Running org.apache.commons.math3.stat.descriptive.summary.ProductTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.stat.descriptive.summary.ProductTest
+Running org.apache.commons.math3.stat.descriptive.summary.SumTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.stat.descriptive.summary.SumTest
+Running org.apache.commons.math3.stat.descriptive.summary.SumLogTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.stat.descriptive.summary.SumLogTest
+Running org.apache.commons.math3.stat.descriptive.MultivariateSummaryStatisticsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.apache.commons.math3.stat.descriptive.MultivariateSummaryStatisticsTest
+Running org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatisticsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatisticsTest
+Running org.apache.commons.math3.stat.descriptive.SynchronizedMultivariateSummaryStatisticsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.apache.commons.math3.stat.descriptive.SynchronizedMultivariateSummaryStatisticsTest
+Running org.apache.commons.math3.stat.descriptive.StatisticalSummaryValuesTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.stat.descriptive.StatisticalSummaryValuesTest
+Running org.apache.commons.math3.stat.descriptive.rank.MaxTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.stat.descriptive.rank.MaxTest
+Running org.apache.commons.math3.stat.descriptive.rank.MinTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.stat.descriptive.rank.MinTest
+Running org.apache.commons.math3.stat.descriptive.rank.MedianTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.stat.descriptive.rank.MedianTest
+Running org.apache.commons.math3.stat.descriptive.rank.PercentileTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.stat.descriptive.rank.PercentileTest
+Running org.apache.commons.math3.stat.data.LewTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.stat.data.LewTest
+Running org.apache.commons.math3.stat.data.LotteryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.stat.data.LotteryTest
+Running org.apache.commons.math3.util.TransformerMapTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.util.TransformerMapTest
+Running org.apache.commons.math3.util.FastMathStrictComparisonTest
+Tests run: 53, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in org.apache.commons.math3.util.FastMathStrictComparisonTest
+Running org.apache.commons.math3.util.DefaultTransformerTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.util.DefaultTransformerTest
+Running org.apache.commons.math3.util.ResizableDoubleArrayTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.util.ResizableDoubleArrayTest
+Running org.apache.commons.math3.util.MultidimensionalCounterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.util.MultidimensionalCounterTest
+Running org.apache.commons.math3.util.Decimal64Test
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.util.Decimal64Test
+Running org.apache.commons.math3.util.OpenIntToDoubleHashMapTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 sec - in org.apache.commons.math3.util.OpenIntToDoubleHashMapTest
+Running org.apache.commons.math3.util.MathArraysTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in org.apache.commons.math3.util.MathArraysTest
+Running org.apache.commons.math3.util.BigRealTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in org.apache.commons.math3.util.BigRealTest
+Running org.apache.commons.math3.util.IncrementorTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.util.IncrementorTest
+Running org.apache.commons.math3.util.ContinuedFractionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.util.ContinuedFractionTest
+Running org.apache.commons.math3.util.MathUtilsTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in org.apache.commons.math3.util.MathUtilsTest
+Running org.apache.commons.math3.util.BigRealFieldTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.util.BigRealFieldTest
+Running org.apache.commons.math3.util.PrecisionTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.apache.commons.math3.util.PrecisionTest
+Running org.apache.commons.math3.util.ArithmeticUtilsTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.361 sec - in org.apache.commons.math3.util.ArithmeticUtilsTest
+Running org.apache.commons.math3.util.PairTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.util.PairTest
+Running org.apache.commons.math3.util.FastMathTest
+Tests run: 45, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 7.455 sec - in org.apache.commons.math3.util.FastMathTest
+Running org.apache.commons.math3.util.OpenIntToFieldTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in org.apache.commons.math3.util.OpenIntToFieldTest
+Running org.apache.commons.math3.optimization.PointVectorValuePairTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.optimization.PointVectorValuePairTest
+Running org.apache.commons.math3.optimization.MultivariateMultiStartOptimizerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.optimization.MultivariateMultiStartOptimizerTest
+Running org.apache.commons.math3.optimization.general.AbstractLeastSquaresOptimizerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.apache.commons.math3.optimization.general.AbstractLeastSquaresOptimizerTest
+Running org.apache.commons.math3.optimization.general.LevenbergMarquardtOptimizerTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 sec - in org.apache.commons.math3.optimization.general.LevenbergMarquardtOptimizerTest
+Running org.apache.commons.math3.optimization.general.MinpackTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.299 sec - in org.apache.commons.math3.optimization.general.MinpackTest
+Running org.apache.commons.math3.optimization.general.GaussNewtonOptimizerTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec - in org.apache.commons.math3.optimization.general.GaussNewtonOptimizerTest
+Running org.apache.commons.math3.optimization.general.NonLinearConjugateGradientOptimizerTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.apache.commons.math3.optimization.general.NonLinearConjugateGradientOptimizerTest
+Running org.apache.commons.math3.optimization.fitting.PolynomialFitterTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.619 sec - in org.apache.commons.math3.optimization.fitting.PolynomialFitterTest
+Running org.apache.commons.math3.optimization.fitting.GaussianFitterTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec - in org.apache.commons.math3.optimization.fitting.GaussianFitterTest
+Running org.apache.commons.math3.optimization.fitting.HarmonicFitterTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in org.apache.commons.math3.optimization.fitting.HarmonicFitterTest
+Running org.apache.commons.math3.optimization.fitting.CurveFitterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.optimization.fitting.CurveFitterTest
+Running org.apache.commons.math3.optimization.direct.CMAESOptimizerTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.373 sec - in org.apache.commons.math3.optimization.direct.CMAESOptimizerTest
+Running org.apache.commons.math3.optimization.direct.MultivariateFunctionMappingAdapterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.optimization.direct.MultivariateFunctionMappingAdapterTest
+Running org.apache.commons.math3.optimization.direct.SimplexOptimizerMultiDirectionalTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.apache.commons.math3.optimization.direct.SimplexOptimizerMultiDirectionalTest
+Running org.apache.commons.math3.optimization.direct.SimplexOptimizerNelderMeadTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.optimization.direct.SimplexOptimizerNelderMeadTest
+Running org.apache.commons.math3.optimization.direct.MultivariateFunctionPenaltyAdapterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.optimization.direct.MultivariateFunctionPenaltyAdapterTest
+Running org.apache.commons.math3.optimization.direct.BOBYQAOptimizerTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.946 sec - in org.apache.commons.math3.optimization.direct.BOBYQAOptimizerTest
+Running org.apache.commons.math3.optimization.direct.PowellOptimizerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.optimization.direct.PowellOptimizerTest
+Running org.apache.commons.math3.optimization.linear.SimplexTableauTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.optimization.linear.SimplexTableauTest
+Running org.apache.commons.math3.optimization.linear.SimplexSolverTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.13 sec - in org.apache.commons.math3.optimization.linear.SimplexSolverTest
+Running org.apache.commons.math3.optimization.univariate.BrentOptimizerTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.apache.commons.math3.optimization.univariate.BrentOptimizerTest
+Running org.apache.commons.math3.optimization.univariate.UnivariateMultiStartOptimizerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.optimization.univariate.UnivariateMultiStartOptimizerTest
+Running org.apache.commons.math3.optimization.univariate.BracketFinderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.optimization.univariate.BracketFinderTest
+Running org.apache.commons.math3.optimization.MultivariateDifferentiableMultiStartOptimizerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.optimization.MultivariateDifferentiableMultiStartOptimizerTest
+Running org.apache.commons.math3.optimization.PointValuePairTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.optimization.PointValuePairTest
+Running org.apache.commons.math3.optimization.MultivariateDifferentiableVectorMultiStartOptimizerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.optimization.MultivariateDifferentiableVectorMultiStartOptimizerTest
+Running org.apache.commons.math3.RetryRunnerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.RetryRunnerTest
+Running org.apache.commons.math3.linear.SparseRealMatrixTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.apache.commons.math3.linear.SparseRealMatrixTest
+Running org.apache.commons.math3.linear.ArrayFieldVectorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.linear.ArrayFieldVectorTest
+Running org.apache.commons.math3.linear.SchurTransformerTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.171 sec - in org.apache.commons.math3.linear.SchurTransformerTest
+Running org.apache.commons.math3.linear.SparseFieldVectorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.linear.SparseFieldVectorTest
+Running org.apache.commons.math3.linear.LUSolverTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.linear.LUSolverTest
+Running org.apache.commons.math3.linear.RealVectorFormatTest
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.apache.commons.math3.linear.RealVectorFormatTest
+Running org.apache.commons.math3.linear.TriDiagonalTransformerTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.linear.TriDiagonalTransformerTest
+Running org.apache.commons.math3.linear.EigenDecompositionTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.242 sec - in org.apache.commons.math3.linear.EigenDecompositionTest
+Running org.apache.commons.math3.linear.SingularValueDecompositionTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.37 sec - in org.apache.commons.math3.linear.SingularValueDecompositionTest
+Running org.apache.commons.math3.linear.RealVectorTest
+Tests run: 105, Failures: 0, Errors: 0, Skipped: 24, Time elapsed: 0.191 sec - in org.apache.commons.math3.linear.RealVectorTest
+Running org.apache.commons.math3.linear.FrenchRealVectorFormatTest
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.linear.FrenchRealVectorFormatTest
+Running org.apache.commons.math3.linear.EigenSolverTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.linear.EigenSolverTest
+Running org.apache.commons.math3.linear.RectangularCholeskyDecompositionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.linear.RectangularCholeskyDecompositionTest
+Running org.apache.commons.math3.linear.FieldLUDecompositionTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in org.apache.commons.math3.linear.FieldLUDecompositionTest
+Running org.apache.commons.math3.linear.QRSolverTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in org.apache.commons.math3.linear.QRSolverTest
+Running org.apache.commons.math3.linear.CholeskySolverTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.linear.CholeskySolverTest
+Running org.apache.commons.math3.linear.UnmodifiableOpenMapRealVectorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec - in org.apache.commons.math3.linear.UnmodifiableOpenMapRealVectorTest
+Running org.apache.commons.math3.linear.SparseFieldMatrixTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.apache.commons.math3.linear.SparseFieldMatrixTest
+Running org.apache.commons.math3.linear.BlockRealMatrixTest
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.171 sec - in org.apache.commons.math3.linear.BlockRealMatrixTest
+Running org.apache.commons.math3.linear.UnmodifiableArrayRealVectorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in org.apache.commons.math3.linear.UnmodifiableArrayRealVectorTest
+Running org.apache.commons.math3.linear.ArrayRealVectorTest
+Tests run: 108, Failures: 0, Errors: 0, Skipped: 6, Time elapsed: 0.061 sec - in org.apache.commons.math3.linear.ArrayRealVectorTest
+Running org.apache.commons.math3.linear.CholeskyDecompositionTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.linear.CholeskyDecompositionTest
+Running org.apache.commons.math3.linear.ConjugateGradientTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec - in org.apache.commons.math3.linear.ConjugateGradientTest
+Running org.apache.commons.math3.linear.Array2DRowRealMatrixTest
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.apache.commons.math3.linear.Array2DRowRealMatrixTest
+Running org.apache.commons.math3.linear.SingularValueSolverTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.linear.SingularValueSolverTest
+Running org.apache.commons.math3.linear.SymmLQTest
+Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 sec - in org.apache.commons.math3.linear.SymmLQTest
+Running org.apache.commons.math3.linear.SparseRealVectorTest
+Tests run: 106, Failures: 0, Errors: 0, Skipped: 8, Time elapsed: 0.12 sec - in org.apache.commons.math3.linear.SparseRealVectorTest
+Running org.apache.commons.math3.linear.BlockFieldMatrixTest
+Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.319 sec - in org.apache.commons.math3.linear.BlockFieldMatrixTest
+Running org.apache.commons.math3.linear.HessenbergTransformerTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in org.apache.commons.math3.linear.HessenbergTransformerTest
+Running org.apache.commons.math3.linear.MatrixUtilsTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.linear.MatrixUtilsTest
+Running org.apache.commons.math3.linear.FieldMatrixImplTest
+Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec - in org.apache.commons.math3.linear.FieldMatrixImplTest
+Running org.apache.commons.math3.linear.FieldLUSolverTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.linear.FieldLUSolverTest
+Running org.apache.commons.math3.linear.MatrixDimensionMismatchExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.linear.MatrixDimensionMismatchExceptionTest
+Running org.apache.commons.math3.linear.QRDecompositionTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.apache.commons.math3.linear.QRDecompositionTest
+Running org.apache.commons.math3.linear.OpenMapRealMatrixTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.linear.OpenMapRealMatrixTest
+Running org.apache.commons.math3.linear.RealMatrixFormatTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.009 sec - in org.apache.commons.math3.linear.RealMatrixFormatTest
+Running org.apache.commons.math3.linear.LUDecompositionTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.linear.LUDecompositionTest
+Running org.apache.commons.math3.linear.BiDiagonalTransformerTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.linear.BiDiagonalTransformerTest
+Running org.apache.commons.math3.special.BetaTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.special.BetaTest
+Running org.apache.commons.math3.special.GammaTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.apache.commons.math3.special.GammaTest
+Running org.apache.commons.math3.special.ErfTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.special.ErfTest
+Running org.apache.commons.math3.complex.ComplexFieldTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.complex.ComplexFieldTest
+Running org.apache.commons.math3.complex.ComplexFormatTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.apache.commons.math3.complex.ComplexFormatTest
+Running org.apache.commons.math3.complex.QuaternionTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.apache.commons.math3.complex.QuaternionTest
+Running org.apache.commons.math3.complex.ComplexUtilsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.complex.ComplexUtilsTest
+Running org.apache.commons.math3.complex.ComplexTest
+Tests run: 123, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in org.apache.commons.math3.complex.ComplexTest
+Running org.apache.commons.math3.complex.RootsOfUnityTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.complex.RootsOfUnityTest
+Running org.apache.commons.math3.complex.FrenchComplexFormatTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.complex.FrenchComplexFormatTest
+Running org.apache.commons.math3.fraction.BigFractionFieldTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.fraction.BigFractionFieldTest
+Running org.apache.commons.math3.fraction.BigFractionFormatTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.fraction.BigFractionFormatTest
+Running org.apache.commons.math3.fraction.BigFractionTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.apache.commons.math3.fraction.BigFractionTest
+Running org.apache.commons.math3.fraction.FractionFieldTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.fraction.FractionFieldTest
+Running org.apache.commons.math3.fraction.FractionTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.fraction.FractionTest
+Running org.apache.commons.math3.fraction.FractionFormatTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.fraction.FractionFormatTest
+Running org.apache.commons.math3.analysis.function.GaussianTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.function.GaussianTest
+Running org.apache.commons.math3.analysis.function.StepFunctionTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.function.StepFunctionTest
+Running org.apache.commons.math3.analysis.function.HarmonicOscillatorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.function.HarmonicOscillatorTest
+Running org.apache.commons.math3.analysis.function.SqrtTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.analysis.function.SqrtTest
+Running org.apache.commons.math3.analysis.function.SigmoidTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.function.SigmoidTest
+Running org.apache.commons.math3.analysis.function.LogitTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.analysis.function.LogitTest
+Running org.apache.commons.math3.analysis.function.LogisticTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.analysis.function.LogisticTest
+Running org.apache.commons.math3.analysis.function.SincTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in org.apache.commons.math3.analysis.function.SincTest
+Running org.apache.commons.math3.analysis.solvers.SecantSolverTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.analysis.solvers.SecantSolverTest
+Running org.apache.commons.math3.analysis.solvers.LaguerreSolverTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.analysis.solvers.LaguerreSolverTest
+Running org.apache.commons.math3.analysis.solvers.RiddersSolverTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.solvers.RiddersSolverTest
+Running org.apache.commons.math3.analysis.solvers.MullerSolverTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.analysis.solvers.MullerSolverTest
+Running org.apache.commons.math3.analysis.solvers.BracketingNthOrderBrentSolverTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.analysis.solvers.BracketingNthOrderBrentSolverTest
+Running org.apache.commons.math3.analysis.solvers.BisectionSolverTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.analysis.solvers.BisectionSolverTest
+Running org.apache.commons.math3.analysis.solvers.NewtonRaphsonSolverTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.analysis.solvers.NewtonRaphsonSolverTest
+Running org.apache.commons.math3.analysis.solvers.RegulaFalsiSolverTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.analysis.solvers.RegulaFalsiSolverTest
+Running org.apache.commons.math3.analysis.solvers.BrentSolverTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.analysis.solvers.BrentSolverTest
+Running org.apache.commons.math3.analysis.solvers.PegasusSolverTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.solvers.PegasusSolverTest
+Running org.apache.commons.math3.analysis.solvers.NewtonSolverTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.solvers.NewtonSolverTest
+Running org.apache.commons.math3.analysis.solvers.MullerSolver2Test
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.solvers.MullerSolver2Test
+Running org.apache.commons.math3.analysis.solvers.UnivariateSolverUtilsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.solvers.UnivariateSolverUtilsTest
+Running org.apache.commons.math3.analysis.solvers.IllinoisSolverTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.solvers.IllinoisSolverTest
+Running org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest
+Tests run: 61, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.9 sec - in org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest
+Running org.apache.commons.math3.analysis.differentiation.DSCompilerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in org.apache.commons.math3.analysis.differentiation.DSCompilerTest
+Running org.apache.commons.math3.analysis.differentiation.FiniteDifferencesDifferentiatorTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec - in org.apache.commons.math3.analysis.differentiation.FiniteDifferencesDifferentiatorTest
+Running org.apache.commons.math3.analysis.differentiation.GradientFunctionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 sec - in org.apache.commons.math3.analysis.differentiation.GradientFunctionTest
+Running org.apache.commons.math3.analysis.differentiation.JacobianFunctionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.analysis.differentiation.JacobianFunctionTest
+Running org.apache.commons.math3.analysis.integration.TrapezoidIntegratorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.integration.TrapezoidIntegratorTest
+Running org.apache.commons.math3.analysis.integration.LegendreGaussIntegratorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.336 sec - in org.apache.commons.math3.analysis.integration.LegendreGaussIntegratorTest
+Running org.apache.commons.math3.analysis.integration.RombergIntegratorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.integration.RombergIntegratorTest
+Running org.apache.commons.math3.analysis.integration.IterativeLegendreGaussIntegratorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.044 sec - in org.apache.commons.math3.analysis.integration.IterativeLegendreGaussIntegratorTest
+Running org.apache.commons.math3.analysis.integration.SimpsonIntegratorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.integration.SimpsonIntegratorTest
+Running org.apache.commons.math3.analysis.integration.gauss.BaseRuleFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in org.apache.commons.math3.analysis.integration.gauss.BaseRuleFactoryTest
+Running org.apache.commons.math3.analysis.integration.gauss.LegendreTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in org.apache.commons.math3.analysis.integration.gauss.LegendreTest
+Running org.apache.commons.math3.analysis.integration.gauss.LegendreHighPrecisionParametricTest
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.197 sec - in org.apache.commons.math3.analysis.integration.gauss.LegendreHighPrecisionParametricTest
+Running org.apache.commons.math3.analysis.integration.gauss.LegendreHighPrecisionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.322 sec - in org.apache.commons.math3.analysis.integration.gauss.LegendreHighPrecisionTest
+Running org.apache.commons.math3.analysis.integration.gauss.LegendreParametricTest
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.apache.commons.math3.analysis.integration.gauss.LegendreParametricTest
+Running org.apache.commons.math3.analysis.interpolation.NevilleInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.analysis.interpolation.NevilleInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.TricubicSplineInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in org.apache.commons.math3.analysis.interpolation.TricubicSplineInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.SplineInterpolatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.analysis.interpolation.SplineInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.BicubicSplineInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.interpolation.BicubicSplineInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.SmoothingPolynomialBicubicSplineInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.interpolation.SmoothingPolynomialBicubicSplineInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.UnivariatePeriodicInterpolatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.interpolation.UnivariatePeriodicInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.MicrosphereInterpolatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.16 sec - in org.apache.commons.math3.analysis.interpolation.MicrosphereInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.TricubicSplineInterpolatingFunctionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.analysis.interpolation.TricubicSplineInterpolatingFunctionTest
+Running org.apache.commons.math3.analysis.interpolation.LinearInterpolatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.analysis.interpolation.LinearInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.LoessInterpolatorTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.apache.commons.math3.analysis.interpolation.LoessInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.DividedDifferenceInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.interpolation.DividedDifferenceInterpolatorTest
+Running org.apache.commons.math3.analysis.interpolation.BicubicSplineInterpolatingFunctionTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.apache.commons.math3.analysis.interpolation.BicubicSplineInterpolatingFunctionTest
+Running org.apache.commons.math3.analysis.interpolation.HermiteInterpolatorTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 sec - in org.apache.commons.math3.analysis.interpolation.HermiteInterpolatorTest
+Running org.apache.commons.math3.analysis.FunctionUtilsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.analysis.FunctionUtilsTest
+Running org.apache.commons.math3.analysis.polynomials.PolynomialFunctionNewtonFormTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.analysis.polynomials.PolynomialFunctionNewtonFormTest
+Running org.apache.commons.math3.analysis.polynomials.PolynomialFunctionLagrangeFormTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.analysis.polynomials.PolynomialFunctionLagrangeFormTest
+Running org.apache.commons.math3.analysis.polynomials.PolynomialFunctionTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.analysis.polynomials.PolynomialFunctionTest
+Running org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunctionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunctionTest
+Running org.apache.commons.math3.analysis.polynomials.PolynomialsUtilsTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.683 sec - in org.apache.commons.math3.analysis.polynomials.PolynomialsUtilsTest
+Running org.apache.commons.math3.transform.FastSineTransformerTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in org.apache.commons.math3.transform.FastSineTransformerTest
+Running org.apache.commons.math3.transform.FastCosineTransformerTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in org.apache.commons.math3.transform.FastCosineTransformerTest
+Running org.apache.commons.math3.transform.FastHadamardTransformerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.transform.FastHadamardTransformerTest
+Running org.apache.commons.math3.transform.FastFourierTransformerTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in org.apache.commons.math3.transform.FastFourierTransformerTest
+Running org.apache.commons.math3.exception.DimensionMismatchExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.DimensionMismatchExceptionTest
+Running org.apache.commons.math3.exception.NotPositiveExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.NotPositiveExceptionTest
+Running org.apache.commons.math3.exception.NotStrictlyPositiveExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.NotStrictlyPositiveExceptionTest
+Running org.apache.commons.math3.exception.util.LocalizedFormatsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in org.apache.commons.math3.exception.util.LocalizedFormatsTest
+Running org.apache.commons.math3.exception.util.ArgUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.util.ArgUtilsTest
+Running org.apache.commons.math3.exception.util.ExceptionContextTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.exception.util.ExceptionContextTest
+Running org.apache.commons.math3.exception.TooManyEvaluationsExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.TooManyEvaluationsExceptionTest
+Running org.apache.commons.math3.exception.MaxCountExceededExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.MaxCountExceededExceptionTest
+Running org.apache.commons.math3.exception.NumberIsTooSmallExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.NumberIsTooSmallExceptionTest
+Running org.apache.commons.math3.exception.NonMonotonicSequenceExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.NonMonotonicSequenceExceptionTest
+Running org.apache.commons.math3.exception.OutOfRangeExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.OutOfRangeExceptionTest
+Running org.apache.commons.math3.exception.NumberIsTooLargeExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.exception.NumberIsTooLargeExceptionTest
+Running org.apache.commons.math3.ode.JacobianMatricesTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.625 sec - in org.apache.commons.math3.ode.JacobianMatricesTest
+Running org.apache.commons.math3.ode.FirstOrderConverterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 sec - in org.apache.commons.math3.ode.FirstOrderConverterTest
+Running org.apache.commons.math3.ode.sampling.DummyStepInterpolatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.ode.sampling.DummyStepInterpolatorTest
+Running org.apache.commons.math3.ode.sampling.StepNormalizerOutputTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in org.apache.commons.math3.ode.sampling.StepNormalizerOutputTest
+Running org.apache.commons.math3.ode.sampling.StepNormalizerOutputOverlapTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.apache.commons.math3.ode.sampling.StepNormalizerOutputOverlapTest
+Running org.apache.commons.math3.ode.sampling.StepNormalizerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.ode.sampling.StepNormalizerTest
+Running org.apache.commons.math3.ode.sampling.NordsieckStepInterpolatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.219 sec - in org.apache.commons.math3.ode.sampling.NordsieckStepInterpolatorTest
+Running org.apache.commons.math3.ode.events.EventStateTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.ode.events.EventStateTest
+Running org.apache.commons.math3.ode.events.OverlappingEventsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.apache.commons.math3.ode.events.OverlappingEventsTest
+Running org.apache.commons.math3.ode.events.ReappearingEventTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.ode.events.ReappearingEventTest
+Running org.apache.commons.math3.ode.ContinuousOutputModelTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in org.apache.commons.math3.ode.ContinuousOutputModelTest
+Running org.apache.commons.math3.ode.nonstiff.EulerIntegratorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.129 sec - in org.apache.commons.math3.ode.nonstiff.EulerIntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.AdamsBashforthIntegratorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 sec - in org.apache.commons.math3.ode.nonstiff.AdamsBashforthIntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.DormandPrince54IntegratorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec - in org.apache.commons.math3.ode.nonstiff.DormandPrince54IntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.MidpointStepInterpolatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec - in org.apache.commons.math3.ode.nonstiff.MidpointStepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.ClassicalRungeKuttaStepInterpolatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.273 sec - in org.apache.commons.math3.ode.nonstiff.ClassicalRungeKuttaStepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.ThreeEighthesIntegratorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 sec - in org.apache.commons.math3.ode.nonstiff.ThreeEighthesIntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.GillStepInterpolatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 sec - in org.apache.commons.math3.ode.nonstiff.GillStepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.MidpointIntegratorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in org.apache.commons.math3.ode.nonstiff.MidpointIntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.DormandPrince853IntegratorTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.apache.commons.math3.ode.nonstiff.DormandPrince853IntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.DormandPrince54StepInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in org.apache.commons.math3.ode.nonstiff.DormandPrince54StepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.HighamHall54StepInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in org.apache.commons.math3.ode.nonstiff.HighamHall54StepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.GraggBulirschStoerStepInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in org.apache.commons.math3.ode.nonstiff.GraggBulirschStoerStepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.DormandPrince853StepInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.apache.commons.math3.ode.nonstiff.DormandPrince853StepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.ThreeEighthesStepInterpolatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in org.apache.commons.math3.ode.nonstiff.ThreeEighthesStepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.GraggBulirschStoerIntegratorTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.268 sec - in org.apache.commons.math3.ode.nonstiff.GraggBulirschStoerIntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.HighamHall54IntegratorTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in org.apache.commons.math3.ode.nonstiff.HighamHall54IntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.ClassicalRungeKuttaIntegratorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec - in org.apache.commons.math3.ode.nonstiff.ClassicalRungeKuttaIntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.EulerStepInterpolatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.ode.nonstiff.EulerStepInterpolatorTest
+Running org.apache.commons.math3.ode.nonstiff.GillIntegratorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in org.apache.commons.math3.ode.nonstiff.GillIntegratorTest
+Running org.apache.commons.math3.ode.nonstiff.AdamsMoultonIntegratorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in org.apache.commons.math3.ode.nonstiff.AdamsMoultonIntegratorTest
+Running org.apache.commons.math3.geometry.partitioning.utilities.AVLTreeTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.geometry.partitioning.utilities.AVLTreeTest
+Running org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest
+Running org.apache.commons.math3.geometry.euclidean.twod.LineTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.geometry.euclidean.twod.LineTest
+Running org.apache.commons.math3.geometry.euclidean.twod.SubLineTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.geometry.euclidean.twod.SubLineTest
+Running org.apache.commons.math3.geometry.euclidean.oned.IntervalsSetTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.geometry.euclidean.oned.IntervalsSetTest
+Running org.apache.commons.math3.geometry.euclidean.threed.LineTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.geometry.euclidean.threed.LineTest
+Running org.apache.commons.math3.geometry.euclidean.threed.SubLineTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.geometry.euclidean.threed.SubLineTest
+Running org.apache.commons.math3.geometry.euclidean.threed.Vector3DFormatTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.geometry.euclidean.threed.Vector3DFormatTest
+Running org.apache.commons.math3.geometry.euclidean.threed.PolyhedronsSetTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec - in org.apache.commons.math3.geometry.euclidean.threed.PolyhedronsSetTest
+Running org.apache.commons.math3.geometry.euclidean.threed.Vector3DTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in org.apache.commons.math3.geometry.euclidean.threed.Vector3DTest
+Running org.apache.commons.math3.geometry.euclidean.threed.RotationOrderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.geometry.euclidean.threed.RotationOrderTest
+Running org.apache.commons.math3.geometry.euclidean.threed.RotationTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 sec - in org.apache.commons.math3.geometry.euclidean.threed.RotationTest
+Running org.apache.commons.math3.geometry.euclidean.threed.FrenchVector3DFormatTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.geometry.euclidean.threed.FrenchVector3DFormatTest
+Running org.apache.commons.math3.geometry.euclidean.threed.PlaneTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.geometry.euclidean.threed.PlaneTest
+Running org.apache.commons.math3.distribution.LogNormalDistributionTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in org.apache.commons.math3.distribution.LogNormalDistributionTest
+Running org.apache.commons.math3.distribution.BetaDistributionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in org.apache.commons.math3.distribution.BetaDistributionTest
+Running org.apache.commons.math3.distribution.NormalDistributionTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.apache.commons.math3.distribution.NormalDistributionTest
+Running org.apache.commons.math3.distribution.TDistributionTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.apache.commons.math3.distribution.TDistributionTest
+Running org.apache.commons.math3.distribution.HypergeometricDistributionTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.apache.commons.math3.distribution.HypergeometricDistributionTest
+Running org.apache.commons.math3.distribution.ChiSquaredDistributionTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in org.apache.commons.math3.distribution.ChiSquaredDistributionTest
+Running org.apache.commons.math3.distribution.UniformIntegerDistributionTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.distribution.UniformIntegerDistributionTest
+Running org.apache.commons.math3.distribution.ExponentialDistributionTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.distribution.ExponentialDistributionTest
+Running org.apache.commons.math3.distribution.GammaDistributionTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.192 sec - in org.apache.commons.math3.distribution.GammaDistributionTest
+Running org.apache.commons.math3.distribution.AbstractIntegerDistributionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.distribution.AbstractIntegerDistributionTest
+Running org.apache.commons.math3.distribution.BinomialDistributionTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in org.apache.commons.math3.distribution.BinomialDistributionTest
+Running org.apache.commons.math3.distribution.AbstractRealDistributionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in org.apache.commons.math3.distribution.AbstractRealDistributionTest
+Running org.apache.commons.math3.distribution.TriangularDistributionTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.apache.commons.math3.distribution.TriangularDistributionTest
+Running org.apache.commons.math3.distribution.MultivariateNormalDistributionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.177 sec - in org.apache.commons.math3.distribution.MultivariateNormalDistributionTest
+Running org.apache.commons.math3.distribution.PascalDistributionTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.apache.commons.math3.distribution.PascalDistributionTest
+Running org.apache.commons.math3.distribution.CauchyDistributionTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.apache.commons.math3.distribution.CauchyDistributionTest
+Running org.apache.commons.math3.distribution.ZipfDistributionTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.apache.commons.math3.distribution.ZipfDistributionTest
+Running org.apache.commons.math3.distribution.PoissonDistributionTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.apache.commons.math3.distribution.PoissonDistributionTest
+Running org.apache.commons.math3.distribution.WeibullDistributionTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.apache.commons.math3.distribution.WeibullDistributionTest
+Running org.apache.commons.math3.distribution.UniformRealDistributionTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.distribution.UniformRealDistributionTest
+Running org.apache.commons.math3.distribution.FDistributionTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in org.apache.commons.math3.distribution.FDistributionTest
+Running org.apache.commons.math3.distribution.KolmogorovSmirnovDistributionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec - in org.apache.commons.math3.distribution.KolmogorovSmirnovDistributionTest
+Running org.apache.commons.math3.random.Well19937cTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.253 sec - in org.apache.commons.math3.random.Well19937cTest
+Running org.apache.commons.math3.random.CorrelatedRandomVectorGeneratorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in org.apache.commons.math3.random.CorrelatedRandomVectorGeneratorTest
+Running org.apache.commons.math3.random.AbstractRandomGeneratorTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.081 sec - in org.apache.commons.math3.random.AbstractRandomGeneratorTest
+Running org.apache.commons.math3.random.ValueServerTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in org.apache.commons.math3.random.ValueServerTest
+Running org.apache.commons.math3.random.ISAACTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.933 sec - in org.apache.commons.math3.random.ISAACTest
+Running org.apache.commons.math3.random.RandomDataTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.266 sec - in org.apache.commons.math3.random.RandomDataTest
+Running org.apache.commons.math3.random.Well44497aTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.764 sec - in org.apache.commons.math3.random.Well44497aTest
+Running org.apache.commons.math3.random.MersenneTwisterTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.662 sec - in org.apache.commons.math3.random.MersenneTwisterTest
+Running org.apache.commons.math3.random.Well44497bTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.866 sec - in org.apache.commons.math3.random.Well44497bTest
+Running org.apache.commons.math3.random.UniformRandomGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.random.UniformRandomGeneratorTest
+Running org.apache.commons.math3.random.EmpiricalDistributionTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in org.apache.commons.math3.random.EmpiricalDistributionTest
+Running org.apache.commons.math3.random.Well19937aTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.722 sec - in org.apache.commons.math3.random.Well19937aTest
+Running org.apache.commons.math3.random.GaussianRandomGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.random.GaussianRandomGeneratorTest
+Running org.apache.commons.math3.random.Well1024aTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.639 sec - in org.apache.commons.math3.random.Well1024aTest
+Running org.apache.commons.math3.random.UncorrelatedRandomVectorGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.apache.commons.math3.random.UncorrelatedRandomVectorGeneratorTest
+Running org.apache.commons.math3.random.Well512aTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.711 sec - in org.apache.commons.math3.random.Well512aTest
+Running org.apache.commons.math3.random.StableRandomGeneratorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in org.apache.commons.math3.random.StableRandomGeneratorTest
+Running org.apache.commons.math3.random.BitsStreamGeneratorTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.671 sec - in org.apache.commons.math3.random.BitsStreamGeneratorTest
+Running org.apache.commons.math3.random.RandomAdaptorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.random.RandomAdaptorTest
+Running org.apache.commons.math3.filter.KalmanFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.filter.KalmanFilterTest
+Running org.apache.commons.math3.genetics.GeneticAlgorithmTestBinary
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec - in org.apache.commons.math3.genetics.GeneticAlgorithmTestBinary
+Running org.apache.commons.math3.genetics.NPointCrossoverTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.genetics.NPointCrossoverTest
+Running org.apache.commons.math3.genetics.BinaryChromosomeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.genetics.BinaryChromosomeTest
+Running org.apache.commons.math3.genetics.RandomKeyMutationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.genetics.RandomKeyMutationTest
+Running org.apache.commons.math3.genetics.FitnessCachingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.apache.commons.math3.genetics.FitnessCachingTest
+Running org.apache.commons.math3.genetics.ElitisticListPopulationTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.genetics.ElitisticListPopulationTest
+Running org.apache.commons.math3.genetics.ChromosomeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.genetics.ChromosomeTest
+Running org.apache.commons.math3.genetics.OnePointCrossoverTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.genetics.OnePointCrossoverTest
+Running org.apache.commons.math3.genetics.BinaryMutationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.genetics.BinaryMutationTest
+Running org.apache.commons.math3.genetics.GeneticAlgorithmTestPermutations
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 sec - in org.apache.commons.math3.genetics.GeneticAlgorithmTestPermutations
+Running org.apache.commons.math3.genetics.RandomKeyTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.commons.math3.genetics.RandomKeyTest
+Running org.apache.commons.math3.genetics.FixedGenerationCountTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.genetics.FixedGenerationCountTest
+Running org.apache.commons.math3.genetics.OrderedCrossoverTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.genetics.OrderedCrossoverTest
+Running org.apache.commons.math3.genetics.TournamentSelectionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.commons.math3.genetics.TournamentSelectionTest
+Running org.apache.commons.math3.genetics.ListPopulationTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.genetics.ListPopulationTest
+Running org.apache.commons.math3.genetics.FixedElapsedTimeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.001 sec - in org.apache.commons.math3.genetics.FixedElapsedTimeTest
+Running org.apache.commons.math3.genetics.CycleCrossoverTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.commons.math3.genetics.CycleCrossoverTest
+Running org.apache.commons.math3.genetics.UniformCrossoverTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 sec - in org.apache.commons.math3.genetics.UniformCrossoverTest
+Running org.apache.commons.math3.dfp.DfpTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 sec - in org.apache.commons.math3.dfp.DfpTest
+Running org.apache.commons.math3.dfp.BracketingNthOrderBrentSolverDFPTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.16 sec - in org.apache.commons.math3.dfp.BracketingNthOrderBrentSolverDFPTest
+Running org.apache.commons.math3.dfp.DfpMathTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.commons.math3.dfp.DfpMathTest
+Running org.apache.commons.math3.dfp.DfpDecTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.commons.math3.dfp.DfpDecTest
+
+Results :
+
+Tests run: 4183, Failures: 0, Errors: 0, Skipped: 42
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:21 min
+[INFO] Finished at: 2021-07-26T05:42:52-07:00
+[INFO] ------------------------------------------------------------------------

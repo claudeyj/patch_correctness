@@ -1,0 +1,11 @@
+--- jd-result/Lang/60/mutant-2/a-StrBuilder.java	2021-07-14 16:58:37.026123337 -0700
++++ jd-result/Lang/60/mutant-2/b-StrBuilder.java	2021-07-14 16:58:38.634123383 -0700
+@@ -539,7 +539,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private void deleteImpl(int startIndex, int endIndex, int len) {
+-/*1114*/    System.arraycopy(this.buffer, endIndex, this.buffer, startIndex, this.size - endIndex);
++/*1114*/    System.arraycopy(this.buffer, endIndex, this.buffer, startIndex, capacity() - endIndex);
+ /*1115*/    this.size -= len;
+ /*   0*/  }
+ /*   0*/  

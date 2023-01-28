@@ -1,0 +1,20 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-90/ori-Axis.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-90/man-patched-Axis.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-90/ori-Axis.java	2021-08-23 09:23:48.492984971 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-90/man-patched-Axis.java	2021-08-23 09:23:48.492984971 +0800
+@@ -119,6 +119,7 @@
+ import org.jfree.chart.util.RectangleEdge;
+ import org.jfree.chart.util.RectangleInsets;
+ import org.jfree.chart.util.SerialUtilities;
++import org.jfree.chart.entity.StandardEntityCollection;
+ 
+ /**
+  * The base class for all axes in JFreeChart.  Subclasses are divided into 
+@@ -1189,7 +1190,7 @@
+         }
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
+-                EntityCollection entities = owner.getEntityCollection();
++      EntityCollection entities = new StandardEntityCollection();
+                 if (entities != null) {
+                     entities.add(new AxisLabelEntity(this, hotspot, 
+                             this.labelToolTip, this.labelURL));

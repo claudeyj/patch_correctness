@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-32/a-EigenDecompositionImpl.java	2021-07-14 09:19:31.873346067 -0700
++++ jd-result/Math/80/mutant-32/b-EigenDecompositionImpl.java	2021-07-14 09:19:33.405346111 -0700
+@@ -700,7 +700,7 @@
+ /*1199*/    right = upper + margin;
+ /*1200*/    for (int j = 0; j < maxIter; j++) {
+ /*1202*/      double range = right - left;
+-/*1203*/      if (range < absoluteTolerance || range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))
++/*1203*/      if (range < absoluteTolerance || range < relativeTolerance * Math.pow(Math.abs(left), Math.abs(right)))
+ /*   0*/        break; 
+ /*1209*/      double middle = 0.5D * (left + right);
+ /*1210*/      if (countEigenValues(middle, index, n) >= n) {

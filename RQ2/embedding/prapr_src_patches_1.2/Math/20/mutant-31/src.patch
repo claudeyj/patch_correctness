@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-31/ori-CMAESOptimizer.java	2021-07-24 01:52:02.370297035 -0700
++++ jd-result/Math/20/mutant-31/patched-CMAESOptimizer.java	2021-07-24 01:52:02.370297035 -0700
+@@ -351,7 +351,7 @@
+          // -------------------- Initialization --------------------------------
+         isMinimize = getGoalType().equals(GoalType.MINIMIZE);
+         final FitnessFunction fitfun = new FitnessFunction();
+-        final double[] guess = fitfun.encode(getStartPoint());
++    double[] guess = fitfun.decode(getStartPoint());
+         // number of objective variables/problem dimension
+         dimension = guess.length;
+         initializeCMA(guess);

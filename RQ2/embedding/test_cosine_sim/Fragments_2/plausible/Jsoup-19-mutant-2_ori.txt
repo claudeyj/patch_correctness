@@ -1,0 +1,7 @@
+        Set<Protocol> protSet;
+
+        if (this.protocols.containsKey(tagName)) {
+            attrMap = this.protocols.get(tagName);
+        } else {
+            attrMap = new HashMap<AttributeKey, Set<Protocol>>();
+            this.protocols.put(tagName, attrMap);

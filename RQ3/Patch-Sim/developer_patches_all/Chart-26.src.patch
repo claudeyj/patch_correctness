@@ -1,0 +1,18 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/26/mutant-0/buggy-Axis.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/26/mutant-0/patched-Axis.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/26/mutant-0/buggy-Axis.java	2021-08-22 00:18:38.570190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/26/mutant-0/patched-Axis.java	2021-08-22 00:18:38.570190183 -0700
+@@ -1189,12 +1189,14 @@
+         }
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
++            if (owner != null) {
+                 EntityCollection entities = owner.getEntityCollection();
+                 if (entities != null) {
+                     entities.add(new AxisLabelEntity(this, hotspot, 
+                             this.labelToolTip, this.labelURL));
+                 }
+         }
++        }
+         return state;
+ 
+     }

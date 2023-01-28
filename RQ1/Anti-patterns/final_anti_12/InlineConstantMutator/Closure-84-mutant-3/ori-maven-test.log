@@ -1,0 +1,479 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.google.javascript:closure-compiler:jar:r@build.svnVersion@
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: rhino:rhino:jar -> duplicate declaration of version 1.84 @ line 130, column 14
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ---------------< com.google.javascript:closure-compiler >---------------
+[INFO] Building Closure Compiler r@build.svnVersion@
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ closure-compiler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Closure/84/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ closure-compiler ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 358 source files to /home/junyang/PR/SubjectPrograms/Closure/84/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.6
+/home/junyang/PR/SubjectPrograms/Closure/84/src/main/java/com/google/javascript/jscomp/graph/StandardUnionFind.java:[188,15] [deprecation] <T>unmodifiableIterator(UnmodifiableIterator<T>) in Iterators has been deprecated
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (copy-resources01) @ closure-compiler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ closure-compiler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/junyang/PR/SubjectPrograms/Closure/84/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ closure-compiler ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ closure-compiler ---
+[INFO] Surefire report directory: /home/junyang/PR/SubjectPrograms/Closure/84/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.google.javascript.jscomp.SourceMap2Test
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.516 sec - in com.google.javascript.jscomp.SourceMap2Test
+Running com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.905 sec - in com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest
+Running com.google.javascript.jscomp.VarCheckTest
+Tests run: 44, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec - in com.google.javascript.jscomp.VarCheckTest
+Running com.google.javascript.jscomp.RenameVarsTest
+Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 sec - in com.google.javascript.jscomp.RenameVarsTest
+Running com.google.javascript.jscomp.ClosureCodeRemovalTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.google.javascript.jscomp.ClosureCodeRemovalTest
+Running com.google.javascript.jscomp.DefinitionsRemoverTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in com.google.javascript.jscomp.DefinitionsRemoverTest
+Running com.google.javascript.jscomp.CheckPathsBetweenNodesTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in com.google.javascript.jscomp.CheckPathsBetweenNodesTest
+Running com.google.javascript.jscomp.JSCompilerSourceExcerptProviderTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.JSCompilerSourceExcerptProviderTest
+Running com.google.javascript.jscomp.DiagnosticGroupTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.DiagnosticGroupTest
+Running com.google.javascript.jscomp.InlineVariablesConstantsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in com.google.javascript.jscomp.InlineVariablesConstantsTest
+Running com.google.javascript.jscomp.SpecializeModuleTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 sec - in com.google.javascript.jscomp.SpecializeModuleTest
+Running com.google.javascript.jscomp.GlobalNamespaceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.GlobalNamespaceTest
+Running com.google.javascript.jscomp.SourceMapTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.292 sec - in com.google.javascript.jscomp.SourceMapTest
+Running com.google.javascript.jscomp.StripCodeTest
+Tests run: 51, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.121 sec - in com.google.javascript.jscomp.StripCodeTest
+Running com.google.javascript.jscomp.ProcessClosurePrimitivesTest
+Tests run: 74, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 sec - in com.google.javascript.jscomp.ProcessClosurePrimitivesTest
+Running com.google.javascript.jscomp.CollapseAnonymousFunctionsTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.google.javascript.jscomp.CollapseAnonymousFunctionsTest
+Running com.google.javascript.jscomp.FunctionToBlockMutatorTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 sec - in com.google.javascript.jscomp.FunctionToBlockMutatorTest
+Running com.google.javascript.jscomp.CheckGlobalNamesTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in com.google.javascript.jscomp.CheckGlobalNamesTest
+Running com.google.javascript.jscomp.NameAnonymousFunctionsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.google.javascript.jscomp.NameAnonymousFunctionsTest
+Running com.google.javascript.jscomp.VariableMapTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.google.javascript.jscomp.VariableMapTest
+Running com.google.javascript.jscomp.AmbiguatePropertiesTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.25 sec - in com.google.javascript.jscomp.AmbiguatePropertiesTest
+Running com.google.javascript.jscomp.SuspiciousPropertiesCheckTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.google.javascript.jscomp.SuspiciousPropertiesCheckTest
+Running com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.252 sec - in com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest
+Running com.google.javascript.jscomp.CollapseVariableDeclarationsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec - in com.google.javascript.jscomp.CollapseVariableDeclarationsTest
+Running com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest
+Tests run: 82, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 sec - in com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest
+Running com.google.javascript.jscomp.InlineFunctionsTest
+Tests run: 200, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.345 sec - in com.google.javascript.jscomp.InlineFunctionsTest
+Running com.google.javascript.jscomp.DenormalizeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.DenormalizeTest
+Running com.google.javascript.jscomp.PureFunctionIdentifierTest
+Tests run: 109, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.507 sec - in com.google.javascript.jscomp.PureFunctionIdentifierTest
+Running com.google.javascript.jscomp.InlineCostEstimatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.InlineCostEstimatorTest
+Running com.google.javascript.jscomp.PeepholeIntegrationTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 sec - in com.google.javascript.jscomp.PeepholeIntegrationTest
+Running com.google.javascript.jscomp.AliasStringsTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in com.google.javascript.jscomp.AliasStringsTest
+Running com.google.javascript.jscomp.CompilerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.CompilerTest
+Running com.google.javascript.jscomp.CheckSideEffectsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in com.google.javascript.jscomp.CheckSideEffectsTest
+Running com.google.javascript.jscomp.ControlFlowAnalysisTest
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in com.google.javascript.jscomp.ControlFlowAnalysisTest
+Running com.google.javascript.jscomp.graph.GraphColoringTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec - in com.google.javascript.jscomp.graph.GraphColoringTest
+Running com.google.javascript.jscomp.graph.GraphReachabilityTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.graph.GraphReachabilityTest
+Running com.google.javascript.jscomp.graph.StandardUnionFindTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.google.javascript.jscomp.graph.StandardUnionFindTest
+Running com.google.javascript.jscomp.graph.GraphTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 sec - in com.google.javascript.jscomp.graph.GraphTest
+Running com.google.javascript.jscomp.RecordFunctionInformationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 sec - in com.google.javascript.jscomp.RecordFunctionInformationTest
+Running com.google.javascript.jscomp.parsing.IRFactoryTest
+Tests run: 100, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in com.google.javascript.jscomp.parsing.IRFactoryTest
+Running com.google.javascript.jscomp.parsing.ParserTest
+Tests run: 86, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.085 sec <<< FAILURE! - in com.google.javascript.jscomp.parsing.ParserTest
+testDestructuringAssignForbidden4(com.google.javascript.jscomp.parsing.ParserTest)  Time elapsed: 0.007 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: null
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at com.google.javascript.jscomp.parsing.ParserTest.parseError(ParserTest.java:783)
+	at com.google.javascript.jscomp.parsing.ParserTest.testDestructuringAssignForbidden4(ParserTest.java:625)
+
+Running com.google.javascript.jscomp.parsing.JsDocInfoParserTest
+Tests run: 367, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 sec - in com.google.javascript.jscomp.parsing.JsDocInfoParserTest
+Running com.google.javascript.jscomp.parsing.JsDocTokenStreamTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.parsing.JsDocTokenStreamTest
+Running com.google.javascript.jscomp.SyntacticScopeCreatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in com.google.javascript.jscomp.SyntacticScopeCreatorTest
+Running com.google.javascript.jscomp.MaybeReachingVariableUseTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec - in com.google.javascript.jscomp.MaybeReachingVariableUseTest
+Running com.google.javascript.jscomp.NodeIteratorsTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.google.javascript.jscomp.NodeIteratorsTest
+Running com.google.javascript.jscomp.GatherRawExportsTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.google.javascript.jscomp.GatherRawExportsTest
+Running com.google.javascript.jscomp.CheckRequiresForConstructorsTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in com.google.javascript.jscomp.CheckRequiresForConstructorsTest
+Running com.google.javascript.jscomp.NodeTraversalTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec - in com.google.javascript.jscomp.NodeTraversalTest
+Running com.google.javascript.jscomp.ReplaceStringsTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.133 sec - in com.google.javascript.jscomp.ReplaceStringsTest
+Running com.google.javascript.jscomp.AliasKeywordsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.google.javascript.jscomp.AliasKeywordsTest
+Running com.google.javascript.jscomp.FunctionRewriterTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in com.google.javascript.jscomp.FunctionRewriterTest
+Running com.google.javascript.jscomp.MustBeReachingVariableDefTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in com.google.javascript.jscomp.MustBeReachingVariableDefTest
+Running com.google.javascript.jscomp.InlineSimpleMethodsTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in com.google.javascript.jscomp.InlineSimpleMethodsTest
+Running com.google.javascript.jscomp.CombinedCompilerPassTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.09 sec - in com.google.javascript.jscomp.CombinedCompilerPassTest
+Running com.google.javascript.jscomp.StrictModeCheckTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec - in com.google.javascript.jscomp.StrictModeCheckTest
+Running com.google.javascript.jscomp.VariableVisibilityAnalysisTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec - in com.google.javascript.jscomp.VariableVisibilityAnalysisTest
+Running com.google.javascript.jscomp.IgnoreCajaPropertiesTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in com.google.javascript.jscomp.IgnoreCajaPropertiesTest
+Running com.google.javascript.jscomp.CrossModuleCodeMotionTest
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 sec - in com.google.javascript.jscomp.CrossModuleCodeMotionTest
+Running com.google.javascript.jscomp.CheckUnreachableCodeTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in com.google.javascript.jscomp.CheckUnreachableCodeTest
+Running com.google.javascript.jscomp.VariableReferenceCheckTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in com.google.javascript.jscomp.VariableReferenceCheckTest
+Running com.google.javascript.jscomp.NormalizeTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 sec - in com.google.javascript.jscomp.NormalizeTest
+Running com.google.javascript.jscomp.GatherSideEffectSubexpressionsCallbackTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.GatherSideEffectSubexpressionsCallbackTest
+Running com.google.javascript.jscomp.deps.JsFunctionParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.javascript.jscomp.deps.JsFunctionParserTest
+Running com.google.javascript.jscomp.deps.SortedDependenciesTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.javascript.jscomp.deps.SortedDependenciesTest
+Running com.google.javascript.jscomp.deps.DepsFileParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.javascript.jscomp.deps.DepsFileParserTest
+Running com.google.javascript.jscomp.deps.JsFileParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.google.javascript.jscomp.deps.JsFileParserTest
+Running com.google.javascript.jscomp.deps.JsFileLineParserTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in com.google.javascript.jscomp.deps.JsFileLineParserTest
+Running com.google.javascript.jscomp.UnreachableCodeEliminationTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec - in com.google.javascript.jscomp.UnreachableCodeEliminationTest
+Running com.google.javascript.jscomp.DefaultCodingConventionTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.DefaultCodingConventionTest
+Running com.google.javascript.jscomp.AstParallelizerTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.google.javascript.jscomp.AstParallelizerTest
+Running com.google.javascript.jscomp.CheckProvidesTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.google.javascript.jscomp.CheckProvidesTest
+Running com.google.javascript.jscomp.LinkedFlowScopeTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec - in com.google.javascript.jscomp.LinkedFlowScopeTest
+Running com.google.javascript.jscomp.RenameLabelsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.google.javascript.jscomp.RenameLabelsTest
+Running com.google.javascript.jscomp.NodeUtilTest
+Tests run: 45, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in com.google.javascript.jscomp.NodeUtilTest
+Running com.google.javascript.jscomp.ReplaceMessagesTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in com.google.javascript.jscomp.ReplaceMessagesTest
+Running com.google.javascript.jscomp.RemoveUnusedNamesTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in com.google.javascript.jscomp.RemoveUnusedNamesTest
+Running com.google.javascript.jscomp.DevirtualizePrototypeMethodsTest
+Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 sec - in com.google.javascript.jscomp.DevirtualizePrototypeMethodsTest
+Running com.google.javascript.jscomp.CheckRegExpTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.google.javascript.jscomp.CheckRegExpTest
+Running com.google.javascript.jscomp.ObjectPropertyStringPostprocessTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.google.javascript.jscomp.ObjectPropertyStringPostprocessTest
+Running com.google.javascript.jscomp.SimpleFunctionAliasAnalysisTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.google.javascript.jscomp.SimpleFunctionAliasAnalysisTest
+Running com.google.javascript.jscomp.PeepholeFoldConstantsTest
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.824 sec - in com.google.javascript.jscomp.PeepholeFoldConstantsTest
+Running com.google.javascript.jscomp.OptimizeArgumentsArrayTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in com.google.javascript.jscomp.OptimizeArgumentsArrayTest
+Running com.google.javascript.jscomp.CallGraphTest
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 sec - in com.google.javascript.jscomp.CallGraphTest
+Running com.google.javascript.jscomp.SanityCheckTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in com.google.javascript.jscomp.SanityCheckTest
+Running com.google.javascript.jscomp.JsMessageExtractorTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in com.google.javascript.jscomp.JsMessageExtractorTest
+Running com.google.javascript.jscomp.PeepholeOptimizationsPassTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.google.javascript.jscomp.PeepholeOptimizationsPassTest
+Running com.google.javascript.jscomp.ExpressionDecomposerTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in com.google.javascript.jscomp.ExpressionDecomposerTest
+Running com.google.javascript.jscomp.TypedScopeCreatorTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 sec - in com.google.javascript.jscomp.TypedScopeCreatorTest
+Running com.google.javascript.jscomp.TypeValidatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in com.google.javascript.jscomp.TypeValidatorTest
+Running com.google.javascript.jscomp.ConstCheckTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in com.google.javascript.jscomp.ConstCheckTest
+Running com.google.javascript.jscomp.CheckMissingReturnTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec - in com.google.javascript.jscomp.CheckMissingReturnTest
+Running com.google.javascript.jscomp.JSModuleGraphTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.google.javascript.jscomp.JSModuleGraphTest
+Running com.google.javascript.jscomp.LiveVariableAnalysisTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.google.javascript.jscomp.LiveVariableAnalysisTest
+Running com.google.javascript.jscomp.ControlStructureCheckTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.google.javascript.jscomp.ControlStructureCheckTest
+Running com.google.javascript.jscomp.FunctionNamesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.FunctionNamesTest
+Running com.google.javascript.jscomp.GroupVariableDeclarationsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in com.google.javascript.jscomp.GroupVariableDeclarationsTest
+Running com.google.javascript.jscomp.ReplaceCssNamesTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.google.javascript.jscomp.ReplaceCssNamesTest
+Running com.google.javascript.jscomp.MakeDeclaredNamesUniqueTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in com.google.javascript.jscomp.MakeDeclaredNamesUniqueTest
+Running com.google.javascript.jscomp.InferJSDocInfoTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in com.google.javascript.jscomp.InferJSDocInfoTest
+Running com.google.javascript.jscomp.MemoizedScopeCreatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.MemoizedScopeCreatorTest
+Running com.google.javascript.jscomp.ConvertToDottedPropertiesTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in com.google.javascript.jscomp.ConvertToDottedPropertiesTest
+Running com.google.javascript.jscomp.RhinoErrorReporterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.RhinoErrorReporterTest
+Running com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest
+Running com.google.javascript.jscomp.CommandLineRunnerTest
+Tests run: 52, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.909 sec - in com.google.javascript.jscomp.CommandLineRunnerTest
+Running com.google.javascript.jscomp.CreateSyntheticBlocksTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.google.javascript.jscomp.CreateSyntheticBlocksTest
+Running com.google.javascript.jscomp.GoogleCodingConventionTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.google.javascript.jscomp.GoogleCodingConventionTest
+Running com.google.javascript.jscomp.ReplaceIdGeneratorsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.javascript.jscomp.ReplaceIdGeneratorsTest
+Running com.google.javascript.jscomp.CoalesceVariableNamesTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 sec - in com.google.javascript.jscomp.CoalesceVariableNamesTest
+Running com.google.javascript.jscomp.TypeCheckFunctionCheckTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in com.google.javascript.jscomp.TypeCheckFunctionCheckTest
+Running com.google.javascript.jscomp.FunctionInjectorTest
+Tests run: 129, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec - in com.google.javascript.jscomp.FunctionInjectorTest
+Running com.google.javascript.jscomp.FixedPointGraphTraversalTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.google.javascript.jscomp.FixedPointGraphTraversalTest
+Running com.google.javascript.jscomp.RenamePrototypesTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in com.google.javascript.jscomp.RenamePrototypesTest
+Running com.google.javascript.jscomp.UnfoldCompoundAssignmentsTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.google.javascript.jscomp.UnfoldCompoundAssignmentsTest
+Running com.google.javascript.jscomp.CrossModuleMethodMotionTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in com.google.javascript.jscomp.CrossModuleMethodMotionTest
+Running com.google.javascript.jscomp.RuntimeTypeCheckTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.307 sec - in com.google.javascript.jscomp.RuntimeTypeCheckTest
+Running com.google.javascript.jscomp.ExtractPrototypeMemberDeclarationsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.google.javascript.jscomp.ExtractPrototypeMemberDeclarationsTest
+Running com.google.javascript.jscomp.TypeInferenceTest
+Tests run: 80, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in com.google.javascript.jscomp.TypeInferenceTest
+Running com.google.javascript.jscomp.JsMessageVisitorTest
+Tests run: 41, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.google.javascript.jscomp.JsMessageVisitorTest
+Running com.google.javascript.jscomp.CheckGlobalThisTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in com.google.javascript.jscomp.CheckGlobalThisTest
+Running com.google.javascript.jscomp.PrepareAstTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.PrepareAstTest
+Running com.google.javascript.jscomp.CollapsePropertiesTest
+Tests run: 207, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.379 sec - in com.google.javascript.jscomp.CollapsePropertiesTest
+Running com.google.javascript.jscomp.FunctionTypeBuilderTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.893 sec - in com.google.javascript.jscomp.FunctionTypeBuilderTest
+Running com.google.javascript.jscomp.DotFormatterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.google.javascript.jscomp.DotFormatterTest
+Running com.google.javascript.jscomp.CompilerOptionsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.CompilerOptionsTest
+Running com.google.javascript.jscomp.MarkNoSideEffectCallsTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.google.javascript.jscomp.MarkNoSideEffectCallsTest
+Running com.google.javascript.jscomp.SideEffectsAnalysisTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec - in com.google.javascript.jscomp.SideEffectsAnalysisTest
+Running com.google.javascript.jscomp.ParallelCompilerPassTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in com.google.javascript.jscomp.ParallelCompilerPassTest
+Running com.google.javascript.jscomp.CheckAccidentalSemicolonTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.CheckAccidentalSemicolonTest
+Running com.google.javascript.jscomp.ConcreteTypeTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.ConcreteTypeTest
+Running com.google.javascript.jscomp.DeadAssignmentsEliminationTest
+Tests run: 41, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec - in com.google.javascript.jscomp.DeadAssignmentsEliminationTest
+Running com.google.javascript.jscomp.MinimizeExitPointsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 sec - in com.google.javascript.jscomp.MinimizeExitPointsTest
+Running com.google.javascript.jscomp.InstrumentFunctionsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in com.google.javascript.jscomp.InstrumentFunctionsTest
+Running com.google.javascript.jscomp.jsonml.SecureCompilerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in com.google.javascript.jscomp.jsonml.SecureCompilerTest
+Running com.google.javascript.jscomp.jsonml.JsonMLValidationTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.google.javascript.jscomp.jsonml.JsonMLValidationTest
+Running com.google.javascript.jscomp.jsonml.JsonMLConversionTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.577 sec - in com.google.javascript.jscomp.jsonml.JsonMLConversionTest
+Running com.google.javascript.jscomp.ProcessTweaksTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in com.google.javascript.jscomp.ProcessTweaksTest
+Running com.google.javascript.jscomp.GenerateExportsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.google.javascript.jscomp.GenerateExportsTest
+Running com.google.javascript.jscomp.JSModuleTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.JSModuleTest
+Running com.google.javascript.jscomp.DataFlowAnalysisTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec - in com.google.javascript.jscomp.DataFlowAnalysisTest
+Running com.google.javascript.jscomp.JsMessageTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.JsMessageTest
+Running com.google.javascript.jscomp.TypeCheckTest
+Tests run: 885, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.252 sec - in com.google.javascript.jscomp.TypeCheckTest
+Running com.google.javascript.jscomp.RemoveTryCatchTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.RemoveTryCatchTest
+Running com.google.javascript.jscomp.NameAnonymousFunctionsMappedTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.NameAnonymousFunctionsMappedTest
+Running com.google.javascript.jscomp.PhaseOptimizerTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.google.javascript.jscomp.PhaseOptimizerTest
+Running com.google.javascript.jscomp.BasicErrorManagerTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.BasicErrorManagerTest
+Running com.google.javascript.jscomp.InlineVariablesTest
+Tests run: 121, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.139 sec - in com.google.javascript.jscomp.InlineVariablesTest
+Running com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest
+Running com.google.javascript.jscomp.OptimizeReturnsTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.OptimizeReturnsTest
+Running com.google.javascript.jscomp.PeepholeFoldWithTypesTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.google.javascript.jscomp.PeepholeFoldWithTypesTest
+Running com.google.javascript.jscomp.SimpleDefinitionFinderTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 sec - in com.google.javascript.jscomp.SimpleDefinitionFinderTest
+Running com.google.javascript.jscomp.ScopedAliasesTest
+Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec - in com.google.javascript.jscomp.ScopedAliasesTest
+Running com.google.javascript.jscomp.MoveFunctionDeclarationsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.google.javascript.jscomp.MoveFunctionDeclarationsTest
+Running com.google.javascript.jscomp.RenameLocalVarsTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in com.google.javascript.jscomp.RenameLocalVarsTest
+Running com.google.javascript.jscomp.CodePrinterTest
+Tests run: 41, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec - in com.google.javascript.jscomp.CodePrinterTest
+Running com.google.javascript.jscomp.ExportTestFunctionsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.google.javascript.jscomp.ExportTestFunctionsTest
+Running com.google.javascript.jscomp.LooseTypeCheckTest
+Tests run: 795, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.648 sec - in com.google.javascript.jscomp.LooseTypeCheckTest
+Running com.google.javascript.jscomp.RenamePropertiesTest
+Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.google.javascript.jscomp.RenamePropertiesTest
+Running com.google.javascript.jscomp.VariableShadowDeclarationCheckTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.javascript.jscomp.VariableShadowDeclarationCheckTest
+Running com.google.javascript.jscomp.AliasExternalsTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.google.javascript.jscomp.AliasExternalsTest
+Running com.google.javascript.jscomp.ObjectPropertyStringPreprocessTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.ObjectPropertyStringPreprocessTest
+Running com.google.javascript.jscomp.ClosureCodingConventionTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.jscomp.ClosureCodingConventionTest
+Running com.google.javascript.jscomp.CheckAccessControlsTest
+Tests run: 67, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec - in com.google.javascript.jscomp.CheckAccessControlsTest
+Running com.google.javascript.jscomp.DisambiguatePropertiesTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.141 sec - in com.google.javascript.jscomp.DisambiguatePropertiesTest
+Running com.google.javascript.jscomp.RemoveUnusedVarsTest
+Tests run: 63, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec - in com.google.javascript.jscomp.RemoveUnusedVarsTest
+Running com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest
+Running com.google.javascript.jscomp.LightweightMessageFormatterTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in com.google.javascript.jscomp.LightweightMessageFormatterTest
+Running com.google.javascript.jscomp.TightenTypesTest
+Tests run: 44, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 sec - in com.google.javascript.jscomp.TightenTypesTest
+Running com.google.javascript.jscomp.CheckMissingGetCssNameTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.javascript.jscomp.CheckMissingGetCssNameTest
+Running com.google.javascript.jscomp.ExternExportsPassTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 sec - in com.google.javascript.jscomp.ExternExportsPassTest
+Running com.google.javascript.jscomp.ChainCallsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in com.google.javascript.jscomp.ChainCallsTest
+Running com.google.javascript.jscomp.FunctionArgumentInjectorTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.google.javascript.jscomp.FunctionArgumentInjectorTest
+Running com.google.javascript.jscomp.ProcessDefinesTest
+Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in com.google.javascript.jscomp.ProcessDefinesTest
+Running com.google.javascript.jscomp.OptimizeParametersTest
+Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec - in com.google.javascript.jscomp.OptimizeParametersTest
+Running com.google.javascript.jscomp.NameAnalyzerTest
+Tests run: 252, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.283 sec - in com.google.javascript.jscomp.NameAnalyzerTest
+Running com.google.javascript.rhino.NodeTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.rhino.NodeTest
+Running com.google.javascript.rhino.jstype.JSTypeTest
+Tests run: 124, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 sec - in com.google.javascript.rhino.jstype.JSTypeTest
+Running com.google.javascript.rhino.jstype.FunctionTypeTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.google.javascript.rhino.jstype.FunctionTypeTest
+Running com.google.javascript.rhino.jstype.FunctionParamBuilderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.rhino.jstype.FunctionParamBuilderTest
+Running com.google.javascript.rhino.jstype.UnionTypeBuilderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.google.javascript.rhino.jstype.UnionTypeBuilderTest
+Running com.google.javascript.rhino.jstype.TernaryValueTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.javascript.rhino.jstype.TernaryValueTest
+Running com.google.javascript.rhino.jstype.JSTypeRegistryTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in com.google.javascript.rhino.jstype.JSTypeRegistryTest
+Running com.google.javascript.rhino.jstype.BooleanLiteralSetTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.javascript.rhino.jstype.BooleanLiteralSetTest
+Running com.google.javascript.rhino.jstype.UnionTypeTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.google.javascript.rhino.jstype.UnionTypeTest
+Running com.google.javascript.rhino.ParserTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE! - in com.google.javascript.rhino.ParserTest
+initializationError(com.google.javascript.rhino.ParserTest)  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.google.javascript.rhino.ParserTest
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at junit.framework.TestSuite.createTest(TestSuite.java:61)
+	at junit.framework.TestSuite.addTestMethod(TestSuite.java:294)
+	at junit.framework.TestSuite.addTestsFromTestCase(TestSuite.java:150)
+	at junit.framework.TestSuite.<init>(TestSuite.java:129)
+	at org.junit.internal.runners.JUnit38ClassRunner.<init>(JUnit38ClassRunner.java:71)
+	at org.junit.internal.builders.JUnit3Builder.runnerForClass(JUnit3Builder.java:14)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:57)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:29)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:57)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:24)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+Running com.google.javascript.rhino.TokenStreamTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.javascript.rhino.TokenStreamTest
+Running com.google.javascript.rhino.JSDocInfoTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.javascript.rhino.JSDocInfoTest
+
+Results :
+
+Failed tests: 
+  ParserTest.testDestructuringAssignForbidden4:625->parseError:783 null
+
+Tests in error: 
+  ParserTest.initializationError » NoClassDefFound Could not initialize class co...
+
+
+Tests run: 6446, Failures: 1, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.992 s
+[INFO] Finished at: 2021-07-26T18:27:18-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18:test (default-test) on project closure-compiler: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/junyang/PR/SubjectPrograms/Closure/84/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

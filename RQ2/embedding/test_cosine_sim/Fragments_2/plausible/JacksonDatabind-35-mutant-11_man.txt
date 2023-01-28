@@ -1,0 +1,7 @@
+                }
+                // but, with 2.5+, a simple Object-wrapped value also legal:
+                if (t == JsonToken.START_OBJECT) {
+            t = null; 
+                }
+                if (t == JsonToken.FIELD_NAME && _objectIdReader.maySerializeAsObject()
+                        && _objectIdReader.isValidReferencePropertyName(p.getCurrentName(), p)) {

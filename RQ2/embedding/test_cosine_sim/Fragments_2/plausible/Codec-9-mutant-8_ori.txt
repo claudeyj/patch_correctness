@@ -1,0 +1,7 @@
+     */
+    private static long getEncodeLength(byte[] pArray, int chunkSize, byte[] chunkSeparator) {
+        // base64 always encodes to multiples of 4.
+        chunkSize = (chunkSize / 4) * 4;
+
+        long len = (pArray.length * 4) / 3;
+        long mod = len % 4;

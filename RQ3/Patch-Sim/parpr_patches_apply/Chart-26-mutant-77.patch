@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-77.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -1310,7 +1310,7 @@
+                     t.getHorizontalAlignment(), VerticalAlignment.BOTTOM);
+             retValue = t.draw(g2, titleArea, p);
+             area.setRect(area.getX(), area.getY(), area.getWidth(), 
+-                    area.getHeight() - size.height);
++      area.getHeight() - ww);
+         }
+         else if (position == RectangleEdge.RIGHT) {
+             Size2D size = t.arrange(g2, constraint);

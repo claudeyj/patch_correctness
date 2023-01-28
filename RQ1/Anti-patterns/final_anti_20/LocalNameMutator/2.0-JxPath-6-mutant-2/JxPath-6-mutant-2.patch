@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/6/mutant-2/a-CoreOperationCompare.java	2021-08-09 04:19:24.601555150 -0700
++++ jd-result-2.0/JxPath/6/mutant-2/b-CoreOperationCompare.java	2021-08-09 04:19:26.121555193 -0700
+@@ -15,7 +15,7 @@
+ /*   0*/  protected boolean equal(EvalContext context, Expression left, Expression right) {
+ /*  50*/    Object l = left.compute(context);
+ /*  51*/    Object r = right.compute(context);
+-/*  57*/    if (l instanceof org.apache.commons.jxpath.ri.axes.InitialContext || l instanceof org.apache.commons.jxpath.ri.axes.SelfContext) {
++/*  57*/    if (r instanceof org.apache.commons.jxpath.ri.axes.InitialContext || l instanceof org.apache.commons.jxpath.ri.axes.SelfContext) {
+ /*  58*/        l = ((EvalContext)l).getSingleNodePointer(); 
+ /*   0*/       }
+ /*  61*/    if (r instanceof org.apache.commons.jxpath.ri.axes.InitialContext || r instanceof org.apache.commons.jxpath.ri.axes.SelfContext) {

@@ -1,0 +1,14 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/4/mutant-2/ori-XYPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/4/mutant-2/man-patched-XYPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/4/mutant-2/ori-XYPlot.java	2021-08-23 09:23:48.504985137 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/4/mutant-2/man-patched-XYPlot.java	2021-08-23 09:23:48.504985137 +0800
+@@ -4489,7 +4489,9 @@
+                                 DatasetUtilities.findRangeBounds(d));
+                     }
+                 }
+-                
++                    if (r == null){
++                        return null; 
++                    }
+                     Collection c = r.getAnnotations();
+                     Iterator i = c.iterator();
+                     while (i.hasNext()) {

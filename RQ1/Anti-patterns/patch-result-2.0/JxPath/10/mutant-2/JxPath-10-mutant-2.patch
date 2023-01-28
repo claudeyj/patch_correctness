@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/10/mutant-2/a-CoreOperationRelationalExpression.java	2021-08-09 04:19:09.857554734 -0700
++++ jd-result-2.0/JxPath/10/mutant-2/b-CoreOperationRelationalExpression.java	2021-08-09 04:19:11.285554774 -0700
+@@ -13,7 +13,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public final Object computeValue(EvalContext context) {
+-/*  42*/    return compute(this.args[0].computeValue(context), this.args[1].computeValue(context)) ? Boolean.TRUE : Boolean.FALSE;
++/*  42*/    return compute(this.args[0].compute(context), this.args[1].computeValue(context)) ? Boolean.TRUE : Boolean.FALSE;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected final int getPrecedence() {

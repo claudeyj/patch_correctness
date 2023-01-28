@@ -1,0 +1,391 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 21:14:00 PDT 2021
+Number of Plausible Fixes: 43
+Total Number of Patches: 33842
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.jscomp.NodeUtil::canBeSideEffected(Lcom/google/javascript/rhino/Node;)Z is replaced with the used of default value false
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 730
+	Rank: 1
+	Total Rank: 101
+	Dump: mutant-21.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 730
+	Rank: 2
+	Total Rank: 102
+	Dump: mutant-41.class
+------------------------------------------------
+3.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 3
+	Total Rank: 278
+	Dump: mutant-44.class
+------------------------------------------------
+4.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local block is replaced a call block.getFirstChild()
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 5
+	Total Rank: 282
+	Dump: mutant-14.class
+------------------------------------------------
+5.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local stmt is replaced a call stmt.getFirstChild()
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 5
+	Total Rank: 282
+	Dump: mutant-3.class
+------------------------------------------------
+6.
+	Mutator: LocalNameMutator
+	Description: local stmt is replaced by local fnNode to be used
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 12
+	Total Rank: 292
+	Dump: mutant-40.class
+------------------------------------------------
+7.
+	Mutator: LocalNameMutator
+	Description: local stmt is replaced by local fnNode to be used
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 702
+	Rank: 12
+	Total Rank: 292
+	Dump: mutant-16.class
+------------------------------------------------
+8.
+	Mutator: LocalNameMutator
+	Description: local stmt is replaced by local block to be used
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 12
+	Total Rank: 292
+	Dump: mutant-38.class
+------------------------------------------------
+9.
+	Mutator: LocalNameMutator
+	Description: local stmt is replaced by local callNode to be used
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 702
+	Rank: 12
+	Total Rank: 292
+	Dump: mutant-15.class
+------------------------------------------------
+10.
+	Mutator: LocalNameMutator
+	Description: local stmt is replaced by local callNode to be used
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 12
+	Total Rank: 292
+	Dump: mutant-39.class
+------------------------------------------------
+11.
+	Mutator: LocalNameMutator
+	Description: local block is replaced by local callNode to be used
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 12
+	Total Rank: 292
+	Dump: mutant-42.class
+------------------------------------------------
+12.
+	Mutator: LocalNameMutator
+	Description: local block is replaced by local fnNode to be used
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 12
+	Total Rank: 292
+	Dump: mutant-43.class
+------------------------------------------------
+13.
+	Mutator: MethodNameMutator
+	Description: replaced call to getFirstChild with a call to cloneNode
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-25.class
+------------------------------------------------
+14.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReturn with a call to isVarArgs
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-6.class
+------------------------------------------------
+15.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReturn with a call to wasEmptyNode
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-10.class
+------------------------------------------------
+16.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReturn with a call to isFromExterns
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-13.class
+------------------------------------------------
+17.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReturn with a call to isQualifiedName
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-8.class
+------------------------------------------------
+18.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReturn with a call to isSyntheticBlock
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-11.class
+------------------------------------------------
+19.
+	Mutator: MethodNameMutator
+	Description: replaced call to getFirstChild with a call to getLastSibling
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-26.class
+------------------------------------------------
+20.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReturn with a call to isOptionalArg
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-12.class
+------------------------------------------------
+21.
+	Mutator: MethodNameMutator
+	Description: replaced call to getFirstChild with a call to cloneTree
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-24.class
+------------------------------------------------
+22.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReturn with a call to hasMoreThanOneChild
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-9.class
+------------------------------------------------
+23.
+	Mutator: MethodNameMutator
+	Description: replaced call to isReturn with a call to isUnscopedQualifiedName
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-7.class
+------------------------------------------------
+24.
+	Mutator: MethodNameMutator
+	Description: replaced call to getFirstChild with a call to getParent
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 24
+	Total Rank: 339
+	Dump: mutant-27.class
+------------------------------------------------
+25.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.Node::isReturn()Z is replaced with the used of local hasSideEffects
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 29
+	Total Rank: 352
+	Dump: mutant-4.class
+------------------------------------------------
+26.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.Node::isReturn()Z is replaced with the used of default value false
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 29
+	Total Rank: 352
+	Dump: mutant-2.class
+------------------------------------------------
+27.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.Node::getFirstChild()Lcom/google/javascript/rhino/Node; is replaced with the used of local callNode
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 29
+	Total Rank: 352
+	Dump: mutant-1.class
+------------------------------------------------
+28.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.jscomp.NodeUtil::mayHaveSideEffects(Lcom/google/javascript/rhino/Node;Lcom/google/javascript/jscomp/AbstractCompiler;)Z is replaced with the used of local hasSideEffects
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 702
+	Rank: 29
+	Total Rank: 352
+	Dump: mutant-32.class
+------------------------------------------------
+29.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.jscomp.NodeUtil::mayHaveSideEffects(Lcom/google/javascript/rhino/Node;Lcom/google/javascript/jscomp/AbstractCompiler;)Z is replaced with the used of default value false
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 702
+	Rank: 29
+	Total Rank: 352
+	Dump: mutant-36.class
+------------------------------------------------
+30.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 701
+	Rank: 30
+	Total Rank: 353
+	Dump: mutant-18.class
+------------------------------------------------
+31.
+	Mutator: NakedReceiverMutator
+	Description: replaced call to com/google/javascript/rhino/Node::getFirstChild with receiver
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 700
+	Rank: 31
+	Total Rank: 355
+	Dump: mutant-17.class
+------------------------------------------------
+32.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to wasEmptyNode
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-34.class
+------------------------------------------------
+33.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to hasMoreThanOneChild
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-31.class
+------------------------------------------------
+34.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to isQualifiedName
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-30.class
+------------------------------------------------
+35.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to isFromExterns
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-22.class
+------------------------------------------------
+36.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to isVarArgs
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-28.class
+------------------------------------------------
+37.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to isSyntheticBlock
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-35.class
+------------------------------------------------
+38.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to isOptionalArg
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-37.class
+------------------------------------------------
+39.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to isOnlyModifiesThisCall
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-33.class
+------------------------------------------------
+40.
+	Mutator: MethodNameMutator
+	Description: replaced call to hasChildren with a call to isUnscopedQualifiedName
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 40
+	Total Rank: 601
+	Dump: mutant-29.class
+------------------------------------------------
+41.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.Node::hasChildren()Z is replaced with the used of default value false
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 42
+	Total Rank: 615
+	Dump: mutant-19.class
+------------------------------------------------
+42.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.Node::hasChildren()Z is replaced with the used of local hasSideEffects
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 42
+	Total Rank: 615
+	Dump: mutant-20.class
+------------------------------------------------
+43.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/google/javascript/jscomp/FunctionInjector.java
+	Line Number: 698
+	Rank: 43
+	Total Rank: 617
+	Dump: mutant-5.class
+------------------------------------------------

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/44/mutant-3/ori-Node.java	2021-08-08 21:02:02.884814660 -0700
++++ jd-result-2.0/Jsoup/44/mutant-3/patched-Node.java	2021-08-09 06:25:54.893769333 -0700
+@@ -303,7 +303,7 @@
+         Validate.notNull(node);
+         Validate.notNull(parentNode);
+ 
+-        parentNode.addChildren(siblingIndex, node);
++    this.parentNode.addChildren(childNodeSize(), new Node[] { node });
+         return this;
+     }
+ 

@@ -1,0 +1,22 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/27/mutant-0/buggy-NumberUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/27/mutant-0/patched-NumberUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/27/mutant-0/buggy-NumberUtils.java	2021-08-22 00:18:38.638190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/27/mutant-0/patched-NumberUtils.java	2021-08-22 00:18:38.638190185 -0700
+@@ -476,7 +476,7 @@
+         if (decPos > -1) {
+ 
+             if (expPos > -1) {
+-                if (expPos < decPos) {
++                if (expPos < decPos || expPos > str.length()) {
+                     throw new NumberFormatException(str + " is not a valid number.");
+                 }
+                 dec = str.substring(decPos + 1, expPos);
+@@ -486,6 +486,9 @@
+             mant = str.substring(0, decPos);
+         } else {
+             if (expPos > -1) {
++                if (expPos > str.length()) {
++                    throw new NumberFormatException(str + " is not a valid number.");
++                }
+                 mant = str.substring(0, expPos);
+             } else {
+                 mant = str;

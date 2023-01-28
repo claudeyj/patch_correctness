@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-16/ori-EigenDecompositionImpl.java	2021-07-24 01:52:09.078297224 -0700
++++ jd-result/Math/81/mutant-16/fixed-patched-EigenDecompositionImpl.java	2021-07-24 01:52:09.062297224 -0700
+@@ -1523,7 +1523,7 @@
+                     tau = s;
+ 
+                 }
+-            } else if (dMin == dN2) {
++            } else if (dMin == minPivot) {
+ 
+                 // case 5.
+                 tType = -5;

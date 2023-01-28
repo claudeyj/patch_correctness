@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-150/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-150/patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-150/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.072993012 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-150/patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.076993067 +0800
+@@ -1068,7 +1068,7 @@
+                                                   Math.min(work[l - 9],
+                                                            dMin2 + work[l - 2 * pingPong])))) {
+             // step 3: choose a shift
+-            computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
++      computeShiftIncrement(end, deflatedEnd, end - deflatedEnd);
+ 
+             // step 4a: dqds
+             for (boolean loop = true; loop;) {

@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/34/mutant-0/buggy-ListPopulation.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/34/mutant-0/patched-ListPopulation.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/34/mutant-0/buggy-ListPopulation.java	2021-08-22 00:18:38.674190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/34/mutant-0/patched-ListPopulation.java	2021-08-22 00:18:38.674190186 -0700
+@@ -206,6 +206,6 @@
+      * @return chromosome iterator
+      */
+     public Iterator<Chromosome> iterator() {
+-        return chromosomes.iterator();
++        return getChromosomes().iterator();
+     }
+ }

@@ -1,0 +1,11 @@
+--- jd-result/Closure/12/mutant-7/ori-FlowSensitiveInlineVariables.java	2021-07-15 18:51:52.688753135 -0700
++++ jd-result/Closure/12/mutant-7/patched-FlowSensitiveInlineVariables.java	2021-07-21 07:51:34.170263406 -0700
+@@ -108,7 +108,7 @@
+           return true;
+         }
+ 
+-        for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {
++        for (Node c = n.getFirstChild(); c != null; c = c.getLastChild()) {
+           if (!ControlFlowGraph.isEnteringNewCfgNode(c) && apply(c)) {
+             return true;
+           }

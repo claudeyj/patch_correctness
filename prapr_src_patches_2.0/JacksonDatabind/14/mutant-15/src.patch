@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-15/ori-ObjectReader.java	2021-08-08 21:02:02.276814643 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-15/man-patched-ObjectReader.java	2021-08-10 05:38:57.800127878 -0700
+@@ -1583,7 +1583,7 @@
+      */
+     protected JsonDeserializer<Object> _prefetchRootDeserializer(DeserializationConfig config, JavaType valueType)
+     {
+-        if (valueType == null || !_config.isEnabled(DeserializationFeature.EAGER_DESERIALIZER_FETCH)) {
++        if (true) {
+             return null;
+         }
+         // already cached?

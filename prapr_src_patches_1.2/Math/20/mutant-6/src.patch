@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-6/ori-CMAESOptimizer.java	2021-07-24 01:52:02.722297045 -0700
++++ jd-result/Math/20/mutant-6/patched-CMAESOptimizer.java	2021-07-24 01:52:02.722297045 -0700
+@@ -910,7 +910,7 @@
+                 double diff = boundaries[1][i] - boundaries[0][i];
+                 res[i] = (x[i] - boundaries[0][i]) / diff;
+             }
+-            return res;
++      return x;
+         }
+ 
+         /**

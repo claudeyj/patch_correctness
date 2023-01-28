@@ -1,0 +1,7 @@
+        for (int i = 0; i < length; i++) {
+            char stripped = (char) (name.charAt(i) & 0x7F);
+            if (stripped != 0) { // would be read as Trailing null
+                result.append(stripped);
+            }
+        }
+        return result.toString();

@@ -1,0 +1,7 @@
+        final int end = (_hashSize << 3);
+        if (_spilloverEnd >= end) {
+            if (_failOnDoS) {
+          release(); 
+            }
+            // and if we didn't fail, we'll simply force rehash for next add
+            // (which, in turn, may double up or nuke contents, depending on size etc)

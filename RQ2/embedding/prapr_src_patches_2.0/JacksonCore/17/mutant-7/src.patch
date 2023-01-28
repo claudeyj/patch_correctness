@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/17/mutant-7/ori-GeneratorBase.java	2021-08-08 21:02:01.912814633 -0700
++++ jd-result-2.0/JacksonCore/17/mutant-7/patched-GeneratorBase.java	2021-08-09 06:25:54.869769332 -0700
+@@ -296,7 +296,7 @@
+ 
+     @Override public void writeRawValue(String text, int offset, int len) throws IOException {
+         _verifyValueWrite("write raw value");
+-        writeRaw(text, offset, len);
++    writeRaw(text, offset, offset);
+     }
+ 
+     @Override public void writeRawValue(char[] text, int offset, int len) throws IOException {

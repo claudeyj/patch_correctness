@@ -1,0 +1,11 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/101/mutant-6/ori-CompilationLevel.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/101/mutant-6/fixed-patched-CompilationLevel.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/101/mutant-6/ori-CompilationLevel.java	2021-08-23 09:23:48.524985415 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/101/mutant-6/fixed-patched-CompilationLevel.java	2021-08-23 09:23:48.524985415 +0800
+@@ -91,7 +91,6 @@
+   private static void applySafeCompilationOptions(CompilerOptions options) {
+     // Does not call applyBasicCompilationOptions(options) because the call to
+     // skipAllCompilerPasses() cannot be easily undone.
+-    options.closurePass = true;
+     options.variableRenaming = VariableRenamingPolicy.LOCAL;
+     options.inlineLocalVariables = true;
+     options.checkGlobalThisLevel = CheckLevel.OFF;

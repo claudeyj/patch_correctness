@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/104/mutant-0/buggy-Gamma.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/104/mutant-0/patched-Gamma.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/104/mutant-0/buggy-Gamma.java	2021-08-22 00:18:38.662190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/104/mutant-0/patched-Gamma.java	2021-08-22 00:18:38.662190185 -0700
+@@ -34,7 +34,7 @@
+     private static final long serialVersionUID = -6587513359895466954L;
+ 
+     /** Maximum allowed numerical error. */
+-    private static final double DEFAULT_EPSILON = 10e-9;
++    private static final double DEFAULT_EPSILON = 10e-15;
+ 
+     /** Lanczos coefficients */
+     private static double[] lanczos =

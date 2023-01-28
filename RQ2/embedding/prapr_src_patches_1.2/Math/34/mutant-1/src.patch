@@ -1,0 +1,10 @@
+--- jd-result/Math/34/mutant-1/ori-ListPopulation.java	2021-07-24 01:52:03.478297066 -0700
++++ jd-result/Math/34/mutant-1/patched-ListPopulation.java	2021-07-24 01:52:03.478297066 -0700
+@@ -206,6 +206,6 @@
+      * @return chromosome iterator
+      */
+     public Iterator<Chromosome> iterator() {
+-        return chromosomes.iterator();
++    return getChromosomes().iterator();
+     }
+ }

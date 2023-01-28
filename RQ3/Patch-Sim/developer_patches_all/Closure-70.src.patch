@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/70/mutant-0/buggy-TypedScopeCreator.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/70/mutant-0/patched-TypedScopeCreator.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/70/mutant-0/buggy-TypedScopeCreator.java	2021-08-22 00:18:38.618190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/70/mutant-0/patched-TypedScopeCreator.java	2021-08-22 00:18:38.618190184 -0700
+@@ -1742,7 +1742,7 @@
+           for (Node astParameter : astParameters.children()) {
+             if (jsDocParameter != null) {
+               defineSlot(astParameter, functionNode,
+-                  jsDocParameter.getJSType(), true);
++                  jsDocParameter.getJSType(), false);
+               jsDocParameter = jsDocParameter.getNext();
+             } else {
+               defineSlot(astParameter, functionNode, null, true);

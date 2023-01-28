@@ -1,0 +1,7 @@
+     * @return The right margin (in Java2D units).
+     */
+    public double calculateRightInset(double width) {
+        double result = this.right;
+        if (this.unitType == UnitType.RELATIVE) {
+            result = (this.right * width);
+        }

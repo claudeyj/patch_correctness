@@ -1,0 +1,11 @@
+--- Math80b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:03:24.000000000 +0800
++++ Math80_Math-80-mutant-15.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:03:24.000000000 +0800
+@@ -1165,7 +1165,7 @@
+         }
+ 
+         // set thresholds
+-        final double tNorm = Math.max(Math.abs(lower), Math.abs(upper));
++    double tNorm = Math.pow(Math.abs(lower), Math.abs(upper));
+         final double relativeTolerance = Math.sqrt(MathUtils.EPSILON);
+         final double absoluteTolerance = 4 * minPivot;
+         final int maxIter =

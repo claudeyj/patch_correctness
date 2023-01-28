@@ -1,0 +1,10 @@
+--- jd-result/Chart/25/mutant-168/ori-DefaultStatisticalCategoryDataset.java	2021-07-15 18:51:51.392753099 -0700
++++ jd-result/Chart/25/mutant-168/man-patched-DefaultStatisticalCategoryDataset.java	2021-07-23 04:54:27.987602353 -0700
+@@ -298,7 +298,6 @@
+                     Comparable rowKey, Comparable columnKey) {
+         MeanAndStandardDeviation item = new MeanAndStandardDeviation(
+                 mean, standardDeviation);
+-        this.data.addObject(item, rowKey, columnKey);
+         double m = 0.0;
+         double sd = 0.0;
+         if (mean != null) {

@@ -1,0 +1,27 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/35/mutant-0/buggy-TypeInference.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/35/mutant-0/patched-TypeInference.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/35/mutant-0/buggy-TypeInference.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/35/mutant-0/patched-TypeInference.java	2021-08-22 00:18:38.602190184 -0700
+@@ -1118,21 +1118,8 @@
+ 
+     ObjectType constraintObj =
+         ObjectType.cast(constraint.restrictByNotNullOrUndefined());
+-    if (constraintObj != null && constraintObj.isRecordType()) {
+-      ObjectType objType = ObjectType.cast(type.restrictByNotNullOrUndefined());
+-      if (objType != null) {
+-        for (String prop : constraintObj.getOwnPropertyNames()) {
+-          JSType propType = constraintObj.getPropertyType(prop);
+-          if (!objType.isPropertyTypeDeclared(prop)) {
+-            JSType typeToInfer = propType;
+-            if (!objType.hasProperty(prop)) {
+-              typeToInfer =
+-                  getNativeType(VOID_TYPE).getLeastSupertype(propType);
+-            }
+-            objType.defineInferredProperty(prop, typeToInfer, null);
+-          }
+-        }
+-      }
++    if (constraintObj != null) {
++      type.matchConstraint(constraintObj);
+     }
+   }
+ 

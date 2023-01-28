@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/10/mutant-2/ori-CoreOperationRelationalExpression.java	2021-08-08 21:02:03.328814673 -0700
++++ jd-result-2.0/JxPath/10/mutant-2/man-patched-CoreOperationRelationalExpression.java	2021-08-12 18:42:56.914331305 -0700
+@@ -39,7 +39,7 @@
+     }
+ 
+     public final Object computeValue(EvalContext context) {
+-        return compute(args[0].computeValue(context), args[1].computeValue(context)) 
++        return compute(args[0].compute(context), args[1].computeValue(context)) 
+                 ? Boolean.TRUE : Boolean.FALSE;
+     }
+ 

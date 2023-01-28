@@ -1,0 +1,11 @@
+--- jd-result/Closure/126/mutant-6/ori-MinimizeExitPoints.java	2021-07-15 18:51:53.464753157 -0700
++++ jd-result/Closure/126/mutant-6/patched-MinimizeExitPoints.java	2021-07-21 07:57:46.198273903 -0700
+@@ -140,7 +140,7 @@
+        */
+       if (NodeUtil.hasFinally(n)) {
+         Node finallyBlock = n.getLastChild();
+-        tryMinimizeExits(finallyBlock, exitType, labelName);
++        tryMinimizeExits(tryBlock, exitType, labelName);
+       }
+     }
+ 

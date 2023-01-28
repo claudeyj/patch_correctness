@@ -1,0 +1,16 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Lang/53/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Lang/53/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Lang/53/buggy1.java	2021-08-27 19:18:33.798863950 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Nopol/Lang/53/tool-patch1.java	2021-08-27 19:18:33.798863950 -0700
+@@ -661,10 +661,12 @@
+         }
+ 
+         // reset time
++        if (seconds <= org.apache.commons.lang.time.DateUtils.fields.length) {
+         if (date.getTime() != time) {
+             date.setTime(time);
+             val.setTime(date);
+         }
++        }
+         // ----------------- Fix for LANG-59 ----------------------- END ----------------
+ 
+         boolean roundUp = false;

@@ -1,0 +1,7 @@
+//            (l == null ? "null" : l.getClass().getName()) + " " +
+//            (r == null ? "null" : r.getClass().getName()));
+
+        if (l instanceof InitialContext || l instanceof SelfContext) {
+            l = ((EvalContext) l).getSingleNodePointer();
+        }
+

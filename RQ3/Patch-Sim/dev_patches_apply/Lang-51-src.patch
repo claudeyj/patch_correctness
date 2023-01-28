@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/51/mutant-0/buggy-BooleanUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/51/mutant-0/patched-BooleanUtils.java
+--- Lang51b/src/java/org/apache/commons/lang/BooleanUtils.java
++++ Lang51b_Lang-51-src.patchb/src/java/org/apache/commons/lang/BooleanUtils.java
+@@ -679,6 +679,7 @@
+                         (str.charAt(1) == 'E' || str.charAt(1) == 'e') &&
+                         (str.charAt(2) == 'S' || str.charAt(2) == 's');
+                 }
++                return false;
+             }
+             case 4: {
+                 char ch = str.charAt(0);

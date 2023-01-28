@@ -1,0 +1,11 @@
+--- Math57b/src/main/java/org/apache/commons/math/stat/clustering/EuclideanIntegerPoint.java	2017-03-20 23:56:05.000000000 +0800
++++ Math57_Math-57-mutant-1.patchb/src/main/java/org/apache/commons/math/stat/clustering/EuclideanIntegerPoint.java	2017-03-20 23:56:05.000000000 +0800
+@@ -81,7 +81,7 @@
+         if (point.length != otherPoint.length) {
+             return false;
+         }
+-        for (int i = 0; i < point.length; i++) {
++    for (int i = 1; i < this.point.length; i++) {
+             if (point[i] != otherPoint[i]) {
+                 return false;
+             }

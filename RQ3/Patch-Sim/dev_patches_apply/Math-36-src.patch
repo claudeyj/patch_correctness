@@ -1,0 +1,33 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/36/mutant-0/buggy-BigFraction.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/36/mutant-0/patched-BigFraction.java
+--- Math36b/src/main/java/org/apache/commons/math/fraction/BigFraction.java
++++ Math36b_Math-36-src.patchb/src/main/java/org/apache/commons/math/fraction/BigFraction.java
+@@ -683,8 +683,14 @@
+     @Override
+     public double doubleValue() {
+         double result = numerator.doubleValue() / denominator.doubleValue();
++        if (Double.isNaN(result)) {
+             // Numerator and/or denominator must be out of range:
+             // Calculate how far to shift them to put them in range.
++            int shift = Math.max(numerator.bitLength(),
++                                 denominator.bitLength()) - Double.MAX_EXPONENT;
++            result = numerator.shiftRight(shift).doubleValue() /
++                denominator.shiftRight(shift).doubleValue();
++        }
+         return result;
+     }
+ 
+@@ -730,8 +736,14 @@
+     @Override
+     public float floatValue() {
+         float result = numerator.floatValue() / denominator.floatValue();
++        if (Double.isNaN(result)) {
+             // Numerator and/or denominator must be out of range:
+             // Calculate how far to shift them to put them in range.
++            int shift = Math.max(numerator.bitLength(),
++                                 denominator.bitLength()) - Float.MAX_EXPONENT;
++            result = numerator.shiftRight(shift).floatValue() /
++                denominator.shiftRight(shift).floatValue();
++        }
+         return result;
+     }
+ 

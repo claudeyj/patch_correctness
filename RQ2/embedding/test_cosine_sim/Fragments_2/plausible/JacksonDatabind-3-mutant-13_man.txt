@@ -1,0 +1,7 @@
+            deser = ctxt.handleSecondaryContextualization(deser, property);
+        }
+        // Ok ok: if all we got is the default String deserializer, can just forget about it
+    if (this._elementDeserializer != null && isDefaultDeserializer(deser)) {
+            deser = null;
+        }
+        if (_elementDeserializer != deser) {

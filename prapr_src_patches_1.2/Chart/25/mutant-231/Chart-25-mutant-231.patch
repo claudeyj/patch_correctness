@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-231/a-CategoryPlot.java	2021-07-14 20:16:14.386457929 -0700
++++ jd-result/Chart/25/mutant-231/b-CategoryPlot.java	2021-07-14 20:16:16.042457975 -0700
+@@ -1295,7 +1295,7 @@
+ /*2852*/    CategoryAxis domainAxis = getDomainAxisForDataset(index);
+ /*2853*/    ValueAxis rangeAxis = getRangeAxisForDataset(index);
+ /*2854*/    boolean hasData = !DatasetUtilities.isEmptyOrNull(currentDataset);
+-/*2855*/    if (hasData && renderer != null) {
++/*2855*/    if (hasData && renderer == null) {
+ /*2857*/      foundData = true;
+ /*2858*/      CategoryItemRendererState state = renderer.initialise(g2, dataArea, this, index, info);
+ /*2860*/      int columnCount = currentDataset.getColumnCount();

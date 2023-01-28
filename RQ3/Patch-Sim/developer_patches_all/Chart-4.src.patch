@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/4/mutant-0/buggy-XYPlot.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/4/mutant-0/patched-XYPlot.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/4/mutant-0/buggy-XYPlot.java	2021-08-22 00:18:38.570190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/4/mutant-0/patched-XYPlot.java	2021-08-22 00:18:38.570190183 -0700
+@@ -4490,6 +4490,7 @@
+                     }
+                 }
+                 
++                if (r != null) {
+                     Collection c = r.getAnnotations();
+                     Iterator i = c.iterator();
+                     while (i.hasNext()) {
+@@ -4500,6 +4501,7 @@
+                     }
+             }
+         }
++        }
+ 
+         Iterator it = includedAnnotations.iterator();
+         while (it.hasNext()) {

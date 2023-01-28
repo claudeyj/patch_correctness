@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-20/ori-Constructors.java	2021-07-15 18:51:56.288753237 -0700
++++ jd-result/Mockito/5/mutant-20/patched-Constructors.java	2021-07-21 08:02:21.262281665 -0700
+@@ -13,7 +13,7 @@
+     public static Constructor<?> noArgConstructorOf(Class<?> classToMock) {
+         try {
+             return classToMock.getDeclaredConstructor();
+-        } catch (NoSuchMethodException e) {
++    } catch (ReflectiveOperationException e) {
+             return null;
+         }
+     }

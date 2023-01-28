@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-205/a-KeyedObjects2D.java	2021-07-14 20:08:52.334445455 -0700
++++ jd-result/Chart/25/mutant-205/b-KeyedObjects2D.java	2021-07-14 20:08:53.634445491 -0700
+@@ -47,7 +47,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public Comparable getColumnKey(int column) {
+-/* 159*/    return this.columnKeys.get(column);
++/* 159*/    return this.columnKeys.remove(column);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public int getColumnIndex(Comparable key) {

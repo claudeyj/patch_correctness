@@ -1,0 +1,18 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-20/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-20/man-patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-20/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.008992125 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/80/mutant-20/man-patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.008992125 +0800
+@@ -1133,14 +1133,6 @@
+         if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
+             // flip array
+             int j = 4 * n - 1;
+-            for (int i = 0; i < j; i += 4) {
+-                for (int k = 0; k < 4; k += step) {
+-                    final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
+-                    work[j - k] = tmp;
+-                }
+-                j -= 4;
+-            }
+             return true;
+         }
+         return false;

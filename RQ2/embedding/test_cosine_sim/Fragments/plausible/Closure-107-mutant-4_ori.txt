@@ -1,0 +1,7 @@
+      } catch (IOException e) {
+        throw new RuntimeException("Reading XTB file", e);
+      }
+    } else if (CompilationLevel.ADVANCED_OPTIMIZATIONS == level) {
+      // In SIMPLE or WHITESPACE mode, if the user hasn't specified a
+      // translations file, they might reasonably try to write their own
+      // implementation of goog.getMsg that makes the substitution at

@@ -1,0 +1,11 @@
+--- jd-result/Closure/108/mutant-1/ori-ScopedAliases.java	2021-07-15 18:51:53.684753163 -0700
++++ jd-result/Closure/108/mutant-1/fixed-patched-ScopedAliases.java	2021-07-22 22:01:06.850323227 -0700
+@@ -419,7 +419,7 @@
+                 compiler.getCodingConvention(),
+                 globalName,
+                 value,
+-                v.getJSDocInfo())
++                new JSDocInfo())
+                 .useSourceInfoIfMissingFromForTree(n);
+             NodeUtil.setDebugInformation(
+                 newDecl.getFirstChild().getFirstChild(), n, name);

@@ -1,0 +1,9 @@
+            JavaType valueType)
+        throws JsonMappingException
+    {
+        if (_rootDeserializer != null) {
+            return _rootDeserializer;
+        }
+
+        // Sanity check: must have actual type...
+        if (valueType == null) {

@@ -1,0 +1,15 @@
+--- jd-result/Math/81/mutant-104/a-EigenDecompositionImpl.java	2021-07-14 09:24:07.165353836 -0700
++++ jd-result/Math/81/mutant-104/b-EigenDecompositionImpl.java	2021-07-14 09:24:08.629353877 -0700
+@@ -931,8 +931,10 @@
+ /*   0*/              break; 
+ /*   0*/          } 
+ /*1517*/          a2 = 1.05D * a2;
+-/*1520*/          if (a2 < 0.563D)
+-/*1521*/            s = gam * (1.0D - Math.sqrt(a2)) / (1.0D + a2); 
++/*1520*/          if (a2 < 0.563D) {
++/*1521*/            this;
++/*1521*/            this.lowerSpectra = gam * (1.0D - Math.sqrt(a2)) / (1.0D + a2);
++/*   0*/          } 
+ /*1523*/          this.tau = s;
+ /*   0*/          break;
+ /*   0*/        } 

@@ -1,0 +1,9 @@
+     @return number of discarded elements (that were considered unsafe)
+     */
+    private int copySafeNodes(Element source, Element dest) {
+        if (source == null) {
+            return 0; 
+           }
+        List<Node> sourceChildren = source.childNodes();
+        int numDiscarded = 0;
+

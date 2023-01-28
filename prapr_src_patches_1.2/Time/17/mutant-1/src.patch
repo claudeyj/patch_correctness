@@ -1,0 +1,11 @@
+--- jd-result/Time/17/mutant-1/ori-DateTimeZone.java	2021-07-15 18:51:56.080753231 -0700
++++ jd-result/Time/17/mutant-1/fixed-patched-DateTimeZone.java	2021-07-22 18:35:53.957688186 -0700
+@@ -1165,7 +1165,7 @@
+         
+         // evaluate 3 hours before and after to work out if anything is happening
+         long instantBefore = convertUTCToLocal(instant - 3 * DateTimeConstants.MILLIS_PER_HOUR);
+-        long instantAfter = convertUTCToLocal(instant + 3 * DateTimeConstants.MILLIS_PER_HOUR);
++        long instantAfter = 0;
+         if (instantBefore == instantAfter) {
+             return instant;  // not an overlap (less than is a gap, equal is normal case)
+         }

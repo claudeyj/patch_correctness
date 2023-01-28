@@ -1,0 +1,36 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/29/mutant-0/buggy-OpenMapRealVector.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/29/mutant-0/patched-OpenMapRealVector.java
+--- Math29b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
++++ Math29b_Math-29-src.patchb/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
+@@ -346,10 +346,9 @@
+          * this only. Indeed, if this[i] = 0d and v[i] = 0d, then
+          * this[i] / v[i] = NaN, and not 0d.
+          */
+-        Iterator iter = entries.iterator();
+-        while (iter.hasNext()) {
+-            iter.advance();
+-            res.setEntry(iter.key(), iter.value() / v.getEntry(iter.key()));
++        final int n = getDimension();
++        for (int i = 0; i < n; i++) {
++            res.setEntry(i, this.getEntry(i) / v.getEntry(i));
+         }
+         return res;
+     }
+@@ -371,6 +370,18 @@
+          *
+          * These special cases are handled below.
+          */
++        if (v.isNaN() || v.isInfinite()) {
++            final int n = getDimension();
++            for (int i = 0; i < n; i++) {
++                final double y = v.getEntry(i);
++                if (Double.isNaN(y)) {
++                    res.setEntry(i, Double.NaN);
++                } else if (Double.isInfinite(y)) {
++                    final double x = this.getEntry(i);
++                    res.setEntry(i, x * y);
++                }
++            }
++        }
+         return res;
+     }
+ 

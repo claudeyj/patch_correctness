@@ -1,0 +1,11 @@
+--- jd-result/Chart/4/mutant-2/a-XYPlot.java	2021-07-14 17:01:18.150127884 -0700
++++ jd-result/Chart/4/mutant-2/b-XYPlot.java	2021-07-14 17:01:19.798127930 -0700
+@@ -2018,6 +2018,8 @@
+ /*   0*/        } else {
+ /*4488*/          result = Range.combine(result, DatasetUtilities.findRangeBounds(d));
+ /*   0*/        } 
++/*4493*/        if (r == null)
++/*4493*/          return null; 
+ /*4493*/        Collection c = r.getAnnotations();
+ /*4494*/        Iterator<XYAnnotation> i = c.iterator();
+ /*4495*/        while (i.hasNext()) {

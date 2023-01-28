@@ -1,0 +1,80 @@
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] expected START_TAG or END_TAG not TEXT (position: TEXT seen ...<repository> \ua0\r\n      \ua0\ua0 \ua0<i... @29:13)  @ /home/junyang/.m2/settings.xml, line 29, column 13
+[WARNING] 
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.commons:commons-math3:jar:3.3-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-surefire-plugin @ line 428, column 9
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------< org.apache.commons:commons-math3 >------------------
+[INFO] Building Commons Math 3.3-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (javadoc.resources) @ commons-math3 ---
+[INFO] Executing tasks
+
+main:
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ commons-math3 ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ commons-math3 ---
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/junyang/PR/SubjectPrograms/Math/20 && svn --non-interactive info
+[INFO] Working directory: /home/junyang/PR/SubjectPrograms/Math/20
+[INFO] Storing buildNumber: ?????? at timestamp: 1627303539361
+[INFO] Executing: /bin/sh -c cd /home/junyang/PR/SubjectPrograms/Math/20 && svn --non-interactive info
+[INFO] Working directory: /home/junyang/PR/SubjectPrograms/Math/20
+[INFO] Storing buildScmBranch: UNKNOWN_BRANCH
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ commons-math3 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ commons-math3 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 663 source files to /home/junyang/PR/SubjectPrograms/Math/20/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/analysis/function/Sigmoid.java: Some input files use or override a deprecated API.
+[WARNING] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/analysis/function/Sigmoid.java: Recompile with -Xlint:deprecation for details.
+[INFO] 2 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/stat/correlation/StorelessCovariance.java:[31,59] unmappable character for encoding UTF-8
+[ERROR] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/stat/correlation/StorelessBivariateCovariance.java:[26,59] unmappable character for encoding UTF-8
+[ERROR] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java:[240,10] cannot find symbol
+  symbol:   variable i
+  location: class org.apache.commons.math3.optimization.direct.CMAESOptimizer
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.935 s
+[INFO] Finished at: 2021-07-26T05:45:44-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project commons-math3: Compilation failure: Compilation failure: 
+[ERROR] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/stat/correlation/StorelessCovariance.java:[31,59] unmappable character for encoding UTF-8
+[ERROR] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/stat/correlation/StorelessBivariateCovariance.java:[26,59] unmappable character for encoding UTF-8
+[ERROR] /home/junyang/PR/SubjectPrograms/Math/20/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java:[240,10] cannot find symbol
+[ERROR]   symbol:   variable i
+[ERROR]   location: class org.apache.commons.math3.optimization.direct.CMAESOptimizer
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

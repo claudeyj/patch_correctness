@@ -1,0 +1,20 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/5/mutant-0/buggy-XYSeries.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/5/mutant-0/patched-XYSeries.java
+--- Chart5b/source/org/jfree/data/xy/XYSeries.java
++++ Chart5b_Chart-5-src.patchb/source/org/jfree/data/xy/XYSeries.java
+@@ -541,11 +541,15 @@
+         if (x == null) {
+             throw new IllegalArgumentException("Null 'x' argument.");
+         }
++        if (this.allowDuplicateXValues) {
++            add(x, y);
++            return null;
++        }
+ 
+         // if we get to here, we know that duplicate X values are not permitted
+         XYDataItem overwritten = null;
+         int index = indexOf(x);
+-        if (index >= 0 && !this.allowDuplicateXValues) {
++        if (index >= 0) {
+             XYDataItem existing = (XYDataItem) this.data.get(index);
+             try {
+                 overwritten = (XYDataItem) existing.clone();

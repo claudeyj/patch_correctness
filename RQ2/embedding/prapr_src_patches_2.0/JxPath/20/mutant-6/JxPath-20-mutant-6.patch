@@ -1,0 +1,13 @@
+--- jd-result-2.0/JxPath/20/mutant-6/a-CoreOperationRelationalExpression.java	2021-08-09 04:17:14.305551473 -0700
++++ jd-result-2.0/JxPath/20/mutant-6/b-CoreOperationRelationalExpression.java	2021-08-09 04:17:15.797551515 -0700
+@@ -41,9 +41,7 @@
+ /*  84*/    if (left instanceof Iterator) {
+ /*  85*/        return containsMatch((Iterator)left, right); 
+ /*   0*/       }
+-/*  87*/    if (right instanceof Iterator) {
+-/*  88*/        return containsMatch((Iterator)right, left); 
+-/*   0*/       }
++/*  87*/    right instanceof Iterator;
+ /*  90*/    double ld = InfoSetUtil.doubleValue(left);
+ /*  91*/    if (Double.isNaN(ld)) {
+ /*  92*/        return false; 

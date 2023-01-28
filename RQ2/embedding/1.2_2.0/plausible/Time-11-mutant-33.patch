@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-33/ori-DateTimeZoneBuilder.java	2021-07-15 18:51:55.860753225 -0700
++++ jd-result/Time/11/mutant-33/man-patched-DateTimeZoneBuilder.java	2021-07-23 23:31:12.754058603 -0700
+@@ -369,7 +369,7 @@
+                 millis = next.getMillis();
+                 saveMillis = next.getSaveMillis();
+                 if (tailZone == null && i == ruleSetCount - 1) {
+-                    tailZone = rs.buildTailZone(id);
++                    tailZone = null;
+                     // If tailZone is not null, don't break out of main loop until
+                     // at least one more transition is calculated. This ensures a
+                     // correct 'seam' to the DSTZone.

@@ -1,0 +1,13 @@
+--- jd-result-2.0/JacksonDatabind/20/mutant-5/a-POJOPropertyBuilder.java	2021-08-09 04:29:14.217571788 -0700
++++ jd-result-2.0/JacksonDatabind/20/mutant-5/b-POJOPropertyBuilder.java	2021-08-09 04:29:15.817571833 -0700
+@@ -178,7 +178,9 @@
+ /*   0*/            continue; 
+ /*   0*/           }
+ /*   0*/      } 
+-/* 284*/      int priNext = _setterPriority((AnnotatedMethod)next.value);
++/* 284*/      (AnnotatedMethod)next.value;
++/* 284*/      this;
++/* 284*/      int priNext = 0;
+ /* 285*/      int priCurr = _setterPriority((AnnotatedMethod)curr.value);
+ /* 287*/      if (priNext != priCurr) {
+ /* 288*/        if (priNext < priCurr) {

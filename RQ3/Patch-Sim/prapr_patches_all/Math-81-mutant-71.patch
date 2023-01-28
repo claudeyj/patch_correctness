@@ -1,0 +1,21 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-71/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-71/man-patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-71/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.120993678 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-71/man-patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.120993678 +0800
+@@ -1431,7 +1431,7 @@
+ 
+         final double cnst1 = 0.563;
+         final double cnst2 = 1.010;
+-        final double cnst3 = 1.05;
++        double cnst3 = 1.05;
+ 
+         // a negative dMin forces the shift to take that absolute value
+         // tType records the type of shift.
+@@ -1518,7 +1518,7 @@
+ 
+                     // rayleigh quotient residual bound.
+                     if (a2 < cnst1) {
+-                        s = gam * (1 - Math.sqrt(a2)) / (1 + a2);
++            cnst3 = gam * (1.0D - Math.sqrt(a2)) / (1.0D + a2); 
+                     }
+                     tau = s;
+ 

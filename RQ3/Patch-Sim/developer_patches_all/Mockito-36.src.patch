@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/36/mutant-0/buggy-Invocation.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/36/mutant-0/patched-Invocation.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/36/mutant-0/buggy-Invocation.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/36/mutant-0/patched-Invocation.java	2021-08-22 00:18:38.706190186 -0700
+@@ -8,6 +8,7 @@
+ 
+ import org.hamcrest.Matcher;
+ import org.mockito.exceptions.PrintableInvocation;
++import org.mockito.exceptions.Reporter;
+ import org.mockito.internal.debugging.Location;
+ import org.mockito.internal.invocation.realmethod.RealMethod;
+ import org.mockito.internal.matchers.*;
+@@ -199,6 +200,9 @@
+     }
+ 
+     public Object callRealMethod() throws Throwable {
++        if (this.getMethod().getDeclaringClass().isInterface()) {
++            new Reporter().cannotCallRealMethodOnInterface();
++        }
+         return realMethod.invoke(mock, rawArguments);
+     }
+ 

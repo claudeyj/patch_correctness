@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-21/a-SpyOnInjectedFieldsHandler.java	2021-07-14 21:31:54.078586030 -0700
++++ jd-result/Mockito/5/mutant-21/b-SpyOnInjectedFieldsHandler.java	2021-07-14 21:31:55.410586067 -0700
+@@ -20,7 +20,7 @@
+ /*   0*/        } else {
+ /*  43*/          new FieldSetter(fieldOwner, field).set(Mockito.mock(instance.getClass(), Mockito.withSettings().spiedInstance(instance).defaultAnswer(Mockito.CALLS_REAL_METHODS).name(field.getName())));
+ /*   0*/        } 
+-/*  50*/      } catch (Exception e) {
++/*  50*/      } catch (Throwable e) {
+ /*  51*/        throw new MockitoException("Problems initiating spied field " + field.getName(), e);
+ /*   0*/      }  
+ /*  55*/    return false;

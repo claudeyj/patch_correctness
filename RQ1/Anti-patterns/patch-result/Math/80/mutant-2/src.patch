@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-2/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.306297146 -0700
++++ jd-result/Math/80/mutant-2/patched-EigenDecompositionImpl.java	2021-07-24 01:52:06.310297146 -0700
+@@ -1133,7 +1133,7 @@
+         if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
+             // flip array
+             int j = 4 * n - 1;
+-            for (int i = 0; i < j; i += 4) {
++      for (int i = 0; i < i; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+                     work[i + k] = work[j - k];

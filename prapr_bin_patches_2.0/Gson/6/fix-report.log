@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 25 07:18:45 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 1433
+================================================
+1.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to nullSafe()Lcom/google/gson/TypeAdapter; is guarded returning default value null
+	File Name: com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java
+	Line Number: 67
+	Rank: 1
+	Total Rank: 43
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallGuardMutator
+	Description: the call to com.google.gson.TypeAdapter::nullSafe()Lcom/google/gson/TypeAdapter; is guarded using default value null
+	File Name: com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java
+	Line Number: 67
+	Rank: 2
+	Total Rank: 47
+	Dump: mutant-1.class
+------------------------------------------------

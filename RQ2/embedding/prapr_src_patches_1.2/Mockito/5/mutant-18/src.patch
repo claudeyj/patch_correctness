@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-18/ori-Whitebox.java	2021-07-15 18:51:56.392753240 -0700
++++ jd-result/Mockito/5/mutant-18/man-patched-Whitebox.java	2021-07-24 01:26:57.410254568 -0700
+@@ -14,7 +14,7 @@
+             Field f = getFieldFromHierarchy(c, field);
+             f.setAccessible(true);
+             return f.get(target);
+-        } catch (Exception e) {
++        } catch (Throwable e) {
+             throw new RuntimeException("Unable to get internal state on a private field. Please report to mockito mailing list.", e);
+         }
+     }

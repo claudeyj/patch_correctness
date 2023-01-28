@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/15/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/15/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/15/buggy1.java	2021-08-27 19:18:35.302863992 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/TBar/Math/15/tool-patch1.java	2021-08-27 19:18:35.302863992 -0700
+@@ -1538,7 +1538,7 @@
+         /* Handle special case x<0 */
+         if (x < 0) {
+             // y is an even integer in this case
+-            if (y >= TWO_POWER_52 || y <= -TWO_POWER_52) {
++            if ((y >= TWO_POWER_52 || y <= -TWO_POWER_52) && !(y == (long) y)) {
+                 return pow(-x, y);
+             }
+ 

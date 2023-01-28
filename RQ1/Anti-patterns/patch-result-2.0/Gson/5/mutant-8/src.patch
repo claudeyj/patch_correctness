@@ -1,0 +1,11 @@
+--- jd-result-2.0/Gson/5/mutant-8/ori-ISO8601Utils.java	2021-08-08 21:02:01.628814625 -0700
++++ jd-result-2.0/Gson/5/mutant-8/man-patched-ISO8601Utils.java	2021-08-11 21:05:12.980134138 -0700
+@@ -227,7 +227,7 @@
+                     timezone = TimeZone.getTimeZone(timezoneId);
+ 
+                     String act = timezone.getID();
+-                    if (!act.equals(timezoneId)) {
++                    if (!act.equals(act)) {
+                         /* 22-Jan-2015, tatu: Looks like canonical version has colons, but we may be given
+                          *    one without. If so, don't sweat.
+                          *   Yes, very inefficient. Hopefully not hit often.

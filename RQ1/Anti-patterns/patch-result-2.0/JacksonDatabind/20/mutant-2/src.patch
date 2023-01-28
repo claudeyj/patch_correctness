@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/20/mutant-2/ori-POJOPropertiesCollector.java	2021-08-08 21:02:02.212814642 -0700
++++ jd-result-2.0/JacksonDatabind/20/mutant-2/patched-POJOPropertiesCollector.java	2021-08-09 06:25:54.921769334 -0700
+@@ -805,7 +805,7 @@
+                     }
+                 } else {
+                     if (prop.hasSetter()) {
+-                        rename = naming.nameForSetterMethod(_config, prop.getSetter(), fullName.getSimpleName());
++            rename = naming.nameForSetterMethod(this._config, null, fullName.getSimpleName());
+                     } else if (prop.hasConstructorParameter()) {
+                         rename = naming.nameForConstructorParameter(_config, prop.getConstructorParameter(), fullName.getSimpleName());
+                     } else if (prop.hasField()) {

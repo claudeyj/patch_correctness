@@ -1,0 +1,11 @@
+--- /home/junyang/patch_correctness/jd-result/Closure/115/mutant-41/a-FunctionInjector.java	2021-07-14 21:49:29.158615802 -0700
++++ /home/junyang/patch_correctness/jd-result/Closure/115/mutant-41/b-FunctionInjector.java	2021-07-20 00:32:59.775000000 -0700
+@@ -330,7 +330,7 @@
+ /* 726*/    while (cArg != null || fnParam != null) {
+ /* 728*/      if (fnParam != null) {
+ /* 729*/        if (cArg != null) {
+-/* 730*/          if (hasSideEffects && NodeUtil.canBeSideEffected(cArg))
++/* 730*/          if (false)
+ /* 731*/            return CanInlineResult.NO; 
+ /* 736*/          if (NodeUtil.mayEffectMutableState(cArg, this.compiler) && NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1)
+ /* 739*/            return CanInlineResult.NO; 

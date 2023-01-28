@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 19 08:10:20 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 7276
+================================================
+1.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/jsoup/parser/HtmlTreeBuilderState.java
+	Line Number: 832
+	Rank: 1
+	Total Rank: 22
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jsoup/parser/HtmlTreeBuilderState.java
+	Line Number: 832
+	Rank: 2
+	Total Rank: 23
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.jsoup.nodes.Node.siblingIndex is replaced by the call to org.jsoup.nodes.Node::childNodeSize()I
+	File Name: org/jsoup/nodes/Node.java
+	Line Number: 306
+	Rank: 3
+	Total Rank: 408
+	Dump: mutant-3.class
+------------------------------------------------
+4.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/String::equals
+	File Name: org/jsoup/parser/HtmlTreeBuilderState.java
+	Line Number: 1109
+	Rank: 4
+	Total Rank: 567
+	Dump: mutant-6.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jsoup/parser/HtmlTreeBuilderState.java
+	Line Number: 1109
+	Rank: 5
+	Total Rank: 571
+	Dump: mutant-5.class
+------------------------------------------------
+6.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/jsoup/parser/HtmlTreeBuilderState.java
+	Line Number: 1109
+	Rank: 6
+	Total Rank: 573
+	Dump: mutant-4.class
+------------------------------------------------

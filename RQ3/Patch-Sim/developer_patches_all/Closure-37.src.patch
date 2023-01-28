@@ -1,0 +1,29 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/37/mutant-0/buggy-NodeTraversal.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/37/mutant-0/patched-NodeTraversal.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/37/mutant-0/buggy-NodeTraversal.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/37/mutant-0/patched-NodeTraversal.java	2021-08-22 00:18:38.602190184 -0700
+@@ -538,7 +538,7 @@
+ 
+     // Body
+     Preconditions.checkState(body.getNext() == null &&
+-            body.isBlock());
++            body.isBlock(), body);
+     traverseBranch(body, n);
+ 
+     popScope();
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/37/mutant-0/buggy-IRFactory.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/37/mutant-0/patched-IRFactory.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/37/mutant-0/buggy-IRFactory.java	2021-08-22 00:18:38.602190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/37/mutant-0/patched-IRFactory.java	2021-08-22 00:18:38.602190184 -0700
+@@ -664,9 +664,13 @@
+       node.addChildToBack(lp);
+ 
+       Node bodyNode = transform(functionNode.getBody());
++      if (!bodyNode.isBlock()) {
+         // When in ideMode Rhino tries to parse some constructs the compiler
+         // doesn't support, repair it here. see Rhino's
+         // Parser#parseFunctionBodyExpr.
++        Preconditions.checkState(config.isIdeMode);
++        bodyNode = IR.block();
++      }
+       parseDirectives(bodyNode);
+       node.addChildToBack(bodyNode);
+      return node;

@@ -1,0 +1,21 @@
+--- jd-result/Lang/27/mutant-11/a-NumberUtils.java	2021-07-14 16:56:14.382119312 -0700
++++ jd-result/Lang/27/mutant-11/b-NumberUtils.java	2021-07-14 16:56:15.966119357 -0700
+@@ -126,7 +126,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static Number createNumber(String str) throws NumberFormatException {
+-/*   0*/    String mant, dec, exp;
++/*   0*/    String dec, mant, exp;
+ /* 453*/    if (str == null)
+ /* 454*/      return null; 
+ /* 456*/    if (StringUtils.isBlank(str))
+@@ -149,7 +149,8 @@
+ /* 486*/      mant = str.substring(0, decPos);
+ /*   0*/    } else {
+ /* 488*/      if (expPos > -1) {
+-/* 489*/        mant = str.substring(0, expPos);
++/* 489*/        int j = expPos, i = 0;
++/* 489*/        mant = str.substring(i);
+ /*   0*/      } else {
+ /* 491*/        mant = str;
+ /*   0*/      } 

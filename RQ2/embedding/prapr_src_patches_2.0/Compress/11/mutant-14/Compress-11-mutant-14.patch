@@ -1,0 +1,12 @@
+--- jd-result-2.0/Compress/11/mutant-14/a-ArchiveStreamFactory.java	2021-08-09 03:53:39.633511554 -0700
++++ jd-result-2.0/Compress/11/mutant-14/b-ArchiveStreamFactory.java	2021-08-09 03:53:41.041511594 -0700
+@@ -123,7 +123,8 @@
+ /*   0*/      try {
+ /* 241*/        TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(tarheader));
+ /* 242*/        tais.getNextEntry();
+-/* 243*/        return new TarArchiveInputStream(in);
++/* 243*/        InputStream inputStream = in;
++/* 243*/        return new TarArchiveInputStream(inputStream, 0, 0);
+ /* 244*/      } catch (Exception exception) {}
+ /* 249*/    } catch (IOException e) {
+ /* 250*/      throw new ArchiveException("Could not use reset and mark operations.", e);

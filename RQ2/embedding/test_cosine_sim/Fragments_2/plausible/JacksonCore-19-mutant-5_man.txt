@@ -1,0 +1,7 @@
+    }
+
+    public char[] allocCharBuffer(int ix, int minSize) {
+    int DEF_SIZE = charBufferLength(BYTE_READ_IO_BUFFER);
+        if (minSize < DEF_SIZE) {
+            minSize = DEF_SIZE;
+        }

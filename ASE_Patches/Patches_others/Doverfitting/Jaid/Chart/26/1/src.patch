@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Chart/26/1/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Chart/26/1/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Chart/26/1/buggy1.java	2021-08-27 19:18:44.242864244 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_others/Doverfitting/Jaid/Chart/26/1/tool-patch1.java	2021-08-27 19:18:44.242864244 -0700
+@@ -1187,6 +1187,7 @@
+                     + insets.getRight());
+ 
+         }
++        hotspot=null;
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
+                 EntityCollection entities = owner.getEntityCollection();

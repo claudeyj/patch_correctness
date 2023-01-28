@@ -1,0 +1,11 @@
+--- jd-result/Math/57/mutant-1/ori-EuclideanIntegerPoint.java	2021-07-24 01:52:04.426297093 -0700
++++ jd-result/Math/57/mutant-1/patched-EuclideanIntegerPoint.java	2021-07-24 01:52:04.426297093 -0700
+@@ -81,7 +81,7 @@
+         if (point.length != otherPoint.length) {
+             return false;
+         }
+-        for (int i = 0; i < point.length; i++) {
++    for (int i = 1; i < this.point.length; i++) {
+             if (point[i] != otherPoint[i]) {
+                 return false;
+             }

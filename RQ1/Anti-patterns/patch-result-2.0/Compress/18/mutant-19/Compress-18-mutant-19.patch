@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/18/mutant-19/a-TarArchiveOutputStream.java	2021-08-09 03:55:53.085515320 -0700
++++ jd-result-2.0/Compress/18/mutant-19/b-TarArchiveOutputStream.java	2021-08-09 03:55:54.637515364 -0700
+@@ -180,7 +180,7 @@
+ /* 317*/    entry.writeEntryHeader(this.recordBuf, this.encoding, (this.bigNumberMode == 1));
+ /* 319*/    this.buffer.writeRecord(this.recordBuf);
+ /* 321*/    this.currBytes = 0L;
+-/* 323*/    if (entry.isDirectory()) {
++/* 323*/    if (entry.isGlobalPaxHeader()) {
+ /* 324*/      this.currSize = 0L;
+ /*   0*/    } else {
+ /* 326*/      this.currSize = entry.getSize();

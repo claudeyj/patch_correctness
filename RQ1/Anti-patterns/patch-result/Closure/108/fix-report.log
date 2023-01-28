@@ -1,0 +1,49 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 19:20:02 PDT 2021
+Number of Plausible Fixes: 5
+Total Number of Patches: 34966
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: the call to factory method com.google.javascript.jscomp.Scope$Var.getJSDocInfo()Lcom/google/javascript/rhino/JSDocInfo; is replaced by an instantiation of type com.google.javascript.rhino.JSDocInfo using ()V
+	File Name: com/google/javascript/jscomp/ScopedAliases.java
+	Line Number: 418
+	Rank: 1
+	Total Rank: 127
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.jscomp.Scope$Var::getJSDocInfo()Lcom/google/javascript/rhino/JSDocInfo; is replaced with the used of default value null
+	File Name: com/google/javascript/jscomp/ScopedAliases.java
+	Line Number: 418
+	Rank: 2
+	Total Rank: 136
+	Dump: mutant-2.class
+------------------------------------------------
+3.
+	Mutator: LocalNameMutator
+	Description: local aliasName is replaced by local typeName to be used
+	File Name: com/google/javascript/jscomp/ScopedAliases.java
+	Line Number: 236
+	Rank: 4
+	Total Rank: 919
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local typeName is replaced by local aliasName to be used
+	File Name: com/google/javascript/jscomp/ScopedAliases.java
+	Line Number: 236
+	Rank: 4
+	Total Rank: 919
+	Dump: mutant-5.class
+------------------------------------------------
+5.
+	Mutator: VoidMethodCallMutator
+	Description: removed call to com/google/common/base/Preconditions::checkState
+	File Name: com/google/javascript/jscomp/ScopedAliases.java
+	Line Number: 236
+	Rank: 5
+	Total Rank: 921
+	Dump: mutant-3.class
+------------------------------------------------

@@ -1,0 +1,20 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/60/mutant-1/ori-NormalDistributionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/60/mutant-1/man-patched-NormalDistributionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/60/mutant-1/ori-NormalDistributionImpl.java	2021-08-23 09:23:48.956991404 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/60/mutant-1/man-patched-NormalDistributionImpl.java	2021-08-23 09:23:48.956991404 +0800
+@@ -25,6 +25,7 @@
+ import org.apache.commons.math.exception.util.LocalizedFormats;
+ import org.apache.commons.math.special.Erf;
+ import org.apache.commons.math.util.FastMath;
++import org.apache.commons.math.ConvergenceException;
+ 
+ /**
+  * Default implementation of
+@@ -126,7 +127,7 @@
+         try {
+         return 0.5 * (1.0 + Erf.erf((dev) /
+                     (standardDeviation * FastMath.sqrt(2.0))));
+-        } catch (MaxIterationsExceededException ex) {
++    } catch (ConvergenceException ex) {
+             if (x < (mean - 20 * standardDeviation)) { // JDK 1.5 blows at 38
+                 return 0;
+             } else if (x > (mean + 20 * standardDeviation)) {

@@ -1,0 +1,69 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/22/mutant-0/buggy-KeyedObjects2D.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/22/mutant-0/patched-KeyedObjects2D.java
+--- Chart22b/source/org/jfree/data/KeyedObjects2D.java
++++ Chart22b_Chart-22-src.patchb/source/org/jfree/data/KeyedObjects2D.java
+@@ -228,9 +228,10 @@
+             throw new UnknownKeyException("Column key (" + columnKey 
+                     + ") not recognised.");
+         }
+-        if (row >= 0) {
+         KeyedObjects rowData = (KeyedObjects) this.rows.get(row);
+-            return rowData.getObject(columnKey);
++        int index = rowData.getIndex(columnKey);
++        if (index >= 0) {
++            return rowData.getObject(index);
+         }
+         else {
+             return null;
+@@ -315,8 +316,29 @@
+         }
+         
+         // 2. check whether the column is now empty.
++        allNull = true;
+         
++        for (int item = 0, itemCount = this.rows.size(); item < itemCount; 
++             item++) {
++            row = (KeyedObjects) this.rows.get(item);
++            int columnIndex = row.getIndex(columnKey);
++            if (columnIndex >= 0 && row.getObject(columnIndex) != null) {
++                allNull = false;
++                break;
++            }
++        }
+         
++        if (allNull) {
++            for (int item = 0, itemCount = this.rows.size(); item < itemCount; 
++                 item++) {
++                row = (KeyedObjects) this.rows.get(item);
++                int columnIndex = row.getIndex(columnKey);
++                if (columnIndex >= 0) {
++                    row.removeValue(columnIndex);
++                }
++            }
++            this.columnKeys.remove(columnKey);
++        }
+     }
+ 
+     /**
+@@ -342,6 +364,10 @@
+      */
+     public void removeRow(Comparable rowKey) {
+         int index = getRowIndex(rowKey);
++        if (index < 0) {
++            throw new UnknownKeyException("Row key (" + rowKey 
++                    + ") not recognised.");
++        }
+         removeRow(index);
+     }
+ 
+@@ -375,7 +401,10 @@
+         Iterator iterator = this.rows.iterator();
+         while (iterator.hasNext()) {
+             KeyedObjects rowData = (KeyedObjects) iterator.next();
+-                rowData.removeValue(columnKey);
++            int i = rowData.getIndex(columnKey);
++            if (i >= 0) {
++                rowData.removeValue(i);
++            }
+         }
+         this.columnKeys.remove(columnKey);
+     }

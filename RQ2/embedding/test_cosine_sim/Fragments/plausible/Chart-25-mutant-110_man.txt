@@ -1,0 +1,7 @@
+            CategoryItemRendererState state = renderer.initialise(g2, dataArea,
+                    this, index, info);
+            int columnCount = currentDataset.getColumnCount();
+      int rowCount = 0;
+            int passCount = renderer.getPassCount();
+            for (int pass = 0; pass < passCount; pass++) {            
+                if (this.columnRenderingOrder == SortOrder.ASCENDING) {

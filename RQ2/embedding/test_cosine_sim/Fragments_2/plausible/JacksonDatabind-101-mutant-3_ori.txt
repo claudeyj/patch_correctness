@@ -1,0 +1,8 @@
+            SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
+            if (creatorProp != null) {
+                // Last creator property to set?
+                if (buffer.assignParameter(creatorProp,
+                        _deserializeWithErrorWrapping(p, ctxt, creatorProp))) {
+                    t = p.nextToken(); // to move to following FIELD_NAME/END_OBJECT
+                    Object bean;
+                    try {

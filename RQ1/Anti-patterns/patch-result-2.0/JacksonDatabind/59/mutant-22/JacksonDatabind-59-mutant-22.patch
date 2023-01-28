@@ -1,0 +1,29 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-22/a-TypeFactory.java	2021-08-09 04:31:33.093575707 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-22/b-TypeFactory.java	2021-08-09 04:31:34.713575752 -0700
+@@ -25,6 +25,7 @@
+ /*   0*/import java.util.TreeMap;
+ /*   0*/import java.util.TreeSet;
+ /*   0*/import java.util.concurrent.atomic.AtomicReference;
++/*   0*/import perf.ManualWritePerfWithAllTypes;
+ /*   0*/
+ /*   0*/public final class TypeFactory implements Serializable {
+ /*   0*/  private static final long serialVersionUID = 1L;
+@@ -473,7 +474,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private JavaType _mapType(Class<?> rawClass, TypeBindings bindings, JavaType superClass, JavaType[] superInterfaces) {
+-/*   0*/    JavaType kt, vt;
++/*   0*/    JavaType vt, kt;
+ /*1018*/    if (rawClass == Properties.class) {
+ /*1019*/      kt = vt = CORE_TYPE_STRING;
+ /*   0*/    } else {
+@@ -604,7 +605,8 @@
+ /*1205*/    if (bindings == null || bindings.isEmpty()) {
+ /*1206*/      key = rawType;
+ /*   0*/    } else {
+-/*1208*/      key = bindings.asKey(rawType);
++/*1208*/      Class<?> clazz = rawType;
++/*1208*/      key = new ManualWritePerfWithAllTypes.AllTypes();
+ /*   0*/    } 
+ /*1210*/    result = this._typeCache.get(key);
+ /*1211*/    if (result != null) {

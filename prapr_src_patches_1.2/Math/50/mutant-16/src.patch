@@ -1,0 +1,11 @@
+--- jd-result/Math/50/mutant-16/ori-BaseSecantSolver.java	2021-07-24 01:52:03.830297076 -0700
++++ jd-result/Math/50/mutant-16/fixed-patched-BaseSecantSolver.java	2021-07-24 01:52:03.830297076 -0700
+@@ -186,7 +186,7 @@
+                     // Nothing.
+                     if (x == x1) {
+                         x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+-                        f0 = computeObjectiveValue(x0);
++              f0 = 0.0D;
+                     }
+                     break;
+                 default:

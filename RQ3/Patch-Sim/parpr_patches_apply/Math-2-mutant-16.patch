@@ -1,0 +1,21 @@
+--- Math2b/src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	2017-03-20 23:45:21.000000000 +0800
++++ Math2_Math-2-mutant-16.patchb/src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	2017-03-20 23:45:21.000000000 +0800
+@@ -126,18 +126,6 @@
+         final double sigma = FastMath.sqrt(getNumericalVariance());
+         final boolean chebyshevApplies = !(Double.isInfinite(mu) || Double.isNaN(mu) ||
+                 Double.isInfinite(sigma) || Double.isNaN(sigma) || sigma == 0.0);
+-        if (chebyshevApplies) {
+-            double k = FastMath.sqrt((1.0 - p) / p);
+-            double tmp = mu - k * sigma;
+-            if (tmp > lower) {
+-                lower = ((int) Math.ceil(tmp)) - 1;
+-            }
+-            k = 1.0 / k;
+-            tmp = mu + k * sigma;
+-            if (tmp < upper) {
+-                upper = ((int) Math.ceil(tmp)) - 1;
+-            }
+-        }
+ 
+         return solveInverseCumulativeProbability(p, lower, upper);
+     }

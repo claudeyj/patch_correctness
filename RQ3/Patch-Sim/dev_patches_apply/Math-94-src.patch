@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/94/mutant-0/buggy-MathUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/94/mutant-0/patched-MathUtils.java
+--- Math94b/src/java/org/apache/commons/math/util/MathUtils.java
++++ Math94b_Math-94-src.patchb/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -409,7 +409,7 @@
+      * @since 1.1
+      */
+     public static int gcd(int u, int v) {
+-        if (u * v == 0) {
++        if ((u == 0) || (v == 0)) {
+             return (Math.abs(u) + Math.abs(v));
+         }
+         // keep u and v negative, as negative integers range down to

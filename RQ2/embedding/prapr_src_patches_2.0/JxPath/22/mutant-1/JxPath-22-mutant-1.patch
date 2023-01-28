@@ -1,0 +1,14 @@
+--- jd-result-2.0/JxPath/22/mutant-1/a-DOMNodePointer.java	2021-08-09 04:17:41.693552246 -0700
++++ jd-result-2.0/JxPath/22/mutant-1/b-DOMNodePointer.java	2021-08-09 04:17:43.517552298 -0700
+@@ -513,7 +513,10 @@
+ /* 686*/        if (aNode.getNodeType() == 1) {
+ /* 687*/          Attr attr = ((Element)aNode).getAttributeNode(qname);
+ /* 688*/          if (attr != null) {
+-/* 689*/              return attr.getValue(); 
++/* 689*/            if (attr.getValue() == null) {
++/* 689*/                throw new RuntimeException(); 
++/*   0*/               }
++/* 689*/            return null;
+ /*   0*/             }
+ /*   0*/        } 
+ /* 692*/        aNode = aNode.getParentNode();

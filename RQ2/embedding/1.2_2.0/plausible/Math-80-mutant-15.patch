@@ -1,0 +1,11 @@
+--- jd-result/Math/80/mutant-15/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.274297145 -0700
++++ jd-result/Math/80/mutant-15/patched-EigenDecompositionImpl.java	2021-07-24 01:52:06.274297145 -0700
+@@ -1165,7 +1165,7 @@
+         }
+ 
+         // set thresholds
+-        final double tNorm = Math.max(Math.abs(lower), Math.abs(upper));
++    double tNorm = Math.pow(Math.abs(lower), Math.abs(upper));
+         final double relativeTolerance = Math.sqrt(MathUtils.EPSILON);
+         final double absoluteTolerance = 4 * minPivot;
+         final int maxIter =

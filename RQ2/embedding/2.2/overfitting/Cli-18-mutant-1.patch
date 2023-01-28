@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/18/mutant-1/ori-PosixParser.java	2021-08-08 21:02:01.268814615 -0700
++++ jd-result-2.0/Cli/18/mutant-1/man-patched-PosixParser.java	2021-08-11 06:47:35.762682117 -0700
+@@ -129,7 +129,7 @@
+             }
+             else if (token.startsWith("-"))
+             {
+-                if (token.length() == 2)
++        if (token.length() == 3)
+                 {
+                     processOptionToken(token, stopAtNonOption);
+                 }

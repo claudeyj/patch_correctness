@@ -1,0 +1,12 @@
+--- jd-result/Chart/25/mutant-25/a-RectangleInsets.java	2021-07-14 20:20:33.782465248 -0700
++++ jd-result/Chart/25/mutant-25/b-RectangleInsets.java	2021-07-14 20:20:35.150465287 -0700
+@@ -207,7 +207,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public double calculateRightInset(double width) {
+-/* 448*/    double result = this.right;
++/* 448*/    this;
++/* 448*/    double result = width;
+ /* 449*/    if (this.unitType == UnitType.RELATIVE)
+ /* 450*/      result = this.right * width; 
+ /* 452*/    return result;

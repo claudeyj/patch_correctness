@@ -1,0 +1,11 @@
+--- jd-result/Closure/36/mutant-7/ori-CompilationLevel.java	2021-07-15 18:51:52.688753135 -0700
++++ jd-result/Closure/36/mutant-7/patched-CompilationLevel.java	2021-07-21 07:51:15.686262884 -0700
+@@ -154,7 +154,7 @@
+     options.setRenamingPolicy(
+         VariableRenamingPolicy.ALL, PropertyRenamingPolicy.ALL_UNQUOTED);
+     options.shadowVariables = true;
+-    options.removeUnusedPrototypeProperties = true;
++    options.checkControlStructures = true;
+     options.removeUnusedPrototypePropertiesInExterns = true;
+     options.collapseAnonymousFunctions = true;
+     options.collapseProperties = true;

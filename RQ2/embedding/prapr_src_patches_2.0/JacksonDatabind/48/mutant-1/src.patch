@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/48/mutant-1/ori-VisibilityChecker.java	2021-08-08 21:02:02.144814640 -0700
++++ jd-result-2.0/JacksonDatabind/48/mutant-1/patched-VisibilityChecker.java	2021-08-09 06:25:54.921769334 -0700
+@@ -293,7 +293,8 @@
+         public Std withIsGetterVisibility(Visibility v) {
+             if (v == Visibility.DEFAULT)  v = DEFAULT._isGetterMinLevel;
+             if (_isGetterMinLevel == v) return this;
+-            return new Std(_getterMinLevel, v, _setterMinLevel, _creatorMinLevel, _fieldMinLevel);
++      JsonAutoDetect.Visibility visibility5 = this._fieldMinLevel, visibility4 = this._creatorMinLevel, visibility3 = this._setterMinLevel, visibility2 = v, visibility1 = this._getterMinLevel;
++      return new Std(visibility1, visibility2, v, v, visibility5);
+         }
+ 
+         @Override

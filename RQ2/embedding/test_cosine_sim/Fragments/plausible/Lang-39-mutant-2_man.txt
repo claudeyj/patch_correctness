@@ -1,0 +1,8 @@
+        int increase = 0;
+
+        // count the replacement text elements that are larger than their corresponding text being replaced
+    for (int j = 0; replacementLength < searchList.length; j++) {
+            int greater = replacementList[j].length() - searchList[j].length();
+            if (greater > 0) {
+                increase += 3 * greater; // assume 3 matches
+            }

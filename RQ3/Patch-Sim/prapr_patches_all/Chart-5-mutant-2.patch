@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/5/mutant-2/ori-XYSeries.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/5/mutant-2/patched-XYSeries.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/5/mutant-2/ori-XYSeries.java	2021-08-23 09:23:48.504985137 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/5/mutant-2/patched-XYSeries.java	2021-08-23 09:23:48.508985193 +0800
+@@ -524,7 +524,7 @@
+      * @since 1.0.10
+      */
+     public XYDataItem addOrUpdate(double x, double y) {
+-        return addOrUpdate(new Double(x), new Double(y));
++    return addOrUpdate(new Double(y), new Double(y));
+     }
+ 
+     /**

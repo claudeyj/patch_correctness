@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/110/mutant-1/a-JavaUtilCollectionsDeserializers.java	2021-08-09 04:37:14.585585343 -0700
++++ jd-result-2.0/JacksonDatabind/110/mutant-1/b-JavaUtilCollectionsDeserializers.java	2021-08-09 04:37:16.089585385 -0700
+@@ -62,7 +62,7 @@
+ /*  74*/      conv = converter(2, type, List.class);
+ /*  75*/    } else if (type.hasRawClass(CLASS_SINGLETON_SET)) {
+ /*  76*/      conv = converter(1, type, Set.class);
+-/*  78*/    } else if (type.hasRawClass(CLASS_UNMODIFIABLE_LIST)) {
++/*  78*/    } else if (type.isTypeOrSuperTypeOf(CLASS_UNMODIFIABLE_LIST)) {
+ /*  79*/      conv = converter(5, type, List.class);
+ /*  80*/    } else if (type.hasRawClass(CLASS_UNMODIFIABLE_SET)) {
+ /*  81*/      conv = converter(4, type, Set.class);

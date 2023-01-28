@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-36/a-JavaType.java	2021-08-09 04:31:36.725575809 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-36/b-JavaType.java	2021-08-09 04:31:38.225575851 -0700
+@@ -23,7 +23,7 @@
+ /*   0*/  
+ /*   0*/  protected JavaType(Class<?> raw, int additionalHash, Object valueHandler, Object typeHandler, boolean asStatic) {
+ /*  79*/    this._class = raw;
+-/*  80*/    this._hash = raw.getName().hashCode() + additionalHash;
++/*  80*/    this._hash = raw.toString().hashCode() + additionalHash;
+ /*  81*/    this._valueHandler = valueHandler;
+ /*  82*/    this._typeHandler = typeHandler;
+ /*  83*/    this._asStatic = asStatic;

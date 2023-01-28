@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/26/mutant-2/a-ByteQuadsCanonicalizer.java	2021-08-09 04:09:55.849539101 -0700
++++ jd-result-2.0/JacksonCore/26/mutant-2/b-ByteQuadsCanonicalizer.java	2021-08-09 04:09:57.353539143 -0700
+@@ -56,7 +56,7 @@
+ /* 223*/    this._parent = null;
+ /* 224*/    this._seed = seed;
+ /* 225*/    this._intern = intern;
+-/* 226*/    this._failOnDoS = failOnDoS;
++/* 226*/    nukeSymbols(failOnDoS);
+ /* 228*/    if (sz < 16) {
+ /* 229*/      sz = 16;
+ /* 233*/    } else if ((sz & sz - 1) != 0) {

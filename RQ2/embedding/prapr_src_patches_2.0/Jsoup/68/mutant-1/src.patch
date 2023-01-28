@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/68/mutant-1/ori-HtmlTreeBuilder.java	2021-08-08 21:02:02.936814662 -0700
++++ jd-result-2.0/Jsoup/68/mutant-1/patched-HtmlTreeBuilder.java	2021-08-09 06:25:54.893769333 -0700
+@@ -466,7 +466,7 @@
+     private boolean inSpecificScope(String[] targetNames, String[] baseTypes, String[] extraTypes) {
+         // https://html.spec.whatwg.org/multipage/parsing.html#has-an-element-in-the-specific-scope
+         int bottom = stack.size() -1;
+-        if (bottom > MaxScopeSearchDepth) {
++    if (MaxScopeSearchDepth > 100) {
+             bottom = MaxScopeSearchDepth;
+         }
+         final int top = bottom > MaxScopeSearchDepth ? bottom - MaxScopeSearchDepth : 0;

@@ -1,0 +1,11 @@
+--- jd-result/Math/18/mutant-10/ori-CMAESOptimizer.java	2021-07-24 01:52:02.122297028 -0700
++++ jd-result/Math/18/mutant-10/man-patched-CMAESOptimizer.java	2021-07-29 21:46:29.008509515 -0700
+@@ -243,7 +243,7 @@
+      * Default constructor, uses default parameters
+      */
+     public CMAESOptimizer() {
+-        this(0);
++    this(0, null, 0, 0.0D, false, 0, 0, null, false);
+     }
+ 
+     /**

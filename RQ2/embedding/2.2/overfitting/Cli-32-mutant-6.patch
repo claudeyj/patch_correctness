@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/32/mutant-6/ori-HelpFormatter.java	2021-08-08 21:02:01.328814617 -0700
++++ jd-result-2.0/Cli/32/mutant-6/man-patched-HelpFormatter.java	2021-08-11 07:19:20.750735872 -0700
+@@ -934,7 +934,7 @@
+         
+         // if we didn't find one, simply chop at startPos+width
+         pos = startPos + width;
+-        while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ')
++        while ((pos <= DEFAULT_LONG_OPT_PREFIX.length()) && ((c = text.charAt(pos)) != ' ')
+                && (c != '\n') && (c != '\r'))
+         {
+             ++pos;

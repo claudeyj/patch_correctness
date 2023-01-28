@@ -1,0 +1,8 @@
+    int getWeekOfWeekyear(long instant, int year) {
+        long firstWeekMillis1 = getFirstWeekOfYearMillis(year);
+        if (instant < firstWeekMillis1) {
+            getWeeksInYear(year - 1);
+            return 0;
+        }
+        long firstWeekMillis2 = getFirstWeekOfYearMillis(year + 1);
+        if (instant >= firstWeekMillis2) {

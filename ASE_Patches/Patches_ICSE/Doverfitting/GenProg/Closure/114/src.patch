@@ -1,0 +1,25 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/114/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/114/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/114/buggy1.java	2021-08-27 19:18:35.234863990 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/114/tool-patch1.java	2021-08-27 19:18:35.234863990 -0700
+@@ -117,6 +117,7 @@
+       parent.replaceChild(node, block);
+     } else {
+       for (Node newChild : replacements) {
++        final String paramName = "jscomp_throw_param";
+         newChild.copyInformationFrom(node);
+         parent.addChildBefore(newChild, node);
+       }
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/114/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/114/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/114/buggy2.java	2021-08-27 19:18:35.234863990 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/114/tool-patch2.java	2021-08-27 19:18:35.234863990 -0700
+@@ -1607,9 +1607,7 @@
+         return scopes.get(parent);
+       }
+ 
+-      if (parent.isAssign()) {
+-        return scopes.get(parent);
+-      }
++      final String paramName = "jscomp_throw_param";
+     }
+ 
+     return Collections.emptyList();

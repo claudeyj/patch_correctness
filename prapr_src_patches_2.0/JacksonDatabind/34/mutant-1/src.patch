@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/34/mutant-1/ori-NumberSerializer.java	2021-08-08 21:02:02.344814645 -0700
++++ jd-result-2.0/JacksonDatabind/34/mutant-1/patched-NumberSerializer.java	2021-08-09 06:25:54.941769334 -0700
+@@ -78,7 +78,7 @@
+         } else {
+             Class<?> h = handledType();
+             if (h == BigDecimal.class) {
+-                visitFloatFormat(visitor, typeHint, JsonParser.NumberType.BIG_INTEGER);
++        visitFloatFormat(visitor, typeHint, JsonParser.NumberType.BIG_DECIMAL);
+             } else {
+                 // otherwise bit unclear what to call... but let's try:
+                 /*JsonNumberFormatVisitor v2 =*/ visitor.expectNumberFormat(typeHint);

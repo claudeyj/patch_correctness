@@ -1,0 +1,12 @@
+--- jd-result/Math/63/mutant-11/ori-MathUtils.java	2021-07-24 01:52:04.554297096 -0700
++++ jd-result/Math/63/mutant-11/fixed-patched-MathUtils.java	2021-07-24 01:52:04.554297096 -0700
+@@ -527,7 +527,8 @@
+             return false;
+         }
+         for (int i = 0; i < x.length; ++i) {
+-            if (!equals(x[i], y[i])) {
++      double d2 = y[i], d1 = x[i];
++      if (!equals(d1, d2, 0)) {
+                 return false;
+             }
+         }

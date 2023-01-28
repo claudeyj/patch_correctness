@@ -1,0 +1,33 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/102/mutant-0/buggy-ChiSquareTestImpl.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/102/mutant-0/patched-ChiSquareTestImpl.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/102/mutant-0/buggy-ChiSquareTestImpl.java	2021-08-22 00:18:38.662190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/102/mutant-0/patched-ChiSquareTestImpl.java	2021-08-22 00:18:38.662190185 -0700
+@@ -71,12 +71,29 @@
+             throw new IllegalArgumentException(
+                 "observed counts must be non-negative and expected counts must be postive");
+         }
++        double sumExpected = 0d;
++        double sumObserved = 0d;
++        for (int i = 0; i < observed.length; i++) {
++            sumExpected += expected[i];
++            sumObserved += observed[i];
++        }
++        double ratio = 1.0d;
++        boolean rescale = false;
++        if (Math.abs(sumExpected - sumObserved) > 10E-6) {
++            ratio = sumObserved / sumExpected;
++            rescale = true;
++        }
+         double sumSq = 0.0d;
+         double dev = 0.0d;
+         for (int i = 0; i < observed.length; i++) {
++            if (rescale) {
++                dev = ((double) observed[i] - ratio * expected[i]);
++                sumSq += dev * dev / (ratio * expected[i]);
++            } else {
+                 dev = ((double) observed[i] - expected[i]);
+                 sumSq += dev * dev / expected[i];
+         }
++        }
+         return sumSq;
+     }
+ 

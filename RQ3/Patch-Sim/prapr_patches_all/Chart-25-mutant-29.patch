@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-29/ori-CategoryPlot.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-29/man-patched-CategoryPlot.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-29/ori-CategoryPlot.java	2021-08-23 09:23:48.400983695 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-29/man-patched-CategoryPlot.java	2021-08-23 09:23:48.400983695 +0800
+@@ -2669,9 +2669,6 @@
+                 }
+             }
+             
+-            for (int i = this.datasets.size() - 1; i >= 0; i--) {
+-                foundData = render(g2, dataArea, i, state) || foundData;   
+-            }
+ 
+             // draw foreground annotations
+             for (int i = datasetCount - 1; i >= 0; i--) {

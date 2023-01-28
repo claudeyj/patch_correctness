@@ -1,0 +1,31 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Math/58/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Math/58/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Math/58/buggy1.java	2021-08-27 19:18:39.242864103 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Math/58/tool-patch1.java	2021-08-27 19:18:39.242864103 -0700
+@@ -589,11 +589,6 @@
+                 return;
+             }
+ 
+-            // compute the Newton correction
+-            for (int j = 0; j < solvedCols; ++j) {
+-                int pj = permutation[j];
+-                work1[pj] = work3[pj] * diag[pj] / dxNorm;
+-            }
+             for (int j = 0; j < solvedCols; ++j) {
+                 int pj = permutation[j];
+                 work1[pj] /= work2[j];
+@@ -612,9 +607,14 @@
+             // depending on the sign of the function, update parl or paru.
+             if (fp > 0) {
+                 parl = FastMath.max(parl, lmPar);
+-            } else if (fp < 0) {
++            } else {
++                for (int j = rank; j < cols; ++j) {
++                    lmDir[permutation[j]] = 0;
++                }
++                if (fp < 0) {
+                 paru = FastMath.min(paru, lmPar);
+             }
++            }
+ 
+             // compute an improved estimate for lmPar
+             lmPar = FastMath.max(parl, lmPar + correction);

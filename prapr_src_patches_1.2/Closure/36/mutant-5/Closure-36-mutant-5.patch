@@ -1,0 +1,11 @@
+--- jd-result/Closure/36/mutant-5/a-DefaultPassConfig.java	2021-07-14 21:41:49.914602843 -0700
++++ jd-result/Closure/36/mutant-5/b-DefaultPassConfig.java	2021-07-14 21:41:51.582602890 -0700
+@@ -518,7 +518,7 @@
+ /*1637*/          return new RemoveUnusedClassProperties(compiler);
+ /*   0*/        }
+ /*   0*/      };
+-/*1645*/    this.smartNamePass = new PassFactory("smartNamePass", true) {
++/*1645*/    this.smartNamePass = new PassFactory("smartNamePass", false) {
+ /*   0*/        protected CompilerPass createInternal(final AbstractCompiler compiler) {
+ /*1649*/          return new CompilerPass() {
+ /*   0*/              public void process(Node externs, Node root) {

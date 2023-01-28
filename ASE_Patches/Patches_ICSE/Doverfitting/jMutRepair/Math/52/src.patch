@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Math/52/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Math/52/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Math/52/buggy1.java	2021-08-27 19:18:34.022863956 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jMutRepair/Math/52/tool-patch1.java	2021-08-27 19:18:34.022863956 -0700
+@@ -341,7 +341,7 @@
+   Vector3D k     = v1Su1.crossProduct(v2Su2);
+   Vector3D u3    = u1.crossProduct(u2);
+   double c       = k.dotProduct(u3);
+-  if (c == 0) {
++  if (c <= 0) {
+     // the (q1, q2, q3) vector is close to the (u1, u2) plane
+     // we try other vectors
+     Vector3D v3 = Vector3D.crossProduct(v1, v2);

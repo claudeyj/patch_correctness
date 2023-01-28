@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/86/mutant-1/a-LRUMap.java	2021-08-09 04:36:11.069583551 -0700
++++ jd-result-2.0/JacksonDatabind/86/mutant-1/b-LRUMap.java	2021-08-09 04:36:12.449583590 -0700
+@@ -43,7 +43,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public V get(Object key) {
+-/*  68*/    return this._map.get(key);
++/*  68*/    this._map.get(key);
++/*  68*/    return null;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void clear() {

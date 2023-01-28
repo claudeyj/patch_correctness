@@ -1,0 +1,7 @@
+   * @throws IllegalArgumentException if this type is not a collection.
+   */
+  public static Type getCollectionElementType(Type context, Class<?> contextRawType) {
+    Type collectionType = getSupertype(context, contextRawType, Collection.class);
+
+    if (collectionType instanceof WildcardType) {
+      collectionType = ((WildcardType)collectionType).getUpperBounds()[0];

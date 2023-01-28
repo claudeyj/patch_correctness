@@ -1,0 +1,163 @@
+--- jd-result-2.0/JacksonDatabind/27/mutant-1/a-ExternalTypeHandler.java	2021-08-09 04:34:21.925580471 -0700
++++ jd-result-2.0/JacksonDatabind/27/mutant-1/b-ExternalTypeHandler.java	2021-08-09 04:34:23.465580514 -0700
+@@ -60,30 +60,136 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public boolean handlePropertyValue(JsonParser jp, DeserializationContext ctxt, String propName, Object bean) throws IOException {
+-/*   0*/    boolean canDeserialize;
+-/*  94*/    Integer I = this._nameToPropertyIndex.get(propName);
+-/*  95*/    if (I == null) {
+-/*  96*/        return false; 
+-/*   0*/       }
+-/*  98*/    int index = I;
+-/*  99*/    ExtTypedProperty prop = this._properties[index];
+-/* 101*/    if (prop.hasTypePropertyName(propName)) {
+-/* 102*/      this._typeIds[index] = jp.getText();
+-/* 103*/      jp.skipChildren();
+-/* 104*/      canDeserialize = (bean != null && this._tokens[index] != null);
+-/*   0*/    } else {
+-/* 107*/      TokenBuffer tokens = new TokenBuffer(jp);
+-/* 108*/      tokens.copyCurrentStructure(jp);
+-/* 109*/      this._tokens[index] = tokens;
+-/* 110*/      canDeserialize = (bean != null && this._typeIds[index] != null);
+-/*   0*/    } 
+-/* 115*/    if (canDeserialize) {
+-/* 116*/      String typeId = this._typeIds[index];
+-/* 118*/      this._typeIds[index] = null;
+-/* 119*/      _deserializeAndSet(jp, ctxt, bean, index, typeId);
+-/* 120*/      this._tokens[index] = null;
+-/*   0*/    } 
+-/* 122*/    return true;
++/*   0*/    // Byte code:
++/*   0*/    //   0: aload_0
++/*   0*/    //   1: getfield _nameToPropertyIndex : Ljava/util/HashMap;
++/*   0*/    //   4: aload_3
++/*   0*/    //   5: invokevirtual get : (Ljava/lang/Object;)Ljava/lang/Object;
++/*   0*/    //   8: checkcast java/lang/Integer
++/*   0*/    //   11: astore #5
++/*   0*/    //   13: aload #5
++/*   0*/    //   15: ifnonnull -> 20
++/*   0*/    //   18: iconst_0
++/*   0*/    //   19: ireturn
++/*   0*/    //   20: aload #5
++/*   0*/    //   22: invokevirtual intValue : ()I
++/*   0*/    //   25: istore #6
++/*   0*/    //   27: aload_0
++/*   0*/    //   28: getfield _properties : [Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler$ExtTypedProperty;
++/*   0*/    //   31: iload #6
++/*   0*/    //   33: aaload
++/*   0*/    //   34: astore #7
++/*   0*/    //   36: aload #7
++/*   0*/    //   38: aload_3
++/*   0*/    //   39: invokevirtual hasTypePropertyName : (Ljava/lang/String;)Z
++/*   0*/    //   42: ifeq -> 86
++/*   0*/    //   45: aload_0
++/*   0*/    //   46: getfield _typeIds : [Ljava/lang/String;
++/*   0*/    //   49: iload #6
++/*   0*/    //   51: aload_1
++/*   0*/    //   52: invokevirtual getText : ()Ljava/lang/String;
++/*   0*/    //   55: aastore
++/*   0*/    //   56: aload_1
++/*   0*/    //   57: invokevirtual skipChildren : ()Lcom/fasterxml/jackson/core/JsonParser;
++/*   0*/    //   60: pop
++/*   0*/    //   61: aload #4
++/*   0*/    //   63: ifnull -> 80
++/*   0*/    //   66: aload_0
++/*   0*/    //   67: getfield _tokens : [Lcom/fasterxml/jackson/databind/util/TokenBuffer;
++/*   0*/    //   70: iload #6
++/*   0*/    //   72: aaload
++/*   0*/    //   73: ifnull -> 80
++/*   0*/    //   76: iconst_1
++/*   0*/    //   77: goto -> 81
++/*   0*/    //   80: iconst_0
++/*   0*/    //   81: istore #8
++/*   0*/    //   83: goto -> 134
++/*   0*/    //   86: new com/fasterxml/jackson/databind/util/TokenBuffer
++/*   0*/    //   89: dup
++/*   0*/    //   90: aload_1
++/*   0*/    //   91: invokespecial <init> : (Lcom/fasterxml/jackson/core/JsonParser;)V
++/*   0*/    //   94: astore #9
++/*   0*/    //   96: aload #9
++/*   0*/    //   98: aload_1
++/*   0*/    //   99: invokevirtual copyCurrentStructure : (Lcom/fasterxml/jackson/core/JsonParser;)V
++/*   0*/    //   102: aload_0
++/*   0*/    //   103: getfield _tokens : [Lcom/fasterxml/jackson/databind/util/TokenBuffer;
++/*   0*/    //   106: iload #6
++/*   0*/    //   108: aload #9
++/*   0*/    //   110: aastore
++/*   0*/    //   111: aload #4
++/*   0*/    //   113: pop
++/*   0*/    //   114: goto -> 131
++/*   0*/    //   117: aload_0
++/*   0*/    //   118: getfield _typeIds : [Ljava/lang/String;
++/*   0*/    //   121: iload #6
++/*   0*/    //   123: aaload
++/*   0*/    //   124: ifnull -> 131
++/*   0*/    //   127: iconst_1
++/*   0*/    //   128: goto -> 132
++/*   0*/    //   131: iconst_0
++/*   0*/    //   132: istore #8
++/*   0*/    //   134: iload #8
++/*   0*/    //   136: ifeq -> 176
++/*   0*/    //   139: aload_0
++/*   0*/    //   140: getfield _typeIds : [Ljava/lang/String;
++/*   0*/    //   143: iload #6
++/*   0*/    //   145: aaload
++/*   0*/    //   146: astore #9
++/*   0*/    //   148: aload_0
++/*   0*/    //   149: getfield _typeIds : [Ljava/lang/String;
++/*   0*/    //   152: iload #6
++/*   0*/    //   154: aconst_null
++/*   0*/    //   155: aastore
++/*   0*/    //   156: aload_0
++/*   0*/    //   157: aload_1
++/*   0*/    //   158: aload_2
++/*   0*/    //   159: aload #4
++/*   0*/    //   161: iload #6
++/*   0*/    //   163: aload #9
++/*   0*/    //   165: invokevirtual _deserializeAndSet : (Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;ILjava/lang/String;)V
++/*   0*/    //   168: aload_0
++/*   0*/    //   169: getfield _tokens : [Lcom/fasterxml/jackson/databind/util/TokenBuffer;
++/*   0*/    //   172: iload #6
++/*   0*/    //   174: aconst_null
++/*   0*/    //   175: aastore
++/*   0*/    //   176: iconst_1
++/*   0*/    //   177: ireturn
++/*   0*/    // Line number table:
++/*   0*/    //   Java source line number -> byte code offset
++/*   0*/    //   #94	-> 0
++/*   0*/    //   #95	-> 13
++/*   0*/    //   #96	-> 18
++/*   0*/    //   #98	-> 20
++/*   0*/    //   #99	-> 27
++/*   0*/    //   #101	-> 36
++/*   0*/    //   #102	-> 45
++/*   0*/    //   #103	-> 56
++/*   0*/    //   #104	-> 61
++/*   0*/    //   #107	-> 86
++/*   0*/    //   #108	-> 96
++/*   0*/    //   #109	-> 102
++/*   0*/    //   #110	-> 111
++/*   0*/    //   #115	-> 134
++/*   0*/    //   #116	-> 139
++/*   0*/    //   #118	-> 148
++/*   0*/    //   #119	-> 156
++/*   0*/    //   #120	-> 168
++/*   0*/    //   #122	-> 176
++/*   0*/    // Local variable table:
++/*   0*/    //   start	length	slot	name	descriptor
++/*   0*/    //   83	3	8	canDeserialize	Z
++/*   0*/    //   96	38	9	tokens	Lcom/fasterxml/jackson/databind/util/TokenBuffer;
++/*   0*/    //   148	28	9	typeId	Ljava/lang/String;
++/*   0*/    //   0	178	0	this	Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler;
++/*   0*/    //   0	178	1	jp	Lcom/fasterxml/jackson/core/JsonParser;
++/*   0*/    //   0	178	2	ctxt	Lcom/fasterxml/jackson/databind/DeserializationContext;
++/*   0*/    //   0	178	3	propName	Ljava/lang/String;
++/*   0*/    //   0	178	4	bean	Ljava/lang/Object;
++/*   0*/    //   13	165	5	I	Ljava/lang/Integer;
++/*   0*/    //   27	151	6	index	I
++/*   0*/    //   36	142	7	prop	Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler$ExtTypedProperty;
++/*   0*/    //   134	44	8	canDeserialize	Z
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public Object complete(JsonParser jp, DeserializationContext ctxt, Object bean) throws IOException {

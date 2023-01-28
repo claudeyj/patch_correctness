@@ -1,0 +1,11 @@
+--- jd-result/Closure/101/mutant-4/ori-CompilationLevel.java	2021-07-15 18:51:53.288753152 -0700
++++ jd-result/Closure/101/mutant-4/patched-CompilationLevel.java	2021-07-21 07:56:28.014271697 -0700
+@@ -91,7 +91,7 @@
+   private static void applySafeCompilationOptions(CompilerOptions options) {
+     // Does not call applyBasicCompilationOptions(options) because the call to
+     // skipAllCompilerPasses() cannot be easily undone.
+-    options.closurePass = true;
++    options.checkDuplicateMessages = true;
+     options.variableRenaming = VariableRenamingPolicy.LOCAL;
+     options.inlineLocalVariables = true;
+     options.checkGlobalThisLevel = CheckLevel.OFF;

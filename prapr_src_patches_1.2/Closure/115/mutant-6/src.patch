@@ -1,0 +1,11 @@
+--- jd-result/Closure/115/mutant-6/ori-FunctionInjector.java	2021-07-15 18:51:53.032753145 -0700
++++ jd-result/Closure/115/mutant-6/fixed-patched-FunctionInjector.java	2021-07-21 20:50:58.066706438 -0700
+@@ -698,7 +698,7 @@
+     if (block.hasChildren()) {
+       Preconditions.checkState(block.hasOneChild());
+       Node stmt = block.getFirstChild();
+-      if (stmt.isReturn()) {
++      if (stmt.isVarArgs()) {
+         hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);
+       }
+     }

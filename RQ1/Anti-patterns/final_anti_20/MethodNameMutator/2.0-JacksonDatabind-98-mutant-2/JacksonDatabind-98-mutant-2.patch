@@ -1,0 +1,22 @@
+--- jd-result-2.0/JacksonDatabind/98/mutant-2/a-BeanDeserializer.java	2021-08-09 04:34:58.545581504 -0700
++++ jd-result-2.0/JacksonDatabind/98/mutant-2/b-BeanDeserializer.java	2021-08-09 04:35:00.217581551 -0700
+@@ -23,6 +23,7 @@
+ /*   0*/import java.util.List;
+ /*   0*/import java.util.Map;
+ /*   0*/import java.util.Set;
++/*   0*/import perf.ManualWritePerfWithAllTypes;
+ /*   0*/
+ /*   0*/public class BeanDeserializer extends BeanDeserializerBase implements Serializable {
+ /*   0*/  private static final long serialVersionUID = 1L;
+@@ -657,7 +658,10 @@
+ /*   0*/    try {
+ /* 994*/      return ext.complete(p, ctxt, buffer, creator);
+ /* 995*/    } catch (Exception e) {
+-/* 996*/      return wrapInstantiationProblem(e, ctxt);
++/* 996*/      DeserializationContext deserializationContext = ctxt;
++/* 996*/      Exception exception1 = e;
++/* 996*/      this;
++/* 996*/      return new ManualWritePerfWithAllTypes.AllTypes();
+ /*   0*/    } 
+ /*   0*/  }
+ /*   0*/  

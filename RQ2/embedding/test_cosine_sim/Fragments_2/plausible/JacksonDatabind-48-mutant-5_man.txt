@@ -1,0 +1,8 @@
+            vchecker = vchecker.withIsGetterVisibility(Visibility.NONE);
+        }
+        if (!isEnabled(MapperFeature.AUTO_DETECT_FIELDS)) {
+      JsonAutoDetect.Visibility visibility = JsonAutoDetect.Visibility.NONE;
+      vchecker = new VisibilityChecker.Std(visibility);
+        }
+        return vchecker;
+    }

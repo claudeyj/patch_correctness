@@ -1,0 +1,25 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/50/mutant-0/buggy-PeepholeReplaceKnownMethods.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/50/mutant-0/patched-PeepholeReplaceKnownMethods.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/50/mutant-0/buggy-PeepholeReplaceKnownMethods.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/50/mutant-0/patched-PeepholeReplaceKnownMethods.java	2021-08-22 00:18:38.610190184 -0700
+@@ -373,7 +373,7 @@
+ 
+     Node right = callTarget.getNext();
+     if (right != null) {
+-      if (!NodeUtil.isImmutableValue(right)) {
++      if (right.getNext() != null || !NodeUtil.isImmutableValue(right)) {
+         return n;
+       }
+     }
+@@ -386,7 +386,12 @@
+       return n;
+     }
+ 
++    if (right != null && right.getType() == Token.STRING
++        && ",".equals(right.getString())) {
+       // "," is the default, it doesn't need to be explicit
++      n.removeChild(right);
++      reportCodeChange();
++    }
+ 
+     String joinString = (right == null) ? "," : NodeUtil.getStringValue(right);
+     List<Node> arrayFoldedChildren = Lists.newLinkedList();

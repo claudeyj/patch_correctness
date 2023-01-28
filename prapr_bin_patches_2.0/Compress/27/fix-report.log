@@ -1,0 +1,49 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 17 15:28:45 PDT 2021
+Number of Plausible Fixes: 5
+Total Number of Patches: 207
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local start is replaced by local offset to be used
+	File Name: org/apache/commons/compress/archivers/tar/TarUtils.java
+	Line Number: 133
+	Rank: 2
+	Total Rank: 167
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: LocalNameMutator
+	Description: local end is replaced by local length to be used
+	File Name: org/apache/commons/compress/archivers/tar/TarUtils.java
+	Line Number: 133
+	Rank: 2
+	Total Rank: 167
+	Dump: mutant-5.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local start is replaced by access to field BYTE_MASK
+	File Name: org/apache/commons/compress/archivers/tar/TarUtils.java
+	Line Number: 133
+	Rank: 4
+	Total Rank: 179
+	Dump: mutant-3.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local end is replaced by access to field BYTE_MASK
+	File Name: org/apache/commons/compress/archivers/tar/TarUtils.java
+	Line Number: 133
+	Rank: 4
+	Total Rank: 179
+	Dump: mutant-4.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/apache/commons/compress/archivers/tar/TarUtils.java
+	Line Number: 133
+	Rank: 5
+	Total Rank: 182
+	Dump: mutant-2.class
+------------------------------------------------

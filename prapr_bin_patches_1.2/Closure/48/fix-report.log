@@ -1,0 +1,58 @@
+PraPR 2 (JDK 1.7) Fix Report - Sun Jul 11 10:08:44 PDT 2021
+Number of Plausible Fixes: 6
+Total Number of Patches: 43936
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.Node::getJSType()Lcom/google/javascript/rhino/jstype/JSType; is replaced with the used of default value null
+	File Name: com/google/javascript/jscomp/TypedScopeCreator.java
+	Line Number: 1441
+	Rank: 2
+	Total Rank: 590
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.Node::getJSType()Lcom/google/javascript/rhino/jstype/JSType; is replaced with the used of local valueType
+	File Name: com/google/javascript/jscomp/TypedScopeCreator.java
+	Line Number: 1441
+	Rank: 2
+	Total Rank: 590
+	Dump: mutant-4.class
+------------------------------------------------
+3.
+	Mutator: LocalNameMutator
+	Description: local rhsValue is replaced by local n to be used
+	File Name: com/google/javascript/jscomp/TypedScopeCreator.java
+	Line Number: 1441
+	Rank: 5
+	Total Rank: 593
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: LocalNameMutator
+	Description: local rhsValue is replaced by local ownerNode to be used
+	File Name: com/google/javascript/jscomp/TypedScopeCreator.java
+	Line Number: 1441
+	Rank: 5
+	Total Rank: 593
+	Dump: mutant-2.class
+------------------------------------------------
+5.
+	Mutator: LocalNameMutator
+	Description: local rhsValue is replaced by local parent to be used
+	File Name: com/google/javascript/jscomp/TypedScopeCreator.java
+	Line Number: 1441
+	Rank: 5
+	Total Rank: 593
+	Dump: mutant-3.class
+------------------------------------------------
+6.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/google/javascript/jscomp/TypedScopeCreator.java
+	Line Number: 1439
+	Rank: 6
+	Total Rank: 10831
+	Dump: mutant-7.class
+------------------------------------------------

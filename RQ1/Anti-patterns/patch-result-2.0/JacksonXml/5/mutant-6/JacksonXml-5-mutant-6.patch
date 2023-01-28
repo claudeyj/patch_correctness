@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonXml/5/mutant-6/a-XmlRootNameLookup.java	2021-08-09 03:47:40.401501417 -0700
++++ jd-result-2.0/JacksonXml/5/mutant-6/b-XmlRootNameLookup.java	2021-08-09 03:47:41.865501459 -0700
+@@ -32,7 +32,7 @@
+ /*   0*/  public QName findRootName(Class<?> rootType, MapperConfig<?> config) {
+ /*  46*/    ClassKey key = new ClassKey(rootType);
+ /*  48*/    synchronized (this._rootNames) {
+-/*  49*/      name = (QName)this._rootNames.get(key);
++/*  49*/      name = null;
+ /*   0*/    } 
+ /*  51*/    if (name != null) {
+ /*  52*/        return name; 

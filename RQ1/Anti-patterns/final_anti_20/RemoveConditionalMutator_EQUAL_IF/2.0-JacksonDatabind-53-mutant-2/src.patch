@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/53/mutant-2/ori-TypeFactory.java	2021-08-08 21:02:02.364814646 -0700
++++ jd-result-2.0/JacksonDatabind/53/mutant-2/man-patched-TypeFactory.java	2021-08-10 06:08:24.460177730 -0700
+@@ -388,7 +388,7 @@
+                 newType = baseType.refine(subclass, TypeBindings.emptyBindings(), baseType, NO_TYPES);
+             }
+             // Only SimpleType returns null, but if so just resolve regularly
+-            if (newType == null) {
++            if (true) {
+                 TypeBindings tb = null;
+                 if (baseType.containedTypeCount() == typeParamCount) {
+                     if (typeParamCount == 1) {

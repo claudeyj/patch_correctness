@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 00:12:26 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 6754
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.joda.time.DateTimeZone::convertUTCToLocal(J)J is replaced with the used of default value 0L
+	File Name: org/joda/time/DateTimeZone.java
+	Line Number: 1168
+	Rank: 1
+	Total Rank: 90
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: ArgumentPropagationMutator
+	Description: replaced call to org/joda/time/DateTimeZone::convertUTCToLocal with argument
+	File Name: org/joda/time/DateTimeZone.java
+	Line Number: 1168
+	Rank: 2
+	Total Rank: 96
+	Dump: mutant-2.class
+------------------------------------------------

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Chart/26/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Chart/26/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Chart/26/buggy1.java	2021-08-27 19:18:38.458864081 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Chart/26/tool-patch1.java	2021-08-27 19:18:38.458864081 -0700
+@@ -2541,6 +2541,8 @@
+ 
+         // record the plot area...
+         if (state == null) {
++            if (true)
++                return;
+             // if the incoming state is null, no information will be passed
+             // back to the caller - but we create a temporary state to record
+             // the plot area, since that is used later by the axes

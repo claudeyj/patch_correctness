@@ -1,0 +1,19 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/6/mutant-0/buggy-ShapeList.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Chart/6/mutant-0/patched-ShapeList.java
+--- Chart6b/source/org/jfree/chart/util/ShapeList.java
++++ Chart6b_Chart-6-src.patchb/source/org/jfree/chart/util/ShapeList.java
+@@ -108,7 +108,14 @@
+         if (!(obj instanceof ShapeList)) {
+             return false;
+         }
+-        return super.equals(obj);
++        ShapeList that = (ShapeList) obj;
++        int listSize = size();
++        for (int i = 0; i < listSize; i++) {
++           if (!ShapeUtilities.equal((Shape) get(i), (Shape) that.get(i))) {
++               return false;
++           }
++        }
++        return true;
+ 
+     }
+ 

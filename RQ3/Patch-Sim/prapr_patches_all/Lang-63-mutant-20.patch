@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-20/ori-DurationFormatUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-20/patched-DurationFormatUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-20/ori-DurationFormatUtils.java	2021-08-23 09:23:48.852989961 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/63/mutant-20/patched-DurationFormatUtils.java	2021-08-23 09:23:48.856990018 +0800
+@@ -319,7 +319,7 @@
+         seconds -= reduceAndCorrect(start, end, Calendar.SECOND, seconds);
+         minutes -= reduceAndCorrect(start, end, Calendar.MINUTE, minutes);
+         hours -= reduceAndCorrect(start, end, Calendar.HOUR_OF_DAY, hours);
+-        days -= reduceAndCorrect(start, end, Calendar.DAY_OF_MONTH, days);
++    days -= reduceAndCorrect(end, end, 5, days);
+         months -= reduceAndCorrect(start, end, Calendar.MONTH, months);
+         years -= reduceAndCorrect(start, end, Calendar.YEAR, years);
+ 

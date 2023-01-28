@@ -1,0 +1,19 @@
+--- jd-result-2.0/Compress/11/mutant-23/a-ArchiveStreamFactory.java	2021-08-09 03:52:59.465510421 -0700
++++ jd-result-2.0/Compress/11/mutant-23/b-ArchiveStreamFactory.java	2021-08-09 03:53:00.873510460 -0700
+@@ -11,6 +11,7 @@
+ /*   0*/import org.apache.commons.compress.archivers.dump.DumpArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.jar.JarArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.jar.JarArchiveOutputStream;
++/*   0*/import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+ /*   0*/import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+ /*   0*/import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
+ /*   0*/import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
+@@ -122,7 +123,7 @@
+ /*   0*/         }
+ /*   0*/      try {
+ /* 241*/        TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(tarheader));
+-/* 242*/        tais.getNextEntry();
++/* 242*/        new TarArchiveEntry((String)null);
+ /* 243*/        return new TarArchiveInputStream(in);
+ /* 244*/      } catch (Exception exception) {}
+ /* 249*/    } catch (IOException e) {

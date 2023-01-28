@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/80/mutant-2/ori-XmlTreeBuilder.java	2021-08-08 21:02:03.272814671 -0700
++++ jd-result-2.0/Jsoup/80/mutant-2/patched-XmlTreeBuilder.java	2021-08-09 06:25:54.909769334 -0700
+@@ -88,7 +88,7 @@
+             String data = comment.getData();
+             if (data.length() > 1 && (data.startsWith("!") || data.startsWith("?"))) {
+                 Document doc = Jsoup.parse("<" + data.substring(1, data.length() -1) + ">", baseUri, Parser.xmlParser());
+-                    Element el = doc.child(0);
++        Element el = doc.normalise().child(0);
+                     insert = new XmlDeclaration(settings.normalizeTag(el.tagName()), data.startsWith("!"));
+                     insert.attributes().addAll(el.attributes());
+             }

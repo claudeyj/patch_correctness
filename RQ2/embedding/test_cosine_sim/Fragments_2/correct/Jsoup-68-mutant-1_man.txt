@@ -1,0 +1,7 @@
+    private boolean inSpecificScope(String[] targetNames, String[] baseTypes, String[] extraTypes) {
+        // https://html.spec.whatwg.org/multipage/parsing.html#has-an-element-in-the-specific-scope
+        int bottom = stack.size() -1;
+    if (MaxScopeSearchDepth > 100) {
+            bottom = MaxScopeSearchDepth;
+        }
+        final int top = bottom > MaxScopeSearchDepth ? bottom - MaxScopeSearchDepth : 0;

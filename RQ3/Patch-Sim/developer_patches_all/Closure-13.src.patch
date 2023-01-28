@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/13/mutant-0/buggy-PeepholeOptimizationsPass.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/13/mutant-0/patched-PeepholeOptimizationsPass.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/13/mutant-0/buggy-PeepholeOptimizationsPass.java	2021-08-22 00:18:38.590190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/13/mutant-0/patched-PeepholeOptimizationsPass.java	2021-08-22 00:18:38.590190183 -0700
+@@ -123,8 +123,8 @@
+     do {
+       Node c = node.getFirstChild();
+       while(c != null) {
+-        traverse(c);
+         Node next = c.getNext();
++        traverse(c);
+         c = next;
+       }
+ 

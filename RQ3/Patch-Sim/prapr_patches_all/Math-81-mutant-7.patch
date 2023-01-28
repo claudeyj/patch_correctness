@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-7/ori-EigenDecompositionImpl.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-7/patched-EigenDecompositionImpl.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-7/ori-EigenDecompositionImpl.java	2021-08-23 09:23:49.120993678 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/81/mutant-7/patched-EigenDecompositionImpl.java	2021-08-23 09:23:49.120993678 +0800
+@@ -1508,7 +1508,7 @@
+                         if (work[i4]  >  work[i4 - 2]) {
+                             return;
+                         }
+-                        b2 = b2 * (work[i4] / work[i4 - 2]);
++            b2 = this.upperSpectra * this.work[i4] / this.work[i4 - 2];
+                         a2 = a2 + b2;
+                         if (100 * Math.max(b2, b1) < a2 || cnst1 < a2) {
+                             break;

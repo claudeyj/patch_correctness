@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/33/mutant-0/buggy-ClassUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/33/mutant-0/patched-ClassUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/33/mutant-0/buggy-ClassUtils.java	2021-08-22 00:18:38.642190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/33/mutant-0/patched-ClassUtils.java	2021-08-22 00:18:38.642190185 -0700
+@@ -907,7 +907,7 @@
+         }
+         Class<?>[] classes = new Class[array.length];
+         for (int i = 0; i < array.length; i++) {
+-            classes[i] = array[i].getClass();
++            classes[i] = array[i] == null ? null : array[i].getClass();
+         }
+         return classes;
+     }

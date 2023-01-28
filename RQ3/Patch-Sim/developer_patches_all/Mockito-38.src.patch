@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/38/mutant-0/buggy-ArgumentMatchingTool.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/38/mutant-0/patched-ArgumentMatchingTool.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/38/mutant-0/buggy-ArgumentMatchingTool.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/38/mutant-0/patched-ArgumentMatchingTool.java	2021-08-22 00:18:38.706190186 -0700
+@@ -45,6 +45,6 @@
+     }
+ 
+     private boolean toStringEquals(Matcher m, Object arg) {
+-        return StringDescription.toString(m).equals(arg.toString());
++        return StringDescription.toString(m).equals(arg == null? "null" : arg.toString());
+     }
+ }

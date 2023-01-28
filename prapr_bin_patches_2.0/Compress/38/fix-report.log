@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 24 08:39:33 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 1928
+================================================
+1.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 860
+	Rank: 1
+	Total Rank: 1
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 860
+	Rank: 2
+	Total Rank: 2
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: BooleanFalseReturnValsMutator
+	Description: replaced boolean return with false for org/apache/commons/compress/archivers/tar/TarArchiveEntry::isDirectory
+	File Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+	Line Number: 860
+	Rank: 3
+	Total Rank: 3
+	Dump: mutant-2.class
+------------------------------------------------

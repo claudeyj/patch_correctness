@@ -1,0 +1,21 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-1/a-TypeFactory.java	2021-08-09 04:31:29.581575608 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-1/b-TypeFactory.java	2021-08-09 04:31:31.013575648 -0700
+@@ -473,7 +473,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private JavaType _mapType(Class<?> rawClass, TypeBindings bindings, JavaType superClass, JavaType[] superInterfaces) {
+-/*   0*/    JavaType kt, vt;
++/*   0*/    JavaType vt, kt;
+ /*1018*/    if (rawClass == Properties.class) {
+ /*1019*/      kt = vt = CORE_TYPE_STRING;
+ /*   0*/    } else {
+@@ -604,7 +604,8 @@
+ /*1205*/    if (bindings == null || bindings.isEmpty()) {
+ /*1206*/      key = rawType;
+ /*   0*/    } else {
+-/*1208*/      key = bindings.asKey(rawType);
++/*1208*/      Class<?> clazz = rawType;
++/*1208*/      key = new Object();
+ /*   0*/    } 
+ /*1210*/    result = this._typeCache.get(key);
+ /*1211*/    if (result != null) {

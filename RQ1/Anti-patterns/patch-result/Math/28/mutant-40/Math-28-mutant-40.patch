@@ -1,0 +1,11 @@
+--- jd-result/Math/28/mutant-40/a-SimplexTableau.java	2021-07-14 09:10:18.889330463 -0700
++++ jd-result/Math/28/mutant-40/b-SimplexTableau.java	2021-07-14 09:10:20.345330504 -0700
+@@ -124,7 +124,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private LinearConstraint normalize(LinearConstraint constraint) {
+-/* 265*/    if (constraint.getValue() < 0.0D)
++/* 265*/    if (constraint.getValue() < 1.0D)
+ /* 266*/      return new LinearConstraint(constraint.getCoefficients().mapMultiply(-1.0D), constraint.getRelationship().oppositeRelationship(), -1.0D * constraint.getValue()); 
+ /* 270*/    return new LinearConstraint(constraint.getCoefficients(), constraint.getRelationship(), constraint.getValue());
+ /*   0*/  }

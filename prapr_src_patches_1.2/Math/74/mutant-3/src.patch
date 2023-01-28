@@ -1,0 +1,11 @@
+--- jd-result/Math/74/mutant-3/ori-MultistepIntegrator.java	2021-07-24 01:52:06.126297141 -0700
++++ jd-result/Math/74/mutant-3/patched-MultistepIntegrator.java	2021-07-24 01:52:06.126297141 -0700
+@@ -324,7 +324,7 @@
+             final double prev = interpolator.getPreviousTime();
+             final double curr = interpolator.getCurrentTime();
+             stepStart = prev;
+-            stepSize  = (curr - prev) / (nSteps + 1);
++      MultistepIntegrator.this.stepSize = (curr - prev) / (this.n + 1);
+ 
+             // compute the first scaled derivative
+             interpolator.setInterpolatedTime(prev);

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/91/mutant-1/a-MapLikeType.java	2021-08-09 04:26:22.913566954 -0700
++++ jd-result-2.0/JacksonDatabind/91/mutant-1/b-MapLikeType.java	2021-08-09 04:26:24.493566999 -0700
+@@ -13,7 +13,7 @@
+ /*   0*/  protected final JavaType _valueType;
+ /*   0*/  
+ /*   0*/  protected MapLikeType(Class<?> mapType, TypeBindings bindings, JavaType superClass, JavaType[] superInts, JavaType keyT, JavaType valueT, Object valueHandler, Object typeHandler, boolean asStatic) {
+-/*  39*/    super(mapType, bindings, superClass, superInts, keyT.hashCode() ^ valueT.hashCode(), valueHandler, typeHandler, asStatic);
++/*  39*/    super(mapType, bindings, superClass, superInts, keyT.hashCode() & valueT.hashCode(), valueHandler, typeHandler, asStatic);
+ /*  41*/    this._keyType = keyT;
+ /*  42*/    this._valueType = valueT;
+ /*   0*/  }

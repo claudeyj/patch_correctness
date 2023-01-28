@@ -1,0 +1,7 @@
+
+    private String _handleOddName2(int startPtr, int hash, int[] codes) throws IOException
+    {
+        _textBuffer.resetWithShared(_inputBuffer, startPtr, (_inputPtr - startPtr));
+        char[] outBuf = _textBuffer.getCurrentSegment();
+        int outPtr = _textBuffer.getCurrentSegmentSize();
+        final int maxCode = codes.length;

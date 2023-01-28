@@ -1,0 +1,7 @@
+                    try {
+                        prop.deserializeAndSet(p, ctxt, bean);
+                    } catch (Exception e) {
+                        wrapAndThrow(e, bean, propName, ctxt);
+                    }
+                    continue;
+                }

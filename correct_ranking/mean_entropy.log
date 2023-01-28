@@ -1,0 +1,127 @@
+ori bug num: 202
+139
+ori bug num: 145
+109
+ori bug num: 263
+196
+ori bug num: 339
+262
+
+ase patches:
+TN: 34
+FN: 214
+TP: 440
+FP: 214
+correct average: 2.978090372750424
+overfitting average: 4.438329724274221
+precision: 0.672782874617737
+recall: 0.672782874617737
+correct recall: 0.13709677419354838
+F1: 0.672782874617737
+ROC-AUC: 0.301414373088685
+PR-AUC: 0.19469485171688825
+AVR / average patch num: 3.42(9.1)
+number of bugs included: 50
+
+prapr 1.2 patches:
+TN: 1
+FN: 46
+TP: 1218
+FP: 46
+correct average: 3.4527621744780523
+overfitting average: 4.177621464942964
+precision: 0.9636075949367089
+recall: 0.9636075949367089
+correct recall: 0.02127659574468085
+F1: 0.9636075949367089
+ROC-AUC: 0.3987341772151899
+PR-AUC: 0.028023243693259883
+AVR / average patch num: 4.769230769230769(10.692307692307692)
+number of bugs included: 26
+
+prapr 2.0 patches:
+TN: 7
+FN: 76
+TP: 1829
+FP: 76
+correct average: 4.165509810082756
+overfitting average: 4.102400131774417
+precision: 0.9601049868766404
+recall: 0.9601049868766404
+correct recall: 0.08433734939759036
+F1: 0.9601049868766404
+ROC-AUC: 0.4274989722670208
+PR-AUC: 0.06456142455155597
+AVR / average patch num: 4.076923076923077(9.64102564102564)
+number of bugs included: 39
+
+prapr + ase merged:
+TN: 18
+FN: 253
+TP: 2236
+FP: 253
+correct average: 3.3637629327396725
+overfitting average: 4.188135767609525
+precision: 0.8983527521092808
+recall: 0.8983527521092808
+correct recall: 0.06642066420664207
+F1: 0.8983527521092808
+ROC-AUC: 0.3413150704427896
+PR-AUC: 0.0802654169411495
+AVR / average patch num: 5.052631578947368(12.868421052631579)
+number of bugs included: 76
+
+10 balanced datasets:
+TN: 1078
+FN: 1632
+TP: 1078
+FP: 1632
+correct average: 3.363762932739671
+overfitting average: 4.138028231059605
+precision: 0.3977859778597786
+recall: 0.3977859778597786
+correct recall: 0.3977859778597786
+F1: 0.3977859778597786
+ROC-AUC: 0.3452866927193257
+PR-AUC: 0.4226660510856345
+
+developer patches:
+TN: 395
+FN: 0
+TP: 0
+FP: 0
+correct average: 2.667719302624829
+
+significance test:
+ase correct vs overfitting: 1.0
+prapr 2.0 correct vs overfitting: 0.9874336151081693
+ase overfitting vs developer: 1.4237948345212329e-37
+prapr 2.0 overfitting vs developer: 8.259201972848055e-55
+
+
+property TokenStrct correct average score: 0.7339489247311829
+property TokenStrct overfitting average score: 0.6517900101936799
+property TokenConpt correct average score: 0.7591061827956989
+property TokenConpt overfitting average score: 0.6983055555555555
+property ASTDist correct average score: 8.237903225806452
+property ASTDist overfitting average score: 19.192660550458715
+property ASTCosDist correct average score: 0.11001666332887118
+property ASTCosDist overfitting average score: 0.19919322350734375
+property VariableDist correct average score: 3.3629032258064515
+property VariableDist overfitting average score: 7.787461773700306
+property VariableSimi correct average score: 0.6200162695957038
+property VariableSimi overfitting average score: 0.4678687173609572
+property SyntaxSimi correct average score: 0.713666887198176
+property SyntaxSimi overfitting average score: 0.5721042506218357
+property SemanticSimi correct average score: 0.6813372442564077
+property SemanticSimi overfitting average score: 0.5218712021046391
+property capgen correct average score: 0.44110386928098505
+property capgen overfitting average score: 0.25357066943975415
+property ssfix correct average score: 1.4930403225806452
+property ssfix overfitting average score: 1.3500902140672784
+property s3 correct average score: 11.710823114941773
+property s3 overfitting average score: 26.3520984222841
+property mean_entropy correct average score: 2.9780903727504247
+property mean_entropy overfitting average score: 4.438329724274216
+property sum_entropy correct average score: 42.00385342453728
+property sum_entropy overfitting average score: 53.71523750691232

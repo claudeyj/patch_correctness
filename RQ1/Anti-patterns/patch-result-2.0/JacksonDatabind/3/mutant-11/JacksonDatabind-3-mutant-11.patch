@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/3/mutant-11/a-StdDeserializer.java	2021-08-09 04:38:58.093588264 -0700
++++ jd-result-2.0/JacksonDatabind/3/mutant-11/b-StdDeserializer.java	2021-08-09 04:38:59.649588308 -0700
+@@ -45,7 +45,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected boolean isDefaultDeserializer(JsonDeserializer<?> deserializer) {
+-/*  77*/    return ClassUtil.isJacksonStdImpl(deserializer);
++/*  77*/    ClassUtil.isJacksonStdImpl(deserializer);
++/*  77*/    return false;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected boolean isDefaultKeyDeserializer(KeyDeserializer keyDeser) {

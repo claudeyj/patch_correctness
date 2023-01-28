@@ -1,0 +1,11 @@
+--- jd-result/Closure/59/mutant-2/a-WarningLevel.java	2021-07-14 21:44:30.678607380 -0700
++++ jd-result/Closure/59/mutant-2/b-WarningLevel.java	2021-07-14 21:44:32.022607417 -0700
+@@ -32,7 +32,7 @@
+ /*   0*/  private static void addVerboseWarnings(CompilerOptions options) {
+ /*  75*/    addDefaultWarnings(options);
+ /*  78*/    options.checkSuspiciousCode = true;
+-/*  79*/    options.checkGlobalThisLevel = CheckLevel.WARNING;
++/*  79*/    options.checkShadowVars = CheckLevel.WARNING;
+ /*  80*/    options.checkSymbols = true;
+ /*  81*/    options.checkMissingReturn = CheckLevel.WARNING;
+ /*  88*/    options.checkTypes = true;

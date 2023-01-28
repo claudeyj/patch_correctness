@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 10 10:09:12 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 32691
+================================================
+1.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to getOwnPropertyNames()Ljava/util/Set; is guarded returning enclosing method
+	File Name: com/google/javascript/jscomp/TypeCheck.java
+	Line Number: 1574
+	Rank: 1
+	Total Rank: 52
+	Dump: mutant-4.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to com.google.javascript.rhino.jstype.FunctionType::getExtendedInterfacesCount()I is replaced with the used of field typedCount
+	File Name: com/google/javascript/jscomp/TypeCheck.java
+	Line Number: 1656
+	Rank: 2
+	Total Rank: 491
+	Dump: mutant-6.class
+------------------------------------------------

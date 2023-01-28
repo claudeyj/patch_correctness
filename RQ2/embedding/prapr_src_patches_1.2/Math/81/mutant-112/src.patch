@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-112/ori-EigenDecompositionImpl.java	2021-07-24 01:52:07.082297168 -0700
++++ jd-result/Math/81/mutant-112/patched-EigenDecompositionImpl.java	2021-07-24 01:52:07.090297168 -0700
+@@ -1272,7 +1272,7 @@
+ 
+         eMin = work[4 * start + pingPong + 4];
+         double d = work[4 * start + pingPong] - tau;
+-        dMin = d;
++    this.dMin = this.upperSpectra;
+         dMin1 = -work[4 * start + pingPong];
+ 
+         if (pingPong == 0) {

@@ -1,0 +1,49 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 19 05:49:28 PDT 2021
+Number of Plausible Fixes: 5
+Total Number of Patches: 5781
+================================================
+1.
+	Mutator: MethodNameMutator
+	Description: replaced call to body with a call to clone
+	File Name: org/jsoup/safety/Cleaner.java
+	Line Number: 43
+	Rank: 1
+	Total Rank: 1034
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local dirtyDocument is replaced a call dirtyDocument.normalise()
+	File Name: org/jsoup/safety/Cleaner.java
+	Line Number: 43
+	Rank: 4
+	Total Rank: 1085
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local dirtyDocument is replaced a call dirtyDocument.normalise()
+	File Name: org/jsoup/safety/Cleaner.java
+	Line Number: 42
+	Rank: 4
+	Total Rank: 1085
+	Dump: mutant-2.class
+------------------------------------------------
+4.
+	Mutator: LocalToMethodCallMutator
+	Description: the access to the local dirtyDocument is replaced a call dirtyDocument.normalise()
+	File Name: org/jsoup/safety/Cleaner.java
+	Line Number: 40
+	Rank: 4
+	Total Rank: 1085
+	Dump: mutant-4.class
+------------------------------------------------
+5.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to childNodes()Ljava/util/List; is guarded returning default value 0
+	File Name: org/jsoup/safety/Cleaner.java
+	Line Number: 73
+	Rank: 5
+	Total Rank: 1292
+	Dump: mutant-3.class
+------------------------------------------------

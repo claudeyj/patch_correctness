@@ -1,0 +1,21 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Chart/19/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Chart/19/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Chart/19/buggy1.java	2021-08-27 19:18:39.610864114 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/ACS/Chart/19/tool-patch1.java	2021-08-27 19:18:39.610864114 -0700
+@@ -695,7 +695,7 @@
+      * @since 1.0.3
+      */
+     public int getDomainAxisIndex(CategoryAxis axis) {
+-        return this.domainAxes.indexOf(axis);
++if (axis == null){throw new IllegalArgumentException();}        return this.domainAxes.indexOf(axis);
+     }
+     
+     /**
+@@ -978,7 +978,7 @@
+                 result = p.getRangeAxisIndex(axis);
+             }
+         }
+-        return result;
++if (axis == null){throw new IllegalArgumentException();}        return result;
+     }
+     
+     /**

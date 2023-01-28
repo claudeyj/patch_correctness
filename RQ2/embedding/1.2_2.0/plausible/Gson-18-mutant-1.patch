@@ -1,0 +1,11 @@
+--- jd-result-2.0/Gson/18/mutant-1/ori-$Gson$Types.java	2021-08-08 21:02:01.636814625 -0700
++++ jd-result-2.0/Gson/18/mutant-1/man-patched-.java	2021-08-11 21:10:34.744143218 -0700
+@@ -296,7 +296,7 @@
+    * @throws IllegalArgumentException if this type is not a collection.
+    */
+   public static Type getCollectionElementType(Type context, Class<?> contextRawType) {
+-    Type collectionType = getSupertype(context, contextRawType, Collection.class);
++    Type collectionType = context;
+ 
+     if (collectionType instanceof WildcardType) {
+       collectionType = ((WildcardType)collectionType).getUpperBounds()[0];

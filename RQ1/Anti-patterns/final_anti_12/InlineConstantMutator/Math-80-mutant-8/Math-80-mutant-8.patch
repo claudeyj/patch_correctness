@@ -1,0 +1,38 @@
+--- jd-result/Math/80/mutant-8/a-EigenDecompositionImpl.java	2021-07-14 09:19:35.509346170 -0700
++++ jd-result/Math/80/mutant-8/b-EigenDecompositionImpl.java	2021-07-14 09:19:37.029346213 -0700
+@@ -354,7 +354,7 @@
+ /* 646*/          oneFourthCount = countEigenValues(oneFourth, begin, n);
+ /* 647*/          threeFourth = 0.25D * (range[0] + 3.0D * range[1]);
+ /* 648*/          threeFourthCount = countEigenValues(threeFourth, begin, n);
+-/* 649*/          chooseLeft = (oneFourthCount - 1 >= n - threeFourthCount);
++/* 649*/          chooseLeft = (oneFourthCount - 0 >= n - threeFourthCount);
+ /* 650*/          lambda = chooseLeft ? range[0] : range[1];
+ /* 652*/          this.tau = (range[1] - range[0]) * 1.1102230246251565E-16D * n + 2.0D * this.minPivot;
+ /* 655*/          ldlTDecomposition(lambda, begin, n);
+@@ -538,7 +538,7 @@
+ /* 941*/      double d = this.work[4 * (n - 1) + this.pingPong];
+ /* 942*/      for (int i = 4 * (n - 2) + this.pingPong; i >= 0; i -= 4) {
+ /* 943*/        if (this.work[i + 2] <= 1.232595164407831E-28D * d) {
+-/* 944*/          this.work[i + 2] = -0.0D;
++/* 944*/          this.work[i + 2] = 0.0D;
+ /* 945*/          d = this.work[i];
+ /*   0*/        } else {
+ /* 947*/          d *= this.work[i] / (d + this.work[i + 2]);
+@@ -549,7 +549,7 @@
+ /* 954*/        int m = j - 2 * this.pingPong - 1;
+ /* 955*/        this.work[m] = d + this.work[j];
+ /* 956*/        if (this.work[j] <= 1.232595164407831E-28D * d) {
+-/* 957*/          this.work[j] = -0.0D;
++/* 957*/          this.work[j] = 0.0D;
+ /* 958*/          this.work[m] = d;
+ /* 959*/          this.work[m + 2] = 0.0D;
+ /* 960*/          d = this.work[j + 2];
+@@ -611,7 +611,7 @@
+ /*1056*/      this.work[l - 1] = Math.min(this.work[l - 1], Math.min(this.work[3 + this.pingPong], this.work[7 + this.pingPong]));
+ /*1059*/      this.work[l - 2 * this.pingPong] = Math.min(this.work[l - 2 * this.pingPong], Math.min(this.work[6 + this.pingPong], this.work[6 + this.pingPong]));
+ /*1062*/      this.qMax = Math.max(this.qMax, Math.max(this.work[3 + this.pingPong], this.work[7 + this.pingPong]));
+-/*1063*/      this.dMin = -0.0D;
++/*1063*/      this.dMin = 0.0D;
+ /*   0*/    } 
+ /*1067*/    if (this.dMin < 0.0D || 2.2250738585072014E-308D * this.qMax < Math.min(this.work[l - 1], Math.min(this.work[l - 9], this.dMin2 + this.work[l - 2 * this.pingPong]))) {
+ /*1072*/      computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);

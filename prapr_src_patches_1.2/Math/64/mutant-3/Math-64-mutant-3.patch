@@ -1,0 +1,12 @@
+--- jd-result/Math/64/mutant-3/a-LevenbergMarquardtOptimizer.java	2021-07-14 09:15:25.849339125 -0700
++++ jd-result/Math/64/mutant-3/b-LevenbergMarquardtOptimizer.java	2021-07-14 09:15:27.333339167 -0700
+@@ -143,7 +143,8 @@
+ /* 359*/        if (firstIteration)
+ /* 360*/          delta = Math.min(delta, lmNorm); 
+ /* 364*/        updateResidualsAndCost();
+-/* 365*/        current = new VectorialPointValuePair(this.point, this.objective);
++/* 365*/        double[] arrayOfDouble2 = this.objective, arrayOfDouble1 = this.point;
++/* 365*/        current = new VectorialPointValuePair(arrayOfDouble1, arrayOfDouble2, false);
+ /* 368*/        double actRed = -1.0D;
+ /* 369*/        if (0.1D * this.cost < previousCost) {
+ /* 370*/          double r = this.cost / previousCost;

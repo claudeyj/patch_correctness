@@ -1,0 +1,29 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/116/mutant-0/buggy-FunctionInjector.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/116/mutant-0/patched-FunctionInjector.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/116/mutant-0/buggy-FunctionInjector.java	2021-08-22 00:18:38.586190183 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/116/mutant-0/patched-FunctionInjector.java	2021-08-22 00:18:38.586190183 -0700
+@@ -694,6 +694,15 @@
+ 
+     Node block = fnNode.getLastChild();
+ 
++    boolean hasSideEffects = false;  // empty function case
++    if (block.hasChildren()) {
++      Preconditions.checkState(block.hasOneChild());
++      Node stmt = block.getFirstChild();
++      if (stmt.isReturn()) {
++        hasSideEffects = NodeUtil.mayHaveSideEffects(
++            stmt.getFirstChild(), compiler);
++      }
++    }
+ 
+     // CALL NODE: [ NAME, ARG1, ARG2, ... ]
+     Node cArg = callNode.getFirstChild().getNext();
+@@ -720,6 +729,9 @@
+       // For each named parameter check if a mutable argument use more than one.
+       if (fnParam != null) {
+         if (cArg != null) {
++          if (hasSideEffects && NodeUtil.canBeSideEffected(cArg)) {
++            return CanInlineResult.NO;
++          }
+ 
+           // Check for arguments that are evaluated more than once.
+           // Note: Unlike block inlining, there it is not possible that a

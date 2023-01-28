@@ -1,0 +1,11 @@
+--- jd-result/Lang/59/mutant-2/a-StrBuilder.java	2021-07-14 16:58:25.502123012 -0700
++++ jd-result/Lang/59/mutant-2/b-StrBuilder.java	2021-07-14 16:58:26.970123053 -0700
+@@ -422,7 +422,7 @@
+ /* 881*/      String str = (obj == null) ? getNullText() : obj.toString();
+ /* 882*/      int strLen = str.length();
+ /* 883*/      if (strLen >= width) {
+-/* 884*/        str.getChars(0, strLen, this.buffer, this.size);
++/* 884*/        str.getChars(0, width, this.buffer, this.size);
+ /*   0*/      } else {
+ /* 886*/        int padLen = width - strLen;
+ /* 887*/        str.getChars(0, strLen, this.buffer, this.size);

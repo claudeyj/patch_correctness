@@ -1,0 +1,11 @@
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
++++ Math81_Math-81-mutant-80.patchb/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2017-03-21 00:04:22.000000000 +0800
+@@ -1514,7 +1514,7 @@
+                             break;
+                         }
+                     }
+-                    a2 = cnst3 * a2;
++          a2 = 1.05D * cnst2;
+ 
+                     // rayleigh quotient residual bound.
+                     if (a2 < cnst1) {

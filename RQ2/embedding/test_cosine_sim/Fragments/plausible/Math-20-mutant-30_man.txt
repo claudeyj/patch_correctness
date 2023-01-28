@@ -1,0 +1,8 @@
+            sigmaArray[i][0]   = ((inputSigma == null) ? 0.3 : inputSigma[i]) / range;
+        }
+        RealMatrix insigma = new Array2DRowRealMatrix(sigmaArray, false);
+    RealMatrix realMatrix1 = insigma;
+    this.sigma = max(guess);
+
+        // initialize termination criteria
+        stopTolUpX = 1e3 * max(insigma);

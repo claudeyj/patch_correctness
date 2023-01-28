@@ -1,0 +1,32 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/99/mutant-0/buggy-CheckGlobalThis.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/99/mutant-0/patched-CheckGlobalThis.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/99/mutant-0/buggy-CheckGlobalThis.java	2021-08-22 00:18:38.630190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/99/mutant-0/patched-CheckGlobalThis.java	2021-08-22 00:18:38.630190184 -0700
+@@ -89,6 +89,7 @@
+       JSDocInfo jsDoc = getFunctionJsDocInfo(n);
+       if (jsDoc != null &&
+           (jsDoc.isConstructor() ||
++           jsDoc.isInterface() ||
+            jsDoc.hasThisType() ||
+            jsDoc.isOverride())) {
+         return false;
+@@ -122,15 +123,19 @@
+       } else {
+         // Only traverse the right side if it's not an assignment to a prototype
+         // property or subproperty.
++        if (NodeUtil.isGet(lhs)) {
+           if (lhs.getType() == Token.GETPROP &&
+               lhs.getLastChild().getString().equals("prototype")) {
+             return false;
+           }
+-          if (lhs.getQualifiedName() != null && lhs.getQualifiedName().contains(".prototype.")) {
++          Node llhs = lhs.getFirstChild();
++          if (llhs.getType() == Token.GETPROP &&
++              llhs.getLastChild().getString().equals("prototype")) {
+             return false;
+           }
+       }
+     }
++    }
+ 
+     return true;
+   }

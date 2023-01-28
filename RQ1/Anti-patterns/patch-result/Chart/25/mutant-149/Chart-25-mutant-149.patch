@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-149/a-AbstractCategoryItemRenderer.java	2021-07-14 20:10:05.514447520 -0700
++++ jd-result/Chart/25/mutant-149/b-AbstractCategoryItemRenderer.java	2021-07-14 20:10:07.018447562 -0700
+@@ -83,7 +83,7 @@
+ /*   0*/  private transient int columnCount;
+ /*   0*/  
+ /*   0*/  public int getPassCount() {
+-/* 248*/    return 1;
++/* 248*/    return true ? 0 : 1;
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public CategoryPlot getPlot() {

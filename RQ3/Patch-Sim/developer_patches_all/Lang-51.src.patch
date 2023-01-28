@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/51/mutant-0/buggy-BooleanUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/51/mutant-0/patched-BooleanUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/51/mutant-0/buggy-BooleanUtils.java	2021-08-22 00:18:38.654190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/51/mutant-0/patched-BooleanUtils.java	2021-08-22 00:18:38.654190185 -0700
+@@ -679,6 +679,7 @@
+                         (str.charAt(1) == 'E' || str.charAt(1) == 'e') &&
+                         (str.charAt(2) == 'S' || str.charAt(2) == 's');
+                 }
++                return false;
+             }
+             case 4: {
+                 char ch = str.charAt(0);

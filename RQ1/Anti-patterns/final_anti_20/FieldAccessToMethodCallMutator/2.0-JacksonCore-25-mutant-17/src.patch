@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/25/mutant-17/ori-ReaderBasedJsonParser.java	2021-08-08 21:02:01.736814628 -0700
++++ jd-result-2.0/JacksonCore/25/mutant-17/patched-ReaderBasedJsonParser.java	2021-08-09 06:25:54.817769331 -0700
+@@ -1802,7 +1802,7 @@
+                 ++ptr;
+             } while (ptr < inputLen);
+         }
+-        int start = _inputPtr-1;
++    int start = _skipColon() - 1;
+         _inputPtr = ptr;
+         return _handleOddName2(start, hash, codes);
+     }

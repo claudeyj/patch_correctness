@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/107/mutant-7/ori-StdTypeResolverBuilder.java	2021-08-08 21:02:02.600814652 -0700
++++ jd-result-2.0/JacksonDatabind/107/mutant-7/man-patched-StdTypeResolverBuilder.java	2021-08-12 17:50:48.634243031 -0700
+@@ -126,7 +126,7 @@
+         switch (_includeAs) {
+         case WRAPPER_ARRAY:
+             return new AsArrayTypeDeserializer(baseType, idRes,
+-                    _typeProperty, _typeIdVisible, defaultImpl);
++                    _typeProperty, _typeIdVisible, baseType);
+         case PROPERTY:
+         case EXISTING_PROPERTY: // as per [#528] same class as PROPERTY
+             return new AsPropertyTypeDeserializer(baseType, idRes,

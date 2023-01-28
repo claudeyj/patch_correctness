@@ -1,0 +1,11 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Closure/26/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Closure/26/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Closure/26/buggy1.java	2021-08-27 19:18:38.982864096 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Closure/26/tool-patch1.java	2021-08-27 19:18:38.982864096 -0700
+@@ -475,6 +475,7 @@
+ 
+     Node newRight;
+     if (areNodesEqualForInlining(left, right.getFirstChild())) {
++      n.removeChild(right);
+       newRight = right.getLastChild();
+     } else if (NodeUtil.isCommutative(right.getType()) &&
+           areNodesEqualForInlining(left, right.getLastChild())) {

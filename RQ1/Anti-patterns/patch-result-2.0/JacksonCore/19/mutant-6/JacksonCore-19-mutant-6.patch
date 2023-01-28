@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/19/mutant-6/a-BufferRecycler.java	2021-08-09 04:02:21.473526279 -0700
++++ jd-result-2.0/JacksonCore/19/mutant-6/b-BufferRecycler.java	2021-08-09 04:02:22.985526322 -0700
+@@ -61,7 +61,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public char[] allocCharBuffer(int ix, int minSize) {
+-/* 118*/    int DEF_SIZE = charBufferLength(ix);
++/* 118*/    int DEF_SIZE = charBufferLength(BYTE_WRITE_ENCODING_BUFFER);
+ /* 119*/    if (minSize < DEF_SIZE) {
+ /* 120*/        minSize = DEF_SIZE; 
+ /*   0*/       }

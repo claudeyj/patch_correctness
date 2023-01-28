@@ -1,0 +1,11 @@
+--- jd-result/Math/88/mutant-2/ori-SimplexSolver.java	2021-07-24 01:52:12.994297335 -0700
++++ jd-result/Math/88/mutant-2/patched-SimplexSolver.java	2021-07-24 01:52:13.030297336 -0700
+@@ -80,7 +80,7 @@
+             double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
+             if (MathUtils.compareTo(tableau.getEntry(i, col), 0, epsilon) >= 0) {
+                 double ratio = rhs / tableau.getEntry(i, col);
+-                if (ratio < minRatio) {
++        if (ratio <= minRatio) {
+                     minRatio = ratio;
+                     minRatioPos = i; 
+                 }

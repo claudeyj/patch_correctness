@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/19/mutant-1/ori-Whitelist.java	2021-08-08 21:02:03.036814665 -0700
++++ jd-result-2.0/Jsoup/19/mutant-1/patched-Whitelist.java	2021-08-09 06:25:54.897769333 -0700
+@@ -298,7 +298,7 @@
+             this.protocols.put(tagName, attrMap);
+         }
+         if (attrMap.containsKey(attrKey)) {
+-            protSet = attrMap.get(attrKey);
++      protSet = attrMap.remove(attrKey);
+         } else {
+             protSet = new HashSet<Protocol>();
+             attrMap.put(attrKey, protSet);

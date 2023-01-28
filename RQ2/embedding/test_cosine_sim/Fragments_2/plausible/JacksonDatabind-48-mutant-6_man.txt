@@ -1,0 +1,7 @@
+    @Override
+    public AnnotationIntrospector getAnnotationIntrospector()
+    {
+    if (isEnabled(MapperFeature.AUTO_DETECT_SETTERS)) {
+            return super.getAnnotationIntrospector();
+        }
+        return AnnotationIntrospector.nopInstance();

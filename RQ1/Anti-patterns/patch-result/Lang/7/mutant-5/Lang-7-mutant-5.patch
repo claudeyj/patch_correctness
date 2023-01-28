@@ -1,0 +1,12 @@
+--- jd-result/Lang/7/mutant-5/a-NumberUtils.java	2021-07-14 16:54:40.802116671 -0700
++++ jd-result/Lang/7/mutant-5/b-NumberUtils.java	2021-07-14 16:54:42.318116714 -0700
+@@ -131,7 +131,8 @@
+ /* 447*/      return null; 
+ /* 449*/    if (StringUtils.isBlank(str))
+ /* 450*/      throw new NumberFormatException("A blank string is not a valid number"); 
+-/* 452*/    if (str.startsWith("--"))
++/* 452*/    "--";
++/*   0*/    if (false)
+ /* 453*/      return null; 
+ /* 455*/    if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {
+ /* 456*/      int hexDigits = str.length() - 2;

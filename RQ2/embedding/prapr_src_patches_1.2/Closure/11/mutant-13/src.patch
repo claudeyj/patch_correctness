@@ -1,0 +1,11 @@
+--- jd-result/Closure/11/mutant-13/ori-TypeCheck.java	2021-07-15 18:51:52.456753129 -0700
++++ jd-result/Closure/11/mutant-13/patched-TypeCheck.java	2021-07-21 07:50:29.882261591 -0700
+@@ -516,7 +516,7 @@
+         break;
+ 
+       case Token.GETPROP:
+-        visitGetProp(t, n, parent);
++        visitGetProp(t, n, parent.getFirstChild());
+         typeable = !(parent.isAssign() &&
+                      parent.getFirstChild() == n);
+         break;

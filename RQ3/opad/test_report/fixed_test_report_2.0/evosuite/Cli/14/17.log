@@ -1,0 +1,20 @@
+--- org.apache.commons.cli2.option.GroupImpl_ESTest
+java.lang.VerifyError: Illegal type at constant pool entry 89 in class org.apache.commons.cli2.option.GroupImpl_ESTest
+Exception Details:
+  Location:
+    org/apache/commons/cli2/option/GroupImpl_ESTest.test20()V @47: invokestatic
+  Reason:
+    Constant pool index 89 is invalid
+  Bytecode:
+    0x0000000: bb00 0259 b700 034c bb00 0459 2b01 c000
+    0x0000010: 0d12 5711 02d2 1103 07b7 0006 4dbb 0051
+    0x0000020: 5903 b700 584e bb00 4f59 b700 503a 04b8
+    0x0000030: 0059 3a05 2c2d 1904 1905 120e b600 5409
+    0x0000040: 2db6 005a 85b8 000b 1400 5b2c b600 0c85
+    0x0000050: b800 0b14 005d 2cb6 000a 85b8 000b b1  
+
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:374)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1060)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:911)

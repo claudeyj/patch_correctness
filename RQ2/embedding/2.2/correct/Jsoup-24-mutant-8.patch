@@ -1,0 +1,10 @@
+--- jd-result-2.0/Jsoup/24/mutant-8/ori-TokeniserState.java	2021-08-08 21:02:03.144814668 -0700
++++ jd-result-2.0/Jsoup/24/mutant-8/man-patched-TokeniserState.java	2021-08-10 01:39:52.335723077 -0700
+@@ -555,7 +555,6 @@
+                 String name = r.consumeLetterSequence();
+                 t.tagPending.appendTagName(name.toLowerCase());
+                 t.dataBuffer.append(name);
+-                r.advance();
+                 return;
+             }
+ 

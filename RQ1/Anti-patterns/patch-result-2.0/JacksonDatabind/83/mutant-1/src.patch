@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/83/mutant-1/ori-FromStringDeserializer.java	2021-08-08 21:02:02.296814644 -0700
++++ jd-result-2.0/JacksonDatabind/83/mutant-1/man-patched-FromStringDeserializer.java	2021-08-10 05:51:28.468149060 -0700
+@@ -116,7 +116,8 @@
+                 // 19-May-2017, tatu: Used to require non-null result (assuming `null`
+                 //    indicated error; but that seems wrong. Should be able to return
+                 //    `null` as value.
+-                if (_deserialize(text, ctxt) != null) {
++                _deserialize(text, ctxt);
++                if (true) {
+                 return _deserialize(text, ctxt);
+                 }
+             } catch (IllegalArgumentException iae) {

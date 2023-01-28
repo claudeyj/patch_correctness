@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/19/mutant-13/ori-TextBuffer.java	2021-08-08 21:02:01.676814626 -0700
++++ jd-result-2.0/JacksonCore/19/mutant-13/man-patched-TextBuffer.java	2021-08-09 23:19:40.447485710 -0700
+@@ -231,7 +231,7 @@
+      */
+     private char[] buf(int needed)
+     {
+-        if (_allocator != null) {
++        if (false) {
+             return _allocator.allocCharBuffer(BufferRecycler.CHAR_TEXT_BUFFER, needed);
+         }
+         return new char[Math.max(needed, MIN_SEGMENT_LEN)];

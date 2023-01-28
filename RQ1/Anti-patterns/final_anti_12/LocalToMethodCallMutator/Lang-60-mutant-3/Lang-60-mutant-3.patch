@@ -1,0 +1,11 @@
+--- jd-result/Lang/60/mutant-3/a-StrBuilder.java	2021-07-14 16:58:29.806123134 -0700
++++ jd-result/Lang/60/mutant-3/b-StrBuilder.java	2021-07-14 16:58:31.310123176 -0700
+@@ -798,7 +798,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public boolean contains(char ch) {
+-/*1672*/    char[] thisBuf = this.buffer;
++/*1672*/    char[] thisBuf = (minimizeCapacity()).buffer;
+ /*1673*/    for (int i = 0; i < thisBuf.length; i++) {
+ /*1674*/      if (thisBuf[i] == ch)
+ /*1675*/        return true; 

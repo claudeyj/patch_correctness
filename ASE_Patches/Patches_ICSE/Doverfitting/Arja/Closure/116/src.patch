@@ -1,0 +1,50 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/buggy1.java	2021-08-27 19:18:32.790863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/tool-patch1.java	2021-08-27 19:18:32.790863921 -0700
+@@ -552,7 +552,7 @@
+       // Only inline functions that return something.
+       if (block.getFirstChild().isReturn()
+           && block.getFirstChild().getFirstChild() != null) {
+-        return true;
++        return false;
+       }
+     }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/buggy2.java	2021-08-27 19:18:32.790863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/tool-patch2.java	2021-08-27 19:18:32.790863921 -0700
+@@ -194,22 +194,6 @@
+           && NodeUtil.isGet(parent.getFirstChild())) {
+         Node functionExpression = parent.getFirstChild();
+         decomposeSubExpressions(functionExpression.getNext(), child, state);
+-        // Now handle the call expression
+-        if (isExpressionTreeUnsafe(functionExpression, state.sideEffects)
+-            && functionExpression.getFirstChild() != grandchild) {
+-          // TODO(johnlenz): In Internet Explorer, non-JavaScript objects such
+-          // as DOM objects can not be decomposed.
+-          Preconditions.checkState(allowObjectCallDecomposing(),
+-              "Object method calls can not be decomposed.");
+-          // Either there were preexisting side-effects, or this node has
+-          // side-effects.
+-          state.sideEffects = true;
+-
+-          // Rewrite the call so "this" is preserved.
+-          Node replacement = rewriteCallExpression(parent, state);
+-          // Continue from here.
+-          parent = replacement;
+-        }
+       } else if (parentType == Token.OBJECTLIT) {
+         decomposeObjectLiteralKeys(parent.getFirstChild(), child, state);
+       } else {
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/buggy3.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/tool-patch3.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/buggy3.java	2021-08-27 19:18:32.790863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Closure/116/tool-patch3.java	2021-08-27 19:18:32.790863921 -0700
+@@ -1456,7 +1456,7 @@
+       }
+       res = n.checkTreeEqualsImpl(n2);
+       if (res != null) {
+-        return res;
++        return null;
+       }
+     }
+     return res;

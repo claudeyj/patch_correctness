@@ -1,0 +1,7 @@
+            } else if ("html".equals(name)) {
+                transition(HtmlTreeBuilderState.BeforeHead);
+                break; // frag
+            } else if (last) {
+                transition(HtmlTreeBuilderState.InBody);
+                break; // frag
+            }

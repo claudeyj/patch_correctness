@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/61/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/61/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/61/buggy1.java	2021-08-27 19:18:38.986864096 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/SimFix/Lang/61/tool-patch1.java	2021-08-27 19:18:38.986864096 -0700
+@@ -1775,7 +1775,7 @@
+         char[] thisBuf = buffer;
+         int len = thisBuf.length - strLen;
+         outer:
+-        for (int i = startIndex; i < len; i++) {
++        for(int i=startIndex;i<size;i++){
+             for (int j = 0; j < strLen; j++) {
+                 if (str.charAt(j) != thisBuf[i + j]) {
+                     continue outer;

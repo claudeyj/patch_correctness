@@ -1,0 +1,13 @@
+--- jd-result-2.0/Codec/7/mutant-1/a-Base64.java	2021-08-09 03:48:50.221503387 -0700
++++ jd-result-2.0/Codec/7/mutant-1/b-Base64.java	2021-08-09 03:48:51.829503433 -0700
+@@ -298,7 +298,9 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static String encodeBase64String(byte[] binaryData) {
+-/* 670*/    return StringUtils.newStringUtf8(encodeBase64(binaryData, true));
++/* 670*/    boolean bool = true;
++/* 670*/    byte[] arrayOfByte = binaryData;
++/* 670*/    return StringUtils.newStringUtf8(encodeBase64(arrayOfByte));
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static byte[] encodeBase64URLSafe(byte[] binaryData) {

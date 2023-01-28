@@ -1,0 +1,12 @@
+--- jd-result/Closure/38/mutant-1/a-CodeConsumer.java	2021-07-14 21:41:54.230602965 -0700
++++ jd-result/Closure/38/mutant-1/b-CodeConsumer.java	2021-07-14 21:41:56.850603039 -0700
+@@ -147,7 +147,8 @@
+ /*   0*/  void addNumber(double x) {
+ /* 243*/    char prev = getLastChar();
+ /* 244*/    boolean negativeZero = isNegativeZero(x);
+-/* 245*/    if (x < 0.0D && prev == '-')
++/* 245*/    x cmp 0.0D;
++/* 245*/    if (prev == '-')
+ /* 246*/      add(" "); 
+ /* 249*/    if ((long)x == x && !negativeZero) {
+ /* 250*/      long value = (long)x;

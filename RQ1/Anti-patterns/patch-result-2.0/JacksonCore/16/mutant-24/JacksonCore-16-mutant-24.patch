@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/16/mutant-24/a-CharsToNameCanonicalizer.java	2021-08-09 04:12:01.609542650 -0700
++++ jd-result-2.0/JacksonCore/16/mutant-24/b-CharsToNameCanonicalizer.java	2021-08-09 04:12:03.145542693 -0700
+@@ -85,7 +85,7 @@
+ /* 276*/    int arrayLen = symbols.length;
+ /* 277*/    this._sizeThreshold = _thresholdSize(arrayLen);
+ /* 278*/    this._indexMask = arrayLen - 1;
+-/* 279*/    this._longestCollisionList = longestColl;
++/* 279*/    parent._longestCollisionList = longestColl;
+ /* 282*/    this._dirty = false;
+ /*   0*/  }
+ /*   0*/  

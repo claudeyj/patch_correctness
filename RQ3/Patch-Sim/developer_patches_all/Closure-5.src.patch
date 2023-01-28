@@ -1,0 +1,13 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/5/mutant-0/buggy-InlineObjectLiterals.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/5/mutant-0/patched-InlineObjectLiterals.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/5/mutant-0/buggy-InlineObjectLiterals.java	2021-08-22 00:18:38.610190184 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Closure/5/mutant-0/patched-InlineObjectLiterals.java	2021-08-22 00:18:38.610190184 -0700
+@@ -173,6 +173,9 @@
+ 
+           // Deleting a property has different semantics from deleting
+           // a variable, so deleted properties should not be inlined.
++          if (gramps.isDelProp()) {
++            return false;
++          }
+ 
+           // NOTE(nicksantos): This pass's object-splitting algorithm has
+           // a blind spot. It assumes that if a property isn't defined on an

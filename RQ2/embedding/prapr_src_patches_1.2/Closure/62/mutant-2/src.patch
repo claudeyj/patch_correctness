@@ -1,0 +1,11 @@
+--- jd-result/Closure/62/mutant-2/ori-LightweightMessageFormatter.java	2021-07-15 18:51:53.680753163 -0700
++++ jd-result/Closure/62/mutant-2/fixed-patched-LightweightMessageFormatter.java	2021-07-22 21:55:09.758304810 -0700
+@@ -95,7 +95,7 @@
+       // charno == sourceExpert.length() means something is missing
+       // at the end of the line
+       if (excerpt.equals(LINE)
+-          && 0 <= charno && charno < sourceExcerpt.length()) {
++          && 0 <= charno && true) {
+         for (int i = 0; i < charno; i++) {
+           char c = sourceExcerpt.charAt(i);
+           if (Character.isWhitespace(c)) {

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Csv/5/mutant-13/ori-CSVFormat.java	2021-08-08 21:02:01.592814624 -0700
++++ jd-result-2.0/Csv/5/mutant-13/man-patched-CSVFormat.java	2021-08-11 20:22:52.248062444 -0700
+@@ -751,7 +751,7 @@
+      */
+     public CSVFormat withHeader(final String... header) {
+         return new CSVFormat(delimiter, quoteChar, quotePolicy, commentStart, escape,
+-                ignoreSurroundingSpaces, ignoreEmptyLines, recordSeparator, nullString, header, skipHeaderRecord);
++                ignoreSurroundingSpaces, ignoreEmptyLines, DEFAULT.recordSeparator, nullString, header, skipHeaderRecord);
+     }
+ 
+     /**

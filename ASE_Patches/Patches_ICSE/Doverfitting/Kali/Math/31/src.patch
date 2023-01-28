@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Math/31/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Math/31/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Math/31/buggy1.java	2021-08-27 19:18:38.458864081 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Kali/Math/31/tool-patch1.java	2021-08-27 19:18:38.458864081 -0700
+@@ -174,6 +174,8 @@
+                                                x);
+             }
+             if (Double.isNaN(hN)) {
++                if (true)
++                    return -1;
+                 throw new ConvergenceException(LocalizedFormats.CONTINUED_FRACTION_NAN_DIVERGENCE,
+                                                x);
+             }

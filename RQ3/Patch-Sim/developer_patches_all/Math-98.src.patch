@@ -1,0 +1,24 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/98/mutant-0/buggy-RealMatrixImpl.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/98/mutant-0/patched-RealMatrixImpl.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/98/mutant-0/buggy-RealMatrixImpl.java	2021-08-22 00:18:38.698190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/98/mutant-0/patched-RealMatrixImpl.java	2021-08-22 00:18:38.698190186 -0700
+@@ -776,7 +776,7 @@
+         if (v.length != nCols) {
+             throw new IllegalArgumentException("vector has wrong length");
+         }
+-        final double[] out = new double[v.length];
++        final double[] out = new double[nRows];
+         for (int row = 0; row < nRows; row++) {
+             final double[] dataRow = data[row];
+             double sum = 0;
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/98/mutant-0/buggy-BigMatrixImpl.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/98/mutant-0/patched-BigMatrixImpl.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/98/mutant-0/buggy-BigMatrixImpl.java	2021-08-22 00:18:38.698190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/98/mutant-0/patched-BigMatrixImpl.java	2021-08-22 00:18:38.698190186 -0700
+@@ -988,7 +988,7 @@
+         }
+         final int nRows = this.getRowDimension();
+         final int nCols = this.getColumnDimension();
+-        final BigDecimal[] out = new BigDecimal[v.length];
++        final BigDecimal[] out = new BigDecimal[nRows];
+         for (int row = 0; row < nRows; row++) {
+             BigDecimal sum = ZERO;
+             for (int i = 0; i < nCols; i++) {

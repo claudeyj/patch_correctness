@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-256/ori-DatasetUtilities.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-256/patched-DatasetUtilities.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-256/ori-DatasetUtilities.java	2021-08-23 09:23:48.384983473 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-256/patched-DatasetUtilities.java	2021-08-23 09:23:48.384983473 +0800
+@@ -565,7 +565,7 @@
+             return true;
+         }
+ 
+-        int rowCount = dataset.getRowCount();
++    int rowCount = 0;
+         int columnCount = dataset.getColumnCount();
+         if (rowCount == 0 || columnCount == 0) {
+             return true;

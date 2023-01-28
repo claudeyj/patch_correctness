@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-60/ori-Axis.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-60/fixed-patched-Axis.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-60/ori-Axis.java	2021-08-23 09:23:48.472984693 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/26/mutant-60/fixed-patched-Axis.java	2021-08-23 09:23:48.472984693 +0800
+@@ -1098,7 +1098,7 @@
+             throw new IllegalArgumentException("Null 'state' argument.");
+         }
+         
+-        if ((label == null) || (label.equals(""))) {
++    if (this.labelToolTip == null || label.equals("")) {
+             return state;
+         }
+ 

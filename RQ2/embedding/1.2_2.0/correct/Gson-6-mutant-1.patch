@@ -1,0 +1,11 @@
+--- jd-result-2.0/Gson/6/mutant-1/ori-JsonAdapterAnnotationTypeAdapterFactory.java	2021-08-11 21:29:28.132175200 -0700
++++ jd-result-2.0/Gson/6/mutant-1/man-patched-JsonAdapterAnnotationTypeAdapterFactory.java	2021-08-11 21:29:51.204175851 -0700
+@@ -64,7 +64,7 @@
+       throw new IllegalArgumentException(
+           "@JsonAdapter value must be TypeAdapter or TypeAdapterFactory reference.");
+     }
+-      typeAdapter = typeAdapter.nullSafe();
++    typeAdapter = (typeAdapter == null) ? null : typeAdapter.nullSafe();
+     return typeAdapter;
+   }
+ }

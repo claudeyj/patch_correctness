@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-79/ori-EigenDecompositionImpl.java	2021-07-24 01:52:11.998297307 -0700
++++ jd-result/Math/81/mutant-79/patched-EigenDecompositionImpl.java	2021-07-24 01:52:11.998297307 -0700
+@@ -1445,7 +1445,7 @@
+         switch (deflated) {
+ 
+         case 0 : // no realEigenvalues deflated.
+-            if (dMin == dN || dMin == dN1) {
++        if (this.dMin == this.dN || this.dMin != this.dN1) {
+ 
+                 double b1 = Math.sqrt(work[nn - 3]) * Math.sqrt(work[nn - 5]);
+                 double b2 = Math.sqrt(work[nn - 7]) * Math.sqrt(work[nn - 9]);

@@ -1,0 +1,40 @@
+PraPR 2 (JDK 1.7) Fix Report - Fri Jul 23 02:25:08 PDT 2021
+Number of Plausible Fixes: 4
+Total Number of Patches: 3708
+================================================
+1.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to java/lang/String::equals
+	File Name: org/jsoup/parser/HtmlTreeBuilderState.java
+	Line Number: 704
+	Rank: 1
+	Total Rank: 70
+	Dump: mutant-3.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/jsoup/parser/HtmlTreeBuilderState.java
+	Line Number: 704
+	Rank: 2
+	Total Rank: 71
+	Dump: mutant-4.class
+------------------------------------------------
+3.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local bottom is replaced by access to field MaxScopeSearchDepth
+	File Name: org/jsoup/parser/HtmlTreeBuilder.java
+	Line Number: 469
+	Rank: 3
+	Total Rank: 982
+	Dump: mutant-1.class
+------------------------------------------------
+4.
+	Mutator: RemoveConditionalMutator_ORDER_ELSE
+	Description: removed conditional - replaced comparison check with false
+	File Name: org/jsoup/parser/HtmlTreeBuilder.java
+	Line Number: 469
+	Rank: 4
+	Total Rank: 986
+	Dump: mutant-2.class
+------------------------------------------------

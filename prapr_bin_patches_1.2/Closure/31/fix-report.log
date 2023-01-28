@@ -1,0 +1,85 @@
+PraPR 2 (JDK 1.7) Fix Report - Sat Jul 10 22:43:55 PDT 2021
+Number of Plausible Fixes: 9
+Total Number of Patches: 24913
+================================================
+1.
+	Mutator: FieldNameMutator
+	Description: replaced access to skipAllPasses with an access to nameAnonymousFunctionsOnly
+	File Name: com/google/javascript/jscomp/CompilerOptions.java
+	Line Number: 1019
+	Rank: 1
+	Total Rank: 72
+	Dump: mutant-8.class
+------------------------------------------------
+2.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local n is replaced by access to field last
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1453
+	Rank: 2
+	Total Rank: 11762
+	Dump: mutant-1.class
+------------------------------------------------
+3.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field next is replaced by access to local n
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1453
+	Rank: 3
+	Total Rank: 11771
+	Dump: mutant-9.class
+------------------------------------------------
+4.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1458
+	Rank: 4
+	Total Rank: 11805
+	Dump: mutant-7.class
+------------------------------------------------
+5.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1458
+	Rank: 5
+	Total Rank: 11807
+	Dump: mutant-5.class
+------------------------------------------------
+6.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.google.javascript.jscomp.CompilerOptions.skipAllPasses is replaced by the call to com.google.javascript.jscomp.CompilerOptions::assumeClosuresOnlyCaptureReferences()Z
+	File Name: com/google/javascript/jscomp/Compiler.java
+	Line Number: 1284
+	Rank: 7
+	Total Rank: 16253
+	Dump: mutant-4.class
+------------------------------------------------
+7.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field com.google.javascript.jscomp.Compiler.options is replaced by the call to com.google.javascript.jscomp.Compiler::newCompilerOptions()Lcom/google/javascript/jscomp/CompilerOptions;
+	File Name: com/google/javascript/jscomp/Compiler.java
+	Line Number: 1284
+	Rank: 7
+	Total Rank: 16253
+	Dump: mutant-2.class
+------------------------------------------------
+8.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/jscomp/Compiler.java
+	Line Number: 1284
+	Rank: 9
+	Total Rank: 16284
+	Dump: mutant-6.class
+------------------------------------------------
+9.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field skipAllPasses is replaced by access to local staleInputs
+	File Name: com/google/javascript/jscomp/Compiler.java
+	Line Number: 1284
+	Rank: 9
+	Total Rank: 16284
+	Dump: mutant-3.class
+------------------------------------------------

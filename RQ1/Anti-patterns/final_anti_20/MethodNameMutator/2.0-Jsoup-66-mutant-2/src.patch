@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/66/mutant-2/ori-Element.java	2021-08-08 21:02:03.272814671 -0700
++++ jd-result-2.0/Jsoup/66/mutant-2/patched-Element.java	2021-08-09 06:25:54.909769334 -0700
+@@ -681,7 +681,7 @@
+      */
+     public Element nextElementSibling() {
+         if (parentNode == null) return null;
+-        List<Element> siblings = parent().childElementsList();
++    List<Element> siblings = (List)parent().ensureChildNodes();
+         Integer index = indexInList(this, siblings);
+         Validate.notNull(index);
+         if (siblings.size() > index+1)

@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/46/mutant-1/a-Entities.java	2021-08-09 04:21:56.197559428 -0700
++++ jd-result-2.0/Jsoup/46/mutant-1/b-Entities.java	2021-08-09 04:21:57.577559467 -0700
+@@ -74,7 +74,7 @@
+ /* 112*/            accum.append("&amp;");
+ /*   0*/            break;
+ /*   0*/          case '\u00A0':
+-/* 115*/            if (escapeMode != EscapeMode.xhtml) {
++/* 115*/            if (escapeMode == EscapeMode.xhtml) {
+ /* 116*/              accum.append("&nbsp;");
+ /*   0*/              break;
+ /*   0*/            } 

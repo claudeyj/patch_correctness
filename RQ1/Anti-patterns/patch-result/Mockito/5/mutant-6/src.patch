@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-6/ori-AcrossJVMSerializationFeature.java	2021-07-15 18:51:56.288753237 -0700
++++ jd-result/Mockito/5/mutant-6/patched-AcrossJVMSerializationFeature.java	2021-07-21 08:02:41.894282247 -0700
+@@ -340,7 +340,7 @@
+             try {
+               Field classNameField = descInstance.getClass().getDeclaredField("name");
+               new FieldSetter(descInstance, classNameField).set(proxyClass.getCanonicalName());
+-            } catch (NoSuchFieldException nsfe) {
++      } catch (ReflectiveOperationException nsfe) {
+                 // TODO use our own mockito mock serialization exception
+                 throw new MockitoSerializationIssue(join(
+                         "Wow, the class 'ObjectStreamClass' in the JDK don't have the field 'name',",

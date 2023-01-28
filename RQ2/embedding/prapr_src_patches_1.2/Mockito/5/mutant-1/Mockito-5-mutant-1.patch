@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-1/a-ClassPathLoader.java	2021-07-14 21:30:49.378584204 -0700
++++ jd-result/Mockito/5/mutant-1/b-ClassPathLoader.java	2021-07-14 21:30:50.682584241 -0700
+@@ -15,7 +15,7 @@
+ /*   0*/    } 
+ /*   0*/    try {
+ /*  75*/      return (IMockitoConfiguration)configClass.newInstance();
+-/*  76*/    } catch (ClassCastException e) {
++/*  76*/    } catch (RuntimeException e) {
+ /*  77*/      throw new MockitoConfigurationException("MockitoConfiguration class must implement " + IMockitoConfiguration.class.getName() + " interface.", e);
+ /*  78*/    } catch (Exception e) {
+ /*  79*/      throw new MockitoConfigurationException("Unable to instantiate org.mockito.configuration.MockitoConfiguration class. Does it have a safe, no-arg constructor?", e);

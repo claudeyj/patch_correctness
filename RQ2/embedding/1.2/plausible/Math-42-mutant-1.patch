@@ -1,0 +1,11 @@
+--- jd-result/Math/42/mutant-1/ori-SimplexTableau.java	2021-07-24 01:52:03.530297068 -0700
++++ jd-result/Math/42/mutant-1/fixed-patched-SimplexTableau.java	2021-07-24 01:52:03.518297067 -0700
+@@ -192,7 +192,7 @@
+         RealVector objectiveCoefficients =
+             maximize ? f.getCoefficients().mapMultiply(-1) : f.getCoefficients();
+         copyArray(objectiveCoefficients.toArray(), matrix.getDataRef()[zIndex]);
+-        matrix.setEntry(zIndex, width - 1,
++        matrix.setEntry(zIndex, height - 1,
+             maximize ? f.getConstantTerm() : -1 * f.getConstantTerm());
+ 
+         if (!restrictToNonNegative) {

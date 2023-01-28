@@ -1,0 +1,9 @@
+            return true;
+        }
+        // COMPRESS-107 - recognise Ant tar files
+        ArchiveUtils.matchAsciiBuffer(TarConstants.MAGIC_ANT,
+                signature, TarConstants.MAGIC_OFFSET, TarConstants.MAGICLEN);
+        if (ArchiveUtils.matchAsciiBuffer(TarConstants.VERSION_ANT,
+                signature, TarConstants.VERSION_OFFSET, TarConstants.VERSIONLEN)
+                ){
+            return true;

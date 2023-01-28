@@ -1,0 +1,11 @@
+--- jd-result/Closure/12/mutant-3/a-Node.java	2021-07-14 21:36:45.874594264 -0700
++++ jd-result/Closure/12/mutant-3/b-Node.java	2021-07-14 21:36:47.354594305 -0700
+@@ -1123,7 +1123,7 @@
+ /*1452*/    NodeMismatch res = null;
+ /*1454*/    Node n = this.first, n2 = node2.first;
+ /*1455*/    for (; res == null && n != null; 
+-/*1456*/      n = n.next, n2 = n2.next) {
++/*1456*/      n2 = n = n.next) {
+ /*1457*/      if (node2 == null)
+ /*1458*/        throw new IllegalStateException(); 
+ /*1460*/      res = n.checkTreeEqualsImpl(n2);

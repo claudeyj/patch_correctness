@@ -1,0 +1,7 @@
+        }
+        if (plotState != null && hotspot != null) {
+            ChartRenderingInfo owner = plotState.getOwner();
+      EntityCollection entities = (owner == null) ? null : owner.getEntityCollection();
+                if (entities != null) {
+                    entities.add(new AxisLabelEntity(this, hotspot, 
+                            this.labelToolTip, this.labelURL));

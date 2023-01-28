@@ -1,0 +1,11 @@
+--- jd-result/Math/81/mutant-26/ori-EigenDecompositionImpl.java	2021-07-24 01:52:09.442297234 -0700
++++ jd-result/Math/81/mutant-26/man-patched-EigenDecompositionImpl.java	2021-07-24 01:52:09.438297234 -0700
+@@ -1477,7 +1477,7 @@
+                     int np;
+                     if (dMin == dN) {
+                         gam = dN;
+-                        a2 = 0.0;
++                        a2 = 1.0;
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }

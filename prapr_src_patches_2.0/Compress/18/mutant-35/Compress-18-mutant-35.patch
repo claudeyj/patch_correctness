@@ -1,0 +1,11 @@
+--- jd-result-2.0/Compress/18/mutant-35/a-TarArchiveOutputStream.java	2021-08-09 03:55:35.293514818 -0700
++++ jd-result-2.0/Compress/18/mutant-35/b-TarArchiveOutputStream.java	2021-08-09 03:55:36.849514862 -0700
+@@ -211,7 +211,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void write(byte[] wBuf, int wOffset, int numToWrite) throws IOException {
+-/* 386*/    if (this.currBytes + numToWrite > this.currSize) {
++/* 386*/    if (this.currBytes - numToWrite > this.currSize) {
+ /* 387*/        throw new IOException("request to write '" + numToWrite + "' bytes exceeds size in header of '" + this.currSize + "' bytes for entry '" + this.currName + "'"); 
+ /*   0*/       }
+ /* 401*/    if (this.assemLen > 0) {

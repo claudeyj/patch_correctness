@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-2/ori-SimplexSolver.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-2/fixed-patched-SimplexSolver.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-2/ori-SimplexSolver.java	2021-08-23 09:23:48.904990683 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-2/fixed-patched-SimplexSolver.java	2021-08-23 09:23:48.904990683 +0800
+@@ -140,7 +140,7 @@
+                 for (Integer row : minRatioPositions) {
+                     int i = tableau.getNumObjectiveFunctions();
+                     for (; i < tableau.getWidth() - 1 && minRow != row; i++) {
+-                        if (row == tableau.getBasicRow(i)) {
++                        if (row != tableau.getBasicRow(i)) {
+                             if (i < minIndex) {
+                                 minIndex = i;
+                                 minRow = row;

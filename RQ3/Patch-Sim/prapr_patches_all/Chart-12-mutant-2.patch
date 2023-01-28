@@ -1,0 +1,13 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/12/mutant-2/ori-AbstractDataset.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/12/mutant-2/patched-AbstractDataset.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/12/mutant-2/ori-AbstractDataset.java	2021-08-23 09:23:48.296982254 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/12/mutant-2/patched-AbstractDataset.java	2021-08-23 09:23:48.296982254 +0800
+@@ -158,7 +158,8 @@
+      */
+     public boolean hasListener(EventListener listener) {
+         List list = Arrays.asList(this.listenerList.getListenerList());
+-        return list.contains(listener);
++    list.contains(listener);
++    return true;
+     }
+     
+     /**

@@ -1,0 +1,10 @@
+--- jd-result/Lang/44/mutant-3/ori-NumberUtils.java	2021-07-15 18:51:51.908753113 -0700
++++ jd-result/Lang/44/mutant-3/man-patched-NumberUtils.java	2021-07-23 21:01:02.257804345 -0700
+@@ -188,7 +188,6 @@
+             String numeric = val.substring(0, val.length() - 1);
+             boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+             switch (lastChar) {
+-                case 'l' :
+                 case 'L' :
+                     if (dec == null
+                         && exp == null

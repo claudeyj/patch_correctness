@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-17/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-17/patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-17/ori-CMAESOptimizer.java	2021-08-23 09:23:48.880990350 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-17/patched-CMAESOptimizer.java	2021-08-23 09:23:48.880990350 +0800
+@@ -579,7 +579,7 @@
+         // initialize selection strategy parameters
+         mu = lambda / 2; // number of parents/points for recombination
+         logMu2 = Math.log(mu + 0.5);
+-        weights = log(sequence(1, mu, 1)).scalarMultiply(-1.).scalarAdd(logMu2);
++    this.weights = log(sequence(1.0D, this.mu, 1.0D)).scalarMultiply(-1.0D).scalarAdd(this.stopTolUpX);
+         double sumw = 0;
+         double sumwq = 0;
+         for (int i = 0; i < mu; i++) {

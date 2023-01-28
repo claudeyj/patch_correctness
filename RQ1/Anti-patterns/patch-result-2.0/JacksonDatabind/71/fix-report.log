@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 22 19:27:32 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 8311
+================================================
+1.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/deser/DeserializerCache::_handleUnknownKeyDeserializer
+	File Name: com/fasterxml/jackson/databind/deser/DeserializerCache.java
+	Line Number: 168
+	Rank: 1
+	Total Rank: 60
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: com/fasterxml/jackson/databind/deser/DeserializerCache.java
+	Line Number: 167
+	Rank: 2
+	Total Rank: 399
+	Dump: mutant-2.class
+------------------------------------------------

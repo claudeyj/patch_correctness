@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/60/mutant-1/ori-StrBuilder.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/60/mutant-1/patched-StrBuilder.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/60/mutant-1/ori-StrBuilder.java	2021-08-23 09:23:48.848989907 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/60/mutant-1/patched-StrBuilder.java	2021-08-23 09:23:48.848989907 +0800
+@@ -1206,7 +1206,7 @@
+                 deleteImpl(index, index + len, len);
+             }
+         }
+-        return this;
++    return minimizeCapacity();
+     }
+ 
+     //-----------------------------------------------------------------------

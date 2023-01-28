@@ -1,0 +1,34 @@
+--- jd-result/Closure/129/mutant-5/a-Node.java	2021-07-14 21:55:25.694625863 -0700
++++ jd-result/Closure/129/mutant-5/b-Node.java	2021-07-14 21:55:27.234625906 -0700
+@@ -1147,7 +1147,9 @@
+ /*1526*/      int post2 = node.getIntProp(32);
+ /*1527*/      if (post1 != post2)
+ /*1528*/        return false; 
+-/*1530*/    } else if (this.type == 40 || this.type == 154) {
++/*   0*/    } else {
++/*1530*/      if (this.type != 40)
++/*1530*/        154; 
+ /*1531*/      if (this.type == 154) {
+ /*1532*/        int quoted1 = getIntProp(36);
+ /*1533*/        int quoted2 = node.getIntProp(36);
+@@ -1158,10 +1160,8 @@
+ /*1540*/      int slashV2 = node.getIntProp(54);
+ /*1541*/      if (slashV1 != slashV2)
+ /*1542*/        return false; 
+-/*1544*/    } else if (this.type == 37 && 
+-/*1545*/      getBooleanProp(50) != node.getBooleanProp(50)) {
+-/*1546*/      return false;
+ /*   0*/    } 
++/*   0*/    while (true) {
+ /*1550*/    if (recur) {
+ /*1552*/      Node n = this.first, n2 = node.first;
+ /*1553*/      for (; n != null; 
+@@ -1172,6 +1172,8 @@
+ /*   0*/    } 
+ /*1562*/    return true;
+ /*   0*/  }
++/*1562*/    return true;
++/*   0*/  }
+ /*   0*/  
+ /*   0*/  public String getQualifiedName() {
+ /*1574*/    if (this.type == 38) {

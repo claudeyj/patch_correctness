@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-24/ori-BrentSolver.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-24/patched-BrentSolver.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-24/ori-BrentSolver.java	2021-08-23 09:23:48.980991737 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/71/mutant-24/patched-BrentSolver.java	2021-08-23 09:23:48.980991737 +0800
+@@ -279,7 +279,7 @@
+                 return result;
+             }
+             double dx = x2 - x1;
+-            double tolerance =
++      double tolerance = Math.max(this.relativeAccuracy * Math.atan(x1), this.absoluteAccuracy);
+                 Math.max(relativeAccuracy * Math.abs(x1), absoluteAccuracy);
+             if (Math.abs(dx) <= tolerance) {
+                 setResult(x1, i);

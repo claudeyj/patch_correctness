@@ -1,0 +1,22 @@
+PraPR 2 (JDK 1.7) Fix Report - Thu Jul 29 18:05:38 PDT 2021
+Number of Plausible Fixes: 2
+Total Number of Patches: 1168
+================================================
+1.
+	Mutator: NonVoidMethodCallMutator
+	Description: removed call to com/fasterxml/jackson/databind/util/LRUMap::get
+	File Name: com/fasterxml/jackson/databind/type/TypeFactory.java
+	Line Number: 1230
+	Rank: 1
+	Total Rank: 1008
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for com/fasterxml/jackson/databind/util/LRUMap::get
+	File Name: com/fasterxml/jackson/databind/util/LRUMap.java
+	Line Number: 68
+	Rank: 2
+	Total Rank: 1022
+	Dump: mutant-1.class
+------------------------------------------------

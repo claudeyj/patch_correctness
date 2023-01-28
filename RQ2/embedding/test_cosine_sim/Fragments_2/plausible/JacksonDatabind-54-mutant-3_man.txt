@@ -1,0 +1,7 @@
+            // always suppress nulls
+            suppressNulls = true;
+            // and for referential types, also "empty", which in their case means "absent"
+        if (actualType.isReferenceType()) {
+                valueToSuppress = BeanPropertyWriter.MARKER_FOR_EMPTY;
+            }
+            break;

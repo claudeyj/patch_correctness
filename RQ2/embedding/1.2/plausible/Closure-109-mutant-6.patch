@@ -1,0 +1,11 @@
+--- jd-result/Closure/109/mutant-6/ori-JsDocInfoParser.java	2021-07-15 18:51:53.680753163 -0700
++++ jd-result/Closure/109/mutant-6/patched-JsDocInfoParser.java	2021-07-21 07:58:10.398274586 -0700
+@@ -1905,7 +1905,7 @@
+    * For expressions on the right hand side of a this: or new:
+    */
+   private Node parseContextTypeExpression(JsDocToken token) {
+-          return parseTypeName(token);
++    return parseAndRecordTypeNode(token);
+   }
+ 
+   /**

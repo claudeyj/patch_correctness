@@ -1,0 +1,531 @@
+--- jd-result/Lang/27/mutant-5/a-NumberUtils.java	2021-07-14 16:56:31.630119799 -0700
++++ jd-result/Lang/27/mutant-5/b-NumberUtils.java	2021-07-14 16:56:33.206119843 -0700
+@@ -126,102 +126,432 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public static Number createNumber(String str) throws NumberFormatException {
+-/*   0*/    String mant, dec, exp;
+-/* 453*/    if (str == null)
+-/* 454*/      return null; 
+-/* 456*/    if (StringUtils.isBlank(str))
+-/* 457*/      throw new NumberFormatException("A blank string is not a valid number"); 
+-/* 459*/    if (str.startsWith("--"))
+-/* 464*/      return null; 
+-/* 466*/    if (str.startsWith("0x") || str.startsWith("-0x"))
+-/* 467*/      return createInteger(str); 
+-/* 469*/    char lastChar = str.charAt(str.length() - 1);
+-/* 473*/    int decPos = str.indexOf('.');
+-/* 474*/    int expPos = str.indexOf('e') + str.indexOf('E') + 1;
+-/* 476*/    if (decPos > -1) {
+-/* 478*/      if (expPos > -1) {
+-/* 479*/        if (expPos < decPos)
+-/* 480*/          throw new NumberFormatException(str + " is not a valid number."); 
+-/* 482*/        dec = str.substring(decPos + 1, expPos);
+-/*   0*/      } else {
+-/* 484*/        dec = str.substring(decPos + 1);
+-/*   0*/      } 
+-/* 486*/      mant = str.substring(0, decPos);
+-/*   0*/    } else {
+-/* 488*/      if (expPos > -1) {
+-/* 489*/        mant = str.substring(0, expPos);
+-/*   0*/      } else {
+-/* 491*/        mant = str;
+-/*   0*/      } 
+-/* 493*/      dec = null;
+-/*   0*/    } 
+-/* 495*/    if (!Character.isDigit(lastChar) && lastChar != '.') {
+-/* 496*/      if (expPos > -1 && expPos < str.length() - 1) {
+-/* 497*/        exp = str.substring(expPos + 1, str.length() - 1);
+-/*   0*/      } else {
+-/* 499*/        exp = null;
+-/*   0*/      } 
+-/* 502*/      String numeric = str.substring(0, str.length() - 1);
+-/* 503*/      boolean bool = (isAllZeros(mant) && isAllZeros(exp));
+-/* 504*/      switch (lastChar) {
+-/*   0*/        case 'L':
+-/*   0*/        case 'l':
+-/* 507*/          if (dec == null && exp == null && ((numeric.charAt(0) == '-' && isDigits(numeric.substring(1))) || isDigits(numeric)))
+-/*   0*/            try {
+-/* 511*/              return createLong(numeric);
+-/* 512*/            } catch (NumberFormatException numberFormatException) {
+-/* 515*/              return createBigInteger(numeric);
+-/*   0*/            }  
+-/* 518*/          throw new NumberFormatException(str + " is not a valid number.");
+-/*   0*/        case 'F':
+-/*   0*/        case 'f':
+-/*   0*/          try {
+-/* 522*/            Float f = createFloat(numeric);
+-/* 523*/            if (!f.isInfinite() && (f != 0.0F || bool))
+-/* 526*/              return f; 
+-/* 529*/          } catch (NumberFormatException numberFormatException) {}
+-/*   0*/        case 'D':
+-/*   0*/        case 'd':
+-/*   0*/          try {
+-/* 536*/            Double d = createDouble(numeric);
+-/* 537*/            if (!d.isInfinite() && (d.floatValue() != 0.0D || bool))
+-/* 538*/              return d; 
+-/* 540*/          } catch (NumberFormatException numberFormatException) {}
+-/*   0*/          try {
+-/* 544*/            return createBigDecimal(numeric);
+-/* 545*/          } catch (NumberFormatException numberFormatException) {
+-/*   0*/            break;
+-/*   0*/          } 
+-/*   0*/      } 
+-/* 550*/      throw new NumberFormatException(str + " is not a valid number.");
+-/*   0*/    } 
+-/* 556*/    if (expPos > -1 && expPos < str.length() - 1) {
+-/* 557*/      exp = str.substring(expPos + 1, str.length());
+-/*   0*/    } else {
+-/* 559*/      exp = null;
+-/*   0*/    } 
+-/* 561*/    if (dec == null && exp == null)
+-/*   0*/      try {
+-/* 564*/        return createInteger(str);
+-/* 565*/      } catch (NumberFormatException numberFormatException) {
+-/*   0*/        try {
+-/* 569*/          return createLong(str);
+-/* 570*/        } catch (NumberFormatException numberFormatException1) {
+-/* 573*/          return createBigInteger(str);
+-/*   0*/        } 
+-/*   0*/      }  
+-/* 577*/    boolean allZeros = (isAllZeros(mant) && isAllZeros(exp));
+-/*   0*/    try {
+-/* 579*/      Float f = createFloat(str);
+-/* 580*/      if (!f.isInfinite() && (f != 0.0F || allZeros))
+-/* 581*/        return f; 
+-/* 583*/    } catch (NumberFormatException numberFormatException) {}
+-/*   0*/    try {
+-/* 587*/      Double d = createDouble(str);
+-/* 588*/      if (!d.isInfinite() && (d != 0.0D || allZeros))
+-/* 589*/        return d; 
+-/* 591*/    } catch (NumberFormatException numberFormatException) {}
+-/* 595*/    return createBigDecimal(str);
++/*   0*/    // Byte code:
++/*   0*/    //   0: aload_0
++/*   0*/    //   1: ifnonnull -> 6
++/*   0*/    //   4: aconst_null
++/*   0*/    //   5: areturn
++/*   0*/    //   6: aload_0
++/*   0*/    //   7: invokestatic isBlank : (Ljava/lang/CharSequence;)Z
++/*   0*/    //   10: ifeq -> 23
++/*   0*/    //   13: new java/lang/NumberFormatException
++/*   0*/    //   16: dup
++/*   0*/    //   17: ldc 'A blank string is not a valid number'
++/*   0*/    //   19: invokespecial <init> : (Ljava/lang/String;)V
++/*   0*/    //   22: athrow
++/*   0*/    //   23: aload_0
++/*   0*/    //   24: ldc '--'
++/*   0*/    //   26: invokevirtual startsWith : (Ljava/lang/String;)Z
++/*   0*/    //   29: ifeq -> 34
++/*   0*/    //   32: aconst_null
++/*   0*/    //   33: areturn
++/*   0*/    //   34: aload_0
++/*   0*/    //   35: ldc '0x'
++/*   0*/    //   37: invokevirtual startsWith : (Ljava/lang/String;)Z
++/*   0*/    //   40: ifne -> 52
++/*   0*/    //   43: aload_0
++/*   0*/    //   44: ldc '-0x'
++/*   0*/    //   46: invokevirtual startsWith : (Ljava/lang/String;)Z
++/*   0*/    //   49: ifeq -> 57
++/*   0*/    //   52: aload_0
++/*   0*/    //   53: invokestatic createInteger : (Ljava/lang/String;)Ljava/lang/Integer;
++/*   0*/    //   56: areturn
++/*   0*/    //   57: aload_0
++/*   0*/    //   58: aload_0
++/*   0*/    //   59: invokevirtual length : ()I
++/*   0*/    //   62: iconst_1
++/*   0*/    //   63: isub
++/*   0*/    //   64: invokevirtual charAt : (I)C
++/*   0*/    //   67: istore_1
++/*   0*/    //   68: aload_0
++/*   0*/    //   69: bipush #46
++/*   0*/    //   71: invokevirtual indexOf : (I)I
++/*   0*/    //   74: istore #5
++/*   0*/    //   76: aload_0
++/*   0*/    //   77: bipush #101
++/*   0*/    //   79: invokevirtual indexOf : (I)I
++/*   0*/    //   82: aload_0
++/*   0*/    //   83: bipush #69
++/*   0*/    //   85: invokevirtual indexOf : (I)I
++/*   0*/    //   88: iadd
++/*   0*/    //   89: iconst_1
++/*   0*/    //   90: iadd
++/*   0*/    //   91: istore #6
++/*   0*/    //   93: iload #5
++/*   0*/    //   95: iconst_m1
++/*   0*/    //   96: if_icmple -> 173
++/*   0*/    //   99: iload #6
++/*   0*/    //   101: iconst_m1
++/*   0*/    //   102: if_icmple -> 153
++/*   0*/    //   105: iload #6
++/*   0*/    //   107: iload #5
++/*   0*/    //   109: if_icmpge -> 139
++/*   0*/    //   112: new java/lang/NumberFormatException
++/*   0*/    //   115: dup
++/*   0*/    //   116: new java/lang/StringBuilder
++/*   0*/    //   119: dup
++/*   0*/    //   120: invokespecial <init> : ()V
++/*   0*/    //   123: aload_0
++/*   0*/    //   124: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
++/*   0*/    //   127: ldc ' is not a valid number.'
++/*   0*/    //   129: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
++/*   0*/    //   132: invokevirtual toString : ()Ljava/lang/String;
++/*   0*/    //   135: invokespecial <init> : (Ljava/lang/String;)V
++/*   0*/    //   138: athrow
++/*   0*/    //   139: aload_0
++/*   0*/    //   140: iload #5
++/*   0*/    //   142: iconst_1
++/*   0*/    //   143: iadd
++/*   0*/    //   144: iload #6
++/*   0*/    //   146: invokevirtual substring : (II)Ljava/lang/String;
++/*   0*/    //   149: astore_3
++/*   0*/    //   150: goto -> 162
++/*   0*/    //   153: aload_0
++/*   0*/    //   154: iload #5
++/*   0*/    //   156: iconst_1
++/*   0*/    //   157: iadd
++/*   0*/    //   158: invokevirtual substring : (I)Ljava/lang/String;
++/*   0*/    //   161: astore_3
++/*   0*/    //   162: aload_0
++/*   0*/    //   163: iconst_0
++/*   0*/    //   164: iload #5
++/*   0*/    //   166: invokevirtual substring : (II)Ljava/lang/String;
++/*   0*/    //   169: astore_2
++/*   0*/    //   170: goto -> 195
++/*   0*/    //   173: iload #6
++/*   0*/    //   175: iconst_m1
++/*   0*/    //   176: pop2
++/*   0*/    //   177: goto -> 191
++/*   0*/    //   180: aload_0
++/*   0*/    //   181: iconst_0
++/*   0*/    //   182: iload #6
++/*   0*/    //   184: invokevirtual substring : (II)Ljava/lang/String;
++/*   0*/    //   187: astore_2
++/*   0*/    //   188: goto -> 193
++/*   0*/    //   191: aload_0
++/*   0*/    //   192: astore_2
++/*   0*/    //   193: aconst_null
++/*   0*/    //   194: astore_3
++/*   0*/    //   195: iload_1
++/*   0*/    //   196: invokestatic isDigit : (C)Z
++/*   0*/    //   199: ifne -> 533
++/*   0*/    //   202: iload_1
++/*   0*/    //   203: bipush #46
++/*   0*/    //   205: if_icmpeq -> 533
++/*   0*/    //   208: iload #6
++/*   0*/    //   210: iconst_m1
++/*   0*/    //   211: if_icmple -> 244
++/*   0*/    //   214: iload #6
++/*   0*/    //   216: aload_0
++/*   0*/    //   217: invokevirtual length : ()I
++/*   0*/    //   220: iconst_1
++/*   0*/    //   221: isub
++/*   0*/    //   222: if_icmpge -> 244
++/*   0*/    //   225: aload_0
++/*   0*/    //   226: iload #6
++/*   0*/    //   228: iconst_1
++/*   0*/    //   229: iadd
++/*   0*/    //   230: aload_0
++/*   0*/    //   231: invokevirtual length : ()I
++/*   0*/    //   234: iconst_1
++/*   0*/    //   235: isub
++/*   0*/    //   236: invokevirtual substring : (II)Ljava/lang/String;
++/*   0*/    //   239: astore #4
++/*   0*/    //   241: goto -> 247
++/*   0*/    //   244: aconst_null
++/*   0*/    //   245: astore #4
++/*   0*/    //   247: aload_0
++/*   0*/    //   248: iconst_0
++/*   0*/    //   249: aload_0
++/*   0*/    //   250: invokevirtual length : ()I
++/*   0*/    //   253: iconst_1
++/*   0*/    //   254: isub
++/*   0*/    //   255: invokevirtual substring : (II)Ljava/lang/String;
++/*   0*/    //   258: astore #7
++/*   0*/    //   260: aload_2
++/*   0*/    //   261: invokestatic isAllZeros : (Ljava/lang/String;)Z
++/*   0*/    //   264: ifeq -> 279
++/*   0*/    //   267: aload #4
++/*   0*/    //   269: invokestatic isAllZeros : (Ljava/lang/String;)Z
++/*   0*/    //   272: ifeq -> 279
++/*   0*/    //   275: iconst_1
++/*   0*/    //   276: goto -> 280
++/*   0*/    //   279: iconst_0
++/*   0*/    //   280: istore #8
++/*   0*/    //   282: iload_1
++/*   0*/    //   283: lookupswitch default -> 506, 68 -> 459, 70 -> 421, 76 -> 340, 100 -> 459, 102 -> 421, 108 -> 340
++/*   0*/    //   340: aload_3
++/*   0*/    //   341: ifnonnull -> 394
++/*   0*/    //   344: aload #4
++/*   0*/    //   346: ifnonnull -> 394
++/*   0*/    //   349: aload #7
++/*   0*/    //   351: iconst_0
++/*   0*/    //   352: invokevirtual charAt : (I)C
++/*   0*/    //   355: bipush #45
++/*   0*/    //   357: if_icmpne -> 372
++/*   0*/    //   360: aload #7
++/*   0*/    //   362: iconst_1
++/*   0*/    //   363: invokevirtual substring : (I)Ljava/lang/String;
++/*   0*/    //   366: invokestatic isDigits : (Ljava/lang/String;)Z
++/*   0*/    //   369: ifne -> 380
++/*   0*/    //   372: aload #7
++/*   0*/    //   374: invokestatic isDigits : (Ljava/lang/String;)Z
++/*   0*/    //   377: ifeq -> 394
++/*   0*/    //   380: aload #7
++/*   0*/    //   382: invokestatic createLong : (Ljava/lang/String;)Ljava/lang/Long;
++/*   0*/    //   385: areturn
++/*   0*/    //   386: astore #9
++/*   0*/    //   388: aload #7
++/*   0*/    //   390: invokestatic createBigInteger : (Ljava/lang/String;)Ljava/math/BigInteger;
++/*   0*/    //   393: areturn
++/*   0*/    //   394: new java/lang/NumberFormatException
++/*   0*/    //   397: dup
++/*   0*/    //   398: new java/lang/StringBuilder
++/*   0*/    //   401: dup
++/*   0*/    //   402: invokespecial <init> : ()V
++/*   0*/    //   405: aload_0
++/*   0*/    //   406: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
++/*   0*/    //   409: ldc ' is not a valid number.'
++/*   0*/    //   411: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
++/*   0*/    //   414: invokevirtual toString : ()Ljava/lang/String;
++/*   0*/    //   417: invokespecial <init> : (Ljava/lang/String;)V
++/*   0*/    //   420: athrow
++/*   0*/    //   421: aload #7
++/*   0*/    //   423: invokestatic createFloat : (Ljava/lang/String;)Ljava/lang/Float;
++/*   0*/    //   426: astore #9
++/*   0*/    //   428: aload #9
++/*   0*/    //   430: invokevirtual isInfinite : ()Z
++/*   0*/    //   433: ifne -> 454
++/*   0*/    //   436: aload #9
++/*   0*/    //   438: invokevirtual floatValue : ()F
++/*   0*/    //   441: fconst_0
++/*   0*/    //   442: fcmpl
++/*   0*/    //   443: ifne -> 451
++/*   0*/    //   446: iload #8
++/*   0*/    //   448: ifeq -> 454
++/*   0*/    //   451: aload #9
++/*   0*/    //   453: areturn
++/*   0*/    //   454: goto -> 459
++/*   0*/    //   457: astore #9
++/*   0*/    //   459: aload #7
++/*   0*/    //   461: invokestatic createDouble : (Ljava/lang/String;)Ljava/lang/Double;
++/*   0*/    //   464: astore #9
++/*   0*/    //   466: aload #9
++/*   0*/    //   468: invokevirtual isInfinite : ()Z
++/*   0*/    //   471: ifne -> 493
++/*   0*/    //   474: aload #9
++/*   0*/    //   476: invokevirtual floatValue : ()F
++/*   0*/    //   479: f2d
++/*   0*/    //   480: dconst_0
++/*   0*/    //   481: dcmpl
++/*   0*/    //   482: ifne -> 490
++/*   0*/    //   485: iload #8
++/*   0*/    //   487: ifeq -> 493
++/*   0*/    //   490: aload #9
++/*   0*/    //   492: areturn
++/*   0*/    //   493: goto -> 498
++/*   0*/    //   496: astore #9
++/*   0*/    //   498: aload #7
++/*   0*/    //   500: invokestatic createBigDecimal : (Ljava/lang/String;)Ljava/math/BigDecimal;
++/*   0*/    //   503: areturn
++/*   0*/    //   504: astore #9
++/*   0*/    //   506: new java/lang/NumberFormatException
++/*   0*/    //   509: dup
++/*   0*/    //   510: new java/lang/StringBuilder
++/*   0*/    //   513: dup
++/*   0*/    //   514: invokespecial <init> : ()V
++/*   0*/    //   517: aload_0
++/*   0*/    //   518: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
++/*   0*/    //   521: ldc ' is not a valid number.'
++/*   0*/    //   523: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
++/*   0*/    //   526: invokevirtual toString : ()Ljava/lang/String;
++/*   0*/    //   529: invokespecial <init> : (Ljava/lang/String;)V
++/*   0*/    //   532: athrow
++/*   0*/    //   533: iload #6
++/*   0*/    //   535: iconst_m1
++/*   0*/    //   536: if_icmple -> 567
++/*   0*/    //   539: iload #6
++/*   0*/    //   541: aload_0
++/*   0*/    //   542: invokevirtual length : ()I
++/*   0*/    //   545: iconst_1
++/*   0*/    //   546: isub
++/*   0*/    //   547: if_icmpge -> 567
++/*   0*/    //   550: aload_0
++/*   0*/    //   551: iload #6
++/*   0*/    //   553: iconst_1
++/*   0*/    //   554: iadd
++/*   0*/    //   555: aload_0
++/*   0*/    //   556: invokevirtual length : ()I
++/*   0*/    //   559: invokevirtual substring : (II)Ljava/lang/String;
++/*   0*/    //   562: astore #4
++/*   0*/    //   564: goto -> 570
++/*   0*/    //   567: aconst_null
++/*   0*/    //   568: astore #4
++/*   0*/    //   570: aload_3
++/*   0*/    //   571: ifnonnull -> 598
++/*   0*/    //   574: aload #4
++/*   0*/    //   576: ifnonnull -> 598
++/*   0*/    //   579: aload_0
++/*   0*/    //   580: invokestatic createInteger : (Ljava/lang/String;)Ljava/lang/Integer;
++/*   0*/    //   583: areturn
++/*   0*/    //   584: astore #7
++/*   0*/    //   586: aload_0
++/*   0*/    //   587: invokestatic createLong : (Ljava/lang/String;)Ljava/lang/Long;
++/*   0*/    //   590: areturn
++/*   0*/    //   591: astore #7
++/*   0*/    //   593: aload_0
++/*   0*/    //   594: invokestatic createBigInteger : (Ljava/lang/String;)Ljava/math/BigInteger;
++/*   0*/    //   597: areturn
++/*   0*/    //   598: aload_2
++/*   0*/    //   599: invokestatic isAllZeros : (Ljava/lang/String;)Z
++/*   0*/    //   602: ifeq -> 617
++/*   0*/    //   605: aload #4
++/*   0*/    //   607: invokestatic isAllZeros : (Ljava/lang/String;)Z
++/*   0*/    //   610: ifeq -> 617
++/*   0*/    //   613: iconst_1
++/*   0*/    //   614: goto -> 618
++/*   0*/    //   617: iconst_0
++/*   0*/    //   618: istore #7
++/*   0*/    //   620: aload_0
++/*   0*/    //   621: invokestatic createFloat : (Ljava/lang/String;)Ljava/lang/Float;
++/*   0*/    //   624: astore #8
++/*   0*/    //   626: aload #8
++/*   0*/    //   628: invokevirtual isInfinite : ()Z
++/*   0*/    //   631: ifne -> 652
++/*   0*/    //   634: aload #8
++/*   0*/    //   636: invokevirtual floatValue : ()F
++/*   0*/    //   639: fconst_0
++/*   0*/    //   640: fcmpl
++/*   0*/    //   641: ifne -> 649
++/*   0*/    //   644: iload #7
++/*   0*/    //   646: ifeq -> 652
++/*   0*/    //   649: aload #8
++/*   0*/    //   651: areturn
++/*   0*/    //   652: goto -> 657
++/*   0*/    //   655: astore #8
++/*   0*/    //   657: aload_0
++/*   0*/    //   658: invokestatic createDouble : (Ljava/lang/String;)Ljava/lang/Double;
++/*   0*/    //   661: astore #8
++/*   0*/    //   663: aload #8
++/*   0*/    //   665: invokevirtual isInfinite : ()Z
++/*   0*/    //   668: ifne -> 689
++/*   0*/    //   671: aload #8
++/*   0*/    //   673: invokevirtual doubleValue : ()D
++/*   0*/    //   676: dconst_0
++/*   0*/    //   677: dcmpl
++/*   0*/    //   678: ifne -> 686
++/*   0*/    //   681: iload #7
++/*   0*/    //   683: ifeq -> 689
++/*   0*/    //   686: aload #8
++/*   0*/    //   688: areturn
++/*   0*/    //   689: goto -> 694
++/*   0*/    //   692: astore #8
++/*   0*/    //   694: aload_0
++/*   0*/    //   695: invokestatic createBigDecimal : (Ljava/lang/String;)Ljava/math/BigDecimal;
++/*   0*/    //   698: areturn
++/*   0*/    // Line number table:
++/*   0*/    //   Java source line number -> byte code offset
++/*   0*/    //   #453	-> 0
++/*   0*/    //   #454	-> 4
++/*   0*/    //   #456	-> 6
++/*   0*/    //   #457	-> 13
++/*   0*/    //   #459	-> 23
++/*   0*/    //   #464	-> 32
++/*   0*/    //   #466	-> 34
++/*   0*/    //   #467	-> 52
++/*   0*/    //   #469	-> 57
++/*   0*/    //   #473	-> 68
++/*   0*/    //   #474	-> 76
++/*   0*/    //   #476	-> 93
++/*   0*/    //   #478	-> 99
++/*   0*/    //   #479	-> 105
++/*   0*/    //   #480	-> 112
++/*   0*/    //   #482	-> 139
++/*   0*/    //   #484	-> 153
++/*   0*/    //   #486	-> 162
++/*   0*/    //   #488	-> 173
++/*   0*/    //   #489	-> 180
++/*   0*/    //   #491	-> 191
++/*   0*/    //   #493	-> 193
++/*   0*/    //   #495	-> 195
++/*   0*/    //   #496	-> 208
++/*   0*/    //   #497	-> 225
++/*   0*/    //   #499	-> 244
++/*   0*/    //   #502	-> 247
++/*   0*/    //   #503	-> 260
++/*   0*/    //   #504	-> 282
++/*   0*/    //   #507	-> 340
++/*   0*/    //   #511	-> 380
++/*   0*/    //   #512	-> 386
++/*   0*/    //   #515	-> 388
++/*   0*/    //   #518	-> 394
++/*   0*/    //   #522	-> 421
++/*   0*/    //   #523	-> 428
++/*   0*/    //   #526	-> 451
++/*   0*/    //   #531	-> 454
++/*   0*/    //   #529	-> 457
++/*   0*/    //   #536	-> 459
++/*   0*/    //   #537	-> 466
++/*   0*/    //   #538	-> 490
++/*   0*/    //   #542	-> 493
++/*   0*/    //   #540	-> 496
++/*   0*/    //   #544	-> 498
++/*   0*/    //   #545	-> 504
++/*   0*/    //   #550	-> 506
++/*   0*/    //   #556	-> 533
++/*   0*/    //   #557	-> 550
++/*   0*/    //   #559	-> 567
++/*   0*/    //   #561	-> 570
++/*   0*/    //   #564	-> 579
++/*   0*/    //   #565	-> 584
++/*   0*/    //   #569	-> 586
++/*   0*/    //   #570	-> 591
++/*   0*/    //   #573	-> 593
++/*   0*/    //   #577	-> 598
++/*   0*/    //   #579	-> 620
++/*   0*/    //   #580	-> 626
++/*   0*/    //   #581	-> 649
++/*   0*/    //   #585	-> 652
++/*   0*/    //   #583	-> 655
++/*   0*/    //   #587	-> 657
++/*   0*/    //   #588	-> 663
++/*   0*/    //   #589	-> 686
++/*   0*/    //   #593	-> 689
++/*   0*/    //   #591	-> 692
++/*   0*/    //   #595	-> 694
++/*   0*/    // Local variable table:
++/*   0*/    //   start	length	slot	name	descriptor
++/*   0*/    //   150	3	3	dec	Ljava/lang/String;
++/*   0*/    //   170	3	2	mant	Ljava/lang/String;
++/*   0*/    //   162	11	3	dec	Ljava/lang/String;
++/*   0*/    //   188	3	2	mant	Ljava/lang/String;
++/*   0*/    //   241	3	4	exp	Ljava/lang/String;
++/*   0*/    //   428	26	9	f	Ljava/lang/Float;
++/*   0*/    //   466	27	9	d	Ljava/lang/Double;
++/*   0*/    //   260	273	7	numeric	Ljava/lang/String;
++/*   0*/    //   282	251	8	allZeros	Z
++/*   0*/    //   247	286	4	exp	Ljava/lang/String;
++/*   0*/    //   564	3	4	exp	Ljava/lang/String;
++/*   0*/    //   626	26	8	f	Ljava/lang/Float;
++/*   0*/    //   663	26	8	d	Ljava/lang/Double;
++/*   0*/    //   620	79	7	allZeros	Z
++/*   0*/    //   0	699	0	str	Ljava/lang/String;
++/*   0*/    //   68	631	1	lastChar	C
++/*   0*/    //   193	506	2	mant	Ljava/lang/String;
++/*   0*/    //   195	504	3	dec	Ljava/lang/String;
++/*   0*/    //   570	129	4	exp	Ljava/lang/String;
++/*   0*/    //   76	623	5	decPos	I
++/*   0*/    //   93	606	6	expPos	I
++/*   0*/    // Exception table:
++/*   0*/    //   from	to	target	type
++/*   0*/    //   380	385	386	java/lang/NumberFormatException
++/*   0*/    //   421	453	457	java/lang/NumberFormatException
++/*   0*/    //   459	492	496	java/lang/NumberFormatException
++/*   0*/    //   498	503	504	java/lang/NumberFormatException
++/*   0*/    //   579	583	584	java/lang/NumberFormatException
++/*   0*/    //   586	590	591	java/lang/NumberFormatException
++/*   0*/    //   620	651	655	java/lang/NumberFormatException
++/*   0*/    //   657	688	692	java/lang/NumberFormatException
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private static boolean isAllZeros(String str) {

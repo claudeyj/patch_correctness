@@ -1,0 +1,12 @@
+--- jd-result-2.0/Compress/16/mutant-4/a-ArchiveStreamFactory.java	2021-08-09 03:57:59.965518900 -0700
++++ jd-result-2.0/Compress/16/mutant-4/b-ArchiveStreamFactory.java	2021-08-09 03:58:01.409518941 -0700
+@@ -122,7 +122,8 @@
+ /*   0*/         }
+ /* 240*/      if (signatureLength >= 512) {
+ /*   0*/          try {
+-/* 242*/            TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(tarheader));
++/* 242*/            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(tarheader);
++/* 242*/            TarArchiveInputStream tais = new TarArchiveInputStream(byteArrayInputStream, AR);
+ /* 244*/            tais.getNextEntry();
+ /* 245*/            return new TarArchiveInputStream(in);
+ /* 246*/          } catch (Exception exception) {} 

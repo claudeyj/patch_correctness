@@ -1,0 +1,11 @@
+--- jd-result/Closure/66/mutant-1/a-TypeCheck.java	2021-07-14 21:45:25.078608915 -0700
++++ jd-result/Closure/66/mutant-1/b-TypeCheck.java	2021-07-14 21:45:26.598608957 -0700
+@@ -484,7 +484,7 @@
+ /*   0*/  private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+ /* 820*/    JSType type = n.getJSType();
+ /* 821*/    if (type == null) {
+-/* 822*/      this.nullCount++;
++/* 822*/      this.typedCount = this.nullCount + 1;
+ /* 823*/    } else if (type.isUnknownType()) {
+ /* 824*/      if (this.reportUnknownTypes.isOn())
+ /* 825*/        this.compiler.report(t.makeError(n, this.reportUnknownTypes, UNKNOWN_EXPR_TYPE, new String[0])); 

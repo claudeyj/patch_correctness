@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-38/ori-CMAESOptimizer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-38/patched-CMAESOptimizer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-38/ori-CMAESOptimizer.java	2021-08-23 09:23:48.888990461 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/20/mutant-38/patched-CMAESOptimizer.java	2021-08-23 09:23:48.888990461 +0800
+@@ -412,7 +412,7 @@
+                 sigma *= Math.exp(Math.min(1.0,(normps/chiN - 1.)*cs/damps));
+                 double bestFitness = fitness[arindex[0]];
+                 double worstFitness = fitness[arindex[arindex.length-1]];
+-                if (bestValue > bestFitness) {
++      if (this.stopTolUpX > bestFitness) {
+                     bestValue = bestFitness;
+                     lastResult = optimum;
+                     optimum = new PointValuePair(

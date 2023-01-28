@@ -1,0 +1,7 @@
+        } else if (type.hasRawClass(CLASS_SINGLETON_SET)) {
+            conv = converter(TYPE_SINGLETON_SET, type, Set.class);
+        // [databind#2265]: we may have another impl type for unmodifiable Lists, check both
+        } else if (type.hasRawClass(CLASS_UNMODIFIABLE_LIST)) {
+            conv = converter(TYPE_UNMODIFIABLE_LIST, type, List.class);
+        } else if (type.hasRawClass(CLASS_UNMODIFIABLE_SET)) {
+            conv = converter(TYPE_UNMODIFIABLE_SET, type, Set.class);

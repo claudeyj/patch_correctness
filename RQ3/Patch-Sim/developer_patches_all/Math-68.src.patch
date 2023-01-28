@@ -1,0 +1,63 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/68/mutant-0/buggy-LevenbergMarquardtOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/68/mutant-0/patched-LevenbergMarquardtOptimizer.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/68/mutant-0/buggy-LevenbergMarquardtOptimizer.java	2021-08-22 00:18:38.686190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/68/mutant-0/patched-LevenbergMarquardtOptimizer.java	2021-08-22 00:18:38.686190186 -0700
+@@ -163,6 +163,7 @@
+         setMaxIterations(1000);
+ 
+         // default values for the tuning parameters
++        setConvergenceChecker(null);
+         setInitialStepBoundFactor(100.0);
+         setCostRelativeTolerance(1.0e-10);
+         setParRelativeTolerance(1.0e-10);
+@@ -244,11 +245,13 @@
+         // outer loop
+         lmPar = 0;
+         boolean firstIteration = true;
++        VectorialPointValuePair current = new VectorialPointValuePair(point, objective);
+         while (true) {
+ 
+             incrementIterationsCounter();
+ 
+             // compute the Q.R. decomposition of the jacobian matrix
++            VectorialPointValuePair previous = current;
+             updateJacobian();
+             qrDecomposition();
+ 
+@@ -300,7 +303,7 @@
+             }
+             if (maxCosine <= orthoTolerance) {
+                 // convergence has been reached
+-                return new VectorialPointValuePair(point, objective);
++                return current;
+             }
+ 
+             // rescale if necessary
+@@ -342,6 +345,7 @@
+ 
+                 // evaluate the function at x + p and calculate its norm
+                 updateResidualsAndCost();
++                current = new VectorialPointValuePair(point, objective);
+ 
+                 // compute the scaled actual reduction
+                 double actRed = -1.0;
+@@ -410,13 +414,19 @@
+                 }
+ 
+                 // tests for convergence.
++                if (checker != null) {
+                     // we use the vectorial convergence checker
++                    if (checker.converged(getIterations(), previous, current)) {
++                        return current;                        
++                    }
++                } else {
+                     // we use the Levenberg-Marquardt specific convergence parameters
+                     if (((Math.abs(actRed) <= costRelativeTolerance) &&
+                          (preRed <= costRelativeTolerance) &&
+                          (ratio <= 2.0)) ||
+                         (delta <= parRelativeTolerance * xNorm)) {
+-                        return new VectorialPointValuePair(point, objective);
++                        return current;
++                    }
+                     }
+ 
+                 // tests for termination and stringent tolerances

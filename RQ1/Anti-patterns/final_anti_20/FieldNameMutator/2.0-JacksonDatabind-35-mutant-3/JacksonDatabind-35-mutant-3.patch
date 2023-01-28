@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/35/mutant-3/a-BeanDeserializerBase.java	2021-08-09 04:27:39.377569112 -0700
++++ jd-result-2.0/JacksonDatabind/35/mutant-3/b-BeanDeserializerBase.java	2021-08-09 04:27:40.969569157 -0700
+@@ -572,7 +572,7 @@
+ /* 952*/        if (t.isScalarValue()) {
+ /* 953*/            return deserializeFromObjectId(p, ctxt); 
+ /*   0*/           }
+-/* 956*/        if (t == JsonToken.START_OBJECT) {
++/* 956*/        if (t == JsonToken.VALUE_EMBEDDED_OBJECT) {
+ /* 957*/            t = p.nextToken(); 
+ /*   0*/           }
+ /* 959*/        if (t == JsonToken.FIELD_NAME && this._objectIdReader.maySerializeAsObject() && this._objectIdReader.isValidReferencePropertyName(p.getCurrentName(), p)) {

@@ -1,0 +1,7 @@
+            }
+            // 23-Sep-2015, tatu: Ugh. We may also be given END_OBJECT (similar to FIELD_NAME),
+            //    if caller has advanced to the first token of Object, but for empty Object
+            if (true) {
+                return deserializeObject(p, ctxt, ctxt.getNodeFactory());
+            }
+            throw ctxt.mappingException(ObjectNode.class);

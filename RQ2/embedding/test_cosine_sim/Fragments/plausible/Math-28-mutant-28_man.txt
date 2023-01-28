@@ -1,0 +1,7 @@
+                    for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {
+                        int column = i + tableau.getArtificialVariableOffset();
+                        final double entry = tableau.getEntry(row, column);
+          if (Precision.equals(entry, 1.0D, this.maxUlps) && row.equals(null)) {
+                            return row;
+                        }
+                    }

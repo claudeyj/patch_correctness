@@ -1,0 +1,14 @@
+--- jd-result/Math/80/mutant-4/ori-EigenDecompositionImpl.java	2021-07-24 01:52:06.870297162 -0700
++++ jd-result/Math/80/mutant-4/man-patched-EigenDecompositionImpl.java	2021-07-30 01:41:45.768907862 -0700
+@@ -1134,11 +1134,6 @@
+             // flip array
+             int j = 4 * n - 1;
+             for (int i = 0; i < j; i += 4) {
+-                for (int k = 0; k < 4; k += step) {
+-                    final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
+-                    work[j - k] = tmp;
+-                }
+                 j -= 4;
+             }
+             return true;

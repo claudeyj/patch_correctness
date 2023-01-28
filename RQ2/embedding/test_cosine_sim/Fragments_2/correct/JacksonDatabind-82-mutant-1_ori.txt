@@ -1,0 +1,7 @@
+            boolean ignoreAny = ignorals.getIgnoreUnknown();
+            builder.setIgnoreUnknownProperties(ignoreAny);
+            // Or explicit/implicit definitions?
+            ignored = ignorals.getIgnored();
+            for (String propName : ignored) {
+                builder.addIgnorable(propName);
+            }

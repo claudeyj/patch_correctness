@@ -1,0 +1,292 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 20:15:25 PDT 2021
+Number of Plausible Fixes: 32
+Total Number of Patches: 2982
+================================================
+1.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.joda.time.tz.ZoneInfoCompiler::verbose()Z is replaced with the used of default value false
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1460
+	Rank: 1
+	Total Rank: 79
+	Dump: mutant-38.class
+------------------------------------------------
+2.
+	Mutator: ReturningMethodCallGuardMutator
+	Description: the call to booleanValue()Z is guarded returning default value false
+	File Name: org/joda/time/tz/ZoneInfoCompiler.java
+	Line Number: 78
+	Rank: 2
+	Total Rank: 87
+	Dump: mutant-40.class
+------------------------------------------------
+3.
+	Mutator: NonVoidMethodCallGuardMutator
+	Description: the call to java.lang.Boolean::booleanValue()Z is guarded using default value false
+	File Name: org/joda/time/tz/ZoneInfoCompiler.java
+	Line Number: 78
+	Rank: 3
+	Total Rank: 90
+	Dump: mutant-41.class
+------------------------------------------------
+4.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.Boolean::booleanValue()Z is replaced with the used of default value false
+	File Name: org/joda/time/tz/ZoneInfoCompiler.java
+	Line Number: 78
+	Rank: 4
+	Total Rank: 93
+	Dump: mutant-39.class
+------------------------------------------------
+5.
+	Mutator: ReturnValsMutator
+	Description: mutated return of Object value for org/joda/time/tz/DateTimeZoneBuilder$RuleSet::buildTailZone to ( if (x != null) null else throw new RuntimeException )
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1154
+	Rank: 5
+	Total Rank: 116
+	Dump: mutant-9.class
+------------------------------------------------
+6.
+	Mutator: NullReturnValsMutator
+	Description: replaced return value with null for org/joda/time/tz/DateTimeZoneBuilder$RuleSet::buildTailZone
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1154
+	Rank: 6
+	Total Rank: 120
+	Dump: mutant-2.class
+------------------------------------------------
+7.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.lang.String::equals(Ljava/lang/Object;)Z is replaced with the used of default value false
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1458
+	Rank: 8
+	Total Rank: 124
+	Dump: mutant-24.class
+------------------------------------------------
+8.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.joda.time.tz.DateTimeZoneBuilder$Recurrence::getNameKey()Ljava/lang/String; is replaced with the used of default value null
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1458
+	Rank: 8
+	Total Rank: 124
+	Dump: mutant-25.class
+------------------------------------------------
+9.
+	Mutator: ConstructorCallMutator
+	Description: removed call to org/joda/time/tz/DateTimeZoneBuilder$DSTZone::<init>
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1154
+	Rank: 9
+	Total Rank: 125
+	Dump: mutant-5.class
+------------------------------------------------
+10.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1458
+	Rank: 10
+	Total Rank: 126
+	Dump: mutant-22.class
+------------------------------------------------
+11.
+	Mutator: MethodNameMutator
+	Description: replaced call to getToYear with a call to getFromYear
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1144
+	Rank: 12
+	Total Rank: 471
+	Dump: mutant-14.class
+------------------------------------------------
+12.
+	Mutator: MethodNameMutator
+	Description: replaced call to getToYear with a call to getSaveMillis
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1144
+	Rank: 12
+	Total Rank: 471
+	Dump: mutant-13.class
+------------------------------------------------
+13.
+	Mutator: FieldNameMutator
+	Description: replaced access to iToYear with an access to iFromYear
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 827
+	Rank: 13
+	Total Rank: 541
+	Dump: mutant-29.class
+------------------------------------------------
+14.
+	Mutator: MathMutator
+	Description: Replaced integer subtraction with addition
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 371
+	Rank: 14
+	Total Rank: 557
+	Dump: mutant-36.class
+------------------------------------------------
+15.
+	Mutator: PrimitiveReturnsMutator
+	Description: replaced int return with 0 for org/joda/time/tz/DateTimeZoneBuilder$Rule::getToYear
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 827
+	Rank: 15
+	Total Rank: 560
+	Dump: mutant-26.class
+------------------------------------------------
+16.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.joda.time.tz.DateTimeZoneBuilder$Rule.iToYear is replaced by the call to org.joda.time.tz.DateTimeZoneBuilder$Rule::getFromYear()I
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 827
+	Rank: 17
+	Total Rank: 582
+	Dump: mutant-32.class
+------------------------------------------------
+17.
+	Mutator: FieldAccessToMethodCallMutator
+	Description: the access to field org.joda.time.tz.DateTimeZoneBuilder$Rule.iToYear is replaced by the call to org.joda.time.tz.DateTimeZoneBuilder$Rule::getSaveMillis()I
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 827
+	Rank: 17
+	Total Rank: 582
+	Dump: mutant-31.class
+------------------------------------------------
+18.
+	Mutator: ReturnValsMutator
+	Description: replaced return of integer sized value with (x == 0 ? 1 : 0)
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 827
+	Rank: 18
+	Total Rank: 593
+	Dump: mutant-34.class
+------------------------------------------------
+19.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 371
+	Rank: 20
+	Total Rank: 630
+	Dump: mutant-37.class
+------------------------------------------------
+20.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1144
+	Rank: 20
+	Total Rank: 630
+	Dump: mutant-1.class
+------------------------------------------------
+21.
+	Mutator: InlineConstantMutator
+	Description: Substituted 2 with 3
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1141
+	Rank: 23
+	Total Rank: 664
+	Dump: mutant-3.class
+------------------------------------------------
+22.
+	Mutator: InlineConstantMutator
+	Description: Substituted 2147483647 with -2147483648
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1144
+	Rank: 23
+	Total Rank: 664
+	Dump: mutant-12.class
+------------------------------------------------
+23.
+	Mutator: InlineConstantMutator
+	Description: Substituted 1 with 0
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 371
+	Rank: 23
+	Total Rank: 664
+	Dump: mutant-35.class
+------------------------------------------------
+24.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.joda.time.tz.DateTimeZoneBuilder$RuleSet::buildTailZone(Ljava/lang/String;)Lorg/joda/time/tz/DateTimeZoneBuilder$DSTZone; is replaced with the used of default value null
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 372
+	Rank: 28
+	Total Rank: 730
+	Dump: mutant-33.class
+------------------------------------------------
+25.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.joda.time.tz.DateTimeZoneBuilder$Rule::getToYear()I is replaced with the used of default value 0
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1144
+	Rank: 28
+	Total Rank: 730
+	Dump: mutant-20.class
+------------------------------------------------
+26.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.ArrayList::size()I is replaced with the used of field YEAR_LIMIT
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1141
+	Rank: 28
+	Total Rank: 730
+	Dump: mutant-16.class
+------------------------------------------------
+27.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.joda.time.tz.DateTimeZoneBuilder$Rule::getToYear()I is replaced with the used of field YEAR_LIMIT
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1144
+	Rank: 28
+	Total Rank: 730
+	Dump: mutant-19.class
+------------------------------------------------
+28.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to java.util.ArrayList::size()I is replaced with the used of default value 0
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1141
+	Rank: 28
+	Total Rank: 730
+	Dump: mutant-15.class
+------------------------------------------------
+29.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1141
+	Rank: 32
+	Total Rank: 763
+	Dump: mutant-4.class
+------------------------------------------------
+30.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1144
+	Rank: 32
+	Total Rank: 763
+	Dump: mutant-21.class
+------------------------------------------------
+31.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 371
+	Rank: 32
+	Total Rank: 763
+	Dump: mutant-27.class
+------------------------------------------------
+32.
+	Mutator: RemoveConditionalMutator_EQUAL_ELSE
+	Description: removed conditional - replaced equality check with false
+	File Name: org/joda/time/tz/DateTimeZoneBuilder.java
+	Line Number: 1457
+	Rank: 32
+	Total Rank: 763
+	Dump: mutant-23.class
+------------------------------------------------

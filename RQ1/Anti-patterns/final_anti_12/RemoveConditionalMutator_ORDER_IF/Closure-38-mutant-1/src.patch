@@ -1,0 +1,11 @@
+--- jd-result/Closure/38/mutant-1/ori-CodeConsumer.java	2021-07-15 18:51:53.788753166 -0700
++++ jd-result/Closure/38/mutant-1/fixed-patched-CodeConsumer.java	2021-07-22 22:02:20.662327034 -0700
+@@ -242,7 +242,7 @@
+     // x--4 (which is a syntax error).
+     char prev = getLastChar();
+     boolean negativeZero = isNegativeZero(x);
+-    if (x < 0 && prev == '-') {
++    if (prev == '-') {
+       add(" ");
+     }
+ 

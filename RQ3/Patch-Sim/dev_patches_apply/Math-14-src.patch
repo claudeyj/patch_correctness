@@ -1,0 +1,35 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/14/mutant-0/buggy-AbstractLeastSquaresOptimizer.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/14/mutant-0/patched-AbstractLeastSquaresOptimizer.java
+--- Math14b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/AbstractLeastSquaresOptimizer.java
++++ Math14b_Math-14-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/AbstractLeastSquaresOptimizer.java
+@@ -264,7 +264,16 @@
+      * @return the square-root of the weight matrix.
+      */
+     private RealMatrix squareRoot(RealMatrix m) {
++        if (m instanceof DiagonalMatrix) {
++            final int dim = m.getRowDimension();
++            final RealMatrix sqrtM = new DiagonalMatrix(dim);
++            for (int i = 0; i < dim; i++) {
++                sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));
++            }
++            return sqrtM;
++        } else {
+             final EigenDecomposition dec = new EigenDecomposition(m);
+             return dec.getSquareRoot();
+     }
++    }
+ }
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/14/mutant-0/buggy-Weight.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/14/mutant-0/patched-Weight.java
+--- Math14b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/AbstractLeastSquaresOptimizer.java
++++ Math14b_Math-14-src.patchb/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/AbstractLeastSquaresOptimizer.java
+@@ -40,10 +40,7 @@
+      */
+     public Weight(double[] weight) {
+         final int dim = weight.length;
+-        weightMatrix = org.apache.commons.math3.linear.MatrixUtils.createRealMatrix(dim, dim);
+-        for (int i = 0; i < dim; i++) {
+-            weightMatrix.setEntry(i, i, weight[i]);
+-        }
++        weightMatrix = new DiagonalMatrix(weight);
+     }
+ 
+     /**

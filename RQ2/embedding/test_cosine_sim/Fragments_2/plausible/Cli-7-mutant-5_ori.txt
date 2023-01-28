@@ -1,0 +1,7 @@
+            hashCode = (hashCode * 37) + getDescription().hashCode();
+        }
+
+        hashCode = (hashCode * 37) + getPrefixes().hashCode();
+        hashCode = (hashCode * 37) + getTriggers().hashCode();
+
+        return hashCode;

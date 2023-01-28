@@ -1,0 +1,11 @@
+--- jd-result/Closure/129/mutant-6/ori-Node.java	2021-07-15 18:51:53.284753152 -0700
++++ jd-result/Closure/129/mutant-6/fixed-patched-Node.java	2021-07-22 21:20:08.690196447 -0700
+@@ -1542,7 +1542,7 @@
+         return false;
+       }
+     } else if (type == Token.CALL) {
+-      if (this.getBooleanProp(FREE_CALL) != node.getBooleanProp(FREE_CALL)) {
++      if (this.getBooleanProp(FREE_CALL) != this.getBooleanProp(FREE_CALL)) {
+         return false;
+       }
+     }

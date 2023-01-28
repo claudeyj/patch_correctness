@@ -1,0 +1,7 @@
+      FunctionType fnType = type.toMaybeFunctionType();
+      if (fnType != null) {
+        visitParameterList(t, n, fnType);
+        ensureTyped(t, n, (JSType)null);
+      } else {
+        ensureTyped(t, n);
+      }

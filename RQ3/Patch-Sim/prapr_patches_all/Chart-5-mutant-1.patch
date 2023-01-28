@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/5/mutant-1/ori-XYSeries.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/5/mutant-1/man-patched-XYSeries.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/5/mutant-1/ori-XYSeries.java	2021-08-23 09:23:48.504985137 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/5/mutant-1/man-patched-XYSeries.java	2021-08-30 00:20:44.186965003 +0800
+@@ -560,7 +560,7 @@
+             // Collections.binarySearch() and tells us where to insert the
+             // new item...otherwise it will be just -1 and we should just
+             // append the value to the list...
+-            if (this.autoSort) {
++            if (false) {
+                 this.data.add(-index - 1, new XYDataItem(x, y));
+             }
+             else {

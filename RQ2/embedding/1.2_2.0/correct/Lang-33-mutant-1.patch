@@ -1,0 +1,11 @@
+--- jd-result/Lang/33/mutant-1/ori-ClassUtils.java	2021-07-15 18:51:52.428753128 -0700
++++ jd-result/Lang/33/mutant-1/man-patched-ClassUtils.java	2021-07-23 21:10:18.625820044 -0700
+@@ -907,7 +907,7 @@
+         }
+         Class<?>[] classes = new Class[array.length];
+         for (int i = 0; i < array.length; i++) {
+-            classes[i] = array[i].getClass();
++            classes[i] = (array[i] == null) ? null : array[i].getClass();
+         }
+         return classes;
+     }

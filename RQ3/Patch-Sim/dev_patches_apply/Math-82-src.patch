@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/82/mutant-0/buggy-SimplexSolver.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/82/mutant-0/patched-SimplexSolver.java
+--- Math82b/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java
++++ Math82b_Math-82-src.patchb/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java
+@@ -79,7 +79,7 @@
+         for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++) {
+             final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
+             final double entry = tableau.getEntry(i, col);
+-            if (MathUtils.compareTo(entry, 0, epsilon) >= 0) {
++            if (MathUtils.compareTo(entry, 0, epsilon) > 0) {
+                 final double ratio = rhs / entry;
+                 if (ratio < minRatio) {
+                     minRatio = ratio;

@@ -1,0 +1,33 @@
+--- jd-result/Chart/25/mutant-75/a-CategoryPlot.java	2021-07-14 20:13:38.822453539 -0700
++++ jd-result/Chart/25/mutant-75/b-CategoryPlot.java	2021-07-14 20:13:40.406453584 -0700
+@@ -1301,29 +1301,7 @@
+ /*2860*/      int columnCount = currentDataset.getColumnCount();
+ /*2861*/      int rowCount = currentDataset.getRowCount();
+ /*2862*/      int passCount = renderer.getPassCount();
+-/*2863*/      for (int pass = 0; pass < passCount; pass++) {
+-/*2864*/        if (this.columnRenderingOrder == SortOrder.ASCENDING) {
+-/*2865*/          for (int column = 0; column < columnCount; column++) {
+-/*2866*/            if (this.rowRenderingOrder == SortOrder.ASCENDING) {
+-/*2867*/              for (int row = 0; row < rowCount; row++)
+-/*2868*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+-/*   0*/            } else {
+-/*2874*/              for (int row = rowCount - 1; row >= 0; row--)
+-/*2875*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+-/*   0*/            } 
+-/*   0*/          } 
+-/*   0*/        } else {
+-/*2883*/          for (int column = columnCount - 1; column >= 0; column--) {
+-/*2884*/            if (this.rowRenderingOrder == SortOrder.ASCENDING) {
+-/*2885*/              for (int row = 0; row < rowCount; row++)
+-/*2886*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+-/*   0*/            } else {
+-/*2892*/              for (int row = rowCount - 1; row >= 0; row--)
+-/*2893*/                renderer.drawItem(g2, state, dataArea, this, domainAxis, rangeAxis, currentDataset, row, column, pass); 
+-/*   0*/            } 
+-/*   0*/          } 
+-/*   0*/        } 
+-/*   0*/      } 
++/*2863*/      int pass = 0;
+ /*   0*/    } 
+ /*2902*/    return foundData;
+ /*   0*/  }

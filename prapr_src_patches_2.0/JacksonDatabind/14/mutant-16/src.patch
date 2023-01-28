@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-16/ori-ObjectReader.java	2021-08-08 21:02:02.280814643 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-16/man-patched-ObjectReader.java	2021-08-10 05:49:35.000145859 -0700
+@@ -1548,9 +1548,6 @@
+             JavaType valueType)
+         throws JsonMappingException
+     {
+-        if (_rootDeserializer != null) {
+-            return _rootDeserializer;
+-        }
+ 
+         // Sanity check: must have actual type...
+         if (valueType == null) {

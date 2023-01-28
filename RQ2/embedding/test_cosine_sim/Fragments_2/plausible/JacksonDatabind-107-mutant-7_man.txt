@@ -1,0 +1,7 @@
+        switch (_includeAs) {
+        case WRAPPER_ARRAY:
+            return new AsArrayTypeDeserializer(baseType, idRes,
+                    _typeProperty, _typeIdVisible, baseType);
+        case PROPERTY:
+        case EXISTING_PROPERTY: // as per [#528] same class as PROPERTY
+            return new AsPropertyTypeDeserializer(baseType, idRes,

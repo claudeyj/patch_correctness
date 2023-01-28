@@ -1,0 +1,12 @@
+--- jd-result-2.0/Cli/11/mutant-3/ori-HelpFormatter.java	2021-08-08 21:02:01.240814614 -0700
++++ jd-result-2.0/Cli/11/mutant-3/patched-HelpFormatter.java	2021-08-09 06:25:54.965769335 -0700
+@@ -631,7 +631,8 @@
+         // if the Option has a value
+         if (option.hasArg() && (option.getArgName() != null))
+         {
+-            buff.append(" <").append(option.getArgName()).append(">");
++      String str = " <";
++      new StringBuffer(str).append(option.getArgName()).append(">");
+         }
+ 
+         // if the Option is not a required option

@@ -1,0 +1,20 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/95/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/95/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/95/buggy1.java	2021-08-27 19:18:32.786863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/95/tool-patch1.java	2021-08-27 19:18:32.786863921 -0700
+@@ -97,6 +97,7 @@
+      */
+     public double inverseCumulativeProbability(final double p) 
+         throws MathException {
++        setNumeratorDegreesOfFreedom(numeratorDegreesOfFreedom);
+         if (p == 0) {
+             return 0d;
+         }
+@@ -145,7 +146,7 @@
+         double d = getDenominatorDegreesOfFreedom();
+             // use mean
+             ret = d / (d - 2.0);
+-        return ret;
++        return 0;
+     }
+     
+     /**

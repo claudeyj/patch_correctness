@@ -1,0 +1,7 @@
+        }
+        newManager.addEventHandler(new EndTimeChecker(endTime),
+                                   Double.POSITIVE_INFINITY,
+                                   Math.ulp(Math.max(Math.abs(startTime), Math.abs(endTime))),
+                                   100);
+        return newManager;
+    }

@@ -1,0 +1,67 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 05:06:47 PDT 2021
+Number of Plausible Fixes: 7
+Total Number of Patches: 35745
+================================================
+1.
+	Mutator: FieldNameMutator
+	Description: replaced access to OTHER with an access to SET
+	File Name: com/google/javascript/jscomp/GlobalNamespace.java
+	Line Number: 358
+	Rank: 2
+	Total Rank: 3970
+	Dump: mutant-5.class
+------------------------------------------------
+2.
+	Mutator: FieldNameMutator
+	Description: replaced access to OTHER with an access to GET
+	File Name: com/google/javascript/jscomp/GlobalNamespace.java
+	Line Number: 358
+	Rank: 2
+	Total Rank: 3970
+	Dump: mutant-6.class
+------------------------------------------------
+3.
+	Mutator: LocalNameMutator
+	Description: local n is replaced by local n2 to be used
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1440
+	Rank: 3
+	Total Rank: 13132
+	Dump: mutant-4.class
+------------------------------------------------
+4.
+	Mutator: LocalToFieldAccessMutator
+	Description: access to local n is replaced by access to field last
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1440
+	Rank: 4
+	Total Rank: 13141
+	Dump: mutant-1.class
+------------------------------------------------
+5.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field next is replaced by access to local n
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1440
+	Rank: 5
+	Total Rank: 13148
+	Dump: mutant-3.class
+------------------------------------------------
+6.
+	Mutator: NegateConditionalsMutator
+	Description: negated conditional
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1445
+	Rank: 6
+	Total Rank: 13182
+	Dump: mutant-7.class
+------------------------------------------------
+7.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: com/google/javascript/rhino/Node.java
+	Line Number: 1445
+	Rank: 7
+	Total Rank: 13184
+	Dump: mutant-2.class
+------------------------------------------------

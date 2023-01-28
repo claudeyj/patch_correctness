@@ -1,0 +1,7 @@
+        Type[] originalLowerBound = original.getLowerBounds();
+        Type[] originalUpperBound = original.getUpperBounds();
+
+        if (originalLowerBound.length == 1) {
+          Type lowerBound = resolve(context, contextRawType, originalLowerBound[0], visitedTypeVariables);
+          if (lowerBound != originalLowerBound[0]) {
+            return supertypeOf(lowerBound);

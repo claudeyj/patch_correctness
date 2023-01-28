@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Tue Jul 13 01:59:15 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 8169
+================================================
+1.
+	Mutator: FieldToLocalAccessMutator
+	Description: access to field stepSize is replaced by access to local t
+	File Name: org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java
+	Line Number: 239
+	Rank: 1
+	Total Rank: 936
+	Dump: mutant-1.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math.ode.MultistepIntegrator::access$000(Lorg/apache/commons/math/ode/MultistepIntegrator;)I is replaced with the used of field n
+	File Name: org/apache/commons/math/ode/MultistepIntegrator.java
+	Line Number: 327
+	Rank: 2
+	Total Rank: 1723
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: MethodNameMutator
+	Description: replaced call to pow with a call to nextAfter
+	File Name: org/apache/commons/math/ode/MultistepIntegrator.java
+	Line Number: 130
+	Rank: 3
+	Total Rank: 1914
+	Dump: mutant-2.class
+------------------------------------------------

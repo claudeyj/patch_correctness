@@ -1,0 +1,7 @@
+             * 2. Implicit, possible setters ("x(...)")
+             */
+            int priNext = _setterPriority(next.value);
+      int priCurr = _getterPriority((AnnotatedMethod)curr.value);
+
+            if (priNext != priCurr) {
+                if (priNext < priCurr) {

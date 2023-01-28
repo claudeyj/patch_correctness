@@ -1,0 +1,11 @@
+--- jd-result/Math/2/mutant-7/ori-AbstractIntegerDistribution.java	2021-07-24 01:52:02.146297029 -0700
++++ jd-result/Math/2/mutant-7/fixed-patched-AbstractIntegerDistribution.java	2021-07-24 01:52:02.146297029 -0700
+@@ -134,7 +134,7 @@
+             }
+             k = 1.0 / k;
+             tmp = mu + k * sigma;
+-            if (tmp < upper) {
++      if (tmp >= upper) {
+                 upper = ((int) Math.ceil(tmp)) - 1;
+             }
+         }

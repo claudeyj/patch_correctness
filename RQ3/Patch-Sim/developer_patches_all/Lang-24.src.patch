@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/24/mutant-0/buggy-NumberUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/24/mutant-0/patched-NumberUtils.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/24/mutant-0/buggy-NumberUtils.java	2021-08-22 00:18:38.638190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/24/mutant-0/patched-NumberUtils.java	2021-08-22 00:18:38.638190185 -0700
+@@ -1410,7 +1410,7 @@
+             if (chars[i] == 'l'
+                 || chars[i] == 'L') {
+                 // not allowing L with an exponent or decimal point
+-                return foundDigit && !hasExp;
++                return foundDigit && !hasExp && !hasDecPoint;
+             }
+             // last character is illegal
+             return false;

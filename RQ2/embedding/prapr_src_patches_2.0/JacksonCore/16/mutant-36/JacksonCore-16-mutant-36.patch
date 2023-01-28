@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/16/mutant-36/a-CharsToNameCanonicalizer.java	2021-08-09 04:12:32.133543511 -0700
++++ jd-result-2.0/JacksonCore/16/mutant-36/b-CharsToNameCanonicalizer.java	2021-08-09 04:12:33.497543549 -0700
+@@ -75,7 +75,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private CharsToNameCanonicalizer(CharsToNameCanonicalizer parent, int flags, String[] symbols, Bucket[] buckets, int size, int hashSeed, int longestColl) {
+-/* 266*/    this._parent = parent;
++/* 266*/    parent._parent = parent;
+ /* 268*/    this._flags = flags;
+ /* 269*/    this._canonicalize = JsonFactory.Feature.CANONICALIZE_FIELD_NAMES.enabledIn(flags);
+ /* 271*/    this._symbols = symbols;

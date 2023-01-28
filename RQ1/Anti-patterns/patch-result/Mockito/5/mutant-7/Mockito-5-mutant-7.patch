@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-7/a-RunnerProvider.java	2021-07-14 21:31:10.094584789 -0700
++++ jd-result/Mockito/5/mutant-7/b-RunnerProvider.java	2021-07-14 21:31:11.402584826 -0700
+@@ -30,7 +30,7 @@
+ /*   0*/    } 
+ /*   0*/    try {
+ /*  39*/      return (RunnerImpl)constructor.newInstance(new Object[] { constructorParam });
+-/*  40*/    } catch (InvocationTargetException e) {
++/*  40*/    } catch (ReflectiveOperationException e) {
+ /*  41*/      throw e;
+ /*  42*/    } catch (Exception e) {
+ /*  43*/      throw new RuntimeException(e);

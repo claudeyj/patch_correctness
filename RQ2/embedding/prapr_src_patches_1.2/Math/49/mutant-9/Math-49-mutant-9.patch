@@ -1,0 +1,17 @@
+--- jd-result/Math/49/mutant-9/a-OpenMapRealVector.java	2021-07-14 09:11:35.809332634 -0700
++++ jd-result/Math/49/mutant-9/b-OpenMapRealVector.java	2021-07-14 09:11:37.269332675 -0700
+@@ -431,11 +431,10 @@
+ /*   0*/  
+ /*   0*/  public void setEntry(int index, double value) {
+ /* 663*/    checkIndex(index);
+-/* 664*/    if (!isDefaultValue(value)) {
++/* 664*/    isDefaultValue(value);
+ /* 665*/      this.entries.put(index, value);
+-/* 666*/    } else if (this.entries.containsKey(index)) {
+-/* 667*/      this.entries.remove(index);
+-/*   0*/    } 
++/*   0*/    while (true)
++/*   0*/      return; 
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public void setSubVector(int index, RealVector v) {

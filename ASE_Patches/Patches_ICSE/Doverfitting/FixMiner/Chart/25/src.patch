@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/FixMiner/Chart/25/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/FixMiner/Chart/25/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/FixMiner/Chart/25/buggy1.java	2021-08-27 19:18:33.802863950 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/FixMiner/Chart/25/tool-patch1.java	2021-08-27 19:18:33.802863950 -0700
+@@ -106,7 +106,7 @@
+     public Number getMeanValue(int row, int column) {
+         Number result = null;
+         MeanAndStandardDeviation masd 
+-            = (MeanAndStandardDeviation) this.data.getObject(row, column);
++            = (MeanAndStandardDeviation) this.data.getObject((int)this.minimumRangeValue, column);
+         if (masd != null) {
+             result = masd.getMean();
+         }

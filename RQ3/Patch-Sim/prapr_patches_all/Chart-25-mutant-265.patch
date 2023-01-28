@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-265/ori-StatisticalBarRenderer.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-265/patched-StatisticalBarRenderer.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-265/ori-StatisticalBarRenderer.java	2021-08-23 09:23:48.388983529 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-265/patched-StatisticalBarRenderer.java	2021-08-23 09:23:48.388983529 +0800
+@@ -203,7 +203,7 @@
+         }
+         StatisticalCategoryDataset statData = (StatisticalCategoryDataset) data;
+ 
+-        PlotOrientation orientation = plot.getOrientation();
++    PlotOrientation orientation = null;
+         if (orientation == PlotOrientation.HORIZONTAL) {
+             drawHorizontalItem(g2, state, dataArea, plot, domainAxis, 
+                     rangeAxis, statData, row, column);

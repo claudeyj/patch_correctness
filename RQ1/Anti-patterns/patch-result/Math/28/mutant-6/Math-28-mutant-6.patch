@@ -1,0 +1,12 @@
+--- jd-result/Math/28/mutant-6/a-SimplexSolver.java	2021-07-14 09:08:41.221327707 -0700
++++ jd-result/Math/28/mutant-6/b-SimplexSolver.java	2021-07-14 09:08:42.637327747 -0700
+@@ -61,7 +61,8 @@
+ /* 119*/      for (Integer row : minRatioPositions) {
+ /* 120*/        for (int j = 0; j < tableau.getNumArtificialVariables(); j++) {
+ /* 121*/          int column = j + tableau.getArtificialVariableOffset();
+-/* 122*/          double entry = tableau.getEntry(row, column);
++/* 122*/          row;
++/* 122*/          double entry = minRatio;
+ /* 123*/          if (Precision.equals(entry, 1.0D, this.maxUlps) && row.equals(tableau.getBasicRow(column)))
+ /* 124*/            return row; 
+ /*   0*/        } 

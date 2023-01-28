@@ -1,0 +1,7 @@
+        if (locale == null) {
+            throw new IllegalArgumentException("Null 'locale' argument.");
+        }
+        Calendar calendar = Calendar.getInstance(zone, locale);
+        calendar.setTime(time);
+
+        // sometimes the last few days of the year are considered to fall in

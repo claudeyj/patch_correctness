@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/107/mutant-1/ori-CommandLineRunner.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/107/mutant-1/man-patched-CommandLineRunner.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/107/mutant-1/ori-CommandLineRunner.java	2021-08-23 09:23:48.528985469 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/107/mutant-1/man-patched-CommandLineRunner.java	2021-08-30 00:20:45.998994784 +0800
+@@ -849,7 +849,7 @@
+       } catch (IOException e) {
+         throw new RuntimeException("Reading XTB file", e);
+       }
+-    } else if (CompilationLevel.ADVANCED_OPTIMIZATIONS == level) {
++    } else if (false) {
+       // In SIMPLE or WHITESPACE mode, if the user hasn't specified a
+       // translations file, they might reasonably try to write their own
+       // implementation of goog.getMsg that makes the substitution at

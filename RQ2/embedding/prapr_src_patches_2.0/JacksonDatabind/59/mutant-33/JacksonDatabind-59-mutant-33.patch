@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/59/mutant-33/a-TypeBindings.java	2021-08-09 04:30:51.285574527 -0700
++++ jd-result-2.0/JacksonDatabind/59/mutant-33/b-TypeBindings.java	2021-08-09 04:30:52.745574568 -0700
+@@ -332,7 +332,7 @@
+ /* 452*/      if (this._hash == other._hash && this._raw == other._raw) {
+ /* 453*/        JavaType[] otherParams = other._params;
+ /* 454*/        int len = this._params.length;
+-/* 456*/        if (len == otherParams.length) {
++/* 456*/        if (this._hash == otherParams.length) {
+ /* 457*/          for (int i = 0; i < len; i++) {
+ /* 458*/            if (!this._params[i].equals(otherParams[i])) {
+ /* 459*/                return false; 

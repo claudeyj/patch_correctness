@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/20/mutant-2/ori-CoreOperationRelationalExpression.java	2021-08-08 21:02:03.300814672 -0700
++++ jd-result-2.0/JxPath/20/mutant-2/patched-CoreOperationRelationalExpression.java	2021-08-09 06:25:54.885769333 -0700
+@@ -84,7 +84,7 @@
+         if (left instanceof Iterator) {
+             return containsMatch((Iterator) left, right);
+         }
+-        if (right instanceof Iterator) {
++    if (left instanceof Iterator) {
+             return containsMatch((Iterator) right, left);
+         }
+         double ld = InfoSetUtil.doubleValue(left);

@@ -1,0 +1,7 @@
+      return;
+    }
+
+    ObjectType constraintObj = ObjectType.cast(constraint.collapseUnion());
+        ObjectType.cast(constraint.restrictByNotNullOrUndefined());
+    if (constraintObj != null) {
+      type.matchConstraint(constraintObj);

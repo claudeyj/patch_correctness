@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/68/mutant-4/ori-HtmlTreeBuilderState.java	2021-08-08 21:02:02.988814663 -0700
++++ jd-result-2.0/Jsoup/68/mutant-4/man-patched-HtmlTreeBuilderState.java	2021-08-10 01:27:50.475702708 -0700
+@@ -701,7 +701,7 @@
+                             // remove currentForm from stack. will shift anything under up.
+                             tb.removeFromStack(currentForm);
+                         }
+-                    } else if (name.equals("p")) {
++                    } else if (false) {
+                         if (!tb.inButtonScope(name)) {
+                             tb.error(this);
+                             tb.processStartTag(name); // if no p to close, creates an empty <p></p>

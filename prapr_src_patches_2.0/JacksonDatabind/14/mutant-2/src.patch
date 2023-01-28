@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/14/mutant-2/ori-ObjectReader.java	2021-08-08 21:02:02.276814643 -0700
++++ jd-result-2.0/JacksonDatabind/14/mutant-2/patched-ObjectReader.java	2021-08-09 06:25:54.933769334 -0700
+@@ -334,7 +334,7 @@
+         if (_schema != null) {
+             p.setSchema(_schema);
+         }
+-        _config.initialize(p); // since 2.5
++    this._config.initialize(p.skipChildren());
+ 
+         /* First: must point to a token; if not pointing to one, advance.
+          * This occurs before first read from JsonParser, as well as

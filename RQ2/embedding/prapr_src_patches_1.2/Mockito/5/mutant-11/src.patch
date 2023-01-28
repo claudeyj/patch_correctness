@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-11/ori-PluginFinder.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-11/man-patched-PluginFinder.java	2021-07-23 02:52:01.211223441 -0700
+@@ -30,7 +30,7 @@
+                     continue;
+                 }
+                 return pluginClassName;
+-            } catch(Exception e) {
++            } catch(Throwable e) {
+                 throw new MockitoException("Problems reading plugin implementation from: " + resource, e);
+             } finally {
+                 IOUtil.closeQuietly(s);

@@ -1,0 +1,11 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-60.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -1098,7 +1098,7 @@
+             throw new IllegalArgumentException("Null 'state' argument.");
+         }
+         
+-        if ((label == null) || (label.equals(""))) {
++    if (this.labelToolTip == null || label.equals("")) {
+             return state;
+         }
+ 

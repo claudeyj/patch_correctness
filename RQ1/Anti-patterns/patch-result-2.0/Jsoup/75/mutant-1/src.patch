@@ -1,0 +1,12 @@
+--- jd-result-2.0/Jsoup/75/mutant-1/ori-TokeniserState.java	2021-08-08 21:02:02.924814662 -0700
++++ jd-result-2.0/Jsoup/75/mutant-1/man-patched-TokeniserState.java	2021-08-12 18:13:30.790281468 -0700
+@@ -766,8 +766,7 @@
+             String value = r.consumeToAny(attributeSingleValueCharsSorted);
+             if (value.length() > 0)
+                 t.tagPending.appendAttributeValue(value);
+-            else
+-                t.tagPending.setEmptyAttributeValue();
++            
+ 
+             char c = r.consume();
+             switch (c) {

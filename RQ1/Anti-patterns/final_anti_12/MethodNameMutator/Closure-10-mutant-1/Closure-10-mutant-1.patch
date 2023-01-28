@@ -1,0 +1,11 @@
+--- jd-result/Closure/10/mutant-1/a-NodeUtil.java	2021-07-14 21:35:13.038591644 -0700
++++ jd-result/Closure/10/mutant-1/b-NodeUtil.java	2021-07-14 21:35:14.786591693 -0700
+@@ -903,7 +903,7 @@
+ /*   0*/  
+ /*   0*/  static boolean mayBeString(Node n, boolean recurse) {
+ /*1416*/    if (recurse)
+-/*1417*/      return allResultsMatch(n, MAY_BE_STRING_PREDICATE); 
++/*1417*/      return anyResultsMatch(n, MAY_BE_STRING_PREDICATE); 
+ /*1419*/    return mayBeStringHelper(n);
+ /*   0*/  }
+ /*   0*/  

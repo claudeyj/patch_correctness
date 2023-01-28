@@ -1,0 +1,7 @@
+            reader.reset();
+            bufPos = 0;
+            bufMark = 0;
+      this.bufSplitPoint = (this.bufLength <= 24576) ? 24576 : this.bufLength;
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }

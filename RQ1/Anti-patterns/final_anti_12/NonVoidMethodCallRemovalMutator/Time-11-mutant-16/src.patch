@@ -1,0 +1,11 @@
+--- jd-result/Time/11/mutant-16/ori-DateTimeZoneBuilder.java	2021-07-15 18:51:56.076753231 -0700
++++ jd-result/Time/11/mutant-16/patched-DateTimeZoneBuilder.java	2021-07-21 07:31:43.818229816 -0700
+@@ -1138,7 +1138,7 @@
+          * Returns null if none can be built.
+          */
+         public DSTZone buildTailZone(String id) {
+-            if (iRules.size() == 2) {
++      if (YEAR_LIMIT == 2) {
+                 Rule startRule = iRules.get(0);
+                 Rule endRule = iRules.get(1);
+                 if (startRule.getToYear() == Integer.MAX_VALUE &&

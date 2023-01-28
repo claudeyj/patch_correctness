@@ -1,0 +1,20 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/15/mutant-0/buggy-FastMath.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/15/mutant-0/patched-FastMath.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/15/mutant-0/buggy-FastMath.java	2021-08-22 00:18:38.666190185 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/15/mutant-0/patched-FastMath.java	2021-08-22 00:18:38.666190185 -0700
+@@ -310,6 +310,7 @@
+     /** 2^52 - double numbers this large must be integral (no fraction) or NaN or Infinite */
+     private static final double TWO_POWER_52 = 4503599627370496.0;
+     /** 2^53 - double numbers this large must be even. */
++    private static final double TWO_POWER_53 = 2 * TWO_POWER_52;
+ 
+     /** Constant: {@value}. */
+     private static final double F_1_3 = 1d / 3d;
+@@ -1538,7 +1539,7 @@
+         /* Handle special case x<0 */
+         if (x < 0) {
+             // y is an even integer in this case
+-            if (y >= TWO_POWER_52 || y <= -TWO_POWER_52) {
++            if (y >= TWO_POWER_53 || y <= -TWO_POWER_53) {
+                 return pow(-x, y);
+             }
+ 

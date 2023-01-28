@@ -1,0 +1,11 @@
+--- jd-result-2.0/JxPath/22/mutant-19/ori-DOMNodePointer.java	2021-08-08 21:02:03.316814673 -0700
++++ jd-result-2.0/JxPath/22/mutant-19/man-patched-DOMNodePointer.java	2021-08-10 00:35:04.595613373 -0700
+@@ -677,7 +677,7 @@
+         Element element = (Element) node;
+ 
+         String uri = element.getNamespaceURI();
+-        if (uri == null) {
++        if (false) {
+             String prefix = getPrefix(node);
+             String qname = prefix == null ? "xmlns" : "xmlns:" + prefix;
+     

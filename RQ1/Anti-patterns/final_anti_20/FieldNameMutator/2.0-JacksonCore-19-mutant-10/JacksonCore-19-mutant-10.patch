@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/19/mutant-10/a-BufferRecycler.java	2021-08-09 04:02:08.085525902 -0700
++++ jd-result-2.0/JacksonCore/19/mutant-10/b-BufferRecycler.java	2021-08-09 04:02:09.377525938 -0700
+@@ -83,7 +83,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected int charBufferLength(int ix) {
+-/* 146*/    return CHAR_BUFFER_LENGTHS[ix];
++/* 146*/    return BYTE_BUFFER_LENGTHS[ix];
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected byte[] balloc(int size) {

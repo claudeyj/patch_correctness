@@ -1,0 +1,11 @@
+--- jd-result/Time/20/mutant-1/a-DateTimeFormatterBuilder.java	2021-07-14 21:30:26.262583552 -0700
++++ jd-result/Time/20/mutant-1/b-DateTimeFormatterBuilder.java	2021-07-14 21:30:27.846583596 -0700
+@@ -1851,7 +1851,7 @@
+ /*   0*/    public int parseInto(DateTimeParserBucket param1DateTimeParserBucket, String param1String, int param1Int) {
+ /*2541*/      String str = param1String.substring(param1Int);
+ /*2542*/      for (String str1 : ALL_IDS) {
+-/*2543*/        if (str.startsWith(str1)) {
++/*2543*/        if (str.equalsIgnoreCase(str1)) {
+ /*2544*/          param1DateTimeParserBucket.setZone(DateTimeZone.forID(str1));
+ /*2545*/          return param1Int + str1.length();
+ /*   0*/        } 

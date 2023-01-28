@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-145/a-CategoryPlot.java	2021-07-14 20:16:18.110458034 -0700
++++ jd-result/Chart/25/mutant-145/b-CategoryPlot.java	2021-07-14 20:16:19.694458078 -0700
+@@ -1199,7 +1199,7 @@
+ /*   0*/        } 
+ /*   0*/      } 
+ /*2672*/      for (int i1 = this.datasets.size() - 1; i1 >= 0; i1--)
+-/*2673*/        foundData = (render(g2, dataArea, i1, state) || foundData); 
++/*2673*/        foundData = (render(g2, dataArea, datasetCount, state) || foundData); 
+ /*2677*/      for (int n = datasetCount - 1; n >= 0; n--) {
+ /*2678*/        CategoryItemRenderer r = getRenderer(n);
+ /*2679*/        if (r != null) {

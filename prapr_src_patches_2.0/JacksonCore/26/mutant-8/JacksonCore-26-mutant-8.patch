@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/26/mutant-8/a-ByteQuadsCanonicalizer.java	2021-08-09 04:10:02.605539292 -0700
++++ jd-result-2.0/JacksonCore/26/mutant-8/b-ByteQuadsCanonicalizer.java	2021-08-09 04:10:04.121539334 -0700
+@@ -55,7 +55,7 @@
+ /*   0*/  private ByteQuadsCanonicalizer(int sz, boolean intern, int seed, boolean failOnDoS) {
+ /* 223*/    this._parent = null;
+ /* 224*/    this._seed = seed;
+-/* 225*/    this._intern = intern;
++/* 225*/    nukeSymbols(intern);
+ /* 226*/    this._failOnDoS = failOnDoS;
+ /* 228*/    if (sz < 16) {
+ /* 229*/      sz = 16;

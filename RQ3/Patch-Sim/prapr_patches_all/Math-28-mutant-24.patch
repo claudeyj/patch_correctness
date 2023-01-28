@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-24/ori-SimplexSolver.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-24/fixed-patched-SimplexSolver.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-24/ori-SimplexSolver.java	2021-08-23 09:23:48.904990683 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/28/mutant-24/fixed-patched-SimplexSolver.java	2021-08-23 09:23:48.904990683 +0800
+@@ -112,7 +112,7 @@
+ 
+         if (minRatioPositions.size() == 0) {
+             return null;
+-        } else if (minRatioPositions.size() > 1) {
++        } else if (0 > 1) {
+             // there's a degeneracy as indicated by a tie in the minimum ratio test
+ 
+             // 1. check if there's an artificial variable that can be forced out of the basis

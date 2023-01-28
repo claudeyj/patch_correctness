@@ -1,0 +1,7 @@
+    assertAllOneTimePasses(passes);
+
+    if (options.smartNameRemoval || options.reportPath != null) {
+      passes.removeAll(getCodeRemovingPasses());
+      passes.add(smartNamePass);
+    }
+

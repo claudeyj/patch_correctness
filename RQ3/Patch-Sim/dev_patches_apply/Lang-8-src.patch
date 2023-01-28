@@ -1,0 +1,27 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/8/mutant-0/buggy-FastDatePrinter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/8/mutant-0/patched-FastDatePrinter.java
+--- Lang8b/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java
++++ Lang8b_Lang-8-src.patchb/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java
+@@ -1095,7 +1095,6 @@
+     private static class TimeZoneNameRule implements Rule {
+         private final Locale mLocale;
+         private final int mStyle;
+-        private final TimeZone zone;
+         private final String mStandard;
+         private final String mDaylight;
+ 
+@@ -1109,7 +1108,6 @@
+         TimeZoneNameRule(TimeZone timeZone, Locale locale, int style) {
+             mLocale = locale;
+             mStyle = style;
+-            zone = timeZone;
+             
+             mStandard = getTimeZoneDisplay(timeZone, false, style, locale);
+             mDaylight = getTimeZoneDisplay(timeZone, true, style, locale);
+@@ -1131,6 +1129,7 @@
+          */
+         @Override
+         public void appendTo(StringBuffer buffer, Calendar calendar) {
++            TimeZone zone = calendar.getTimeZone();
+             if (zone.useDaylightTime()
+                     && calendar.get(Calendar.DST_OFFSET) != 0) {
+                 buffer.append(getTimeZoneDisplay(zone, true, mStyle, mLocale));

@@ -1,0 +1,26 @@
+--- jd-result/Math/84/mutant-2/a-MultiDirectional.java	2021-07-14 09:29:36.945363141 -0700
++++ jd-result/Math/84/mutant-2/b-MultiDirectional.java	2021-07-14 09:29:38.337363181 -0700
+@@ -21,11 +21,9 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  protected void iterateSimplex(Comparator<RealPointValuePair> comparator) throws FunctionEvaluationException, OptimizationException, IllegalArgumentException {
+-/*   0*/    RealPointValuePair best, contracted;
+-/*   0*/    do {
+ /*  66*/      incrementIterationsCounter();
+ /*  69*/      RealPointValuePair[] original = this.simplex;
+-/*  70*/      best = original[0];
++/*  70*/    RealPointValuePair best = original[0];
+ /*  73*/      RealPointValuePair reflected = evaluateNewSimplex(original, 1.0D, comparator);
+ /*  74*/      if (comparator.compare(reflected, best) < 0) {
+ /*  77*/        RealPointValuePair[] reflectedSimplex = this.simplex;
+@@ -34,8 +32,8 @@
+ /*  81*/          this.simplex = reflectedSimplex; 
+ /*   0*/        return;
+ /*   0*/      } 
+-/*  89*/      contracted = evaluateNewSimplex(original, this.gamma, comparator);
+-/*  90*/    } while (comparator.compare(contracted, best) >= 0);
++/*  89*/    RealPointValuePair contracted = evaluateNewSimplex(original, this.gamma, comparator);
++/*  90*/    comparator.compare(contracted, best);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private RealPointValuePair evaluateNewSimplex(RealPointValuePair[] original, double coeff, Comparator<RealPointValuePair> comparator) throws FunctionEvaluationException, OptimizationException {

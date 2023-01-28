@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-4/ori-BracketingNthOrderBrentSolver.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-4/fixed-patched-BracketingNthOrderBrentSolver.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-4/ori-BracketingNthOrderBrentSolver.java	2021-08-23 09:23:48.924990960 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Math/40/mutant-4/fixed-patched-BracketingNthOrderBrentSolver.java	2021-08-23 09:23:48.924990960 +0800
+@@ -371,7 +371,7 @@
+ 
+         // evaluate Q(targetY)
+         double x0 = 0;
+-        for (int j = end - 1; j >= start; --j) {
++    for (int j = this.maximalOrder - 1; j >= start; j--) {
+             x0 = x[j] + x0 * (targetY - y[j]);
+         }
+ 

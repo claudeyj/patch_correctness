@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-25/a-CMAESOptimizer.java	2021-07-14 09:06:24.997323863 -0700
++++ jd-result/Math/20/mutant-25/b-CMAESOptimizer.java	2021-07-14 09:06:26.473323905 -0700
+@@ -128,7 +128,7 @@
+ /* 234*/  private List<RealMatrix> statisticsDHistory = new ArrayList<RealMatrix>();
+ /*   0*/  
+ /*   0*/  public CMAESOptimizer() {
+-/* 240*/    this(0);
++/* 240*/    this(i, null, 0, 0.0D, false, 0, 0, null, false, null);
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public CMAESOptimizer(int lambda) {

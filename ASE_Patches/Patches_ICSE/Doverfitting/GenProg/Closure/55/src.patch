@@ -1,0 +1,15 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/55/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/55/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/55/buggy1.java	2021-08-27 19:18:35.234863990 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/GenProg/Closure/55/tool-patch1.java	2021-08-27 19:18:35.134863987 -0700
+@@ -63,11 +63,6 @@
+ 
+     Multimap<Reducer, Reduction> reductionMap = HashMultimap.create();
+ 
+-    // Accumulate possible reductions in the reduction multi map.  They
+-    // will be applied in the loop below.
+-    NodeTraversal.traverse(compiler, root,
+-                           new ReductionGatherer(reducers, reductionMap));
+-
+     // Apply reductions iff they will provide some savings.
+     for (Reducer reducer : reducers) {
+       Collection<Reduction> reductions = reductionMap.get(reducer);

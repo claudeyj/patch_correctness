@@ -1,0 +1,7 @@
+        private static String fixHeaderEncoding(String val) {
+            try {
+                byte[] bytes = val.getBytes("ISO-8859-1");
+                if (!looksLikeUtf8(bytes))
+                    return val;
+                return new String(bytes, "UTF-8");
+            } catch (UnsupportedEncodingException e) {

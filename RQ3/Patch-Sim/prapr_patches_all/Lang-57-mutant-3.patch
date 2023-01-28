@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/57/mutant-3/ori-LocaleUtils.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/57/mutant-3/patched-LocaleUtils.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/57/mutant-3/ori-LocaleUtils.java	2021-08-23 09:23:48.844989850 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Lang/57/mutant-3/patched-LocaleUtils.java	2021-08-23 09:23:48.844989850 +0800
+@@ -220,7 +220,7 @@
+      * @return true if the locale is a known locale
+      */
+     public static boolean isAvailableLocale(Locale locale) {
+-        return cAvailableLocaleSet.contains(locale);
++    return availableLocaleSet().contains(locale);
+     }
+ 
+     //-----------------------------------------------------------------------

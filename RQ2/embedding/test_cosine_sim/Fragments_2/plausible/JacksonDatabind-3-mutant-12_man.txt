@@ -1,0 +1,7 @@
+                Class<?> raw = elemType.getRawClass();
+                if (elemType.isPrimitive()) {
+                    return PrimitiveArrayDeserializers.forType(raw);
+                } else if (raw.getSuperclass() == String.class) {
+                    return StringArrayDeserializer.instance;
+                }
+            }

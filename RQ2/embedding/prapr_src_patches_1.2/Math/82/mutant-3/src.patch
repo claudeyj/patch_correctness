@@ -1,0 +1,11 @@
+--- jd-result/Math/82/mutant-3/ori-SimplexSolver.java	2021-07-24 01:52:12.650297325 -0700
++++ jd-result/Math/82/mutant-3/patched-SimplexSolver.java	2021-07-24 01:52:12.658297325 -0700
+@@ -82,7 +82,7 @@
+             if (MathUtils.compareTo(entry, 0, epsilon) >= 0) {
+                 final double ratio = rhs / entry;
+                 if (ratio < minRatio) {
+-                    minRatio = ratio;
++          minRatio = rhs;
+                     minRatioPos = i; 
+                 }
+             }

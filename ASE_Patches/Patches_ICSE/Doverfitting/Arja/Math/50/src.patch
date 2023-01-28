@@ -1,0 +1,28 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/50/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/50/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/50/buggy1.java	2021-08-27 19:18:32.786863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/50/tool-patch1.java	2021-08-27 19:18:32.786863921 -0700
+@@ -183,11 +183,6 @@
+                     f0 *= f1 / (f1 + fx);
+                     break;
+                 case REGULA_FALSI:
+-                    // Nothing.
+-                    if (x == x1) {
+-                        x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+-                        f0 = computeObjectiveValue(x0);
+-                    }
+                     break;
+                 default:
+                     // Should never happen.
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/50/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/50/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/50/buggy2.java	2021-08-27 19:18:32.786863921 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/Arja/Math/50/tool-patch2.java	2021-08-27 19:18:32.786863921 -0700
+@@ -368,9 +368,6 @@
+     public static void verifyBracketing(UnivariateRealFunction function,
+                                         final double lower,
+                                         final double upper) {
+-        if (function == null) {
+-            throw new NullArgumentException(LocalizedFormats.FUNCTION);
+-        }
+         verifyInterval(lower, upper);
+         if (!isBracketing(function, lower, upper)) {
+             throw new NoBracketingException(lower, upper,

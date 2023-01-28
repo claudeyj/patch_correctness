@@ -1,0 +1,56 @@
+Running ant (compile)...................................................... FAIL
+Executed command:  cd /home/junyang/patch_correctness/d4jrepos/JacksonCore/16 && /home/junyang/tools/d4j2.0/defects4j/major/bin/ant -f /home/junyang/tools/d4j2.0/defects4j/framework/projects/defects4j.build.xml -Dd4j.home=/home/junyang/tools/d4j2.0/defects4j -Dd4j.dir.projects=/home/junyang/tools/d4j2.0/defects4j/framework/projects -Dbasedir=/home/junyang/patch_correctness/d4jrepos/JacksonCore/16 -Dbuild.compiler=javac1.7  compile 2>&1
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Buildfile: /home/junyang/tools/d4j2.0/defects4j/framework/projects/defects4j.build.xml
+
+test-offline:
+
+get-deps:
+
+jackson-core-from-maven.compile:
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/maven-build.xml:74: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/target/classes
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1267: error: not a statement
+    [javac]                     0, // count
+    [javac]                     ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1267: error: ';' expected
+    [javac]                     0, // count
+    [javac]                      ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1268: error: not a statement
+    [javac]                     tertShift,
+    [javac]                     ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1268: error: ';' expected
+    [javac]                     tertShift,
+    [javac]                              ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1269: error: ']' expected
+    [javac]                     new int[hashAreaSize], // mainHash, 2x slots, 4 ints per slot
+    [javac]                             ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1269: error: ';' expected
+    [javac]                     new int[hashAreaSize], // mainHash, 2x slots, 4 ints per slot
+    [javac]                                         ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1270: error: not a statement
+    [javac]                     new String[sz << 1], // names == 2x slots
+    [javac]                               ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1270: error: ';' expected
+    [javac]                     new String[sz << 1], // names == 2x slots
+    [javac]                                        ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1271: error: not a statement
+    [javac]                     hashAreaSize - sz, // at 7/8 of the total area
+    [javac]                                  ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1271: error: ';' expected
+    [javac]                     hashAreaSize - sz, // at 7/8 of the total area
+    [javac]                                      ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1272: error: not a statement
+    [javac]                     hashAreaSize // longNameOffset, immediately after main hashes
+    [javac]                     ^
+    [javac] /home/junyang/patch_correctness/d4jrepos/JacksonCore/16/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java:1272: error: ';' expected
+    [javac]                     hashAreaSize // longNameOffset, immediately after main hashes
+    [javac]                                 ^
+    [javac] 12 errors
+
+BUILD FAILED
+/home/junyang/patch_correctness/d4jrepos/JacksonCore/16/maven-build.xml:74: Compile failed; see the compiler error output for details.
+
+Total time: 0 seconds
+Cannot compile sources! at /home/junyang/tools/d4j2.0/defects4j/framework/bin/d4j/d4j-compile line 82.
+Compilation failed in require at /home/junyang/tools/d4j2.0/defects4j/framework/bin/defects4j line 195.

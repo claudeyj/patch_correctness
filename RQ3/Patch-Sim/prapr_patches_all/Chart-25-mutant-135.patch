@@ -1,0 +1,12 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-135/ori-JFreeChart.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-135/fixed-patched-JFreeChart.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-135/ori-JFreeChart.java	2021-08-23 09:23:48.336982807 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Chart/25/mutant-135/fixed-patched-JFreeChart.java	2021-08-23 09:23:48.336982807 +0800
+@@ -1316,7 +1316,7 @@
+                     t.getHorizontalAlignment(), VerticalAlignment.BOTTOM);
+             retValue = t.draw(g2, titleArea, p);
+             area.setRect(area.getX(), area.getY(), area.getWidth(), 
+-                    area.getHeight() - size.height);
++                    0.0D - size.height);
+         }
+         else if (position == RectangleEdge.RIGHT) {
+             Size2D size = t.arrange(g2, constraint);

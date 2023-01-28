@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/AVATAR/Closure/73/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/AVATAR/Closure/73/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/AVATAR/Closure/73/buggy1.java	2021-08-27 19:18:40.134864129 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Dcorrect/AVATAR/Closure/73/tool-patch1.java	2021-08-27 19:18:40.134864129 -0700
+@@ -1042,7 +1042,7 @@
+             // No charsetEncoder provided - pass straight latin characters
+             // through, and escape the rest.  Doing the explicit character
+             // check is measurably faster than using the CharsetEncoder.
+-            if (c > 0x1f && c <= 0x7f) {
++            if (c > 0x1f && c < 0x7f) {
+               sb.append(c);
+             } else {
+               // Other characters can be misinterpreted by some js parsers,

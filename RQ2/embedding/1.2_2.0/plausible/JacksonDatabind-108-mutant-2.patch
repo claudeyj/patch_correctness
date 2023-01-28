@@ -1,0 +1,12 @@
+--- jd-result-2.0/JacksonDatabind/108/mutant-2/ori-ObjectReader.java	2021-08-08 21:02:02.544814651 -0700
++++ jd-result-2.0/JacksonDatabind/108/mutant-2/patched-ObjectReader.java	2021-08-09 06:25:54.949769335 -0700
+@@ -1166,7 +1166,8 @@
+     @SuppressWarnings("unchecked")
+     @Override
+     public <T extends TreeNode> T readTree(JsonParser p) throws IOException {
+-        return (T) _bindAsTree(p);
++    _bindAsTree(p);
++    return null;
+     }
+ 
+     @Override

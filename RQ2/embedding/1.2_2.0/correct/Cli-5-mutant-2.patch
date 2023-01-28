@@ -1,0 +1,12 @@
+--- jd-result-2.0/Cli/5/mutant-2/ori-Util.java	2021-08-08 21:02:01.260814615 -0700
++++ jd-result-2.0/Cli/5/mutant-2/man-patched-Util.java	2021-08-10 06:39:47.456230864 -0700
+@@ -33,6 +33,9 @@
+      */
+     static String stripLeadingHyphens(String str)
+     {
++        if (str == null) {
++            return str; 
++        }
+         if (str.startsWith("--"))
+         {
+             return str.substring(2, str.length());

@@ -1,0 +1,27 @@
+diff -u -b /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/21/mutant-8/ori-CheckSideEffects.java /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/21/mutant-8/man-patched-CheckSideEffects.java
+--- /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/21/mutant-8/ori-CheckSideEffects.java	2021-08-23 09:23:48.684987633 +0800
++++ /home/user/yangjun/test_execution/patch_correctness/patch-result/Closure/21/mutant-8/man-patched-CheckSideEffects.java	2021-08-23 09:23:48.684987633 +0800
+@@ -24,6 +24,7 @@
+ import com.google.javascript.rhino.Node;
+ import com.google.javascript.rhino.Token;
+ 
++import java.util.Iterator;
+ import java.util.List;
+ 
+ /**
+@@ -115,12 +116,9 @@
+         return;
+       }
+       if (n == parent.getLastChild()) {
+-        for (Node an : parent.getAncestors()) {
+-          int ancestorType = an.getType();
+-          if (ancestorType == Token.COMMA) continue;
+-          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK) return;
+-          else break;
+-        }
++        // for (Node an : parent.getAncestors()) {
++          Iterator<Node> ir = parent.getAncestors().iterator();
++        // }
+       }
+     } else if (parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+       if (! (parent.getType() == Token.FOR && parent.getChildCount() == 4 && (n == parent.getFirstChild() || n == parent.getFirstChild().getNext().getNext()))) {

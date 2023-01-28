@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/52/mutant-0/buggy-StringEscapeUtils.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Lang/52/mutant-0/patched-StringEscapeUtils.java
+--- Lang52b/src/java/org/apache/commons/lang/StringEscapeUtils.java
++++ Lang52b_Lang-52-src.patchb/src/java/org/apache/commons/lang/StringEscapeUtils.java
+@@ -233,6 +233,10 @@
+                         out.write('\\');
+                         out.write('\\');
+                         break;
++                    case '/':
++                        out.write('\\');
++                        out.write('/');
++                        break;
+                     default :
+                         out.write(ch);
+                         break;

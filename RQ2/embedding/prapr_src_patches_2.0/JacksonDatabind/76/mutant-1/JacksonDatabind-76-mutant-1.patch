@@ -1,0 +1,30 @@
+--- jd-result-2.0/JacksonDatabind/76/mutant-1/a-BuilderBasedDeserializer.java	2021-08-09 04:27:58.325569646 -0700
++++ jd-result-2.0/JacksonDatabind/76/mutant-1/b-BuilderBasedDeserializer.java	2021-08-09 04:28:00.273569701 -0700
+@@ -400,26 +400,7 @@
+ /* 579*/      p.nextToken();
+ /* 581*/      SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
+ /* 582*/      if (creatorProp != null) {
+-/* 583*/        if (buffer.assignParameter(creatorProp, creatorProp.deserialize(p, ctxt))) {
+-/*   0*/          Object object;
+-/* 584*/          t = p.nextToken();
+-/*   0*/          try {
+-/* 587*/            object = creator.build(ctxt, buffer);
+-/* 588*/          } catch (Exception e) {
+-/* 589*/            wrapAndThrow(e, this._beanType.getRawClass(), propName, ctxt);
+-/*   0*/          } 
+-/* 592*/          while (t == JsonToken.FIELD_NAME) {
+-/* 593*/            p.nextToken();
+-/* 594*/            tokens.copyCurrentStructure(p);
+-/* 595*/            t = p.nextToken();
+-/*   0*/          } 
+-/* 597*/          tokens.writeEndObject();
+-/* 598*/          if (object.getClass() != this._beanType.getRawClass()) {
+-/* 599*/            ctxt.reportMappingException("Can not create polymorphic instances with unwrapped values", new Object[0]);
+-/* 600*/            return null;
+-/*   0*/          } 
+-/* 602*/          return this._unwrappedPropertyHandler.processUnwrapped(p, ctxt, object, tokens);
+-/*   0*/        } 
++/* 583*/        buffer.assignParameter(creatorProp, creatorProp.deserialize(p, ctxt));
+ /* 607*/      } else if (!buffer.readIdProperty(propName)) {
+ /* 611*/        SettableBeanProperty prop = this._beanProperties.find(propName);
+ /* 612*/        if (prop != null) {

@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonCore/11/mutant-1/a-ByteQuadsCanonicalizer.java	2021-08-09 04:01:01.685524028 -0700
++++ jd-result-2.0/JacksonCore/11/mutant-1/b-ByteQuadsCanonicalizer.java	2021-08-09 04:01:03.077524067 -0700
+@@ -571,7 +571,7 @@
+ /* 929*/    end = this._hashSize << 3;
+ /* 930*/    if (this._spilloverEnd >= end) {
+ /* 931*/      if (this._failOnDoS) {
+-/* 932*/          _reportTooManyCollisions(); 
++/* 932*/          release(); 
+ /*   0*/         }
+ /* 936*/      this._needRehash = true;
+ /*   0*/    } 

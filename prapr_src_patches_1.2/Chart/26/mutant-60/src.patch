@@ -1,0 +1,11 @@
+--- jd-result/Chart/26/mutant-60/ori-Axis.java	2021-07-15 18:51:51.896753113 -0700
++++ jd-result/Chart/26/mutant-60/fixed-patched-Axis.java	2021-07-21 20:45:52.594697818 -0700
+@@ -1098,7 +1098,7 @@
+             throw new IllegalArgumentException("Null 'state' argument.");
+         }
+         
+-        if ((label == null) || (label.equals(""))) {
++    if (this.labelToolTip == null || label.equals("")) {
+             return state;
+         }
+ 

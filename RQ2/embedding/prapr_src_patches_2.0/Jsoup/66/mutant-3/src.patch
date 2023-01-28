@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/66/mutant-3/ori-Element.java	2021-08-08 21:02:03.276814672 -0700
++++ jd-result-2.0/Jsoup/66/mutant-3/patched-Element.java	2021-08-09 06:25:54.909769334 -0700
+@@ -273,7 +273,7 @@
+      */
+     private List<Element> childElementsList() {
+         List<Element> children;
+-        if (shadowChildrenRef == null || (children = shadowChildrenRef.get()) == null) {
++    if (this.shadowChildrenRef == null || (children = this.shadowChildrenRef.get()) != null) {
+             final int size = childNodes.size();
+             children = new ArrayList<>(size);
+             //noinspection ForLoopReplaceableByForEach (beacause it allocates an Iterator which is wasteful here)

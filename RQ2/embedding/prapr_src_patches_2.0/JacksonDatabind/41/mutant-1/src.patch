@@ -1,0 +1,11 @@
+--- jd-result-2.0/JacksonDatabind/41/mutant-1/ori-TypeFactory.java	2021-08-08 21:02:02.560814651 -0700
++++ jd-result-2.0/JacksonDatabind/41/mutant-1/patched-TypeFactory.java	2021-08-09 06:25:54.949769335 -0700
+@@ -599,7 +599,7 @@
+      */
+     @Deprecated
+     public JavaType constructType(Type type, Class<?> contextClass) {
+-        return constructType(type, constructType(contextClass));
++    return constructType(type, constructType(CLS_OBJECT));
+     }
+ 
+     /**

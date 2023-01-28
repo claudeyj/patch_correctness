@@ -1,0 +1,11 @@
+--- jd-result/Closure/119/mutant-2/ori-CheckGlobalNames.java	2021-07-15 18:51:53.684753163 -0700
++++ jd-result/Closure/119/mutant-2/patched-CheckGlobalNames.java	2021-07-21 07:58:35.106275284 -0700
+@@ -98,7 +98,7 @@
+         continue;
+       }
+ 
+-      checkDescendantNames(name, name.globalSets + name.localSets > 0);
++      checkDescendantNames(name, (name.globalSets + name.localSets > 0) ? true : true);
+     }
+   }
+ 

@@ -1,0 +1,80 @@
+--- jd-result-2.0/Gson/16/mutant-2/a-$Gson$Types.java	2021-08-09 04:43:59.673596774 -0700
++++ jd-result-2.0/Gson/16/mutant-2/b-$Gson$Types.java	2021-08-09 04:44:01.169596816 -0700
+@@ -216,6 +216,7 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  private static Type resolve(Type context, Class<?> contextRawType, Type toResolve, Collection<TypeVariable> visitedTypeVariables) {
++/*   0*/    WildcardType original;
+ /* 340*/    while (toResolve instanceof TypeVariable) {
+ /* 341*/      TypeVariable<?> typeVariable = (TypeVariable)toResolve;
+ /* 343*/      toResolve = resolveTypeVariable(context, contextRawType, typeVariable);
+@@ -224,23 +225,23 @@
+ /*   0*/         }
+ /*   0*/    } 
+ /* 348*/    if (toResolve instanceof Class && ((Class)toResolve).isArray()) {
+-/* 349*/      Class<?> original = (Class)toResolve;
+-/* 350*/      Type<?> componentType = original.getComponentType();
++/* 349*/      Class<?> clazz = (Class)toResolve;
++/* 350*/      Type<?> componentType = clazz.getComponentType();
+ /* 351*/      Type newComponentType = resolve(context, contextRawType, componentType, visitedTypeVariables);
+-/* 352*/      return (componentType == newComponentType) ? original : arrayOf(newComponentType);
++/* 352*/      return (componentType == newComponentType) ? clazz : arrayOf(newComponentType);
+ /*   0*/    } 
+ /* 356*/    if (toResolve instanceof GenericArrayType) {
+-/* 357*/      GenericArrayType original = (GenericArrayType)toResolve;
+-/* 358*/      Type componentType = original.getGenericComponentType();
++/* 357*/      GenericArrayType genericArrayType = (GenericArrayType)toResolve;
++/* 358*/      Type componentType = genericArrayType.getGenericComponentType();
+ /* 359*/      Type newComponentType = resolve(context, contextRawType, componentType, visitedTypeVariables);
+-/* 360*/      return (componentType == newComponentType) ? original : arrayOf(newComponentType);
++/* 360*/      return (componentType == newComponentType) ? genericArrayType : arrayOf(newComponentType);
+ /*   0*/    } 
+ /* 364*/    if (toResolve instanceof ParameterizedType) {
+-/* 365*/      ParameterizedType original = (ParameterizedType)toResolve;
+-/* 366*/      Type ownerType = original.getOwnerType();
++/* 365*/      ParameterizedType parameterizedType = (ParameterizedType)toResolve;
++/* 366*/      Type ownerType = parameterizedType.getOwnerType();
+ /* 367*/      Type newOwnerType = resolve(context, contextRawType, ownerType, visitedTypeVariables);
+ /* 368*/      boolean changed = (newOwnerType != ownerType);
+-/* 370*/      Type[] args = original.getActualTypeArguments();
++/* 370*/      Type[] args = parameterizedType.getActualTypeArguments();
+ /* 371*/      for (int t = 0, length = args.length; t < length; t++) {
+ /* 372*/        Type resolvedTypeArgument = resolve(context, contextRawType, args[t], visitedTypeVariables);
+ /* 373*/        if (resolvedTypeArgument != args[t]) {
+@@ -251,27 +252,26 @@
+ /* 378*/          args[t] = resolvedTypeArgument;
+ /*   0*/        } 
+ /*   0*/      } 
+-/* 382*/      return changed ? newParameterizedTypeWithOwner(newOwnerType, original.getRawType(), args) : original;
++/* 382*/      return changed ? newParameterizedTypeWithOwner(newOwnerType, parameterizedType.getRawType(), args) : parameterizedType;
+ /*   0*/    } 
+ /* 386*/    if (toResolve instanceof WildcardType) {
+-/* 387*/      WildcardType original = (WildcardType)toResolve;
++/* 387*/      original = (WildcardType)toResolve;
+ /* 388*/      Type[] originalLowerBound = original.getLowerBounds();
+ /* 389*/      Type[] originalUpperBound = original.getUpperBounds();
+-/* 391*/      if (originalLowerBound.length == 1) {
+-/* 392*/        Type lowerBound = resolve(context, contextRawType, originalLowerBound[0], visitedTypeVariables);
+-/* 393*/        if (lowerBound != originalLowerBound[0]) {
+-/* 394*/            return supertypeOf(lowerBound); 
+-/*   0*/           }
+-/* 396*/      } else if (originalUpperBound.length == 1) {
++/* 391*/      true;
++/* 396*/      if (originalUpperBound.length == 1) {
+ /* 397*/        Type upperBound = resolve(context, contextRawType, originalUpperBound[0], visitedTypeVariables);
+ /* 398*/        if (upperBound != originalUpperBound[0]) {
+ /* 399*/            return subtypeOf(upperBound); 
+ /*   0*/           }
+ /*   0*/      } 
+-/* 402*/      return original;
+-/*   0*/    } 
++/*   0*/    } else {
+ /* 405*/    return toResolve;
+ /*   0*/  }
++/*   0*/    while (true) {
++/*   0*/        return original; 
++/*   0*/       }
++/*   0*/  }
+ /*   0*/  
+ /*   0*/  static Type resolveTypeVariable(Type context, Class<?> contextRawType, TypeVariable<?> unknown) {
+ /* 411*/    Class<?> declaredByRaw = declaringClassOf(unknown);

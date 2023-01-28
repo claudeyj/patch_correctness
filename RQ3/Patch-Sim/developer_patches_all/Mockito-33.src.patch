@@ -1,0 +1,24 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/33/mutant-0/buggy-InvocationMatcher.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/33/mutant-0/patched-InvocationMatcher.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/33/mutant-0/buggy-InvocationMatcher.java	2021-08-22 00:18:38.706190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Mockito/33/mutant-0/patched-InvocationMatcher.java	2021-08-22 00:18:38.706190186 -0700
+@@ -95,8 +95,19 @@
+         Method m1 = invocation.getMethod();
+         Method m2 = candidate.getMethod();
+         
++        if (m1.getName() != null && m1.getName().equals(m2.getName())) {
+         	/* Avoid unnecessary cloning */
+-        return m1.equals(m2);
++        	Class[] params1 = m1.getParameterTypes();
++        	Class[] params2 = m2.getParameterTypes();
++        	if (params1.length == params2.length) {
++        	    for (int i = 0; i < params1.length; i++) {
++        		if (params1[i] != params2[i])
++        		    return false;
++        	    }
++        	    return true;
++        	}
++        }
++        return false;
+     }
+     
+     public Location getLocation() {

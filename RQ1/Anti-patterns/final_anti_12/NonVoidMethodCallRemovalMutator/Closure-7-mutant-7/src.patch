@@ -1,0 +1,11 @@
+--- jd-result/Closure/7/mutant-7/ori-ChainableReverseAbstractInterpreter.java	2021-07-15 18:51:53.464753157 -0700
++++ jd-result/Closure/7/mutant-7/fixed-patched-ChainableReverseAbstractInterpreter.java	2021-07-22 21:30:49.482229496 -0700
+@@ -608,7 +608,7 @@
+ 
+     @Override
+     public JSType caseObjectType(ObjectType type) {
+-      if (value.equals("function")) {
++      if (this.resultEqualsValue) {
+         JSType ctorType = getNativeType(U2U_CONSTRUCTOR_TYPE);
+         return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : null;
+           // Objects are restricted to "Function", subtypes are left

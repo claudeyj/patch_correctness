@@ -1,0 +1,12 @@
+--- jd-result/Math/28/mutant-3/a-SimplexSolver.java	2021-07-14 09:08:24.929327247 -0700
++++ jd-result/Math/28/mutant-3/b-SimplexSolver.java	2021-07-14 09:08:26.309327286 -0700
+@@ -62,7 +62,8 @@
+ /* 120*/        for (int j = 0; j < tableau.getNumArtificialVariables(); j++) {
+ /* 121*/          int column = j + tableau.getArtificialVariableOffset();
+ /* 122*/          double entry = tableau.getEntry(row, column);
+-/* 123*/          if (Precision.equals(entry, 1.0D, this.maxUlps) && row.equals(tableau.getBasicRow(column)))
++/* 123*/          int k = column;
++/* 123*/          if (Precision.equals(entry, 1.0D, this.maxUlps) && row.equals(new Integer(k)))
+ /* 124*/            return row; 
+ /*   0*/        } 
+ /*   0*/      } 

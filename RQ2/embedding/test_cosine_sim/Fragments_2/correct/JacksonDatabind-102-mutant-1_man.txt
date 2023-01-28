@@ -1,0 +1,6 @@
+    {
+        // Note! Should not skip if `property` null since that'd skip check
+        // for config overrides, in case of root value
+        JsonFormat.Value format = findFormatOverrides(serializers, property, handledType());
+        if (format == null) {
+            return this;

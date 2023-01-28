@@ -1,0 +1,11 @@
+--- jd-result/Chart/11/mutant-1/ori-ShapeUtilities.java	2021-07-15 18:51:50.688753079 -0700
++++ jd-result/Chart/11/mutant-1/patched-ShapeUtilities.java	2021-07-21 09:43:32.093576419 -0700
+@@ -271,7 +271,7 @@
+         if (p1.getWindingRule() != p2.getWindingRule()) {
+             return false;
+         }
+-        PathIterator iterator1 = p1.getPathIterator(null);
++    PathIterator iterator1 = p2.getPathIterator(null);
+         PathIterator iterator2 = p1.getPathIterator(null);
+         double[] d1 = new double[6];
+         double[] d2 = new double[6];

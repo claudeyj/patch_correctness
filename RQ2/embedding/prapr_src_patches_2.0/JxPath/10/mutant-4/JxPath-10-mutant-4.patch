@@ -1,0 +1,12 @@
+--- jd-result-2.0/JxPath/10/mutant-4/a-InfoSetUtil.java	2021-08-09 04:19:06.765554647 -0700
++++ jd-result-2.0/JxPath/10/mutant-4/b-InfoSetUtil.java	2021-08-09 04:19:08.185554687 -0700
+@@ -22,9 +22,6 @@
+ /*  48*/    if (object instanceof Boolean) {
+ /*  49*/        return (Boolean)object ? "true" : "false"; 
+ /*   0*/       }
+-/*  51*/    if (object == null) {
+-/*  52*/        return ""; 
+-/*   0*/       }
+ /*  54*/    if (object instanceof NodePointer) {
+ /*  55*/        return stringValue(((NodePointer)object).getValue()); 
+ /*   0*/       }

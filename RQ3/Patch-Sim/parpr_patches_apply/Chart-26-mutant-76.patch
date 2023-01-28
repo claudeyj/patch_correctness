@@ -1,0 +1,17 @@
+--- Chart26b/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
++++ Chart26_Chart-26-mutant-76.patchb/source/org/jfree/chart/plot/CategoryPlot.java	2017-05-03 11:40:59.000000000 +0800
+@@ -1187,14 +1187,6 @@
+                     + insets.getRight());
+ 
+         }
+-        if (plotState != null && hotspot != null) {
+-            ChartRenderingInfo owner = plotState.getOwner();
+-                EntityCollection entities = owner.getEntityCollection();
+-                if (entities != null) {
+-                    entities.add(new AxisLabelEntity(this, hotspot, 
+-                            this.labelToolTip, this.labelURL));
+-                }
+-        }
+         return state;
+ 
+     }

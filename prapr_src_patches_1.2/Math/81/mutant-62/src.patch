@@ -1,0 +1,20 @@
+--- jd-result/Math/81/mutant-62/ori-EigenDecompositionImpl.java	2021-07-24 01:52:11.166297283 -0700
++++ jd-result/Math/81/mutant-62/fixed-patched-EigenDecompositionImpl.java	2021-07-30 02:33:23.592995277 -0700
+@@ -1427,7 +1427,7 @@
+      * @param end end index
+      * @param deflated number of realEigenvalues just deflated
+      */
+-    private void computeShiftIncrement(final int start, final int end, final int deflated) {
++    private void computeShiftIncrement(final int start, int end, final int deflated) {
+ 
+         final double cnst1 = 0.563;
+         final double cnst2 = 1.010;
+@@ -1526,7 +1526,7 @@
+             } else if (dMin == dN2) {
+ 
+                 // case 5.
+-                tType = -5;
++          end = -5;
+                 double s = 0.25 * dMin;
+ 
+                 // compute contribution to norm squared from i > nn-2.

@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Math/95/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Math/95/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Math/95/buggy1.java	2021-08-27 19:18:33.034863928 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/jGenProg/Math/95/tool-patch1.java	2021-08-27 19:18:33.030863928 -0700
+@@ -144,7 +144,7 @@
+         double ret;
+         double d = getDenominatorDegreesOfFreedom();
+             // use mean
+-            ret = d / (d - 2.0);
++        ret = d / (d - 2.0);         ret = 0.0;
+         return ret;
+     }
+     

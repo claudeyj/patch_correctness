@@ -1,0 +1,11 @@
+--- jd-result/Math/20/mutant-1/a-CMAESOptimizer.java	2021-07-14 09:07:00.289324859 -0700
++++ jd-result/Math/20/mutant-1/b-CMAESOptimizer.java	2021-07-14 09:07:01.917324905 -0700
+@@ -647,7 +647,7 @@
+ /*1129*/    double[][] d = new double[1][m.getColumnDimension()];
+ /*1130*/    for (int c = 0; c < m.getColumnDimension(); c++) {
+ /*1131*/      double sum = 0.0D;
+-/*1132*/      for (int r = 0; r < m.getRowDimension(); r++)
++/*1132*/      for (int r = 1; r < m.getRowDimension(); r++)
+ /*1133*/        sum += m.getEntry(r, c); 
+ /*1135*/      d[0][c] = sum;
+ /*   0*/    } 

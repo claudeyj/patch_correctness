@@ -1,0 +1,11 @@
+--- jd-result-2.0/Jsoup/72/mutant-1/a-CharacterReader.java	2021-08-09 04:20:30.877557020 -0700
++++ jd-result-2.0/Jsoup/72/mutant-1/b-CharacterReader.java	2021-08-09 04:20:32.273557060 -0700
+@@ -61,7 +61,7 @@
+ /*  55*/      this.reader.reset();
+ /*  56*/      this.bufPos = 0;
+ /*  57*/      this.bufMark = 0;
+-/*  58*/      this.bufSplitPoint = (this.bufLength > 24576) ? 24576 : this.bufLength;
++/*  58*/      this.bufSplitPoint = (this.bufLength <= 24576) ? 24576 : this.bufLength;
+ /*  59*/    } catch (IOException e) {
+ /*  60*/      throw new UncheckedIOException(e);
+ /*   0*/    } 

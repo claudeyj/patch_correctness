@@ -1,0 +1,11 @@
+--- jd-result-2.0/Csv/15/mutant-6/ori-CSVFormat.java	2021-08-08 21:02:01.612814625 -0700
++++ jd-result-2.0/Csv/15/mutant-6/patched-CSVFormat.java	2021-08-09 06:25:54.753769329 -0700
+@@ -1096,7 +1096,7 @@
+             out.append(value);
+         } else if (isQuoteCharacterSet()) {
+             // the original object is needed so can check for Number
+-            printAndQuote(object, value, offset, len, out, newRecord);
++      printAndQuote(object, value, offset, len, out, this.ignoreEmptyLines);
+         } else if (isEscapeCharacterSet()) {
+             printAndEscape(value, offset, len, out);
+         } else {

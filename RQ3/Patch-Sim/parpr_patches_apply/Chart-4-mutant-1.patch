@@ -1,0 +1,12 @@
+--- Chart4b/source/org/jfree/chart/plot/XYPlot.java	2017-05-03 11:40:03.000000000 +0800
++++ Chart4_Chart-4-mutant-1.patchb/source/org/jfree/chart/plot/XYPlot.java	2017-05-03 11:40:03.000000000 +0800
+@@ -4490,6 +4490,9 @@
+                     }
+                 }
+                 
++                    if (r == null){
++                        return result; 
++                    }
+                     Collection c = r.getAnnotations();
+                     Iterator i = c.iterator();
+                     while (i.hasNext()) {

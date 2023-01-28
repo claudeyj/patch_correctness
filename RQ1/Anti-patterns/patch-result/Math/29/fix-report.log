@@ -1,0 +1,31 @@
+PraPR 2 (JDK 1.7) Fix Report - Mon Jul 12 23:12:27 PDT 2021
+Number of Plausible Fixes: 3
+Total Number of Patches: 1601
+================================================
+1.
+	Mutator: LocalNameMutator
+	Description: local value is replaced by local epsilon to be used
+	File Name: org/apache/commons/math3/linear/OpenMapRealVector.java
+	Line Number: 139
+	Rank: 1
+	Total Rank: 1044
+	Dump: mutant-2.class
+------------------------------------------------
+2.
+	Mutator: NonVoidMethodCallRemovalMutator
+	Description: the call to org.apache.commons.math3.linear.OpenMapRealVector::isDefaultValue(D)Z is replaced with the used of default value false
+	File Name: org/apache/commons/math3/linear/OpenMapRealVector.java
+	Line Number: 139
+	Rank: 2
+	Total Rank: 1045
+	Dump: mutant-3.class
+------------------------------------------------
+3.
+	Mutator: RemoveConditionalMutator_EQUAL_IF
+	Description: removed conditional - replaced equality check with true
+	File Name: org/apache/commons/math3/linear/OpenMapRealVector.java
+	Line Number: 139
+	Rank: 3
+	Total Rank: 1046
+	Dump: mutant-1.class
+------------------------------------------------

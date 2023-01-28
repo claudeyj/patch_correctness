@@ -1,0 +1,11 @@
+--- jd-result-2.0/Cli/11/mutant-2/ori-HelpFormatter.java	2021-08-08 21:02:01.236814614 -0700
++++ jd-result-2.0/Cli/11/mutant-2/man-patched-HelpFormatter.java	2021-08-11 06:43:34.146675299 -0700
+@@ -629,7 +629,7 @@
+         }
+ 
+         // if the Option has a value
+-        if (option.hasArg() && (option.getArgName() != null))
++    if (option.hasArgs() && option.getArgName() != null) 
+         {
+             buff.append(" <").append(option.getArgName()).append(">");
+         }

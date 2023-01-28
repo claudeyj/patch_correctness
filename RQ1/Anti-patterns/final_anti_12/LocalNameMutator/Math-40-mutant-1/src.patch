@@ -1,0 +1,11 @@
+--- jd-result/Math/40/mutant-1/ori-BracketingNthOrderBrentSolver.java	2021-07-24 01:52:03.494297067 -0700
++++ jd-result/Math/40/mutant-1/patched-BracketingNthOrderBrentSolver.java	2021-07-24 01:52:03.494297067 -0700
+@@ -294,7 +294,7 @@
+                 nbPoints = end - start;
+                 System.arraycopy(x, start, x, 0, nbPoints);
+                 System.arraycopy(y, start, y, 0, nbPoints);
+-                signChangeIndex -= start;
++        signChangeIndex = end - start;
+ 
+             } else  if (nbPoints == x.length) {
+ 

@@ -1,0 +1,23 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/13/buggy1.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/13/tool-patch1.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/13/buggy1.java	2021-08-27 19:18:39.218864103 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/13/tool-patch1.java	2021-08-27 19:18:39.218864103 -0700
+@@ -304,7 +304,6 @@
+                     LengthConstraintType.RANGE, 0.0, null,
+                     LengthConstraintType.NONE);
+             Size2D size = this.rightBlock.arrange(g2, c3);
+-            w[3] = size.width;
+             h[3] = size.height;
+         }
+ 
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/13/buggy2.java /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/13/tool-patch2.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/13/buggy2.java	2021-08-27 19:18:39.218864103 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/ASE_Patches/Patches_ICSE/Doverfitting/RSRepair/Chart/13/tool-patch2.java	2021-08-27 19:18:39.218864103 -0700
+@@ -84,7 +84,7 @@
+         if (lower > upper) {
+             String msg = "Range(double, double): require lower (" + lower 
+                 + ") <= upper (" + upper + ").";
+-            throw new IllegalArgumentException(msg);
++            Comparable result = null;
+         }
+         this.lower = lower;
+         this.upper = upper;

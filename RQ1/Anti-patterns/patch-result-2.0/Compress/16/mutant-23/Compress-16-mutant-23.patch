@@ -1,0 +1,29 @@
+--- jd-result-2.0/Compress/16/mutant-23/a-ArchiveStreamFactory.java	2021-08-09 03:58:54.065520427 -0700
++++ jd-result-2.0/Compress/16/mutant-23/b-ArchiveStreamFactory.java	2021-08-09 03:58:55.397520464 -0700
+@@ -1,6 +1,5 @@
+ /*   0*/package org.apache.commons.compress.archivers;
+ /*   0*/
+-/*   0*/import java.io.ByteArrayInputStream;
+ /*   0*/import java.io.IOException;
+ /*   0*/import java.io.InputStream;
+ /*   0*/import java.io.OutputStream;
+@@ -120,16 +119,12 @@
+ /* 236*/      if (TarArchiveInputStream.matches(tarheader, signatureLength)) {
+ /* 237*/          return new TarArchiveInputStream(in); 
+ /*   0*/         }
+-/* 240*/      if (signatureLength >= 512) {
+-/*   0*/          try {
+-/* 242*/            TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(tarheader));
+-/* 244*/            tais.getNextEntry();
+-/* 245*/            return new TarArchiveInputStream(in);
+-/* 246*/          } catch (Exception exception) {} 
+-/*   0*/         }
++/* 240*/      512;
+ /* 253*/    } catch (IOException e) {
+ /* 254*/      throw new ArchiveException("Could not use reset and mark operations.", e);
+ /*   0*/    } 
++/*   0*/    while (true) {
+ /* 257*/    throw new ArchiveException("No Archiver found for the stream signature");
+ /*   0*/  }
++/*   0*/  }
+ /*   0*/}

@@ -1,0 +1,14 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/7/mutant-0/buggy-DateTimeFormatter.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/7/mutant-0/patched-DateTimeFormatter.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/7/mutant-0/buggy-DateTimeFormatter.java	2021-08-22 00:18:38.722190187 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Time/7/mutant-0/patched-DateTimeFormatter.java	2021-08-22 00:18:38.722190187 -0700
+@@ -705,9 +705,9 @@
+         
+         long instantMillis = instant.getMillis();
+         Chronology chrono = instant.getChronology();
++        int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis);
+         long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
+         chrono = selectChronology(chrono);
+-        int defaultYear = chrono.year().get(instantLocal);
+         
+         DateTimeParserBucket bucket = new DateTimeParserBucket(
+             instantLocal, chrono, iLocale, iPivotYear, defaultYear);

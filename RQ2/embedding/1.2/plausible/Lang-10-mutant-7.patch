@@ -1,0 +1,11 @@
+--- jd-result/Lang/10/mutant-7/ori-FastDateParser.java	2021-07-15 18:51:52.428753128 -0700
++++ jd-result/Lang/10/mutant-7/patched-FastDateParser.java	2021-07-21 08:05:56.918287751 -0700
+@@ -304,7 +304,7 @@
+         boolean wasWhite= false;
+         for(int i= 0; i<value.length(); ++i) {
+             char c= value.charAt(i);
+-            if(Character.isWhitespace(c)) {
++      if (Character.isSurrogate(c)) {
+                 if(!wasWhite) {
+                     wasWhite= true;
+                     regex.append("\\s*+");

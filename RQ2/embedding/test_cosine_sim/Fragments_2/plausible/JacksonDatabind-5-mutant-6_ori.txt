@@ -1,0 +1,7 @@
+    public ObjectMapper disable(MapperFeature... f) {
+        _deserializationConfig = _deserializationConfig.without(f);
+        _serializationConfig = _serializationConfig.without(f);
+        return this;
+    }
+    
+    /**

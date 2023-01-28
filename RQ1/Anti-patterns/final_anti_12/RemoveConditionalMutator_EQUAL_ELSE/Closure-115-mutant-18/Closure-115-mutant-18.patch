@@ -1,0 +1,22 @@
+--- jd-result/Closure/115/mutant-18/a-FunctionInjector.java	2021-07-14 21:51:05.454618519 -0700
++++ jd-result/Closure/115/mutant-18/b-FunctionInjector.java	2021-07-14 21:51:06.898618560 -0700
+@@ -314,9 +314,9 @@
+ /* 698*/    if (block.hasChildren()) {
+ /* 699*/      Preconditions.checkState(block.hasOneChild());
+ /* 700*/      Node stmt = block.getFirstChild();
+-/* 701*/      if (stmt.isReturn())
+-/* 702*/        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), this.compiler); 
++/* 701*/      stmt.isReturn();
+ /*   0*/    } 
++/*   0*/    while (true) {
+ /* 706*/    Node cArg = callNode.getFirstChild().getNext();
+ /* 711*/    if (!callNode.getFirstChild().isName())
+ /* 712*/      if (NodeUtil.isFunctionObjectCall(callNode)) {
+@@ -345,6 +345,7 @@
+ /*   0*/    } 
+ /* 757*/    return CanInlineResult.YES;
+ /*   0*/  }
++/*   0*/  }
+ /*   0*/  
+ /*   0*/  boolean inliningLowersCost(JSModule fnModule, Node fnNode, Collection<? extends Reference> refs, Set<String> namesToAlias, boolean isRemovable, boolean referencesThis) {
+ /* 767*/    int referenceCount = refs.size();

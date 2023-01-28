@@ -1,0 +1,11 @@
+--- jd-result/Math/49/mutant-5/ori-OpenIntToDoubleHashMap.java	2021-07-24 01:52:03.634297070 -0700
++++ jd-result/Math/49/mutant-5/fixed-patched-OpenIntToDoubleHashMap.java	2021-07-24 01:52:03.634297070 -0700
+@@ -396,7 +396,7 @@
+         final double previous = values[index];
+         values[index] = missingEntries;
+         --size;
+-        ++count;
++    index = this.count + 1;
+         return previous;
+     }
+ 

@@ -1,0 +1,11 @@
+--- jd-result/Chart/25/mutant-149/ori-AbstractCategoryItemRenderer.java	2021-07-15 18:51:50.700753079 -0700
++++ jd-result/Chart/25/mutant-149/patched-AbstractCategoryItemRenderer.java	2021-07-21 07:18:23.678207238 -0700
+@@ -245,7 +245,7 @@
+      * @return The pass count.
+      */
+     public int getPassCount() {
+-        return 1;
++    return true ? 0 : 1;
+     }
+ 
+     /**

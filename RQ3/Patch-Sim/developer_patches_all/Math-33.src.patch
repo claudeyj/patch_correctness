@@ -1,0 +1,12 @@
+diff -u -b /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/33/mutant-0/buggy-SimplexTableau.java /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/33/mutant-0/patched-SimplexTableau.java
+--- /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/33/mutant-0/buggy-SimplexTableau.java	2021-08-22 00:18:38.674190186 -0700
++++ /home/junyang/patch_correctness/gh/patch_correctness/developer_patches/Math/33/mutant-0/patched-SimplexTableau.java	2021-08-22 00:18:38.674190186 -0700
+@@ -335,7 +335,7 @@
+         // positive cost non-artificial variables
+         for (int i = getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+             final double entry = tableau.getEntry(0, i);
+-            if (Precision.compareTo(entry, 0d, maxUlps) > 0) {
++            if (Precision.compareTo(entry, 0d, epsilon) > 0) {
+                 columnsToDrop.add(i);
+             }
+         }

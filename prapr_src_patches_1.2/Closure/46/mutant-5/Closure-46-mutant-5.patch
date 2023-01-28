@@ -1,0 +1,18 @@
+--- jd-result/Closure/46/mutant-5/a-RecordType.java	2021-07-14 21:43:27.170605587 -0700
++++ jd-result/Closure/46/mutant-5/b-RecordType.java	2021-07-14 21:43:28.518605626 -0700
+@@ -56,14 +56,8 @@
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  public JSType getLeastSupertype(JSType that) {
+-/* 142*/    if (!that.isRecordType())
++/* 142*/    that.isRecordType();
+ /* 143*/      return super.getLeastSupertype(that); 
+-/* 145*/    RecordTypeBuilder builder = new RecordTypeBuilder(this.registry);
+-/* 146*/    for (String property : this.properties.keySet()) {
+-/* 147*/      if (that.toMaybeRecordType().hasProperty(property) && that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(getPropertyType(property)))
+-/* 150*/        builder.addProperty(property, getPropertyType(property), getPropertyNode(property)); 
+-/*   0*/    } 
+-/* 154*/    return builder.build();
+ /*   0*/  }
+ /*   0*/  
+ /*   0*/  JSType getGreatestSubtypeHelper(JSType that) {

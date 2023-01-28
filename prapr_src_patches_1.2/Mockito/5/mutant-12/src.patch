@@ -1,0 +1,11 @@
+--- jd-result/Mockito/5/mutant-12/ori-Whitebox.java	2021-07-15 18:51:56.292753237 -0700
++++ jd-result/Mockito/5/mutant-12/man-patched-Whitebox.java	2021-07-24 01:25:37.022252299 -0700
+@@ -48,7 +48,7 @@
+     private static Field getField(Class<?> clazz, String field) {
+         try {
+             return clazz.getDeclaredField(field);
+-        } catch (NoSuchFieldException e) {
++        } catch (ReflectiveOperationException e) {
+             return null;
+         }
+     }
