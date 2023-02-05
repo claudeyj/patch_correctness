@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "If",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Assignment",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "this.leftBlock = null",
+            "src_parent": "{\n    double[] w = new double[5];\n    double[] h = new double[5];\n    w[0] = constraint.getWidth();\n    if (this.topBlock != null) {\n        org.jfree.chart.block.RectangleConstraint c1 = new org.jfree.chart.block.RectangleConstraint(w[0], null, LengthConstraintType.FIXED, 0.0, new org.jfree.data.Range(0.0, constraint.getHeight()), LengthConstraintType.RANGE);\n        org.jfree.chart.util.Size2D size = this.topBlock.arrange(g2, c1);\n        h[0] = size.height;\n    }\n    w[1] = w[0];\n    if (this.bottomBlock != null) {\n        org.jfree.chart.block.RectangleConstraint c2 = new org.jfree.chart.block.RectangleConstraint(w[0], null, LengthConstraintType.FIXED, 0.0, new org.jfree.data.Range(0.0, constraint.getHeight() - h[0]), LengthConstraintType.RANGE);\n        org.jfree.chart.util.Size2D size = this.bottomBlock.arrange(g2, c2);\n        h[1] = size.height;\n    }\n    this.leftBlock = null;\n    h[2] = (constraint.getHeight() - h[1]) - h[0];\n    if (this.leftBlock != null) {\n        org.jfree.chart.block.RectangleConstraint c3 = new org.jfree.chart.block.RectangleConstraint(0.0, new org.jfree.data.Range(0.0, constraint.getWidth()), LengthConstraintType.RANGE, h[2], null, LengthConstraintType.FIXED);\n        org.jfree.chart.util.Size2D size = this.leftBlock.arrange(g2, c3);\n        w[2] = size.width;\n    }\n    h[3] = h[2];\n    if (this.rightBlock != null) {\n        org.jfree.chart.block.RectangleConstraint c4 = new org.jfree.chart.block.RectangleConstraint(0.0, new org.jfree.data.Range(0.0, constraint.getWidth() - w[2]), LengthConstraintType.RANGE, h[2], null, LengthConstraintType.FIXED);\n        org.jfree.chart.util.Size2D size = this.rightBlock.arrange(g2, c4);\n        w[3] = size.width;\n    }\n    h[4] = h[2];\n    w[4] = (constraint.getWidth() - w[3]) - w[2];\n    org.jfree.chart.block.RectangleConstraint c5 = new org.jfree.chart.block.RectangleConstraint(w[4], h[4]);\n    if (this.centerBlock != null) {\n        this.centerBlock.arrange(g2, c5);\n    }\n    if (this.topBlock != null) {\n        this.topBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, 0.0, w[0], h[0]));\n    }\n    if (this.bottomBlock != null) {\n        this.bottomBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, h[0] + h[2], w[1], h[1]));\n    }\n    if (this.leftBlock != null) {\n        this.leftBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, h[0], w[2], h[2]));\n    }\n    if (this.rightBlock != null) {\n        this.rightBlock.setBounds(new java.awt.geom.Rectangle2D.Double(w[2] + w[4], h[0], w[3], h[3]));\n    }\n    if (this.centerBlock != null) {\n        this.centerBlock.setBounds(new java.awt.geom.Rectangle2D.Double(w[2], h[0], w[4], h[4]));\n    }\n    return new org.jfree.chart.util.Size2D(constraint.getWidth(), constraint.getHeight());\n}",
+            "src_parent_type": "Block",
+            "src_type": "Assignment"
+          }
+        }
+      ],
+      "file_name": "BorderArrangement"
+    }
+  ],
+  "id": "Arja_patch_Defects4J_Chart_13_0_81"
+}

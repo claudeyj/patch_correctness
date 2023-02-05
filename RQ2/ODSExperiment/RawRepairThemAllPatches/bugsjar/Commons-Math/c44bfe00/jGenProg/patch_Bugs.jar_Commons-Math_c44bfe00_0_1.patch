@@ -1,0 +1,77 @@
+
+--- org\/apache\/commons\/math4\/analysis\/solvers\/BracketingNthOrderBrentSolver.java
++++ org\/apache\/commons\/math4\/analysis\/solvers\/BracketingNthOrderBrentSolver.java
+@@ -303,46 +303,46 @@
+ 				nbPoints = end - start;
+ 				java.lang.System.arraycopy(x, start, x, 0, nbPoints);
+ 				java.lang.System.arraycopy(y, start, y, 0, nbPoints);
+-				signChangeIndex -= start;
+ 
+-			}else 				if (nbPoints == (x.length)) {
+ 
+ 
+-					nbPoints--;
+ 
+ 
+-					if (signChangeIndex >= (((x.length) + 1) \/ 2)) {
+ 
+-						java.lang.System.arraycopy(x, 1, x, 0, nbPoints);
+-						java.lang.System.arraycopy(y, 1, y, 0, nbPoints);
+-						--signChangeIndex;
+-					}
+ 
+-				}
+ 
+ 
+ 
+-			java.lang.System.arraycopy(x, signChangeIndex, x, (signChangeIndex + 1), (nbPoints - signChangeIndex));
+-			x[signChangeIndex] = nextX;
+-			java.lang.System.arraycopy(y, signChangeIndex, y, (signChangeIndex + 1), (nbPoints - signChangeIndex));
+-			y[signChangeIndex] = nextY;
+-			++nbPoints;
+ 
+ 
+-			if ((nextY * yA) <= 0) {
+ 
+-				xB = nextX;
+-				yB = nextY;
+-				absYB = org.apache.commons.math4.util.FastMath.abs(yB);
+-				++agingA;
+-				agingB = 0;
+-			}else {
+ 
+-				xA = nextX;
+-				yA = nextY;
+-				absYA = org.apache.commons.math4.util.FastMath.abs(yA);
+-				agingA = 0;
+-				++agingB;
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++				++agingB; 				signChangeIndex -= start;}else 				if (nbPoints == (x.length)) { 					nbPoints--; 					if (signChangeIndex >= (((x.length) + 1) \/ 2)) { 						java.lang.System.arraycopy(x, 1, x, 0, nbPoints); 						java.lang.System.arraycopy(y, 1, y, 0, nbPoints); 						--signChangeIndex;}} 			java.lang.System.arraycopy(x, signChangeIndex, x, (signChangeIndex + 1), (nbPoints - signChangeIndex)); 			x[signChangeIndex] = nextX; 			java.lang.System.arraycopy(y, signChangeIndex, y, (signChangeIndex + 1), (nbPoints - signChangeIndex)); 			y[signChangeIndex] = nextY; 			++nbPoints; 			if ((nextY * yA) <= 0) { 				xB = nextX; 				yB = nextY; 				absYB = org.apache.commons.math4.util.FastMath.abs(yB); 				++agingA; 				agingB = 0;}else { 				xA = nextX; 				yA = nextY; 				absYA = org.apache.commons.math4.util.FastMath.abs(yA); 				agingA = 0; 				++agingB;
+ 
+ 
+ 				signChangeIndex++;
+

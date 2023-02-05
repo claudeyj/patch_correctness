@@ -1,0 +1,109 @@
+
+--- org\/traccar\/protocol\/WatchProtocolDecoder.java
++++ org\/traccar\/protocol\/WatchProtocolDecoder.java
+@@ -160,63 +160,63 @@
+ 
+ 					getLastLocation(position, null);
+ 
+-					position.set(org.traccar.model.Position.KEY_BATTERY_LEVEL, java.lang.Integer.parseInt(values[3]));
+ 
+-					return position;
+-				}
+-			}
+ 
+-		}else 			if (((((type.equals("UD")) || (type.equals("UD2"))) || (type.equals("UD3"))) || 
+-			(type.equals("AL"))) || (type.equals("WT"))) {
+ 
+-				if (type.equals("AL")) {
+-					sendResponse(channel, manufacturer, id, "AL");
+-				}
+ 
+-				parser = new org.traccar.helper.Parser(org.traccar.protocol.WatchProtocolDecoder.PATTERN_POSITION, content);
+-				if (!(parser.matches())) {
+-					return null;
+-				}
+ 
+-				org.traccar.model.Position position = new org.traccar.model.Position();
+-				position.setProtocol(getProtocolName());
+-				position.setDeviceId(deviceSession.getDeviceId());
+ 
+-				position.setTime(parser.nextDateTime(org.traccar.helper.Parser.DateTimeFormat.DMY_HMS));
+ 
+-				position.setValid(parser.next().equals("A"));
+-				position.setLatitude(parser.nextCoordinate(org.traccar.helper.Parser.CoordinateFormat.DEG_HEM));
+-				position.setLongitude(parser.nextCoordinate(org.traccar.helper.Parser.CoordinateFormat.DEG_HEM));
+-				position.setSpeed(org.traccar.helper.UnitsConverter.knotsFromKph(parser.nextDouble(0)));
+-				position.setCourse(parser.nextDouble(0));
+-				position.setAltitude(parser.nextDouble(0));
+ 
+-				position.set(org.traccar.model.Position.KEY_SATELLITES, parser.nextInt(0));
+-				position.set(org.traccar.model.Position.KEY_RSSI, parser.nextInt(0));
+-				position.set(org.traccar.model.Position.KEY_BATTERY_LEVEL, parser.nextInt(0));
+ 
+-				position.set("steps", parser.nextInt(0));
+ 
+-				position.set(org.traccar.model.Position.KEY_ALARM, decodeAlarm(parser.nextHexInt(0)));
+ 
+-				decodeTail(position, parser.next());
+ 
+-				return position;
+ 
+-			}else 				if (type.equals("TKQ")) {
+ 
+-					sendResponse(channel, manufacturer, id, "TKQ");
+ 
+-				}else 					if ((type.equals("PULSE")) || (type.equals("heart"))) {
+ 
+-						org.traccar.model.Position position = new org.traccar.model.Position();
+-						position.setProtocol(getProtocolName());
+-						position.setDeviceId(deviceSession.getDeviceId());
+-						getLastLocation(position, new java.util.Date());
+-						position.setValid(false);
+-						java.lang.String pulse = content.substring(1);
+-						position.set("pulse", pulse);
+-						position.set(org.traccar.model.Position.KEY_RESULT, pulse);
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++					position.set(org.traccar.model.Position.KEY_RESULT, type); 					return position;}}}else 			if (((((type.equals("UD")) || (type.equals("UD2"))) || (type.equals("UD3"))) || (type.equals("AL"))) || (type.equals("WT"))) { 				if (type.equals("AL")) { 					sendResponse(channel, manufacturer, id, "AL");} 				parser = new org.traccar.helper.Parser(org.traccar.protocol.WatchProtocolDecoder.PATTERN_POSITION, content); 				if (!(parser.matches())) { 					return null;} 				org.traccar.model.Position position = new org.traccar.model.Position(); 				position.setProtocol(getProtocolName()); 				position.setDeviceId(deviceSession.getDeviceId()); 				position.setTime(parser.nextDateTime(org.traccar.helper.Parser.DateTimeFormat.DMY_HMS)); 				position.setValid(parser.next().equals("A")); 				position.setLatitude(parser.nextCoordinate(org.traccar.helper.Parser.CoordinateFormat.DEG_HEM)); 				position.setLongitude(parser.nextCoordinate(org.traccar.helper.Parser.CoordinateFormat.DEG_HEM)); 				position.setSpeed(org.traccar.helper.UnitsConverter.knotsFromKph(parser.nextDouble(0))); 				position.setCourse(parser.nextDouble(0)); 				position.setAltitude(parser.nextDouble(0)); 				position.set(org.traccar.model.Position.KEY_SATELLITES, parser.nextInt(0)); 				position.set(org.traccar.model.Position.KEY_RSSI, parser.nextInt(0)); 				position.set(org.traccar.model.Position.KEY_BATTERY_LEVEL, parser.nextInt(0)); 				position.set("steps", parser.nextInt(0)); 				position.set(org.traccar.model.Position.KEY_ALARM, decodeAlarm(parser.nextHexInt(0))); 				decodeTail(position, parser.next()); 				return position;}else 				if (type.equals("TKQ")) { 					sendResponse(channel, manufacturer, id, "TKQ");}else 					if ((type.equals("PULSE")) || (type.equals("heart"))) { 						org.traccar.model.Position position = new org.traccar.model.Position(); 						position.setProtocol(getProtocolName()); 						position.setDeviceId(deviceSession.getDeviceId()); 						getLastLocation(position, new java.util.Date()); 						position.setValid(false); 						java.lang.String pulse = content.substring(1); 						position.set("pulse", pulse); 						position.set(org.traccar.model.Position.KEY_RESULT, pulse);
+ 						return position;
+ 
+ 					}
+

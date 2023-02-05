@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "ForEach",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "LocalVariable",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "recent.clear()",
+            "dst_parent": "{\n    if (recent.isEmpty() && removed.isEmpty()) {\n        return;\n    }\n    org.apache.jackrabbit.oak.plugins.segment.SegmentWriter writer = null;\n    java.util.Map<java.lang.String, org.apache.jackrabbit.oak.plugins.segment.RecordId> segmentIdMap = com.google.common.collect.Maps.newHashMap();\n    for (java.util.Map.Entry<java.util.UUID, org.apache.jackrabbit.oak.plugins.segment.RecordIdMap> recentEntry : recent.entrySet()) {\n        java.util.UUID uuid = recentEntry.getKey();\n        org.apache.jackrabbit.oak.plugins.segment.RecordIdMap newSegment = recentEntry.getValue();\n        if (removed.contains(uuid)) {\n            continue;\n        }\n        org.apache.jackrabbit.oak.plugins.segment.MapRecord base;\n        org.apache.jackrabbit.oak.plugins.segment.MapEntry baseEntry = (entries == null) ? null : entries.getEntry(uuid.toString());\n        base = (baseEntry == null) ? null : new org.apache.jackrabbit.oak.plugins.segment.MapRecord(baseEntry.getValue());\n        if (writer == null) {\n            writer = store.createSegmentWriter();\n        }\n        java.util.Map<java.lang.String, org.apache.jackrabbit.oak.plugins.segment.RecordId> offsetMap = com.google.common.collect.Maps.newHashMap();\n        for (int k = 0; k < newSegment.size(); k++) {\n            offsetMap.put(java.lang.String.valueOf(newSegment.getKey(k)), writer.writeString(newSegment.getRecordId(k).toString10()));\n        }\n        org.apache.jackrabbit.oak.plugins.segment.RecordId newEntryId = writer.writeMap(base, offsetMap).getRecordId();\n        segmentIdMap.put(uuid.toString(), newEntryId);\n        recordCount += offsetMap.size();\n    }\n    if (entries != null) {\n        for (java.util.UUID uuid : removed) {\n            org.apache.jackrabbit.oak.plugins.segment.MapEntry toRemove = entries.getEntry(uuid.toString());\n            if (toRemove != null) {\n                segmentIdMap.put(uuid.toString(), null);\n                recordCount -= new org.apache.jackrabbit.oak.plugins.segment.MapRecord(toRemove.getValue()).size();\n            }\n        }\n    }\n    if (!segmentIdMap.isEmpty()) {\n        if (writer == null) {\n            writer = store.createSegmentWriter();\n        }\n        org.apache.jackrabbit.oak.plugins.segment.RecordId previousBaseId = (entries == null) ? null : entries.getRecordId();\n        entries = writer.writeMap(entries, segmentIdMap);\n        entries.getSegment().getSegmentId().pin();\n        java.lang.String mapInfo = (((((org.apache.jackrabbit.oak.plugins.segment.PersistedCompactionMap.PERSISTED_COMPACTION_MAP + '{') + \"id=\") + entries.getRecordId()) + \", baseId=\") + previousBaseId) + '}';\n        writer.writeString(mapInfo);\n        writer.flush();\n    }\n    recent.clear();\n    if (recordCount == 0) {\n        entries = null;\n    }\n}",
+            "dst_parent_type": "Block",
+            "dst_type": "Invocation",
+            "operator": "MOV",
+            "src": "recent.clear()",
+            "src_parent": "{\n    if (writer == null) {\n        writer = store.createSegmentWriter();\n    }\n    org.apache.jackrabbit.oak.plugins.segment.RecordId previousBaseId = (entries == null) ? null : entries.getRecordId();\n    entries = writer.writeMap(entries, segmentIdMap);\n    entries.getSegment().getSegmentId().pin();\n    java.lang.String mapInfo = (((((org.apache.jackrabbit.oak.plugins.segment.PersistedCompactionMap.PERSISTED_COMPACTION_MAP + '{') + \"id=\") + entries.getRecordId()) + \", baseId=\") + previousBaseId) + '}';\n    writer.writeString(mapInfo);\n    writer.flush();\n    recent.clear();\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "PersistedCompactionMap"
+    }
+  ],
+  "id": "jackrabbit-oak_5138a1e2"
+}

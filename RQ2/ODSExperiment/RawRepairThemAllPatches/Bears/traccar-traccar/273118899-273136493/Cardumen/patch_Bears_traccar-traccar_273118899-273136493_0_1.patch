@@ -1,0 +1,105 @@
+
+--- org\/traccar\/protocol\/EelinkProtocolDecoder.java
++++ org\/traccar\/protocol\/EelinkProtocolDecoder.java
+@@ -158,60 +158,60 @@
+ 
+ 					position.set(org.traccar.model.Position.KEY_EVENT, statusType);
+ 
+-					if (((statusType == 1) || (statusType == 2)) || (statusType == 3)) {
+-						buf.readUnsignedInt();
+-						decodeStatus(position, buf.readUnsignedShort());
+-					}
++					if ((
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+-				}
+ 
+-		return position;
+-	}
+ 
+-	private org.traccar.model.Position decodeNew(org.traccar.DeviceSession deviceSession, org.jboss.netty.buffer.ChannelBuffer buf, int index) {
+ 
+-		org.traccar.model.Position position = new org.traccar.model.Position();
+-		position.setDeviceId(deviceSession.getDeviceId());
+-		position.setProtocol(getProtocolName());
+ 
+-		position.set(org.traccar.model.Position.KEY_INDEX, index);
+ 
+-		position.setTime(new java.util.Date(((buf.readUnsignedInt()) * 1000)));
+ 
+-		int flags = buf.readUnsignedByte();
+ 
+-		if (org.traccar.helper.BitUtil.check(flags, 0)) {
+-			position.setLatitude(((buf.readInt()) \/ 1800000.0));
+-			position.setLongitude(((buf.readInt()) \/ 1800000.0));
+-			position.setAltitude(buf.readShort());
+-			position.setSpeed(org.traccar.helper.UnitsConverter.knotsFromKph(buf.readUnsignedShort()));
+-			position.setCourse(buf.readUnsignedShort());
+-			position.set(org.traccar.model.Position.KEY_SATELLITES, buf.readUnsignedByte());
+-		}
+ 
+-		if (org.traccar.helper.BitUtil.check(flags, 1)) {
+-			position.setNetwork(new org.traccar.model.Network(org.traccar.model.CellTower.from(
+-			buf.readUnsignedShort(), buf.readUnsignedShort(), 
+-			buf.readUnsignedShort(), buf.readUnsignedInt(), buf.readUnsignedByte())));
+-		}
+ 
+-		if (org.traccar.helper.BitUtil.check(flags, 2)) {
+-			buf.skipBytes(7);
+-		}
+ 
+-		if (org.traccar.helper.BitUtil.check(flags, 3)) {
+-			buf.skipBytes(7);
+-		}
+ 
+-		if (org.traccar.helper.BitUtil.check(flags, 4)) {
+-			buf.skipBytes(7);
+-		}
+ 
+-		if (org.traccar.helper.BitUtil.check(flags, 5)) {
+-			buf.skipBytes(7);
+-		}
+ 
+-		if (org.traccar.helper.BitUtil.check(flags, 6)) {
++					(org.traccar.helper.BitUtil.check(type, 6)) || (statusType == 2)) || (statusType == 3)) { 						buf.readUnsignedInt(); 						decodeStatus(position, buf.readUnsignedShort());}} 		return position;} 	private org.traccar.model.Position decodeNew(org.traccar.DeviceSession deviceSession, org.jboss.netty.buffer.ChannelBuffer buf, int index) { 		org.traccar.model.Position position = new org.traccar.model.Position(); 		position.setDeviceId(deviceSession.getDeviceId()); 		position.setProtocol(getProtocolName()); 		position.set(org.traccar.model.Position.KEY_INDEX, index); 		position.setTime(new java.util.Date(((buf.readUnsignedInt()) * 1000))); 		int flags = buf.readUnsignedByte(); 		if (org.traccar.helper.BitUtil.check(flags, 0)) { 			position.setLatitude(((buf.readInt()) \/ 1800000.0)); 			position.setLongitude(((buf.readInt()) \/ 1800000.0)); 			position.setAltitude(buf.readShort()); 			position.setSpeed(org.traccar.helper.UnitsConverter.knotsFromKph(buf.readUnsignedShort())); 			position.setCourse(buf.readUnsignedShort()); 			position.set(org.traccar.model.Position.KEY_SATELLITES, buf.readUnsignedByte());} 		if (org.traccar.helper.BitUtil.check(flags, 1)) { 			position.setNetwork(new org.traccar.model.Network(org.traccar.model.CellTower.from(buf.readUnsignedShort(), buf.readUnsignedShort(), buf.readUnsignedShort(), buf.readUnsignedInt(), buf.readUnsignedByte())));} 		if (org.traccar.helper.BitUtil.check(flags, 2)) { 			buf.skipBytes(7);} 		if (org.traccar.helper.BitUtil.check(flags, 3)) { 			buf.skipBytes(7);} 		if (org.traccar.helper.BitUtil.check(flags, 4)) { 			buf.skipBytes(7);} 		if (org.traccar.helper.BitUtil.check(flags, 5)) { 			buf.skipBytes(7);} 		if (org.traccar.helper.BitUtil.check(flags, 6)) {
+ 			buf.skipBytes(7);
+ 		}
+ 
+

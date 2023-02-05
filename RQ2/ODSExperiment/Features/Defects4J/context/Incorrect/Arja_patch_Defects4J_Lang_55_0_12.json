@@ -1,0 +1,93 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "this.runningState = org.apache.commons.lang.time.StopWatch.STATE_STOPPED",
+            "src_parent": "{\n    if ((this.runningState != org.apache.commons.lang.time.StopWatch.STATE_RUNNING) && (this.runningState != org.apache.commons.lang.time.StopWatch.STATE_SUSPENDED)) {\n        throw new java.lang.IllegalStateException(\"Stopwatch is not running. \");\n    }\n    stopTime = java.lang.System.currentTimeMillis();\n    this.runningState = org.apache.commons.lang.time.StopWatch.STATE_STOPPED;\n}",
+            "src_parent_type": "Block",
+            "src_type": "Assignment"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Assignment",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "stopTime = java.lang.System.currentTimeMillis()",
+            "dst_parent": "{\n    if ((this.runningState != org.apache.commons.lang.time.StopWatch.STATE_RUNNING) && (this.runningState != org.apache.commons.lang.time.StopWatch.STATE_SUSPENDED)) {\n        throw new java.lang.IllegalStateException(\"Stopwatch is not running. \");\n    }\n    stopTime = java.lang.System.currentTimeMillis();\n    this.runningState = org.apache.commons.lang.time.StopWatch.STATE_STOPPED;\n}",
+            "dst_parent_type": "Block",
+            "dst_type": "Assignment",
+            "operator": "MOV",
+            "src": "stopTime = java.lang.System.currentTimeMillis()",
+            "src_parent": "{\n    stopTime = java.lang.System.currentTimeMillis();\n    if (this.runningState == org.apache.commons.lang.time.StopWatch.STATE_STOPPED) {\n        throw new java.lang.IllegalStateException(\"Stopwatch must be reset before being restarted. \");\n    }\n    if (this.runningState != org.apache.commons.lang.time.StopWatch.STATE_UNSTARTED) {\n        throw new java.lang.IllegalStateException(\"Stopwatch already started. \");\n    }\n    stopTime = -1;\n    startTime = java.lang.System.currentTimeMillis();\n    this.runningState = org.apache.commons.lang.time.StopWatch.STATE_RUNNING;\n}",
+            "src_parent_type": "Block",
+            "src_type": "Assignment"
+          }
+        }
+      ],
+      "file_name": "StopWatch"
+    }
+  ],
+  "id": "Arja_patch_Defects4J_Lang_55_0_12"
+}

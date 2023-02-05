@@ -1,0 +1,13 @@
+
+--- org\/apache\/commons\/math\/optimization\/general\/LevenbergMarquardtOptimizer.java
++++ org\/apache\/commons\/math\/optimization\/general\/LevenbergMarquardtOptimizer.java
+@@ -444,7 +444,7 @@
+ 					if (((((java.lang.Math.abs(actRed)) <= (costRelativeTolerance)) && 
+ 					(preRed <= (costRelativeTolerance))) && 
+ 					(ratio <= 2.0)) || 
+-					(delta <= ((parRelativeTolerance) * xNorm))) {
++					(delta <= ((parRelativeTolerance) * xNorm))) { 						current = new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective);
+ 						return current;
+ 					}
+ 				}
+

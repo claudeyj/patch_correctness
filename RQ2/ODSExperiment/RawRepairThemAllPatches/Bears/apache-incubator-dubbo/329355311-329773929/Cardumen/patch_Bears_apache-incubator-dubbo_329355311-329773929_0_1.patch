@@ -1,0 +1,13 @@
+
+--- com\/alibaba\/dubbo\/rpc\/cluster\/router\/condition\/ConditionRouter.java
++++ com\/alibaba\/dubbo\/rpc\/cluster\/router\/condition\/ConditionRouter.java
+@@ -213,7 +213,7 @@
+ 				}
+ 			}else {
+ 
+-				if ((matchPair.getValue().matches.size()) > 0) {
++				if (matchWhen(url, invocation)) {
+ 					return false;
+ 				}else {
+ 					result = true;
+

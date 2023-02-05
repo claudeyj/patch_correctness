@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "Invocation",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Invocation",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "setRenderAllowed()",
+            "dst_parent": "{\n    configure();\n    setRenderAllowed();\n    if ((determineVisibility() && (!getFlag(org.apache.wicket.Component.FLAG_RENDERING))) && (!getFlag(org.apache.wicket.Component.FLAG_PREPARED_FOR_RENDER))) {\n        setRequestFlag(org.apache.wicket.Component.RFLAG_BEFORE_RENDER_SUPER_CALL_VERIFIED, false);\n        getApplication().getComponentPreOnBeforeRenderListeners().onBeforeRender(this);\n        onBeforeRender();\n        getApplication().getComponentPostOnBeforeRenderListeners().onBeforeRender(this);\n        if (!getRequestFlag(org.apache.wicket.Component.RFLAG_BEFORE_RENDER_SUPER_CALL_VERIFIED)) {\n            throw new java.lang.IllegalStateException(((org.apache.wicket.Component.class.getName() + \" has not been properly rendered. Something in the hierarchy of \") + getClass().getName()) + \" has not called super.onBeforeRender() in the override of onBeforeRender() method\");\n        }\n    }\n}",
+            "dst_parent_type": "Block",
+            "dst_type": "Invocation",
+            "operator": "MOV",
+            "src": "setRenderAllowed()",
+            "src_parent": "{\n    beforeRender();\n    if (setRenderingFlag) {\n        java.util.List<org.apache.wicket.Component> feedbacks = getRequestCycle().getMetaData(org.apache.wicket.Component.FEEDBACK_LIST);\n        if (feedbacks != null) {\n            for (org.apache.wicket.Component feedback : feedbacks) {\n                feedback.internalBeforeRender();\n            }\n        }\n        getRequestCycle().setMetaData(org.apache.wicket.Component.FEEDBACK_LIST, null);\n    }\n    markRendering(setRenderingFlag);\n    setRenderAllowed();\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "Component"
+    }
+  ],
+  "id": "wicket_09166ea8"
+}

@@ -1,0 +1,13 @@
+
+--- \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_5fe9b36c\/src\/main\/java\/org\/apache\/commons\/math\/util\/ContinuedFractionjava
++++ \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_5fe9b36c\/src\/main\/java\/org\/apache\/commons\/math\/util\/ContinuedFractionjava
+@@ -160,7 +160,7 @@
+ 					lastScaleFactor = scaleFactor;
+ 					scaleFactor *= scale;
+ 					if ((a != 0.0) && (a > b)) {
+-						p2 = (p1 \/ lastScaleFactor) + ((b \/ scaleFactor) * p0);
++						p2 = (b \/ b) + ((b \/ b) * b);
+ 						q2 = (q1 \/ lastScaleFactor) + ((b \/ scaleFactor) * q0);
+ 					}else 						if (b != 0) {
+ 							p2 = ((a \/ scaleFactor) * p1) + (p0 \/ lastScaleFactor);
+

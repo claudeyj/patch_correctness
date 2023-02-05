@@ -1,0 +1,8 @@
+--- org/jfree/chart/plot/CategoryPlot.java
++++ org/jfree/chart/plot/CategoryPlot.java
+@@ -2447,2 +2447,5 @@
+         }
++        if (markers == null) {
++            return rangeCrosshairVisible;
++        }
+         boolean removed = markers.remove(marker);

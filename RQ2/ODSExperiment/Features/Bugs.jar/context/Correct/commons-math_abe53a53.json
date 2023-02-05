@@ -1,0 +1,93 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "If",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Assignment",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "fitfun.repairAndDecode(bestArx.getColumn(0))",
+            "dst_parent": "new org.apache.commons.math3.optimization.PointValuePair(fitfun.repairAndDecode(bestArx.getColumn(0)), isMinimize ? bestFitness : -bestFitness)",
+            "dst_parent_type": "ConstructorCall",
+            "dst_type": "Invocation",
+            "operator": "UPD",
+            "src": "fitfun.decode(bestArx.getColumn(0))",
+            "src_parent": "new org.apache.commons.math3.optimization.PointValuePair(fitfun.decode(bestArx.getColumn(0)), isMinimize ? bestFitness : -bestFitness)",
+            "src_parent_type": "ConstructorCall",
+            "src_type": "Invocation"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "public double[] repairAndDecode(final double[] x) {\n    return (boundaries != null) && isRepairMode ? decode(repair(x)) : decode(x);\n}",
+            "src_parent": "private class FitnessFunction {\n    private double valueRange;\n\n    private boolean isRepairMode;\n\n    public FitnessFunction() {\n        valueRange = 1.0;\n        isRepairMode = true;\n    }\n\n    public double[] encode(final double[] x) {\n        if (boundaries == null) {\n            return x;\n        }\n        double[] res = new double[x.length];\n        for (int i = 0; i < x.length; i++) {\n            double diff = boundaries[1][i] - boundaries[0][i];\n            res[i] = (x[i] - boundaries[0][i]) / diff;\n        }\n        return res;\n    }\n\n    public double[] repairAndDecode(final double[] x) {\n        return (boundaries != null) && isRepairMode ? decode(repair(x)) : decode(x);\n    }\n\n    public double[] decode(final double[] x) {\n        if (boundaries == null) {\n            return x;\n        }\n        double[] res = new double[x.length];\n        for (int i = 0; i < x.length; i++) {\n            double diff = boundaries[1][i] - boundaries[0][i];\n            res[i] = (diff * x[i]) + boundaries[0][i];\n        }\n        return res;\n    }\n\n    public double value(final double[] point) {\n        double value;\n        if ((boundaries != null) && isRepairMode) {\n            double[] repaired = repair(point);\n            value = CMAESOptimizer.this.computeObjectiveValue(decode(repaired)) + penalty(point, repaired);\n        } else {\n            value = CMAESOptimizer.this.computeObjectiveValue(decode(point));\n        }\n        return isMinimize ? value : -value;\n    }\n\n    public boolean isFeasible(final double[] x) {\n        if (boundaries == null) {\n            return true;\n        }\n        for (int i = 0; i < x.length; i++) {\n            if (x[i] < 0) {\n                return false;\n            }\n            if (x[i] > 1.0) {\n                return false;\n            }\n        }\n        return true;\n    }\n\n    public void setValueRange(double valueRange) {\n        this.valueRange = valueRange;\n    }\n\n    private double[] repair(final double[] x) {\n        double[] repaired = new double[x.length];\n        for (int i = 0; i < x.length; i++) {\n            if (x[i] < 0) {\n                repaired[i] = 0;\n            } else if (x[i] > 1.0) {\n                repaired[i] = 1.0;\n            } else {\n                repaired[i] = x[i];\n            }\n        }\n        return repaired;\n    }\n\n    private double penalty(final double[] x, final double[] repaired) {\n        double penalty = 0;\n        for (int i = 0; i < x.length; i++) {\n            double diff = java.lang.Math.abs(x[i] - repaired[i]);\n            penalty += diff * valueRange;\n        }\n        return isMinimize ? penalty : -penalty;\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "CMAESOptimizer"
+    }
+  ],
+  "id": "commons-math_abe53a53"
+}

@@ -1,0 +1,23 @@
+--- /tmp/RSRepair_Defects4J_Closure_119/src/com/google/javascript/jscomp/CheckGlobalNames.java	2018-12-02 05:20:35.521619059 -0500
++++ /tmp/RSRepair_Defects4J_Closure_119/patches_u5xu/Patch_234/patched/tmp/RSRepair_Defects4J_Closure_119/src/com/google/javascript/jscomp/CheckGlobalNames.java	2018-12-02 05:32:41.884655834 -0500
+@@ -156,7 +156,6 @@
+ 
+       if (!isDefined && !isTypedef(ref)) {
+         if (!isGlobalExpr) {
+-          reportRefToUndefinedName(name, ref);
+         }
+       } else if (declaration != null &&
+           ref.getModule() != declaration.getModule() &&
+@@ -219,10 +218,6 @@
+            name.parent.globalSets + name.parent.localSets == 0) {
+       name = name.parent;
+     }
+-
+-    compiler.report(
+-        JSError.make(ref.getSourceName(), ref.node, level,
+-            UNDEFINED_NAME_WARNING, name.getFullName()));
+   }
+ 
+   /**
+
+

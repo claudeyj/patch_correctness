@@ -1,0 +1,13 @@
+
+--- \/tmp\/jMutRepair_Bug_dot_jar_Commons-Math_2a6c6409\/src\/main\/java\/org\/apache\/commons\/math3\/geometry\/euclidean\/twod\/PolygonsSetjava
++++ \/tmp\/jMutRepair_Bug_dot_jar_Commons-Math_2a6c6409\/src\/main\/java\/org\/apache\/commons\/math3\/geometry\/euclidean\/twod\/PolygonsSetjava
+@@ -817,7 +817,7 @@
+ 
+ 		} 
+ 
+-		if (((loop.size()) == 2) && (!open)) {
++		if (((loop.size()) <= 2) && (!open)) {
+ 
+ 			return null;
+ 		}
+

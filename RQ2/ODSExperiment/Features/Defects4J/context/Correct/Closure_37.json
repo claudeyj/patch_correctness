@@ -1,0 +1,99 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "LocalVariable",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Invocation",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "body",
+            "src_parent": "com.google.common.base.Preconditions.checkState((body.getNext() == null) && body.isBlock(), body)",
+            "src_parent_type": "Invocation",
+            "src_type": "VariableRead"
+          }
+        }
+      ],
+      "file_name": "NodeTraversal"
+    },
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "Return",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "ForEach",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "if (!bodyNode.isBlock()) {\n    com.google.common.base.Preconditions.checkState(config.isIdeMode);\n    bodyNode = com.google.javascript.rhino.IR.block();\n}",
+            "src_parent": "{\n    com.google.javascript.rhino.head.ast.Name name = functionNode.getFunctionName();\n    java.lang.Boolean isUnnamedFunction = false;\n    if (name == null) {\n        int functionType = functionNode.getFunctionType();\n        if (functionType != com.google.javascript.rhino.head.ast.FunctionNode.FUNCTION_EXPRESSION) {\n            errorReporter.error(\"unnamed function statement\", sourceName, functionNode.getLineno(), \"\", 0);\n            return newNode(Token.EXPR_RESULT, com.google.javascript.rhino.Node.newNumber(0));\n        }\n        name = new com.google.javascript.rhino.head.ast.Name();\n        name.setIdentifier(\"\");\n        isUnnamedFunction = true;\n    }\n    com.google.javascript.rhino.Node node = newNode(Token.FUNCTION);\n    com.google.javascript.rhino.Node newName = transform(name);\n    if (isUnnamedFunction) {\n        newName.setLineno(functionNode.getLineno());\n        int lpColumn = functionNode.getAbsolutePosition() + functionNode.getLp();\n        newName.setCharno(position2charno(lpColumn));\n        maybeSetLengthFrom(newName, name);\n    }\n    node.addChildToBack(newName);\n    com.google.javascript.rhino.Node lp = newNode(Token.PARAM_LIST);\n    com.google.javascript.rhino.head.ast.Name fnName = functionNode.getFunctionName();\n    if (fnName != null) {\n        lp.setLineno(fnName.getLineno());\n    } else {\n        lp.setLineno(functionNode.getLineno());\n    }\n    int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();\n    lp.setCharno(position2charno(lparenCharno));\n    for (com.google.javascript.rhino.head.ast.AstNode param : functionNode.getParams()) {\n        lp.addChildToBack(transform(param));\n    }\n    node.addChildToBack(lp);\n    com.google.javascript.rhino.Node bodyNode = transform(functionNode.getBody());\n    if (!bodyNode.isBlock()) {\n        com.google.common.base.Preconditions.checkState(config.isIdeMode);\n        bodyNode = com.google.javascript.rhino.IR.block();\n    }\n    parseDirectives(bodyNode);\n    node.addChildToBack(bodyNode);\n    return node;\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "IRFactory"
+    }
+  ],
+  "id": "Closure_37"
+}

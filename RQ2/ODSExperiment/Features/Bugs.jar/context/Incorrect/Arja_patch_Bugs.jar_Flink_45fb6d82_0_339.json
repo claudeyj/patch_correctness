@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "in.setLocalStrategy(LocalStrategy.COMBININGSORT, in.getLocalStrategyKeys(), in.getLocalStrategySortOrder())",
+            "src_parent": "{\n    java.util.ArrayList<org.apache.flink.compiler.operators.GlobalPropertiesPair> pairs = new java.util.ArrayList<org.apache.flink.compiler.operators.GlobalPropertiesPair>();\n    if (repartitionAllowed) {\n        org.apache.flink.compiler.dataproperties.RequestedGlobalProperties partitioned1 = new org.apache.flink.compiler.dataproperties.RequestedGlobalProperties();\n        if (customPartitioner == null) {\n            partitioned1.setAnyPartitioning(this.keys1);\n        } else {\n            partitioned1.setCustomPartitioned(this.keys1, this.customPartitioner);\n        }\n        org.apache.flink.compiler.dataproperties.RequestedGlobalProperties partitioned2 = new org.apache.flink.compiler.dataproperties.RequestedGlobalProperties();\n        if (customPartitioner == null) {\n            partitioned2.setAnyPartitioning(this.keys2);\n        } else {\n            partitioned2.setCustomPartitioned(this.keys2, this.customPartitioner);\n        }\n        pairs.add(new org.apache.flink.compiler.operators.GlobalPropertiesPair(partitioned1, partitioned2));\n    }\n    if (broadcastSecondAllowed) {\n        org.apache.flink.compiler.dataproperties.RequestedGlobalProperties any1 = new org.apache.flink.compiler.dataproperties.RequestedGlobalProperties();\n        org.apache.flink.compiler.dataproperties.RequestedGlobalProperties replicated2 = new org.apache.flink.compiler.dataproperties.RequestedGlobalProperties();\n        replicated2.setFullyReplicated();\n        pairs.add(new org.apache.flink.compiler.operators.GlobalPropertiesPair(any1, replicated2));\n    }\n    if (broadcastFirstAllowed) {\n        org.apache.flink.compiler.dataproperties.RequestedGlobalProperties replicated1 = new org.apache.flink.compiler.dataproperties.RequestedGlobalProperties();\n        replicated1.setFullyReplicated();\n        org.apache.flink.compiler.dataproperties.RequestedGlobalProperties any2 = new org.apache.flink.compiler.dataproperties.RequestedGlobalProperties();\n        pairs.add(new org.apache.flink.compiler.operators.GlobalPropertiesPair(replicated1, any2));\n    }\n    in.setLocalStrategy(LocalStrategy.COMBININGSORT, in.getLocalStrategyKeys(), in.getLocalStrategySortOrder());\n    return pairs;\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "AbstractJoinDescriptor"
+    }
+  ],
+  "id": "Arja_patch_Bugs.jar_Flink_45fb6d82_0_339"
+}

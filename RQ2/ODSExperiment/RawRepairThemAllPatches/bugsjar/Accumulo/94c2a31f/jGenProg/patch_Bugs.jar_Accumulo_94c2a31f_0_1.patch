@@ -1,0 +1,31 @@
+
+--- org\/apache\/accumulo\/minicluster\/MiniAccumuloCluster.java
++++ org\/apache\/accumulo\/minicluster\/MiniAccumuloCluster.java
+@@ -368,16 +368,16 @@
+ 
+ 
+ 
+-	public void stop() throws java.io.IOException, java.lang.InterruptedException {
+-		if ((zooKeeperProcess) != null) {
+-			try {
+-				stopProcessWithTimeout(zooKeeperProcess, 30, java.util.concurrent.TimeUnit.SECONDS);
+-			} catch (java.util.concurrent.ExecutionException e) {
+-				org.apache.accumulo.minicluster.MiniAccumuloCluster.log.warn("ZooKeeper did not fully stop after 30 seconds", e);
+-			} catch (java.util.concurrent.TimeoutException e) {
+-				org.apache.accumulo.minicluster.MiniAccumuloCluster.log.warn("ZooKeeper did not fully stop after 30 seconds", e);
+-			}
+-		}
++	public void stop() throws java.io.IOException, java.lang.InterruptedException { 		if (null == (executor)) { 			executor = java.util.concurrent.Executors.newSingleThreadExecutor();}
++
++
++
++
++
++
++
++
++
+ 		if ((masterProcess) != null) {
+ 			try {
+ 				stopProcessWithTimeout(masterProcess, 30, java.util.concurrent.TimeUnit.SECONDS);
+

@@ -1,0 +1,98 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "java.lang.String consumeLetterThenDigitSequence() {\n    int start = pos;\n    while (!isEmpty()) {\n        char c = input.charAt(pos);\n        if (((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z'))) {\n            pos++;\n        } else {\n            break;\n        }\n    } \n    while (!isEmpty()) {\n        char c = input.charAt(pos);\n        if ((c >= '0') && (c <= '9')) {\n            pos++;\n        } else {\n            break;\n        }\n    } \n    return input.substring(start, pos);\n}",
+            "src_parent": "class CharacterReader {\n    static final char EOF = ((char) (-1));\n\n    private final java.lang.String input;\n\n    private final int length;\n\n    private int pos = 0;\n\n    private int mark = 0;\n\n    CharacterReader(java.lang.String input) {\n        org.jsoup.helper.Validate.notNull(input);\n        input = input.replaceAll(\"\\r\\n?\", \"\\n\");\n        this.input = input;\n        this.length = input.length();\n    }\n\n    int pos() {\n        return pos;\n    }\n\n    boolean isEmpty() {\n        return pos >= length;\n    }\n\n    char current() {\n        return isEmpty() ? org.jsoup.parser.CharacterReader.EOF : input.charAt(pos);\n    }\n\n    char consume() {\n        char val = (isEmpty()) ? org.jsoup.parser.CharacterReader.EOF : input.charAt(pos);\n        pos++;\n        return val;\n    }\n\n    void unconsume() {\n        pos--;\n    }\n\n    void advance() {\n        pos++;\n    }\n\n    void mark() {\n        mark = pos;\n    }\n\n    void rewindToMark() {\n        pos = mark;\n    }\n\n    java.lang.String consumeAsString() {\n        return input.substring(pos, pos++);\n    }\n\n    java.lang.String consumeTo(char c) {\n        int offset = input.indexOf(c, pos);\n        if (offset != (-1)) {\n            java.lang.String consumed = input.substring(pos, offset);\n            pos += consumed.length();\n            return consumed;\n        } else {\n            return consumeToEnd();\n        }\n    }\n\n    java.lang.String consumeTo(java.lang.String seq) {\n        int offset = input.indexOf(seq, pos);\n        if (offset != (-1)) {\n            java.lang.String consumed = input.substring(pos, offset);\n            pos += consumed.length();\n            return consumed;\n        } else {\n            return consumeToEnd();\n        }\n    }\n\n    java.lang.String consumeToAny(char... seq) {\n        int start = pos;\n        OUTER : while (!isEmpty()) {\n            char c = input.charAt(pos);\n            for (char seek : seq) {\n                if (seek == c) {\n                    break OUTER;\n                }\n            }\n            pos++;\n        } \n        return pos > start ? input.substring(start, pos) : \"\";\n    }\n\n    java.lang.String consumeToEnd() {\n        java.lang.String data = input.substring(pos, input.length());\n        pos = input.length();\n        return data;\n    }\n\n    java.lang.String consumeLetterSequence() {\n        int start = pos;\n        while (!isEmpty()) {\n            char c = input.charAt(pos);\n            if (((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z'))) {\n                pos++;\n            } else {\n                break;\n            }\n        } \n        return input.substring(start, pos);\n    }\n\n    java.lang.String consumeLetterThenDigitSequence() {\n        int start = pos;\n        while (!isEmpty()) {\n            char c = input.charAt(pos);\n            if (((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z'))) {\n                pos++;\n            } else {\n                break;\n            }\n        } \n        while (!isEmpty()) {\n            char c = input.charAt(pos);\n            if ((c >= '0') && (c <= '9')) {\n                pos++;\n            } else {\n                break;\n            }\n        } \n        return input.substring(start, pos);\n    }\n\n    java.lang.String consumeHexSequence() {\n        int start = pos;\n        while (!isEmpty()) {\n            char c = input.charAt(pos);\n            if ((((c >= '0') && (c <= '9')) || ((c >= 'A') && (c <= 'F'))) || ((c >= 'a') && (c <= 'f'))) {\n                pos++;\n            } else {\n                break;\n            }\n        } \n        return input.substring(start, pos);\n    }\n\n    java.lang.String consumeDigitSequence() {\n        int start = pos;\n        while (!isEmpty()) {\n            char c = input.charAt(pos);\n            if ((c >= '0') && (c <= '9')) {\n                pos++;\n            } else {\n                break;\n            }\n        } \n        return input.substring(start, pos);\n    }\n\n    boolean matches(char c) {\n        return (!isEmpty()) && (input.charAt(pos) == c);\n    }\n\n    boolean matches(java.lang.String seq) {\n        return input.startsWith(seq, pos);\n    }\n\n    boolean matchesIgnoreCase(java.lang.String seq) {\n        return input.regionMatches(true, pos, seq, 0, seq.length());\n    }\n\n    boolean matchesAny(char... seq) {\n        if (isEmpty()) {\n            return false;\n        }\n        char c = input.charAt(pos);\n        for (char seek : seq) {\n            if (seek == c) {\n                return true;\n            }\n        }\n        return false;\n    }\n\n    boolean matchesLetter() {\n        if (isEmpty()) {\n            return false;\n        }\n        char c = input.charAt(pos);\n        return ((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z'));\n    }\n\n    boolean matchesDigit() {\n        if (isEmpty()) {\n            return false;\n        }\n        char c = input.charAt(pos);\n        return (c >= '0') && (c <= '9');\n    }\n\n    boolean matchConsume(java.lang.String seq) {\n        if (matches(seq)) {\n            pos += seq.length();\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n    boolean matchConsumeIgnoreCase(java.lang.String seq) {\n        if (matchesIgnoreCase(seq)) {\n            pos += seq.length();\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n    boolean containsIgnoreCase(java.lang.String seq) {\n        java.lang.String loScan = seq.toLowerCase();\n        java.lang.String hiScan = seq.toUpperCase();\n        return (input.indexOf(loScan, pos) > (-1)) || (input.indexOf(hiScan, pos) > (-1));\n    }\n\n    @java.lang.Override\n    public java.lang.String toString() {\n        return input.substring(pos);\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "CharacterReader"
+    },
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "If",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "LocalVariable",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "reader.consumeLetterSequence()",
+            "dst_parent": "java.lang.String nameRef = reader.consumeLetterSequence()",
+            "dst_parent_type": "LocalVariable",
+            "dst_type": "Invocation",
+            "operator": "UPD",
+            "src": "reader.consumeLetterThenDigitSequence()",
+            "src_parent": "java.lang.String nameRef = reader.consumeLetterThenDigitSequence()",
+            "src_parent_type": "LocalVariable",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "Tokeniser"
+    }
+  ],
+  "id": "Jsoup_23"
+}

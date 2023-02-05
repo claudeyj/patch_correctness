@@ -1,0 +1,13 @@
+
+--- org\/traccar\/events\/IgnitionEventHandler.java
++++ org\/traccar\/events\/IgnitionEventHandler.java
+@@ -33,7 +33,7 @@
+ 		if (device == null) {
+ 			return null;
+ 		}
+-		if ((!(org.traccar.Context.getIdentityManager().isLatestPosition(position))) || (!(position.getValid()))) {
++		if ((!(org.traccar.Context.getIdentityManager().isLatestPosition(position))) || (org.traccar.Context.getIdentityManager().isLatestPosition(position))) {
+ 			return null;
+ 		}
+ 
+

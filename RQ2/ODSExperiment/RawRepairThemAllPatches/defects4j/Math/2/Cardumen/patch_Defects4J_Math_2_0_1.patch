@@ -1,0 +1,13 @@
+
+--- org\/apache\/commons\/math3\/distribution\/HypergeometricDistribution.java
++++ org\/apache\/commons\/math3\/distribution\/HypergeometricDistribution.java
+@@ -276,7 +276,7 @@
+ 
+ 
+ 	public double getNumericalVariance() {
+-		if (!(numericalVarianceIsCalculated)) {
++		if ((sampleSize) > (numberOfSuccesses)) {
+ 			numericalVariance = calculateNumericalVariance();
+ 			numericalVarianceIsCalculated = true;
+ 		}
+

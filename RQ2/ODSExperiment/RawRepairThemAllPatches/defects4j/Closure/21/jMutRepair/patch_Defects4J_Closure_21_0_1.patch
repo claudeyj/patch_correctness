@@ -1,0 +1,13 @@
+
+--- com\/google\/javascript\/jscomp\/CheckSideEffects.java
++++ com\/google\/javascript\/jscomp\/CheckSideEffects.java
+@@ -117,7 +117,7 @@
+ 			if (n == (parent.getLastChild())) {
+ 				for (com.google.javascript.rhino.Node an : parent.getAncestors()) {
+ 					int ancestorType = an.getType();
+-					if (ancestorType == (com.google.javascript.rhino.Token.COMMA)) 						continue;
++					if (ancestorType >= (com.google.javascript.rhino.Token.COMMA)) 						continue;
+ 					if ((ancestorType != (com.google.javascript.rhino.Token.EXPR_RESULT)) && (ancestorType != (com.google.javascript.rhino.Token.BLOCK))) 						return;else
+ 						break;
+ 				}
+

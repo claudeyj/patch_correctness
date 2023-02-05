@@ -1,0 +1,15 @@
+--- /tmp/GenProg_Defects4J_Closure_33/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java	2018-12-02 07:28:24.268466511 -0500
++++ /tmp/GenProg_Defects4J_Closure_33/patches_2wm1/Patch_17/patched/tmp/GenProg_Defects4J_Closure_33/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java	2018-12-02 07:33:25.693085160 -0500
+@@ -569,10 +569,6 @@
+         JSType propType = constraintObj.getPropertyType(prop);
+         if (!isPropertyTypeDeclared(prop)) {
+           JSType typeToInfer = propType;
+-          if (!hasProperty(prop)) {
+-            typeToInfer = getNativeType(JSTypeNative.VOID_TYPE)
+-                .getLeastSupertype(propType);
+-          }
+           defineInferredProperty(prop, typeToInfer, null);
+         }
+       }
+
+

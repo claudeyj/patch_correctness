@@ -1,0 +1,11 @@
+--- ExternalIdentityRef.java
++++ ExternalIdentityRef.java
+@@ -127,3 +127,7 @@
+             // assuming that we never compare other types of classes
+-            return this == o || string.equals(((ExternalIdentityRef) o).string);
++            if (o == null) {
++                return this == o || string.equals(((ExternalIdentityRef) id).string);
++            } else {
++                return this == o || string.equals(((ExternalIdentityRef) o).string);
++            }
+         } catch (Exception e) {

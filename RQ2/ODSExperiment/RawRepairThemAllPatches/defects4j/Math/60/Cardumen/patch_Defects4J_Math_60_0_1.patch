@@ -1,0 +1,13 @@
+
+--- org\/apache\/commons\/math\/util\/ContinuedFraction.java
++++ org\/apache\/commons\/math\/util\/ContinuedFraction.java
+@@ -160,7 +160,7 @@
+ 					lastScaleFactor = scaleFactor;
+ 					scaleFactor *= scale;
+ 					if ((a != 0.0) && (a > b)) {
+-						p2 = (p1 \/ lastScaleFactor) + ((b \/ scaleFactor) * p0);
++						p2 = org.apache.commons.math.util.FastMath.max(b, b);
+ 						q2 = (q1 \/ lastScaleFactor) + ((b \/ scaleFactor) * q0);
+ 					}else 						if (b != 0) {
+ 							p2 = ((a \/ scaleFactor) * p1) + (p0 \/ lastScaleFactor);
+

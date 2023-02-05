@@ -1,0 +1,655 @@
+
+--- org\/traccar\/protocol\/Gt06ProtocolDecoder.java
++++ org\/traccar\/protocol\/Gt06ProtocolDecoder.java
+@@ -182,364 +182,364 @@
+ 		}
+ 
+ 		if (length > 0) {
+-			buf.skipBytes((length - 12));
+-		}
+ 
+-		return true;
+-	}
+ 
+-	private boolean decodeLbs(org.traccar.model.Position position, org.jboss.netty.buffer.ChannelBuffer buf, boolean hasLength) {
+ 
+-		int length = 0;
+-		if (hasLength) {
+-			length = buf.readUnsignedByte();
+-			if (length == 0) {
+-				return false;
+-			}
+-		}
+ 
+-		position.setNetwork(new org.traccar.model.Network(org.traccar.model.CellTower.from(
+-		buf.readUnsignedShort(), buf.readUnsignedByte(), buf.readUnsignedShort(), buf.readUnsignedMedium())));
+ 
+-		if (length > 0) {
+-			buf.skipBytes((length - 8));
+-		}
+ 
+-		return true;
+-	}
+ 
+-	private boolean decodeStatus(org.traccar.model.Position position, org.jboss.netty.buffer.ChannelBuffer buf) {
+ 
+-		int status = buf.readUnsignedByte();
+ 
+-		position.set(org.traccar.model.Position.KEY_STATUS, status);
+-		position.set(org.traccar.model.Position.KEY_IGNITION, org.traccar.helper.BitUtil.check(status, 1));
+-		position.set(org.traccar.model.Position.KEY_CHARGE, org.traccar.helper.BitUtil.check(status, 2));
+-		position.set(org.traccar.model.Position.KEY_BLOCKED, org.traccar.helper.BitUtil.check(status, 7));
+-
+-		switch (org.traccar.helper.BitUtil.between(status, 3, 6)) {
+-			case 1 :
+-				position.set(org.traccar.model.Position.KEY_ALARM, org.traccar.model.Position.ALARM_SHOCK);
+-				break;
+-			case 2 :
+-				position.set(org.traccar.model.Position.KEY_ALARM, org.traccar.model.Position.ALARM_POWER_CUT);
+-				break;
+-			case 3 :
+-				position.set(org.traccar.model.Position.KEY_ALARM, org.traccar.model.Position.ALARM_LOW_BATTERY);
+-				break;
+-			case 4 :
+-				position.set(org.traccar.model.Position.KEY_ALARM, org.traccar.model.Position.ALARM_SOS);
+-				break;
+-			default :
+-				break;}
+-
+-
+-		position.set(org.traccar.model.Position.KEY_BATTERY, buf.readUnsignedByte());
+-		position.set(org.traccar.model.Position.KEY_RSSI, buf.readUnsignedByte());
+-		position.set(org.traccar.model.Position.KEY_ALARM, decodeAlarm(buf.readUnsignedByte()));
+ 
+-		return true;
+-	}
+ 
+-	private java.lang.String decodeAlarm(short value) {
+-		switch (value) {
+-			case 1 :
+-				return org.traccar.model.Position.ALARM_SOS;
+-			case 2 :
+-				return org.traccar.model.Position.ALARM_POWER_CUT;
+-			case 3 :
+-			case 9 :
+-				return org.traccar.model.Position.ALARM_VIBRATION;
+-			case 4 :
+-				return org.traccar.model.Position.ALARM_GEOFENCE_ENTER;
+-			case 5 :
+-				return org.traccar.model.Position.ALARM_GEOFENCE_EXIT;
+-			case 6 :
+-				return org.traccar.model.Position.ALARM_OVERSPEED;
+-			case 14 :
+-			case 15 :
+-				return org.traccar.model.Position.ALARM_LOW_BATTERY;
+-			case 17 :
+-				return org.traccar.model.Position.ALARM_POWER_OFF;
+-			default :
+-				return null;}
+ 
+-	}
+ 
+-	private static final java.util.regex.Pattern PATTERN_FUEL = new org.traccar.helper.PatternBuilder().text(
+-	"!AIOIL,").number(
+-	"d+,").number(
+-	"d+.d+,").number(
+-	"(d+.d+),").expression(
+-	"[^,]+,").number(
+-	"dd").number(
+-	"d").number(
+-	"d,").number(
+-	"(d+.d+),").expression(
+-	"[01],").number(
+-	"d+,").number(
+-	"xx").compile();
+-
+-
+-	private org.traccar.model.Position decodeFuelData(org.traccar.model.Position position, java.lang.String sentence) {
+-		org.traccar.helper.Parser parser = new org.traccar.helper.Parser(org.traccar.protocol.Gt06ProtocolDecoder.PATTERN_FUEL, sentence);
+-		if (!(parser.matches())) {
+-			return null;
+-		}
+ 
+-		position.set(((org.traccar.model.Position.PREFIX_TEMP) + 1), parser.nextDouble(0));
+-		position.set(org.traccar.model.Position.KEY_FUEL_LEVEL, parser.nextDouble(0));
+ 
+-		return position;
+-	}
+ 
+-	private static final java.util.regex.Pattern PATTERN_LOCATION = new org.traccar.helper.PatternBuilder().text(
+-	"Current position!").number(
+-	"Lat:([NS])(d+.d+),").number(
+-	"Lon:([EW])(d+.d+),").text(
+-	"Course:").number("(d+.d+),").text(
+-	"Speed:").number("(d+.d+),").text(
+-	"DateTime:").number(
+-	"(dddd)-(dd)-(dd)  ").number(
+-	"(dd):(dd):(dd)").compile();
+ 
+ 
+-	private org.traccar.model.Position decodeLocationString(org.traccar.model.Position position, java.lang.String sentence) {
+-		org.traccar.helper.Parser parser = new org.traccar.helper.Parser(org.traccar.protocol.Gt06ProtocolDecoder.PATTERN_LOCATION, sentence);
+-		if (!(parser.matches())) {
+-			return null;
+-		}
+ 
+-		position.setValid(true);
+-		position.setLatitude(parser.nextCoordinate(org.traccar.helper.Parser.CoordinateFormat.HEM_DEG));
+-		position.setLongitude(parser.nextCoordinate(org.traccar.helper.Parser.CoordinateFormat.HEM_DEG));
+-		position.setCourse(parser.nextDouble());
+-		position.setSpeed(parser.nextDouble());
+-		position.setTime(parser.nextDateTime(org.traccar.helper.Parser.DateTimeFormat.YMD_HMS));
+ 
+-		return position;
+-	}
+ 
+-	private java.lang.Object decodeBasic(org.jboss.netty.channel.Channel channel, java.net.SocketAddress remoteAddress, org.jboss.netty.buffer.ChannelBuffer buf) throws java.lang.Exception {
+ 
+-		int length = buf.readUnsignedByte();
+-		int dataLength = length - 5;
+-		int type = buf.readUnsignedByte();
+-
+-		org.traccar.DeviceSession deviceSession = null;
+-		if (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LOGIN)) {
+-			deviceSession = getDeviceSession(channel, remoteAddress);
+-			if (deviceSession == null) {
+-				return null;
+-			}
+-		}
+ 
+-		if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LOGIN)) {
+ 
+-			java.lang.String imei = org.jboss.netty.buffer.ChannelBuffers.hexDump(buf.readBytes(8)).substring(1);
+-			buf.readUnsignedShort();
+ 
+-			if (dataLength > 10) {
+-				int extensionBits = buf.readUnsignedShort();
+-				int hours = (extensionBits >> 4) \/ 100;
+-				int minutes = (extensionBits >> 4) % 100;
+-				int offset = ((hours * 60) + minutes) * 60;
+-				if ((extensionBits & 8) != 0) {
+-					offset = -offset;
+-				}
+-				if (!(forceTimeZone)) {
+-					timeZone.setRawOffset((offset * 1000));
+-				}
+-			}
+ 
+-			if ((getDeviceSession(channel, remoteAddress, imei)) != null) {
+-				sendResponse(channel, false, type);
+-			}
+ 
+-		}else 			if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_X1_GPS)) {
+ 
+-				org.traccar.model.Position position = new org.traccar.model.Position();
+-				position.setDeviceId(deviceSession.getDeviceId());
+-				position.setProtocol(getProtocolName());
+ 
+-				buf.readUnsignedInt();
+ 
+-				decodeGps(position, buf, false);
+ 
+-				buf.readUnsignedShort();
+ 
+-				position.set(org.traccar.model.Position.KEY_ODOMETER, buf.readUnsignedInt());
+ 
+-				position.setNetwork(new org.traccar.model.Network(org.traccar.model.CellTower.from(
+-				buf.readUnsignedShort(), buf.readUnsignedByte(), 
+-				buf.readUnsignedShort(), buf.readUnsignedInt())));
+ 
+-				return position;
+ 
+-			}else 				if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_X1_PHOTO_INFO)) {
+ 
+-					buf.skipBytes(6);
+-					buf.readUnsignedByte();
+-					buf.readUnsignedInt();
+-					buf.readUnsignedInt();
+-					buf.readUnsignedByte();
+-					buf.readUnsignedByte();
+-					buf.readUnsignedByte();
+-
+-					org.jboss.netty.buffer.ChannelBuffer photo = org.jboss.netty.buffer.ChannelBuffers.buffer(buf.readInt());
+-					int pictureId = buf.readInt();
+-					photos.put(pictureId, photo);
+-					sendPhotoRequest(channel, pictureId);
+ 
+-				}else {
+ 
+-					return decodeBasicOther(channel, buf, deviceSession, type, dataLength);
+ 
+-				}
+ 
+-		return null;
+-	}
+ 
+-	private java.lang.Object decodeBasicOther(org.jboss.netty.channel.Channel channel, org.jboss.netty.buffer.ChannelBuffer buf, 
+-	org.traccar.DeviceSession deviceSession, int type, int dataLength) throws java.lang.Exception {
+ 
+-		org.traccar.model.Position position = new org.traccar.model.Position();
+-		position.setDeviceId(deviceSession.getDeviceId());
+-		position.setProtocol(getProtocolName());
+-
+-		if (((type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_MULTIPLE)) || (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_EXTEND))) || (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_WIFI))) {
+-
+-			org.traccar.helper.DateBuilder dateBuilder = new org.traccar.helper.DateBuilder(timeZone).setDate(
+-			buf.readUnsignedByte(), buf.readUnsignedByte(), buf.readUnsignedByte()).setTime(
+-			buf.readUnsignedByte(), buf.readUnsignedByte(), buf.readUnsignedByte());
+-
+-			getLastLocation(position, dateBuilder.getDate());
+-
+-			int mcc = buf.readUnsignedShort();
+-			int mnc = buf.readUnsignedByte();
+-			org.traccar.model.Network network = new org.traccar.model.Network();
+-			for (int i = 0; i < 7; i++) {
+-				int lac = buf.readUnsignedShort();
+-				int cid = buf.readUnsignedMedium();
+-				int rssi = -(buf.readUnsignedByte());
+-				if (lac > 0) {
+-					network.addCellTower(org.traccar.model.CellTower.from(mcc, mnc, lac, cid, rssi));
+-				}
+-			}
+ 
+-			buf.readUnsignedByte();
+ 
+-			if (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_MULTIPLE)) {
+-				int wifiCount = buf.readUnsignedByte();
+-				for (int i = 0; i < wifiCount; i++) {
+-					java.lang.String mac = org.jboss.netty.buffer.ChannelBuffers.hexDump(buf.readBytes(6)).replaceAll("(..)", "$1:");
+-					network.addWifiAccessPoint(org.traccar.model.WifiAccessPoint.from(
+-					mac.substring(0, ((mac.length()) - 1)), buf.readUnsignedByte()));
+-				}
+-			}
+ 
+-			position.setNetwork(network);
+ 
+-		}else 			if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_STRING)) {
+ 
+-				getLastLocation(position, null);
+ 
+-				int commandLength = buf.readUnsignedByte();
+ 
+-				if (commandLength > 0) {
+-					buf.readUnsignedByte();
+-					position.set(org.traccar.model.Position.KEY_RESULT, 
+-					buf.readBytes((commandLength - 1)).toString(java.nio.charset.StandardCharsets.US_ASCII));
+-				}
+ 
+-			}else 				if (org.traccar.protocol.Gt06ProtocolDecoder.isSupported(type)) {
+ 
+-					if (org.traccar.protocol.Gt06ProtocolDecoder.hasGps(type)) {
+-						decodeGps(position, buf, false);
+-					}else {
+-						getLastLocation(position, null);
+-					}
+ 
+-					if (org.traccar.protocol.Gt06ProtocolDecoder.hasLbs(type)) {
+-						decodeLbs(position, buf, org.traccar.protocol.Gt06ProtocolDecoder.hasStatus(type));
+-					}
+ 
+-					if (org.traccar.protocol.Gt06ProtocolDecoder.hasStatus(type)) {
+-						decodeStatus(position, buf);
+-					}
+ 
+-					if ((type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_GPS_LBS_1)) && ((buf.readableBytes()) >= (4 + 6))) {
+-						position.set(org.traccar.model.Position.KEY_ODOMETER, buf.readUnsignedInt());
+-					}
+ 
+-					if ((type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_GPS_LBS_2)) && ((buf.readableBytes()) >= (3 + 6))) {
+-						position.set(org.traccar.model.Position.KEY_IGNITION, ((buf.readUnsignedByte()) > 0));
+-						position.set(org.traccar.model.Position.KEY_EVENT, buf.readUnsignedByte());
+-						position.set(org.traccar.model.Position.KEY_ARCHIVE, ((buf.readUnsignedByte()) > 0));
+-					}
+ 
+-				}else {
+ 
+-					buf.skipBytes(dataLength);
+-					if (((type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_COMMAND_0)) && (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_COMMAND_1))) && (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_COMMAND_2))) {
+-						sendResponse(channel, false, type);
+-					}
+-					return null;
+ 
+-				}
+ 
+-		sendResponse(channel, false, type);
+ 
+-		return position;
+-	}
+ 
+-	private java.lang.Object decodeExtended(org.jboss.netty.channel.Channel channel, java.net.SocketAddress remoteAddress, org.jboss.netty.buffer.ChannelBuffer buf) throws java.lang.Exception {
+ 
+-		org.traccar.DeviceSession deviceSession = getDeviceSession(channel, remoteAddress);
+-		if (deviceSession == null) {
+-			return null;
+-		}
+ 
+-		org.traccar.model.Position position = new org.traccar.model.Position();
+-		position.setDeviceId(deviceSession.getDeviceId());
+-		position.setProtocol(getProtocolName());
+-
+-		buf.readUnsignedShort();
+-		int type = buf.readUnsignedByte();
+-
+-		if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_STRING_INFO)) {
+-
+-			buf.readUnsignedInt();
+-			java.lang.String data;
+-			if ((buf.readUnsignedByte()) == 1) {
+-				data = buf.readBytes(((buf.readableBytes()) - 6)).toString(java.nio.charset.StandardCharsets.US_ASCII);
+-			}else {
+-				data = buf.readBytes(((buf.readableBytes()) - 6)).toString(java.nio.charset.StandardCharsets.UTF_16BE);
+-			}
+ 
+-			if ((decodeLocationString(position, data)) == null) {
+-				getLastLocation(position, null);
+-				position.set(org.traccar.model.Position.KEY_RESULT, data);
+-			}
+ 
+-			return position;
+ 
+-		}else 			if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_INFO)) {
+ 
+-				int subType = buf.readUnsignedByte();
+ 
+-				getLastLocation(position, null);
+ 
+-				if (subType == 0) {
+ 
+-					position.set(org.traccar.model.Position.KEY_POWER, ((buf.readUnsignedShort()) * 0.01));
+-					return position;
+ 
+-				}else 					if (subType == 5) {
+ 
+-						int flags = buf.readUnsignedByte();
+-						position.set(org.traccar.model.Position.KEY_DOOR, org.traccar.helper.BitUtil.check(flags, 0));
+-						position.set(((org.traccar.model.Position.PREFIX_IO) + 1), org.traccar.helper.BitUtil.check(flags, 2));
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++			position.set(((org.traccar.model.Position.PREFIX_IO) + 1), org.traccar.helper.BitUtil.check(flags, 2));} 		return true;} 	private boolean decodeLbs(org.traccar.model.Position position, org.jboss.netty.buffer.ChannelBuffer buf, boolean hasLength) { 		int length = 0; 		if (hasLength) { 			length = buf.readUnsignedByte(); 			if (length == 0) { 				return false;}} 		position.setNetwork(new org.traccar.model.Network(org.traccar.model.CellTower.from(buf.readUnsignedShort(), buf.readUnsignedByte(), buf.readUnsignedShort(), buf.readUnsignedMedium()))); 		if (length > 0) { 			buf.skipBytes((length - 8));} 		return true;} 	private boolean decodeStatus(org.traccar.model.Position position, org.jboss.netty.buffer.ChannelBuffer buf) { 		int status = buf.readUnsignedByte(); 		position.set(org.traccar.model.Position.KEY_STATUS, status); 		position.set(org.traccar.model.Position.KEY_IGNITION, org.traccar.helper.BitUtil.check(status, 1)); 		position.set(org.traccar.model.Position.KEY_CHARGE, org.traccar.helper.BitUtil.check(status, 2)); 		position.set(org.traccar.model.Position.KEY_BLOCKED, org.traccar.helper.BitUtil.check(status, 7)); 		switch (org.traccar.helper.BitUtil.between(status, 3, 6)) { 			case 1 : 				position.set(org.traccar.model.Position.KEY_ALARM, org.traccar.model.Position.ALARM_SHOCK); 				break; 			case 2 : 				position.set(org.traccar.model.Position.KEY_ALARM, org.traccar.model.Position.ALARM_POWER_CUT); 				break; 			case 3 : 				position.set(org.traccar.model.Position.KEY_ALARM, org.traccar.model.Position.ALARM_LOW_BATTERY); 				break; 			case 4 : 				position.set(org.traccar.model.Position.KEY_ALARM, org.traccar.model.Position.ALARM_SOS); 				break; 			default : 				break;} 		position.set(org.traccar.model.Position.KEY_BATTERY, buf.readUnsignedByte()); 		position.set(org.traccar.model.Position.KEY_RSSI, buf.readUnsignedByte()); 		position.set(org.traccar.model.Position.KEY_ALARM, decodeAlarm(buf.readUnsignedByte())); 		return true;} 	private java.lang.String decodeAlarm(short value) { 		switch (value) { 			case 1 : 				return org.traccar.model.Position.ALARM_SOS; 			case 2 : 				return org.traccar.model.Position.ALARM_POWER_CUT; 			case 3 : 			case 9 : 				return org.traccar.model.Position.ALARM_VIBRATION; 			case 4 : 				return org.traccar.model.Position.ALARM_GEOFENCE_ENTER; 			case 5 : 				return org.traccar.model.Position.ALARM_GEOFENCE_EXIT; 			case 6 : 				return org.traccar.model.Position.ALARM_OVERSPEED; 			case 14 : 			case 15 : 				return org.traccar.model.Position.ALARM_LOW_BATTERY; 			case 17 : 				return org.traccar.model.Position.ALARM_POWER_OFF; 			default : 				return null;}} 	private static final java.util.regex.Pattern PATTERN_FUEL = new org.traccar.helper.PatternBuilder().text("!AIOIL,").number("d+,").number("d+.d+,").number("(d+.d+),").expression("[^,]+,").number("dd").number("d").number("d,").number("(d+.d+),").expression("[01],").number("d+,").number("xx").compile(); 	private org.traccar.model.Position decodeFuelData(org.traccar.model.Position position, java.lang.String sentence) { 		org.traccar.helper.Parser parser = new org.traccar.helper.Parser(org.traccar.protocol.Gt06ProtocolDecoder.PATTERN_FUEL, sentence); 		if (!(parser.matches())) { 			return null;} 		position.set(((org.traccar.model.Position.PREFIX_TEMP) + 1), parser.nextDouble(0)); 		position.set(org.traccar.model.Position.KEY_FUEL_LEVEL, parser.nextDouble(0)); 		return position;} 	private static final java.util.regex.Pattern PATTERN_LOCATION = new org.traccar.helper.PatternBuilder().text("Current position!").number("Lat:([NS])(d+.d+),").number("Lon:([EW])(d+.d+),").text("Course:").number("(d+.d+),").text("Speed:").number("(d+.d+),").text("DateTime:").number("(dddd)-(dd)-(dd)  ").number("(dd):(dd):(dd)").compile(); 	private org.traccar.model.Position decodeLocationString(org.traccar.model.Position position, java.lang.String sentence) { 		org.traccar.helper.Parser parser = new org.traccar.helper.Parser(org.traccar.protocol.Gt06ProtocolDecoder.PATTERN_LOCATION, sentence); 		if (!(parser.matches())) { 			return null;} 		position.setValid(true); 		position.setLatitude(parser.nextCoordinate(org.traccar.helper.Parser.CoordinateFormat.HEM_DEG)); 		position.setLongitude(parser.nextCoordinate(org.traccar.helper.Parser.CoordinateFormat.HEM_DEG)); 		position.setCourse(parser.nextDouble()); 		position.setSpeed(parser.nextDouble()); 		position.setTime(parser.nextDateTime(org.traccar.helper.Parser.DateTimeFormat.YMD_HMS)); 		return position;} 	private java.lang.Object decodeBasic(org.jboss.netty.channel.Channel channel, java.net.SocketAddress remoteAddress, org.jboss.netty.buffer.ChannelBuffer buf) throws java.lang.Exception { 		int length = buf.readUnsignedByte(); 		int dataLength = length - 5; 		int type = buf.readUnsignedByte(); 		org.traccar.DeviceSession deviceSession = null; 		if (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LOGIN)) { 			deviceSession = getDeviceSession(channel, remoteAddress); 			if (deviceSession == null) { 				return null;}} 		if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LOGIN)) { 			java.lang.String imei = org.jboss.netty.buffer.ChannelBuffers.hexDump(buf.readBytes(8)).substring(1); 			buf.readUnsignedShort(); 			if (dataLength > 10) { 				int extensionBits = buf.readUnsignedShort(); 				int hours = (extensionBits >> 4) \/ 100; 				int minutes = (extensionBits >> 4) % 100; 				int offset = ((hours * 60) + minutes) * 60; 				if ((extensionBits & 8) != 0) { 					offset = -offset;} 				if (!(forceTimeZone)) { 					timeZone.setRawOffset((offset * 1000));}} 			if ((getDeviceSession(channel, remoteAddress, imei)) != null) { 				sendResponse(channel, false, type);}}else 			if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_X1_GPS)) { 				org.traccar.model.Position position = new org.traccar.model.Position(); 				position.setDeviceId(deviceSession.getDeviceId()); 				position.setProtocol(getProtocolName()); 				buf.readUnsignedInt(); 				decodeGps(position, buf, false); 				buf.readUnsignedShort(); 				position.set(org.traccar.model.Position.KEY_ODOMETER, buf.readUnsignedInt()); 				position.setNetwork(new org.traccar.model.Network(org.traccar.model.CellTower.from(buf.readUnsignedShort(), buf.readUnsignedByte(), buf.readUnsignedShort(), buf.readUnsignedInt()))); 				return position;}else 				if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_X1_PHOTO_INFO)) { 					buf.skipBytes(6); 					buf.readUnsignedByte(); 					buf.readUnsignedInt(); 					buf.readUnsignedInt(); 					buf.readUnsignedByte(); 					buf.readUnsignedByte(); 					buf.readUnsignedByte(); 					org.jboss.netty.buffer.ChannelBuffer photo = org.jboss.netty.buffer.ChannelBuffers.buffer(buf.readInt()); 					int pictureId = buf.readInt(); 					photos.put(pictureId, photo); 					sendPhotoRequest(channel, pictureId);}else { 					return decodeBasicOther(channel, buf, deviceSession, type, dataLength);} 		return null;} 	private java.lang.Object decodeBasicOther(org.jboss.netty.channel.Channel channel, org.jboss.netty.buffer.ChannelBuffer buf, org.traccar.DeviceSession deviceSession, int type, int dataLength) throws java.lang.Exception { 		org.traccar.model.Position position = new org.traccar.model.Position(); 		position.setDeviceId(deviceSession.getDeviceId()); 		position.setProtocol(getProtocolName()); 		if (((type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_MULTIPLE)) || (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_EXTEND))) || (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_WIFI))) { 			org.traccar.helper.DateBuilder dateBuilder = new org.traccar.helper.DateBuilder(timeZone).setDate(buf.readUnsignedByte(), buf.readUnsignedByte(), buf.readUnsignedByte()).setTime(buf.readUnsignedByte(), buf.readUnsignedByte(), buf.readUnsignedByte()); 			getLastLocation(position, dateBuilder.getDate()); 			int mcc = buf.readUnsignedShort(); 			int mnc = buf.readUnsignedByte(); 			org.traccar.model.Network network = new org.traccar.model.Network(); 			for (int i = 0; i < 7; i++) { 				int lac = buf.readUnsignedShort(); 				int cid = buf.readUnsignedMedium(); 				int rssi = -(buf.readUnsignedByte()); 				if (lac > 0) { 					network.addCellTower(org.traccar.model.CellTower.from(mcc, mnc, lac, cid, rssi));}} 			buf.readUnsignedByte(); 			if (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_MULTIPLE)) { 				int wifiCount = buf.readUnsignedByte(); 				for (int i = 0; i < wifiCount; i++) { 					java.lang.String mac = org.jboss.netty.buffer.ChannelBuffers.hexDump(buf.readBytes(6)).replaceAll("(..)", "$1:"); 					network.addWifiAccessPoint(org.traccar.model.WifiAccessPoint.from(mac.substring(0, ((mac.length()) - 1)), buf.readUnsignedByte()));}} 			position.setNetwork(network);}else 			if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_STRING)) { 				getLastLocation(position, null); 				int commandLength = buf.readUnsignedByte(); 				if (commandLength > 0) { 					buf.readUnsignedByte(); 					position.set(org.traccar.model.Position.KEY_RESULT, buf.readBytes((commandLength - 1)).toString(java.nio.charset.StandardCharsets.US_ASCII));}}else 				if (org.traccar.protocol.Gt06ProtocolDecoder.isSupported(type)) { 					if (org.traccar.protocol.Gt06ProtocolDecoder.hasGps(type)) { 						decodeGps(position, buf, false);}else { 						getLastLocation(position, null);} 					if (org.traccar.protocol.Gt06ProtocolDecoder.hasLbs(type)) { 						decodeLbs(position, buf, org.traccar.protocol.Gt06ProtocolDecoder.hasStatus(type));} 					if (org.traccar.protocol.Gt06ProtocolDecoder.hasStatus(type)) { 						decodeStatus(position, buf);} 					if ((type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_GPS_LBS_1)) && ((buf.readableBytes()) >= (4 + 6))) { 						position.set(org.traccar.model.Position.KEY_ODOMETER, buf.readUnsignedInt());} 					if ((type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_GPS_LBS_2)) && ((buf.readableBytes()) >= (3 + 6))) { 						position.set(org.traccar.model.Position.KEY_IGNITION, ((buf.readUnsignedByte()) > 0)); 						position.set(org.traccar.model.Position.KEY_EVENT, buf.readUnsignedByte()); 						position.set(org.traccar.model.Position.KEY_ARCHIVE, ((buf.readUnsignedByte()) > 0));}}else { 					buf.skipBytes(dataLength); 					if (((type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_COMMAND_0)) && (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_COMMAND_1))) && (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_COMMAND_2))) { 						sendResponse(channel, false, type);} 					return null;} 		sendResponse(channel, false, type); 		return position;} 	private java.lang.Object decodeExtended(org.jboss.netty.channel.Channel channel, java.net.SocketAddress remoteAddress, org.jboss.netty.buffer.ChannelBuffer buf) throws java.lang.Exception { 		org.traccar.DeviceSession deviceSession = getDeviceSession(channel, remoteAddress); 		if (deviceSession == null) { 			return null;} 		org.traccar.model.Position position = new org.traccar.model.Position(); 		position.setDeviceId(deviceSession.getDeviceId()); 		position.setProtocol(getProtocolName()); 		buf.readUnsignedShort(); 		int type = buf.readUnsignedByte(); 		if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_STRING_INFO)) { 			buf.readUnsignedInt(); 			java.lang.String data; 			if ((buf.readUnsignedByte()) == 1) { 				data = buf.readBytes(((buf.readableBytes()) - 6)).toString(java.nio.charset.StandardCharsets.US_ASCII);}else { 				data = buf.readBytes(((buf.readableBytes()) - 6)).toString(java.nio.charset.StandardCharsets.UTF_16BE);} 			if ((decodeLocationString(position, data)) == null) { 				getLastLocation(position, null); 				position.set(org.traccar.model.Position.KEY_RESULT, data);} 			return position;}else 			if (type == (org.traccar.protocol.Gt06ProtocolDecoder.MSG_INFO)) { 				int subType = buf.readUnsignedByte(); 				getLastLocation(position, null); 				if (subType == 0) { 					position.set(org.traccar.model.Position.KEY_POWER, ((buf.readUnsignedShort()) * 0.01)); 					return position;}else 					if (subType == 5) { 						int flags = buf.readUnsignedByte(); 						position.set(org.traccar.model.Position.KEY_DOOR, org.traccar.helper.BitUtil.check(flags, 0)); 						position.set(((org.traccar.model.Position.PREFIX_IO) + 1), org.traccar.helper.BitUtil.check(flags, 2));
+ 						return position;
+ 
+ 					}else 						if (subType == 13) {
+

@@ -1,0 +1,13 @@
+
+--- \/tmp\/Cardumen_Bug_dot_jar_Jackrabbit-Oak_5449bf39\/oak-commons\/src\/main\/java\/org\/apache\/jackrabbit\/oak\/commons\/PathUtilsjava
++++ \/tmp\/Cardumen_Bug_dot_jar_Jackrabbit-Oak_5449bf39\/oak-commons\/src\/main\/java\/org\/apache\/jackrabbit\/oak\/commons\/PathUtilsjava
+@@ -285,7 +285,7 @@
+ 	public static boolean isAncestor(java.lang.String ancestor, java.lang.String path) {
+ 		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(ancestor);
+ 		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(path);
+-		if ((ancestor.isEmpty()) || (path.isEmpty())) {
++		if ((org.apache.jackrabbit.oak.commons.PathUtils.denotesRootPath(path)) || (path.isEmpty())) {
+ 			return false;
+ 		}
+ 		if (!(org.apache.jackrabbit.oak.commons.PathUtils.denotesRoot(ancestor))) {
+

@@ -1,0 +1,93 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Invocation",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Literal",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "\"(?:d)?,\"",
+            "dst_parent": "new org.traccar.helper.PatternBuilder().text(\"+\").expression(\"(?:RESP|BUFF):GTINF,\").number(\"[0-9A-Z]{2}xxxx,\").number(\"(d{15}|x{14}),\").expression(\"(?:[0-9A-Z]{17},)?\").expression(\"(?:[^,]+)?,\").number(\"(xx),\").expression(\"(?:[0-9F]{20})?,\").number(\"(d{1,2}),\").number(\"d{1,2},\").expression(\"[01],\").number(\"([d.]+)?,\").number(\"d*,\").number(\"(d+.d+),\").expression(\"([01]),\").number(\"(?:d),\").number(\"(?:d)?,\").number(\"(?:d)?,\").number(\"(?:d)?,\")",
+            "dst_parent_type": "Invocation",
+            "dst_type": "Literal",
+            "operator": "UPD",
+            "src": "\"(?:d),\"",
+            "src_parent": "new org.traccar.helper.PatternBuilder().text(\"+\").expression(\"(?:RESP|BUFF):GTINF,\").number(\"[0-9A-Z]{2}xxxx,\").number(\"(d{15}|x{14}),\").expression(\"(?:[0-9A-Z]{17},)?\").expression(\"(?:[^,]+)?,\").number(\"(xx),\").expression(\"(?:[0-9F]{20})?,\").number(\"(d{1,2}),\").number(\"d{1,2},\").expression(\"[01],\").number(\"([d.]+)?,\").number(\"d*,\").number(\"(d+.d+),\").expression(\"([01]),\").number(\"(?:d),\").number(\"(?:d)?,\").number(\"(?:d)?,\").number(\"(?:d),\")",
+            "src_parent_type": "Invocation",
+            "src_type": "Literal"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "LocalVariable",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "org.traccar.helper.PatternUtil.MatchResult matchResult = org.traccar.protocol.PatternUtil.checkPattern(org.traccar.protocol.Gl200TextProtocolDecoder.PATTERN_INF.pattern(), sentence)",
+            "src_parent": "{\n    org.traccar.helper.PatternUtil.MatchResult matchResult = org.traccar.protocol.PatternUtil.checkPattern(org.traccar.protocol.Gl200TextProtocolDecoder.PATTERN_INF.pattern(), sentence);\n    org.traccar.helper.Parser parser = new org.traccar.helper.Parser(org.traccar.protocol.Gl200TextProtocolDecoder.PATTERN_INF, sentence);\n    org.traccar.model.Position position = initPosition(parser, channel, remoteAddress);\n    if (position == null) {\n        return null;\n    }\n    position.set(Position.KEY_STATUS, parser.next());\n    position.set(Position.KEY_RSSI, parser.nextInt());\n    parser.next();\n    position.set(Position.KEY_BATTERY, parser.nextDouble(0));\n    position.set(Position.KEY_CHARGE, parser.nextInt(0) == 1);\n    position.set(Position.KEY_BATTERY_LEVEL, parser.nextInt());\n    position.set(org.traccar.model.Position.PREFIX_TEMP + 1, parser.next());\n    position.set(org.traccar.model.Position.PREFIX_ADC + 1, parser.next());\n    position.set(org.traccar.model.Position.PREFIX_ADC + 2, parser.next());\n    position.set(Position.KEY_INPUT, parser.next());\n    position.set(Position.KEY_OUTPUT, parser.next());\n    getLastLocation(position, parser.nextDateTime());\n    position.set(Position.KEY_INDEX, parser.nextHexInt(0));\n    return position;\n}",
+            "src_parent_type": "Block",
+            "src_type": "LocalVariable"
+          }
+        }
+      ],
+      "file_name": "Gl200TextProtocolDecoder"
+    }
+  ],
+  "id": "bears_122"
+}

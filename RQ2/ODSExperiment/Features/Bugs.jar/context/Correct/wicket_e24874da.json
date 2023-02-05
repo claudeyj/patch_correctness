@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "@java.lang.Override\nprotected void onDetach() {\n    if (this.component == null) {\n        this.onDetach();\n    }\n}",
+            "src_parent": "private class AssignmentWrapper extends org.apache.wicket.model.LoadableDetachableModel<java.lang.String> implements org.apache.wicket.model.IWrapModel<java.lang.String> {\n    private static final long serialVersionUID = 1L;\n\n    private final org.apache.wicket.Component component;\n\n    public AssignmentWrapper(org.apache.wicket.Component component) {\n        this.component = component;\n    }\n\n    @java.lang.Override\n    public void detach() {\n        super.detach();\n        StringResourceModel.this.detach();\n    }\n\n    @java.lang.Override\n    protected void onDetach() {\n        if (StringResourceModel.this.component == null) {\n            StringResourceModel.this.onDetach();\n        }\n    }\n\n    @java.lang.Override\n    protected java.lang.String load() {\n        if (StringResourceModel.this.component != null) {\n            return StringResourceModel.this.getObject();\n        } else {\n            return getString(component);\n        }\n    }\n\n    @java.lang.Override\n    public void setObject(java.lang.String object) {\n        StringResourceModel.this.setObject(object);\n    }\n\n    @java.lang.Override\n    public org.apache.wicket.model.IModel<java.lang.String> getWrappedModel() {\n        return StringResourceModel.this;\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "super.onDetach()",
+            "src_parent": "{\n    super.onDetach();\n    if (model != null) {\n        model.detach();\n    }\n    if (parameters != null) {\n        for (java.lang.Object parameter : parameters) {\n            if (parameter instanceof org.apache.wicket.model.IDetachable) {\n                ((org.apache.wicket.model.IDetachable) (parameter)).detach();\n            }\n        }\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "StringResourceModel"
+    }
+  ],
+  "id": "wicket_e24874da"
+}

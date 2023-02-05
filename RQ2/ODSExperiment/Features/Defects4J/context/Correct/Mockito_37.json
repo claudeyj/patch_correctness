@@ -1,0 +1,93 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "If",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "if (answer instanceof org.mockito.internal.stubbing.answers.CallsRealMethods) {\n    validateMockingConcreteClass(((org.mockito.internal.stubbing.answers.CallsRealMethods) (answer)), invocation);\n}",
+            "src_parent": "{\n    if (answer instanceof org.mockito.internal.stubbing.answers.ThrowsException) {\n        validateException(((org.mockito.internal.stubbing.answers.ThrowsException) (answer)), invocation);\n    }\n    if (answer instanceof org.mockito.internal.stubbing.answers.Returns) {\n        validateReturnValue(((org.mockito.internal.stubbing.answers.Returns) (answer)), invocation);\n    }\n    if (answer instanceof org.mockito.internal.stubbing.answers.DoesNothing) {\n        validateDoNothing(((org.mockito.internal.stubbing.answers.DoesNothing) (answer)), invocation);\n    }\n    if (answer instanceof org.mockito.internal.stubbing.answers.CallsRealMethods) {\n        validateMockingConcreteClass(((org.mockito.internal.stubbing.answers.CallsRealMethods) (answer)), invocation);\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "private void validateMockingConcreteClass(org.mockito.internal.stubbing.answers.CallsRealMethods answer, org.mockito.internal.invocation.Invocation invocation) {\n    if (invocation.getMethod().getDeclaringClass().isInterface()) {\n        reporter.cannotCallRealMethodOnInterface();\n    }\n}",
+            "src_parent": "public class AnswersValidator {\n    private org.mockito.exceptions.Reporter reporter = new org.mockito.exceptions.Reporter();\n\n    public void validate(org.mockito.stubbing.Answer<?> answer, org.mockito.internal.invocation.Invocation invocation) {\n        if (answer instanceof org.mockito.internal.stubbing.answers.ThrowsException) {\n            validateException(((org.mockito.internal.stubbing.answers.ThrowsException) (answer)), invocation);\n        }\n        if (answer instanceof org.mockito.internal.stubbing.answers.Returns) {\n            validateReturnValue(((org.mockito.internal.stubbing.answers.Returns) (answer)), invocation);\n        }\n        if (answer instanceof org.mockito.internal.stubbing.answers.DoesNothing) {\n            validateDoNothing(((org.mockito.internal.stubbing.answers.DoesNothing) (answer)), invocation);\n        }\n        if (answer instanceof org.mockito.internal.stubbing.answers.CallsRealMethods) {\n            validateMockingConcreteClass(((org.mockito.internal.stubbing.answers.CallsRealMethods) (answer)), invocation);\n        }\n    }\n\n    private void validateMockingConcreteClass(org.mockito.internal.stubbing.answers.CallsRealMethods answer, org.mockito.internal.invocation.Invocation invocation) {\n        if (invocation.getMethod().getDeclaringClass().isInterface()) {\n            reporter.cannotCallRealMethodOnInterface();\n        }\n    }\n\n    private void validateDoNothing(org.mockito.internal.stubbing.answers.DoesNothing answer, org.mockito.internal.invocation.Invocation invocation) {\n        if (!invocation.isVoid()) {\n            reporter.onlyVoidMethodsCanBeSetToDoNothing();\n        }\n    }\n\n    private void validateReturnValue(org.mockito.internal.stubbing.answers.Returns answer, org.mockito.internal.invocation.Invocation invocation) {\n        if (invocation.isVoid()) {\n            reporter.cannotStubVoidMethodWithAReturnValue();\n        }\n        if (answer.returnsNull() && invocation.returnsPrimitive()) {\n            reporter.wrongTypeOfReturnValue(invocation.printMethodReturnType(), \"null\", invocation.getMethodName());\n        }\n        if ((!answer.returnsNull()) && (!invocation.isValidReturnType(answer.getReturnType()))) {\n            reporter.wrongTypeOfReturnValue(invocation.printMethodReturnType(), answer.printReturnType(), invocation.getMethodName());\n        }\n    }\n\n    private void validateException(org.mockito.internal.stubbing.answers.ThrowsException answer, org.mockito.internal.invocation.Invocation invocation) {\n        java.lang.Throwable throwable = answer.getThrowable();\n        if (throwable == null) {\n            reporter.cannotStubWithNullThrowable();\n        }\n        if ((throwable instanceof java.lang.RuntimeException) || (throwable instanceof java.lang.Error)) {\n            return;\n        }\n        if (!invocation.isValidException(throwable)) {\n            reporter.checkedExceptionInvalid(throwable);\n        }\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "AnswersValidator"
+    }
+  ],
+  "id": "Mockito_37"
+}

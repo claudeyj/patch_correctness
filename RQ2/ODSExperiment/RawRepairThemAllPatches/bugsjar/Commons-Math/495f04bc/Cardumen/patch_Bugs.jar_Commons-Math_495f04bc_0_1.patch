@@ -1,0 +1,1181 @@
+
+--- \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_495f04bc\/src\/main\/java\/org\/apache\/commons\/math\/util\/MathUtilsjava
++++ \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_495f04bc\/src\/main\/java\/org\/apache\/commons\/math\/util\/MathUtilsjava
+@@ -420,8 +420,439 @@
+ 
+ 
+ 	public static boolean equals(double x, double y) {
+-		return ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (x == y);
+-	}
++		return (
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 
+ 
+@@ -431,9 +862,6 @@
+ 
+ 
+ 
+-	public static boolean equalsIncludingNaN(double x, double y) {
+-		return ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (org.apache.commons.math.util.MathUtils.equals(x, y, 1));
+-	}
+ 
+ 
+ 
+@@ -444,9 +872,6 @@
+ 
+ 
+ 
+-	public static boolean equals(double x, double y, double eps) {
+-		return (org.apache.commons.math.util.MathUtils.equals(x, y, 1)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= eps);
+-	}
+ 
+ 
+ 
+@@ -458,9 +883,6 @@
+ 
+ 
+ 
+-	public static boolean equalsIncludingNaN(double x, double y, double eps) {
+-		return (org.apache.commons.math.util.MathUtils.equalsIncludingNaN(x, y)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= eps);
+-	}
+ 
+ 
+ 
+@@ -479,26 +901,13 @@
+ 
+ 
+ 
+-	public static boolean equals(double x, double y, int maxUlps) {
+ 
+ 
+-		assert (maxUlps > 0) && (maxUlps < (org.apache.commons.math.util.MathUtils.NAN_GAP));
+ 
+-		long xInt = java.lang.Double.doubleToLongBits(x);
+-		long yInt = java.lang.Double.doubleToLongBits(y);
+ 
+ 
+-		if (xInt < 0) {
+-			xInt = (org.apache.commons.math.util.MathUtils.SGN_MASK) - xInt;
+-		}
+-		if (yInt < 0) {
+-			yInt = (org.apache.commons.math.util.MathUtils.SGN_MASK) - yInt;
+-		}
+ 
+-		final boolean isEqual = (org.apache.commons.math.util.FastMath.abs((xInt - yInt))) <= maxUlps;
+ 
+-		return (isEqual && (!(java.lang.Double.isNaN(x)))) && (!(java.lang.Double.isNaN(y)));
+-	}
+ 
+ 
+ 
+@@ -511,9 +920,6 @@
+ 
+ 
+ 
+-	public static boolean equalsIncludingNaN(double x, double y, int maxUlps) {
+-		return ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (org.apache.commons.math.util.MathUtils.equals(x, y, maxUlps));
+-	}
+ 
+ 
+ 
+@@ -531,20 +937,6 @@
+ 
+ 
+ 
+-	public static boolean equals(double[] x, double[] y) {
+-		if ((x == null) || (y == null)) {
+-			return !((x == null) ^ (y == null));
+-		}
+-		if ((x.length) != (y.length)) {
+-			return false;
+-		}
+-		for (int i = 0; i < (x.length); ++i) {
+-			if (!(org.apache.commons.math.util.MathUtils.equals(x[i], y[i]))) {
+-				return false;
+-			}
+-		}
+-		return true;
+-	}
+ 
+ 
+ 
+@@ -556,20 +948,6 @@
+ 
+ 
+ 
+-	public static boolean equalsIncludingNaN(double[] x, double[] y) {
+-		if ((x == null) || (y == null)) {
+-			return !((x == null) ^ (y == null));
+-		}
+-		if ((x.length) != (y.length)) {
+-			return false;
+-		}
+-		for (int i = 0; i < (x.length); ++i) {
+-			if (!(org.apache.commons.math.util.MathUtils.equalsIncludingNaN(x[i], y[i]))) {
+-				return false;
+-			}
+-		}
+-		return true;
+-	}
+ 
+ 
+ 
+@@ -593,18 +971,6 @@
+ 
+ 
+ 
+-	public static long factorial(final int n) {
+-		if (n < 0) {
+-			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER, 
+-			n);
+-		}
+-		if (n > 20) {
+-			throw new java.lang.ArithmeticException(
+-			"factorial value is too large to fit in a long");
+-		}
+-		return org.apache.commons.math.util.MathUtils.FACTORIALS[n];
+-	}
+ 
+ 
+ 
+@@ -626,17 +992,6 @@
+ 
+ 
+ 
+-	public static double factorialDouble(final int n) {
+-		if (n < 0) {
+-			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER, 
+-			n);
+-		}
+-		if (n < 21) {
+-			return org.apache.commons.math.util.MathUtils.factorial(n);
+-		}
+-		return org.apache.commons.math.util.FastMath.floor(((org.apache.commons.math.util.FastMath.exp(org.apache.commons.math.util.MathUtils.factorialLog(n))) + 0.5));
+-	}
+ 
+ 
+ 
+@@ -651,21 +1006,6 @@
+ 
+ 
+ 
+-	public static double factorialLog(final int n) {
+-		if (n < 0) {
+-			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER, 
+-			n);
+-		}
+-		if (n < 21) {
+-			return org.apache.commons.math.util.FastMath.log(org.apache.commons.math.util.MathUtils.factorial(n));
+-		}
+-		double logSum = 0;
+-		for (int i = 2; i <= n; i++) {
+-			logSum += org.apache.commons.math.util.FastMath.log(i);
+-		}
+-		return logSum;
+-	}
+ 
+ 
+ 
+@@ -696,65 +1036,23 @@
+ 
+ 
+ 
+-	public static int gcd(final int p, final int q) {
+-		int u = p;
+-		int v = q;
+-		if ((u == 0) || (v == 0)) {
+-			if ((u == (java.lang.Integer.MIN_VALUE)) || (v == (java.lang.Integer.MIN_VALUE))) {
+-				throw org.apache.commons.math.MathRuntimeException.createArithmeticException(
+-				org.apache.commons.math.exception.util.LocalizedFormats.GCD_OVERFLOW_32_BITS, 
+-				p, q);
+-			}
+-			return (org.apache.commons.math.util.FastMath.abs(u)) + (org.apache.commons.math.util.FastMath.abs(v));
+-		}
+ 
+ 
+ 
+ 
+ 
+-		if (u > 0) {
+-			u = -u;
+-		}
+-		if (v > 0) {
+-			v = -v;
+-		}
+ 
+-		int k = 0;
+-		while ((((u & 1) == 0) && ((v & 1) == 0)) && (k < 31)) {
+ 
+-			u \/= 2;
+-			v \/= 2;
+-			k++;
+-		} 
+-		if (k == 31) {
+-			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.GCD_OVERFLOW_32_BITS, 
+-			p, q);
+-		}
+ 
+ 
+-		int t = ((u & 1) == 1) ? v : -(u \/ 2);
+ 
+ 
+-		do {
+ 
+ 
+-			while ((t & 1) == 0) {
+-				t \/= 2;
+-			} 
+ 
+-			if (t > 0) {
+-				u = -t;
+-			}else {
+-				v = t;
+-			}
+ 
+-			t = (v - u) \/ 2;
+ 
+ 
+-		} while (t != 0 );
+-		return (-u) * (1 << k);
+-	}
+ 
+ 
+ 
+@@ -785,65 +1083,23 @@
+ 
+ 
+ 
+-	public static long gcd(final long p, final long q) {
+-		long u = p;
+-		long v = q;
+-		if ((u == 0) || (v == 0)) {
+-			if ((u == (java.lang.Long.MIN_VALUE)) || (v == (java.lang.Long.MIN_VALUE))) {
+-				throw org.apache.commons.math.MathRuntimeException.createArithmeticException(
+-				org.apache.commons.math.exception.util.LocalizedFormats.GCD_OVERFLOW_64_BITS, 
+-				p, q);
+-			}
+-			return (org.apache.commons.math.util.FastMath.abs(u)) + (org.apache.commons.math.util.FastMath.abs(v));
+-		}
+ 
+ 
+ 
+ 
+ 
+-		if (u > 0) {
+-			u = -u;
+-		}
+-		if (v > 0) {
+-			v = -v;
+-		}
+ 
+-		int k = 0;
+-		while ((((u & 1) == 0) && ((v & 1) == 0)) && (k < 63)) {
+ 
+-			u \/= 2;
+-			v \/= 2;
+-			k++;
+-		} 
+-		if (k == 63) {
+-			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.GCD_OVERFLOW_64_BITS, 
+-			p, q);
+-		}
+ 
+ 
+-		long t = ((u & 1) == 1) ? v : -(u \/ 2);
+ 
+ 
+-		do {
+ 
+ 
+-			while ((t & 1) == 0) {
+-				t \/= 2;
+-			} 
+ 
+-			if (t > 0) {
+-				u = -t;
+-			}else {
+-				v = t;
+-			}
+ 
+-			t = (v - u) \/ 2;
+ 
+ 
+-		} while (t != 0 );
+-		return (-u) * (1L << k);
+-	}
+ 
+ 
+ 
+@@ -851,9 +1107,6 @@
+ 
+ 
+ 
+-	public static int hash(double value) {
+-		return new java.lang.Double(value).hashCode();
+-	}
+ 
+ 
+ 
+@@ -862,9 +1115,6 @@
+ 
+ 
+ 
+-	public static int hash(double[] value) {
+-		return java.util.Arrays.hashCode(value);
+-	}
+ 
+ 
+ 
+@@ -873,9 +1123,6 @@
+ 
+ 
+ 
+-	public static byte indicator(final byte x) {
+-		return x >= (org.apache.commons.math.util.MathUtils.ZB) ? org.apache.commons.math.util.MathUtils.PB : org.apache.commons.math.util.MathUtils.NB;
+-	}
+ 
+ 
+ 
+@@ -885,12 +1132,6 @@
+ 
+ 
+ 
+-	public static double indicator(final double x) {
+-		if (java.lang.Double.isNaN(x)) {
+-			return java.lang.Double.NaN;
+-		}
+-		return x >= 0.0 ? 1.0 : -1.0;
+-	}
+ 
+ 
+ 
+@@ -899,12 +1140,6 @@
+ 
+ 
+ 
+-	public static float indicator(final float x) {
+-		if (java.lang.Float.isNaN(x)) {
+-			return java.lang.Float.NaN;
+-		}
+-		return x >= 0.0F ? 1.0F : -1.0F;
+-	}
+ 
+ 
+ 
+@@ -912,9 +1147,6 @@
+ 
+ 
+ 
+-	public static int indicator(final int x) {
+-		return x >= 0 ? 1 : -1;
+-	}
+ 
+ 
+ 
+@@ -922,9 +1154,6 @@
+ 
+ 
+ 
+-	public static long indicator(final long x) {
+-		return x >= 0L ? 1L : -1L;
+-	}
+ 
+ 
+ 
+@@ -933,9 +1162,6 @@
+ 
+ 
+ 
+-	public static short indicator(final short x) {
+-		return x >= (org.apache.commons.math.util.MathUtils.ZS) ? org.apache.commons.math.util.MathUtils.PS : org.apache.commons.math.util.MathUtils.NS;
+-	}
+ 
+ 
+ 
+@@ -960,18 +1186,6 @@
+ 
+ 
+ 
+-	public static int lcm(int a, int b) {
+-		if ((a == 0) || (b == 0)) {
+-			return 0;
+-		}
+-		int lcm = org.apache.commons.math.util.FastMath.abs(org.apache.commons.math.util.MathUtils.mulAndCheck((a \/ (org.apache.commons.math.util.MathUtils.gcd(a, b))), b));
+-		if (lcm == (java.lang.Integer.MIN_VALUE)) {
+-			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.LCM_OVERFLOW_32_BITS, 
+-			a, b);
+-		}
+-		return lcm;
+-	}
+ 
+ 
+ 
+@@ -995,18 +1209,6 @@
+ 
+ 
+ 
+-	public static long lcm(long a, long b) {
+-		if ((a == 0) || (b == 0)) {
+-			return 0;
+-		}
+-		long lcm = org.apache.commons.math.util.FastMath.abs(org.apache.commons.math.util.MathUtils.mulAndCheck((a \/ (org.apache.commons.math.util.MathUtils.gcd(a, b))), b));
+-		if (lcm == (java.lang.Long.MIN_VALUE)) {
+-			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.LCM_OVERFLOW_64_BITS, 
+-			a, b);
+-		}
+-		return lcm;
+-	}
+ 
+ 
+ 
+@@ -1024,9 +1226,6 @@
+ 
+ 
+ 
+-	public static double log(double base, double x) {
+-		return (org.apache.commons.math.util.FastMath.log(x)) \/ (org.apache.commons.math.util.FastMath.log(base));
+-	}
+ 
+ 
+ 
+@@ -1038,13 +1237,6 @@
+ 
+ 
+ 
+-	public static int mulAndCheck(int x, int y) {
+-		long m = ((long) (x)) * ((long) (y));
+-		if ((m < (java.lang.Integer.MIN_VALUE)) || (m > (java.lang.Integer.MAX_VALUE))) {
+-			throw new java.lang.ArithmeticException("overflow: mul");
+-		}
+-		return ((int) (m));
+-	}
+ 
+ 
+ 
+@@ -1056,50 +1248,14 @@
+ 
+ 
+ 
+-	public static long mulAndCheck(long a, long b) {
+-		long ret;
+-		java.lang.String msg = "overflow: multiply";
+-		if (a > b) {
+-
+-			ret = org.apache.commons.math.util.MathUtils.mulAndCheck(b, a);
+-		}else {
+-			if (a < 0) {
+-				if (b < 0) {
+-
+-					if (a >= ((java.lang.Long.MAX_VALUE) \/ b)) {
+-						ret = a * b;
+-					}else {
+-						throw new java.lang.ArithmeticException(msg);
+-					}
+-				}else 					if (b > 0) {
+ 
+-						if (((java.lang.Long.MIN_VALUE) \/ b) <= a) {
+-							ret = a * b;
+-						}else {
+-							throw new java.lang.ArithmeticException(msg);
+ 
+-						}
+-					}else {
+ 
+-						ret = 0;
+-					}
+-			}else 				if (a > 0) {
+ 
+ 
+ 
+ 
+-					if (a <= ((java.lang.Long.MAX_VALUE) \/ b)) {
+-						ret = a * b;
+-					}else {
+-						throw new java.lang.ArithmeticException(msg);
+-					}
+-				}else {
+ 
+-					ret = 0;
+-				}
+-		}
+-		return ret;
+-	}
+ 
+ 
+ 
+@@ -1119,10 +1275,6 @@
+ 
+ 
+ 
+-	@java.lang.Deprecated
+-	public static double nextAfter(double d, double direction) {
+-		return org.apache.commons.math.util.FastMath.nextAfter(d, direction);
+-	}
+ 
+ 
+ 
+@@ -1133,23 +1285,13 @@
+ 
+ 
+ 
+-	public static double scalb(final double d, final int scaleFactor) {
+ 
+ 
+-		if (((d == 0) || (java.lang.Double.isNaN(d))) || (java.lang.Double.isInfinite(d))) {
+-			return d;
+-		}
+ 
+ 
+-		final long bits = java.lang.Double.doubleToLongBits(d);
+-		final long exponent = bits & 9218868437227405312L;
+-		final long rest = bits & -9218868437227405313L;
+ 
+ 
+-		final long newBits = rest | (exponent + (((long) (scaleFactor)) << 52));
+-		return java.lang.Double.longBitsToDouble(newBits);
+ 
+-	}
+ 
+ 
+ 
+@@ -1170,9 +1312,6 @@
+ 
+ 
+ 
+-	public static double normalizeAngle(double a, double center) {
+-		return a - ((org.apache.commons.math.util.MathUtils.TWO_PI) * (org.apache.commons.math.util.FastMath.floor((((a + (org.apache.commons.math.util.FastMath.PI)) - center) \/ (org.apache.commons.math.util.MathUtils.TWO_PI)))));
+-	}
+ 
+ 
+ 
+@@ -1195,40 +1334,6 @@
+ 
+ 
+ 
+-	public static double[] normalizeArray(double[] values, double normalizedSum) throws 
+-	java.lang.ArithmeticException, java.lang.IllegalArgumentException {
+-		if (java.lang.Double.isInfinite(normalizedSum)) {
+-			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.NORMALIZE_INFINITE);
+-		}
+-		if (java.lang.Double.isNaN(normalizedSum)) {
+-			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(
+-			org.apache.commons.math.exception.util.LocalizedFormats.NORMALIZE_NAN);
+-		}
+-		double sum = 0.0;
+-		final int len = values.length;
+-		double[] out = new double[len];
+-		for (int i = 0; i < len; i++) {
+-			if (java.lang.Double.isInfinite(values[i])) {
+-				throw org.apache.commons.math.MathRuntimeException.createArithmeticException(
+-				org.apache.commons.math.exception.util.LocalizedFormats.INFINITE_ARRAY_ELEMENT, values[i], i);
+-			}
+-			if (!(java.lang.Double.isNaN(values[i]))) {
+-				sum += values[i];
+-			}
+-		}
+-		if (sum == 0) {
+-			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.ARRAY_SUMS_TO_ZERO);
+-		}
+-		for (int i = 0; i < len; i++) {
+-			if (java.lang.Double.isNaN(values[i])) {
+-				out[i] = java.lang.Double.NaN;
+-			}else {
+-				out[i] = ((values[i]) * normalizedSum) \/ sum;
+-			}
+-		}
+-		return out;
+-	}
+ 
+ 
+ 
+@@ -1239,9 +1344,6 @@
+ 
+ 
+ 
+-	public static double round(double x, int scale) {
+-		return org.apache.commons.math.util.MathUtils.round(x, scale, java.math.BigDecimal.ROUND_HALF_UP);
+-	}
+ 
+ 
+ 
+@@ -1255,20 +1357,6 @@
+ 
+ 
+ 
+-	public static double round(double x, int scale, int roundingMethod) {
+-		try {
+-			return new java.math.BigDecimal(
+-			java.lang.Double.toString(x)).setScale(
+-			scale, roundingMethod).doubleValue();
+-
+-		} catch (java.lang.NumberFormatException ex) {
+-			if (java.lang.Double.isInfinite(x)) {
+-				return x;
+-			}else {
+-				return java.lang.Double.NaN;
+-			}
+-		}
+-	}
+ 
+ 
+ 
+@@ -1279,9 +1367,6 @@
+ 
+ 
+ 
+-	public static float round(float x, int scale) {
+-		return org.apache.commons.math.util.MathUtils.round(x, scale, java.math.BigDecimal.ROUND_HALF_UP);
+-	}
+ 
+ 
+ 
+@@ -1295,11 +1380,6 @@
+ 
+ 
+ 
+-	public static float round(float x, int scale, int roundingMethod) {
+-		float sign = org.apache.commons.math.util.MathUtils.indicator(x);
+-		float factor = ((float) (org.apache.commons.math.util.FastMath.pow(10.0F, scale))) * sign;
+-		return ((float) (org.apache.commons.math.util.MathUtils.roundUnscaled((x * factor), sign, roundingMethod))) \/ factor;
+-	}
+ 
+ 
+ 
+@@ -1313,86 +1393,7 @@
+ 
+ 
+ 
+-	private static double roundUnscaled(double unscaled, double sign, 
+-	int roundingMethod) {
+-		switch (roundingMethod) {
+-			case java.math.BigDecimal.ROUND_CEILING :
+-				if (sign == (-1)) {
+-					unscaled = org.apache.commons.math.util.FastMath.floor(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.NEGATIVE_INFINITY));
+-				}else {
+-					unscaled = org.apache.commons.math.util.FastMath.ceil(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY));
+-				}
+-				break;
+-			case java.math.BigDecimal.ROUND_DOWN :
+-				unscaled = org.apache.commons.math.util.FastMath.floor(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.NEGATIVE_INFINITY));
+-				break;
+-			case java.math.BigDecimal.ROUND_FLOOR :
+-				if (sign == (-1)) {
+-					unscaled = org.apache.commons.math.util.FastMath.ceil(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY));
+-				}else {
+-					unscaled = org.apache.commons.math.util.FastMath.floor(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.NEGATIVE_INFINITY));
+-				}
+-				break;
+-			case java.math.BigDecimal.ROUND_HALF_DOWN : 				{
+-					unscaled = org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.NEGATIVE_INFINITY);
+-					double fraction = unscaled - (org.apache.commons.math.util.FastMath.floor(unscaled));
+-					if (fraction > 0.5) {
+-						unscaled = org.apache.commons.math.util.FastMath.ceil(unscaled);
+-					}else {
+-						unscaled = org.apache.commons.math.util.FastMath.floor(unscaled);
+-					}
+-					break;
+-				}
+-			case java.math.BigDecimal.ROUND_HALF_EVEN : 				{
+-					double fraction = unscaled - (org.apache.commons.math.util.FastMath.floor(unscaled));
+-					if (fraction > 0.5) {
+-						unscaled = org.apache.commons.math.util.FastMath.ceil(unscaled);
+-					}else 						if (fraction < 0.5) {
+-							unscaled = org.apache.commons.math.util.FastMath.floor(unscaled);
+-						}else {
+-
+-							if (((org.apache.commons.math.util.FastMath.floor(unscaled)) \/ 2.0) == (org.apache.commons.math.util.FastMath.floor(((java.lang.Math.floor(
+-							unscaled)) \/ 2.0)))) {
+-								unscaled = org.apache.commons.math.util.FastMath.floor(unscaled);
+-							}else {
+-								unscaled = org.apache.commons.math.util.FastMath.ceil(unscaled);
+-							}
+-						}
+-					break;
+-				}
+-			case java.math.BigDecimal.ROUND_HALF_UP : 				{
+-					unscaled = org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY);
+-					double fraction = unscaled - (org.apache.commons.math.util.FastMath.floor(unscaled));
+-					if (fraction >= 0.5) {
+-						unscaled = org.apache.commons.math.util.FastMath.ceil(unscaled);
+-					}else {
+-						unscaled = org.apache.commons.math.util.FastMath.floor(unscaled);
+-					}
+-					break;
+-				}
+-			case java.math.BigDecimal.ROUND_UNNECESSARY :
+-				if (unscaled != (org.apache.commons.math.util.FastMath.floor(unscaled))) {
+-					throw new java.lang.ArithmeticException("Inexact result from rounding");
+-				}
+-				break;
+-			case java.math.BigDecimal.ROUND_UP :
+-				unscaled = org.apache.commons.math.util.FastMath.ceil(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY));
+-				break;
+-			default :
+-				throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(
+-				org.apache.commons.math.exception.util.LocalizedFormats.INVALID_ROUNDING_METHOD, 
+-				roundingMethod, 
+-				"ROUND_CEILING", java.math.BigDecimal.ROUND_CEILING, 
+-				"ROUND_DOWN", java.math.BigDecimal.ROUND_DOWN, 
+-				"ROUND_FLOOR", java.math.BigDecimal.ROUND_FLOOR, 
+-				"ROUND_HALF_DOWN", java.math.BigDecimal.ROUND_HALF_DOWN, 
+-				"ROUND_HALF_EVEN", java.math.BigDecimal.ROUND_HALF_EVEN, 
+-				"ROUND_HALF_UP", java.math.BigDecimal.ROUND_HALF_UP, 
+-				"ROUND_UNNECESSARY", java.math.BigDecimal.ROUND_UNNECESSARY, 
+-				"ROUND_UP", java.math.BigDecimal.ROUND_UP);}
+ 
+-		return unscaled;
+-	}
+ 
+ 
+ 
+@@ -1404,8 +1405,7 @@
+ 
+ 
+ 
+-	public static byte sign(final byte x) {
+-		return x == (org.apache.commons.math.util.MathUtils.ZB) ? org.apache.commons.math.util.MathUtils.ZB : x > (org.apache.commons.math.util.MathUtils.ZB) ? org.apache.commons.math.util.MathUtils.PB : org.apache.commons.math.util.MathUtils.NB;
++		((NB) == (org.apache.commons.math.util.MathUtils.ZB)) && (java.lang.Double.isNaN(y))) || (x == y);} 	public static boolean equalsIncludingNaN(double x, double y) { 		return ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (org.apache.commons.math.util.MathUtils.equals(x, y, 1));} 	public static boolean equals(double x, double y, double eps) { 		return (org.apache.commons.math.util.MathUtils.equals(x, y, 1)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= eps);} 	public static boolean equalsIncludingNaN(double x, double y, double eps) { 		return (org.apache.commons.math.util.MathUtils.equalsIncludingNaN(x, y)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= eps);} 	public static boolean equals(double x, double y, int maxUlps) { 		assert (maxUlps > 0) && (maxUlps < (org.apache.commons.math.util.MathUtils.NAN_GAP)); 		long xInt = java.lang.Double.doubleToLongBits(x); 		long yInt = java.lang.Double.doubleToLongBits(y); 		if (xInt < 0) { 			xInt = (org.apache.commons.math.util.MathUtils.SGN_MASK) - xInt;} 		if (yInt < 0) { 			yInt = (org.apache.commons.math.util.MathUtils.SGN_MASK) - yInt;} 		final boolean isEqual = (org.apache.commons.math.util.FastMath.abs((xInt - yInt))) <= maxUlps; 		return (isEqual && (!(java.lang.Double.isNaN(x)))) && (!(java.lang.Double.isNaN(y)));} 	public static boolean equalsIncludingNaN(double x, double y, int maxUlps) { 		return ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (org.apache.commons.math.util.MathUtils.equals(x, y, maxUlps));} 	public static boolean equals(double[] x, double[] y) { 		if ((x == null) || (y == null)) { 			return !((x == null) ^ (y == null));} 		if ((x.length) != (y.length)) { 			return false;} 		for (int i = 0; i < (x.length); ++i) { 			if (!(org.apache.commons.math.util.MathUtils.equals(x[i], y[i]))) { 				return false;}} 		return true;} 	public static boolean equalsIncludingNaN(double[] x, double[] y) { 		if ((x == null) || (y == null)) { 			return !((x == null) ^ (y == null));} 		if ((x.length) != (y.length)) { 			return false;} 		for (int i = 0; i < (x.length); ++i) { 			if (!(org.apache.commons.math.util.MathUtils.equalsIncludingNaN(x[i], y[i]))) { 				return false;}} 		return true;} 	public static long factorial(final int n) { 		if (n < 0) { 			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(org.apache.commons.math.exception.util.LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER, n);} 		if (n > 20) { 			throw new java.lang.ArithmeticException("factorial value is too large to fit in a long");} 		return org.apache.commons.math.util.MathUtils.FACTORIALS[n];} 	public static double factorialDouble(final int n) { 		if (n < 0) { 			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(org.apache.commons.math.exception.util.LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER, n);} 		if (n < 21) { 			return org.apache.commons.math.util.MathUtils.factorial(n);} 		return org.apache.commons.math.util.FastMath.floor(((org.apache.commons.math.util.FastMath.exp(org.apache.commons.math.util.MathUtils.factorialLog(n))) + 0.5));} 	public static double factorialLog(final int n) { 		if (n < 0) { 			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(org.apache.commons.math.exception.util.LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER, n);} 		if (n < 21) { 			return org.apache.commons.math.util.FastMath.log(org.apache.commons.math.util.MathUtils.factorial(n));} 		double logSum = 0; 		for (int i = 2; i <= n; i++) { 			logSum += org.apache.commons.math.util.FastMath.log(i);} 		return logSum;} 	public static int gcd(final int p, final int q) { 		int u = p; 		int v = q; 		if ((u == 0) || (v == 0)) { 			if ((u == (java.lang.Integer.MIN_VALUE)) || (v == (java.lang.Integer.MIN_VALUE))) { 				throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.GCD_OVERFLOW_32_BITS, p, q);} 			return (org.apache.commons.math.util.FastMath.abs(u)) + (org.apache.commons.math.util.FastMath.abs(v));} 		if (u > 0) { 			u = -u;} 		if (v > 0) { 			v = -v;} 		int k = 0; 		while ((((u & 1) == 0) && ((v & 1) == 0)) && (k < 31)) { 			u \/= 2; 			v \/= 2; 			k++;} 		if (k == 31) { 			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.GCD_OVERFLOW_32_BITS, p, q);} 		int t = ((u & 1) == 1) ? v : -(u \/ 2); 		do { 			while ((t & 1) == 0) { 				t \/= 2;} 			if (t > 0) { 				u = -t;}else { 				v = t;} 			t = (v - u) \/ 2;} while (t != 0 ); 		return (-u) * (1 << k);} 	public static long gcd(final long p, final long q) { 		long u = p; 		long v = q; 		if ((u == 0) || (v == 0)) { 			if ((u == (java.lang.Long.MIN_VALUE)) || (v == (java.lang.Long.MIN_VALUE))) { 				throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.GCD_OVERFLOW_64_BITS, p, q);} 			return (org.apache.commons.math.util.FastMath.abs(u)) + (org.apache.commons.math.util.FastMath.abs(v));} 		if (u > 0) { 			u = -u;} 		if (v > 0) { 			v = -v;} 		int k = 0; 		while ((((u & 1) == 0) && ((v & 1) == 0)) && (k < 63)) { 			u \/= 2; 			v \/= 2; 			k++;} 		if (k == 63) { 			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.GCD_OVERFLOW_64_BITS, p, q);} 		long t = ((u & 1) == 1) ? v : -(u \/ 2); 		do { 			while ((t & 1) == 0) { 				t \/= 2;} 			if (t > 0) { 				u = -t;}else { 				v = t;} 			t = (v - u) \/ 2;} while (t != 0 ); 		return (-u) * (1L << k);} 	public static int hash(double value) { 		return new java.lang.Double(value).hashCode();} 	public static int hash(double[] value) { 		return java.util.Arrays.hashCode(value);} 	public static byte indicator(final byte x) { 		return x >= (org.apache.commons.math.util.MathUtils.ZB) ? org.apache.commons.math.util.MathUtils.PB : org.apache.commons.math.util.MathUtils.NB;} 	public static double indicator(final double x) { 		if (java.lang.Double.isNaN(x)) { 			return java.lang.Double.NaN;} 		return x >= 0.0 ? 1.0 : -1.0;} 	public static float indicator(final float x) { 		if (java.lang.Float.isNaN(x)) { 			return java.lang.Float.NaN;} 		return x >= 0.0F ? 1.0F : -1.0F;} 	public static int indicator(final int x) { 		return x >= 0 ? 1 : -1;} 	public static long indicator(final long x) { 		return x >= 0L ? 1L : -1L;} 	public static short indicator(final short x) { 		return x >= (org.apache.commons.math.util.MathUtils.ZS) ? org.apache.commons.math.util.MathUtils.PS : org.apache.commons.math.util.MathUtils.NS;} 	public static int lcm(int a, int b) { 		if ((a == 0) || (b == 0)) { 			return 0;} 		int lcm = org.apache.commons.math.util.FastMath.abs(org.apache.commons.math.util.MathUtils.mulAndCheck((a \/ (org.apache.commons.math.util.MathUtils.gcd(a, b))), b)); 		if (lcm == (java.lang.Integer.MIN_VALUE)) { 			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.LCM_OVERFLOW_32_BITS, a, b);} 		return lcm;} 	public static long lcm(long a, long b) { 		if ((a == 0) || (b == 0)) { 			return 0;} 		long lcm = org.apache.commons.math.util.FastMath.abs(org.apache.commons.math.util.MathUtils.mulAndCheck((a \/ (org.apache.commons.math.util.MathUtils.gcd(a, b))), b)); 		if (lcm == (java.lang.Long.MIN_VALUE)) { 			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.LCM_OVERFLOW_64_BITS, a, b);} 		return lcm;} 	public static double log(double base, double x) { 		return (org.apache.commons.math.util.FastMath.log(x)) \/ (org.apache.commons.math.util.FastMath.log(base));} 	public static int mulAndCheck(int x, int y) { 		long m = ((long) (x)) * ((long) (y)); 		if ((m < (java.lang.Integer.MIN_VALUE)) || (m > (java.lang.Integer.MAX_VALUE))) { 			throw new java.lang.ArithmeticException("overflow: mul");} 		return ((int) (m));} 	public static long mulAndCheck(long a, long b) { 		long ret; 		java.lang.String msg = "overflow: multiply"; 		if (a > b) { 			ret = org.apache.commons.math.util.MathUtils.mulAndCheck(b, a);}else { 			if (a < 0) { 				if (b < 0) { 					if (a >= ((java.lang.Long.MAX_VALUE) \/ b)) { 						ret = a * b;}else { 						throw new java.lang.ArithmeticException(msg);}}else 					if (b > 0) { 						if (((java.lang.Long.MIN_VALUE) \/ b) <= a) { 							ret = a * b;}else { 							throw new java.lang.ArithmeticException(msg);}}else { 						ret = 0;}}else 				if (a > 0) { 					if (a <= ((java.lang.Long.MAX_VALUE) \/ b)) { 						ret = a * b;}else { 						throw new java.lang.ArithmeticException(msg);}}else { 					ret = 0;}} 		return ret;} 	@java.lang.Deprecated 	public static double nextAfter(double d, double direction) { 		return org.apache.commons.math.util.FastMath.nextAfter(d, direction);} 	public static double scalb(final double d, final int scaleFactor) { 		if (((d == 0) || (java.lang.Double.isNaN(d))) || (java.lang.Double.isInfinite(d))) { 			return d;} 		final long bits = java.lang.Double.doubleToLongBits(d); 		final long exponent = bits & 9218868437227405312L; 		final long rest = bits & -9218868437227405313L; 		final long newBits = rest | (exponent + (((long) (scaleFactor)) << 52)); 		return java.lang.Double.longBitsToDouble(newBits);} 	public static double normalizeAngle(double a, double center) { 		return a - ((org.apache.commons.math.util.MathUtils.TWO_PI) * (org.apache.commons.math.util.FastMath.floor((((a + (org.apache.commons.math.util.FastMath.PI)) - center) \/ (org.apache.commons.math.util.MathUtils.TWO_PI)))));} 	public static double[] normalizeArray(double[] values, double normalizedSum) throws java.lang.ArithmeticException, java.lang.IllegalArgumentException { 		if (java.lang.Double.isInfinite(normalizedSum)) { 			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(org.apache.commons.math.exception.util.LocalizedFormats.NORMALIZE_INFINITE);} 		if (java.lang.Double.isNaN(normalizedSum)) { 			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(org.apache.commons.math.exception.util.LocalizedFormats.NORMALIZE_NAN);} 		double sum = 0.0; 		final int len = values.length; 		double[] out = new double[len]; 		for (int i = 0; i < len; i++) { 			if (java.lang.Double.isInfinite(values[i])) { 				throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.INFINITE_ARRAY_ELEMENT, values[i], i);} 			if (!(java.lang.Double.isNaN(values[i]))) { 				sum += values[i];}} 		if (sum == 0) { 			throw org.apache.commons.math.MathRuntimeException.createArithmeticException(org.apache.commons.math.exception.util.LocalizedFormats.ARRAY_SUMS_TO_ZERO);} 		for (int i = 0; i < len; i++) { 			if (java.lang.Double.isNaN(values[i])) { 				out[i] = java.lang.Double.NaN;}else { 				out[i] = ((values[i]) * normalizedSum) \/ sum;}} 		return out;} 	public static double round(double x, int scale) { 		return org.apache.commons.math.util.MathUtils.round(x, scale, java.math.BigDecimal.ROUND_HALF_UP);} 	public static double round(double x, int scale, int roundingMethod) { 		try { 			return new java.math.BigDecimal(java.lang.Double.toString(x)).setScale(scale, roundingMethod).doubleValue();} catch (java.lang.NumberFormatException ex) { 			if (java.lang.Double.isInfinite(x)) { 				return x;}else { 				return java.lang.Double.NaN;}}} 	public static float round(float x, int scale) { 		return org.apache.commons.math.util.MathUtils.round(x, scale, java.math.BigDecimal.ROUND_HALF_UP);} 	public static float round(float x, int scale, int roundingMethod) { 		float sign = org.apache.commons.math.util.MathUtils.indicator(x); 		float factor = ((float) (org.apache.commons.math.util.FastMath.pow(10.0F, scale))) * sign; 		return ((float) (org.apache.commons.math.util.MathUtils.roundUnscaled((x * factor), sign, roundingMethod))) \/ factor;} 	private static double roundUnscaled(double unscaled, double sign, int roundingMethod) { 		switch (roundingMethod) { 			case java.math.BigDecimal.ROUND_CEILING : 				if (sign == (-1)) { 					unscaled = org.apache.commons.math.util.FastMath.floor(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.NEGATIVE_INFINITY));}else { 					unscaled = org.apache.commons.math.util.FastMath.ceil(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY));} 				break; 			case java.math.BigDecimal.ROUND_DOWN : 				unscaled = org.apache.commons.math.util.FastMath.floor(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.NEGATIVE_INFINITY)); 				break; 			case java.math.BigDecimal.ROUND_FLOOR : 				if (sign == (-1)) { 					unscaled = org.apache.commons.math.util.FastMath.ceil(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY));}else { 					unscaled = org.apache.commons.math.util.FastMath.floor(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.NEGATIVE_INFINITY));} 				break; 			case java.math.BigDecimal.ROUND_HALF_DOWN : 				{ 					unscaled = org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.NEGATIVE_INFINITY); 					double fraction = unscaled - (org.apache.commons.math.util.FastMath.floor(unscaled)); 					if (fraction > 0.5) { 						unscaled = org.apache.commons.math.util.FastMath.ceil(unscaled);}else { 						unscaled = org.apache.commons.math.util.FastMath.floor(unscaled);} 					break;} 			case java.math.BigDecimal.ROUND_HALF_EVEN : 				{ 					double fraction = unscaled - (org.apache.commons.math.util.FastMath.floor(unscaled)); 					if (fraction > 0.5) { 						unscaled = org.apache.commons.math.util.FastMath.ceil(unscaled);}else 						if (fraction < 0.5) { 							unscaled = org.apache.commons.math.util.FastMath.floor(unscaled);}else { 							if (((org.apache.commons.math.util.FastMath.floor(unscaled)) \/ 2.0) == (org.apache.commons.math.util.FastMath.floor(((java.lang.Math.floor(unscaled)) \/ 2.0)))) { 								unscaled = org.apache.commons.math.util.FastMath.floor(unscaled);}else { 								unscaled = org.apache.commons.math.util.FastMath.ceil(unscaled);}} 					break;} 			case java.math.BigDecimal.ROUND_HALF_UP : 				{ 					unscaled = org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY); 					double fraction = unscaled - (org.apache.commons.math.util.FastMath.floor(unscaled)); 					if (fraction >= 0.5) { 						unscaled = org.apache.commons.math.util.FastMath.ceil(unscaled);}else { 						unscaled = org.apache.commons.math.util.FastMath.floor(unscaled);} 					break;} 			case java.math.BigDecimal.ROUND_UNNECESSARY : 				if (unscaled != (org.apache.commons.math.util.FastMath.floor(unscaled))) { 					throw new java.lang.ArithmeticException("Inexact result from rounding");} 				break; 			case java.math.BigDecimal.ROUND_UP : 				unscaled = org.apache.commons.math.util.FastMath.ceil(org.apache.commons.math.util.MathUtils.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY)); 				break; 			default : 				throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(org.apache.commons.math.exception.util.LocalizedFormats.INVALID_ROUNDING_METHOD, roundingMethod, "ROUND_CEILING", java.math.BigDecimal.ROUND_CEILING, "ROUND_DOWN", java.math.BigDecimal.ROUND_DOWN, "ROUND_FLOOR", java.math.BigDecimal.ROUND_FLOOR, "ROUND_HALF_DOWN", java.math.BigDecimal.ROUND_HALF_DOWN, "ROUND_HALF_EVEN", java.math.BigDecimal.ROUND_HALF_EVEN, "ROUND_HALF_UP", java.math.BigDecimal.ROUND_HALF_UP, "ROUND_UNNECESSARY", java.math.BigDecimal.ROUND_UNNECESSARY, "ROUND_UP", java.math.BigDecimal.ROUND_UP);} 		return unscaled;} 	public static byte sign(final byte x) { 		return x == (org.apache.commons.math.util.MathUtils.ZB) ? org.apache.commons.math.util.MathUtils.ZB : x > (org.apache.commons.math.util.MathUtils.ZB) ? org.apache.commons.math.util.MathUtils.PB : org.apache.commons.math.util.MathUtils.NB;
+ 	}
+ 
+ 
+

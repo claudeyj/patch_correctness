@@ -1,0 +1,14 @@
+--- /tmp/Kali_Bears_traccar-traccar_255051210-255052458/src/org/traccar/BaseProtocolDecoder.java	2018-12-27 05:24:51.725490787 -0500
++++ /tmp/Kali_Bears_traccar-traccar_255051210-255052458/patches_f7yb/Patch_2/patched/tmp/Kali_Bears_traccar-traccar_255051210-255052458/src/org/traccar/BaseProtocolDecoder.java	2018-12-27 05:25:55.326511244 -0500
+@@ -106,8 +106,7 @@
+     }
+ 
+     public DeviceSession getDeviceSession(Channel channel, SocketAddress remoteAddress, String... uniqueIds) {
+-        if (channel.getPipeline().get(HttpRequestDecoder.class) != null
+-                || Context.getConfig().getBoolean("decoder.ignoreSessionCache")) {
++        if (false) {
+             long deviceId = findDeviceId(remoteAddress, uniqueIds);
+             if (deviceId != 0) {
+                 if (Context.getConnectionManager() != null) {
+
+

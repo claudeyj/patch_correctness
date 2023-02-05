@@ -1,0 +1,13 @@
+--- /tmp/RSRepair_Defects4J_Closure_75/src/com/google/javascript/jscomp/NodeUtil.java	2018-12-02 08:07:09.306102473 -0500
++++ /tmp/RSRepair_Defects4J_Closure_75/patches_98sr/Patch_16/patched/tmp/RSRepair_Defects4J_Closure_75/src/com/google/javascript/jscomp/NodeUtil.java	2018-12-02 08:11:26.686180015 -0500
+@@ -346,7 +346,7 @@
+     }
+ 
+     try {
+-      return Double.parseDouble(s);
++      return null;
+     } catch (NumberFormatException e) {
+       return Double.NaN;
+     }
+
+

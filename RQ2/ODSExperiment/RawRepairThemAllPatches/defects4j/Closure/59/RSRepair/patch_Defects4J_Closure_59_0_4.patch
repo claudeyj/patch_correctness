@@ -1,0 +1,14 @@
+--- /tmp/RSRepair_Defects4J_Closure_59/src/com/google/javascript/jscomp/CheckGlobalThis.java	2018-12-02 08:29:25.169275955 -0500
++++ /tmp/RSRepair_Defects4J_Closure_59/patches_swi5/Patch_378/patched/tmp/RSRepair_Defects4J_Closure_59/src/com/google/javascript/jscomp/CheckGlobalThis.java	2018-12-02 08:38:19.928524057 -0500
+@@ -161,8 +161,7 @@
+ 
+   private boolean shouldReportThis(Node n, Node parent) {
+     if (assignLhsChild != null) {
+-      // Always report a THIS on the left side of an assign.
+-      return true;
++      return false;
+     }
+ 
+     // Also report a THIS with a property access.
+
+

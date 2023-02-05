@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "Invocation",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Constructor",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Try",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "source.setSystemId(configSource.getLocation())",
+            "src_parent": "{\n    final java.io.InputStream configStream = configSource.getInputStream();\n    try {\n        buffer = org.apache.logging.log4j.core.config.AbstractConfiguration.toByteArray(configStream);\n    } finally {\n        configStream.close();\n    }\n    final org.xml.sax.InputSource source = new org.xml.sax.InputSource(new java.io.ByteArrayInputStream(buffer));\n    source.setSystemId(configSource.getLocation());\n    final org.w3c.dom.Document document = org.apache.logging.log4j.core.config.xml.XmlConfiguration.newDocumentBuilder().parse(source);\n    rootElement = document.getDocumentElement();\n    final java.util.Map<java.lang.String, java.lang.String> attrs = processAttributes(rootNode, rootElement);\n    final org.apache.logging.log4j.core.config.status.StatusConfiguration statusConfig = new org.apache.logging.log4j.core.config.status.StatusConfiguration().withVerboseClasses(org.apache.logging.log4j.core.config.xml.XmlConfiguration.VERBOSE_CLASSES).withStatus(getDefaultStatus());\n    for (final java.util.Map.Entry<java.lang.String, java.lang.String> entry : attrs.entrySet()) {\n        final java.lang.String key = entry.getKey();\n        final java.lang.String value = getStrSubstitutor().replace(entry.getValue());\n        if (\"status\".equalsIgnoreCase(key)) {\n            statusConfig.withStatus(value);\n        } else if (\"dest\".equalsIgnoreCase(key)) {\n            statusConfig.withDestination(value);\n        } else if (\"shutdownHook\".equalsIgnoreCase(key)) {\n            isShutdownHookEnabled = !\"disable\".equalsIgnoreCase(value);\n        } else if (\"verbose\".equalsIgnoreCase(key)) {\n            statusConfig.withVerbosity(value);\n        } else if (\"packages\".equalsIgnoreCase(key)) {\n            final java.lang.String[] packages = value.split(org.apache.logging.log4j.core.util.Patterns.COMMA_SEPARATOR);\n            for (final java.lang.String p : packages) {\n                org.apache.logging.log4j.core.config.plugins.util.PluginManager.addPackage(p);\n            }\n        } else if (\"name\".equalsIgnoreCase(key)) {\n            setName(value);\n        } else if (\"strict\".equalsIgnoreCase(key)) {\n            strict = java.lang.Boolean.parseBoolean(value);\n        } else if (\"schema\".equalsIgnoreCase(key)) {\n            schema = value;\n        } else if (\"monitorInterval\".equalsIgnoreCase(key)) {\n            final int interval = java.lang.Integer.parseInt(value);\n            if ((interval > 0) && (configFile != null)) {\n                monitor = new org.apache.logging.log4j.core.config.FileConfigurationMonitor(this, configFile, listeners, interval);\n            }\n        } else if (\"advertiser\".equalsIgnoreCase(key)) {\n            createAdvertiser(value, configSource, buffer, \"text/xml\");\n        }\n    }\n    statusConfig.initialize();\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "XmlConfiguration"
+    }
+  ],
+  "id": "logging-log4j2_4b77622b"
+}

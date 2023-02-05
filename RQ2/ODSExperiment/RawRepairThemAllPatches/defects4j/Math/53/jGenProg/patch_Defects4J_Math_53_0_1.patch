@@ -1,0 +1,55 @@
+
+--- org\/apache\/commons\/math\/complex\/Complex.java
++++ org\/apache\/commons\/math\/complex\/Complex.java
+@@ -149,10 +149,6 @@
+ 
+ 	public org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws 
+ 	org.apache.commons.math.exception.NullArgumentException {
+-		org.apache.commons.math.util.MathUtils.checkNotNull(rhs);
+-		return createComplex(((real) + (rhs.getReal())), 
+-		((imaginary) + (rhs.getImaginary())));
+-	}
+ 
+ 
+ 
+@@ -168,12 +164,6 @@
+ 
+ 
+ 
+-	public org.apache.commons.math.complex.Complex conjugate() {
+-		if (isNaN) {
+-			return org.apache.commons.math.complex.Complex.NaN;
+-		}
+-		return createComplex(real, (-(imaginary)));
+-	}
+ 
+ 
+ 
+@@ -210,12 +200,22 @@
+ 
+ 
+ 
+-	public org.apache.commons.math.complex.Complex divide(org.apache.commons.math.complex.Complex rhs) throws 
+-	org.apache.commons.math.exception.NullArgumentException {
+-		org.apache.commons.math.util.MathUtils.checkNotNull(rhs);
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 		if ((isNaN) || (rhs.isNaN)) {
+ 			return org.apache.commons.math.complex.Complex.NaN;
+-		}
++		} 		org.apache.commons.math.util.MathUtils.checkNotNull(rhs); 		return createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));} 	public org.apache.commons.math.complex.Complex conjugate() { 		if (isNaN) { 			return org.apache.commons.math.complex.Complex.NaN;} 		return createComplex(real, (-(imaginary)));} 	public org.apache.commons.math.complex.Complex divide(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException { 		org.apache.commons.math.util.MathUtils.checkNotNull(rhs); 		if ((isNaN) || (rhs.isNaN)) { 			return org.apache.commons.math.complex.Complex.NaN;}
+ 
+ 		double c = rhs.getReal();
+ 		double d = rhs.getImaginary();
+

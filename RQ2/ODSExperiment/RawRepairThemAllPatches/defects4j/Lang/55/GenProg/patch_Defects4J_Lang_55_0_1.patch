@@ -1,0 +1,13 @@
+--- /tmp/GenProg_Defects4J_Lang_55/src/java/org/apache/commons/lang/time/StopWatch.java	2018-12-02 04:10:02.431054548 -0500
++++ /tmp/GenProg_Defects4J_Lang_55/patches_g457/Patch_94/patched/tmp/GenProg_Defects4J_Lang_55/src/java/org/apache/commons/lang/time/StopWatch.java	2018-12-02 04:19:05.444564270 -0500
+@@ -115,8 +115,6 @@
+         if(this.runningState != STATE_RUNNING && this.runningState != STATE_SUSPENDED) {
+             throw new IllegalStateException("Stopwatch is not running. ");
+         }
+-            stopTime = System.currentTimeMillis();
+-        this.runningState = STATE_STOPPED;
+     }
+ 
+     /**
+
+

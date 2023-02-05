@@ -1,0 +1,127 @@
+
+--- org\/jfree\/chart\/plot\/PiePlot3D.java
++++ org\/jfree\/chart\/plot\/PiePlot3D.java
+@@ -264,78 +264,78 @@
+ 		}
+ 
+ 		double linkX = (plotArea.getX()) + (gapHorizontal \/ 2);
+-		double linkY = (plotArea.getY()) + (gapVertical \/ 2);
+-		double linkW = (plotArea.getWidth()) - gapHorizontal;
+-		double linkH = (plotArea.getHeight()) - gapVertical;
+ 
+ 
+-		if (isCircular()) {
+-			double min = (java.lang.Math.min(linkW, linkH)) \/ 2;
+-			linkX = (((linkX + linkX) + linkW) \/ 2) - min;
+-			linkY = (((linkY + linkY) + linkH) \/ 2) - min;
+-			linkW = 2 * min;
+-			linkH = 2 * min;
+-		}
+ 
+-		org.jfree.chart.plot.PiePlotState state = initialise(g2, plotArea, this, null, info);
+ 
+ 
+ 
+-		java.awt.geom.Rectangle2D linkAreaXX = new java.awt.geom.Rectangle2D.Double(linkX, linkY, linkW, 
+-		(linkH * (1 - (this.depthFactor))));
+-		state.setLinkArea(linkAreaXX);
+ 
+-		if (org.jfree.chart.plot.PiePlot.DEBUG_DRAW_LINK_AREA) {
+-			g2.setPaint(java.awt.Color.blue);
+-			g2.draw(linkAreaXX);
+-			g2.setPaint(java.awt.Color.yellow);
+-			g2.draw(new java.awt.geom.Ellipse2D.Double(linkAreaXX.getX(), linkAreaXX.getY(), 
+-			linkAreaXX.getWidth(), linkAreaXX.getHeight()));
+-		}
+ 
+ 
+ 
+ 
+-		double hh = linkW * (getLabelLinkMargin());
+-		double vv = linkH * (getLabelLinkMargin());
+-		java.awt.geom.Rectangle2D explodeArea = new java.awt.geom.Rectangle2D.Double((linkX + (hh \/ 2.0)), 
+-		(linkY + (vv \/ 2.0)), (linkW - hh), (linkH - vv));
+ 
+-		state.setExplodedPieArea(explodeArea);
+ 
+ 
+ 
+ 
+-		double maximumExplodePercent = getMaximumExplodePercent();
+-		double percent = maximumExplodePercent \/ (1.0 + maximumExplodePercent);
+ 
+-		double h1 = (explodeArea.getWidth()) * percent;
+-		double v1 = (explodeArea.getHeight()) * percent;
+-		java.awt.geom.Rectangle2D pieArea = new java.awt.geom.Rectangle2D.Double(((explodeArea.getX()) + 
+-		(h1 \/ 2.0)), ((explodeArea.getY()) + (v1 \/ 2.0)), 
+-		((explodeArea.getWidth()) - h1), ((explodeArea.getHeight()) - v1));
+ 
+ 
+ 
+-		int depth = ((int) ((pieArea.getHeight()) * (this.depthFactor)));
+-		java.awt.geom.Rectangle2D linkArea = new java.awt.geom.Rectangle2D.Double(linkX, linkY, linkW, 
+-		(linkH - depth));
+-		state.setLinkArea(linkArea);
+ 
+-		state.setPieArea(pieArea);
+-		state.setPieCenterX(pieArea.getCenterX());
+-		state.setPieCenterY(((pieArea.getCenterY()) - (depth \/ 2.0)));
+-		state.setPieWRadius(((pieArea.getWidth()) \/ 2.0));
+-		state.setPieHRadius((((pieArea.getHeight()) - depth) \/ 2.0));
+ 
+ 
+-		org.jfree.data.general.PieDataset dataset = getDataset();
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 		if (org.jfree.data.general.DatasetUtilities.isEmptyOrNull(getDataset())) {
+ 			drawNoDataMessage(g2, plotArea);
+ 			g2.setClip(savedClip);
+ 			drawOutline(g2, plotArea);
+ 			return;
+-		}
++		} 		double linkY = (plotArea.getY()) + (gapVertical \/ 2); 		double linkW = (plotArea.getWidth()) - gapHorizontal; 		double linkH = (plotArea.getHeight()) - gapVertical; 		if (isCircular()) { 			double min = (java.lang.Math.min(linkW, linkH)) \/ 2; 			linkX = (((linkX + linkX) + linkW) \/ 2) - min; 			linkY = (((linkY + linkY) + linkH) \/ 2) - min; 			linkW = 2 * min; 			linkH = 2 * min;} 		org.jfree.chart.plot.PiePlotState state = initialise(g2, plotArea, this, null, info); 		java.awt.geom.Rectangle2D linkAreaXX = new java.awt.geom.Rectangle2D.Double(linkX, linkY, linkW, (linkH * (1 - (this.depthFactor)))); 		state.setLinkArea(linkAreaXX); 		if (org.jfree.chart.plot.PiePlot.DEBUG_DRAW_LINK_AREA) { 			g2.setPaint(java.awt.Color.blue); 			g2.draw(linkAreaXX); 			g2.setPaint(java.awt.Color.yellow); 			g2.draw(new java.awt.geom.Ellipse2D.Double(linkAreaXX.getX(), linkAreaXX.getY(), linkAreaXX.getWidth(), linkAreaXX.getHeight()));} 		double hh = linkW * (getLabelLinkMargin()); 		double vv = linkH * (getLabelLinkMargin()); 		java.awt.geom.Rectangle2D explodeArea = new java.awt.geom.Rectangle2D.Double((linkX + (hh \/ 2.0)), (linkY + (vv \/ 2.0)), (linkW - hh), (linkH - vv)); 		state.setExplodedPieArea(explodeArea); 		double maximumExplodePercent = getMaximumExplodePercent(); 		double percent = maximumExplodePercent \/ (1.0 + maximumExplodePercent); 		double h1 = (explodeArea.getWidth()) * percent; 		double v1 = (explodeArea.getHeight()) * percent; 		java.awt.geom.Rectangle2D pieArea = new java.awt.geom.Rectangle2D.Double(((explodeArea.getX()) + (h1 \/ 2.0)), ((explodeArea.getY()) + (v1 \/ 2.0)), ((explodeArea.getWidth()) - h1), ((explodeArea.getHeight()) - v1)); 		int depth = ((int) ((pieArea.getHeight()) * (this.depthFactor))); 		java.awt.geom.Rectangle2D linkArea = new java.awt.geom.Rectangle2D.Double(linkX, linkY, linkW, (linkH - depth)); 		state.setLinkArea(linkArea); 		state.setPieArea(pieArea); 		state.setPieCenterX(pieArea.getCenterX()); 		state.setPieCenterY(((pieArea.getCenterY()) - (depth \/ 2.0))); 		state.setPieWRadius(((pieArea.getWidth()) \/ 2.0)); 		state.setPieHRadius((((pieArea.getHeight()) - depth) \/ 2.0)); 		org.jfree.data.general.PieDataset dataset = getDataset(); 		if (org.jfree.data.general.DatasetUtilities.isEmptyOrNull(getDataset())) { 			drawNoDataMessage(g2, plotArea); 			g2.setClip(savedClip); 			drawOutline(g2, plotArea); 			return;}
+ 
+ 
+ 		if ((dataset.getKeys().size()) > (plotArea.getWidth())) {
+

@@ -1,0 +1,24 @@
+--- /tmp/RSRepair_Defects4J_Closure_112/src/com/google/javascript/jscomp/TypeInference.java	2018-12-02 05:28:55.270249364 -0500
++++ /tmp/RSRepair_Defects4J_Closure_112/patches_pvgv/Patch_660/patched/tmp/RSRepair_Defects4J_Closure_112/src/com/google/javascript/jscomp/TypeInference.java	2018-12-02 05:48:34.038712734 -0500
+@@ -1039,10 +1039,6 @@
+     Node callTarget = call.getFirstChild();
+     if (NodeUtil.isGet(callTarget)) {
+       Node obj = callTarget.getFirstChild();
+-      maybeResolveTemplatedType(
+-          fnType.getTypeOfThis(),
+-          getJSType(obj),
+-          resolvedTypes);
+     }
+ 
+     if (call.hasMoreThanOneChild()) {
+@@ -1116,8 +1112,6 @@
+       Iterable<Node> declParams,
+       Iterable<Node> callParams,
+       Map<TemplateType, JSType> resolvedTypes) {
+-    maybeResolveTemplateTypeFromNodes(
+-        declParams.iterator(), callParams.iterator(), resolvedTypes);
+   }
+ 
+   private void maybeResolveTemplateTypeFromNodes(
+
+

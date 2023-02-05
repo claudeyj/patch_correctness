@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "protected boolean isTaskRunAllowed() {\n    return isRunAllowed() && (!isSuspended());\n}",
+            "src_parent": "public class TimerConsumer extends org.apache.camel.impl.DefaultConsumer {\n    private static transient final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(org.apache.camel.component.timer.TimerConsumer.class);\n\n    private final org.apache.camel.component.timer.TimerEndpoint endpoint;\n\n    private volatile java.util.TimerTask task;\n\n    public TimerConsumer(org.apache.camel.component.timer.TimerEndpoint endpoint, org.apache.camel.Processor processor) {\n        super(endpoint, processor);\n        this.endpoint = endpoint;\n    }\n\n    @java.lang.Override\n    protected void doStart() throws java.lang.Exception {\n        task = new java.util.TimerTask() {\n            private final java.util.concurrent.atomic.AtomicLong counter = new java.util.concurrent.atomic.AtomicLong();\n\n            @java.lang.Override\n            public void run() {\n                if (!isTaskRunAllowed()) {\n                    return;\n                }\n                try {\n                    long count = counter.incrementAndGet();\n                    boolean fire = (endpoint.getRepeatCount() <= 0) || (count <= endpoint.getRepeatCount());\n                    if (fire) {\n                        sendTimerExchange(count);\n                    } else {\n                        org.apache.camel.component.timer.TimerConsumer.LOG.debug(\"Cancelling {} timer as repeat count limit reached after {} counts.\", endpoint.getTimerName(), endpoint.getRepeatCount());\n                        cancel();\n                    }\n                } catch (java.lang.Throwable e) {\n                    org.apache.camel.component.timer.TimerConsumer.LOG.warn(\"Error processing exchange. This exception will be ignored, to let the timer be able to trigger again.\", e);\n                }\n            }\n        };\n        java.util.Timer timer = endpoint.getTimer();\n        configureTask(task, timer);\n    }\n\n    @java.lang.Override\n    protected void doStop() throws java.lang.Exception {\n        if (task != null) {\n            task.cancel();\n        }\n        task = null;\n    }\n\n    protected boolean isTaskRunAllowed() {\n        return isRunAllowed() && (!isSuspended());\n    }\n\n    protected void configureTask(java.util.TimerTask task, java.util.Timer timer) {\n        if (endpoint.isFixedRate()) {\n            if (endpoint.getTime() != null) {\n                timer.scheduleAtFixedRate(task, endpoint.getTime(), endpoint.getPeriod());\n            } else {\n                timer.scheduleAtFixedRate(task, endpoint.getDelay(), endpoint.getPeriod());\n            }\n        } else if (endpoint.getTime() != null) {\n            if (endpoint.getPeriod() > 0) {\n                timer.schedule(task, endpoint.getTime(), endpoint.getPeriod());\n            } else {\n                timer.schedule(task, endpoint.getTime());\n            }\n        } else if (endpoint.getPeriod() > 0) {\n            timer.schedule(task, endpoint.getDelay(), endpoint.getPeriod());\n        } else {\n            timer.schedule(task, endpoint.getDelay());\n        }\n    }\n\n    protected void sendTimerExchange(long counter) {\n        org.apache.camel.Exchange exchange = endpoint.createExchange();\n        exchange.setProperty(Exchange.TIMER_COUNTER, counter);\n        exchange.setProperty(Exchange.TIMER_NAME, endpoint.getTimerName());\n        exchange.setProperty(Exchange.TIMER_TIME, endpoint.getTime());\n        exchange.setProperty(Exchange.TIMER_PERIOD, endpoint.getPeriod());\n        java.util.Date now = new java.util.Date();\n        exchange.setProperty(Exchange.TIMER_FIRED_TIME, now);\n        exchange.getIn().setHeader(\"firedTime\", now);\n        org.apache.camel.component.timer.TimerConsumer.LOG.trace(\"Timer {} is firing #{} count\", endpoint.getTimerName(), counter);\n        try {\n            getProcessor().process(exchange);\n            if (exchange.getException() != null) {\n                getExceptionHandler().handleException(\"Error processing exchange\", exchange, exchange.getException());\n            }\n        } catch (java.lang.Exception e) {\n            getExceptionHandler().handleException(\"Error processing exchange\", exchange, exchange.getException());\n        }\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Assignment",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "true",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (!isTaskRunAllowed()) {\n    return;\n}",
+            "src_parent": "{\n    if (!isTaskRunAllowed()) {\n        return;\n    }\n    try {\n        long count = counter.incrementAndGet();\n        boolean fire = (endpoint.getRepeatCount() <= 0) || (count <= endpoint.getRepeatCount());\n        if (fire) {\n            sendTimerExchange(count);\n        } else {\n            org.apache.camel.component.timer.TimerConsumer.LOG.debug(\"Cancelling {} timer as repeat count limit reached after {} counts.\", endpoint.getTimerName(), endpoint.getRepeatCount());\n            cancel();\n        }\n    } catch (java.lang.Throwable e) {\n        org.apache.camel.component.timer.TimerConsumer.LOG.warn(\"Error processing exchange. This exception will be ignored, to let the timer be able to trigger again.\", e);\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "TimerConsumer"
+    }
+  ],
+  "id": "camel_afa1d132"
+}

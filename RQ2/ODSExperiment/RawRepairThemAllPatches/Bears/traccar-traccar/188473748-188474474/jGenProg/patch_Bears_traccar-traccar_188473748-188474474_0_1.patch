@@ -1,0 +1,67 @@
+
+--- org\/traccar\/protocol\/GoSafeProtocolDecoder.java
++++ org\/traccar\/protocol\/GoSafeProtocolDecoder.java
+@@ -156,37 +156,37 @@
+ 
+ 		position.set(org.traccar.model.Position.KEY_HDOP, parser.next());
+ 
+-		if (parser.hasNext(4)) {
+-			position.setNetwork(new org.traccar.model.Network(org.traccar.model.CellTower.from(
+-			parser.nextInt(), parser.nextInt(), parser.nextInt(16), parser.nextInt(16), parser.nextInt())));
+-		}
+-		if (parser.hasNext()) {
+-			position.set(org.traccar.model.Position.KEY_ODOMETER, parser.nextInt());
+-		}
+-		position.set(org.traccar.model.Position.KEY_POWER, parser.next());
+-		position.set(org.traccar.model.Position.KEY_BATTERY, parser.next());
+ 
+-		if (parser.hasNext(6)) {
+-			long status = parser.nextLong(16);
+-			position.set(org.traccar.model.Position.KEY_IGNITION, org.traccar.helper.BitUtil.check(status, 13));
+-			position.set(org.traccar.model.Position.KEY_STATUS, status);
+-			position.set("ioStatus", parser.next());
+-			position.set(org.traccar.model.Position.KEY_GEOFENCE, ((parser.next()) + (parser.next())));
+-			position.set("eventStatus", parser.next());
+-			position.set("packetType", parser.next());
+-		}
+ 
+-		if (parser.hasNext()) {
+-			position.set("eventData", parser.next());
+-		}
+ 
+-		if (parser.hasNext()) {
+-			position.set("obd", parser.next());
+-		}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 		if (parser.hasNext()) {
+ 			position.set("tagData", parser.next());
+-		}
++		} 		if (parser.hasNext()) { 			position.set(org.traccar.model.Position.KEY_ODOMETER, parser.nextInt());} 		position.set(org.traccar.model.Position.KEY_POWER, parser.next()); 		position.set(org.traccar.model.Position.KEY_BATTERY, parser.next()); 		if (parser.hasNext(6)) { 			long status = parser.nextLong(16); 			position.set(org.traccar.model.Position.KEY_IGNITION, org.traccar.helper.BitUtil.check(status, 13)); 			position.set(org.traccar.model.Position.KEY_STATUS, status); 			position.set("ioStatus", parser.next()); 			position.set(org.traccar.model.Position.KEY_GEOFENCE, ((parser.next()) + (parser.next()))); 			position.set("eventStatus", parser.next()); 			position.set("packetType", parser.next());} 		if (parser.hasNext()) { 			position.set("eventData", parser.next());} 		if (parser.hasNext()) { 			position.set("obd", parser.next());} 		if (parser.hasNext()) { 			position.set("tagData", parser.next());}
+ 
+ 		return position;
+ 	}
+

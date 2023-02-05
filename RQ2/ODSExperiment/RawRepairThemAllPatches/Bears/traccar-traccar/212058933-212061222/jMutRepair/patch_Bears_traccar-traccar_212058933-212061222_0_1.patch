@@ -1,0 +1,13 @@
+
+--- org\/traccar\/protocol\/SuntechProtocolDecoder.java
++++ org\/traccar\/protocol\/SuntechProtocolDecoder.java
+@@ -144,7 +144,7 @@
+ 			position.set(org.traccar.model.Position.KEY_INDEX, java.lang.Integer.parseInt(values[(index++)]));
+ 		}
+ 
+-		if (index < (values.length)) {
++		if (index > (values.length)) {
+ 			position.set(org.traccar.model.Position.KEY_HOURS, java.lang.Integer.parseInt(values[(index++)]));
+ 		}
+ 
+

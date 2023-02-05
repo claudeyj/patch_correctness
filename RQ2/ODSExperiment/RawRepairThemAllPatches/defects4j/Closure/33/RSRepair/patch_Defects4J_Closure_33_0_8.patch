@@ -1,0 +1,38 @@
+--- /tmp/RSRepair_Defects4J_Closure_33/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java	2018-12-02 08:49:13.422310962 -0500
++++ /tmp/RSRepair_Defects4J_Closure_33/patches_ufd1/Patch_440/patched/tmp/RSRepair_Defects4J_Closure_33/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java	2018-12-02 08:59:24.419022396 -0500
+@@ -565,17 +565,6 @@
+     // taking any each property on the record and trying to match
+     // properties on this object.
+     if (constraintObj.isRecordType()) {
+-      for (String prop : constraintObj.getOwnPropertyNames()) {
+-        JSType propType = constraintObj.getPropertyType(prop);
+-        if (!isPropertyTypeDeclared(prop)) {
+-          JSType typeToInfer = propType;
+-          if (!hasProperty(prop)) {
+-            typeToInfer = getNativeType(JSTypeNative.VOID_TYPE)
+-                .getLeastSupertype(propType);
+-          }
+-          defineInferredProperty(prop, typeToInfer, null);
+-        }
+-      }
+     }
+   }
+ }
+
+
+--- /tmp/RSRepair_Defects4J_Closure_33/src/com/google/javascript/rhino/jstype/RecordType.java	2018-12-02 08:49:11.830310926 -0500
++++ /tmp/RSRepair_Defects4J_Closure_33/patches_ufd1/Patch_440/patched/tmp/RSRepair_Defects4J_Closure_33/src/com/google/javascript/rhino/jstype/RecordType.java	2018-12-02 08:59:24.419022396 -0500
+@@ -109,11 +109,6 @@
+     if (!otherProps.keySet().equals(keySet)) {
+       return false;
+     }
+-    for (String key : keySet) {
+-      if (!otherProps.get(key).isEquivalentTo(properties.get(key))) {
+-        return false;
+-      }
+-    }
+     return true;
+   }
+ 
+
+

@@ -1,0 +1,90 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "org.apache.wicket.markup.html.panel.Copy markupId;",
+            "src_parent": "public abstract class Panel extends org.apache.wicket.markup.html.WebMarkupContainerWithAssociatedMarkup {\n    private static final long serialVersionUID = 1L;\n\n    public static final java.lang.String PANEL = \"panel\";\n\n    static {\n        org.apache.wicket.markup.parser.filter.WicketTagIdentifier.registerWellKnownTagName(PANEL);\n    }\n\n    private transient boolean wasOpenCloseTag = false;\n\n    public Panel(final java.lang.String id) {\n        super(id);\n    }\n\n    public Panel(final java.lang.String id, final org.apache.wicket.model.IModel<?> model) {\n        super(id, model);\n    }\n\n    @java.lang.Override\n    protected void onComponentTag(final org.apache.wicket.markup.ComponentTag tag) {\n        if (tag.isOpenClose()) {\n            wasOpenCloseTag = true;\n            tag.setType(XmlTag.OPEN);\n        }\n        super.onComponentTag(tag);\n    }\n\n    @java.lang.Override\n    protected void onComponentTagBody(final org.apache.wicket.markup.MarkupStream markupStream, final org.apache.wicket.markup.ComponentTag openTag) {\n        renderAssociatedMarkup(org.apache.wicket.markup.html.panel.Panel.PANEL, \"Markup for a panel component has to contain part '<wicket:panel>'\");\n        if (wasOpenCloseTag == false) {\n            markupStream.skipRawMarkup();\n            if (markupStream.get().closes(openTag) == false) {\n                throw new org.apache.wicket.markup.MarkupException(markupStream, ((\"close tag not found for tag: \" + openTag.toString()) + \". Component: \") + this.toString());\n            }\n        }\n    }\n\n    @java.lang.Override\n    public org.apache.wicket.markup.IMarkupFragment getMarkup(final org.apache.wicket.Component child) {\n        org.apache.wicket.markup.IMarkupFragment markup = org.apache.wicket.markup.html.panel.Panel.PanelMarkupHelper.getMarkup(this, child);\n        if ((child == null) || (markup != null)) {\n            return markup;\n        }\n        return findMarkupInAssociatedFileHeader(child);\n    }\n\n    public static class PanelMarkupHelper {\n        public static org.apache.wicket.markup.IMarkupFragment getMarkup(final org.apache.wicket.MarkupContainer parent, final org.apache.wicket.Component child) {\n            org.apache.wicket.markup.IMarkupFragment markup = parent.getAssociatedMarkup();\n            if (markup == null) {\n                throw new org.apache.wicket.markup.MarkupNotFoundException(((\"Failed to find markup file associated. \" + parent.getClass().getSimpleName()) + \": \") + parent.toString());\n            }\n            org.apache.wicket.markup.IMarkupFragment panelMarkup = org.apache.wicket.markup.html.panel.Panel.PanelMarkupHelper.findPanelTag(markup);\n            if (panelMarkup == null) {\n                throw new org.apache.wicket.markup.MarkupNotFoundException(\"Expected to find <wicket:panel> in associated markup file. Markup: \" + markup.toString());\n            }\n            if (child == null) {\n                return panelMarkup;\n            }\n            return panelMarkup.find(child.getId());\n        }\n\n        private static final org.apache.wicket.markup.IMarkupFragment findPanelTag(final org.apache.wicket.markup.IMarkupFragment markup) {\n            org.apache.wicket.markup.MarkupStream stream = new org.apache.wicket.markup.MarkupStream(markup);\n            while (stream.skipUntil(org.apache.wicket.markup.ComponentTag.class)) {\n                org.apache.wicket.markup.ComponentTag tag = stream.getTag();\n                if (tag.isOpen() || tag.isOpenClose()) {\n                    if (tag instanceof org.apache.wicket.markup.WicketTag) {\n                        org.apache.wicket.markup.WicketTag wtag = ((org.apache.wicket.markup.WicketTag) (tag));\n                        if (wtag.isPanelTag()) {\n                            return stream.getMarkupFragment();\n                        }\n                    }\n                    stream.skipToMatchingCloseTag(tag);\n                }\n                stream.next();\n            } \n            return null;\n        }\n    }\n\n    org.apache.wicket.markup.html.panel.Copy markupId;\n\n    @org.apache.wicket.markup.html.panel.param\n    final void setMarkupId(org.apache.wicket.Component comp) {\n        org.apache.wicket.util.lang.Args.notNull(comp, \"comp\");\n        generatedMarkupId = comp.generatedMarkupId;\n        setMetaData(org.apache.wicket.markup.html.panel.MARKUP_ID_KEY, comp.getMetaData(org.apache.wicket.markup.html.panel.MARKUP_ID_KEY));\n        setOutputMarkupId(comp.getOutputMarkupId());\n        return;\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Field"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "@org.apache.wicket.markup.html.panel.param\nfinal void setMarkupId(org.apache.wicket.Component comp) {\n    org.apache.wicket.util.lang.Args.notNull(comp, \"comp\");\n    generatedMarkupId = comp.generatedMarkupId;\n    setMetaData(org.apache.wicket.markup.html.panel.MARKUP_ID_KEY, comp.getMetaData(org.apache.wicket.markup.html.panel.MARKUP_ID_KEY));\n    setOutputMarkupId(comp.getOutputMarkupId());\n    return;\n}",
+            "src_parent": "public abstract class Panel extends org.apache.wicket.markup.html.WebMarkupContainerWithAssociatedMarkup {\n    private static final long serialVersionUID = 1L;\n\n    public static final java.lang.String PANEL = \"panel\";\n\n    static {\n        org.apache.wicket.markup.parser.filter.WicketTagIdentifier.registerWellKnownTagName(PANEL);\n    }\n\n    private transient boolean wasOpenCloseTag = false;\n\n    public Panel(final java.lang.String id) {\n        super(id);\n    }\n\n    public Panel(final java.lang.String id, final org.apache.wicket.model.IModel<?> model) {\n        super(id, model);\n    }\n\n    @java.lang.Override\n    protected void onComponentTag(final org.apache.wicket.markup.ComponentTag tag) {\n        if (tag.isOpenClose()) {\n            wasOpenCloseTag = true;\n            tag.setType(XmlTag.OPEN);\n        }\n        super.onComponentTag(tag);\n    }\n\n    @java.lang.Override\n    protected void onComponentTagBody(final org.apache.wicket.markup.MarkupStream markupStream, final org.apache.wicket.markup.ComponentTag openTag) {\n        renderAssociatedMarkup(org.apache.wicket.markup.html.panel.Panel.PANEL, \"Markup for a panel component has to contain part '<wicket:panel>'\");\n        if (wasOpenCloseTag == false) {\n            markupStream.skipRawMarkup();\n            if (markupStream.get().closes(openTag) == false) {\n                throw new org.apache.wicket.markup.MarkupException(markupStream, ((\"close tag not found for tag: \" + openTag.toString()) + \". Component: \") + this.toString());\n            }\n        }\n    }\n\n    @java.lang.Override\n    public org.apache.wicket.markup.IMarkupFragment getMarkup(final org.apache.wicket.Component child) {\n        org.apache.wicket.markup.IMarkupFragment markup = org.apache.wicket.markup.html.panel.Panel.PanelMarkupHelper.getMarkup(this, child);\n        if ((child == null) || (markup != null)) {\n            return markup;\n        }\n        return findMarkupInAssociatedFileHeader(child);\n    }\n\n    public static class PanelMarkupHelper {\n        public static org.apache.wicket.markup.IMarkupFragment getMarkup(final org.apache.wicket.MarkupContainer parent, final org.apache.wicket.Component child) {\n            org.apache.wicket.markup.IMarkupFragment markup = parent.getAssociatedMarkup();\n            if (markup == null) {\n                throw new org.apache.wicket.markup.MarkupNotFoundException(((\"Failed to find markup file associated. \" + parent.getClass().getSimpleName()) + \": \") + parent.toString());\n            }\n            org.apache.wicket.markup.IMarkupFragment panelMarkup = org.apache.wicket.markup.html.panel.Panel.PanelMarkupHelper.findPanelTag(markup);\n            if (panelMarkup == null) {\n                throw new org.apache.wicket.markup.MarkupNotFoundException(\"Expected to find <wicket:panel> in associated markup file. Markup: \" + markup.toString());\n            }\n            if (child == null) {\n                return panelMarkup;\n            }\n            return panelMarkup.find(child.getId());\n        }\n\n        private static final org.apache.wicket.markup.IMarkupFragment findPanelTag(final org.apache.wicket.markup.IMarkupFragment markup) {\n            org.apache.wicket.markup.MarkupStream stream = new org.apache.wicket.markup.MarkupStream(markup);\n            while (stream.skipUntil(org.apache.wicket.markup.ComponentTag.class)) {\n                org.apache.wicket.markup.ComponentTag tag = stream.getTag();\n                if (tag.isOpen() || tag.isOpenClose()) {\n                    if (tag instanceof org.apache.wicket.markup.WicketTag) {\n                        org.apache.wicket.markup.WicketTag wtag = ((org.apache.wicket.markup.WicketTag) (tag));\n                        if (wtag.isPanelTag()) {\n                            return stream.getMarkupFragment();\n                        }\n                    }\n                    stream.skipToMatchingCloseTag(tag);\n                }\n                stream.next();\n            } \n            return null;\n        }\n    }\n\n    org.apache.wicket.markup.html.panel.Copy markupId;\n\n    @org.apache.wicket.markup.html.panel.param\n    final void setMarkupId(org.apache.wicket.Component comp) {\n        org.apache.wicket.util.lang.Args.notNull(comp, \"comp\");\n        generatedMarkupId = comp.generatedMarkupId;\n        setMetaData(org.apache.wicket.markup.html.panel.MARKUP_ID_KEY, comp.getMetaData(org.apache.wicket.markup.html.panel.MARKUP_ID_KEY));\n        setOutputMarkupId(comp.getOutputMarkupId());\n        return;\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "Panel"
+    }
+  ],
+  "id": "wicket_be70e608"
+}

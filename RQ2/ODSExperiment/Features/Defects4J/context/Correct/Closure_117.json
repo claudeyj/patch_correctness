@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "LocalVariable",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "if (n.isGetProp()) {\n    com.google.javascript.rhino.jstype.ObjectType objectType = getJSType(n.getFirstChild()).dereference();\n    if (objectType != null) {\n        java.lang.String propName = n.getLastChild().getString();\n        if ((objectType.getConstructor() != null) && objectType.getConstructor().isInterface()) {\n            objectType = com.google.javascript.rhino.jstype.FunctionType.getTopDefiningInterface(objectType, propName);\n        } else {\n            while ((objectType != null) && (!objectType.hasOwnProperty(propName))) {\n                objectType = objectType.getImplicitPrototype();\n            } \n        }\n        if ((objectType != null) && ((objectType.getConstructor() != null) || objectType.isFunctionPrototypeType())) {\n            return (objectType.toString() + \".\") + propName;\n        }\n    }\n}",
+            "dst_parent": "{\n    if (n.isGetProp()) {\n        com.google.javascript.rhino.jstype.ObjectType objectType = getJSType(n.getFirstChild()).dereference();\n        if (objectType != null) {\n            java.lang.String propName = n.getLastChild().getString();\n            if ((objectType.getConstructor() != null) && objectType.getConstructor().isInterface()) {\n                objectType = com.google.javascript.rhino.jstype.FunctionType.getTopDefiningInterface(objectType, propName);\n            } else {\n                while ((objectType != null) && (!objectType.hasOwnProperty(propName))) {\n                    objectType = objectType.getImplicitPrototype();\n                } \n            }\n            if ((objectType != null) && ((objectType.getConstructor() != null) || objectType.isFunctionPrototypeType())) {\n                return (objectType.toString() + \".\") + propName;\n            }\n        }\n    }\n    com.google.javascript.rhino.jstype.JSType type = getJSType(n);\n    if (dereference) {\n        com.google.javascript.rhino.jstype.ObjectType dereferenced = type.dereference();\n        if (dereferenced != null) {\n            type = dereferenced;\n        }\n    }\n    if (type.isFunctionPrototypeType() || ((type.toObjectType() != null) && (type.toObjectType().getConstructor() != null))) {\n        return type.toString();\n    }\n    java.lang.String qualifiedName = n.getQualifiedName();\n    if (qualifiedName != null) {\n        return qualifiedName;\n    } else if (type.isFunctionType()) {\n        return \"function\";\n    } else {\n        return type.toString();\n    }\n}",
+            "dst_parent_type": "Block",
+            "dst_type": "If",
+            "operator": "MOV",
+            "src": "if (n.isGetProp()) {\n    com.google.javascript.rhino.jstype.ObjectType objectType = getJSType(n.getFirstChild()).dereference();\n    if (objectType != null) {\n        java.lang.String propName = n.getLastChild().getString();\n        if ((objectType.getConstructor() != null) && objectType.getConstructor().isInterface()) {\n            objectType = com.google.javascript.rhino.jstype.FunctionType.getTopDefiningInterface(objectType, propName);\n        } else {\n            while ((objectType != null) && (!objectType.hasOwnProperty(propName))) {\n                objectType = objectType.getImplicitPrototype();\n            } \n        }\n        if ((objectType != null) && ((objectType.getConstructor() != null) || objectType.isFunctionPrototypeType())) {\n            return (objectType.toString() + \".\") + propName;\n        }\n    }\n}",
+            "src_parent": "{\n    com.google.javascript.rhino.jstype.JSType type = getJSType(n);\n    if (dereference) {\n        com.google.javascript.rhino.jstype.ObjectType dereferenced = type.dereference();\n        if (dereferenced != null) {\n            type = dereferenced;\n        }\n    }\n    if (type.isFunctionPrototypeType() || ((type.toObjectType() != null) && (type.toObjectType().getConstructor() != null))) {\n        return type.toString();\n    }\n    if (n.isGetProp()) {\n        com.google.javascript.rhino.jstype.ObjectType objectType = getJSType(n.getFirstChild()).dereference();\n        if (objectType != null) {\n            java.lang.String propName = n.getLastChild().getString();\n            if ((objectType.getConstructor() != null) && objectType.getConstructor().isInterface()) {\n                objectType = com.google.javascript.rhino.jstype.FunctionType.getTopDefiningInterface(objectType, propName);\n            } else {\n                while ((objectType != null) && (!objectType.hasOwnProperty(propName))) {\n                    objectType = objectType.getImplicitPrototype();\n                } \n            }\n            if ((objectType != null) && ((objectType.getConstructor() != null) || objectType.isFunctionPrototypeType())) {\n                return (objectType.toString() + \".\") + propName;\n            }\n        }\n    }\n    java.lang.String qualifiedName = n.getQualifiedName();\n    if (qualifiedName != null) {\n        return qualifiedName;\n    } else if (type.isFunctionType()) {\n        return \"function\";\n    } else {\n        return type.toString();\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "TypeValidator"
+    }
+  ],
+  "id": "Closure_117"
+}

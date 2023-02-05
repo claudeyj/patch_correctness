@@ -1,0 +1,15 @@
+
+--- org\/traccar\/protocol\/Gl200TextProtocolDecoder.java
++++ org\/traccar\/protocol\/Gl200TextProtocolDecoder.java
+@@ -611,8 +611,8 @@
+ 			int deviceType = java.lang.Integer.parseInt(data[(index++)]);
+ 			if (deviceType == 2) {
+ 				int deviceCount = java.lang.Integer.parseInt(data[(index++)]);
+-				for (int i = 1; i <= deviceCount; i++) {
+-					index++;
++				for (int i = 1; i <= deviceCount; i++) { 					parser.nextHexInt(0);
++
+ 					index++;
+ 					position.set(((org.traccar.model.Position.PREFIX_TEMP) + i), ((java.lang.Short.parseShort(data[(index++)], 16)) * 0.0625));
+ 				}
+

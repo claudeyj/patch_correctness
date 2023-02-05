@@ -1,0 +1,13 @@
+
+--- org\/traccar\/protocol\/SuntechProtocolDecoder.java
++++ org\/traccar\/protocol\/SuntechProtocolDecoder.java
+@@ -136,7 +136,7 @@
+ 		position.set(org.traccar.model.Position.KEY_ODOMETER, java.lang.Integer.parseInt(values[(index++)]));
+ 		position.set(org.traccar.model.Position.KEY_POWER, java.lang.Double.parseDouble(values[(index++)]));
+ 
+-		position.set(((org.traccar.model.Position.PREFIX_IO) + 1), values[(index++)]);
++		position.set(((org.traccar.model.Position.PREFIX_IO) + 1), values[((protocolType)++)]);
+ 
+ 		index += 1;
+ 
+

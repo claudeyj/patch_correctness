@@ -1,0 +1,15 @@
+--- /tmp/GenProg_Defects4J_Closure_119/src/com/google/javascript/jscomp/CheckGlobalNames.java	2018-12-02 05:42:43.834215860 -0500
++++ /tmp/GenProg_Defects4J_Closure_119/patches_io4p/Patch_5/patched/tmp/GenProg_Defects4J_Closure_119/src/com/google/javascript/jscomp/CheckGlobalNames.java	2018-12-02 05:48:11.714387694 -0500
+@@ -219,10 +219,6 @@
+            name.parent.globalSets + name.parent.localSets == 0) {
+       name = name.parent;
+     }
+-
+-    compiler.report(
+-        JSError.make(ref.getSourceName(), ref.node, level,
+-            UNDEFINED_NAME_WARNING, name.getFullName()));
+   }
+ 
+   /**
+
+

@@ -1,0 +1,15 @@
+
+--- com\/json\/ignore\/JsonIgnoreFields.java
++++ com\/json\/ignore\/JsonIgnoreFields.java
+@@ -129,8 +129,8 @@
+ 
+ 	}
+ 
+-	private boolean fieldAcceptable(java.lang.reflect.Field field) {
+-		return ((field.getType().isPrimitive()) || (field.getType().isArray())) || (com.json.ignore.JsonIgnoreFields.ignoredNames.contains(field.getName()));
++	private boolean fieldAcceptable(java.lang.reflect.Field field) { 		return false;
++
+ 	}
+ 
+ 	public void ignoreFields(java.lang.Object object) throws java.lang.IllegalAccessException {
+

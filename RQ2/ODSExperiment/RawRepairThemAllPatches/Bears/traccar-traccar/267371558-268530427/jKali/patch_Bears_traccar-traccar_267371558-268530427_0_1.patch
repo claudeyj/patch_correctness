@@ -1,0 +1,13 @@
+
+--- org\/traccar\/protocol\/Gl200TextProtocolDecoder.java
++++ org\/traccar\/protocol\/Gl200TextProtocolDecoder.java
+@@ -607,7 +607,7 @@
+ 
+ 		int index = 0;
+ 		java.lang.String[] data = parser.next().split(",");
+-		if ((data.length) > 1) {
++		if (false) {
+ 			int deviceType = java.lang.Integer.parseInt(data[(index++)]);
+ 			if (deviceType == 2) {
+ 				int deviceCount = java.lang.Integer.parseInt(data[(index++)]);
+

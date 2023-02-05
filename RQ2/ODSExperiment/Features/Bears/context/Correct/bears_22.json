@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "@java.lang.Override\npublic com.fasterxml.jackson.databind.JavaType getSuperClass() {\n    if (_referencedType != null) {\n        return _referencedType.getSuperClass();\n    }\n    return super.getSuperClass();\n}",
+            "src_parent": "public class ResolvedRecursiveType extends com.fasterxml.jackson.databind.type.TypeBase {\n    private static final long serialVersionUID = 1L;\n\n    protected com.fasterxml.jackson.databind.JavaType _referencedType;\n\n    public ResolvedRecursiveType(java.lang.Class<?> erasedType, com.fasterxml.jackson.databind.type.TypeBindings bindings) {\n        super(erasedType, bindings, null, null, 0, null, null, false);\n    }\n\n    public void setReference(com.fasterxml.jackson.databind.JavaType ref) {\n        if (_referencedType != null) {\n            throw new java.lang.IllegalStateException(((\"Trying to re-set self reference; old value = \" + _referencedType) + \", new = \") + ref);\n        }\n        _referencedType = ref;\n    }\n\n    @java.lang.Override\n    public com.fasterxml.jackson.databind.JavaType getSuperClass() {\n        if (_referencedType != null) {\n            return _referencedType.getSuperClass();\n        }\n        return super.getSuperClass();\n    }\n\n    public com.fasterxml.jackson.databind.JavaType getSelfReferencedType() {\n        return _referencedType;\n    }\n\n    @java.lang.Override\n    public java.lang.StringBuilder getGenericSignature(java.lang.StringBuilder sb) {\n        return _referencedType.getGenericSignature(sb);\n    }\n\n    @java.lang.Override\n    public java.lang.StringBuilder getErasedSignature(java.lang.StringBuilder sb) {\n        return _referencedType.getErasedSignature(sb);\n    }\n\n    @java.lang.Override\n    public com.fasterxml.jackson.databind.JavaType withContentType(com.fasterxml.jackson.databind.JavaType contentType) {\n        return this;\n    }\n\n    @java.lang.Override\n    public com.fasterxml.jackson.databind.JavaType withTypeHandler(java.lang.Object h) {\n        return this;\n    }\n\n    @java.lang.Override\n    public com.fasterxml.jackson.databind.JavaType withContentTypeHandler(java.lang.Object h) {\n        return this;\n    }\n\n    @java.lang.Override\n    public com.fasterxml.jackson.databind.JavaType withValueHandler(java.lang.Object h) {\n        return this;\n    }\n\n    @java.lang.Override\n    public com.fasterxml.jackson.databind.JavaType withContentValueHandler(java.lang.Object h) {\n        return this;\n    }\n\n    @java.lang.Override\n    public com.fasterxml.jackson.databind.JavaType withStaticTyping() {\n        return this;\n    }\n\n    @java.lang.Deprecated\n    @java.lang.Override\n    protected com.fasterxml.jackson.databind.JavaType _narrow(java.lang.Class<?> subclass) {\n        return this;\n    }\n\n    @java.lang.Override\n    public com.fasterxml.jackson.databind.JavaType refine(java.lang.Class<?> rawType, com.fasterxml.jackson.databind.type.TypeBindings bindings, com.fasterxml.jackson.databind.JavaType superClass, com.fasterxml.jackson.databind.JavaType[] superInterfaces) {\n        return null;\n    }\n\n    @java.lang.Override\n    public boolean isContainerType() {\n        return false;\n    }\n\n    @java.lang.Override\n    public java.lang.String toString() {\n        java.lang.StringBuilder sb = new java.lang.StringBuilder(40).append(\"[recursive type; \");\n        if (_referencedType == null) {\n            sb.append(\"UNRESOLVED\");\n        } else {\n            sb.append(_referencedType.getRawClass().getName());\n        }\n        return sb.toString();\n    }\n\n    @java.lang.Override\n    public boolean equals(java.lang.Object o) {\n        if (o == this) {\n            return true;\n        }\n        if (o == null) {\n            return false;\n        }\n        if (_referencedType == null) {\n            return false;\n        }\n        return (o.getClass() == getClass()) && _referencedType.equals(((com.fasterxml.jackson.databind.type.ResolvedRecursiveType) (o)).getSelfReferencedType());\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "ResolvedRecursiveType"
+    }
+  ],
+  "id": "bears_22"
+}

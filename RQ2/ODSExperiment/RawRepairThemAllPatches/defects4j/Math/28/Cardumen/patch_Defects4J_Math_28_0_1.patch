@@ -1,0 +1,13 @@
+
+--- org\/apache\/commons\/math3\/optimization\/linear\/SimplexSolver.java
++++ org\/apache\/commons\/math3\/optimization\/linear\/SimplexSolver.java
+@@ -112,7 +112,7 @@
+ 
+ 		if ((minRatioPositions.size()) == 0) {
+ 			return null;
+-		}else 			if ((minRatioPositions.size()) > 1) {
++		}else 			if ((tableau.getNumObjectiveFunctions()) > 1) {
+ 
+ 
+ 
+

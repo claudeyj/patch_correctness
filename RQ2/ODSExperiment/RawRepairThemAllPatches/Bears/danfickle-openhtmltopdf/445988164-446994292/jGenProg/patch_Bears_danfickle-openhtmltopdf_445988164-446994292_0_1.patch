@@ -1,0 +1,96 @@
+
+--- com\/openhtmltopdf\/visualtest\/VisualTester.java
++++ com\/openhtmltopdf\/visualtest\/VisualTester.java
+@@ -150,53 +150,53 @@
+ 			java.lang.System.err.println("Writing generated PDF to file instead in output directory.");
+ 			java.io.File output = new java.io.File(this.outputPath, (resource + ".pdf"));
+ 			org.apache.commons.io.FileUtils.writeByteArrayToFile(output, actualPdfBytes);
+-			return false;
+-		}
+ 
+-		org.apache.pdfbox.pdmodel.PDDocument docActual = org.apache.pdfbox.pdmodel.PDDocument.load(actualPdfBytes);
+-		org.apache.pdfbox.pdmodel.PDDocument docExpected = org.apache.pdfbox.pdmodel.PDDocument.load(testFile);
+ 
+-		org.apache.pdfbox.rendering.PDFRenderer rendActual = new org.apache.pdfbox.rendering.PDFRenderer(docActual);
+-		org.apache.pdfbox.rendering.PDFRenderer rendExpected = new org.apache.pdfbox.rendering.PDFRenderer(docExpected);
+ 
+-		boolean problems = false;
+ 
+-		for (int i = 0; i < (docActual.getNumberOfPages()); i++) {
+-			java.awt.image.BufferedImage imgActual = (i >= (docActual.getNumberOfPages())) ? com.openhtmltopdf.visualtest.VisualTester.ONE_PX_IMAGE : rendActual.renderImageWithDPI(i, 96.0F, org.apache.pdfbox.rendering.ImageType.RGB);
+-			java.awt.image.BufferedImage imgExpected = (i >= (docExpected.getNumberOfPages())) ? com.openhtmltopdf.visualtest.VisualTester.ONE_PX_IMAGE : rendExpected.renderImageWithDPI(i, 96.0F, org.apache.pdfbox.rendering.ImageType.RGB);
+-
+-			if (((imgActual.getWidth()) != (imgExpected.getWidth())) || 
+-			((imgActual.getHeight()) != (imgExpected.getHeight()))) {
+-				java.lang.System.err.println((("When running test (" + resource) + "), page sizes were different. Please check diff image in output directory."));
+-				problems = true;
+-			}
+ 
+-			java.awt.image.BufferedImage diff = compareImages(imgActual, imgExpected);
+ 
+-			if (diff != null) {
+-				java.lang.System.err.println((("When running test (" + resource) + "), differences were found. Please check diff images in output directory."));
+-				java.io.File output = new java.io.File(this.outputPath, (((resource + "---") + i) + "---diff.png"));
+-				javax.imageio.ImageIO.write(diff, "png", output);
+-
+-				output = new java.io.File(this.outputPath, (((resource + "---") + i) + "---actual.png"));
+-				javax.imageio.ImageIO.write(imgActual, "png", output);
+-
+-				output = new java.io.File(this.outputPath, (((resource + "---") + i) + "---expected.png"));
+-				javax.imageio.ImageIO.write(imgExpected, "png", output);
+-				problems = true;
+-			}
+-		}
+ 
+-		docActual.close();
+-		docExpected.close();
+ 
+-		if (problems) {
+-			java.io.File outPdf = new java.io.File(this.outputPath, (resource + ".pdf"));
+-			org.apache.commons.io.FileUtils.writeByteArrayToFile(outPdf, actualPdfBytes);
+-			return false;
+-		}
+ 
+-		return true;
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++			return true;} 		org.apache.pdfbox.pdmodel.PDDocument docActual = org.apache.pdfbox.pdmodel.PDDocument.load(actualPdfBytes); 		org.apache.pdfbox.pdmodel.PDDocument docExpected = org.apache.pdfbox.pdmodel.PDDocument.load(testFile); 		org.apache.pdfbox.rendering.PDFRenderer rendActual = new org.apache.pdfbox.rendering.PDFRenderer(docActual); 		org.apache.pdfbox.rendering.PDFRenderer rendExpected = new org.apache.pdfbox.rendering.PDFRenderer(docExpected); 		boolean problems = false; 		for (int i = 0; i < (docActual.getNumberOfPages()); i++) { 			java.awt.image.BufferedImage imgActual = (i >= (docActual.getNumberOfPages())) ? com.openhtmltopdf.visualtest.VisualTester.ONE_PX_IMAGE : rendActual.renderImageWithDPI(i, 96.0F, org.apache.pdfbox.rendering.ImageType.RGB); 			java.awt.image.BufferedImage imgExpected = (i >= (docExpected.getNumberOfPages())) ? com.openhtmltopdf.visualtest.VisualTester.ONE_PX_IMAGE : rendExpected.renderImageWithDPI(i, 96.0F, org.apache.pdfbox.rendering.ImageType.RGB); 			if (((imgActual.getWidth()) != (imgExpected.getWidth())) || ((imgActual.getHeight()) != (imgExpected.getHeight()))) { 				java.lang.System.err.println((("When running test (" + resource) + "), page sizes were different. Please check diff image in output directory.")); 				problems = true;} 			java.awt.image.BufferedImage diff = compareImages(imgActual, imgExpected); 			if (diff != null) { 				java.lang.System.err.println((("When running test (" + resource) + "), differences were found. Please check diff images in output directory.")); 				java.io.File output = new java.io.File(this.outputPath, (((resource + "---") + i) + "---diff.png")); 				javax.imageio.ImageIO.write(diff, "png", output); 				output = new java.io.File(this.outputPath, (((resource + "---") + i) + "---actual.png")); 				javax.imageio.ImageIO.write(imgActual, "png", output); 				output = new java.io.File(this.outputPath, (((resource + "---") + i) + "---expected.png")); 				javax.imageio.ImageIO.write(imgExpected, "png", output); 				problems = true;}} 		docActual.close(); 		docExpected.close(); 		if (problems) { 			java.io.File outPdf = new java.io.File(this.outputPath, (resource + ".pdf")); 			org.apache.commons.io.FileUtils.writeByteArrayToFile(outPdf, actualPdfBytes); 			return false;} 		return true;
+ 	}
+ 
+ 	public java.awt.image.BufferedImage compareImages(java.awt.image.BufferedImage img1, java.awt.image.BufferedImage img2) {
+

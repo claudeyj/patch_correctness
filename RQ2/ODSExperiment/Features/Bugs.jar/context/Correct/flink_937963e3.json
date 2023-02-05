@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Synchronized",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "true",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "checkpointIdCounter.start()",
+            "src_parent": "{\n    if (isShutdown()) {\n        throw new java.lang.IllegalStateException(\"CheckpointCoordinator is shut down\");\n    }\n    long recoveryTimestamp = java.lang.System.currentTimeMillis();\n    org.apache.flink.runtime.checkpoint.SavepointCoordinator.LOG.info(\"Rolling back to savepoint '{}'.\", savepointPath);\n    org.apache.flink.runtime.checkpoint.Savepoint savepoint = savepointStore.getState(savepointPath);\n    org.apache.flink.runtime.checkpoint.CompletedCheckpoint checkpoint = savepoint.getCompletedCheckpoint();\n    org.apache.flink.runtime.checkpoint.SavepointCoordinator.LOG.info(\"Savepoint: {}@{}\", checkpoint.getCheckpointID(), checkpoint.getTimestamp());\n    org.apache.flink.runtime.checkpoint.SavepointCoordinator.LOG.debug(\"Rolling back individual operators.\");\n    for (org.apache.flink.runtime.checkpoint.StateForTask state : checkpoint.getStates()) {\n        org.apache.flink.runtime.checkpoint.SavepointCoordinator.LOG.debug(\"Rolling back subtask {} of operator {}.\", state.getSubtask(), state.getOperatorId());\n        org.apache.flink.runtime.executiongraph.ExecutionJobVertex vertex = tasks.get(state.getOperatorId());\n        if (vertex == null) {\n            java.lang.String msg = java.lang.String.format(\"Failed to rollback to savepoint %s. \" + ((\"Cannot map old state for task %s to the new program. \" + \"This indicates that the program has been changed in a \") + \"non-compatible way  after the savepoint.\"), savepoint, state.getOperatorId());\n            throw new java.lang.IllegalStateException(msg);\n        }\n        if (state.getSubtask() >= vertex.getParallelism()) {\n            java.lang.String msg = java.lang.String.format(\"Failed to rollback to savepoint %s. \" + (((\"Parallelism mismatch between savepoint state and new program. \" + \"Cannot map subtask %d of operator %s to new program with \") + \"parallelism %d. This indicates that the program has been changed \") + \"in a non-compatible way after the savepoint.\"), savepoint, state.getSubtask(), state.getOperatorId(), vertex.getParallelism());\n            throw new java.lang.IllegalStateException(msg);\n        }\n        org.apache.flink.runtime.executiongraph.Execution exec = vertex.getTaskVertices()[state.getSubtask()].getCurrentExecutionAttempt();\n        exec.setInitialState(state.getState(), recoveryTimestamp);\n    }\n    long nextCheckpointId = checkpoint.getCheckpointID();\n    checkpointIdCounter.start();\n    checkpointIdCounter.setCount(nextCheckpointId + 1);\n    org.apache.flink.runtime.checkpoint.SavepointCoordinator.LOG.info(\"Reset the checkpoint ID to {}\", nextCheckpointId);\n    this.appId = savepoint.getApplicationId();\n    org.apache.flink.runtime.checkpoint.SavepointCoordinator.LOG.info(\"Reset the application ID to {}\", appId);\n    return appId;\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "SavepointCoordinator"
+    }
+  ],
+  "id": "flink_937963e3"
+}

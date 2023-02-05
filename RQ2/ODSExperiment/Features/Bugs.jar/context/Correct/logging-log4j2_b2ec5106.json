@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "If",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Return",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "equalObjectsOrStrings(obj, that.obj)",
+            "dst_parent": "obj == null ? that.obj == null : equalObjectsOrStrings(obj, that.obj)",
+            "dst_parent_type": "Conditional",
+            "dst_type": "Invocation",
+            "operator": "UPD",
+            "src": "obj.equals(that.obj)",
+            "src_parent": "obj == null ? that.obj == null : obj.equals(that.obj)",
+            "src_parent_type": "Conditional",
+            "src_type": "Invocation"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "private boolean equalObjectsOrStrings(java.lang.Object left, java.lang.Object right) {\n    return left.equals(right) || java.lang.String.valueOf(left).equals(java.lang.String.valueOf(right));\n}",
+            "src_parent": "public class ObjectMessage implements org.apache.logging.log4j.message.Message {\n    private static final long serialVersionUID = -5903272448334166185L;\n\n    private transient java.lang.Object obj;\n\n    private transient java.lang.String objectString;\n\n    public ObjectMessage(java.lang.Object obj) {\n        if (obj == null) {\n            obj = \"null\";\n        }\n        this.obj = obj;\n    }\n\n    @java.lang.Override\n    public java.lang.String getFormattedMessage() {\n        if (objectString == null) {\n            objectString = java.lang.String.valueOf(obj);\n        }\n        return objectString;\n    }\n\n    @java.lang.Override\n    public java.lang.String getFormat() {\n        return getFormattedMessage();\n    }\n\n    @java.lang.Override\n    public java.lang.Object[] getParameters() {\n        return new java.lang.Object[]{ obj };\n    }\n\n    @java.lang.Override\n    public boolean equals(final java.lang.Object o) {\n        if (this == o) {\n            return true;\n        }\n        if ((o == null) || (getClass() != o.getClass())) {\n            return false;\n        }\n        final org.apache.logging.log4j.message.ObjectMessage that = ((org.apache.logging.log4j.message.ObjectMessage) (o));\n        return obj == null ? that.obj == null : equalObjectsOrStrings(obj, that.obj);\n    }\n\n    private boolean equalObjectsOrStrings(java.lang.Object left, java.lang.Object right) {\n        return left.equals(right) || java.lang.String.valueOf(left).equals(java.lang.String.valueOf(right));\n    }\n\n    @java.lang.Override\n    public int hashCode() {\n        return obj != null ? obj.hashCode() : 0;\n    }\n\n    @java.lang.Override\n    public java.lang.String toString() {\n        return (\"ObjectMessage[obj=\" + getFormattedMessage()) + ']';\n    }\n\n    private void writeObject(final java.io.ObjectOutputStream out) throws java.io.IOException {\n        out.defaultWriteObject();\n        if (obj instanceof java.io.Serializable) {\n            out.writeObject(obj);\n        } else {\n            out.writeObject(java.lang.String.valueOf(obj));\n        }\n    }\n\n    private void readObject(final java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {\n        in.defaultReadObject();\n        obj = in.readObject();\n    }\n\n    @java.lang.Override\n    public java.lang.Throwable getThrowable() {\n        return obj instanceof java.lang.Throwable ? ((java.lang.Throwable) (obj)) : null;\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "ObjectMessage"
+    }
+  ],
+  "id": "logging-log4j2_b2ec5106"
+}

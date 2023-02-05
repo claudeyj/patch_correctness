@@ -1,0 +1,13 @@
+
+--- \/tmp\/jMutRepair_Bug_dot_jar_Commons-Math_596ccd59\/src\/main\/java\/org\/apache\/commons\/math3\/ml\/clustering\/FuzzyKMeansClustererjava
++++ \/tmp\/jMutRepair_Bug_dot_jar_Commons-Math_596ccd59\/src\/main\/java\/org\/apache\/commons\/math3\/ml\/clustering\/FuzzyKMeansClustererjava
+@@ -359,7 +359,7 @@
+ 
+ 				membershipMatrix[i][j] = 1.0 \/ sum;
+ 
+-				if ((membershipMatrix[i][j]) > maxMembership) {
++				if ((this.membershipMatrix[i][j]) != maxMembership) {
+ 					maxMembership = membershipMatrix[i][j];
+ 					newCluster = j;
+ 				}
+

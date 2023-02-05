@@ -1,0 +1,93 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "For",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "LocalVariable",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "LocalVariable",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "true",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "y",
+            "dst_parent": "y.length",
+            "dst_parent_type": "FieldRead",
+            "dst_type": "VariableRead",
+            "operator": "UPD",
+            "src": "y0",
+            "src_parent": "y0.length",
+            "src_parent_type": "FieldRead",
+            "src_type": "VariableRead"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (!isLastStep) {\n    interpolator.storeTime(stepStart);\n    final double nextT = stepStart + stepSize;\n    final boolean nextIsLast = (forward) ? nextT >= t : nextT <= t;\n    if (nextIsLast) {\n        stepSize = t - stepStart;\n    }\n}",
+            "src_parent": "{\n    sanityChecks(equations, t);\n    setEquations(equations);\n    final boolean forward = t > equations.getTime();\n    final double[] y0 = equations.getCompleteState();\n    final double[] y = y0.clone();\n    final int stages = c.length + 1;\n    final double[][] yDotK = new double[stages][];\n    for (int i = 0; i < stages; ++i) {\n        yDotK[i] = new double[y0.length];\n    }\n    final double[] yTmp = y0.clone();\n    final double[] yDotTmp = new double[y.length];\n    final org.apache.commons.math3.ode.nonstiff.RungeKuttaStepInterpolator interpolator = ((org.apache.commons.math3.ode.nonstiff.RungeKuttaStepInterpolator) (prototype.copy()));\n    interpolator.reinitialize(this, yTmp, yDotK, forward, equations.getPrimaryMapper(), equations.getSecondaryMappers());\n    interpolator.storeTime(equations.getTime());\n    stepStart = equations.getTime();\n    stepSize = (forward) ? step : -step;\n    initIntegration(equations.getTime(), y0, t);\n    if (!isLastStep) {\n        interpolator.storeTime(stepStart);\n        final double nextT = stepStart + stepSize;\n        final boolean nextIsLast = (forward) ? nextT >= t : nextT <= t;\n        if (nextIsLast) {\n            stepSize = t - stepStart;\n        }\n    }\n    isLastStep = false;\n    do {\n        interpolator.shift();\n        computeDerivatives(stepStart, y, yDotK[0]);\n        for (int k = 1; k < stages; ++k) {\n            for (int j = 0; j < y0.length; ++j) {\n                double sum = a[k - 1][0] * yDotK[0][j];\n                for (int l = 1; l < k; ++l) {\n                    sum += a[k - 1][l] * yDotK[l][j];\n                }\n                yTmp[j] = y[j] + (stepSize * sum);\n            }\n            computeDerivatives(stepStart + (c[k - 1] * stepSize), yTmp, yDotK[k]);\n        }\n        for (int j = 0; j < y0.length; ++j) {\n            double sum = b[0] * yDotK[0][j];\n            for (int l = 1; l < stages; ++l) {\n                sum += b[l] * yDotK[l][j];\n            }\n            yTmp[j] = y[j] + (stepSize * sum);\n        }\n        interpolator.storeTime(stepStart + stepSize);\n        java.lang.System.arraycopy(yTmp, 0, y, 0, y0.length);\n        java.lang.System.arraycopy(yDotK[stages - 1], 0, yDotTmp, 0, y0.length);\n        stepStart = acceptStep(interpolator, y, yDotTmp, t);\n        if (!isLastStep) {\n            interpolator.storeTime(stepStart);\n            final double nextT = stepStart + stepSize;\n            final boolean nextIsLast = (forward) ? nextT >= t : nextT <= t;\n            if (nextIsLast) {\n                stepSize = t - stepStart;\n            }\n        }\n    } while (!isLastStep );\n    equations.setTime(stepStart);\n    equations.setCompleteState(y);\n    stepStart = java.lang.Double.NaN;\n    stepSize = java.lang.Double.NaN;\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "RungeKuttaIntegrator"
+    }
+  ],
+  "id": "Arja_patch_Bugs.jar_Commons-Math_69273dca_0_60"
+}

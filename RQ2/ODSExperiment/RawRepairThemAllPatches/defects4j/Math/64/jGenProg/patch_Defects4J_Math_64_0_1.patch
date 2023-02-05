@@ -1,0 +1,13 @@
+
+--- org\/apache\/commons\/math\/optimization\/general\/LevenbergMarquardtOptimizer.java
++++ org\/apache\/commons\/math\/optimization\/general\/LevenbergMarquardtOptimizer.java
+@@ -431,7 +431,7 @@
+ 					tmpVec = residuals;
+ 					residuals = oldRes;
+ 					oldRes = tmpVec;
+-				}
++				} 				current = new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective);
+ 				if ((checker) == null) {
+ 					if (((((java.lang.Math.abs(actRed)) <= (costRelativeTolerance)) && 
+ 					(preRed <= (costRelativeTolerance))) && 
+

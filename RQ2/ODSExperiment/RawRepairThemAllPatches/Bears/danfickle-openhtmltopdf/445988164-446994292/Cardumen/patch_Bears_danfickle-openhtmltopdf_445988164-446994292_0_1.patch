@@ -1,0 +1,13 @@
+
+--- com\/openhtmltopdf\/visualtest\/VisualTester.java
++++ com\/openhtmltopdf\/visualtest\/VisualTester.java
+@@ -126,7 +126,7 @@
+ 	public boolean runTest(java.lang.String resource, com.openhtmltopdf.visualtest.VisualTester.BuilderConfig additionalBuilderConfiguration) throws java.io.IOException {
+ 		java.lang.String absResPath = ((this.resourcePath) + resource) + ".html";
+ 
+-		java.io.File override = new java.io.File(this.overridePath, (resource + ".pdf"));
++		java.io.File override = new java.io.File(outputPath, (resource + ".pdf"));
+ 		java.io.File primary = new java.io.File(this.primaryPath, (resource + ".pdf"));
+ 
+ 		java.io.File testFile = (override.exists()) ? override : primary;
+

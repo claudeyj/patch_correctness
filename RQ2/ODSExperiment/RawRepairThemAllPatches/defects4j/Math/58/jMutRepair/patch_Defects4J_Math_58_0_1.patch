@@ -1,0 +1,13 @@
+
+--- org\/apache\/commons\/math\/analysis\/function\/Gaussian.java
++++ org\/apache\/commons\/math\/analysis\/function\/Gaussian.java
+@@ -179,7 +179,7 @@
+ 			if ((param.length) != 3) {
+ 				throw new org.apache.commons.math.exception.DimensionMismatchException(param.length, 3);
+ 			}
+-			if ((param[2]) <= 0) {
++			if ((param[2]) == 0) {
+ 				throw new org.apache.commons.math.exception.NotStrictlyPositiveException(param[2]);
+ 			}
+ 		}
+

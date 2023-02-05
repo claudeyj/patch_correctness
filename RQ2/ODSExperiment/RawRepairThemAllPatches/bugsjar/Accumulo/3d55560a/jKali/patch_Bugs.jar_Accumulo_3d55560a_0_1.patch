@@ -1,0 +1,15 @@
+
+--- org\/apache\/accumulo\/core\/client\/mock\/MockTable.java
++++ org\/apache\/accumulo\/core\/client\/mock\/MockTable.java
+@@ -104,8 +104,8 @@
+ 			if (u.isDeleted())
+ 				key.setDeleted(true);
+ 			if (!(u.hasTimestamp())) 
+-			{ 				if (timeType.equals(org.apache.accumulo.core.client.admin.TimeType.LOGICAL))
+-					key.setTimestamp(mutationCount);else
++			{ 				if (true)
++					key.setTimestamp(this.mutationCount);else
+ 
+ 					key.setTimestamp(now);}
+ 
+

@@ -1,0 +1,13 @@
+--- /tmp/Kali_Bears_traccar-traccar_305623200-305713931/src/org/traccar/protocol/Jt600FrameDecoder.java	2018-12-27 05:23:31.088338766 -0500
++++ /tmp/Kali_Bears_traccar-traccar_305623200-305713931/patches_7a4z/Patch_5/patched/tmp/Kali_Bears_traccar-traccar_305623200-305713931/src/org/traccar/protocol/Jt600FrameDecoder.java	2018-12-27 05:24:16.756530880 -0500
+@@ -37,7 +37,7 @@
+         if (type == '$') {
+             boolean longFormat = buf.getUnsignedByte(buf.readerIndex() + 1) == 0x75;
+             int length = buf.getUnsignedShort(buf.readerIndex() + (longFormat ? 8 : 7)) + 10;
+-            if (length >= buf.readableBytes()) {
++            if (true) {
+                 return buf.readBytes(length);
+             }
+         } else if (type == '(') {
+
+

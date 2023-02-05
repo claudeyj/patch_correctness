@@ -1,0 +1,13 @@
+
+--- org\/traccar\/helper\/PatternBuilder.java
++++ org\/traccar\/helper\/PatternBuilder.java
+@@ -74,7 +74,7 @@
+ 		return expression("(?:");
+ 	}
+ 
+-	public org.traccar.helper.PatternBuilder groupEnd() {
++	public org.traccar.helper.PatternBuilder groupEnd() { 		fragments.add(".*?");
+ 		return expression(")");
+ 	}
+ 
+

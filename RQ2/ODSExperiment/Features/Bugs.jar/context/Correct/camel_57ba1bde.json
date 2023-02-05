@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "For",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "i <= (uri.length() - 2)",
+            "dst_parent": "if (i <= (uri.length() - 2)) {\n    next = uri.charAt(i + 1);\n} else {\n    next = '\\u0000';\n}",
+            "dst_parent_type": "If",
+            "dst_type": "BinaryOperator",
+            "operator": "UPD",
+            "src": "i < (uri.length() - 2)",
+            "src_parent": "if (i < (uri.length() - 2)) {\n    next = uri.charAt(i + 1);\n} else {\n    next = '\\u0000';\n}",
+            "src_parent_type": "If",
+            "src_type": "BinaryOperator"
+          }
+        }
+      ],
+      "file_name": "URISupport"
+    }
+  ],
+  "id": "camel_57ba1bde"
+}

@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (ref == null) {\n    return false;\n}",
+            "src_parent": "{\n    if (ref == null) {\n        return false;\n    }\n    if (((targetType != null) && targetType.getSimpleName().equals(ref.getSimpleName())) && (!targetType.equals(ref))) {\n        return false;\n    }\n    if (classImports.containsKey(ref.getSimpleName())) {\n        return isImportedInClassImports(ref);\n    }\n    if ((ref.getPackage() == null) || ref.getPackage().isUnnamedPackage()) {\n        return false;\n    }\n    if (ref.getPackage().getSimpleName().equals(\"java.lang\")) {\n        if (classNamePresentInJavaLang(ref)) {\n            return false;\n        }\n    }\n    if ((targetType != null) && (targetType.canAccess(ref) == false)) {\n        return false;\n    }\n    if (targetType != null) {\n        try {\n            spoon.reflect.declaration.CtElement parent = ref.getParent();\n            if (parent != null) {\n                parent = parent.getParent();\n                if (parent != null) {\n                    if (((parent instanceof spoon.reflect.code.CtFieldAccess) || (parent instanceof spoon.reflect.declaration.CtExecutable)) || (parent instanceof spoon.reflect.code.CtInvocation)) {\n                        spoon.reflect.reference.CtTypeReference declaringType;\n                        spoon.reflect.reference.CtReference reference;\n                        spoon.reflect.reference.CtPackageReference pack = targetType.getPackage();\n                        if (parent instanceof spoon.reflect.code.CtFieldAccess) {\n                            spoon.reflect.code.CtFieldAccess field = ((spoon.reflect.code.CtFieldAccess) (parent));\n                            spoon.reflect.reference.CtFieldReference localReference = field.getVariable();\n                            declaringType = localReference.getDeclaringType();\n                            reference = localReference;\n                        } else if (parent instanceof spoon.reflect.declaration.CtExecutable) {\n                            spoon.reflect.declaration.CtExecutable exec = ((spoon.reflect.declaration.CtExecutable) (parent));\n                            spoon.reflect.reference.CtExecutableReference localReference = exec.getReference();\n                            declaringType = localReference.getDeclaringType();\n                            reference = localReference;\n                        } else if (parent instanceof spoon.reflect.code.CtInvocation) {\n                            spoon.reflect.code.CtInvocation invo = ((spoon.reflect.code.CtInvocation) (parent));\n                            spoon.reflect.reference.CtExecutableReference localReference = invo.getExecutable();\n                            declaringType = localReference.getDeclaringType();\n                            reference = localReference;\n                        } else {\n                            declaringType = null;\n                            reference = null;\n                        }\n                        if ((reference != null) && isImported(reference)) {\n                            if (declaringType != null) {\n                                if ((declaringType.getPackage() != null) && (!declaringType.getPackage().isUnnamedPackage())) {\n                                    if (!declaringType.getPackage().getSimpleName().equals(\"java.lang\")) {\n                                        if (declaringType.getPackage().getSimpleName().equals(pack.getSimpleName())) {\n                                            classImports.put(ref.getSimpleName(), ref);\n                                            return true;\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        } catch (spoon.reflect.declaration.ParentNotInitializedException e) {\n        }\n        spoon.reflect.reference.CtPackageReference pack = targetType.getPackage();\n        if ((ref.getPackage() != null) && (!ref.getPackage().isUnnamedPackage())) {\n            if (!ref.getPackage().getSimpleName().equals(\"java.lang\")) {\n                if (ref.getPackage().getSimpleName().equals(pack.getSimpleName())) {\n                    return false;\n                }\n            }\n        }\n    }\n    classImports.put(ref.getSimpleName(), ref);\n    return true;\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (((targetType != null) && targetType.getSimpleName().equals(ref.getSimpleName())) && (!targetType.equals(ref))) {\n    return false;\n}",
+            "src_parent": "{\n    if (ref == null) {\n        return false;\n    }\n    if (((targetType != null) && targetType.getSimpleName().equals(ref.getSimpleName())) && (!targetType.equals(ref))) {\n        return false;\n    }\n    if (classImports.containsKey(ref.getSimpleName())) {\n        return isImportedInClassImports(ref);\n    }\n    if ((ref.getPackage() == null) || ref.getPackage().isUnnamedPackage()) {\n        return false;\n    }\n    if (ref.getPackage().getSimpleName().equals(\"java.lang\")) {\n        if (classNamePresentInJavaLang(ref)) {\n            return false;\n        }\n    }\n    if ((targetType != null) && (targetType.canAccess(ref) == false)) {\n        return false;\n    }\n    if (targetType != null) {\n        try {\n            spoon.reflect.declaration.CtElement parent = ref.getParent();\n            if (parent != null) {\n                parent = parent.getParent();\n                if (parent != null) {\n                    if (((parent instanceof spoon.reflect.code.CtFieldAccess) || (parent instanceof spoon.reflect.declaration.CtExecutable)) || (parent instanceof spoon.reflect.code.CtInvocation)) {\n                        spoon.reflect.reference.CtTypeReference declaringType;\n                        spoon.reflect.reference.CtReference reference;\n                        spoon.reflect.reference.CtPackageReference pack = targetType.getPackage();\n                        if (parent instanceof spoon.reflect.code.CtFieldAccess) {\n                            spoon.reflect.code.CtFieldAccess field = ((spoon.reflect.code.CtFieldAccess) (parent));\n                            spoon.reflect.reference.CtFieldReference localReference = field.getVariable();\n                            declaringType = localReference.getDeclaringType();\n                            reference = localReference;\n                        } else if (parent instanceof spoon.reflect.declaration.CtExecutable) {\n                            spoon.reflect.declaration.CtExecutable exec = ((spoon.reflect.declaration.CtExecutable) (parent));\n                            spoon.reflect.reference.CtExecutableReference localReference = exec.getReference();\n                            declaringType = localReference.getDeclaringType();\n                            reference = localReference;\n                        } else if (parent instanceof spoon.reflect.code.CtInvocation) {\n                            spoon.reflect.code.CtInvocation invo = ((spoon.reflect.code.CtInvocation) (parent));\n                            spoon.reflect.reference.CtExecutableReference localReference = invo.getExecutable();\n                            declaringType = localReference.getDeclaringType();\n                            reference = localReference;\n                        } else {\n                            declaringType = null;\n                            reference = null;\n                        }\n                        if ((reference != null) && isImported(reference)) {\n                            if (declaringType != null) {\n                                if ((declaringType.getPackage() != null) && (!declaringType.getPackage().isUnnamedPackage())) {\n                                    if (!declaringType.getPackage().getSimpleName().equals(\"java.lang\")) {\n                                        if (declaringType.getPackage().getSimpleName().equals(pack.getSimpleName())) {\n                                            classImports.put(ref.getSimpleName(), ref);\n                                            return true;\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        } catch (spoon.reflect.declaration.ParentNotInitializedException e) {\n        }\n        spoon.reflect.reference.CtPackageReference pack = targetType.getPackage();\n        if ((ref.getPackage() != null) && (!ref.getPackage().isUnnamedPackage())) {\n            if (!ref.getPackage().getSimpleName().equals(\"java.lang\")) {\n                if (ref.getPackage().getSimpleName().equals(pack.getSimpleName())) {\n                    return false;\n                }\n            }\n        }\n    }\n    classImports.put(ref.getSimpleName(), ref);\n    return true;\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "ImportScannerImpl"
+    }
+  ],
+  "id": "bears_36"
+}

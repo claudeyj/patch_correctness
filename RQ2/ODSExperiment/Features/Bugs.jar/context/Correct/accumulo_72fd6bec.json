@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Constructor",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "mergePropWithRandomPort(siteConfig, Property.MONITOR_LOG4J_PORT.getKey())",
+            "src_parent": "{\n    if (config.getDir().exists() && (!config.getDir().isDirectory())) {\n        throw new java.lang.IllegalArgumentException((\"Must pass in directory, \" + config.getDir()) + \" is a file\");\n    }\n    if (config.getDir().exists() && (config.getDir().list().length != 0)) {\n        throw new java.lang.IllegalArgumentException((\"Directory \" + config.getDir()) + \" is not empty\");\n    }\n    this.config = config;\n    libDir = new java.io.File(config.getDir(), \"lib\");\n    libExtDir = new java.io.File(libDir, \"ext\");\n    confDir = new java.io.File(config.getDir(), \"conf\");\n    accumuloDir = new java.io.File(config.getDir(), \"accumulo\");\n    zooKeeperDir = new java.io.File(config.getDir(), \"zookeeper\");\n    logDir = new java.io.File(config.getDir(), \"logs\");\n    walogDir = new java.io.File(config.getDir(), \"walogs\");\n    confDir.mkdirs();\n    accumuloDir.mkdirs();\n    zooKeeperDir.mkdirs();\n    logDir.mkdirs();\n    walogDir.mkdirs();\n    libDir.mkdirs();\n    libExtDir.mkdirs();\n    zooKeeperPort = org.apache.accumulo.server.util.PortUtils.getRandomFreePort();\n    java.io.File siteFile = new java.io.File(confDir, \"accumulo-site.xml\");\n    java.io.OutputStreamWriter fileWriter = new java.io.OutputStreamWriter(new java.io.FileOutputStream(siteFile), org.apache.accumulo.core.Constants.UTF8);\n    fileWriter.append(\"<configuration>\\n\");\n    java.util.HashMap<java.lang.String, java.lang.String> siteConfig = new java.util.HashMap<java.lang.String, java.lang.String>(config.getSiteConfig());\n    appendProp(fileWriter, Property.INSTANCE_DFS_URI, \"file:///\", siteConfig);\n    appendProp(fileWriter, Property.INSTANCE_DFS_DIR, accumuloDir.getAbsolutePath(), siteConfig);\n    appendProp(fileWriter, Property.INSTANCE_ZK_HOST, \"localhost:\" + zooKeeperPort, siteConfig);\n    appendProp(fileWriter, Property.INSTANCE_SECRET, org.apache.accumulo.minicluster.MiniAccumuloCluster.INSTANCE_SECRET, siteConfig);\n    appendProp(fileWriter, Property.TSERV_PORTSEARCH, \"true\", siteConfig);\n    appendProp(fileWriter, Property.LOGGER_DIR, walogDir.getAbsolutePath(), siteConfig);\n    appendProp(fileWriter, Property.TSERV_DATACACHE_SIZE, \"10M\", siteConfig);\n    appendProp(fileWriter, Property.TSERV_INDEXCACHE_SIZE, \"10M\", siteConfig);\n    appendProp(fileWriter, Property.TSERV_MAXMEM, \"50M\", siteConfig);\n    appendProp(fileWriter, Property.TSERV_WALOG_MAX_SIZE, \"100M\", siteConfig);\n    appendProp(fileWriter, Property.TSERV_NATIVEMAP_ENABLED, \"false\", siteConfig);\n    appendProp(fileWriter, org.apache.accumulo.core.conf.Property.TRACE_TOKEN_PROPERTY_PREFIX + \".password\", config.getRootPassword(), siteConfig);\n    appendProp(fileWriter, Property.GC_CYCLE_DELAY, \"4s\", siteConfig);\n    appendProp(fileWriter, Property.GC_CYCLE_START, \"0s\", siteConfig);\n    mergePropWithRandomPort(siteConfig, Property.MASTER_CLIENTPORT.getKey());\n    mergePropWithRandomPort(siteConfig, Property.TRACE_PORT.getKey());\n    mergePropWithRandomPort(siteConfig, Property.TSERV_CLIENTPORT.getKey());\n    mergePropWithRandomPort(siteConfig, Property.MONITOR_PORT.getKey());\n    mergePropWithRandomPort(siteConfig, Property.GC_PORT.getKey());\n    mergePropWithRandomPort(siteConfig, Property.MONITOR_LOG4J_PORT.getKey());\n    appendProp(fileWriter, Property.TSERV_MAJC_DELAY, \"3\", siteConfig);\n    appendProp(fileWriter, Property.GENERAL_CLASSPATHS, libDir.getAbsolutePath() + \"/[^.].*.jar\", siteConfig);\n    appendProp(fileWriter, Property.GENERAL_DYNAMIC_CLASSPATHS, libExtDir.getAbsolutePath() + \"/[^.].*.jar\", siteConfig);\n    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry : siteConfig.entrySet()) {\n        fileWriter.append((((\"<property><name>\" + entry.getKey()) + \"</name><value>\") + entry.getValue()) + \"</value></property>\\n\");\n    }\n    fileWriter.append(\"</configuration>\\n\");\n    fileWriter.close();\n    zooCfgFile = new java.io.File(confDir, \"zoo.cfg\");\n    fileWriter = new java.io.OutputStreamWriter(new java.io.FileOutputStream(zooCfgFile), org.apache.accumulo.core.Constants.UTF8);\n    java.util.Properties zooCfg = new java.util.Properties();\n    zooCfg.setProperty(\"tickTime\", \"1000\");\n    zooCfg.setProperty(\"initLimit\", \"10\");\n    zooCfg.setProperty(\"syncLimit\", \"5\");\n    zooCfg.setProperty(\"clientPort\", zooKeeperPort + \"\");\n    zooCfg.setProperty(\"maxClientCnxns\", \"100\");\n    zooCfg.setProperty(\"dataDir\", zooKeeperDir.getAbsolutePath());\n    zooCfg.store(fileWriter, null);\n    fileWriter.close();\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "MiniAccumuloCluster"
+    }
+  ],
+  "id": "accumulo_72fd6bec"
+}

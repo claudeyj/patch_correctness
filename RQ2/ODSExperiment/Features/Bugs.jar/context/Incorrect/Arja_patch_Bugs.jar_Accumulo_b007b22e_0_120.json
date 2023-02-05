@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "{\n    VARNUM : encoder = new org.apache.accumulo.core.iterators.VarNumEncoder();\n    return;\n    LONG : encoder = new org.apache.accumulo.core.iterators.LongEncoder();\n    return;\n    STRING : encoder = new org.apache.accumulo.core.iterators.StringEncoder();\n    return;\n}",
+            "src_parent": "public abstract class Combiner extends org.apache.accumulo.core.iterators.WrappingIterator implements org.apache.accumulo.core.iterators.OptionDescriber {\n    static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger(org.apache.accumulo.core.iterators.Combiner.class);\n\n    {\n        VARNUM : encoder = new org.apache.accumulo.core.iterators.VarNumEncoder();\n        return;\n        LONG : encoder = new org.apache.accumulo.core.iterators.LongEncoder();\n        return;\n        STRING : encoder = new org.apache.accumulo.core.iterators.StringEncoder();\n        return;\n    }\n\n    public static final java.lang.String COLUMN_PREFIX = \"column:\";\n\n    public static class ValueIterator implements java.util.Iterator<org.apache.accumulo.core.data.Value> {\n        org.apache.accumulo.core.data.Key topKey;\n\n        org.apache.accumulo.core.iterators.SortedKeyValueIterator<org.apache.accumulo.core.data.Key, org.apache.accumulo.core.data.Value> source;\n\n        boolean hasNext;\n\n        public ValueIterator(org.apache.accumulo.core.iterators.SortedKeyValueIterator<org.apache.accumulo.core.data.Key, org.apache.accumulo.core.data.Value> source) {\n            this.source = source;\n            topKey = source.getTopKey();\n            hasNext = _hasNext();\n        }\n\n        private boolean _hasNext() {\n            return (source.hasTop() && (!source.getTopKey().isDeleted())) && topKey.equals(source.getTopKey(), PartialKey.ROW_COLFAM_COLQUAL_COLVIS);\n        }\n\n        @java.lang.Override\n        public boolean hasNext() {\n            return hasNext;\n        }\n\n        @java.lang.Override\n        public org.apache.accumulo.core.data.Value next() {\n            if (!hasNext) {\n                throw new java.util.NoSuchElementException();\n            }\n            org.apache.accumulo.core.data.Value topValue = source.getTopValue();\n            try {\n                source.next();\n                hasNext = _hasNext();\n            } catch (java.io.IOException e) {\n                throw new java.lang.RuntimeException(e);\n            }\n            return topValue;\n        }\n\n        @java.lang.Override\n        public void remove() {\n            throw new java.lang.UnsupportedOperationException();\n        }\n    }\n\n    org.apache.accumulo.core.data.Key topKey;\n\n    org.apache.accumulo.core.data.Value topValue;\n\n    public Combiner() {\n    }\n\n    @java.lang.Override\n    public org.apache.accumulo.core.data.Key getTopKey() {\n        if (topKey == null) {\n            return super.getTopKey();\n        }\n        return topKey;\n    }\n\n    @java.lang.Override\n    public org.apache.accumulo.core.data.Value getTopValue() {\n        if (topKey == null) {\n            return super.getTopValue();\n        }\n        return topValue;\n    }\n\n    @java.lang.Override\n    public boolean hasTop() {\n        return (topKey != null) || super.hasTop();\n    }\n\n    @java.lang.Override\n    public void next() throws java.io.IOException {\n        if (topKey != null) {\n            topKey = null;\n            topValue = null;\n        } else {\n            super.next();\n        }\n        findTop();\n    }\n\n    private org.apache.accumulo.core.data.Key workKey = new org.apache.accumulo.core.data.Key();\n\n    private void findTop() throws java.io.IOException {\n        if (super.hasTop()) {\n            workKey.set(super.getTopKey());\n            if (combiners.isEmpty() || combiners.contains(workKey)) {\n                if (workKey.isDeleted()) {\n                    return;\n                }\n                topKey = workKey;\n                java.util.Iterator<org.apache.accumulo.core.data.Value> viter = new org.apache.accumulo.core.iterators.Combiner.ValueIterator(getSource());\n                topValue = reduce(topKey, viter);\n                while (viter.hasNext()) {\n                    viter.next();\n                } \n            }\n        }\n    }\n\n    @java.lang.Override\n    public void seek(org.apache.accumulo.core.data.Range range, java.util.Collection<org.apache.accumulo.core.data.ByteSequence> columnFamilies, boolean inclusive) throws java.io.IOException {\n        org.apache.accumulo.core.data.Range seekRange = org.apache.accumulo.core.iterators.IteratorUtil.maximizeStartKeyTimeStamp(range);\n        super.seek(seekRange, columnFamilies, inclusive);\n        findTop();\n        if (range.getStartKey() != null) {\n            while ((hasTop() && getTopKey().equals(range.getStartKey(), PartialKey.ROW_COLFAM_COLQUAL_COLVIS)) && (getTopKey().getTimestamp() > range.getStartKey().getTimestamp())) {\n                next();\n            } \n            while (hasTop() && range.beforeStartKey(getTopKey())) {\n                next();\n            } \n        }\n    }\n\n    public abstract org.apache.accumulo.core.data.Value reduce(org.apache.accumulo.core.data.Key key, java.util.Iterator<org.apache.accumulo.core.data.Value> iter);\n\n    private org.apache.accumulo.core.iterators.conf.ColumnSet combiners;\n\n    @java.lang.Override\n    public void init(org.apache.accumulo.core.iterators.SortedKeyValueIterator<org.apache.accumulo.core.data.Key, org.apache.accumulo.core.data.Value> source, java.util.Map<java.lang.String, java.lang.String> options, org.apache.accumulo.core.iterators.IteratorEnvironment env) throws java.io.IOException {\n        super.init(source, options, env);\n        java.util.List<java.lang.String> colOpts = new java.util.ArrayList<java.lang.String>();\n        for (java.util.Map.Entry<java.lang.String, java.lang.String> opt : options.entrySet()) {\n            if (opt.getKey().startsWith(org.apache.accumulo.core.iterators.Combiner.COLUMN_PREFIX)) {\n                colOpts.add(opt.getKey().substring(org.apache.accumulo.core.iterators.Combiner.COLUMN_PREFIX.length()));\n            }\n        }\n        combiners = new org.apache.accumulo.core.iterators.conf.ColumnSet(colOpts);\n    }\n\n    @java.lang.Override\n    public org.apache.accumulo.core.iterators.IteratorOptions describeOptions() {\n        return new org.apache.accumulo.core.iterators.IteratorOptions(\"comb\", \"Combiners apply reduce functions to values with identical keys\", null, java.util.Collections.singletonList(\"<columnName> null\"));\n    }\n\n    @java.lang.Override\n    public boolean validateOptions(java.util.Map<java.lang.String, java.lang.String> options) {\n        return true;\n    }\n\n    public static void addColumn(org.apache.hadoop.io.Text colf, org.apache.hadoop.io.Text colq, org.apache.accumulo.core.client.IteratorSetting is) {\n        java.lang.String column = org.apache.accumulo.core.iterators.conf.PerColumnIteratorConfig.encodeColumns(colf, colq);\n        is.addOption(org.apache.accumulo.core.iterators.Combiner.COLUMN_PREFIX + column, \"\");\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "AnonymousExecutable"
+          }
+        }
+      ],
+      "file_name": "Combiner"
+    }
+  ],
+  "id": "Arja_patch_Bugs.jar_Accumulo_b007b22e_0_120"
+}

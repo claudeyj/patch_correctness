@@ -1,0 +1,13 @@
+
+--- \/tmp\/jMutRepair_Bug_dot_jar_Flink_8dc70f2e\/flink-optimizer\/src\/main\/java\/org\/apache\/flink\/optimizer\/dataproperties\/LocalPropertiesjava
++++ \/tmp\/jMutRepair_Bug_dot_jar_Flink_8dc70f2e\/flink-optimizer\/src\/main\/java\/org\/apache\/flink\/optimizer\/dataproperties\/LocalPropertiesjava
+@@ -162,7 +162,7 @@
+ 					}
+ 				}else {
+ 
+-					if ((targetField.size()) > 1) {
++					if ((targetField.size()) == 1) {
+ 						org.apache.flink.optimizer.dataproperties.LocalProperties.LOG.warn(("Found that a field is forwarded to more than one target field in " + 
+ 						"semantic forwarded field information. Will only use the field with the lowest index."));
+ 					}
+

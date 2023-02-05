@@ -1,0 +1,22 @@
+
+--- org\/apache\/commons\/math\/analysis\/solvers\/BracketingNthOrderBrentSolver.java
++++ org\/apache\/commons\/math\/analysis\/solvers\/BracketingNthOrderBrentSolver.java
+@@ -260,7 +260,7 @@
+ 					if ((signChangeIndex - start) >= (end - signChangeIndex)) {
+ 
+ 						++start;
+-					}else {
++					}else { 						do { 							java.lang.System.arraycopy(x, start, tmpX, start, (end - start)); 							nextX = guessX(targetY, tmpX, y, start, end); 							if (!((nextX > xA) && (nextX < xB))) { 								if ((signChangeIndex - start) >= (end - signChangeIndex)) { 									++start;}else {
+ 
+ 						--end;
+ 					}
+@@ -270,7 +270,7 @@
+ 
+ 				}
+ 
+-			} while ((java.lang.Double.isNaN(nextX)) && ((end - start) > 1) );
++						} while ((java.lang.Double.isNaN(nextX)) && ((end - start) > 1) ); 						--end;} 					nextX = java.lang.Double.NaN;}} while ((java.lang.Double.isNaN(nextX)) && ((end - start) > 1) );
+ 
+ 			if (java.lang.Double.isNaN(nextX)) {
+ 
+

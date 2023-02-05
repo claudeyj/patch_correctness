@@ -1,0 +1,75 @@
+
+--- \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_fc409e88\/src\/main\/java\/org\/apache\/commons\/math\/optimization\/direct\/CMAESOptimizerjava
++++ \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_fc409e88\/src\/main\/java\/org\/apache\/commons\/math\/optimization\/direct\/CMAESOptimizerjava
+@@ -858,44 +858,44 @@
+ 				return x;
+ 			double[] res = new double[x.length];
+ 			for (int i = 0; i < (x.length); i++) {
+-				double diff = (boundaries[1][i]) - (boundaries[0][i]);
+-				res[i] = ((x[i]) - (boundaries[0][i])) \/ diff;
+-			}
+-			return res;
+-		}
++				double diff = 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 
+ 
+ 
+ 
+ 
+-		public double[] decode(final double[] x) {
+-			if ((boundaries) == null)
+-				return x;
+-			double[] res = new double[x.length];
+-			for (int i = 0; i < (x.length); i++) {
+-				double diff = (boundaries[1][i]) - (boundaries[0][i]);
+-				res[i] = (diff * (x[i])) + (boundaries[0][i]);
+-			}
+-			return res;
+-		}
+ 
+ 
+ 
+ 
+ 
+ 
+-		public double value(final double[] point) {
+-			double value;
+-			if (((boundaries) != null) && (isRepairMode)) {
+-				double[] repaired = repair(point);
+-				value = (org.apache.commons.math.optimization.direct.CMAESOptimizer.this.computeObjectiveValue(
+-				decode(repaired))) + 
+-				(penalty(point, repaired));
+-			}else
+-				value = org.apache.commons.math.optimization.direct.CMAESOptimizer.this.computeObjectiveValue(
+-				decode(point));
+-			return isMinimize ? value : -value;
++				-(valueRange); 				res[i] = ((x[i]) - (boundaries[0][i])) \/ diff;} 			return res;} 		public double[] decode(final double[] x) { 			if ((boundaries) == null) 				return x; 			double[] res = new double[x.length]; 			for (int i = 0; i < (x.length); i++) { 				double diff = (boundaries[1][i]) - (boundaries[0][i]); 				res[i] = (diff * (x[i])) + (boundaries[0][i]);} 			return res;} 		public double value(final double[] point) { 			double value; 			if (((boundaries) != null) && (isRepairMode)) { 				double[] repaired = repair(point); 				value = (org.apache.commons.math.optimization.direct.CMAESOptimizer.this.computeObjectiveValue(decode(repaired))) + (penalty(point, repaired));}else 				value = org.apache.commons.math.optimization.direct.CMAESOptimizer.this.computeObjectiveValue(decode(point)); 			return isMinimize ? value : -value;
+ 		}
+ 
+ 
+

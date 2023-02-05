@@ -1,0 +1,98 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Return",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "org.apache.commons.codec.binary.StringUtils",
+            "src_parent": "org.apache.commons.codec.binary.StringUtils.equals(doubleMetaphone(value1, alternate), doubleMetaphone(value2, alternate))",
+            "src_parent_type": "Invocation",
+            "src_type": "TypeAccess"
+          }
+        }
+      ],
+      "file_name": "DoubleMetaphone"
+    },
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "public static boolean equals(final java.lang.CharSequence cs1, final java.lang.CharSequence cs2) {\n    if (cs1 == cs2) {\n        return true;\n    }\n    if ((cs1 == null) || (cs2 == null)) {\n        return false;\n    }\n    if ((cs1 instanceof java.lang.String) && (cs2 instanceof java.lang.String)) {\n        return cs1.equals(cs2);\n    }\n    return org.apache.commons.codec.binary.CharSequenceUtils.regionMatches(cs1, false, 0, cs2, 0, java.lang.Math.max(cs1.length(), cs2.length()));\n}",
+            "src_parent": "public class StringUtils {\n    public static boolean equals(final java.lang.CharSequence cs1, final java.lang.CharSequence cs2) {\n        if (cs1 == cs2) {\n            return true;\n        }\n        if ((cs1 == null) || (cs2 == null)) {\n            return false;\n        }\n        if ((cs1 instanceof java.lang.String) && (cs2 instanceof java.lang.String)) {\n            return cs1.equals(cs2);\n        }\n        return org.apache.commons.codec.binary.CharSequenceUtils.regionMatches(cs1, false, 0, cs2, 0, java.lang.Math.max(cs1.length(), cs2.length()));\n    }\n\n    private static byte[] getBytes(final java.lang.String string, final java.nio.charset.Charset charset) {\n        if (string == null) {\n            return null;\n        }\n        return string.getBytes(charset);\n    }\n\n    public static byte[] getBytesIso8859_1(final java.lang.String string) {\n        return org.apache.commons.codec.binary.StringUtils.getBytes(string, org.apache.commons.codec.Charsets.ISO_8859_1);\n    }\n\n    public static byte[] getBytesUnchecked(final java.lang.String string, final java.lang.String charsetName) {\n        if (string == null) {\n            return null;\n        }\n        try {\n            return string.getBytes(charsetName);\n        } catch (final java.io.UnsupportedEncodingException e) {\n            throw org.apache.commons.codec.binary.StringUtils.newIllegalStateException(charsetName, e);\n        }\n    }\n\n    public static byte[] getBytesUsAscii(final java.lang.String string) {\n        return org.apache.commons.codec.binary.StringUtils.getBytes(string, org.apache.commons.codec.Charsets.US_ASCII);\n    }\n\n    public static byte[] getBytesUtf16(final java.lang.String string) {\n        return org.apache.commons.codec.binary.StringUtils.getBytes(string, org.apache.commons.codec.Charsets.UTF_16);\n    }\n\n    public static byte[] getBytesUtf16Be(final java.lang.String string) {\n        return org.apache.commons.codec.binary.StringUtils.getBytes(string, org.apache.commons.codec.Charsets.UTF_16BE);\n    }\n\n    public static byte[] getBytesUtf16Le(final java.lang.String string) {\n        return org.apache.commons.codec.binary.StringUtils.getBytes(string, org.apache.commons.codec.Charsets.UTF_16LE);\n    }\n\n    public static byte[] getBytesUtf8(final java.lang.String string) {\n        return org.apache.commons.codec.binary.StringUtils.getBytes(string, org.apache.commons.codec.Charsets.UTF_8);\n    }\n\n    private static java.lang.IllegalStateException newIllegalStateException(final java.lang.String charsetName, final java.io.UnsupportedEncodingException e) {\n        return new java.lang.IllegalStateException((charsetName + \": \") + e);\n    }\n\n    private static java.lang.String newString(final byte[] bytes, final java.nio.charset.Charset charset) {\n        return bytes == null ? null : new java.lang.String(bytes, charset);\n    }\n\n    public static java.lang.String newString(final byte[] bytes, final java.lang.String charsetName) {\n        if (bytes == null) {\n            return null;\n        }\n        try {\n            return new java.lang.String(bytes, charsetName);\n        } catch (final java.io.UnsupportedEncodingException e) {\n            throw org.apache.commons.codec.binary.StringUtils.newIllegalStateException(charsetName, e);\n        }\n    }\n\n    public static java.lang.String newStringIso8859_1(final byte[] bytes) {\n        return new java.lang.String(bytes, org.apache.commons.codec.Charsets.ISO_8859_1);\n    }\n\n    public static java.lang.String newStringUsAscii(final byte[] bytes) {\n        return new java.lang.String(bytes, org.apache.commons.codec.Charsets.US_ASCII);\n    }\n\n    public static java.lang.String newStringUtf16(final byte[] bytes) {\n        return new java.lang.String(bytes, org.apache.commons.codec.Charsets.UTF_16);\n    }\n\n    public static java.lang.String newStringUtf16Be(final byte[] bytes) {\n        return new java.lang.String(bytes, org.apache.commons.codec.Charsets.UTF_16BE);\n    }\n\n    public static java.lang.String newStringUtf16Le(final byte[] bytes) {\n        return new java.lang.String(bytes, org.apache.commons.codec.Charsets.UTF_16LE);\n    }\n\n    public static java.lang.String newStringUtf8(final byte[] bytes) {\n        return org.apache.commons.codec.binary.StringUtils.newString(bytes, org.apache.commons.codec.Charsets.UTF_8);\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "StringUtils"
+    }
+  ],
+  "id": "Codec_13"
+}

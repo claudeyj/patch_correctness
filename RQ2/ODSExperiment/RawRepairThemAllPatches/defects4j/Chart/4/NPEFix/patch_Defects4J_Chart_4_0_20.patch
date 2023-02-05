@@ -1,0 +1,20 @@
+--- org/jfree/chart/plot/XYPlot.java
++++ org/jfree/chart/plot/XYPlot.java
+@@ -4492,4 +4492,15 @@
+                 
+-                    Collection c = r.getAnnotations();
+-                    Iterator i = c.iterator();
++                    } else {
++                        if (r != null) {
++                            Collection c = r.getAnnotations();
++                        }
++                    }
++                    } else {
++                        Iterator i;
++                        if (c == null) {
++                            i = annotations.iterator();
++                        } else {
++                            i = c.iterator();
++                        }
++                    }
+                     while (i.hasNext()) {

@@ -1,0 +1,13 @@
+
+--- \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_596ccd59\/src\/main\/java\/org\/apache\/commons\/math3\/ml\/clustering\/FuzzyKMeansClustererjava
++++ \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_596ccd59\/src\/main\/java\/org\/apache\/commons\/math3\/ml\/clustering\/FuzzyKMeansClustererjava
+@@ -354,7 +354,7 @@
+ 
+ 				for (final org.apache.commons.math3.ml.clustering.CentroidCluster<T> c : clusters) {
+ 					final double distB = org.apache.commons.math3.util.FastMath.abs(distance(point, c.getCenter()));
+-					sum += org.apache.commons.math3.util.FastMath.pow((distA \/ distB), (2.0 \/ ((fuzziness) - 1.0)));
++					sum += org.apache.commons.math3.util.FastMath.pow((2.0 \/ ((fuzziness) - 1.0)), (2.0 \/ ((fuzziness) - 1.0)));
+ 				}
+ 
+ 				membershipMatrix[i][j] = 1.0 \/ sum;
+

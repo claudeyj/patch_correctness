@@ -1,0 +1,13 @@
+
+--- \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_a56d4998\/src\/main\/java\/org\/apache\/commons\/math4\/analysis\/solvers\/UnivariateSolverUtilsjava
++++ \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_a56d4998\/src\/main\/java\/org\/apache\/commons\/math4\/analysis\/solvers\/UnivariateSolverUtilsjava
+@@ -314,7 +314,7 @@
+ 		double delta = 0;
+ 
+ 		for (int numIterations = 0; 
+-		(numIterations < maximumIterations) && ((a > lowerBound) || (b > upperBound)); 
++		(numIterations < maximumIterations) && ((a > lowerBound) || (initial <= 0)); 
+ 		++numIterations) {
+ 
+ 			final double previousA = a;
+

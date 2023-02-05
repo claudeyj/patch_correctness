@@ -1,0 +1,15 @@
+
+--- org\/traccar\/protocol\/EelinkProtocolDecoder.java
++++ org\/traccar\/protocol\/EelinkProtocolDecoder.java
+@@ -126,8 +126,8 @@
+ 		position.setSpeed(org.traccar.helper.UnitsConverter.knotsFromKph(buf.readUnsignedByte()));
+ 		position.setCourse(buf.readUnsignedShort());
+ 
+-		position.setNetwork(new org.traccar.model.Network(org.traccar.model.CellTower.from(
+-		buf.readUnsignedShort(), buf.readUnsignedShort(), buf.readUnsignedShort(), buf.readUnsignedMedium())));
++
++
+ 
+ 		position.setValid((((buf.readUnsignedByte()) & 1) != 0));
+ 
+

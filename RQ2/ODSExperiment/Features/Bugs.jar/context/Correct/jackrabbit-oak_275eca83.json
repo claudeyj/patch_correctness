@@ -1,0 +1,93 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if ((java.lang.Long.MAX_VALUE - now) > lifetime) {\n    cp.setProperty(\"timestamp\", now + lifetime);\n} else {\n    cp.setProperty(\"timestamp\", java.lang.Long.MAX_VALUE);\n}",
+            "src_parent": "{\n    long now = java.lang.System.currentTimeMillis();\n    refreshHead();\n    org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState state = head.get();\n    org.apache.jackrabbit.oak.plugins.segment.SegmentNodeBuilder builder = state.builder();\n    org.apache.jackrabbit.oak.spi.state.NodeBuilder checkpoints = builder.child(\"checkpoints\");\n    for (java.lang.String n : checkpoints.getChildNodeNames()) {\n        org.apache.jackrabbit.oak.spi.state.NodeBuilder cp = checkpoints.getChildNode(n);\n        org.apache.jackrabbit.oak.api.PropertyState ts = cp.getProperty(\"timestamp\");\n        if (((ts == null) || (ts.getType() != LONG)) || (now > ts.getValue(org.apache.jackrabbit.oak.plugins.segment.LONG))) {\n            cp.remove();\n        }\n    }\n    org.apache.jackrabbit.oak.spi.state.NodeBuilder cp = checkpoints.child(name);\n    if ((java.lang.Long.MAX_VALUE - now) > lifetime) {\n        cp.setProperty(\"timestamp\", now + lifetime);\n    } else {\n        cp.setProperty(\"timestamp\", java.lang.Long.MAX_VALUE);\n    }\n    cp.setProperty(\"created\", now);\n    org.apache.jackrabbit.oak.spi.state.NodeBuilder props = cp.setChildNode(\"properties\");\n    for (java.util.Map.Entry<java.lang.String, java.lang.String> p : properties.entrySet()) {\n        props.setProperty(p.getKey(), p.getValue());\n    }\n    cp.setChildNode(org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStore.ROOT, state.getChildNode(org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStore.ROOT));\n    org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState newState = builder.getNodeState();\n    if (store.setHead(state, newState)) {\n        refreshHead();\n        return true;\n    } else {\n        return false;\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "ForEach",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "ForEach",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "LocalVariable",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Invocation",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "cp.setProperty(\"timestamp\", now + lifetime)",
+            "dst_parent": "{\n    cp.setProperty(\"timestamp\", now + lifetime);\n}",
+            "dst_parent_type": "Block",
+            "dst_type": "Invocation",
+            "operator": "MOV",
+            "src": "cp.setProperty(\"timestamp\", now + lifetime)",
+            "src_parent": "{\n    long now = java.lang.System.currentTimeMillis();\n    refreshHead();\n    org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState state = head.get();\n    org.apache.jackrabbit.oak.plugins.segment.SegmentNodeBuilder builder = state.builder();\n    org.apache.jackrabbit.oak.spi.state.NodeBuilder checkpoints = builder.child(\"checkpoints\");\n    for (java.lang.String n : checkpoints.getChildNodeNames()) {\n        org.apache.jackrabbit.oak.spi.state.NodeBuilder cp = checkpoints.getChildNode(n);\n        org.apache.jackrabbit.oak.api.PropertyState ts = cp.getProperty(\"timestamp\");\n        if (((ts == null) || (ts.getType() != LONG)) || (now > ts.getValue(org.apache.jackrabbit.oak.plugins.segment.LONG))) {\n            cp.remove();\n        }\n    }\n    org.apache.jackrabbit.oak.spi.state.NodeBuilder cp = checkpoints.child(name);\n    cp.setProperty(\"timestamp\", now + lifetime);\n    cp.setProperty(\"created\", now);\n    org.apache.jackrabbit.oak.spi.state.NodeBuilder props = cp.setChildNode(\"properties\");\n    for (java.util.Map.Entry<java.lang.String, java.lang.String> p : properties.entrySet()) {\n        props.setProperty(p.getKey(), p.getValue());\n    }\n    cp.setChildNode(org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStore.ROOT, state.getChildNode(org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStore.ROOT));\n    org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState newState = builder.getNodeState();\n    if (store.setHead(state, newState)) {\n        refreshHead();\n        return true;\n    } else {\n        return false;\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "SegmentNodeStore"
+    }
+  ],
+  "id": "jackrabbit-oak_275eca83"
+}

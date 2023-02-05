@@ -1,0 +1,15 @@
+
+--- org\/traccar\/protocol\/Gt06ProtocolDecoder.java
++++ org\/traccar\/protocol\/Gt06ProtocolDecoder.java
+@@ -181,8 +181,8 @@
+ 			position.set(org.traccar.model.Position.KEY_IGNITION, org.traccar.helper.BitUtil.check(flags, 15));
+ 		}
+ 
+-		if (length > 0) {
+-			buf.skipBytes((length - 12));
++		if (length > 0) { 			position.setLatitude(latitude);
++
+ 		}
+ 
+ 		return true;
+

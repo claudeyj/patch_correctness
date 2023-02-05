@@ -1,0 +1,13 @@
+
+--- org\/traccar\/protocol\/Gt06ProtocolDecoder.java
++++ org\/traccar\/protocol\/Gt06ProtocolDecoder.java
+@@ -567,7 +567,7 @@
+ 
+ 			buf.readUnsignedByte();
+ 
+-			if ((type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_MULTIPLE)) && (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_2))) {
++			if (false) {
+ 				int wifiCount = buf.readUnsignedByte();
+ 				for (int i = 0; i < wifiCount; i++) {
+ 					java.lang.String mac = org.jboss.netty.buffer.ChannelBuffers.hexDump(buf.readBytes(6)).replaceAll("(..)", "$1:");
+

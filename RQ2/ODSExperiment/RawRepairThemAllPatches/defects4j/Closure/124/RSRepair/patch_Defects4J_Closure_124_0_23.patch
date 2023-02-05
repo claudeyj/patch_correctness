@@ -1,0 +1,20 @@
+--- /tmp/RSRepair_Defects4J_Closure_124/src/com/google/javascript/jscomp/ExploitAssigns.java	2018-12-02 05:17:57.266954096 -0500
++++ /tmp/RSRepair_Defects4J_Closure_124/patches_b4al/Patch_637/patched/tmp/RSRepair_Defects4J_Closure_124/src/com/google/javascript/jscomp/ExploitAssigns.java	2018-12-02 05:30:23.381374792 -0500
+@@ -52,7 +52,6 @@
+       reportCodeChange();
+     } else if (isCollapsibleValue(rightValue, false) &&
+         collapseAssignEqualTo(expr, exprParent, rightValue)) {
+-      reportCodeChange();
+     } else if (rightValue.isAssign()) {
+       // Recursively deal with nested assigns.
+       collapseAssign(rightValue, expr, exprParent);
+@@ -174,7 +173,6 @@
+             // Dive down the right side of the assign.
+             parent = next;
+             next = leftSide.getNext();
+-            break;
+           } else {
+             return false;
+           }
+
+

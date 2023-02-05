@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "If",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Try",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (opts.columns != null) {\n    for (org.apache.accumulo.proxy.thrift.ScanColumn col : opts.columns) {\n        if (col.isSetColQualifier()) {\n            scanner.fetchColumn(org.apache.accumulo.core.util.ByteBufferUtil.toText(col.colFamily), org.apache.accumulo.core.util.ByteBufferUtil.toText(col.colQualifier));\n        } else {\n            scanner.fetchColumnFamily(org.apache.accumulo.core.util.ByteBufferUtil.toText(col.colFamily));\n        }\n    }\n}",
+            "src_parent": "{\n    if (opts.iterators != null) {\n        for (org.apache.accumulo.proxy.thrift.IteratorSetting iter : opts.iterators) {\n            org.apache.accumulo.core.client.IteratorSetting is = new org.apache.accumulo.core.client.IteratorSetting(iter.getPriority(), iter.getName(), iter.getIteratorClass(), iter.getProperties());\n            scanner.addScanIterator(is);\n        }\n    }\n    java.util.ArrayList<org.apache.accumulo.core.data.Range> ranges = new java.util.ArrayList<org.apache.accumulo.core.data.Range>();\n    if (opts.ranges == null) {\n        ranges.add(new org.apache.accumulo.core.data.Range());\n    } else {\n        for (org.apache.accumulo.proxy.thrift.Range range : opts.ranges) {\n            org.apache.accumulo.core.data.Range aRange = new org.apache.accumulo.core.data.Range(range.getStart() == null ? null : org.apache.accumulo.proxy.Util.fromThrift(range.getStart()), true, range.getStop() == null ? null : org.apache.accumulo.proxy.Util.fromThrift(range.getStop()), false);\n            ranges.add(aRange);\n        }\n    }\n    scanner.setRanges(ranges);\n    if (opts.columns != null) {\n        for (org.apache.accumulo.proxy.thrift.ScanColumn col : opts.columns) {\n            if (col.isSetColQualifier()) {\n                scanner.fetchColumn(org.apache.accumulo.core.util.ByteBufferUtil.toText(col.colFamily), org.apache.accumulo.core.util.ByteBufferUtil.toText(col.colQualifier));\n            } else {\n                scanner.fetchColumnFamily(org.apache.accumulo.core.util.ByteBufferUtil.toText(col.colFamily));\n            }\n        }\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "ProxyServer"
+    }
+  ],
+  "id": "accumulo_cfbf5999"
+}

@@ -1,0 +1,41 @@
+--- /tmp/Arja_Defects4J_Math_71/src/main/java/org/apache/commons/math/ode/events/CombinedEventsManager.java	2018-12-01 06:00:01.503483649 -0500
++++ /tmp/Arja_Defects4J_Math_71/patches_6k3o/Patch_1038/patched/tmp/Arja_Defects4J_Math_71/src/main/java/org/apache/commons/math/ode/events/CombinedEventsManager.java	2018-12-01 07:27:29.237686395 -0500
+@@ -151,6 +151,19 @@
+ 
+                 if (state.evaluateStep(interpolator)) {
+                     if (first == null) {
++						first = state;
++					} else {
++						if (interpolator.isForward()) {
++							if (state.getEventTime() < first.getEventTime()) {
++								first = state;
++							}
++						} else {
++							if (state.getEventTime() > first.getEventTime()) {
++								first = state;
++							}
++						}
++					}
++					if (first == null) {
+                         first = state;
+                     } else {
+                         if (interpolator.isForward()) {
+
+
+--- /tmp/Arja_Defects4J_Math_71/src/main/java/org/apache/commons/math/ode/events/EventState.java	2018-12-01 06:00:01.503483649 -0500
++++ /tmp/Arja_Defects4J_Math_71/patches_6k3o/Patch_1038/patched/tmp/Arja_Defects4J_Math_71/src/main/java/org/apache/commons/math/ode/events/EventState.java	2018-12-01 07:27:29.237686395 -0500
+@@ -208,7 +208,11 @@
+                         }
+                     }
+ 
+-                    // variation direction, with respect to the integration direction
++                    if (pendingEvent
++							&& (Math.abs(t1 - pendingEventTime) <= convergence)) {
++						return false;
++					}
++					// variation direction, with respect to the integration direction
+                     increasing = gb >= ga;
+ 
+                     final UnivariateRealFunction f = new UnivariateRealFunction() {
+
+

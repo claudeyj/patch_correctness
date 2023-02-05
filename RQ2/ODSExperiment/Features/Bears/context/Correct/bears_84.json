@@ -1,0 +1,90 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "{\n}",
+            "src_parent": "public class IsNewAwareAuditingHandler extends org.springframework.data.auditing.AuditingHandler {\n    private final org.springframework.data.support.IsNewStrategyFactory isNewStrategyFactory;\n\n    @java.lang.Deprecated\n    @java.lang.SuppressWarnings(\"unchecked\")\n    public IsNewAwareAuditingHandler(org.springframework.data.mapping.context.MappingContext<? extends org.springframework.data.mapping.PersistentEntity<?, ?>, ? extends org.springframework.data.mapping.PersistentProperty<?>> mappingContext) {\n        this(new org.springframework.data.mapping.context.PersistentEntities(java.util.Arrays.asList(mappingContext)));\n    }\n\n    public IsNewAwareAuditingHandler(org.springframework.data.mapping.context.PersistentEntities entities) {\n        super(entities);\n        this.isNewStrategyFactory = new org.springframework.data.mapping.context.MappingContextIsNewStrategyFactory(entities);\n    }\n\n    public void markAudited(java.lang.Object object) {\n        if (object == null) {\n            return;\n        }\n        org.springframework.data.support.IsNewStrategy strategy = isNewStrategyFactory.getIsNewStrategy(object.getClass());\n        if (strategy.isNew(object)) {\n            markCreated(object);\n        } else {\n            markModified(object);\n        }\n    }\n\n    {\n    }\n\n    protected final boolean isAuditable(java.lang.Object source) {\n        return factory.getBeanWrapperFor(source) != null;\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "AnonymousExecutable"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "protected final boolean isAuditable(java.lang.Object source) {\n    return factory.getBeanWrapperFor(source) != null;\n}",
+            "src_parent": "public class IsNewAwareAuditingHandler extends org.springframework.data.auditing.AuditingHandler {\n    private final org.springframework.data.support.IsNewStrategyFactory isNewStrategyFactory;\n\n    @java.lang.Deprecated\n    @java.lang.SuppressWarnings(\"unchecked\")\n    public IsNewAwareAuditingHandler(org.springframework.data.mapping.context.MappingContext<? extends org.springframework.data.mapping.PersistentEntity<?, ?>, ? extends org.springframework.data.mapping.PersistentProperty<?>> mappingContext) {\n        this(new org.springframework.data.mapping.context.PersistentEntities(java.util.Arrays.asList(mappingContext)));\n    }\n\n    public IsNewAwareAuditingHandler(org.springframework.data.mapping.context.PersistentEntities entities) {\n        super(entities);\n        this.isNewStrategyFactory = new org.springframework.data.mapping.context.MappingContextIsNewStrategyFactory(entities);\n    }\n\n    public void markAudited(java.lang.Object object) {\n        if (object == null) {\n            return;\n        }\n        org.springframework.data.support.IsNewStrategy strategy = isNewStrategyFactory.getIsNewStrategy(object.getClass());\n        if (strategy.isNew(object)) {\n            markCreated(object);\n        } else {\n            markModified(object);\n        }\n    }\n\n    {\n    }\n\n    protected final boolean isAuditable(java.lang.Object source) {\n        return factory.getBeanWrapperFor(source) != null;\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "IsNewAwareAuditingHandler"
+    }
+  ],
+  "id": "bears_84"
+}

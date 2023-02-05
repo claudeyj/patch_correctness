@@ -1,0 +1,13 @@
+
+--- \/tmp\/jMutRepair_Bug_dot_jar_Commons-Math_26a61077\/src\/main\/java\/org\/apache\/commons\/math\/analysis\/function\/Gaussianjava
++++ \/tmp\/jMutRepair_Bug_dot_jar_Commons-Math_26a61077\/src\/main\/java\/org\/apache\/commons\/math\/analysis\/function\/Gaussianjava
+@@ -179,7 +179,7 @@
+ 			if ((param.length) != 3) {
+ 				throw new org.apache.commons.math.exception.DimensionMismatchException(param.length, 3);
+ 			}
+-			if ((param[2]) <= 0) {
++			if ((param[2]) == 0) {
+ 				throw new org.apache.commons.math.exception.NotStrictlyPositiveException(param[2]);
+ 			}
+ 		}
+

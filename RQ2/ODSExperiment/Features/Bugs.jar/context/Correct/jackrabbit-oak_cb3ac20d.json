@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "Switch",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "If",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "ForEach",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if ((pr.first == null) && (pr.last == null)) {\n    continue;\n}",
+            "src_parent": "{\n    if ((pr.first == null) && (pr.last == null)) {\n        continue;\n    }\n    java.lang.String name = pr.propertyName;\n    if (name.contains(\"/\")) {\n        continue;\n    }\n    if (\"rep:excerpt\".equals(name)) {\n        continue;\n    }\n    if (JcrConstants.JCR_PRIMARYTYPE.equals(name)) {\n        continue;\n    }\n    java.lang.String first = null;\n    java.lang.String last = null;\n    boolean isLike = pr.isLike;\n    if (pr.first != null) {\n        first = pr.first.getValue(Type.STRING);\n        first = first.replace(\"\\\\\", \"\");\n    }\n    if (pr.last != null) {\n        last = pr.last.getValue(Type.STRING);\n        last = last.replace(\"\\\\\", \"\");\n    }\n    if (isLike) {\n        first = first.replace('%', WildcardQuery.WILDCARD_STRING);\n        first = first.replace('_', WildcardQuery.WILDCARD_CHAR);\n        int indexOfWS = first.indexOf(WildcardQuery.WILDCARD_STRING);\n        int indexOfWC = first.indexOf(WildcardQuery.WILDCARD_CHAR);\n        int len = first.length();\n        if ((indexOfWS == len) || (indexOfWC == len)) {\n            first = first.substring(0, first.length() - 1);\n            if (org.apache.jackrabbit.oak.plugins.index.lucene.JCR_PATH.equals(name)) {\n                qs.add(new org.apache.lucene.search.PrefixQuery(org.apache.jackrabbit.oak.plugins.index.lucene.TermFactory.newPathTerm(first)));\n            } else {\n                qs.add(new org.apache.lucene.search.PrefixQuery(new org.apache.lucene.index.Term(name, first)));\n            }\n        } else if (org.apache.jackrabbit.oak.plugins.index.lucene.JCR_PATH.equals(name)) {\n            qs.add(new org.apache.lucene.search.WildcardQuery(org.apache.jackrabbit.oak.plugins.index.lucene.TermFactory.newPathTerm(first)));\n        } else {\n            qs.add(new org.apache.lucene.search.WildcardQuery(new org.apache.lucene.index.Term(name, first)));\n        }\n        continue;\n    }\n    if ((((first != null) && first.equals(last)) && pr.firstIncluding) && pr.lastIncluding) {\n        if (org.apache.jackrabbit.oak.plugins.index.lucene.JCR_PATH.equals(name)) {\n            qs.add(new org.apache.lucene.search.TermQuery(org.apache.jackrabbit.oak.plugins.index.lucene.TermFactory.newPathTerm(first)));\n        } else if (\"*\".equals(name)) {\n            org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndex.addReferenceConstraint(first, qs, reader);\n        } else {\n            qs.add(new org.apache.lucene.search.TermQuery(new org.apache.lucene.index.Term(name, first)));\n        }\n        continue;\n    }\n    qs.add(org.apache.lucene.search.TermRangeQuery.newStringRange(name, first, last, pr.firstIncluding, pr.lastIncluding));\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "LuceneIndex"
+    }
+  ],
+  "id": "jackrabbit-oak_cb3ac20d"
+}

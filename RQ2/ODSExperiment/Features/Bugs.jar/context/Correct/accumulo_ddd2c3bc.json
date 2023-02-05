@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "dataOutput.writeBoolean(offlineScan)",
+            "src_parent": "{\n    if (iterators != null) {\n        dataOutput.writeInt(iterators.size());\n        for (org.apache.accumulo.core.client.IteratorSetting setting : iterators) {\n            setting.write(dataOutput);\n        }\n    } else {\n        dataOutput.writeInt(0);\n    }\n    if (ranges != null) {\n        dataOutput.writeInt(ranges.size());\n        for (org.apache.accumulo.core.data.Range range : ranges) {\n            range.write(dataOutput);\n        }\n    } else {\n        dataOutput.writeInt(0);\n    }\n    if (columns != null) {\n        dataOutput.writeInt(columns.size());\n        for (org.apache.accumulo.core.util.Pair<org.apache.hadoop.io.Text, org.apache.hadoop.io.Text> column : columns) {\n            if (column.getSecond() == null) {\n                dataOutput.writeInt(1);\n                column.getFirst().write(dataOutput);\n            } else {\n                dataOutput.writeInt(2);\n                column.getFirst().write(dataOutput);\n                column.getSecond().write(dataOutput);\n            }\n        }\n    } else {\n        dataOutput.writeInt(0);\n    }\n    dataOutput.writeBoolean(autoAdjustRanges);\n    dataOutput.writeBoolean(useLocalIterators);\n    dataOutput.writeBoolean(useIsolatedScanners);\n    dataOutput.writeBoolean(offlineScan);\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "offlineScan = dataInput.readBoolean()",
+            "src_parent": "{\n    long iterSize = dataInput.readInt();\n    if (iterSize > 0) {\n        iterators = new java.util.ArrayList<org.apache.accumulo.core.client.IteratorSetting>();\n    }\n    for (int i = 0; i < iterSize; i++) {\n        iterators.add(new org.apache.accumulo.core.client.IteratorSetting(dataInput));\n    }\n    long rangeSize = dataInput.readInt();\n    if (rangeSize > 0) {\n        ranges = new java.util.ArrayList<org.apache.accumulo.core.data.Range>();\n    }\n    for (int i = 0; i < rangeSize; i++) {\n        org.apache.accumulo.core.data.Range range = new org.apache.accumulo.core.data.Range();\n        range.readFields(dataInput);\n        ranges.add(range);\n    }\n    long columnSize = dataInput.readInt();\n    if (columnSize > 0) {\n        columns = new java.util.HashSet<org.apache.accumulo.core.util.Pair<org.apache.hadoop.io.Text, org.apache.hadoop.io.Text>>();\n    }\n    for (int i = 0; i < columnSize; i++) {\n        long numPairs = dataInput.readInt();\n        org.apache.hadoop.io.Text colFam = new org.apache.hadoop.io.Text();\n        colFam.readFields(dataInput);\n        if (numPairs == 1) {\n            columns.add(new org.apache.accumulo.core.util.Pair<org.apache.hadoop.io.Text, org.apache.hadoop.io.Text>(colFam, null));\n        } else if (numPairs == 2) {\n            org.apache.hadoop.io.Text colQual = new org.apache.hadoop.io.Text();\n            colQual.readFields(dataInput);\n            columns.add(new org.apache.accumulo.core.util.Pair<org.apache.hadoop.io.Text, org.apache.hadoop.io.Text>(colFam, colQual));\n        }\n    }\n    autoAdjustRanges = dataInput.readBoolean();\n    useLocalIterators = dataInput.readBoolean();\n    useIsolatedScanners = dataInput.readBoolean();\n    offlineScan = dataInput.readBoolean();\n}",
+            "src_parent_type": "Block",
+            "src_type": "Assignment"
+          }
+        }
+      ],
+      "file_name": "InputTableConfig"
+    }
+  ],
+  "id": "accumulo_ddd2c3bc"
+}

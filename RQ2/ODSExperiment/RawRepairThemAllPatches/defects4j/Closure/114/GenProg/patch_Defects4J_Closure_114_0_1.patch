@@ -1,0 +1,23 @@
+--- /tmp/GenProg_Defects4J_Closure_114/src/com/google/javascript/rhino/Node.java	2018-12-02 05:51:27.866763740 -0500
++++ /tmp/GenProg_Defects4J_Closure_114/patches_5fhy/Patch_1757/patched/tmp/GenProg_Defects4J_Closure_114/src/com/google/javascript/rhino/Node.java	2018-12-02 06:19:34.090327018 -0500
+@@ -1427,7 +1427,8 @@
+   public String checkTreeEquals(Node node2) {
+       NodeMismatch diff = checkTreeEqualsImpl(node2);
+       if (diff != null) {
+-        return "Node tree inequality:" +
++        this.sourcePosition = sourcePosition;
++		return "Node tree inequality:" +
+             "\nTree1:\n" + toStringTree() +
+             "\n\nTree2:\n" + node2.toStringTree() +
+             "\n\nSubtree1: " + diff.nodeA.toStringTree() +
+@@ -1456,7 +1457,7 @@
+       }
+       res = n.checkTreeEqualsImpl(n2);
+       if (res != null) {
+-        return res;
++        return null;
+       }
+     }
+     return res;
+
+

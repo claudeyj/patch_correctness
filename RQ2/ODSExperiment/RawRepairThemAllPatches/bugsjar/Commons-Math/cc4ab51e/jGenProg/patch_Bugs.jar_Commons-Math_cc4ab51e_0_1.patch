@@ -1,0 +1,17 @@
+
+--- org\/apache\/commons\/math3\/distribution\/SaddlePointExpansion.java
++++ org\/apache\/commons\/math3\/distribution\/SaddlePointExpansion.java
+@@ -179,9 +179,9 @@
+ 		double ret;
+ 		if (x == 0) {
+ 			if (p < 0.1) {
+-				ret = (-(org.apache.commons.math3.distribution.SaddlePointExpansion.getDeviancePart(n, (n * q)))) - (n * p);
+-			}else {
+-				ret = n * (org.apache.commons.math3.util.FastMath.log(q));
++
++
++				ret = n * (org.apache.commons.math3.util.FastMath.log(q));}else { 				ret = n * (org.apache.commons.math3.util.FastMath.log(q));
+ 			}
+ 		}else 			if (x == n) {
+ 				if (q < 0.1) {
+

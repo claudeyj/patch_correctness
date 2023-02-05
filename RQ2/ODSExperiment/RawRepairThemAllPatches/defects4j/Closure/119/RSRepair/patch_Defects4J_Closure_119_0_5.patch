@@ -1,0 +1,14 @@
+--- /tmp/RSRepair_Defects4J_Closure_119/src/com/google/javascript/jscomp/CheckGlobalNames.java	2018-12-02 05:20:35.521619059 -0500
++++ /tmp/RSRepair_Defects4J_Closure_119/patches_u5xu/Patch_15/patched/tmp/RSRepair_Defects4J_Closure_119/src/com/google/javascript/jscomp/CheckGlobalNames.java	2018-12-02 05:26:01.990432799 -0500
+@@ -155,9 +155,6 @@
+       boolean isGlobalExpr = ref.getNode().getParent().isExprResult();
+ 
+       if (!isDefined && !isTypedef(ref)) {
+-        if (!isGlobalExpr) {
+-          reportRefToUndefinedName(name, ref);
+-        }
+       } else if (declaration != null &&
+           ref.getModule() != declaration.getModule() &&
+           !moduleGraph.dependsOn(
+
+

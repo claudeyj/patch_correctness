@@ -1,0 +1,93 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "sbuf.append(\"<meta charset=\\\"\").append(getCharset()).append(\"\\\"/>\").append(Constants.LINE_SEP)",
+            "src_parent": "{\n    final java.lang.StringBuilder sbuf = new java.lang.StringBuilder();\n    sbuf.append(\"<!DOCTYPE HTML PUBLIC \\\"-//W3C//DTD HTML 4.01 Transitional//EN\\\" \");\n    sbuf.append(\"\\\"http://www.w3.org/TR/html4/loose.dtd\\\">\");\n    sbuf.append(Constants.LINE_SEP);\n    sbuf.append(\"<html>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<head>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<meta charset=\\\"\").append(getCharset()).append(\"\\\"/>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<title>\").append(title).append(\"</title>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<style type=\\\"text/css\\\">\").append(Constants.LINE_SEP);\n    sbuf.append(\"<!--\").append(Constants.LINE_SEP);\n    sbuf.append(\"body, table {font-family:\").append(font).append(\"; font-size: \");\n    sbuf.append(headerSize).append(\";}\").append(Constants.LINE_SEP);\n    sbuf.append(\"th {background: #336699; color: #FFFFFF; text-align: left;}\").append(Constants.LINE_SEP);\n    sbuf.append(\"-->\").append(Constants.LINE_SEP);\n    sbuf.append(\"</style>\").append(Constants.LINE_SEP);\n    sbuf.append(\"</head>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<body bgcolor=\\\"#FFFFFF\\\" topmargin=\\\"6\\\" leftmargin=\\\"6\\\">\").append(Constants.LINE_SEP);\n    sbuf.append(\"<hr size=\\\"1\\\" noshade>\").append(Constants.LINE_SEP);\n    sbuf.append((\"Log session start time \" + new java.util.Date()) + \"<br>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<br>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<table cellspacing=\\\"0\\\" cellpadding=\\\"4\\\" border=\\\"1\\\" bordercolor=\\\"#224466\\\" width=\\\"100%\\\">\");\n    sbuf.append(Constants.LINE_SEP);\n    sbuf.append(\"<tr>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<th>Time</th>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<th>Thread</th>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<th>Level</th>\").append(Constants.LINE_SEP);\n    sbuf.append(\"<th>Logger</th>\").append(Constants.LINE_SEP);\n    if (locationInfo) {\n        sbuf.append(\"<th>File:Line</th>\").append(Constants.LINE_SEP);\n    }\n    sbuf.append(\"<th>Message</th>\").append(Constants.LINE_SEP);\n    sbuf.append(\"</tr>\").append(Constants.LINE_SEP);\n    return sbuf.toString().getBytes(getCharset());\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "Assignment",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "LocalVariable",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "Charsets.UTF_8",
+            "src_parent": "org.apache.logging.log4j.core.helpers.Charsets.getSupportedCharset(charsetName, Charsets.UTF_8)",
+            "src_parent_type": "Invocation",
+            "src_type": "TypeAccess"
+          }
+        }
+      ],
+      "file_name": "HTMLLayout"
+    }
+  ],
+  "id": "logging-log4j2_7b38965d"
+}

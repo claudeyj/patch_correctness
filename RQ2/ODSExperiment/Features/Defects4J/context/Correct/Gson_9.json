@@ -1,0 +1,143 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "@java.lang.Override\npublic com.google.gson.stream.JsonWriter value(java.lang.Boolean value) throws java.io.IOException {\n    if (value == null) {\n        return nullValue();\n    }\n    put(new com.google.gson.JsonPrimitive(value));\n    return this;\n}",
+            "src_parent": "public final class JsonTreeWriter extends com.google.gson.stream.JsonWriter {\n    private static final java.io.Writer UNWRITABLE_WRITER = new java.io.Writer() {\n        @java.lang.Override\n        public void write(char[] buffer, int offset, int counter) {\n            throw new java.lang.AssertionError();\n        }\n\n        @java.lang.Override\n        public void flush() throws java.io.IOException {\n            throw new java.lang.AssertionError();\n        }\n\n        @java.lang.Override\n        public void close() throws java.io.IOException {\n            throw new java.lang.AssertionError();\n        }\n    };\n\n    private static final com.google.gson.JsonPrimitive SENTINEL_CLOSED = new com.google.gson.JsonPrimitive(\"closed\");\n\n    private final java.util.List<com.google.gson.JsonElement> stack = new java.util.ArrayList<com.google.gson.JsonElement>();\n\n    private java.lang.String pendingName;\n\n    private com.google.gson.JsonElement product = com.google.gson.JsonNull.INSTANCE;\n\n    public JsonTreeWriter() {\n        super(com.google.gson.internal.bind.JsonTreeWriter.UNWRITABLE_WRITER);\n    }\n\n    public com.google.gson.JsonElement get() {\n        if (!stack.isEmpty()) {\n            throw new java.lang.IllegalStateException(\"Expected one JSON element but was \" + stack);\n        }\n        return product;\n    }\n\n    private com.google.gson.JsonElement peek() {\n        return stack.get(stack.size() - 1);\n    }\n\n    private void put(com.google.gson.JsonElement value) {\n        if (pendingName != null) {\n            if ((!value.isJsonNull()) || getSerializeNulls()) {\n                com.google.gson.JsonObject object = ((com.google.gson.JsonObject) (peek()));\n                object.add(pendingName, value);\n            }\n            pendingName = null;\n        } else if (stack.isEmpty()) {\n            product = value;\n        } else {\n            com.google.gson.JsonElement element = peek();\n            if (element instanceof com.google.gson.JsonArray) {\n                ((com.google.gson.JsonArray) (element)).add(value);\n            } else {\n                throw new java.lang.IllegalStateException();\n            }\n        }\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter beginArray() throws java.io.IOException {\n        com.google.gson.JsonArray array = new com.google.gson.JsonArray();\n        put(array);\n        stack.add(array);\n        return this;\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter endArray() throws java.io.IOException {\n        if (stack.isEmpty() || (pendingName != null)) {\n            throw new java.lang.IllegalStateException();\n        }\n        com.google.gson.JsonElement element = peek();\n        if (element instanceof com.google.gson.JsonArray) {\n            stack.remove(stack.size() - 1);\n            return this;\n        }\n        throw new java.lang.IllegalStateException();\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter beginObject() throws java.io.IOException {\n        com.google.gson.JsonObject object = new com.google.gson.JsonObject();\n        put(object);\n        stack.add(object);\n        return this;\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter endObject() throws java.io.IOException {\n        if (stack.isEmpty() || (pendingName != null)) {\n            throw new java.lang.IllegalStateException();\n        }\n        com.google.gson.JsonElement element = peek();\n        if (element instanceof com.google.gson.JsonObject) {\n            stack.remove(stack.size() - 1);\n            return this;\n        }\n        throw new java.lang.IllegalStateException();\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter name(java.lang.String name) throws java.io.IOException {\n        if (stack.isEmpty() || (pendingName != null)) {\n            throw new java.lang.IllegalStateException();\n        }\n        com.google.gson.JsonElement element = peek();\n        if (element instanceof com.google.gson.JsonObject) {\n            pendingName = name;\n            return this;\n        }\n        throw new java.lang.IllegalStateException();\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter value(java.lang.String value) throws java.io.IOException {\n        if (value == null) {\n            return nullValue();\n        }\n        put(new com.google.gson.JsonPrimitive(value));\n        return this;\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter nullValue() throws java.io.IOException {\n        put(com.google.gson.JsonNull.INSTANCE);\n        return this;\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter value(boolean value) throws java.io.IOException {\n        put(new com.google.gson.JsonPrimitive(value));\n        return this;\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter value(java.lang.Boolean value) throws java.io.IOException {\n        if (value == null) {\n            return nullValue();\n        }\n        put(new com.google.gson.JsonPrimitive(value));\n        return this;\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter value(double value) throws java.io.IOException {\n        if ((!isLenient()) && (java.lang.Double.isNaN(value) || java.lang.Double.isInfinite(value))) {\n            throw new java.lang.IllegalArgumentException(\"JSON forbids NaN and infinities: \" + value);\n        }\n        put(new com.google.gson.JsonPrimitive(value));\n        return this;\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter value(long value) throws java.io.IOException {\n        put(new com.google.gson.JsonPrimitive(value));\n        return this;\n    }\n\n    @java.lang.Override\n    public com.google.gson.stream.JsonWriter value(java.lang.Number value) throws java.io.IOException {\n        if (value == null) {\n            return nullValue();\n        }\n        if (!isLenient()) {\n            double d = value.doubleValue();\n            if (java.lang.Double.isNaN(d) || java.lang.Double.isInfinite(d)) {\n                throw new java.lang.IllegalArgumentException(\"JSON forbids NaN and infinities: \" + value);\n            }\n        }\n        put(new com.google.gson.JsonPrimitive(value));\n        return this;\n    }\n\n    @java.lang.Override\n    public void flush() throws java.io.IOException {\n    }\n\n    @java.lang.Override\n    public void close() throws java.io.IOException {\n        if (!stack.isEmpty()) {\n            throw new java.io.IOException(\"Incomplete document\");\n        }\n        stack.add(com.google.gson.internal.bind.JsonTreeWriter.SENTINEL_CLOSED);\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "JsonTreeWriter"
+    },
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (value == null) {\n    out.nullValue();\n    return;\n}",
+            "src_parent": "{\n    if (value == null) {\n        out.nullValue();\n        return;\n    }\n    out.value(value);\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "TypeAdapters"
+    },
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "public com.google.gson.stream.JsonWriter value(java.lang.Boolean value) throws java.io.IOException {\n    if (value == null) {\n        return nullValue();\n    }\n    writeDeferredName();\n    beforeValue();\n    out.write(value ? \"true\" : \"false\");\n    return this;\n}",
+            "src_parent": "public class JsonWriter implements java.io.Closeable , java.io.Flushable {\n    private static final java.lang.String[] REPLACEMENT_CHARS;\n\n    private static final java.lang.String[] HTML_SAFE_REPLACEMENT_CHARS;\n\n    static {\n        REPLACEMENT_CHARS = new java.lang.String[128];\n        for (int i = 0; i <= 0x1f; i++) {\n            REPLACEMENT_CHARS[i] = java.lang.String.format(\"\\\\u%04x\", ((int) (i)));\n        }\n        REPLACEMENT_CHARS['\"'] = \"\\\\\\\"\";\n        REPLACEMENT_CHARS['\\\\'] = \"\\\\\\\\\";\n        REPLACEMENT_CHARS['\\t'] = \"\\\\t\";\n        REPLACEMENT_CHARS['\\b'] = \"\\\\b\";\n        REPLACEMENT_CHARS['\\n'] = \"\\\\n\";\n        REPLACEMENT_CHARS['\\r'] = \"\\\\r\";\n        REPLACEMENT_CHARS['\\f'] = \"\\\\f\";\n        HTML_SAFE_REPLACEMENT_CHARS = REPLACEMENT_CHARS.clone();\n        HTML_SAFE_REPLACEMENT_CHARS['<'] = \"\\\\u003c\";\n        HTML_SAFE_REPLACEMENT_CHARS['>'] = \"\\\\u003e\";\n        HTML_SAFE_REPLACEMENT_CHARS['&'] = \"\\\\u0026\";\n        HTML_SAFE_REPLACEMENT_CHARS['='] = \"\\\\u003d\";\n        HTML_SAFE_REPLACEMENT_CHARS['\\''] = \"\\\\u0027\";\n    }\n\n    private final java.io.Writer out;\n\n    private int[] stack = new int[32];\n\n    private int stackSize = 0;\n\n    {\n        push(com.google.gson.stream.JsonScope.EMPTY_DOCUMENT);\n    }\n\n    private java.lang.String indent;\n\n    private java.lang.String separator = \":\";\n\n    private boolean lenient;\n\n    private boolean htmlSafe;\n\n    private java.lang.String deferredName;\n\n    private boolean serializeNulls = true;\n\n    public JsonWriter(java.io.Writer out) {\n        if (out == null) {\n            throw new java.lang.NullPointerException(\"out == null\");\n        }\n        this.out = out;\n    }\n\n    public final void setIndent(java.lang.String indent) {\n        if (indent.length() == 0) {\n            this.indent = null;\n            this.separator = \":\";\n        } else {\n            this.indent = indent;\n            this.separator = \": \";\n        }\n    }\n\n    public final void setLenient(boolean lenient) {\n        this.lenient = lenient;\n    }\n\n    public boolean isLenient() {\n        return lenient;\n    }\n\n    public final void setHtmlSafe(boolean htmlSafe) {\n        this.htmlSafe = htmlSafe;\n    }\n\n    public final boolean isHtmlSafe() {\n        return htmlSafe;\n    }\n\n    public final void setSerializeNulls(boolean serializeNulls) {\n        this.serializeNulls = serializeNulls;\n    }\n\n    public final boolean getSerializeNulls() {\n        return serializeNulls;\n    }\n\n    public com.google.gson.stream.JsonWriter beginArray() throws java.io.IOException {\n        writeDeferredName();\n        return open(com.google.gson.stream.JsonScope.EMPTY_ARRAY, \"[\");\n    }\n\n    public com.google.gson.stream.JsonWriter endArray() throws java.io.IOException {\n        return close(com.google.gson.stream.JsonScope.EMPTY_ARRAY, com.google.gson.stream.JsonScope.NONEMPTY_ARRAY, \"]\");\n    }\n\n    public com.google.gson.stream.JsonWriter beginObject() throws java.io.IOException {\n        writeDeferredName();\n        return open(com.google.gson.stream.JsonScope.EMPTY_OBJECT, \"{\");\n    }\n\n    public com.google.gson.stream.JsonWriter endObject() throws java.io.IOException {\n        return close(com.google.gson.stream.JsonScope.EMPTY_OBJECT, com.google.gson.stream.JsonScope.NONEMPTY_OBJECT, \"}\");\n    }\n\n    private com.google.gson.stream.JsonWriter open(int empty, java.lang.String openBracket) throws java.io.IOException {\n        beforeValue();\n        push(empty);\n        out.write(openBracket);\n        return this;\n    }\n\n    private com.google.gson.stream.JsonWriter close(int empty, int nonempty, java.lang.String closeBracket) throws java.io.IOException {\n        int context = peek();\n        if ((context != nonempty) && (context != empty)) {\n            throw new java.lang.IllegalStateException(\"Nesting problem.\");\n        }\n        if (deferredName != null) {\n            throw new java.lang.IllegalStateException(\"Dangling name: \" + deferredName);\n        }\n        stackSize--;\n        if (context == nonempty) {\n            newline();\n        }\n        out.write(closeBracket);\n        return this;\n    }\n\n    private void push(int newTop) {\n        if (stackSize == stack.length) {\n            int[] newStack = new int[stackSize * 2];\n            java.lang.System.arraycopy(stack, 0, newStack, 0, stackSize);\n            stack = newStack;\n        }\n        stack[stackSize++] = newTop;\n    }\n\n    private int peek() {\n        if (stackSize == 0) {\n            throw new java.lang.IllegalStateException(\"JsonWriter is closed.\");\n        }\n        return stack[stackSize - 1];\n    }\n\n    private void replaceTop(int topOfStack) {\n        stack[stackSize - 1] = topOfStack;\n    }\n\n    public com.google.gson.stream.JsonWriter name(java.lang.String name) throws java.io.IOException {\n        if (name == null) {\n            throw new java.lang.NullPointerException(\"name == null\");\n        }\n        if (deferredName != null) {\n            throw new java.lang.IllegalStateException();\n        }\n        if (stackSize == 0) {\n            throw new java.lang.IllegalStateException(\"JsonWriter is closed.\");\n        }\n        deferredName = name;\n        return this;\n    }\n\n    private void writeDeferredName() throws java.io.IOException {\n        if (deferredName != null) {\n            beforeName();\n            string(deferredName);\n            deferredName = null;\n        }\n    }\n\n    public com.google.gson.stream.JsonWriter value(java.lang.String value) throws java.io.IOException {\n        if (value == null) {\n            return nullValue();\n        }\n        writeDeferredName();\n        beforeValue();\n        string(value);\n        return this;\n    }\n\n    public com.google.gson.stream.JsonWriter jsonValue(java.lang.String value) throws java.io.IOException {\n        if (value == null) {\n            return nullValue();\n        }\n        writeDeferredName();\n        beforeValue();\n        out.append(value);\n        return this;\n    }\n\n    public com.google.gson.stream.JsonWriter nullValue() throws java.io.IOException {\n        if (deferredName != null) {\n            if (serializeNulls) {\n                writeDeferredName();\n            } else {\n                deferredName = null;\n                return this;\n            }\n        }\n        beforeValue();\n        out.write(\"null\");\n        return this;\n    }\n\n    public com.google.gson.stream.JsonWriter value(boolean value) throws java.io.IOException {\n        writeDeferredName();\n        beforeValue();\n        out.write(value ? \"true\" : \"false\");\n        return this;\n    }\n\n    public com.google.gson.stream.JsonWriter value(java.lang.Boolean value) throws java.io.IOException {\n        if (value == null) {\n            return nullValue();\n        }\n        writeDeferredName();\n        beforeValue();\n        out.write(value ? \"true\" : \"false\");\n        return this;\n    }\n\n    public com.google.gson.stream.JsonWriter value(double value) throws java.io.IOException {\n        if (java.lang.Double.isNaN(value) || java.lang.Double.isInfinite(value)) {\n            throw new java.lang.IllegalArgumentException(\"Numeric values must be finite, but was \" + value);\n        }\n        writeDeferredName();\n        beforeValue();\n        out.append(java.lang.Double.toString(value));\n        return this;\n    }\n\n    public com.google.gson.stream.JsonWriter value(long value) throws java.io.IOException {\n        writeDeferredName();\n        beforeValue();\n        out.write(java.lang.Long.toString(value));\n        return this;\n    }\n\n    public com.google.gson.stream.JsonWriter value(java.lang.Number value) throws java.io.IOException {\n        if (value == null) {\n            return nullValue();\n        }\n        writeDeferredName();\n        java.lang.String string = value.toString();\n        if ((!lenient) && ((string.equals(\"-Infinity\") || string.equals(\"Infinity\")) || string.equals(\"NaN\"))) {\n            throw new java.lang.IllegalArgumentException(\"Numeric values must be finite, but was \" + value);\n        }\n        beforeValue();\n        out.append(string);\n        return this;\n    }\n\n    public void flush() throws java.io.IOException {\n        if (stackSize == 0) {\n            throw new java.lang.IllegalStateException(\"JsonWriter is closed.\");\n        }\n        out.flush();\n    }\n\n    public void close() throws java.io.IOException {\n        out.close();\n        int size = stackSize;\n        if ((size > 1) || ((size == 1) && (stack[size - 1] != com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT))) {\n            throw new java.io.IOException(\"Incomplete document\");\n        }\n        stackSize = 0;\n    }\n\n    private void string(java.lang.String value) throws java.io.IOException {\n        java.lang.String[] replacements = (htmlSafe) ? com.google.gson.stream.JsonWriter.HTML_SAFE_REPLACEMENT_CHARS : com.google.gson.stream.JsonWriter.REPLACEMENT_CHARS;\n        out.write(\"\\\"\");\n        int last = 0;\n        int length = value.length();\n        for (int i = 0; i < length; i++) {\n            char c = value.charAt(i);\n            java.lang.String replacement;\n            if (c < 128) {\n                replacement = replacements[c];\n                if (replacement == null) {\n                    continue;\n                }\n            } else if (c == '\u2028') {\n                replacement = \"\\\\u2028\";\n            } else if (c == '\u2029') {\n                replacement = \"\\\\u2029\";\n            } else {\n                continue;\n            }\n            if (last < i) {\n                out.write(value, last, i - last);\n            }\n            out.write(replacement);\n            last = i + 1;\n        }\n        if (last < length) {\n            out.write(value, last, length - last);\n        }\n        out.write(\"\\\"\");\n    }\n\n    private void newline() throws java.io.IOException {\n        if (indent == null) {\n            return;\n        }\n        out.write(\"\\n\");\n        for (int i = 1, size = stackSize; i < size; i++) {\n            out.write(indent);\n        }\n    }\n\n    private void beforeName() throws java.io.IOException {\n        int context = peek();\n        if (context == com.google.gson.stream.JsonScope.NONEMPTY_OBJECT) {\n            out.write(',');\n        } else if (context != com.google.gson.stream.JsonScope.EMPTY_OBJECT) {\n            throw new java.lang.IllegalStateException(\"Nesting problem.\");\n        }\n        newline();\n        replaceTop(com.google.gson.stream.JsonScope.DANGLING_NAME);\n    }\n\n    @java.lang.SuppressWarnings(\"fallthrough\")\n    private void beforeValue() throws java.io.IOException {\n        switch (peek()) {\n            case com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT :\n                if (!lenient) {\n                    throw new java.lang.IllegalStateException(\"JSON must have only one top-level value.\");\n                }\n            case com.google.gson.stream.JsonScope.EMPTY_DOCUMENT :\n                replaceTop(com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT);\n                break;\n            case com.google.gson.stream.JsonScope.EMPTY_ARRAY :\n                replaceTop(com.google.gson.stream.JsonScope.NONEMPTY_ARRAY);\n                newline();\n                break;\n            case com.google.gson.stream.JsonScope.NONEMPTY_ARRAY :\n                out.append(',');\n                newline();\n                break;\n            case com.google.gson.stream.JsonScope.DANGLING_NAME :\n                out.append(separator);\n                replaceTop(com.google.gson.stream.JsonScope.NONEMPTY_OBJECT);\n                break;\n            default :\n                throw new java.lang.IllegalStateException(\"Nesting problem.\");\n        }\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "JsonWriter"
+    }
+  ],
+  "id": "Gson_9"
+}

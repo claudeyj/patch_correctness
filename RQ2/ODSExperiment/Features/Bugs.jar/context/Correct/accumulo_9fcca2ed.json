@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "final java.util.concurrent.atomic.AtomicInteger tableIdCounter = new java.util.concurrent.atomic.AtomicInteger(0);",
+            "src_parent": "public class MockAccumulo {\n    final java.util.Map<java.lang.String, org.apache.accumulo.core.client.mock.MockTable> tables = new java.util.HashMap<java.lang.String, org.apache.accumulo.core.client.mock.MockTable>();\n\n    final java.util.Map<java.lang.String, java.lang.String> systemProperties = new java.util.HashMap<java.lang.String, java.lang.String>();\n\n    java.util.Map<java.lang.String, org.apache.accumulo.core.client.mock.MockUser> users = new java.util.HashMap<java.lang.String, org.apache.accumulo.core.client.mock.MockUser>();\n\n    final org.apache.hadoop.fs.FileSystem fs;\n\n    final java.util.concurrent.atomic.AtomicInteger tableIdCounter = new java.util.concurrent.atomic.AtomicInteger(0);\n\n    MockAccumulo(org.apache.hadoop.fs.FileSystem fs) {\n        this.fs = fs;\n    }\n\n    {\n        org.apache.accumulo.core.client.mock.MockUser root = new org.apache.accumulo.core.client.mock.MockUser(\"root\", new org.apache.accumulo.core.client.security.tokens.PasswordToken(new byte[0]), org.apache.accumulo.core.Constants.NO_AUTHS);\n        root.permissions.add(SystemPermission.SYSTEM);\n        users.put(root.name, root);\n        createTable(\"root\", Constants.METADATA_TABLE_NAME, true, TimeType.LOGICAL);\n    }\n\n    public org.apache.hadoop.fs.FileSystem getFileSystem() {\n        return fs;\n    }\n\n    void setProperty(java.lang.String key, java.lang.String value) {\n        systemProperties.put(key, value);\n    }\n\n    java.lang.String removeProperty(java.lang.String key) {\n        return systemProperties.remove(key);\n    }\n\n    void createTable(java.lang.String user, java.lang.String table) {\n        createTable(user, table, true, TimeType.MILLIS);\n    }\n\n    public void addMutation(java.lang.String table, org.apache.accumulo.core.data.Mutation m) {\n        org.apache.accumulo.core.client.mock.MockTable t = tables.get(table);\n        t.addMutation(m);\n    }\n\n    public org.apache.accumulo.core.client.BatchScanner createBatchScanner(java.lang.String tableName, org.apache.accumulo.core.security.Authorizations authorizations) {\n        return new org.apache.accumulo.core.client.mock.MockBatchScanner(tables.get(tableName), authorizations);\n    }\n\n    public void createTable(java.lang.String username, java.lang.String tableName, boolean useVersions, org.apache.accumulo.core.client.admin.TimeType timeType) {\n        org.apache.accumulo.core.client.mock.MockTable t = new org.apache.accumulo.core.client.mock.MockTable(useVersions, timeType, java.lang.Integer.toString(tableIdCounter.incrementAndGet()));\n        t.userPermissions.put(username, java.util.EnumSet.allOf(org.apache.accumulo.core.security.TablePermission.class));\n        tables.put(tableName, t);\n    }\n\n    public void addSplits(java.lang.String tableName, java.util.SortedSet<org.apache.hadoop.io.Text> partitionKeys) {\n        tables.get(tableName).addSplits(partitionKeys);\n    }\n\n    public java.util.Collection<org.apache.hadoop.io.Text> getSplits(java.lang.String tableName) {\n        return tables.get(tableName).getSplits();\n    }\n\n    public void merge(java.lang.String tableName, org.apache.hadoop.io.Text start, org.apache.hadoop.io.Text end) {\n        tables.get(tableName).merge(start, end);\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Field"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "LocalVariable",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "java.lang.Integer.toString(tableIdCounter.incrementAndGet())",
+            "src_parent": "new org.apache.accumulo.core.client.mock.MockTable(useVersions, timeType, java.lang.Integer.toString(tableIdCounter.incrementAndGet()))",
+            "src_parent_type": "ConstructorCall",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "MockAccumulo"
+    }
+  ],
+  "id": "accumulo_9fcca2ed"
+}

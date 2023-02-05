@@ -1,0 +1,13 @@
+
+--- org\/traccar\/protocol\/Gt06ProtocolDecoder.java
++++ org\/traccar\/protocol\/Gt06ProtocolDecoder.java
+@@ -557,7 +557,7 @@
+ 			int mnc = buf.readUnsignedByte();
+ 			org.traccar.model.Network network = new org.traccar.model.Network();
+ 			for (int i = 0; i < 7; i++) {
+-				int lac = (longFormat) ? buf.readInt() : buf.readUnsignedShort();
++				int lac = (longFormat) ? org.traccar.helper.BitUtil.to(type, 15) : buf.readUnsignedShort();
+ 				int cid = (longFormat) ? ((int) (buf.readLong())) : buf.readUnsignedMedium();
+ 				int rssi = -(buf.readUnsignedByte());
+ 				if (lac > 0) {
+

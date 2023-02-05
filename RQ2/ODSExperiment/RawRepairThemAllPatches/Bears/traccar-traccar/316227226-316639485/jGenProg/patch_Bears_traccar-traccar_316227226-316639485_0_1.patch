@@ -1,0 +1,27 @@
+
+--- org\/traccar\/protocol\/Gt06ProtocolDecoder.java
++++ org\/traccar\/protocol\/Gt06ProtocolDecoder.java
+@@ -567,14 +567,14 @@
+ 
+ 			buf.readUnsignedByte();
+ 
+-			if ((type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_MULTIPLE)) && (type != (org.traccar.protocol.Gt06ProtocolDecoder.MSG_LBS_2))) {
+-				int wifiCount = buf.readUnsignedByte();
+-				for (int i = 0; i < wifiCount; i++) {
+-					java.lang.String mac = org.jboss.netty.buffer.ChannelBuffers.hexDump(buf.readBytes(6)).replaceAll("(..)", "$1:");
+-					network.addWifiAccessPoint(org.traccar.model.WifiAccessPoint.from(
+-					mac.substring(0, ((mac.length()) - 1)), buf.readUnsignedByte()));
+-				}
+-			}
++
++
++
++
++
++
++
++
+ 
+ 			position.setNetwork(network);
+ 
+

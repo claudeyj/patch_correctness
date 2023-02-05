@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "If",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "For",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "adopter.attributes().addAll(formatEl.attributes())",
+            "src_parent": "{\n    org.jsoup.parser.Element formatEl = tb.getActiveFormattingElement(name);\n    if (formatEl == null) {\n        return anyOtherEndTag(t, tb);\n    } else if (!tb.onStack(formatEl)) {\n        tb.error(this);\n        tb.removeFromActiveFormattingElements(formatEl);\n        return true;\n    } else if (!tb.inScope(formatEl.nodeName())) {\n        tb.error(this);\n        return false;\n    } else if (tb.currentElement() != formatEl) {\n        tb.error(this);\n    }\n    org.jsoup.parser.Element furthestBlock = null;\n    org.jsoup.parser.Element commonAncestor = null;\n    boolean seenFormattingElement = false;\n    java.util.LinkedList<org.jsoup.parser.Element> stack = tb.getStack();\n    for (int si = 0; (si < stack.size()) && (si < 64); si++) {\n        org.jsoup.parser.Element el = stack.get(si);\n        if (el == formatEl) {\n            commonAncestor = stack.get(si - 1);\n            seenFormattingElement = true;\n        } else if (seenFormattingElement && tb.isSpecial(el)) {\n            furthestBlock = el;\n            break;\n        }\n    }\n    if (furthestBlock == null) {\n        tb.popStackToClose(formatEl.nodeName());\n        tb.removeFromActiveFormattingElements(formatEl);\n        return true;\n    }\n    org.jsoup.parser.Element node = furthestBlock;\n    org.jsoup.parser.Element lastNode = furthestBlock;\n    INNER : for (int j = 0; j < 3; j++) {\n        if (tb.onStack(node)) {\n            node = tb.aboveOnStack(node);\n        }\n        if (!tb.isInActiveFormattingElements(node)) {\n            tb.removeFromStack(node);\n            continue INNER;\n        } else if (node == formatEl) {\n            break INNER;\n        }\n        org.jsoup.parser.Element replacement = new org.jsoup.parser.Element(org.jsoup.parser.Tag.valueOf(node.nodeName()), tb.getBaseUri());\n        tb.replaceActiveFormattingElement(node, replacement);\n        tb.replaceOnStack(node, replacement);\n        node = replacement;\n        if (lastNode == furthestBlock) {\n        }\n        if (lastNode.parent() != null) {\n            lastNode.remove();\n        }\n        node.appendChild(lastNode);\n        lastNode = node;\n    }\n    if (org.jsoup.helper.StringUtil.in(commonAncestor.nodeName(), \"table\", \"tbody\", \"tfoot\", \"thead\", \"tr\")) {\n        if (lastNode.parent() != null) {\n            lastNode.remove();\n        }\n        tb.insertInFosterParent(lastNode);\n    } else {\n        if (lastNode.parent() != null) {\n            lastNode.remove();\n        }\n        commonAncestor.appendChild(lastNode);\n    }\n    org.jsoup.parser.Element adopter = new org.jsoup.parser.Element(formatEl.tag(), tb.getBaseUri());\n    adopter.attributes().addAll(formatEl.attributes());\n    org.jsoup.parser.Node[] childNodes = furthestBlock.childNodes().toArray(new org.jsoup.parser.Node[furthestBlock.childNodeSize()]);\n    for (org.jsoup.parser.Node childNode : childNodes) {\n        adopter.appendChild(childNode);\n    }\n    furthestBlock.appendChild(adopter);\n    tb.removeFromActiveFormattingElements(formatEl);\n    tb.removeFromStack(formatEl);\n    tb.insertOnStackAfter(furthestBlock, adopter);\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "HtmlTreeBuilderState"
+    }
+  ],
+  "id": "Jsoup_35"
+}

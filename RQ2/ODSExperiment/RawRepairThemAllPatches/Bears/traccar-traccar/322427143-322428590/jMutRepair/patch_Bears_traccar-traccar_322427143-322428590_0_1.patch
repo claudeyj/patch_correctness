@@ -1,0 +1,13 @@
+
+--- org\/traccar\/protocol\/MeitrackProtocolDecoder.java
++++ org\/traccar\/protocol\/MeitrackProtocolDecoder.java
+@@ -254,7 +254,7 @@
+ 			position.set("tempData", values[1]);
+ 		}
+ 
+-		if (((values.length) > 5) && (!(values[5].isEmpty()))) {
++		if (((values.length) == 5) && (!(values[5].isEmpty()))) {
+ 			java.lang.String[] data = values[5].split("\\|");
+ 			boolean started = (data[0].charAt(0)) == '0';
+ 			position.set("taximeterOn", started);
+

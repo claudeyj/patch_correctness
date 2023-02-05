@@ -1,0 +1,13 @@
+
+--- \/tmp\/jMutRepair_Bug_dot_jar_Accumulo_3d55560a\/src\/core\/src\/main\/java\/org\/apache\/accumulo\/core\/client\/mock\/MockTablejava
++++ \/tmp\/jMutRepair_Bug_dot_jar_Accumulo_3d55560a\/src\/core\/src\/main\/java\/org\/apache\/accumulo\/core\/client\/mock\/MockTablejava
+@@ -104,7 +104,7 @@
+ 			if (u.isDeleted())
+ 				key.setDeleted(true);
+ 			if (!(u.hasTimestamp()))
+-				if (timeType.equals(org.apache.accumulo.core.client.admin.TimeType.LOGICAL))
++				if (!(this.timeType.equals(org.apache.accumulo.core.client.admin.TimeType.LOGICAL)))
+ 					key.setTimestamp(mutationCount);else
+ 
+ 					key.setTimestamp(now);
+

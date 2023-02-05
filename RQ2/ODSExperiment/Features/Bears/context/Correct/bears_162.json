@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (java.sql.Types.DECIMAL == dataType.jdbcType()) {\n    if (dataType.length() == (-1)) {\n        column.length(10);\n    }\n    if (dataType.scale() == (-1)) {\n        column.scale(0);\n    }\n}",
+            "src_parent": "{\n    java.util.List<io.debezium.text.ParsingException> errors = new java.util.ArrayList<>();\n    io.debezium.text.TokenStream.Marker dataTypeStart = tokens.mark();\n    io.debezium.relational.ddl.DataType dataType = dataTypeParser.parse(tokens, errors::addAll);\n    if (dataType == null) {\n        java.lang.String dataTypeName = parseDomainName(start);\n        if (dataTypeName != null) {\n            dataType = io.debezium.relational.ddl.DataType.userDefinedType(dataTypeName);\n        }\n    }\n    if (dataType == null) {\n        parsingFailed(dataTypeStart.position(), errors, \"Unable to read the data type\");\n        return;\n    }\n    column.jdbcType(dataType.jdbcType());\n    column.type(dataType.name(), dataType.expression());\n    if (\"ENUM\".equals(dataType.name())) {\n        column.length(1);\n    } else if (\"SET\".equals(dataType.name())) {\n        java.util.List<java.lang.String> options = io.debezium.connector.mysql.MySqlDdlParser.parseSetAndEnumOptions(dataType.expression());\n        column.length(java.lang.Math.max(0, (options.size() * 2) - 1));\n    } else {\n        if (dataType.length() > (-1)) {\n            column.length(((int) (dataType.length())));\n        }\n        if (dataType.scale() > (-1)) {\n            column.scale(dataType.scale());\n        }\n    }\n    if ((java.sql.Types.NCHAR == dataType.jdbcType()) || (java.sql.Types.NVARCHAR == dataType.jdbcType())) {\n        column.charsetName(\"utf8\");\n    }\n    if (java.sql.Types.DECIMAL == dataType.jdbcType()) {\n        if (dataType.length() == (-1)) {\n            column.length(10);\n        }\n        if (dataType.scale() == (-1)) {\n            column.scale(0);\n        }\n    }\n    if (tokens.canConsume(\"CHARSET\") || tokens.canConsume(\"CHARACTER\", \"SET\")) {\n        java.lang.String charsetName = tokens.consume();\n        if (!\"DEFAULT\".equalsIgnoreCase(charsetName)) {\n            column.charsetName(charsetName);\n        }\n    }\n    if (tokens.canConsume(\"COLLATE\")) {\n        tokens.consume();\n    }\n    if (tokens.canConsume(\"AS\") || tokens.canConsume(\"GENERATED\", \"ALWAYS\", \"AS\")) {\n        consumeExpression(start);\n        tokens.canConsumeAnyOf(\"VIRTUAL\", \"STORED\");\n        if (tokens.canConsume(\"UNIQUE\")) {\n            tokens.canConsume(\"KEY\");\n        }\n        if (tokens.canConsume(\"COMMENT\")) {\n            consumeQuotedString();\n        }\n        tokens.canConsume(\"NOT\", \"NULL\");\n        tokens.canConsume(\"NULL\");\n        tokens.canConsume(\"PRIMARY\", \"KEY\");\n        tokens.canConsume(\"KEY\");\n    } else {\n        while (tokens.matchesAnyOf(\"NOT\", \"NULL\", \"DEFAULT\", \"AUTO_INCREMENT\", \"UNIQUE\", \"PRIMARY\", \"KEY\", \"COMMENT\", \"REFERENCES\", \"COLUMN_FORMAT\", \"ON\", \"COLLATE\")) {\n            if (tokens.canConsume(\"NOT\", \"NULL\")) {\n                column.optional(false);\n            } else if (tokens.canConsume(\"NULL\")) {\n                column.optional(true);\n            }\n            if (tokens.matches(\"DEFAULT\")) {\n                parseDefaultClause(start);\n            }\n            if (tokens.matches(\"ON\", \"UPDATE\") || tokens.matches(\"ON\", \"DELETE\")) {\n                parseOnUpdateOrDelete(tokens.mark());\n                column.autoIncremented(true);\n            }\n            if (tokens.canConsume(\"AUTO_INCREMENT\")) {\n                column.autoIncremented(true);\n                column.generated(true);\n            }\n            if (tokens.canConsume(\"UNIQUE\", \"KEY\") || tokens.canConsume(\"UNIQUE\")) {\n                if (table.primaryKeyColumnNames().isEmpty() && (!column.isOptional())) {\n                    isPrimaryKey.set(true);\n                }\n            }\n            if (tokens.canConsume(\"PRIMARY\", \"KEY\") || tokens.canConsume(\"KEY\")) {\n                column.optional(false);\n                isPrimaryKey.set(true);\n            }\n            if (tokens.canConsume(\"COMMENT\")) {\n                consumeQuotedString();\n            }\n            if (tokens.canConsume(\"COLUMN_FORMAT\")) {\n                tokens.consumeAnyOf(\"FIXED\", \"DYNAMIC\", \"DEFAULT\");\n            }\n            if (tokens.matches(\"REFERENCES\")) {\n                parseReferenceDefinition(start);\n            }\n            if (tokens.canConsume(\"COLLATE\")) {\n                tokens.consume();\n            }\n        } \n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "MySqlDdlParser"
+    }
+  ],
+  "id": "bears_162"
+}

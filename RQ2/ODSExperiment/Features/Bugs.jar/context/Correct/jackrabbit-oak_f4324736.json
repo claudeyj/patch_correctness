@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Annotation",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "FieldRead",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "org.apache.felix.scr.annotations.ReferenceCardinality.OPTIONAL_UNARY",
+            "dst_parent": "@org.apache.felix.scr.annotations.Reference(policy = org.apache.felix.scr.annotations.ReferencePolicy.DYNAMIC, cardinality = org.apache.felix.scr.annotations.ReferenceCardinality.OPTIONAL_UNARY, policyOption = org.apache.felix.scr.annotations.ReferencePolicyOption.GREEDY)",
+            "dst_parent_type": "Annotation",
+            "dst_type": "FieldRead",
+            "operator": "UPD",
+            "src": "org.apache.felix.scr.annotations.ReferenceCardinality.OPTIONAL_MULTIPLE",
+            "src_parent": "@org.apache.felix.scr.annotations.Reference(policy = org.apache.felix.scr.annotations.ReferencePolicy.DYNAMIC, cardinality = org.apache.felix.scr.annotations.ReferenceCardinality.OPTIONAL_MULTIPLE, policyOption = org.apache.felix.scr.annotations.ReferencePolicyOption.GREEDY)",
+            "src_parent_type": "Annotation",
+            "src_type": "FieldRead"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (extractedTextProvider != null) {\n    registerExtractedTextProvider(extractedTextProvider);\n}",
+            "src_parent": "{\n    int cacheSizeInMB = org.apache.jackrabbit.oak.commons.PropertiesUtil.toInteger(config.get(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexProviderService.PROP_EXTRACTED_TEXT_CACHE_SIZE), org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexProviderService.PROP_EXTRACTED_TEXT_CACHE_SIZE_DEFAULT);\n    int cacheExpiryInSecs = org.apache.jackrabbit.oak.commons.PropertiesUtil.toInteger(config.get(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexProviderService.PROP_EXTRACTED_TEXT_CACHE_EXPIRY), org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexProviderService.PROP_EXTRACTED_TEXT_CACHE_EXPIRY_DEFAULT);\n    extractedTextCache = new org.apache.jackrabbit.oak.plugins.index.lucene.ExtractedTextCache(cacheSizeInMB * org.apache.commons.io.FileUtils.ONE_MB, cacheExpiryInSecs);\n    if (extractedTextProvider != null) {\n        registerExtractedTextProvider(extractedTextProvider);\n    }\n    org.apache.jackrabbit.oak.cache.CacheStats stats = extractedTextCache.getCacheStats();\n    if (stats != null) {\n        oakRegs.add(registerMBean(whiteboard, org.apache.jackrabbit.oak.api.jmx.CacheStatsMBean.class, stats, CacheStatsMBean.TYPE, stats.getName()));\n        log.info(\"Extracted text caching enabled with maxSize {} MB, expiry time {} secs\", cacheSizeInMB, cacheExpiryInSecs);\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "LuceneIndexProviderService"
+    }
+  ],
+  "id": "jackrabbit-oak_f4324736"
+}

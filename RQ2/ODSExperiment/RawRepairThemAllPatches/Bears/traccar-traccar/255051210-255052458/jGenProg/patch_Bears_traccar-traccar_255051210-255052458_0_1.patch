@@ -1,0 +1,35 @@
+
+--- org\/traccar\/BaseProtocolDecoder.java
++++ org\/traccar\/BaseProtocolDecoder.java
+@@ -106,18 +106,18 @@
+ 	}
+ 
+ 	public org.traccar.DeviceSession getDeviceSession(org.jboss.netty.channel.Channel channel, java.net.SocketAddress remoteAddress, java.lang.String... uniqueIds) {
+-		if (((channel.getPipeline().get(org.jboss.netty.handler.codec.http.HttpRequestDecoder.class)) != null) || 
+-		(org.traccar.Context.getConfig().getBoolean("decoder.ignoreSessionCache"))) {
+-			long deviceId = findDeviceId(remoteAddress, uniqueIds);
+-			if (deviceId != 0) {
+-				if ((org.traccar.Context.getConnectionManager()) != null) {
+-					org.traccar.Context.getConnectionManager().addActiveDevice(deviceId, protocol, channel, remoteAddress);
+-				}
+-				return new org.traccar.DeviceSession(deviceId);
+-			}else {
+-				return null;
+-			}
+-		}
++
++
++
++
++
++
++
++
++
++
++
++
+ 		if (channel instanceof org.jboss.netty.channel.socket.DatagramChannel) {
+ 			long deviceId = findDeviceId(remoteAddress, uniqueIds);
+ 			org.traccar.DeviceSession deviceSession = addressDeviceSessions.get(remoteAddress);
+

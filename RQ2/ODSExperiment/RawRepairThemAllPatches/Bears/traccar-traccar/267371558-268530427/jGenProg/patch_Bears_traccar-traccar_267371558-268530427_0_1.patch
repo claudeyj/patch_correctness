@@ -1,0 +1,13 @@
+
+--- org\/traccar\/protocol\/Gl200TextProtocolDecoder.java
++++ org\/traccar\/protocol\/Gl200TextProtocolDecoder.java
+@@ -614,7 +614,7 @@
+ 				for (int i = 1; i <= deviceCount; i++) {
+ 					index++;
+ 					index++;
+-					position.set(((org.traccar.model.Position.PREFIX_TEMP) + i), ((java.lang.Short.parseShort(data[(index++)], 16)) * 0.0625));
++
+ 				}
+ 			}
+ 		}
+

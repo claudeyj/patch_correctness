@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Field",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "private static final long serialVersionUID = 20130104L;",
+            "src_parent": "public abstract class BitsStreamGenerator implements java.io.Serializable , org.apache.commons.math3.random.RandomGenerator {\n    private static final long serialVersionUID = 20130104L;\n\n    private double nextGaussian;\n\n    public BitsStreamGenerator() {\n        nextGaussian = java.lang.Double.NaN;\n    }\n\n    public abstract void setSeed(int seed);\n\n    public abstract void setSeed(int[] seed);\n\n    public abstract void setSeed(long seed);\n\n    protected abstract int next(int bits);\n\n    public boolean nextBoolean() {\n        return next(1) != 0;\n    }\n\n    public void nextBytes(byte[] bytes) {\n        int i = 0;\n        final int iEnd = bytes.length - 3;\n        while (i < iEnd) {\n            final int random = next(32);\n            bytes[i] = ((byte) (random & 0xff));\n            bytes[i + 1] = ((byte) ((random >> 8) & 0xff));\n            bytes[i + 2] = ((byte) ((random >> 16) & 0xff));\n            bytes[i + 3] = ((byte) ((random >> 24) & 0xff));\n            i += 4;\n        } \n        int random = next(32);\n        while (i < bytes.length) {\n            bytes[i++] = ((byte) (random & 0xff));\n            random = random >> 8;\n        } \n    }\n\n    public double nextDouble() {\n        final long high = ((long) (next(26))) << 26;\n        final int low = next(26);\n        return (high | low) * 0x1.0p-52;\n    }\n\n    public float nextFloat() {\n        return next(23) * 0x1.0p-23F;\n    }\n\n    public double nextGaussian() {\n        final double random;\n        if (java.lang.Double.isNaN(nextGaussian)) {\n            final double x = nextDouble();\n            final double y = nextDouble();\n            final double alpha = (2 * org.apache.commons.math3.util.FastMath.PI) * x;\n            final double r = org.apache.commons.math3.util.FastMath.sqrt((-2) * org.apache.commons.math3.util.FastMath.log(y));\n            random = r * org.apache.commons.math3.util.FastMath.cos(alpha);\n            nextGaussian = r * org.apache.commons.math3.util.FastMath.sin(alpha);\n        } else {\n            random = nextGaussian;\n            nextGaussian = java.lang.Double.NaN;\n        }\n        return random;\n    }\n\n    public int nextInt() {\n        return next(32);\n    }\n\n    public int nextInt(int n) throws java.lang.IllegalArgumentException {\n        if (n > 0) {\n            if ((n & (-n)) == n) {\n                return ((int) ((n * ((long) (next(31)))) >> 31));\n            }\n            int bits;\n            int val;\n            do {\n                bits = next(31);\n                val = bits % n;\n            } while (((bits - val) + (n - 1)) < 0 );\n            return val;\n        }\n        throw new org.apache.commons.math3.exception.NotStrictlyPositiveException(n);\n    }\n\n    public long nextLong() {\n        final long high = ((long) (next(32))) << 32;\n        final long low = ((long) (next(32))) & 0xffffffffL;\n        return high | low;\n    }\n\n    public void clear() {\n        nextGaussian = java.lang.Double.NaN;\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Field"
+          }
+        }
+      ],
+      "file_name": "BitsStreamGenerator"
+    }
+  ],
+  "id": "Math_12"
+}

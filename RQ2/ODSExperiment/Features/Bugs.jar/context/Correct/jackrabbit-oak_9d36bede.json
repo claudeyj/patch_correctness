@@ -1,0 +1,90 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "{\n}",
+            "src_parent": "public class VersionGarbageCollector {\n    private final org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore nodeStore;\n\n    private final org.apache.jackrabbit.oak.plugins.document.VersionGCSupport versionStore;\n\n    private final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(getClass());\n\n    private static final java.util.Set<org.apache.jackrabbit.oak.plugins.document.NodeDocument.SplitDocType> GC_TYPES = java.util.EnumSet.of(NodeDocument.SplitDocType.DEFAULT_NO_CHILD, NodeDocument.SplitDocType.PROP_COMMIT_ONLY);\n\n    VersionGarbageCollector(org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore nodeStore) {\n        this.nodeStore = nodeStore;\n        if (nodeStore.getDocumentStore() instanceof org.apache.jackrabbit.oak.plugins.document.mongo.MongoDocumentStore) {\n            this.versionStore = new org.apache.jackrabbit.oak.plugins.document.mongo.MongoVersionGCSupport(((org.apache.jackrabbit.oak.plugins.document.mongo.MongoDocumentStore) (nodeStore.getDocumentStore())));\n        } else {\n            this.versionStore = new org.apache.jackrabbit.oak.plugins.document.VersionGCSupport(nodeStore.getDocumentStore());\n        }\n    }\n\n    public org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats gc(long maxRevisionAge, java.util.concurrent.TimeUnit unit) {\n        long maxRevisionAgeInMillis = unit.toMillis(maxRevisionAge);\n        com.google.common.base.Stopwatch sw = com.google.common.base.Stopwatch.createStarted();\n        org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats stats = new org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats();\n        final long oldestRevTimeStamp = nodeStore.getClock().getTime() - maxRevisionAgeInMillis;\n        final org.apache.jackrabbit.oak.plugins.document.Revision headRevision = nodeStore.getHeadRevision();\n        log.info(\"Starting revision garbage collection. Revisions older than [{}] would be \" + \"removed\", org.apache.jackrabbit.oak.plugins.document.util.Utils.timestampToString(oldestRevTimeStamp));\n        org.apache.jackrabbit.oak.plugins.document.Revision checkpoint = nodeStore.getCheckpoints().getOldestRevisionToKeep();\n        if ((checkpoint != null) && (checkpoint.getTimestamp() < oldestRevTimeStamp)) {\n            log.info(\"Ignoring version gc as valid checkpoint [{}] found while \" + \"need to collect versions older than [{}]\", checkpoint.toReadableString(), org.apache.jackrabbit.oak.plugins.document.util.Utils.timestampToString(oldestRevTimeStamp));\n            stats.ignoredGCDueToCheckPoint = true;\n            return stats;\n        }\n        collectDeletedDocuments(stats, headRevision, oldestRevTimeStamp);\n        collectSplitDocuments(stats, oldestRevTimeStamp);\n        sw.stop();\n        log.info(\"Version garbage collected in {}. {}\", sw, stats);\n        return stats;\n    }\n\n    private void collectSplitDocuments(org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats stats, long oldestRevTimeStamp) {\n        int count = versionStore.deleteSplitDocuments(org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.GC_TYPES, oldestRevTimeStamp);\n        stats.splitDocGCCount += count;\n    }\n\n    private void collectDeletedDocuments(org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats stats, org.apache.jackrabbit.oak.plugins.document.Revision headRevision, long oldestRevTimeStamp) {\n        java.util.List<java.lang.String> docIdsToDelete = new java.util.ArrayList<java.lang.String>();\n        java.lang.Iterable<org.apache.jackrabbit.oak.plugins.document.NodeDocument> itr = versionStore.getPossiblyDeletedDocs(oldestRevTimeStamp);\n        try {\n            for (org.apache.jackrabbit.oak.plugins.document.NodeDocument doc : itr) {\n                if (doc.getNodeAtRevision(nodeStore, headRevision, null) == null) {\n                    docIdsToDelete.add(doc.getId());\n                    for (org.apache.jackrabbit.oak.plugins.document.NodeDocument prevDoc : com.google.common.collect.ImmutableList.copyOf(doc.getAllPreviousDocs())) {\n                        docIdsToDelete.add(prevDoc.getId());\n                    }\n                }\n            }\n        } finally {\n            org.apache.jackrabbit.oak.plugins.document.util.Utils.closeIfCloseable(itr);\n        }\n        if (log.isDebugEnabled()) {\n            java.lang.StringBuilder sb = new java.lang.StringBuilder(\"Deleted document with following ids were deleted as part of GC \\n\");\n            com.google.common.base.Joiner.on(com.google.common.base.StandardSystemProperty.LINE_SEPARATOR.value()).appendTo(sb, docIdsToDelete);\n            log.debug(sb.toString());\n        }\n        nodeStore.getDocumentStore().remove(Collection.NODES, docIdsToDelete);\n        stats.deletedDocGCCount += docIdsToDelete.size();\n    }\n\n    public static class VersionGCStats {\n        boolean ignoredGCDueToCheckPoint;\n\n        int deletedDocGCCount;\n\n        int splitDocGCCount;\n\n        @java.lang.Override\n        public java.lang.String toString() {\n            return ((((((\"VersionGCStats{\" + \"ignoredGCDueToCheckPoint=\") + ignoredGCDueToCheckPoint) + \", deletedDocGCCount=\") + deletedDocGCCount) + \", splitDocGCCount=\") + splitDocGCCount) + '}';\n        }\n    }\n\n    {\n    }\n\n    void invalidateDocChildrenCache() {\n        docChildrenCache.invalidateAll();\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "AnonymousExecutable"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "void invalidateDocChildrenCache() {\n    docChildrenCache.invalidateAll();\n}",
+            "src_parent": "public class VersionGarbageCollector {\n    private final org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore nodeStore;\n\n    private final org.apache.jackrabbit.oak.plugins.document.VersionGCSupport versionStore;\n\n    private final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(getClass());\n\n    private static final java.util.Set<org.apache.jackrabbit.oak.plugins.document.NodeDocument.SplitDocType> GC_TYPES = java.util.EnumSet.of(NodeDocument.SplitDocType.DEFAULT_NO_CHILD, NodeDocument.SplitDocType.PROP_COMMIT_ONLY);\n\n    VersionGarbageCollector(org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore nodeStore) {\n        this.nodeStore = nodeStore;\n        if (nodeStore.getDocumentStore() instanceof org.apache.jackrabbit.oak.plugins.document.mongo.MongoDocumentStore) {\n            this.versionStore = new org.apache.jackrabbit.oak.plugins.document.mongo.MongoVersionGCSupport(((org.apache.jackrabbit.oak.plugins.document.mongo.MongoDocumentStore) (nodeStore.getDocumentStore())));\n        } else {\n            this.versionStore = new org.apache.jackrabbit.oak.plugins.document.VersionGCSupport(nodeStore.getDocumentStore());\n        }\n    }\n\n    public org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats gc(long maxRevisionAge, java.util.concurrent.TimeUnit unit) {\n        long maxRevisionAgeInMillis = unit.toMillis(maxRevisionAge);\n        com.google.common.base.Stopwatch sw = com.google.common.base.Stopwatch.createStarted();\n        org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats stats = new org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats();\n        final long oldestRevTimeStamp = nodeStore.getClock().getTime() - maxRevisionAgeInMillis;\n        final org.apache.jackrabbit.oak.plugins.document.Revision headRevision = nodeStore.getHeadRevision();\n        log.info(\"Starting revision garbage collection. Revisions older than [{}] would be \" + \"removed\", org.apache.jackrabbit.oak.plugins.document.util.Utils.timestampToString(oldestRevTimeStamp));\n        org.apache.jackrabbit.oak.plugins.document.Revision checkpoint = nodeStore.getCheckpoints().getOldestRevisionToKeep();\n        if ((checkpoint != null) && (checkpoint.getTimestamp() < oldestRevTimeStamp)) {\n            log.info(\"Ignoring version gc as valid checkpoint [{}] found while \" + \"need to collect versions older than [{}]\", checkpoint.toReadableString(), org.apache.jackrabbit.oak.plugins.document.util.Utils.timestampToString(oldestRevTimeStamp));\n            stats.ignoredGCDueToCheckPoint = true;\n            return stats;\n        }\n        collectDeletedDocuments(stats, headRevision, oldestRevTimeStamp);\n        collectSplitDocuments(stats, oldestRevTimeStamp);\n        sw.stop();\n        log.info(\"Version garbage collected in {}. {}\", sw, stats);\n        return stats;\n    }\n\n    private void collectSplitDocuments(org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats stats, long oldestRevTimeStamp) {\n        int count = versionStore.deleteSplitDocuments(org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.GC_TYPES, oldestRevTimeStamp);\n        stats.splitDocGCCount += count;\n    }\n\n    private void collectDeletedDocuments(org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.VersionGCStats stats, org.apache.jackrabbit.oak.plugins.document.Revision headRevision, long oldestRevTimeStamp) {\n        java.util.List<java.lang.String> docIdsToDelete = new java.util.ArrayList<java.lang.String>();\n        java.lang.Iterable<org.apache.jackrabbit.oak.plugins.document.NodeDocument> itr = versionStore.getPossiblyDeletedDocs(oldestRevTimeStamp);\n        try {\n            for (org.apache.jackrabbit.oak.plugins.document.NodeDocument doc : itr) {\n                if (doc.getNodeAtRevision(nodeStore, headRevision, null) == null) {\n                    docIdsToDelete.add(doc.getId());\n                    for (org.apache.jackrabbit.oak.plugins.document.NodeDocument prevDoc : com.google.common.collect.ImmutableList.copyOf(doc.getAllPreviousDocs())) {\n                        docIdsToDelete.add(prevDoc.getId());\n                    }\n                }\n            }\n        } finally {\n            org.apache.jackrabbit.oak.plugins.document.util.Utils.closeIfCloseable(itr);\n        }\n        if (log.isDebugEnabled()) {\n            java.lang.StringBuilder sb = new java.lang.StringBuilder(\"Deleted document with following ids were deleted as part of GC \\n\");\n            com.google.common.base.Joiner.on(com.google.common.base.StandardSystemProperty.LINE_SEPARATOR.value()).appendTo(sb, docIdsToDelete);\n            log.debug(sb.toString());\n        }\n        nodeStore.getDocumentStore().remove(Collection.NODES, docIdsToDelete);\n        stats.deletedDocGCCount += docIdsToDelete.size();\n    }\n\n    public static class VersionGCStats {\n        boolean ignoredGCDueToCheckPoint;\n\n        int deletedDocGCCount;\n\n        int splitDocGCCount;\n\n        @java.lang.Override\n        public java.lang.String toString() {\n            return ((((((\"VersionGCStats{\" + \"ignoredGCDueToCheckPoint=\") + ignoredGCDueToCheckPoint) + \", deletedDocGCCount=\") + deletedDocGCCount) + \", splitDocGCCount=\") + splitDocGCCount) + '}';\n        }\n    }\n\n    {\n    }\n\n    void invalidateDocChildrenCache() {\n        docChildrenCache.invalidateAll();\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        }
+      ],
+      "file_name": "VersionGarbageCollector"
+    }
+  ],
+  "id": "jackrabbit-oak_9d36bede"
+}

@@ -1,0 +1,64 @@
+
+--- org\/traccar\/protocol\/EelinkProtocolDecoder.java
++++ org\/traccar\/protocol\/EelinkProtocolDecoder.java
+@@ -131,39 +131,39 @@
+ 
+ 		position.setValid((((buf.readUnsignedByte()) & 1) != 0));
+ 
+-		if (type == (org.traccar.protocol.EelinkProtocolDecoder.MSG_GPS)) {
+ 
+-			if ((buf.readableBytes()) >= 2) {
+-				decodeStatus(position, buf.readUnsignedShort());
+-			}
+ 
+-			if ((buf.readableBytes()) >= (2 * 4)) {
+ 
+-				position.set(org.traccar.model.Position.KEY_BATTERY, ((buf.readUnsignedShort()) * 0.001));
+ 
+-				position.set(org.traccar.model.Position.KEY_RSSI, buf.readUnsignedShort());
+ 
+-				position.set(((org.traccar.model.Position.PREFIX_ADC) + 1), buf.readUnsignedShort());
+-				position.set(((org.traccar.model.Position.PREFIX_ADC) + 2), buf.readUnsignedShort());
+ 
+-			}
+ 
+-		}else 			if (type == (org.traccar.protocol.EelinkProtocolDecoder.MSG_ALARM)) {
+ 
+-				position.set(org.traccar.model.Position.KEY_ALARM, decodeAlarm(buf.readUnsignedByte()));
+ 
+-			}else 				if (type == (org.traccar.protocol.EelinkProtocolDecoder.MSG_STATE)) {
+ 
+-					int statusType = buf.readUnsignedByte();
+ 
+-					position.set(org.traccar.model.Position.KEY_EVENT, statusType);
+ 
+-					if (((statusType == 1) || (statusType == 2)) || (statusType == 3)) {
+-						buf.readUnsignedInt();
+-						decodeStatus(position, buf.readUnsignedShort());
+-					}
+ 
+-				}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 		return position;
+ 	}
+

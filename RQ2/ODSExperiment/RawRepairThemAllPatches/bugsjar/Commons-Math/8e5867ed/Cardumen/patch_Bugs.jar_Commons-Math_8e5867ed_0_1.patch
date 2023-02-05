@@ -1,0 +1,13 @@
+
+--- \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_8e5867ed\/src\/main\/java\/org\/apache\/commons\/math3\/util\/Precisionjava
++++ \/tmp\/Cardumen_Bug_dot_jar_Commons-Math_8e5867ed\/src\/main\/java\/org\/apache\/commons\/math3\/util\/Precisionjava
+@@ -516,7 +516,7 @@
+ 				}
+ 				break;
+ 			case java.math.BigDecimal.ROUND_UP :
+-				unscaled = org.apache.commons.math3.util.FastMath.ceil(org.apache.commons.math3.util.FastMath.nextAfter(unscaled, java.lang.Double.POSITIVE_INFINITY));
++				unscaled = org.apache.commons.math3.util.FastMath.ceil(org.apache.commons.math3.util.FastMath.ceil(unscaled));
+ 				break;
+ 			default :
+ 				throw new org.apache.commons.math3.exception.MathIllegalArgumentException(org.apache.commons.math3.exception.util.LocalizedFormats.INVALID_ROUNDING_METHOD, 
+

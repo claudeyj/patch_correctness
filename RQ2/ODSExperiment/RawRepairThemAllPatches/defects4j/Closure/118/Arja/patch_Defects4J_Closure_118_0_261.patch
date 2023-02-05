@@ -1,0 +1,26 @@
+--- /tmp/Arja_Defects4J_Closure_118/src/com/google/javascript/jscomp/TypedScopeCreator.java	2018-12-01 08:50:18.948921226 -0500
++++ /tmp/Arja_Defects4J_Closure_118/patches_pkqi/Patch_1267/patched/tmp/Arja_Defects4J_Closure_118/src/com/google/javascript/jscomp/TypedScopeCreator.java	2018-12-01 09:09:50.803039898 -0500
+@@ -1669,7 +1669,8 @@
+       if (qName != null && qName.endsWith(".prototype")) {
+         String className = qName.substring(0, qName.lastIndexOf(".prototype"));
+         Var slot = scope.getSlot(className);
+-        JSType classType = slot == null ? null : slot.getType();
++        this.sourceName = sourceName;
++		JSType classType = slot == null ? null : slot.getType();
+         if (classType != null
+             && (classType.isConstructor() || classType.isInterface())) {
+           return false;
+
+
+--- /tmp/Arja_Defects4J_Closure_118/src/com/google/javascript/jscomp/DisambiguateProperties.java	2018-12-01 08:50:21.552921286 -0500
++++ /tmp/Arja_Defects4J_Closure_118/patches_pkqi/Patch_1267/patched/tmp/Arja_Defects4J_Closure_118/src/com/google/javascript/jscomp/DisambiguateProperties.java	2018-12-01 09:09:50.807039954 -0500
+@@ -439,7 +439,6 @@
+       if (n.isGetProp()) {
+         handleGetProp(t, n);
+       } else if (n.isObjectLit()) {
+-        handleObjectLit(t, n);
+       }
+     }
+ 
+
+

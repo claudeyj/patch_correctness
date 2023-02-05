@@ -1,0 +1,13 @@
+--- /tmp/RSRepair_Defects4J_Closure_22/src/com/google/javascript/jscomp/CheckSideEffects.java	2018-12-02 08:53:14.342528072 -0500
++++ /tmp/RSRepair_Defects4J_Closure_22/patches_zhto/Patch_244/patched/tmp/RSRepair_Defects4J_Closure_22/src/com/google/javascript/jscomp/CheckSideEffects.java	2018-12-02 09:01:54.742124043 -0500
+@@ -112,7 +112,7 @@
+         for (Node an : parent.getAncestors()) {
+           int ancestorType = an.getType();
+           if (ancestorType == Token.COMMA)
+-            continue;
++			break;
+           if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK)
+             return;
+           else
+
+

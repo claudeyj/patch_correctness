@@ -1,0 +1,13 @@
+
+--- org\/apache\/commons\/math\/optimization\/direct\/MultiDirectional.java
++++ org\/apache\/commons\/math\/optimization\/direct\/MultiDirectional.java
+@@ -87,7 +87,7 @@
+ 
+ 
+ 			final org.apache.commons.math.optimization.RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);
+-			if ((comparator.compare(contracted, best)) < 0) {
++			if ((comparator.compare(contracted, best)) == 0) {
+ 
+ 
+ 
+

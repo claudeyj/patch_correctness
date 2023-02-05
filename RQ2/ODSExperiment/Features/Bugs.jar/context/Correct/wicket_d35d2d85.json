@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "{\n    setFlag(org.apache.wicket.FLAG_RENDERING, false);\n}",
+            "src_parent": "if ((markup != null) && (markup.size() > 1)) {\n    org.apache.wicket.markup.MarkupStream stream = new org.apache.wicket.markup.MarkupStream(markup);\n    if (stream.skipUntil(org.apache.wicket.markup.ComponentTag.class)) {\n        stream.next();\n    }\n    while (stream.skipUntil(org.apache.wicket.markup.ComponentTag.class)) {\n        org.apache.wicket.markup.ComponentTag tag = stream.getTag();\n        if (tag.isOpen() || tag.isOpenClose()) {\n            if (tag instanceof org.apache.wicket.markup.WicketTag) {\n                org.apache.wicket.Component component = org.apache.wicket.markup.resolver.ComponentResolvers.resolve(this, stream, tag, null);\n                if ((component != null) && (component.getParent() == null)) {\n                    if (component.getId().equals(tag.getId()) == false) {\n                        tag.setId(component.getId());\n                        tag.setModified(true);\n                    }\n                    add(component);\n                }\n            }\n            if (tag.isOpen()) {\n                stream.skipToMatchingCloseTag(tag);\n            }\n        }\n        stream.next();\n    } \n} else {\n    setFlag(org.apache.wicket.FLAG_RENDERING, false);\n}",
+            "src_parent_type": "If",
+            "src_type": "Block"
+          }
+        }
+      ],
+      "file_name": "MarkupContainer"
+    }
+  ],
+  "id": "wicket_d35d2d85"
+}

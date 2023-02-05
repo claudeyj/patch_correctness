@@ -1,0 +1,20 @@
+
+--- org\/apache\/commons\/math3\/geometry\/enclosing\/WelzlEncloser.java
++++ org\/apache\/commons\/math3\/geometry\/enclosing\/WelzlEncloser.java
+@@ -103,11 +103,11 @@
+ 			support.clear();
+ 			support.add(farthest);
+ 			org.apache.commons.math3.geometry.enclosing.EnclosingBall<S, P> savedBall = ball;
+-			ball = moveToFrontBall(extreme, support);
+-			if ((ball.getRadius()) < (savedBall.getRadius())) {
++			ball = moveToFrontBall(extreme, support); 			if ((points == null) || (points.isEmpty())) { 				return generator.ballOnSupport(new java.util.ArrayList<P>());}
++
++
++
+ 
+-				throw new org.apache.commons.math3.exception.MathInternalError();
+-			}
+ 
+ 
+ 
+

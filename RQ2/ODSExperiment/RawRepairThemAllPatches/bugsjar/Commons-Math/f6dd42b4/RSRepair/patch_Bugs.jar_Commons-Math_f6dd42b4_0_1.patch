@@ -1,0 +1,14 @@
+--- /tmp/RSRepair_Bug_dot_jar_Commons-Math_f6dd42b4/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-12-30 01:27:28.893226000 -0500
++++ /tmp/RSRepair_Bug_dot_jar_Commons-Math_f6dd42b4/patches_0m1a/Patch_300/patched/tmp/RSRepair_Bug_dot_jar_Commons-Math_f6dd42b4/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-12-30 01:42:23.740899533 -0500
+@@ -123,7 +123,8 @@
+             return result;
+         }
+ 
+-        // reduce interval if initial and max bracket the root
++        verifyBracketing(min, max, f);
++		// reduce interval if initial and max bracket the root
+         if (yInitial * yMax < 0) {
+             return solve(f, initial, yInitial, max, yMax, initial, yInitial);
+         }
+
+

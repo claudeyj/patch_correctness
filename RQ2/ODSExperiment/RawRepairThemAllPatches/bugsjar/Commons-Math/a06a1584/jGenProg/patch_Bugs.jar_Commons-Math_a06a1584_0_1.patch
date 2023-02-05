@@ -1,0 +1,24 @@
+
+--- org\/apache\/commons\/math4\/geometry\/euclidean\/threed\/PolyhedronsSet.java
++++ org\/apache\/commons\/math4\/geometry\/euclidean\/threed\/PolyhedronsSet.java
+@@ -323,14 +323,14 @@
+ 		@java.lang.SuppressWarnings("unchecked")
+ 		final org.apache.commons.math4.geometry.partitioning.BoundaryAttribute<org.apache.commons.math4.geometry.euclidean.threed.Euclidean3D> attribute = 
+ 		((org.apache.commons.math4.geometry.partitioning.BoundaryAttribute<org.apache.commons.math4.geometry.euclidean.threed.Euclidean3D>) (node.getAttribute()));
+-		if (((attribute.getPlusOutside()) != null) && 
+-		((((org.apache.commons.math4.geometry.euclidean.threed.SubPlane) (attribute.getPlusOutside())).getRemainingRegion().checkPoint(point2D)) == (org.apache.commons.math4.geometry.partitioning.Region.Location.INSIDE))) {
+-			return attribute.getPlusOutside();
+-		}
++
++
++
++
+ 		if (((attribute.getPlusInside()) != null) && 
+ 		((((org.apache.commons.math4.geometry.euclidean.threed.SubPlane) (attribute.getPlusInside())).getRemainingRegion().checkPoint(point2D)) == (org.apache.commons.math4.geometry.partitioning.Region.Location.INSIDE))) {
+ 			return attribute.getPlusInside();
+-		}
++		} 		if (((attribute.getPlusInside()) != null) && ((((org.apache.commons.math4.geometry.euclidean.threed.SubPlane) (attribute.getPlusInside())).getRemainingRegion().checkPoint(point2D)) == (org.apache.commons.math4.geometry.partitioning.Region.Location.INSIDE))) { 			return attribute.getPlusInside();}
+ 		return null;
+ 	}
+ 
+

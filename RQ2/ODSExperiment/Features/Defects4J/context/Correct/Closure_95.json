@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "LocalVariable",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "if (((n.getType() == com.google.javascript.rhino.Token.GETPROP) && (!scope.isGlobal())) && isQnameRootedInGlobalScope(n)) {\n    com.google.javascript.jscomp.Scope globalScope = scope.getGlobalScope();\n    if (!globalScope.isDeclared(variableName, false)) {\n        scopeToDeclareIn = scope.getGlobalScope();\n    }\n}",
+            "src_parent": "{\n    com.google.common.base.Preconditions.checkArgument(inferred || (type != null));\n    boolean shouldDeclareOnGlobalThis = false;\n    if (n.getType() == com.google.javascript.rhino.Token.NAME) {\n        com.google.common.base.Preconditions.checkArgument((((parent.getType() == com.google.javascript.rhino.Token.FUNCTION) || (parent.getType() == com.google.javascript.rhino.Token.VAR)) || (parent.getType() == com.google.javascript.rhino.Token.LP)) || (parent.getType() == com.google.javascript.rhino.Token.CATCH));\n        shouldDeclareOnGlobalThis = scope.isGlobal() && ((parent.getType() == com.google.javascript.rhino.Token.VAR) || (parent.getType() == com.google.javascript.rhino.Token.FUNCTION));\n    } else {\n        com.google.common.base.Preconditions.checkArgument((n.getType() == com.google.javascript.rhino.Token.GETPROP) && ((parent.getType() == com.google.javascript.rhino.Token.ASSIGN) || (parent.getType() == com.google.javascript.rhino.Token.EXPR_RESULT)));\n    }\n    java.lang.String variableName = n.getQualifiedName();\n    com.google.common.base.Preconditions.checkArgument(!variableName.isEmpty());\n    com.google.javascript.jscomp.Scope scopeToDeclareIn = scope;\n    if (((n.getType() == com.google.javascript.rhino.Token.GETPROP) && (!scope.isGlobal())) && isQnameRootedInGlobalScope(n)) {\n        com.google.javascript.jscomp.Scope globalScope = scope.getGlobalScope();\n        if (!globalScope.isDeclared(variableName, false)) {\n            scopeToDeclareIn = scope.getGlobalScope();\n        }\n    }\n    if (scopeToDeclareIn.isDeclared(variableName, false)) {\n        com.google.javascript.jscomp.Scope.Var oldVar = scopeToDeclareIn.getVar(variableName);\n        validator.expectUndeclaredVariable(sourceName, n, parent, oldVar, variableName, type);\n    } else {\n        if (!inferred) {\n            setDeferredType(n, type);\n        }\n        com.google.javascript.jscomp.CompilerInput input = compiler.getInput(sourceName);\n        scopeToDeclareIn.declare(variableName, n, type, input, inferred);\n        if (shouldDeclareOnGlobalThis) {\n            com.google.javascript.rhino.jstype.ObjectType globalThis = typeRegistry.getNativeObjectType(JSTypeNative.GLOBAL_THIS);\n            boolean isExtern = input.isExtern();\n            if (inferred) {\n                globalThis.defineInferredProperty(variableName, type == null ? getNativeType(JSTypeNative.NO_TYPE) : type, isExtern);\n            } else {\n                globalThis.defineDeclaredProperty(variableName, type, isExtern);\n            }\n        }\n        if (scopeToDeclareIn.isGlobal() && (type instanceof com.google.javascript.rhino.jstype.FunctionType)) {\n            com.google.javascript.rhino.jstype.FunctionType fnType = ((com.google.javascript.rhino.jstype.FunctionType) (type));\n            if (fnType.isConstructor() || fnType.isInterface()) {\n                com.google.javascript.rhino.jstype.FunctionType superClassCtor = fnType.getSuperClassConstructor();\n                scopeToDeclareIn.declare(variableName + \".prototype\", n, fnType.getPrototype(), compiler.getInput(sourceName), (superClassCtor == null) || superClassCtor.getInstanceType().equals(getNativeType(com.google.javascript.jscomp.OBJECT_TYPE)));\n            }\n        }\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "TypedScopeCreator"
+    }
+  ],
+  "id": "Closure_95"
+}

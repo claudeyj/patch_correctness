@@ -1,0 +1,14 @@
+--- /tmp/RSRepair_Defects4J_Closure_55/src/com/google/javascript/jscomp/FunctionRewriter.java	2018-12-02 08:31:50.719827596 -0500
++++ /tmp/RSRepair_Defects4J_Closure_55/patches_2m63/Patch_294/patched/tmp/RSRepair_Defects4J_Closure_55/src/com/google/javascript/jscomp/FunctionRewriter.java	2018-12-02 08:40:14.388372191 -0500
+@@ -143,8 +143,7 @@
+      * Estimate number of bytes saved by applying this reduction.
+      */
+     int estimateSavings() {
+-      return InlineCostEstimator.getCost(oldChild) -
+-          InlineCostEstimator.getCost(newChild);
++      return 0;
+     }
+   }
+ 
+
+

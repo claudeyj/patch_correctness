@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Invocation",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "removeDuplicateDeclarations(root)",
+            "dst_parent": "{\n    com.google.javascript.jscomp.NodeTraversal.traverse(compiler, root, this);\n    if (com.google.javascript.jscomp.Normalize.MAKE_LOCAL_NAMES_UNIQUE) {\n        com.google.javascript.jscomp.MakeDeclaredNamesUnique renamer = new com.google.javascript.jscomp.MakeDeclaredNamesUnique();\n        com.google.javascript.jscomp.NodeTraversal t = new com.google.javascript.jscomp.NodeTraversal(compiler, renamer);\n        t.traverseRoots(externs, root);\n    }\n    removeDuplicateDeclarations(root);\n    new com.google.javascript.jscomp.Normalize.PropogateConstantAnnotations(compiler, assertOnChange).process(externs, root);\n}",
+            "dst_parent_type": "Block",
+            "dst_type": "Invocation",
+            "operator": "MOV",
+            "src": "removeDuplicateDeclarations(root)",
+            "src_parent": "{\n    com.google.javascript.jscomp.NodeTraversal.traverse(compiler, root, this);\n    removeDuplicateDeclarations(root);\n    if (com.google.javascript.jscomp.Normalize.MAKE_LOCAL_NAMES_UNIQUE) {\n        com.google.javascript.jscomp.MakeDeclaredNamesUnique renamer = new com.google.javascript.jscomp.MakeDeclaredNamesUnique();\n        com.google.javascript.jscomp.NodeTraversal t = new com.google.javascript.jscomp.NodeTraversal(compiler, renamer);\n        t.traverseRoots(externs, root);\n    }\n    new com.google.javascript.jscomp.Normalize.PropogateConstantAnnotations(compiler, assertOnChange).process(externs, root);\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "Normalize"
+    }
+  ],
+  "id": "Closure_102"
+}

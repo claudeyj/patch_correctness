@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "Return",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "LocalVariable",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "ForEach",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "if (type.equalsIgnoreCase(\"button\")) {\n    continue;\n}",
+            "src_parent": "{\n    if (!el.tag().isFormSubmittable()) {\n        continue;\n    }\n    if (el.hasAttr(\"disabled\")) {\n        continue;\n    }\n    java.lang.String name = el.attr(\"name\");\n    if (name.length() == 0) {\n        continue;\n    }\n    java.lang.String type = el.attr(\"type\");\n    if (type.equalsIgnoreCase(\"button\")) {\n        continue;\n    }\n    if (\"select\".equals(el.normalName())) {\n        org.jsoup.select.Elements options = el.select(\"option[selected]\");\n        boolean set = false;\n        for (org.jsoup.nodes.Element option : options) {\n            data.add(HttpConnection.KeyVal.create(name, option.val()));\n            set = true;\n        }\n        if (!set) {\n            org.jsoup.nodes.Element option = el.select(\"option\").first();\n            if (option != null) {\n                data.add(HttpConnection.KeyVal.create(name, option.val()));\n            }\n        }\n    } else if (\"checkbox\".equalsIgnoreCase(type) || \"radio\".equalsIgnoreCase(type)) {\n        if (el.hasAttr(\"checked\")) {\n            final java.lang.String val = (el.val().length() > 0) ? el.val() : \"on\";\n            data.add(HttpConnection.KeyVal.create(name, val));\n        }\n    } else {\n        data.add(HttpConnection.KeyVal.create(name, el.val()));\n    }\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "FormElement"
+    }
+  ],
+  "id": "Jsoup_93"
+}

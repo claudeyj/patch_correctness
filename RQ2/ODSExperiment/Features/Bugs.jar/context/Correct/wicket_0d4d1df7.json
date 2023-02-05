@@ -1,0 +1,91 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "private void bindSessionIfNeeded() {\n    org.apache.wicket.feedback.FeedbackCollector collector = new org.apache.wicket.feedback.FeedbackCollector();\n    java.util.List<org.apache.wicket.feedback.FeedbackMessage> feedbackMessages = collector.collect();\n    if (feedbackMessages.size() > 0) {\n        org.apache.wicket.Session.get().bind();\n    }\n}",
+            "src_parent": "public class WebPageRenderer extends org.apache.wicket.request.handler.render.PageRenderer {\n    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(org.apache.wicket.request.handler.render.WebPageRenderer.class);\n\n    public WebPageRenderer(org.apache.wicket.core.request.handler.RenderPageRequestHandler renderPageRequestHandler) {\n        super(renderPageRequestHandler);\n    }\n\n    private boolean isAjax(org.apache.wicket.request.cycle.RequestCycle requestCycle) {\n        boolean isAjax = false;\n        org.apache.wicket.request.Request request = requestCycle.getRequest();\n        if (request instanceof org.apache.wicket.request.http.WebRequest) {\n            org.apache.wicket.request.http.WebRequest webRequest = ((org.apache.wicket.request.http.WebRequest) (request));\n            isAjax = webRequest.isAjax();\n        }\n        return isAjax;\n    }\n\n    protected void storeBufferedResponse(org.apache.wicket.request.Url url, org.apache.wicket.protocol.http.BufferedWebResponse response) {\n        org.apache.wicket.protocol.http.WebApplication.get().storeBufferedResponse(getSessionId(), url, response);\n    }\n\n    protected org.apache.wicket.protocol.http.BufferedWebResponse getAndRemoveBufferedResponse(org.apache.wicket.request.Url url) {\n        return org.apache.wicket.protocol.http.WebApplication.get().getAndRemoveBufferedResponse(getSessionId(), url);\n    }\n\n    protected org.apache.wicket.protocol.http.BufferedWebResponse renderPage(org.apache.wicket.request.Url targetUrl, org.apache.wicket.request.cycle.RequestCycle requestCycle) {\n        org.apache.wicket.request.component.IRequestablePage requestablePage = getPage();\n        org.apache.wicket.request.IRequestHandler scheduled = requestCycle.getRequestHandlerScheduledAfterCurrent();\n        if (scheduled != null) {\n            return null;\n        }\n        final org.apache.wicket.request.http.WebResponse originalResponse = ((org.apache.wicket.request.http.WebResponse) (requestCycle.getResponse()));\n        org.apache.wicket.protocol.http.BufferedWebResponse response = new org.apache.wicket.protocol.http.BufferedWebResponse(originalResponse);\n        org.apache.wicket.request.Url originalBaseUrl = requestCycle.getUrlRenderer().setBaseUrl(targetUrl);\n        try {\n            requestCycle.setResponse(response);\n            requestablePage.renderPage();\n            if ((scheduled == null) && (requestCycle.getRequestHandlerScheduledAfterCurrent() != null)) {\n                originalResponse.reset();\n                response.writeMetaData(originalResponse);\n                return null;\n            } else {\n                return response;\n            }\n        } finally {\n            requestCycle.setResponse(originalResponse);\n            requestCycle.getUrlRenderer().setBaseUrl(originalBaseUrl);\n        }\n    }\n\n    protected void redirectTo(org.apache.wicket.request.Url url, org.apache.wicket.request.cycle.RequestCycle requestCycle) {\n        bindSessionIfNeeded();\n        org.apache.wicket.request.http.WebResponse response = ((org.apache.wicket.request.http.WebResponse) (requestCycle.getResponse()));\n        java.lang.String relativeUrl = requestCycle.getUrlRenderer().renderUrl(url);\n        response.sendRedirect(relativeUrl);\n    }\n\n    private void bindSessionIfNeeded() {\n        org.apache.wicket.feedback.FeedbackCollector collector = new org.apache.wicket.feedback.FeedbackCollector();\n        java.util.List<org.apache.wicket.feedback.FeedbackMessage> feedbackMessages = collector.collect();\n        if (feedbackMessages.size() > 0) {\n            org.apache.wicket.Session.get().bind();\n        }\n    }\n\n    @java.lang.Override\n    public void respond(org.apache.wicket.request.cycle.RequestCycle requestCycle) {\n        org.apache.wicket.request.Url currentUrl = requestCycle.getUrlRenderer().getBaseUrl();\n        org.apache.wicket.request.Url targetUrl = requestCycle.mapUrlFor(getRenderPageRequestHandler());\n        org.apache.wicket.protocol.http.BufferedWebResponse bufferedResponse = getAndRemoveBufferedResponse(currentUrl);\n        boolean isAjax = isAjax(requestCycle);\n        boolean shouldPreserveClientUrl = ((org.apache.wicket.request.http.WebRequest) (requestCycle.getRequest())).shouldPreserveClientUrl();\n        if (bufferedResponse != null) {\n            org.apache.wicket.request.handler.render.WebPageRenderer.logger.warn(\"The Buffered response should be handled by BufferedResponseRequestHandler\");\n            bufferedResponse.writeTo(((org.apache.wicket.request.http.WebResponse) (requestCycle.getResponse())));\n        } else {\n            org.apache.wicket.core.request.handler.RenderPageRequestHandler.RedirectPolicy redirectPolicy = getRedirectPolicy();\n            boolean onePassRender = isOnePassRender();\n            boolean isRedirectToRender = isRedirectToRender();\n            boolean redirectToBuffer = isRedirectToBuffer();\n            boolean targetEqualsCurrentUrl = targetUrl.equals(currentUrl);\n            boolean isNewPageInstance = getPageProvider().isNewPageInstance();\n            boolean isPageStateless = getPage().isPageStateless();\n            if (shouldRenderPageAndWriteResponse(isAjax, onePassRender, isRedirectToRender, redirectPolicy, shouldPreserveClientUrl, targetEqualsCurrentUrl, isNewPageInstance, isPageStateless)) {\n                org.apache.wicket.protocol.http.BufferedWebResponse response = renderPage(currentUrl, requestCycle);\n                if (response != null) {\n                    response.writeTo(((org.apache.wicket.request.http.WebResponse) (requestCycle.getResponse())));\n                }\n            } else {\n                boolean sessionTemporary = isSessionTemporary();\n                if (shouldRedirectToTargetUrl(isAjax, redirectPolicy, isRedirectToRender, targetEqualsCurrentUrl, isNewPageInstance, isPageStateless, sessionTemporary)) {\n                    redirectTo(targetUrl, requestCycle);\n                } else {\n                    if ((redirectToBuffer == false) && org.apache.wicket.request.handler.render.WebPageRenderer.logger.isDebugEnabled()) {\n                        java.lang.String details = java.lang.String.format(\"redirect strategy: '%s', isAjax: '%s', redirect policy: '%s', \" + \"current url: '%s', target url: '%s', is new: '%s', is stateless: '%s', is temporary: '%s'\", org.apache.wicket.Application.get().getRequestCycleSettings().getRenderStrategy(), isAjax, redirectPolicy, currentUrl, targetUrl, isNewPageInstance, isPageStateless, sessionTemporary);\n                        org.apache.wicket.request.handler.render.WebPageRenderer.logger.debug((\"Falling back to Redirect_To_Buffer render strategy because none of the conditions \" + \"matched. Details: \") + details);\n                    }\n                    getPage();\n                    org.apache.wicket.request.Url renderTargetUrl = requestCycle.mapUrlFor(getRenderPageRequestHandler());\n                    org.apache.wicket.protocol.http.BufferedWebResponse response = renderPage(renderTargetUrl, requestCycle);\n                    if (response == null) {\n                        return;\n                    }\n                    if (currentUrl.equals(renderTargetUrl)) {\n                        response.writeTo(((org.apache.wicket.request.http.WebResponse) (requestCycle.getResponse())));\n                    } else if (isPageStateless && (!enableRedirectForStatelessPage())) {\n                        response.writeTo(((org.apache.wicket.request.http.WebResponse) (requestCycle.getResponse())));\n                    } else {\n                        storeBufferedResponse(renderTargetUrl, response);\n                        redirectTo(renderTargetUrl, requestCycle);\n                    }\n                }\n            }\n        }\n    }\n\n    protected boolean shouldRedirectToTargetUrl(boolean ajax, org.apache.wicket.core.request.handler.RenderPageRequestHandler.RedirectPolicy redirectPolicy, boolean redirectToRender, boolean targetEqualsCurrentUrl, boolean newPageInstance, boolean pageStateless, boolean sessionTemporary) {\n        return ((org.apache.wicket.request.handler.render.WebPageRenderer.alwaysRedirect(redirectPolicy) || redirectToRender) || (ajax && targetEqualsCurrentUrl)) || ((!targetEqualsCurrentUrl) && (newPageInstance || (sessionTemporary && pageStateless)));\n    }\n\n    protected boolean shouldRenderPageAndWriteResponse(boolean ajax, boolean onePassRender, boolean redirectToRender, org.apache.wicket.core.request.handler.RenderPageRequestHandler.RedirectPolicy redirectPolicy, boolean shouldPreserveClientUrl, boolean targetEqualsCurrentUrl, boolean newPageInstance, boolean pageStateless) {\n        return ((org.apache.wicket.request.handler.render.WebPageRenderer.neverRedirect(redirectPolicy) || ((!ajax) && ((onePassRender && org.apache.wicket.request.handler.render.WebPageRenderer.notForcedRedirect(redirectPolicy)) || (targetEqualsCurrentUrl && org.apache.wicket.request.handler.render.WebPageRenderer.notNewAndNotStatelessPage(newPageInstance, pageStateless))))) || (targetEqualsCurrentUrl && redirectToRender)) || shouldPreserveClientUrl;\n    }\n\n    private static boolean notNewAndNotStatelessPage(boolean newPageInstance, boolean pageStateless) {\n        return (!newPageInstance) && (!pageStateless);\n    }\n\n    private static boolean neverRedirect(org.apache.wicket.core.request.handler.RenderPageRequestHandler.RedirectPolicy redirectPolicy) {\n        return redirectPolicy == org.apache.wicket.core.request.handler.RenderPageRequestHandler.RedirectPolicy.NEVER_REDIRECT;\n    }\n\n    private static boolean alwaysRedirect(org.apache.wicket.core.request.handler.RenderPageRequestHandler.RedirectPolicy redirectPolicy) {\n        return redirectPolicy == org.apache.wicket.core.request.handler.RenderPageRequestHandler.RedirectPolicy.ALWAYS_REDIRECT;\n    }\n\n    private static boolean notForcedRedirect(org.apache.wicket.core.request.handler.RenderPageRequestHandler.RedirectPolicy redirectPolicy) {\n        return !org.apache.wicket.request.handler.render.WebPageRenderer.alwaysRedirect(redirectPolicy);\n    }\n}",
+            "src_parent_type": "Class",
+            "src_type": "Method"
+          }
+        },
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "bindSessionIfNeeded()",
+            "src_parent": "{\n    bindSessionIfNeeded();\n    org.apache.wicket.request.http.WebResponse response = ((org.apache.wicket.request.http.WebResponse) (requestCycle.getResponse()));\n    java.lang.String relativeUrl = requestCycle.getUrlRenderer().renderUrl(url);\n    response.sendRedirect(relativeUrl);\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "WebPageRenderer"
+    }
+  ],
+  "id": "wicket_0d4d1df7"
+}

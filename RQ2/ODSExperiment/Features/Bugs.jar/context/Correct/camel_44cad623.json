@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Package",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Class",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "java.lang.String TRY_ROUTE_BLOCK = \"TryRouteBlock\";",
+            "src_parent": "public class TryProcessor extends org.apache.camel.support.ServiceSupport implements org.apache.camel.AsyncProcessor , org.apache.camel.Navigate<org.apache.camel.Processor> , org.apache.camel.Traceable {\n    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(org.apache.camel.processor.TryProcessor.class);\n\n    protected final org.apache.camel.Processor tryProcessor;\n\n    protected final java.util.List<org.apache.camel.Processor> catchClauses;\n\n    protected final org.apache.camel.Processor finallyProcessor;\n\n    public TryProcessor(org.apache.camel.Processor tryProcessor, java.util.List<org.apache.camel.Processor> catchClauses, org.apache.camel.Processor finallyProcessor) {\n        this.tryProcessor = tryProcessor;\n        this.catchClauses = catchClauses;\n        this.finallyProcessor = finallyProcessor;\n    }\n\n    public java.lang.String toString() {\n        java.lang.String catchText = ((catchClauses == null) || catchClauses.isEmpty()) ? \"\" : (\" Catches {\" + catchClauses) + \"}\";\n        java.lang.String finallyText = (finallyProcessor == null) ? \"\" : (\" Finally {\" + finallyProcessor) + \"}\";\n        return (((\"Try {\" + tryProcessor) + \"}\") + catchText) + finallyText;\n    }\n\n    public java.lang.String getTraceLabel() {\n        return \"doTry\";\n    }\n\n    public void process(org.apache.camel.Exchange exchange) throws java.lang.Exception {\n        org.apache.camel.util.AsyncProcessorHelper.process(this, exchange);\n    }\n\n    public boolean process(org.apache.camel.Exchange exchange, org.apache.camel.AsyncCallback callback) {\n        java.util.Iterator<org.apache.camel.Processor> processors = next().iterator();\n        java.lang.Object lastHandled = exchange.getProperty(Exchange.EXCEPTION_HANDLED);\n        exchange.setProperty(Exchange.EXCEPTION_HANDLED, null);\n        while (continueRouting(processors, exchange)) {\n            org.apache.camel.util.ExchangeHelper.prepareOutToIn(exchange);\n            org.apache.camel.Processor processor = processors.next();\n            org.apache.camel.AsyncProcessor async = org.apache.camel.util.AsyncProcessorConverterHelper.convert(processor);\n            boolean sync = process(exchange, callback, processors, async, lastHandled);\n            if (!sync) {\n                org.apache.camel.processor.TryProcessor.LOG.trace(\"Processing exchangeId: {} is continued being processed asynchronously\", exchange.getExchangeId());\n                return false;\n            }\n            org.apache.camel.processor.TryProcessor.LOG.trace(\"Processing exchangeId: {} is continued being processed synchronously\", exchange.getExchangeId());\n        } \n        org.apache.camel.util.ExchangeHelper.prepareOutToIn(exchange);\n        exchange.setProperty(Exchange.EXCEPTION_HANDLED, lastHandled);\n        org.apache.camel.processor.TryProcessor.LOG.trace(\"Processing complete for exchangeId: {} >>> {}\", exchange.getExchangeId(), exchange);\n        callback.done(true);\n        return true;\n    }\n\n    protected boolean process(final org.apache.camel.Exchange exchange, final org.apache.camel.AsyncCallback callback, final java.util.Iterator<org.apache.camel.Processor> processors, final org.apache.camel.AsyncProcessor processor, final java.lang.Object lastHandled) {\n        org.apache.camel.processor.TryProcessor.LOG.trace(\"Processing exchangeId: {} >>> {}\", exchange.getExchangeId(), exchange);\n        boolean sync = processor.process(exchange, new org.apache.camel.AsyncCallback() {\n            public void done(boolean doneSync) {\n                if (doneSync) {\n                    return;\n                }\n                while (continueRouting(processors, exchange)) {\n                    org.apache.camel.util.ExchangeHelper.prepareOutToIn(exchange);\n                    org.apache.camel.AsyncProcessor processor = org.apache.camel.util.AsyncProcessorConverterHelper.convert(processors.next());\n                    doneSync = process(exchange, callback, processors, processor, lastHandled);\n                    if (!doneSync) {\n                        org.apache.camel.processor.TryProcessor.LOG.trace(\"Processing exchangeId: {} is continued being processed asynchronously\", exchange.getExchangeId());\n                        return;\n                    }\n                } \n                org.apache.camel.util.ExchangeHelper.prepareOutToIn(exchange);\n                exchange.setProperty(Exchange.EXCEPTION_HANDLED, lastHandled);\n                org.apache.camel.processor.TryProcessor.LOG.trace(\"Processing complete for exchangeId: {} >>> {}\", exchange.getExchangeId(), exchange);\n                callback.done(false);\n            }\n        });\n        return sync;\n    }\n\n    protected boolean continueRouting(java.util.Iterator<org.apache.camel.Processor> it, org.apache.camel.Exchange exchange) {\n        java.lang.Object stop = exchange.getProperty(Exchange.ROUTE_STOP);\n        if (stop != null) {\n            boolean doStop = exchange.getContext().getTypeConverter().convertTo(java.lang.Boolean.class, stop);\n            if (doStop) {\n                org.apache.camel.processor.TryProcessor.LOG.debug(\"Exchange is marked to stop routing: {}\", exchange);\n                return false;\n            }\n        }\n        return it.hasNext();\n    }\n\n    protected void doStart() throws java.lang.Exception {\n        org.apache.camel.util.ServiceHelper.startServices(tryProcessor, catchClauses, finallyProcessor);\n    }\n\n    protected void doStop() throws java.lang.Exception {\n        org.apache.camel.util.ServiceHelper.stopServices(tryProcessor, catchClauses, finallyProcessor);\n    }\n\n    public java.util.List<org.apache.camel.Processor> next() {\n        if (!hasNext()) {\n            return null;\n        }\n        java.util.List<org.apache.camel.Processor> answer = new java.util.ArrayList<org.apache.camel.Processor>();\n        if (tryProcessor != null) {\n            answer.add(tryProcessor);\n        }\n        if (catchClauses != null) {\n            answer.addAll(catchClauses);\n        }\n        if (finallyProcessor != null) {\n            answer.add(finallyProcessor);\n        }\n        return answer;\n    }\n\n    public boolean hasNext() {\n        return ((tryProcessor != null) || ((catchClauses != null) && (!catchClauses.isEmpty()))) || (finallyProcessor != null);\n    }\n\n    java.lang.String TRY_ROUTE_BLOCK = \"TryRouteBlock\";\n}",
+            "src_parent_type": "Class",
+            "src_type": "Field"
+          }
+        }
+      ],
+      "file_name": "TryProcessor"
+    }
+  ],
+  "id": "camel_44cad623"
+}

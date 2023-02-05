@@ -1,0 +1,15 @@
+
+--- org\/apache\/commons\/math\/linear\/OpenMapRealVector.java
++++ org\/apache\/commons\/math\/linear\/OpenMapRealVector.java
+@@ -663,8 +663,8 @@
+ 		checkIndex(index);
+ 		if (!(isDefaultValue(value))) {
+ 			entries.put(index, value);
+-		}else 			if (entries.containsKey(index)) {
+-				entries.remove(index);
++		}else 			if (entries.containsKey(index)) { 				entries.put(index, value);
++
+ 			}
+ 	}
+ 
+

@@ -1,0 +1,13 @@
+
+--- org\/traccar\/protocol\/Gl200ProtocolDecoder.java
++++ org\/traccar\/protocol\/Gl200ProtocolDecoder.java
+@@ -621,7 +621,7 @@
+ 		org.traccar.model.Network network = new org.traccar.model.Network();
+ 
+ 		int count = parser.nextInt();
+-		for (int i = 0; i < count; i++) {
++		for (int i = 0; parser.find(); i++) {
+ 			java.lang.String mac = parser.next().replaceAll("(..)", "$1:");
+ 			network.addWifiAccessPoint(org.traccar.model.WifiAccessPoint.from(mac.substring(0, ((mac.length()) - 1)), parser.nextInt()));
+ 		}
+

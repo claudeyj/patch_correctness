@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (tempC == java.lang.Double.POSITIVE_INFINITY) {\n    return java.lang.Double.POSITIVE_INFINITY;\n}",
+            "src_parent": "{\n    double intPartA;\n    double intPartB;\n    int intVal = ((int) (x));\n    if (x < 0.0) {\n        if (x < (-746.0)) {\n            if (hiPrec != null) {\n                hiPrec[0] = 0.0;\n                hiPrec[1] = 0.0;\n            }\n            return 0.0;\n        }\n        if (intVal < (-709)) {\n            final double result = org.apache.commons.math4.util.FastMath.exp(x + 40.19140625, extra, hiPrec) / 2.85040095144011776E17;\n            if (hiPrec != null) {\n                hiPrec[0] /= 2.85040095144011776E17;\n                hiPrec[1] /= 2.85040095144011776E17;\n            }\n            return result;\n        }\n        if (intVal == (-709)) {\n            final double result = org.apache.commons.math4.util.FastMath.exp(x + 1.494140625, extra, hiPrec) / 4.455505956692757;\n            if (hiPrec != null) {\n                hiPrec[0] /= 4.455505956692757;\n                hiPrec[1] /= 4.455505956692757;\n            }\n            return result;\n        }\n        intVal--;\n    } else if (intVal > 709) {\n        if (hiPrec != null) {\n            hiPrec[0] = java.lang.Double.POSITIVE_INFINITY;\n            hiPrec[1] = 0.0;\n        }\n        return java.lang.Double.POSITIVE_INFINITY;\n    }\n    intPartA = org.apache.commons.math4.util.FastMath.ExpIntTable.EXP_INT_TABLE_A[org.apache.commons.math4.util.FastMath.EXP_INT_TABLE_MAX_INDEX + intVal];\n    intPartB = org.apache.commons.math4.util.FastMath.ExpIntTable.EXP_INT_TABLE_B[org.apache.commons.math4.util.FastMath.EXP_INT_TABLE_MAX_INDEX + intVal];\n    final int intFrac = ((int) ((x - intVal) * 1024.0));\n    final double fracPartA = org.apache.commons.math4.util.FastMath.ExpFracTable.EXP_FRAC_TABLE_A[intFrac];\n    final double fracPartB = org.apache.commons.math4.util.FastMath.ExpFracTable.EXP_FRAC_TABLE_B[intFrac];\n    final double epsilon = x - (intVal + (intFrac / 1024.0));\n    double z = 0.04168701738764507;\n    z = (z * epsilon) + 0.1666666505023083;\n    z = (z * epsilon) + 0.5000000000042687;\n    z = (z * epsilon) + 1.0;\n    z = (z * epsilon) + (-3.940510424527919E-20);\n    double tempA = intPartA * fracPartA;\n    double tempB = ((intPartA * fracPartB) + (intPartB * fracPartA)) + (intPartB * fracPartB);\n    final double tempC = tempB + tempA;\n    if (tempC == java.lang.Double.POSITIVE_INFINITY) {\n        return java.lang.Double.POSITIVE_INFINITY;\n    }\n    final double result;\n    if (extra != 0.0) {\n        result = (((((tempC * extra) * z) + (tempC * extra)) + (tempC * z)) + tempB) + tempA;\n    } else {\n        result = ((tempC * z) + tempB) + tempA;\n    }\n    if (hiPrec != null) {\n        hiPrec[0] = tempA;\n        hiPrec[1] = ((((tempC * extra) * z) + (tempC * extra)) + (tempC * z)) + tempB;\n    }\n    return result;\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "FastMath"
+    }
+  ],
+  "id": "commons-math_a94ff90a"
+}

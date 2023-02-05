@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "If",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "Invocation",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "ForEach",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "true",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Invocation",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "true",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "DEL",
+            "src": "lifecycleStrategies.clear()",
+            "src_parent": "{\n    stopWatch.restart();\n    log.info((((\"Apache Camel \" + getVersion()) + \" (CamelContext:\") + getName()) + \") is shutting down\");\n    org.apache.camel.util.EventHelper.notifyCamelContextStopping(this);\n    try {\n        shutdownStrategy.shutdown(this, getRouteStartupOrder());\n    } catch (java.lang.Throwable e) {\n        log.warn(\"Error occurred while shutting down routes. This exception will be ignored.\", e);\n    }\n    getRouteStartupOrder().clear();\n    shutdownServices(routeServices.values());\n    suspendedRouteServices.clear();\n    org.apache.camel.util.ServiceHelper.stopAndShutdownService(getDebugger());\n    shutdownServices(endpoints.values());\n    endpoints.clear();\n    shutdownServices(components.values());\n    components.clear();\n    try {\n        for (org.apache.camel.spi.LifecycleStrategy strategy : lifecycleStrategies) {\n            strategy.onContextStop(this);\n        }\n    } catch (java.lang.Throwable e) {\n        log.warn(\"Error occurred while stopping lifecycle strategies. This exception will be ignored.\", e);\n    }\n    shutdownServices(servicesToClose);\n    servicesToClose.clear();\n    org.apache.camel.util.EventHelper.notifyCamelContextStopped(this);\n    for (org.apache.camel.spi.EventNotifier notifier : getManagementStrategy().getEventNotifiers()) {\n        shutdownServices(notifier);\n    }\n    shutdownServices(managementStrategy);\n    shutdownServices(lifecycleStrategies);\n    lifecycleStrategies.clear();\n    forceStopLazyInitialization();\n    stopWatch.stop();\n    if (log.isInfoEnabled()) {\n        log.info(\"Uptime: \" + getUptime());\n        log.info(((((\"Apache Camel \" + getVersion()) + \" (CamelContext: \") + getName()) + \") is shutdown in \") + org.apache.camel.util.TimeUtils.printDuration(stopWatch.taken()));\n    }\n    startDate = null;\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "DefaultCamelContext"
+    }
+  ],
+  "id": "camel_1e54865c"
+}

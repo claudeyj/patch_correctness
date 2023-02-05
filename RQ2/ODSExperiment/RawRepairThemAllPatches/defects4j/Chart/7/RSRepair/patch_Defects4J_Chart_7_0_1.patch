@@ -1,0 +1,13 @@
+--- /tmp/RSRepair_Defects4J_Chart_7/source/org/jfree/data/time/TimePeriodValues.java	2018-12-02 04:38:17.586295556 -0500
++++ /tmp/RSRepair_Defects4J_Chart_7/patches_qs8i/Patch_397/patched/tmp/RSRepair_Defects4J_Chart_7/source/org/jfree/data/time/TimePeriodValues.java	2018-12-02 04:42:32.908198162 -0500
+@@ -314,7 +314,7 @@
+             long minEnd = getDataItem(this.minEndIndex).getPeriod().getEnd()
+                 .getTime();
+             if (end < minEnd) {
+-                this.minEndIndex = index;           
++                this.data.remove(index);           
+             }
+         }
+         else {
+
+

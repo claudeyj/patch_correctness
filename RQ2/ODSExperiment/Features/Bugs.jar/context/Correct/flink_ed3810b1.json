@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Method",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "false",
+          "S16_HAS_Invocations_Prone_Exception": "false",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "If",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S6_METHOD_THROWS_EXCEPTION": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "kryo.setReferences(false)",
+            "src_parent": "{\n    this.kryo = getKryoInstance();\n    kryo.setReferences(false);\n    kryo.addDefaultSerializer(java.lang.Throwable.class, new com.esotericsoftware.kryo.serializers.JavaSerializer());\n    for (java.util.Map.Entry<java.lang.Class<?>, org.apache.flink.api.common.ExecutionConfig.SerializableSerializer<?>> entry : defaultSerializers.entrySet()) {\n        kryo.addDefaultSerializer(entry.getKey(), entry.getValue().getSerializer());\n    }\n    for (java.util.Map.Entry<java.lang.Class<?>, java.lang.Class<? extends com.esotericsoftware.kryo.Serializer<?>>> entry : defaultSerializerClasses.entrySet()) {\n        kryo.addDefaultSerializer(entry.getKey(), entry.getValue());\n    }\n    kryo.register(type);\n    for (java.lang.Class<?> type : registeredTypes) {\n        kryo.register(type);\n    }\n    for (java.util.Map.Entry<java.lang.Class<?>, java.lang.Class<? extends com.esotericsoftware.kryo.Serializer<?>>> e : registeredTypesWithSerializerClasses.entrySet()) {\n        java.lang.Class<?> typeClass = e.getKey();\n        java.lang.Class<? extends com.esotericsoftware.kryo.Serializer<?>> serializerClass = e.getValue();\n        com.esotericsoftware.kryo.Serializer<?> serializer = com.esotericsoftware.kryo.factories.ReflectionSerializerFactory.makeSerializer(kryo, serializerClass, typeClass);\n        kryo.register(typeClass, serializer);\n    }\n    for (java.util.Map.Entry<java.lang.Class<?>, org.apache.flink.api.common.ExecutionConfig.SerializableSerializer<?>> e : registeredTypesWithSerializers.entrySet()) {\n        kryo.register(e.getKey(), e.getValue().getSerializer());\n    }\n    kryo.register(GenericData.Array.class, new org.apache.flink.api.java.typeutils.runtime.kryo.Serializers.SpecificInstanceCollectionSerializerForArrayList());\n    kryo.setRegistrationRequired(false);\n    kryo.setClassLoader(java.lang.Thread.currentThread().getContextClassLoader());\n}",
+            "src_parent_type": "Block",
+            "src_type": "Invocation"
+          }
+        }
+      ],
+      "file_name": "KryoSerializer"
+    }
+  ],
+  "id": "flink_ed3810b1"
+}

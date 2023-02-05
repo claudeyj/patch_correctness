@@ -1,0 +1,13 @@
+--- /tmp/RSRepair_Defects4J_Closure_55/src/com/google/javascript/jscomp/FunctionRewriter.java	2018-12-02 08:31:50.719827596 -0500
++++ /tmp/RSRepair_Defects4J_Closure_55/patches_2m63/Patch_49/patched/tmp/RSRepair_Defects4J_Closure_55/src/com/google/javascript/jscomp/FunctionRewriter.java	2018-12-02 08:37:30.062126738 -0500
+@@ -110,7 +110,7 @@
+   public Node parseHelperCode(Reducer reducer) {
+     Node root = compiler.parseSyntheticCode(
+         reducer.getClass().toString() + ":helper", reducer.getHelperSource());
+-    return (root != null) ? root.removeFirstChild() : null;
++    return null;
+   }
+ 
+   private static boolean isReduceableFunctionExpression(Node n) {
+
+

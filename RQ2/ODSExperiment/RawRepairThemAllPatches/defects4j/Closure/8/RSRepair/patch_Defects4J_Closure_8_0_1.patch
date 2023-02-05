@@ -1,0 +1,15 @@
+--- /tmp/RSRepair_Defects4J_Closure_8/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java	2018-12-02 10:57:05.875901179 -0500
++++ /tmp/RSRepair_Defects4J_Closure_8/patches_0cst/Patch_367/patched/tmp/RSRepair_Defects4J_Closure_8/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java	2018-12-02 11:04:55.169044892 -0500
+@@ -199,9 +199,7 @@
+       }
+ 
+       Var var = s.getVar(lhs.getString());
+-      return var != null
+-          && var.getScope() == s
+-          && !blacklistedVars.contains(var);
++      return false;
+     }
+   }
+ 
+
+

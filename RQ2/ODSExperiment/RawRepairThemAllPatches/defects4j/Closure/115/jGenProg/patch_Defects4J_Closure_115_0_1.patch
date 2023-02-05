@@ -1,0 +1,13 @@
+
+--- com\/google\/javascript\/jscomp\/FunctionInjector.java
++++ com\/google\/javascript\/jscomp\/FunctionInjector.java
+@@ -699,7 +699,7 @@
+ 			com.google.common.base.Preconditions.checkState(block.hasOneChild());
+ 			com.google.javascript.rhino.Node stmt = block.getFirstChild();
+ 			if (stmt.isReturn()) {
+-				hasSideEffects = com.google.javascript.jscomp.NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);
++
+ 			}
+ 		}
+ 
+

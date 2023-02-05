@@ -1,0 +1,142 @@
+
+--- org\/apache\/jackrabbit\/oak\/commons\/PathUtils.java
++++ org\/apache\/jackrabbit\/oak\/commons\/PathUtils.java
+@@ -285,14 +285,6 @@
+ 	public static boolean isAncestor(java.lang.String ancestor, java.lang.String path) {
+ 		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(ancestor);
+ 		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(path);
+-		if ((ancestor.isEmpty()) || (path.isEmpty())) {
+-			return false;
+-		}
+-		if (!(org.apache.jackrabbit.oak.commons.PathUtils.denotesRoot(ancestor))) {
+-			ancestor += "\/";
+-		}
+-		return path.startsWith(ancestor);
+-	}
+ 
+ 
+ 
+@@ -303,24 +295,9 @@
+ 
+ 
+ 
+-	@javax.annotation.Nonnull
+-	public static java.lang.String relativize(java.lang.String parentPath, java.lang.String path) {
+-		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(parentPath);
+-		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(path);
+ 
+-		if (parentPath.equals(path)) {
+-			return "";
+-		}
+ 
+-		java.lang.String prefix = (org.apache.jackrabbit.oak.commons.PathUtils.denotesRootPath(parentPath)) ? 
+-		parentPath : 
+-		parentPath + '\/';
+ 
+-		if (path.startsWith(prefix)) {
+-			return path.substring(prefix.length());
+-		}
+-		throw new java.lang.IllegalArgumentException(((("Cannot relativize " + path) + " wrt. ") + parentPath));
+-	}
+ 
+ 
+ 
+@@ -330,11 +307,7 @@
+ 
+ 
+ 
+-	public static int getNextSlash(java.lang.String path, int index) {
+-		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(path);
+ 
+-		return path.indexOf('\/', index);
+-	}
+ 
+ 
+ 
+@@ -345,23 +318,6 @@
+ 
+ 
+ 
+-	public static void validate(java.lang.String path) {
+-		if ((path.isEmpty()) || (org.apache.jackrabbit.oak.commons.PathUtils.denotesRootPath(path))) {
+-			return;
+-		}else 			if ((path.charAt(((path.length()) - 1))) == '\/') {
+-				throw new java.lang.IllegalArgumentException(("Path may not end with '\/': " + path));
+-			}
+-		char last = 0;
+-		for (int index = 0, len = path.length(); index < len; index++) {
+-			char c = path.charAt(index);
+-			if (c == '\/') {
+-				if (last == '\/') {
+-					throw new java.lang.IllegalArgumentException(("Path may not contains '\/\/': " + path));
+-				}
+-			}
+-			last = c;
+-		}
+-	}
+ 
+ 
+ 
+@@ -372,12 +328,56 @@
+ 
+ 
+ 
+-	public static boolean isValid(java.lang.String path) {
+-		if ((path.isEmpty()) || (org.apache.jackrabbit.oak.commons.PathUtils.denotesRootPath(path))) {
+-			return true;
+-		}else 			if ((path.charAt(((path.length()) - 1))) == '\/') {
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++		if ((path.charAt(((path.length()) - 1))) == '\/') {
+ 				return false;
+-			}
++		} 		if (!(org.apache.jackrabbit.oak.commons.PathUtils.denotesRoot(ancestor))) { 			ancestor += "\/";} 		return path.startsWith(ancestor);} 	@javax.annotation.Nonnull 	public static java.lang.String relativize(java.lang.String parentPath, java.lang.String path) { 		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(parentPath); 		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(path); 		if (parentPath.equals(path)) { 			return "";} 		java.lang.String prefix = (org.apache.jackrabbit.oak.commons.PathUtils.denotesRootPath(parentPath)) ? parentPath : parentPath + '\/'; 		if (path.startsWith(prefix)) { 			return path.substring(prefix.length());} 		throw new java.lang.IllegalArgumentException(((("Cannot relativize " + path) + " wrt. ") + parentPath));} 	public static int getNextSlash(java.lang.String path, int index) { 		assert org.apache.jackrabbit.oak.commons.PathUtils.isValid(path); 		return path.indexOf('\/', index);} 	public static void validate(java.lang.String path) { 		if ((path.isEmpty()) || (org.apache.jackrabbit.oak.commons.PathUtils.denotesRootPath(path))) { 			return;}else 			if ((path.charAt(((path.length()) - 1))) == '\/') { 				throw new java.lang.IllegalArgumentException(("Path may not end with '\/': " + path));} 		char last = 0; 		for (int index = 0, len = path.length(); index < len; index++) { 			char c = path.charAt(index); 			if (c == '\/') { 				if (last == '\/') { 					throw new java.lang.IllegalArgumentException(("Path may not contains '\/\/': " + path));}} 			last = c;}} 	public static boolean isValid(java.lang.String path) { 		if ((path.isEmpty()) || (org.apache.jackrabbit.oak.commons.PathUtils.denotesRootPath(path))) { 			return true;}else 			if ((path.charAt(((path.length()) - 1))) == '\/') { 				return false;}
+ 		char last = 0;
+ 		for (int index = 0, len = path.length(); index < len; index++) {
+ 			char c = path.charAt(index);
+

@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "features": [
+        {
+          "FEATURES_METHOD_INVOCATION": {},
+          "FEATURES_TYPEACCESS": {},
+          "FEATURES_VARS": {},
+          "S10_METHOD_CALL_WITH_NULL_GUARD": "false",
+          "S11_FAULTY_CLASS_EXCEPTION_TYPE": "false",
+          "S12_METHOD_CALL_WITH_TRY_CATCH": "false",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_AFTER_3": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_1": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_2": "",
+          "S13_TYPE_OF_FAULTY_STATEMENT_BEFORE_3": "",
+          "S14_TYPE_OF_FAULTY_STATEMENT_PARENT": "Class",
+          "S15_HAS_OBJECTIVE_METHOD_CALL": "true",
+          "S16_HAS_Invocations_Prone_Exception": "true",
+          "S18_In_Synchronized_Method": "false",
+          "S1_LOCAL_VAR_NOT_ASSIGNED": "false",
+          "S1_LOCAL_VAR_NOT_USED": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NORMAL_GUARD": "false",
+          "S2_SIMILAR_OBJECT_TYPE_WITH_NULL_GUARD": "false",
+          "S3_TYPE_OF_FAULTY_STATEMENT": "Method",
+          "S4_Field_NOT_ASSIGNED": "false",
+          "S4_Field_NOT_USED": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NORMAL_GUARD": "false",
+          "S5_SIMILAR_PRIMITIVE_TYPE_WITH_NULL_GUARD": "false",
+          "S7_OBJECT_USED_IN_ASSIGNMENT": "false",
+          "S8_PRIMITIVE_USED_IN_ASSIGNMENT": "false",
+          "S9_METHOD_CALL_WITH_NORMAL_GUARD": "false",
+          "ast_info": {
+            "dst": "null",
+            "dst_parent": "null",
+            "dst_parent_type": "null",
+            "dst_type": "null",
+            "operator": "INS",
+            "src": "if (event.getMarker() != null) {\n    final org.apache.logging.log4j.Marker marker = event.getMarker();\n    buf.append(this.indent2);\n    buf.append('<');\n    if (!complete) {\n        buf.append(this.namespacePrefix);\n    }\n    buf.append(\"Marker\");\n    final org.apache.logging.log4j.Marker parent = marker.getParent();\n    if (parent != null) {\n        buf.append(\" parent=\\\"\").append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(parent.getName())).append(\"\\\"\");\n    }\n    buf.append('>');\n    buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(marker.getName()));\n    buf.append(\"</\");\n    if (!complete) {\n        buf.append(this.namespacePrefix);\n    }\n    buf.append(\"Marker>\");\n    buf.append(this.eol);\n}",
+            "src_parent": "{\n    final java.lang.StringBuilder buf = new java.lang.StringBuilder(org.apache.logging.log4j.core.layout.XMLLayout.DEFAULT_SIZE);\n    buf.append(this.indent1);\n    buf.append('<');\n    if (!complete) {\n        buf.append(this.namespacePrefix);\n    }\n    buf.append(\"Event logger=\\\"\");\n    java.lang.String name = event.getLoggerName();\n    if (name.isEmpty()) {\n        name = \"root\";\n    }\n    buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(name));\n    buf.append(\"\\\" timestamp=\\\"\");\n    buf.append(event.getMillis());\n    buf.append(\"\\\" level=\\\"\");\n    buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(java.lang.String.valueOf(event.getLevel())));\n    buf.append(\"\\\" thread=\\\"\");\n    buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(event.getThreadName()));\n    buf.append(\"\\\">\");\n    buf.append(this.eol);\n    final org.apache.logging.log4j.message.Message msg = event.getMessage();\n    if (msg != null) {\n        boolean xmlSupported = false;\n        if (msg instanceof org.apache.logging.log4j.message.MultiformatMessage) {\n            final java.lang.String[] formats = ((org.apache.logging.log4j.message.MultiformatMessage) (msg)).getFormats();\n            for (final java.lang.String format : formats) {\n                if (format.equalsIgnoreCase(\"XML\")) {\n                    xmlSupported = true;\n                    break;\n                }\n            }\n        }\n        buf.append(this.indent2);\n        buf.append('<');\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"Message>\");\n        if (xmlSupported) {\n            buf.append(((org.apache.logging.log4j.message.MultiformatMessage) (msg)).getFormattedMessage(org.apache.logging.log4j.core.layout.XMLLayout.FORMATS));\n        } else {\n            buf.append(\"<![CDATA[\");\n            org.apache.logging.log4j.core.helpers.Transform.appendEscapingCDATA(buf, event.getMessage().getFormattedMessage());\n            buf.append(\"]]>\");\n        }\n        buf.append(\"</\");\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"Message>\");\n        buf.append(this.eol);\n    }\n    if (event.getContextStack().getDepth() > 0) {\n        buf.append(this.indent2);\n        buf.append('<');\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"NDC><![CDATA[\");\n        org.apache.logging.log4j.core.helpers.Transform.appendEscapingCDATA(buf, event.getContextStack().toString());\n        buf.append(\"]]></\");\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"NDC>\");\n        buf.append(this.eol);\n    }\n    if (event.getMarker() != null) {\n        final org.apache.logging.log4j.Marker marker = event.getMarker();\n        buf.append(this.indent2);\n        buf.append('<');\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"Marker\");\n        final org.apache.logging.log4j.Marker parent = marker.getParent();\n        if (parent != null) {\n            buf.append(\" parent=\\\"\").append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(parent.getName())).append(\"\\\"\");\n        }\n        buf.append('>');\n        buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(marker.getName()));\n        buf.append(\"</\");\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"Marker>\");\n        buf.append(this.eol);\n    }\n    final java.lang.Throwable throwable = event.getThrown();\n    if (throwable != null) {\n        final java.util.List<java.lang.String> s = org.apache.logging.log4j.core.helpers.Throwables.toStringList(throwable);\n        buf.append(this.indent2);\n        buf.append('<');\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"Throwable><![CDATA[\");\n        for (final java.lang.String str : s) {\n            org.apache.logging.log4j.core.helpers.Transform.appendEscapingCDATA(buf, str);\n            buf.append(this.eol);\n        }\n        buf.append(\"]]></\");\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"Throwable>\");\n        buf.append(this.eol);\n    }\n    if (locationInfo) {\n        final java.lang.StackTraceElement element = event.getSource();\n        buf.append(this.indent2);\n        buf.append('<');\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"LocationInfo class=\\\"\");\n        buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(element.getClassName()));\n        buf.append(\"\\\" method=\\\"\");\n        buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(element.getMethodName()));\n        buf.append(\"\\\" file=\\\"\");\n        buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(element.getFileName()));\n        buf.append(\"\\\" line=\\\"\");\n        buf.append(element.getLineNumber());\n        buf.append(\"\\\"/>\");\n        buf.append(this.eol);\n    }\n    if (properties && (event.getContextMap().size() > 0)) {\n        buf.append(this.indent2);\n        buf.append('<');\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"Properties>\");\n        buf.append(this.eol);\n        for (final java.util.Map.Entry<java.lang.String, java.lang.String> entry : event.getContextMap().entrySet()) {\n            buf.append(this.indent3);\n            buf.append('<');\n            if (!complete) {\n                buf.append(this.namespacePrefix);\n            }\n            buf.append(\"Data name=\\\"\");\n            buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(entry.getKey()));\n            buf.append(\"\\\" value=\\\"\");\n            buf.append(org.apache.logging.log4j.core.helpers.Transform.escapeHtmlTags(java.lang.String.valueOf(entry.getValue())));\n            buf.append(\"\\\"/>\");\n            buf.append(this.eol);\n        }\n        buf.append(this.indent2);\n        buf.append(\"</\");\n        if (!complete) {\n            buf.append(this.namespacePrefix);\n        }\n        buf.append(\"Properties>\");\n        buf.append(this.eol);\n    }\n    buf.append(this.indent1);\n    buf.append(\"</\");\n    if (!complete) {\n        buf.append(this.namespacePrefix);\n    }\n    buf.append(\"Event>\");\n    buf.append(this.eol);\n    return buf.toString();\n}",
+            "src_parent_type": "Block",
+            "src_type": "If"
+          }
+        }
+      ],
+      "file_name": "XMLLayout"
+    }
+  ],
+  "id": "logging-log4j2_0343e9c7"
+}

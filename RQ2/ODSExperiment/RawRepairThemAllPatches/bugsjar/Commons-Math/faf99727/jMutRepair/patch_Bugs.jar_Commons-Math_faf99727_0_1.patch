@@ -1,0 +1,13 @@
+
+--- \/tmp\/jMutRepair_Bug_dot_jar_Commons-Math_faf99727\/src\/main\/java\/org\/apache\/commons\/math3\/geometry\/enclosing\/WelzlEncloserjava
++++ \/tmp\/jMutRepair_Bug_dot_jar_Commons-Math_faf99727\/src\/main\/java\/org\/apache\/commons\/math3\/geometry\/enclosing\/WelzlEncloserjava
+@@ -104,7 +104,7 @@
+ 			support.add(farthest);
+ 			org.apache.commons.math3.geometry.enclosing.EnclosingBall<S, P> savedBall = ball;
+ 			ball = moveToFrontBall(extreme, support);
+-			if ((ball.getRadius()) < (savedBall.getRadius())) {
++			if ((ball.getRadius()) == (savedBall.getRadius())) {
+ 
+ 				throw new org.apache.commons.math3.exception.MathInternalError();
+ 			}
+

@@ -1,0 +1,13 @@
+--- /tmp/RSRepair_Defects4J_Math_103/src/java/org/apache/commons/math/special/Gamma.java	2018-12-02 02:44:27.936415164 -0500
++++ /tmp/RSRepair_Defects4J_Math_103/patches_nzo8/Patch_41/patched/tmp/RSRepair_Defects4J_Math_103/src/java/org/apache/commons/math/special/Gamma.java	2018-12-02 02:46:13.064419700 -0500
+@@ -177,7 +177,7 @@
+                 sum = sum + an;
+             }
+             if (n >= maxIterations) {
+-                throw new MaxIterationsExceededException(maxIterations);
++                ret = 1.0;
+             } else {
+                 ret = Math.exp(-x + (a * Math.log(x)) - logGamma(a)) * sum;
+             }
+
+
