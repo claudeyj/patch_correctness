@@ -23,11 +23,11 @@ def add_patch_property(bugs_dict, bug_id, patch_name, property_name, property_va
 def rank_correct_patch(patches_dict, tool):
     # the patches should contain at least one correct patch and one overfitting patch
     
-    reverse = tool == 's3'
+    reverse = tool in ['s3', 'sum_entropy', 'mean_entropy']
     correct_patches_dict = {k: v for k, v in patches_dict.items() if v['label'] == 'correct'}
     overfitting_patches_dict = {k: v for k, v in patches_dict.items() if v['label'] == 'overfitting'}
     if len(correct_patches_dict) > 0 and len(overfitting_patches_dict) == 0: return None
-    if len(correct_patches_dict) ==0 and len(overfitting_patches_dict) > 0: return None
+    if len(correct_patches_dict) == 0 and len(overfitting_patches_dict) > 0: return None
     correct_patch_score = max([float(patch_dict[tool]) for patch_dict in correct_patches_dict.values()])
     if reverse: correct_patch_score = min([float(patch_dict[tool]) for patch_dict in correct_patches_dict.values()])
     rank = 1
@@ -54,8 +54,8 @@ def get_top_N(score_label_list, correct_num, tool):
     top_N = list()
     others = list()
     tied = list()
-    if tool == 'capgen' or tool == 'ssfix' or tool == 'sum_entropy' or tool == 'mean_entropy': reverse = True
-    if tool == 's3': reverse = False
+    if tool == 'capgen' or tool == 'ssfix': reverse = True
+    if tool in ['s3', 'sum_entropy', 'mean_entropy']: reverse = False
     sorted_score_label_list = sorted(score_label_list, key=lambda x: x[0], reverse=reverse)
     threshold = sorted_score_label_list[correct_num - 1][0]
     for pair in sorted_score_label_list:
@@ -470,7 +470,7 @@ def print_average_score_all(patches):
 if __name__ == '__main__':
     ssfix_dir = '../RQ1/ssFix'
     s3_capgen_dir = '../RQ1/refined-scores/capgen_s3'
-    alpha_repair_dir = '../RQ2/AlphaRepair'
+    alpha_repair_dir = '../RQ1/entropy'
     opad_dir = '../RQ3/opad'
     ASE_patch_dir = '../ASE_Patches'
     prapr_patch_root_dir = '../prapr_src_patches_1.2'
@@ -559,10 +559,11 @@ if __name__ == '__main__':
     prapr_new_correct_scores =  [element[0] for element in prapr_new_score_label_list if element[1] == 'correct']
     prapr_new_overfitting_scores =  [element[0] for element in prapr_new_score_label_list if element[1] == 'overfitting']
     dev_scores = [element[0] for element in dev_score_label_list]
-    print('ase correct vs overfitting: %s' % stats.mannwhitneyu(ase_correct_scores, ase_overfitting_scores, alternative='greater')[1])
-    print('prapr 2.0 correct vs overfitting: %s' % stats.mannwhitneyu(prapr_new_correct_scores, prapr_new_overfitting_scores, alternative='greater')[1])
-    print('ase overfitting vs developer: %s' % stats.mannwhitneyu(ase_overfitting_scores, dev_scores, alternative='greater')[1])
-    print('prapr 2.0 overfitting vs developer: %s' % stats.mannwhitneyu(prapr_new_overfitting_scores, dev_scores, alternative='greater')[1])
+    alter = 'less' if tool in ['s3', 'mean_entropy', 'sum_entropy'] else 'greater'
+    print('ase correct vs overfitting: %s' % stats.mannwhitneyu(ase_correct_scores, ase_overfitting_scores, alternative=alter)[1])
+    print('prapr 2.0 correct vs overfitting: %s' % stats.mannwhitneyu(prapr_new_correct_scores, prapr_new_overfitting_scores, alternative=alter)[1])
+    print('ase overfitting vs developer: %s' % stats.mannwhitneyu(ase_overfitting_scores, dev_scores, alternative=alter)[1])
+    print('prapr 2.0 overfitting vs developer: %s' % stats.mannwhitneyu(prapr_new_overfitting_scores, dev_scores, alternative=alter)[1])
 
     print_average_score_all(ase_patches)
     
