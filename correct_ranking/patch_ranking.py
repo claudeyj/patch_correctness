@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 import random
 from sklearn.metrics import roc_auc_score, precision_recall_curve, auc
 from scipy import stats
-
+from typing import List, Dict
 
 # get scores of ssfix, s3, capgen, opad
 
@@ -39,7 +39,7 @@ def rank_correct_patch(patches_dict, tool):
             if score < correct_patch_score: rank += 1
     return rank
     
-def rank_patches_per_bug(bugs_dict, tool):
+def rank_patches_per_bug(bugs_dict:Dict, tool):
     rank_dict = dict()
     for bug_id in bugs_dict:
         patches_dict = bugs_dict[bug_id]
@@ -49,6 +49,16 @@ def rank_patches_per_bug(bugs_dict, tool):
         rank_dict[bug_id] = (rank, len(patches_dict), tool)
         
     return rank_dict
+
+def rank_patches_per_bug_subdataset(dataset:List, bugs_dict:Dict, tool):
+    subset_bugs_dict = dict()
+    for item in dataset:
+        score, label, patch_full_name = item
+        bug_id, patch_name = patch_full_name.split('_')
+        subset_bugs_dict[bug_id] = subset_bugs_dict.get(bug_id, dict())
+        subset_bugs_dict[bug_id][patch_name] = bugs_dict[bug_id][patch_name]
+
+    return rank_patches_per_bug(subset_bugs_dict, tool)
     
 def get_top_N(score_label_list, correct_num, tool):
     top_N = list()
@@ -466,7 +476,7 @@ def print_average_score_all(patches):
     for property in ['TokenStrct', 'TokenConpt', 'ASTDist', 'ASTCosDist', 'VariableDist', \
          'VariableSimi', 'SyntaxSimi', 'SemanticSimi', 'capgen', 'ssfix', 's3', 'mean_entropy', 'sum_entropy']:
         print_average_score_for_property(patches, property)
-
+        
 if __name__ == '__main__':
     ssfix_dir = '../RQ1/ssFix'
     s3_capgen_dir = '../RQ1/refined-scores/capgen_s3'
@@ -536,16 +546,30 @@ if __name__ == '__main__':
     # calculate average of sampled balanced datasets
     count = 10
     balanced_datasets = list()
+    AVR_list = list()
+    patch_num_list = list()
     for i in range(count):
         random.seed(i + 1)
         balanced_dataset_file = '../balanced_dataset/balanced_dataset_patches-' + str(i + 1) + '.txt'
         balanced_dataset = get_balanced_dataset(prapr_ase_merged_patches, tool)
+        
+        print('\nbalanced dataset %s:' % (i + 1))
+        rank_dict_subdataset = rank_patches_per_bug_subdataset(balanced_dataset, prapr_ase_merged_patches, tool)
+        patch_num_subset = average_num_patches(rank_dict_subdataset)
+        avr_subset = average_correct_rank(rank_dict_subdataset)
+        print('AVR / average patch num: %.2f(%.2f)' % (avr_subset, patch_num_subset))
+        print("number of bugs included: " + str(len(rank_dict_subdataset)))
+        AVR_list.append(avr_subset)
+        patch_num_list.append(patch_num_subset)
+        
         if not isfile(balanced_dataset_file):
             with open(balanced_dataset_file, 'w') as f:
                 f.writelines([x[-1] + '\n' for x in balanced_dataset])
         balanced_datasets += balanced_dataset
     print('\n10 balanced datasets:')
     print_confusion_matrix(balanced_datasets, int(len(balanced_datasets)/2), tool)
+    
+    print('average AVR / average patch num: %.2f(%.2f)' % (sum(AVR_list) / count, sum(patch_num_list) / count))
     
     print('\ndeveloper patches:')
     dev_new_patches = dev_patches.copy()
