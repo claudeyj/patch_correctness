@@ -384,31 +384,6 @@ def display(dict_small, dict_merge, file_name):
     table = ax.table(cellText=text, rowLabels=df.index, colLabels=df.columns, loc='center', cellColours=plt.cm.Greys(df * 0.8))
     fig.savefig(file_name)
 
-@DeprecationWarning
-def print_ase_patches(ase_patches):
-    bug_nums = [('Chart', 26), ('Closure', 133), ('Lang', 65), ('Math', 106), ('Time', 26)]
-    count = 0
-    for bug_tuple in bug_nums:
-        project, num = bug_tuple
-        for seq in range(num):
-            id = str(seq + 1)
-            bug_id = project + '-' + id
-            if not bug_id in ase_patches: continue
-            patches_dict = ase_patches[bug_id]
-            for patch_name in patches_dict:
-                tool, patch_id, Dlabel = patch_name.split('-')
-                if patch_id == '0': sub_dir = 'Patches_ICSE'
-                else: sub_dir = 'Patches_others'
-                patch_dir = join(ASE_patch_dir, sub_dir, Dlabel, tool, project, id)
-                if patch_id != '0': patch_dir = join(patch_dir, patch_id)
-                if isfile(join(patch_dir, 'NOT_PLAUSIBLE')): continue
-                count += 1
-                assert isfile(join(patch_dir, 'src.patch'))
-                print(join(patch_dir, 'src.patch'))
-        
-    assert count == 902
-    sys.exit(0)
-    
 def average_correct_rank(rank_dict):
     rank_sum = 0
     for bug_id in rank_dict:
@@ -530,18 +505,29 @@ if __name__ == '__main__':
     
     print('\nprapr 1.2 patches:')
     prapr_score_label_list = print_confusion_matrix_from_patches(prapr_patches, tool)
-    print('AVR / average patch num: %s(%s)' % (average_correct_rank(rank_patches_per_bug(prapr_patches, tool)), average_num_patches(rank_patches_per_bug(prapr_patches, tool))))
-    print("number of bugs included: " + str(len(rank_patches_per_bug(prapr_patches, tool))))
+    rank_prapr_dict = rank_patches_per_bug(prapr_patches, tool)
+    print('AVR / average patch num: %s(%s)' % (average_correct_rank(rank_prapr_dict), average_num_patches(rank_prapr_dict)))
+    print("number of bugs included: " + str(len(rank_prapr_dict)))
     
     print('\nprapr 2.0 patches:')
     prapr_new_score_label_list = print_confusion_matrix_from_patches(prapr_new_patches, tool)
-    print('AVR / average patch num: %s(%s)' % (average_correct_rank(rank_patches_per_bug(prapr_new_patches, tool)), average_num_patches(rank_patches_per_bug(prapr_new_patches, tool))))
-    print("number of bugs included: " + str(len(rank_patches_per_bug(prapr_new_patches, tool))))
+    rank_prapr_new_dict = rank_patches_per_bug(prapr_new_patches, tool)
+    print('AVR / average patch num: %s(%s)' % (average_correct_rank(rank_prapr_new_dict), average_num_patches(rank_prapr_new_dict)))
+    print("number of bugs included: " + str(len(rank_prapr_new_dict)))
     
     print('\nprapr + ase merged:')
     merged_score_label_list = print_confusion_matrix_from_patches(prapr_ase_merged_patches, tool)
     print('AVR / average patch num: %s(%s)' % (average_correct_rank(rank_merged_dict), average_num_patches(rank_merged_dict)))
     print("number of bugs included: " + str(len(rank_merged_dict)))
+    
+    # ranking_box_plot([rank_ase_dict, rank_prapr_dict, rank_prapr_new_dict, rank_merged_dict], 'ranking_box_plot_' + tool + '.png')
+    
+    # dump the ranking results to json file
+    for rank_dict, file_name in zip([rank_ase_dict, rank_prapr_dict, rank_prapr_new_dict, rank_merged_dict], \
+        ['rank_dict/' + tool + '_' + name for name in 'rank_ase_dict.json rank_prapr_dict.json rank_prapr_new_dict.json rank_merged_dict.json'.split()]):
+        with open(file_name, 'w') as f:
+            json.dump(rank_dict, f)
+        
     
     # calculate average of sampled balanced datasets
     count = 10
