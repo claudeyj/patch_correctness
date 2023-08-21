@@ -81,15 +81,15 @@ def make_input_for_dev(dev_patch_dir, target_dir):
                 copyfile(patched_file_path, join(target_diff_dir, file_prefix + '_t.java'))
 
 if __name__ == "__main__":
-    prapr_patch_1_root_dir = '/home/jun/hust/ICSE23/patch_correctness/prapr_src_patches_1.2'
-    prapr_patch_2_root_dir = '/home/jun/hust/ICSE23/patch_correctness/prapr_src_patches_2.0'
-    ASE_patch_root_dir = '/home/jun/hust/ICSE23/patch_correctness/ASE_Patches'
-    dev_patch_1_root_dir = '/home/jun/hust/ICSE23/patch_correctness/developer_patches_1.2'
-    dev_patch_2_root_dir = '/home/jun/hust/ICSE23/patch_correctness/developer_patches_2.0'
-    target_root_dir = '/home/jun/hust/ICSE23/patch_correctness/RQ3/ODS/pairs'
+    root_dir_path = dirname(dirname(dirname(abspath(__file__))))
+    prapr_patch_1_root_dir = join(root_dir_path, 'prapr_src_patches_1.2')
+    prapr_patch_2_root_dir = join(root_dir_path, 'prapr_src_patches_2.0')
+    ASE_patch_root_dir = join(root_dir_path, 'ASE_Patches')
+    dev_patch_1_root_dir = join(root_dir_path, 'developer_patches_1.2')
+    dev_patch_2_root_dir = join(root_dir_path, 'developer_patches_2.0')
+    target_root_dir = join(root_dir_path, 'RQ3/ODS/pairs')
     
-    # make_input_for_prapr(prapr_patch_1_root_dir, join(target_root_dir, 'prapr_1.2'))
-    # make_input_for_prapr(prapr_patch_2_root_dir, join(target_root_dir, 'prapr_2.0'))
-    # make_input_for_ASE(ASE_patch_root_dir, target_root_dir)
+    make_input_for_prapr(prapr_patch_1_root_dir, join(target_root_dir, 'prapr_1.2'))
+    make_input_for_prapr(prapr_patch_2_root_dir, join(target_root_dir, 'prapr_2.0'))
     make_input_for_dev(dev_patch_1_root_dir, join(target_root_dir, 'dev_1.2'))
     make_input_for_dev(dev_patch_2_root_dir, join(target_root_dir, 'dev_2.0'))
