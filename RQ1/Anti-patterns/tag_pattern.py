@@ -33,19 +33,19 @@ for mutator in mutators_list:
             if 'correct' in files:
                 if mutator_pattern[mutator] == 1:
                     cnt_tn += 1
-                    f = open('TN.txt','a')
+                    f = open('TN_12.txt','a')
                     f.write(mutant+'\n')
                     f.close()
                 else:
                     cnt_fp += 1
-                    f = open('FP.txt', 'a')
+                    f = open('FP_12.txt', 'a')
                     # print("***FP:" + mutant.replace('-','/')+" "+mutator)
                     f.write(mutant + '\n')
                     f.close()
             elif 'correct' not in files:
                 if mutator_pattern[mutator] == 1:
                     cnt_fn += 1
-                    f = open('FN.txt', 'a')
+                    f = open('FN_12.txt', 'a')
                     if mutant+'\n' not in overlap_list:
                         print("***FN:" + mutant.replace('-', '/') + " " + mutator)
                     else:
@@ -54,7 +54,7 @@ for mutator in mutators_list:
                     f.close()
                 else:
                     cnt_tp += 1
-                    f = open('TP.txt', 'a')
+                    f = open('TP_12.txt', 'a')
                     f.write(mutant + '\n')
                     f.close()
             break
